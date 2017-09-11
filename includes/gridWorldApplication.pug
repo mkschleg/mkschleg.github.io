@@ -1,0 +1,25 @@
+
+.applicationWrapper
+
+  .worldWrapper
+    canvas.gridWorld#applicationCanvas(width="500" height="500") HTML5 Not Supported
+  .settings
+    h4 Grid World Settings
+    #gridSizeWrapper
+      p Size x:
+      select.gridSizeSelector#Width
+        option(value="5") 5
+        option(value="10" selected="selected") 10
+        option(value="20") 20
+      p y:
+      select.gridSizeSelector#Height
+        option(value="5") 5
+        option(value="10" selected="selected") 10
+        option(value="20") 20
+    button#reset Reset
+    //- <canvasclass="gridWorld" id="TDMaze" width="500" height="500"> HTML5 Not Supported </canvas>
+  .controls
+    button#start Start
+    button#stop Stop
+    button#slower Slower
+    button#faster Faster

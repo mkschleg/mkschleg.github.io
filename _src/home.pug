@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  include ../includes/commonVars.pug
+
+  - var page = "Home"
+  - var styleFiles = styleFiles.concat("home.css").concat("quotes.css").concat("publications.css")
+
+  include ../includes/commonHead.pug
+
+  //- include ../_assets/content/frontPageContent.pug
+
+  body.Site
+    include ../includes/header.pug
+
+    main.content
+
+      .lookAtThese-wrap.subContent
+        .lookAtThese
+          +lookAtMe("Github", "https://github.com/mkschleg", imagePath + "github-icon.png", "background-color:rgb(60,60,60);background-size:200px 200px; background-position:center;")
+            p Visit my Github to get a look at some of my open-source code.
+          +lookAtMe("Linkedin","https://www.linkedin.com/in/matthew-schlegel-1a00b739/", imagePath + "linkedin-icon.jpg", "background-color:rgb(19,127,176);background-size:200px 200px; background-position:center;")
+            p Visit my Linkedin profile for up to date information about my skills and current professional work.
+          +lookAtMe("Adapting Kernel Representations Online Using Submodular Maximization", "http://proceedings.mlr.press/v70/schlegel17a.html", imagePath + "teleTiming.jpg", "background-color:white;")
+
+      include ../includes/about.pug
+      include ../includes/publications.pug
+      include ../includes/quotes.pug
+
+    include ../includes/footer.pug
+    

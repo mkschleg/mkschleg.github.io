@@ -1,0 +1,23 @@
+
+-var infoLink = "siteInfo.html"
+
+- var pageLinks = ["home.html","education.html","publications.html","projects.html","musings.html"]
+- var pageNames = ["Home","Education","Publications","Projects","Musings"]
+
+- var assetsPath = "_assets/"
+- var includePath =  "includes/"
+- var stylesPath = assetsPath + "styles_2/"
+
+- var headerPath = includePath + "header.pug"
+- var footerPath = includePath + "footer.pug"
+
+- var styleFiles = ["temp.css", "header.css", "footer.css"]
+
+mixin fparticle(title)
+  .fparticle
+    h.title title
+    if block
+      block
+    else
+      p No content
+      

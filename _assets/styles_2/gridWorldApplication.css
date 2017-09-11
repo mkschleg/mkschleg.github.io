@@ -1,0 +1,111 @@
+
+
+main.content{
+  display: flex;
+  justify-content: center;
+
+  min-height: 570px
+}
+
+
+canvas.gridWorld{
+  height: 500px;
+  width: 500px;
+  /*border-style: solid;*/
+  /*border-width: thin;*/
+  /*border-color: black;*/
+}
+
+.controls{
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+
+  min-height: 50px;
+  max-height: 50px;
+  min-width: 710px;
+}
+
+.controls button{
+  /*display: flex;*/
+  /*text-align: center;*/
+  /*justify-content: center;*/
+  /*align-content: center;*/
+  min-width:100px;
+  height:50px;
+  border-style: none;
+  flex-grow: 1;
+
+  /*margin-left: 5px;*/
+  /*margin-right: 5px;*/
+  
+  font-variant: small-caps;
+  font-size: 1.4em;
+}
+
+button#start{
+  background-color: rgb(0,255,0);
+}
+button#start:hover{
+  background-color: rgb(0,200,0);
+}
+button#stop{
+  background-color: rgb(255,0,0);
+}
+button#stop:hover{
+  background-color: rgb(200,0,0);
+}
+button#slower{
+  background-color: rgb(255,255,0);
+}
+button#slower:hover{
+  background-color: rgb(200,200,0);
+}
+button#faster{
+  background-color: rgb(250,150,50);
+}
+button#faster:hover{
+  background-color: rgb(200,100,0);
+}
+
+
+.settings{
+  display:flex;
+  flex-direction: column;
+  min-width: 198px;
+  max-height: 488px;
+  padding: 5px;
+  border-style:solid;
+  border-width: 1px;
+}
+
+#gridSizeWrapper{
+  display: flex;
+  flex-direction: row;
+}
+
+#gridSizeWrapper p{
+  flex-grow: 1;
+
+  /*margin-right: 5px;*/
+}
+
+.gridSizeSelector{
+  flex-grow: 1;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.worldWrapper{
+  display: flex;
+  min-height: 500px;
+}
+
+.applicationWrapper{
+  display: flex;
+  flex-direction: row;
+  min-height:570px;
+  max-width: 710px;
+  flex-wrap: wrap;
+  /*min-height: 750px;*/
+}

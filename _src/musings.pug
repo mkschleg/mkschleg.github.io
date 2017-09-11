@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  include ../includes/commonVars.pug
+
+  - var page = "Musings"
+  - var styleFiles = styleFiles.concat("musings.css").concat("gridWorldApplication.css").concat("comingSoon.css")
+  - var scriptFiles = scriptFiles.concat("main")
+
+  include ../includes/commonHead.pug
+
+  //- include ../_assets/content/frontPageContent.pug
+
+  body.Site
+    include ../includes/header.pug
+    
+    //- main.content
+    //-   p So just as a temporary posting here to
+
+    //- main.content
+    //-   include ../includes/gridWorldApplication.pug
+    main.content
+      include ../includes/commingSoon.pug
+
+    include ../includes/footer.pug
+    

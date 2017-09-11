@@ -1,0 +1,26 @@
+
+-var infoLink = "siteInfo.html"
+
+// - var pageLinks = ["home.html","education.html","publications.html","projects.html","musings.html"]
+- var pageLinks = []
+// - var pageNames = ["Home","Education","Research","Projects","Musings"]
+- var pageNames = []
+
+- var assetsFolder = "_assets/"
+- var includeFolder = assetsFolder + "inc/"
+- var stylesFolder = assetsFolder + "styles_2/"
+- var scriptsFolder = assetsFolder + "scripts/"
+
+- var imagePath = assetsFolder + "images/"
+
+- var styleFiles = ["temp.css", "header.css", "footer.css"]
+
+- var scriptFiles = []
+
+mixin lookAtMe(title,link,img,customStyle)
+  a(href=link,style="background-image: url(" + img + ");" + customStyle ).lookAtMe
+    .lookAtMeContentWrap
+      h.title=title
+      if block
+        block
+      

@@ -1,0 +1,165 @@
+
+header{
+  padding-top: 100px;
+  background-color: #333;
+}
+
+
+h1.headTitle{
+  font-size: 3em;
+  margin-left: 20px;
+  color: rgb(230,230,230)
+}
+
+div.underTitle{
+  display: block;
+  min-height:10px;
+  background-color: rgb(230,230,230);
+  margin-bottom: 0;
+  /*margin-left: -20;
+  margin-right: -20;*/
+  width:100%;
+}
+
+ul.menu, nav{
+  font-size: 1.5em;
+  margin-top: 0;
+    display: inline-block;
+    list-style: none;
+    /**/
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    min-height:50px;
+    text-align: center;
+    background-color: #333;
+
+}
+
+nav a.curPage{
+  background-color: rgb(230,230,230);
+  color: #333;
+}
+
+nav a.diffPage{
+  /*border-radius: 0 0 10px 10px;*/
+  color: white;
+  display: block;
+  background-color: #333;
+
+
+  /*min-height: 30px;*/
+
+}
+
+nav a{
+  float: left;
+  min-width: 100px;
+  padding: 14px 16px;
+  font-style: normal;
+  text-decoration: none;
+
+}
+
+
+
+nav a.diffPage:hover{
+  /*color: white;*/
+  /*display: block;*/
+  background-color: #111;
+
+}
+
+
+@media all and (max-width: 680px) {
+  header{
+    padding-top: 30px;
+    text-align: center;
+  }
+  nav{
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  nav a{
+    clear:both;
+    float: none;
+    border-radius: 0;
+    margin-right: 0;
+
+  }
+}
+
+/*@media handheld {
+  header{
+    padding-top: 30px;
+    text-align: center;
+  }
+  nav{
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  nav a{
+    clear:both;
+    float: none;
+    border-radius: 0;
+    margin-right: 0;
+
+  }
+}*/
+
+
+/* iPad [portrait + landscape] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  header{
+    padding-top: 30px;
+    text-align: center;
+  }
+  nav{
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  nav a{
+    clear:both;
+    float: none;
+    border-radius: 0;
+    margin-right: 0;
+    font-size: 50pt;
+
+  }
+}
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px) {
+  header{
+    padding-top: 100px;
+    text-align: center;
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    /*flex: 1;*/
+    flex: 0;
+  }
+  
+  header .headTitle{
+    font-size: 75pt;
+  }
+
+  nav{
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-right: 0px !important;
+    padding-right: 0px !important;
+    /*flex: 1;*/
+  }
+  nav a{
+    clear:both;
+    float: none;
+    border-radius: 0px;
+    margin-right: 0px !important;
+    font-size: 50pt;
+    /*flex: 1;*/
+  }
+}

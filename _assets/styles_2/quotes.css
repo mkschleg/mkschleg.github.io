@@ -1,0 +1,27 @@
+
+
+
+
+
+.quoteWrapper{
+  
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  clear:both;
+  justify-content: center;
+  align-content: center;
+}
+
+p.author{
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+p.quote{
+  align-self: center;
+  font-style: italic;
+  max-width: 800px;
+  /*min-width: 800px;*/
+  margin-bottom: 10px;
+}

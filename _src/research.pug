@@ -1,0 +1,38 @@
+doctype html
+
+mixin paper(title, authors, conference, year)
+  .paperWrapper
+    h1 #{title}.
+    p #{authors}. #{conference}, #{year}.
+
+    //- p.paper= quote
+    //- p.author=author + ", " + year
+    
+
+html(lang="en")
+  include ../includes/commonVars.pug
+  
+  - var page = "Research"
+  - var styleFiles = styleFiles.concat("publications.css")
+  
+  include ../includes/commonHead.pug
+  body
+
+    include ../includes/header.pug
+
+
+    main.content
+
+      +paper("Adapting kernel representations online using submodular maximization", "Matthew Schlegel, Yangchen Pan, and Martha White","International Conference on Machine Learning (ICML)", "2017")
+      +paper("Stable predictive representations with general value functions for continual learning", "Matthew Schlegel, Adam White, Martha White","Continual Learning and Deep Networks workshop at the Neural Information Processing System Conference","2017")
+      //- .subContent.mostRecentPaper
+      //-   h2 Paper title
+      //-   p.
+      //-     Abstract/graphs/formating.
+      //- 
+      //- .subContent.activity
+      //-   h2 Recent Events
+      //-   p.
+      //-     This is where my research activity will be.
+
+    include ../includes/footer.pug

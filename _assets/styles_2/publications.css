@@ -1,0 +1,29 @@
+
+
+main.content{
+
+}
+
+.publications{
+  margin-bottom: 50px;
+  border-bottom-color: rgba(0,0,0,1);
+  border-bottom-width: thin;
+  border-bottom-style: dashed;
+}
+
+.paperWrapper{
+  /*margin-bottom: 10px;*/
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+.paperWrapper h2{
+  font-size: 1em;
+  display: inline;
+}
+
+.paperWrapper p{
+  font-size: 1em;
+  display: inline;
+}

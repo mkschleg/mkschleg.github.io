@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+
+  include ../includes/commonVars.pug
+
+  - var page = "Info"
+  - var styleFiles = styleFiles.concat("home.css")
+
+
+  include ../includes/commonHead.pug
+
+  body.site
+    include ../includes/header.pug
+    
+    
+    main.content
+      .subContent
+        p This website was made using Pug (HTML5), CSS, and javascript. 
+        
+      .lookAtThese
+        +lookAtMe("PUG", "https://pugjs.org/api/getting-started.html", imagePath + "", "background-color:rgb(60,60,60);background-size:200px 200px; background-position:center;")
+          p Pug is an open-source language for easier development of HTML
+      //- ul.refLinks
+      //-   li: a(href="https://pugjs.org/api/getting-started.html", title="PUG") PUG
+      //-   li: a(href="https://sass-lang.com", title="SASS") SASS
+    //- h1 Matthew Schlegel
+    //- #container.col
+    //-   if youAreUsingPug
+    //-     p You are amazing
+    //-   else
+    //-     p Get on it!
+    //-   p.
+    //-     Pug is a terse and simple templating language with a
+    //-     strong focus on performance and powerful features.
+    include ../includes/footer.pug

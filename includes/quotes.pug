@@ -1,0 +1,15 @@
+mixin quote(author, year, quote)
+  .quoteWrapper
+    p.quote= quote
+    p.author=author + ", " + year
+    
+    
+.favoriteQuotes.subContent
+  +quote("Erwin Schrödinger", "1994", "Nirvana is a state of pure blissful knowledge... It has nothing to do with the individual. The ego or its separation is an illusion. Indeed in a certain sense two \"I\"'s are identical namely when one disregards all special contents - their Karma. The goal of man is to preserve his Karma and to develop it further... when man dies his Karma lives and creates for itself another carrier.")
+  //- +quote("Alan Turing", "1948", "A man provided with paper, pencil, and rubber, and subject to strict discipline, is in effect a universal machine.")
+  //- 
+  //- +quote("Invisible Man - Ralph Waldo Ellison", "1952", "Power doesn't have to show off. Power is confident, self-assuring, self-starting and self-stopping, self-warning and self-justifying. When you have in, you know it.")
+  //- 
+  //- +quote("Leonard Bernstein", "1958", "Any great work of art … revives and readapts time and space, and the measure of its success is the extent to which it makes you an inhabitant of that world — the extent to which it invites you in and lets you breathe its strange, special air.")
+  //- 
+  //-

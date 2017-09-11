@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  include ../includes/commonVars.pug
+
+  - var page = "Projects"
+  - var styleFiles = styleFiles.concat("comingSoon.css")
+
+  include ../includes/commonHead.pug
+
+  //- include ../_assets/content/frontPageContent.pug
+
+  body.Site
+    include ../includes/header.pug
+
+    main.content
+      include ../includes/commingSoon.pug
+
+
+    include ../includes/footer.pug
+    
