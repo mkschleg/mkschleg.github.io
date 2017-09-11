@@ -1,9 +1,13 @@
-mixin paper(title, authors, conference, year)
+mixin paper(title, authors, conference, year, lnk)
   .paperWrapper
-    h2 #{title}.
+    h2 <a href = #{lnk}> #{title} </a>.
     p #{authors}. #{conference}, #{year}.
 
 .publications.subContent
   h2 Publications
-  +paper("Adapting kernel representations online using submodular maximization", "Matthew Schlegel, Yangchen Pan, and Martha White","International Conference on Machine Learning (ICML)", "2017")
-  +paper("Stable predictive representations with general value functions for continual learning", "Matthew Schlegel, Adam White, Martha White","Continual Learning and Deep Networks workshop at the Neural Information Processing System Conference","2017")
+  +paper("Adapting kernel representations online using submodular maximization", 
+        "Matthew Schlegel, Yangchen Pan, and Martha White",
+        "International Conference on Machine Learning (ICML)", "2017", "assets/papers/17icml_kernels.pdf")
+  +paper("Stable predictive representations with general value functions for continual learning", 
+        "Matthew Schlegel, Adam White, Martha White",
+        "Continual Learning and Deep Networks workshop at the Neural Information Processing System Conference","2017", "assets/papers/17cldl_nips_gvfs.pdf")
