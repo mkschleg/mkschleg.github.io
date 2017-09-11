@@ -6,9 +6,9 @@ main.content{
 
 .publications{
   margin-bottom: 50px;
-  border-bottom-color: rgba(0,0,0,1);
-  border-bottom-width: thin;
-  border-bottom-style: dashed;
+  /*border-bottom-color: rgba(0,0,0,1);*/
+  /*border-bottom-width: thin;*/
+  /*border-bottom-style: dashed;*/
 }
 
 .paperWrapper{
