@@ -17,7 +17,9 @@
 .aboutContent.subContent img{
 
   /*max-width: 1000px;*/
-
+  
+  width: 128px;
+  height: 128px;
   display: flex;
   flex-direction: row;
 
