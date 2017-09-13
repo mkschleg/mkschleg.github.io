@@ -3,7 +3,7 @@ html(lang="en")
   include ../includes/commonVars.pug
 
   - var page = "Home"
-  - var styleFiles = styleFiles.concat("home.css","quotes.css","publications.css","about.css","lookatme.css")
+  - var styleFiles = styleFiles.concat("home.css","quotes.css","publications.css","about.css","lookatme.css","contact.css")
 
   include ../includes/commonHead.pug
 
@@ -14,7 +14,7 @@ html(lang="en")
 
     main.content
       
-
+      //- include ../includes/contact.pug
       include ../includes/about.pug
 
       .lookAtThese-wrap.subContent
@@ -27,6 +27,7 @@ html(lang="en")
 
 
       //- include ../includes/publications.pug
+
       include ../includes/quotes.pug
 
     include ../includes/footer.pug

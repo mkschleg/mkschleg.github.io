@@ -5,13 +5,13 @@ mixin project(title, lnk, lastupdated)
     h2 <a href=#{lnk}>#{title}</a>
     p.description
       block
-    p.lastupdated #{lastupdated}
+    //- p.lastupdated #{lastupdated}
 
 html(lang="en")
   include ../includes/commonVars.pug
 
   - var page = "Projects"
-  - var styleFiles = styleFiles
+  - var styleFiles = styleFiles.concat("projects.css")
 
   include ../includes/commonHead.pug
 
@@ -22,10 +22,11 @@ html(lang="en")
 
     main.content
       //- include ../includes/commingSoon.pug
-      +project("Simple Visual Engine","https://github.com/mkschleg/SimpleSDLGameEngine","updated")
-        p This is a simple example of a visualization engine used for displaying a scene. This is primarily used by me for visualizing my experiments for talks, and other meetings. It uses SDL, SDL-IMG, and c++11. I will eventually create a openGL extension (using sdls ability to have openGL renderers).
-      +project("C++11 Experiment Utilities", "https://github.com/mkschleg", "updated")
-        p These are some useful utilities for running and maintaining experiments in c++11. This includes a stripped down version of the filesystem introduced in c++17, managers for reporting error and internal varriables, a manager for saving to files, and more. This is mostly useful for the managers to keep track of these variables for you. This is still being actively updated and the api is bound to change overtime, but hopefully as it matures certain aspects will become stable.
+      #projects.subContent
+        +project("Simple Visual Engine","https://github.com/mkschleg/SimpleSDLGameEngine","updated")
+          p This is a simple example of a visualization engine used for displaying a scene. This is primarily used by me for visualizing my experiments for talks, and other meetings. It uses SDL, SDL-IMG, and c++11. I will eventually create a openGL extension (using sdls ability to have openGL renderers).
+        +project("C++11 Experiment Utilities", "https://github.com/mkschleg", "updated")
+          p These are some useful utilities for running and maintaining experiments in c++11. This includes a stripped down version of the filesystem introduced in c++17, managers for reporting error and internal varriables, a manager for saving to files, and more. This is mostly useful for the managers to keep track of these variables for you. This is still being actively updated and the api is bound to change overtime, but hopefully as it matures certain aspects will become stable.
 
 
     include ../includes/footer.pug

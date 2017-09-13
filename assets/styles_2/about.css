@@ -2,28 +2,48 @@
   display: flex;
   flex-direction: row;
 }*/
+.aboutWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 .aboutContent.subContent .subContainer{
-  display: flex;
-  flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
+  float: left;
 }
 
 .aboutContent.subContent p{
   margin-bottom: 5px;
   /*display: flex;
   flex-direction: row;*/
+
 }
 
 .aboutContent.subContent img{
 
   /*max-width: 1000px;*/
 
-  min-width: 128px !important;
-  min-height: 128px !important;
-  max-width: 128px !important;
-  max-height:128px !important;
-  display: flex;
-  flex-direction: row;
+  min-width: 200px !important;
+  min-height: 200px !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  float:left;
+  margin-right: 20px;
+  margin-bottom: 10px;
 
 
+}
+
+.aboutContent.subContent .subSubContainer h2{
+  margin-left: 10px;
+  /*float:left;*/
+}
+
+.aboutContent.subContent#reasearchInterests h2{
+  margin-top: 0px !important;
 }
