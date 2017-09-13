@@ -1,0 +1,25 @@
+/*.aboutContent.subContent{
+  display: flex;
+  flex-direction: row;
+}*/
+
+.aboutContent.subContent .subContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.aboutContent.subContent p{
+  margin-bottom: 5px;
+  /*display: flex;
+  flex-direction: row;*/
+}
+
+.aboutContent.subContent img{
+
+  /*max-width: 1000px;*/
+
+  display: flex;
+  flex-direction: row;
+
+
+}
