@@ -18,8 +18,8 @@
 
   /*max-width: 1000px;*/
 
-  width: 128px !important;
-  height: 128px !important;
+  min-width: 128px !important;
+  min-height: 128px !important;
   display: flex;
   flex-direction: row;
 
