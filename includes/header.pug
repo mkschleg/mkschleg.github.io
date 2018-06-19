@@ -1,9 +1,9 @@
 header
-  h1.headTitle Matthew Schlegel
-  .underTitle
-  nav
-    each val, index in pageNames
-      a(href=pageLinks[index], title=val, class = (page == val) ? 'curPage' : 'diffPage') #{val}
+  div.headContainer
+    h1.headTitle Matthew Schlegel
+    nav
+      each val, index in pageNames
+        a(href=pageLinks[index], title=val, class = (page == val) ? 'curPage' : 'diffPage') #{val}
 
       //-
       //- li(class = (page == "Publications") ? 'curPage' : ''): a(href=publicationsLink, title="Publications") Publications

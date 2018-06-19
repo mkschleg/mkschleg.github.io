@@ -1,14 +1,26 @@
 
 header{
-  padding-top: 100px;
+    /* padding-top: 100px; */
+    /* min-height:100px; */
   background-color: #333;
+  /* display: flex; */
+  /* flex-direction:row; */
+  /* flex-wrap: nowrap; */
 }
 
+div.headContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+}
 
 h1.headTitle{
-  font-size: 3em;
+    font-size: 1.5em;
+    min-width: 190px;
   margin-left: 20px;
-  color: rgb(230,230,230)
+  margin-right: 20px;
+  color: rgb(230,230,230);
 }
 
 div.underTitle{
@@ -21,16 +33,20 @@ div.underTitle{
   width:100%;
 }
 
+nav{
+    
+}
+
 ul.menu, nav{
   font-size: 1.5em;
   margin-top: 0;
-    display: inline-block;
-    list-style: none;
-    /**/
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+  display: inline-block;
+  list-style: none;
+  /**/
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 
     min-height:50px;
     text-align: center;
@@ -55,7 +71,7 @@ nav a.diffPage{
 }
 
 nav a{
-  float: left;
+    justify-content: right;
   min-width: 100px;
   padding: 14px 16px;
   font-style: normal;
@@ -74,11 +90,30 @@ nav a.diffPage:hover{
 
 
 @media all and (max-width: 680px) {
+
+    div.headContainer{
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        align-items:center;
+    }
+    h1.headTitle{
+     
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+     
+     
+     
+    }
   header{
-    padding-top: 30px;
+      /* padding-top: 30px; */
+      /* padding-bottom: 30px; */
+      margin-bottom: 20px;
     text-align: center;
   }
   nav{
+      width: 100%;
     flex-direction: column;
     margin-bottom: 0;
   }
