@@ -3,6 +3,54 @@
   clear:both;
 }*/
 
+.lookAtThese-wrap.subContent{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(80, 91, 109);
+}
+
+
+.subContent#reasearchInterests{
+    padding-top: 20px;
+    /* max-width:1000px; */
+    display: flex;
+    flex-direction:column;
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+
+.subContent#reasearchInterests h1{
+    border-bottom: 1px solid rgb(80, 91, 109);
+}
+
+.interest{
+    border-bottom: 1px solid rgb(80, 91, 109);
+    /* max-width:1000px; */
+    padding-top:30px;
+    padding-bottom:30px
+}
+
+.interest_content{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-bottom: 1px solid rgb(80, 91, 109); */
+    max-width:1000px;
+    /* padding-top:30px; */
+    padding-bottom:30px
+}
+
+#interest_physics{
+    border-bottom: 0px solid rgb(80, 91, 109);
+    /* background-color: rgb(255,0,0); */
+}
+
+
+
+
 /* iPad [portrait + landscape] */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 

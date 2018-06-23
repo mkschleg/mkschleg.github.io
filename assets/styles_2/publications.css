@@ -4,7 +4,23 @@ main.content{
 
 }
 
+
+.subContent {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+
+.subContent p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .publications{
+    margin-top: 50px;
   margin-bottom: 50px;
   /*border-bottom-color: rgba(0,0,0,1);*/
   /*border-bottom-width: thin;*/

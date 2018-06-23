@@ -3,7 +3,9 @@ html(lang="en")
   include ../includes/commonVars.pug
 
   - var page = "Home"
-  - var styleFiles = styleFiles.concat("home.css","quotes.css","publications.css","about.css","lookatme.css","contact.css")
+  - var styleFiles = styleFiles.concat("home.css","quotes.css","about.css","lookatme.css","contact.css")
+  - var marthaWebsite = "https://webdocs.cs.ualberta.ca/~whitem/"
+  - var adamWebsite = "http://adamwhite.ca"
 
   include ../includes/commonHead.pug
 
@@ -15,7 +17,22 @@ html(lang="en")
     main.content
 
       //- include ../includes/contact.pug
-      include ../includes/about.pug
+      //- include ../includes/about.pug
+      //- .tagline
+      //-   h1 Taking a multi-disciplinary approach to artificial intelligence and learning. 
+
+      .aboutWrapper
+        .aboutContent.subContent#aboutMe
+          img(src = "assets/images/me.gif")
+          .subSubContainer
+            include ../includes/contact.pug
+            h2 About Me
+            p.
+              A PhD student at the University of Alberta in Edmonton interested in reinforcement learning and machine learning.
+            //- p.
+            //-   I am a current PhD student at the University of Alberta in Edmonton, working under <a href=#{marthaWebsite}>Dr. Martha White</a>. Previously, I attended Indiana University - Bloomington and recieved a Bachelor of Science in Physics (2015) and Masters of Science in Computer Science (2017).
+            //- p.
+            //-   I spend my time away from my research listening to my favorite music, playing clarinet, enjoying a good book or movie, and tinkering with various tech and circuits. I also enjoy reading tech news, recent research in physics, and anything related to space and AI.
 
       .lookAtThese-wrap.subContent
         .lookAtThese
@@ -24,6 +41,18 @@ html(lang="en")
           +lookAtMe("Linkedin","https://www.linkedin.com/in/matthew-schlegel-1a00b739/", imagePath + "linkedin-icon.jpg", "background-color:rgb(19,127,176);background-size:200px 200px; background-position:center;")
             p Visit my Linkedin profile for up to date information about my skills and current professional work.
           +lookAtMe("Adapting Kernel Representations Online Using Submodular Maximization", "http://proceedings.mlr.press/v70/schlegel17a.html", imagePath + "teleTiming.jpg", "background-color:white;")
+
+
+      include ../includes/research_interests.pug
+      //- .subContent#reasearchInterests
+      //-   h2 Research Interests
+      //-   p.
+      //-     My reasearch interests primarly fall within Reinforcement Learning, but I also dabble in visual data, and genearl machine learning. My main research goal is to create agents that learn their own representation in a continual learning setting. My current work focuses on several types of representation learning:
+      //-     using General Value Functions to create predictive knowledge representations on the fly through question generation;
+      //-     exploring the use of kernel representations and gaussian processes for in online settings and for reinforcement learning, particularly creating efficient methods to select prototypes for such representations;
+      //-     and evaluationg deep architectures (primarily recurrent networks) for policy evaluation in partially observable markov decision processes. I'm currently working under <a href=#{marthaWebsite}>Dr. Martha White</a>.
+      //-   p.
+      //-     To see my currently published work please go <a href="research.html"> here.</a> To see some of my open-source code/projects please go <a href="projects.html">here</a>, and to see a more complete history see below for my github account and linkedin account.
 
 
       //- include ../includes/publications.pug

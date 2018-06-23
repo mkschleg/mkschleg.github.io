@@ -1,5 +1,9 @@
 
 
+.lookAtThese-wrap{
+    margin-top: 50px;
+}
+
 p.degree{
   margin-bottom: 0!important;
   padding-bottom: 0!important;
@@ -13,6 +17,12 @@ p.specialization{
 
 
 @media all and (max-width: 680px) {
+    .lookAtThese-wrap{
+        margin-top: 0px;
+    }
+    .lookAtMe{
+        margin-top:10px !important;
+    }
   .lookAtMeContentWrap {
     flex-grow: 0;
     flex-shrink: 0;
@@ -43,7 +53,12 @@ p.specialization{
 @media only screen and (max-device-width: 480px) {
   
   .lookAtThese-wrap{
-    margin-bottom: 0px !important;
+      margin-bottom: 0px !important;
+      margin-top: 0px !important;
+  }
+
+  .lookAtMe{
+      margin-top:10px !important;
   }
   
   .lookAtMeContentWrap {
