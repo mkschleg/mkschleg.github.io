@@ -7,6 +7,23 @@
   font-size: 1.3em;
 }
 
+#contact div.links{
+    display: flex;
+    flex-direction: row;
+}
+
+div.links div{
+    margin-right: 10px;
+}
+
+#contact img{
+    min-width:20px;
+    max-width:20px;
+    min-height:20px;
+    max-height:20px;
+
+}
+
 /*#contact.subContent{
 
 }*/

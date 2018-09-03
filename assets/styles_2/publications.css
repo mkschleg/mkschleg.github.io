@@ -1,11 +1,10 @@
 
 
-main.content{
-
+.publications.subContent h1{
+    text-align:center;
 }
 
-
-.subContent {
+.publications.subContent {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -14,7 +13,7 @@ main.content{
 }
 
 
-.subContent p{
+.publications.subContent p{
     padding-left: 20px;
     padding-right: 20px;
 }

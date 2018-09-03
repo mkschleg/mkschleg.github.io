@@ -172,7 +172,7 @@
     /*padding-right: 15px;*/
     
     flex-direction: row;
-    justify-content: left; /* align horizontal */
+    /* justify-content: left; /\* align horizontal *\/ */
     align-items: center; /* align vertical */
   }
   

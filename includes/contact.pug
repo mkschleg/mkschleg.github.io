@@ -1,7 +1,10 @@
 
+mixin twitter()
+  <a href="https://twitter.com/mattschleg?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-dnt="true" data-show-count="false">Follow @mattschleg</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 .subContent#contact
-  p.job PhD Student and Research Assistant
-  p.organization University of Alberta, Department of Computing Science
+  //- p.job PhD Student and Research Assistant
+  //- p.organization University of Alberta, Department of Computing Science
   p.email Email: 
     em mkschleg 
     | for 
@@ -9,3 +12,13 @@
     |  dot com and
     em  ualberta
     |  dot ca
+  div.links
+    div#link_twitter
+      +twitter()
+    div#link_linkedin
+      a(href = "https://www.linkedin.com/in/mkschleg")
+        img(src = imagePath + "linkedin-icon.jpg", style="background-size:100px 100px !important;") 
+    div#link_github
+      a(href = "https://www.github.com/mkschleg")
+        img(src = imagePath + "github-icon.png")
+
