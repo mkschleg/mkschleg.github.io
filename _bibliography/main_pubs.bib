@@ -5,6 +5,7 @@
   author={Jacobsen, Andrew and Schlegel, Matthew and Linke, Cameron and Degris, Thomas and White, Adam and White, Martha},
   booktitle={AAAI Conference on Artificial Intelligence},
   year={2019},
+  arxiv={https://arxiv.org/abs/1907.07751},
   abstract={This paper investigates different vector step-size adaptation approaches for non-stationary online, continual prediction problems. Vanilla stochastic gradient descent can be considerably improved by scaling the update with a vector of appropriately chosen step-sizes. Many methods, including Ada-Grad, RMSProp, and AMSGrad, keep statistics about the learning process to approximate a second order update—a vector approximation of the inverse Hessian. Another family of approaches use meta-gradient descent to adapt the stepsize parameters to minimize prediction error. These metadescent strategies are promising for non-stationary problems, but have not been as extensively explored as quasi-second order methods. We first derive a general, incremental metadescent algorithm, called AdaGain, designed to be applicable to a much broader range of algorithms, including those with semi-gradient updates or even those with accelerations, such as RMSProp. We provide an empirical comparison of methods from both families. We conclude that methods from both families can perform well, but in non-stationary prediction problems the meta-descent methods exhibit advantages. Our method is particularly robust across several prediction problems, and is competitive with the state-of-the-art method on a large-scale, time-series prediction problem on real data from a mobile robot.}
 }
 
@@ -15,6 +16,7 @@ booktitle = {Advances in Neural Information Processing Systems 32},
 editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
 pages = {1797--1807},
 year = {2019},
+arxiv={https://arxiv.org/abs/1906.04328},
 abstract= {Importance sampling (IS) is a common reweighting strategy for off-policy prediction in reinforcement learning. While it is consistent and unbiased, it can result in high variance updates to the weights for the value function. In this work, we explore a resampling strategy as an alternative to reweighting. We propose Importance Resampling (IR) for off-policy prediction, which resamples experience from a replay buffer and applies standard on-policy updates. The approach avoids using importance sampling ratios in the update, instead correcting the distribution before the update. We characterize the bias and consistency of IR, particularly compared to Weighted IS (WIS). We demonstrate in several microworlds that IR has improved sample efficiency and lower variance updates, as compared to IS and several variance-reduced IS strategies, including variants of WIS and V-trace which clips IS ratios. We also provide a demonstration showing IR improves over IS for learning a value function from images in a racing car simulator.}
 }
 

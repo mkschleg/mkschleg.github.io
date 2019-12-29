@@ -3,5 +3,8 @@ main:
     url: /about/
   - title: "Publications"
     url: /publications/
+  - title: "CV"
+    url: /assets/current-cv.pdf
   - title: "Blog"
     url: https://www.coffeesideai.com
+    

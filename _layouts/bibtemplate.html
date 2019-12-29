@@ -12,6 +12,10 @@
     {% if link %}
     <a href="{{link}}"><button class="btn btnId btnPub--download" style="position:relative;white-space: normal;">PDF</button></a>
     {% endif %}
+
+    {% if entry.arxiv %}
+    <a href="{{entry.arxiv}}"><button class="btn btnId btnPub--arxiv" style="position:relative;white-space: normal;">Arxiv</button></a>
+    {% endif %}
     
     {% if links['sup.pdf'] %}
     <a href="{{links['sup.pdf']}}"><button class="btn btnId btnPub--supplement" style="position:relative;white-space: normal;">Supplement</button></a>
