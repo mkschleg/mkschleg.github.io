@@ -1,0 +1,16 @@
+# /_data/authors.yml
+
+Matthew Schlegel:
+  name        : "Matthew Schlegel"
+  bio         : "Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world."
+  avatar      : "/assets/images/me.gif"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:mkschleg@gmail.com"
+    - label: "Github"
+      icon: "fab fa-fw fa-github-square"
+      url: "https://github.com/mkschleg"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mattschleg"

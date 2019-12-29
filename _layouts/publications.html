@@ -1,0 +1,18 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<!-- <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3> -->
+<h3 class="archive_subtitle"> Papers In Progress </h3>
+
+{% bibliography --file in_progress %}
+
+<h3 class="archive_subtitle"> Published Papers </h3>
+
+{% bibliography --file main_pubs %}
+
+<h3 class="archive_subtitle"> Other Publications </h3>
+
+{% bibliography --file workshop_pubs %}

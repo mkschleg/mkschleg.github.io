@@ -1,0 +1,61 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// body.archive {
+//     padding-right: 0px;
+// }
+
+ol.bibliography {
+    list-style-type: none;
+    li {
+	font-size: 16px;
+	.dropDownAbstract {
+	    font-size: 14px;
+	    padding: 15px;
+	    overflow: scroll;
+	    max-height: 250px;
+	}
+	.dropDownBibtex {
+	    font-size: 14px;
+	}
+	.btn {
+	    margin-left: 5px;
+	    margin-right:5px;
+	}
+
+	.btnPub--abstract {
+	    // outline-style: solid;
+	    // outline-width: 1px;
+	    // outline-color: blue;
+	    border: 2px solid blue;
+	}
+	.btnPub--BibTex {
+	    border: 2px solid red;
+	}
+	.btnPub--download {
+	    border: 2px solid green;
+	}
+	.pub-buttons {
+	    margin-top: 5px;
+	    margin-bottom: 10px;
+	    display: flex;
+	    flex-wrap: nowrap;
+	}
+    }
+}
+
+h4.archive_subtitle {
+    
+}
+
+.research_desc {
+    font-size: 0.5em;
+    padding: 10px;
+		   
+}
