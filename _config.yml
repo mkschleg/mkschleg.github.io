@@ -24,7 +24,7 @@ email: mkschleg@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Working hard to make machines work harder.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: https://"mkschleg.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://mkschleg.github.io # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mattschleg
 github_username:  mkschleg
 
