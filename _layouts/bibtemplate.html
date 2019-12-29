@@ -1,0 +1,26 @@
+---
+---
+{{reference | replace_first: 'Schlegel, M.', '<b>Schlegel, M.</b>'}}
+
+<div class="pub-buttons">
+    {% if entry.abstract %}
+    <button class="btn btnId btnPub--abstract" id="b_{{key}}-abstract" style="">Abstract</button>
+    {% endif %}
+
+    <button class="btn btnId btnPub--BibTex" id="b_{{key}}-bibtex" style="">BibTeX</button>
+    
+    {% if link %}
+    <a href="{{link}}"><button class="btn btnId btnPub--download" style="position:relative;white-space: normal;">PDF</button></a>
+    {% endif %}
+    
+    {% if links['sup.pdf'] %}
+    <a href="{{links['sup.pdf']}}"><button class="btn btnId btnPub--supplement" style="position:relative;white-space: normal;">Supplement</button></a>
+    {% endif %}
+</div>
+    <div class="dropDownBibtex" id="{{key}}-bibtex" style="display: none">
+    <pre>{{entry.bibtex}}</pre>
+    </div>
+    
+    <div class="dropDownAbstract" id="{{key}}-abstract" style="display: none">
+    {{entry.abstract}}
+    </div>
