@@ -44,6 +44,14 @@ scholar:
   repository: /_publications
 
 
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile  
+
 # collections:
 #   main_pubs:
 #     output: true
