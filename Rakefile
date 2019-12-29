@@ -8,3 +8,4 @@ task :default do
   sh("JEKYLL_ENV=production bundle exec jekyll build")
   puts "Jekyll successfully built"
 end
+#end Rakefile
