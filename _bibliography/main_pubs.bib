@@ -13,7 +13,6 @@
 title = {Importance Resampling for Off-policy Prediction},
 author = {Schlegel, Matthew and Chung, Wesley and Graves, Daniel and Qian, Jian and White, Martha},
 booktitle = {Advances in Neural Information Processing Systems},
-pages = {1797--1807},
 year = {2019},
 arxiv={https://arxiv.org/abs/1906.04328},
 abstract= {Importance sampling (IS) is a common reweighting strategy for off-policy prediction in reinforcement learning. While it is consistent and unbiased, it can result in high variance updates to the weights for the value function. In this work, we explore a resampling strategy as an alternative to reweighting. We propose Importance Resampling (IR) for off-policy prediction, which resamples experience from a replay buffer and applies standard on-policy updates. The approach avoids using importance sampling ratios in the update, instead correcting the distribution before the update. We characterize the bias and consistency of IR, particularly compared to Weighted IS (WIS). We demonstrate in several microworlds that IR has improved sample efficiency and lower variance updates, as compared to IS and several variance-reduced IS strategies, including variants of WIS and V-trace which clips IS ratios. We also provide a demonstration showing IR improves over IS for learning a value function from images in a racing car simulator.}
@@ -23,7 +22,6 @@ abstract= {Importance sampling (IS) is a common reweighting strategy for off-pol
   title={Context-dependent upper-confidence bounds for directed exploration},
   author={Kumaraswamy, Raksha and Schlegel, Matthew and White, Adam and White, Martha},
   booktitle={Advances in Neural Information Processing Systems},
-  pages={4779--4789},
   year={2018},
   abstract={Directed exploration strategies for reinforcement learning are critical for learning an optimal policy in a minimal number of interactions with the environment. Many algorithms use optimism to direct exploration, either through visitation estimates or upper-confidence bounds, as opposed to data-inefficient strategies like ✏-greedy that use random, undirected exploration. Most data-efficient exploration methods require significant computation, typically relying on a learned model to guide exploration. Least-squares methods have the potential to provide some of the data-efficiency benefits of model-based approaches—because they summarize past interactions—with the computation closer to that of model-free approaches. In this work, we provide a novel, computationally efficient, incremental exploration strategy, leveraging this property of least-squares temporal difference learning (LSTD). We derive upper-confidence bounds on the action-values learned by LSTD, with context-dependent (or state-dependent) noise variance. Such context- dependent noise focuses exploration on a subset of variable states, and allows for reduced exploration in other states. We empirically demonstrate that our algorithm can converge more quickly than other incremental exploration strategies using confidence estimates on action-values.}
 }
@@ -31,9 +29,7 @@ abstract= {Importance sampling (IS) is a common reweighting strategy for off-pol
 @inproceedings{schlegel2017adapting,
   title={Adapting kernel representations online using submodular maximization},
   author={Schlegel, Matthew and Pan, Yangchen and Chen, Jiecao and White, Martha},
-  booktitle={Proceedings of the 34th International Conference on Machine Learning-Volume 70},
-  pages={3037--3046},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
   year={2017},
-  organization={JMLR. org},
   abstract={Kernel representations provide a nonlinear repre- sentation, through similarities to prototypes, but require only simple linear learning algorithms given those prototypes. In a continual learning setting, with a constant stream of observations, it is critical to have an efficient mechanism for sub-selecting prototypes amongst observations. In this work, we develop an approximately submodular criterion for this setting, and an efficient online greedy submodular maximization algorithm for optimizing the criterion. We extend streaming submodular maximization algorithms to continual learning, by removing the need for multiple passes which is infeasible and instead introducing the idea of coverage time. We propose a general block-diagonal approximation for the greedy update with our criterion, that enables updates linear in the number of prototypes. We empirically demonstrate the effectiveness of this approximation, in terms of approximation quality, significant runtime improvements, and effective prediction performance.}
 }
