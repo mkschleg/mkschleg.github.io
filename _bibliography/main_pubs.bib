@@ -1,0 +1,35 @@
+
+
+@inproceedings{jacobsen2019meta,
+  title={Meta-descent for Online, Continual Prediction},
+  author={Jacobsen, Andrew and Schlegel, Matthew and Linke, Cameron and Degris, Thomas and White, Adam and White, Martha},
+  booktitle={AAAI Conference on Artificial Intelligence},
+  year={2019},
+  arxiv={https://arxiv.org/abs/1907.07751},
+  abstract={This paper investigates different vector step-size adaptation approaches for non-stationary online, continual prediction problems. Vanilla stochastic gradient descent can be considerably improved by scaling the update with a vector of appropriately chosen step-sizes. Many methods, including Ada-Grad, RMSProp, and AMSGrad, keep statistics about the learning process to approximate a second order update—a vector approximation of the inverse Hessian. Another family of approaches use meta-gradient descent to adapt the stepsize parameters to minimize prediction error. These metadescent strategies are promising for non-stationary problems, but have not been as extensively explored as quasi-second order methods. We first derive a general, incremental metadescent algorithm, called AdaGain, designed to be applicable to a much broader range of algorithms, including those with semi-gradient updates or even those with accelerations, such as RMSProp. We provide an empirical comparison of methods from both families. We conclude that methods from both families can perform well, but in non-stationary prediction problems the meta-descent methods exhibit advantages. Our method is particularly robust across several prediction problems, and is competitive with the state-of-the-art method on a large-scale, time-series prediction problem on real data from a mobile robot.}
+}
+
+@incollection{schlegel2019importance,
+title = {Importance Resampling for Off-policy Prediction},
+author = {Schlegel, Matthew and Chung, Wesley and Graves, Daniel and Qian, Jian and White, Martha},
+booktitle = {Advances in Neural Information Processing Systems},
+year = {2019},
+arxiv={https://arxiv.org/abs/1906.04328},
+abstract= {Importance sampling (IS) is a common reweighting strategy for off-policy prediction in reinforcement learning. While it is consistent and unbiased, it can result in high variance updates to the weights for the value function. In this work, we explore a resampling strategy as an alternative to reweighting. We propose Importance Resampling (IR) for off-policy prediction, which resamples experience from a replay buffer and applies standard on-policy updates. The approach avoids using importance sampling ratios in the update, instead correcting the distribution before the update. We characterize the bias and consistency of IR, particularly compared to Weighted IS (WIS). We demonstrate in several microworlds that IR has improved sample efficiency and lower variance updates, as compared to IS and several variance-reduced IS strategies, including variants of WIS and V-trace which clips IS ratios. We also provide a demonstration showing IR improves over IS for learning a value function from images in a racing car simulator.}
+}
+
+@inproceedings{kumaraswamy2018context,
+  title={Context-dependent upper-confidence bounds for directed exploration},
+  author={Kumaraswamy, Raksha and Schlegel, Matthew and White, Adam and White, Martha},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2018},
+  abstract={Directed exploration strategies for reinforcement learning are critical for learning an optimal policy in a minimal number of interactions with the environment. Many algorithms use optimism to direct exploration, either through visitation estimates or upper-confidence bounds, as opposed to data-inefficient strategies like ✏-greedy that use random, undirected exploration. Most data-efficient exploration methods require significant computation, typically relying on a learned model to guide exploration. Least-squares methods have the potential to provide some of the data-efficiency benefits of model-based approaches—because they summarize past interactions—with the computation closer to that of model-free approaches. In this work, we provide a novel, computationally efficient, incremental exploration strategy, leveraging this property of least-squares temporal difference learning (LSTD). We derive upper-confidence bounds on the action-values learned by LSTD, with context-dependent (or state-dependent) noise variance. Such context- dependent noise focuses exploration on a subset of variable states, and allows for reduced exploration in other states. We empirically demonstrate that our algorithm can converge more quickly than other incremental exploration strategies using confidence estimates on action-values.}
+}
+
+@inproceedings{schlegel2017adapting,
+  title={Adapting kernel representations online using submodular maximization},
+  author={Schlegel, Matthew and Pan, Yangchen and Chen, Jiecao and White, Martha},
+  booktitle={Proceedings of the 34th International Conference on Machine Learning},
+  year={2017},
+  abstract={Kernel representations provide a nonlinear repre- sentation, through similarities to prototypes, but require only simple linear learning algorithms given those prototypes. In a continual learning setting, with a constant stream of observations, it is critical to have an efficient mechanism for sub-selecting prototypes amongst observations. In this work, we develop an approximately submodular criterion for this setting, and an efficient online greedy submodular maximization algorithm for optimizing the criterion. We extend streaming submodular maximization algorithms to continual learning, by removing the need for multiple passes which is infeasible and instead introducing the idea of coverage time. We propose a general block-diagonal approximation for the greedy update with our criterion, that enables updates linear in the number of prototypes. We empirically demonstrate the effectiveness of this approximation, in terms of approximation quality, significant runtime improvements, and effective prediction performance.}
+}
