@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on Matthew Schlegel</title>
+    <link>http://example.org/tags/meta/</link>
+    <description>Recent content in Meta on Matthew Schlegel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why am I blogging?</title>
+      <link>http://example.org/post/2018-11-03-blog-state-of-purpose/</link>
+      <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-11-03-blog-state-of-purpose/</guid>
+      <description>So why am I starting a blog? And what is it going to be about? These are great questions, and hopefully this post will act as a launching pad for the content that will eventually be found here. Instead of having a long rant up front, I&amp;rsquo;m going to answer a bunch of questions you may have and you can easily skip sections if they are uninteresting.
+Who the heck are you?</description>
+    </item>
+    
+  </channel>
+</rss>

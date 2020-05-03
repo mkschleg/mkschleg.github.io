@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/braindump/</loc>
+    <lastmod>2020-05-03T15:23:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/how_to_take_smart_notes_with_org_mode/</loc>
+    <lastmod>2020-05-03T15:23:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/zettelkasten_method/</loc>
+    <lastmod>2020-05-03T15:23:30-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/sign_theory/</loc>
+    <lastmod>2020-05-03T15:23:16-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/matrix/</loc>
+    <lastmod>2020-05-03T15:23:06-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/richard_feynman/</loc>
+    <lastmod>2020-05-03T15:22:59-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/hermann_von_helmholtz/</loc>
+    <lastmod>2020-05-03T15:22:48-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/thinking/</loc>
+    <lastmod>2020-05-03T15:22:42-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/philosophy/</loc>
+    <lastmod>2020-05-03T15:22:35-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/perception/</loc>
+    <lastmod>2020-05-03T15:22:26-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/people/</loc>
+    <lastmod>2020-05-03T15:22:05-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/note_taking/</loc>
+    <lastmod>2020-05-03T15:21:56-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/math/</loc>
+    <lastmod>2020-05-03T15:21:49-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/linear_algebra/</loc>
+    <lastmod>2020-05-03T15:21:41-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/braindump/brain/</loc>
+    <lastmod>2020-05-03T15:21:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/coffee/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/2019-02-24-canmore-rave-coffe/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/2018-11-13-credo-procrastination/</loc>
+    <lastmod>2018-11-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/about/</loc>
+    <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/meta/</loc>
+    <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/post/2018-11-03-blog-state-of-purpose/</loc>
+    <lastmod>2018-11-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/about/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/cv/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/publications/</loc>
+    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/collections/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/coffee/</loc>
+  </url>
+  
+</urlset>

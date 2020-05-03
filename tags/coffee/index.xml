@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coffee on Matthew Schlegel</title>
+    <link>http://example.org/tags/coffee/</link>
+    <description>Recent content in coffee on Matthew Schlegel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Raving for Rave Coffee</title>
+      <link>http://example.org/post/2019-02-24-canmore-rave-coffe/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2019-02-24-canmore-rave-coffe/</guid>
+      <description>This weekend we&amp;mdash;my partner, Jess, and me&amp;mdash;made a trip to a small town between Calgary and Banff: Canmore, AB. Looking for relaxation, inspiration, and fresh brisk air, we didn&amp;rsquo;t expect the great food and drink scene that Canmore has to offer two self-proclaimed foodies looking for a weekend getaway. Among the high achievers was our first stop, Rave Coffee. We loved the coffee and atmosphere on our first visit so much that I find myself writing this post while enjoying an espresso and pour over on our way out of town.</description>
+    </item>
+    
+    <item>
+      <title>Creed(o) of Procrastination</title>
+      <link>http://example.org/post/2018-11-13-credo-procrastination/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/post/2018-11-13-credo-procrastination/</guid>
+      <description>Ok. Look. I procrastinate. I procrastinate a lot. I have a reasonably sized talk tomorrow at Startup Edmonton (you should come! Details found here!), of which I have yet to finish, let alone practice. So instead of doing that I&amp;rsquo;ve decided to come and enjoy the ritual of an espresso at Credo Coffee. I&amp;rsquo;m not proud of my choices, but they are the choices that get made (either by me or at the whims of some biological process).</description>
+    </item>
+    
+  </channel>
+</rss>
