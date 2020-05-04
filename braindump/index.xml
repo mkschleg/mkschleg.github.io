@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Brain Dump on Matthew Schlegel</title>
-    <link>http://example.org/braindump/</link>
+    <link>https://mkschleg.github.io/braindump/</link>
     <description>Recent content in Brain Dump on Matthew Schlegel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 May 2020 15:23:34 -0600</lastBuildDate>
     
-	<atom:link href="http://example.org/braindump/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mkschleg.github.io/braindump/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Take Smart Notes with Org-mode</title>
-      <link>http://example.org/braindump/how_to_take_smart_notes_with_org_mode/</link>
+      <link>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</link>
       <pubDate>Sun, 03 May 2020 15:23:34 -0600</pubDate>
       
-      <guid>http://example.org/braindump/how_to_take_smart_notes_with_org_mode/</guid>
+      <guid>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</guid>
       <description>tags R:Thinking, R:Note-Taking source How to Take Smart Notes With Org-mode | blog  This is a blog about how the author of org-roam (Jethro Kuan) takes notes and utilizes org-roam to organize his thinking.
 &amp;ldquo;Note-taking is Not Just a Precursor to Writing&amp;rdquo;
 Quote from R:Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;
@@ -26,29 +26,29 @@ Process of writing:
     
     <item>
       <title>Zettelkasten method</title>
-      <link>http://example.org/braindump/zettelkasten_method/</link>
+      <link>https://mkschleg.github.io/braindump/zettelkasten_method/</link>
       <pubDate>Sun, 03 May 2020 15:23:30 -0600</pubDate>
       
-      <guid>http://example.org/braindump/zettelkasten_method/</guid>
+      <guid>https://mkschleg.github.io/braindump/zettelkasten_method/</guid>
       <description>tags R:Note-Taking  This is a method for note taking developed by Niklas Luhmann. There are several principles under which the method derives it&amp;rsquo;s workflow:
  Your notes should be atomic: This means topics should be placed into a single note, butthe scope of the topic should be small. This makes it easier to link and categorize throughout your notes. Your notes (or collection of notes) should be interconnected: This means you should continually make connections with notes previously written and place new notes into this structure.</description>
     </item>
     
     <item>
       <title>Sign Theory</title>
-      <link>http://example.org/braindump/sign_theory/</link>
+      <link>https://mkschleg.github.io/braindump/sign_theory/</link>
       <pubDate>Sun, 03 May 2020 15:23:16 -0600</pubDate>
       
-      <guid>http://example.org/braindump/sign_theory/</guid>
+      <guid>https://mkschleg.github.io/braindump/sign_theory/</guid>
       <description>tags Philosophy, Brain, Perception  Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
     </item>
     
     <item>
       <title>Matrix</title>
-      <link>http://example.org/braindump/matrix/</link>
+      <link>https://mkschleg.github.io/braindump/matrix/</link>
       <pubDate>Sun, 03 May 2020 15:23:06 -0600</pubDate>
       
-      <guid>http://example.org/braindump/matrix/</guid>
+      <guid>https://mkschleg.github.io/braindump/matrix/</guid>
       <description>tags Linear Algebra, Math  We star with a set of equations with nine coefficients, three unknowns, and three right-hand sides.
 \begin{align*} 2u + v + w &amp;amp;= 5 \\\
 4u - 6v &amp;amp;=-2 \\\
@@ -58,93 +58,93 @@ We represent the right hand side with a column vector (or a 1 by 3 matrix). The 
     
     <item>
       <title>Richard Feynman</title>
-      <link>http://example.org/braindump/richard_feynman/</link>
+      <link>https://mkschleg.github.io/braindump/richard_feynman/</link>
       <pubDate>Sun, 03 May 2020 15:22:59 -0600</pubDate>
       
-      <guid>http://example.org/braindump/richard_feynman/</guid>
+      <guid>https://mkschleg.github.io/braindump/richard_feynman/</guid>
       <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Quote from R:Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;</description>
     </item>
     
     <item>
       <title>Hermann von Helmholtz</title>
-      <link>http://example.org/braindump/hermann_von_helmholtz/</link>
+      <link>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</link>
       <pubDate>Sun, 03 May 2020 15:22:48 -0600</pubDate>
       
-      <guid>http://example.org/braindump/hermann_von_helmholtz/</guid>
+      <guid>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</guid>
       <description>Backlinks 1 Backlinks Sign Theory Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience. Reasonably, we can lay this as a significant step towards representationalism.</description>
     </item>
     
     <item>
       <title>Thinking</title>
-      <link>http://example.org/braindump/thinking/</link>
+      <link>https://mkschleg.github.io/braindump/thinking/</link>
       <pubDate>Sun, 03 May 2020 15:22:42 -0600</pubDate>
       
-      <guid>http://example.org/braindump/thinking/</guid>
+      <guid>https://mkschleg.github.io/braindump/thinking/</guid>
       <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode R:Thinking, R:Note-Taking</description>
     </item>
     
     <item>
       <title>Philosophy</title>
-      <link>http://example.org/braindump/philosophy/</link>
+      <link>https://mkschleg.github.io/braindump/philosophy/</link>
       <pubDate>Sun, 03 May 2020 15:22:35 -0600</pubDate>
       
-      <guid>http://example.org/braindump/philosophy/</guid>
+      <guid>https://mkschleg.github.io/braindump/philosophy/</guid>
       <description>Backlinks 1 Backlinks Sign Theory Philosophy, Brain, Perception</description>
     </item>
     
     <item>
       <title>Perception</title>
-      <link>http://example.org/braindump/perception/</link>
+      <link>https://mkschleg.github.io/braindump/perception/</link>
       <pubDate>Sun, 03 May 2020 15:22:26 -0600</pubDate>
       
-      <guid>http://example.org/braindump/perception/</guid>
+      <guid>https://mkschleg.github.io/braindump/perception/</guid>
       <description>Backlinks 1 Backlinks Sign Theory Philosophy, Brain, Perception</description>
     </item>
     
     <item>
       <title>People</title>
-      <link>http://example.org/braindump/people/</link>
+      <link>https://mkschleg.github.io/braindump/people/</link>
       <pubDate>Sun, 03 May 2020 15:22:05 -0600</pubDate>
       
-      <guid>http://example.org/braindump/people/</guid>
+      <guid>https://mkschleg.github.io/braindump/people/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Note-Taking</title>
-      <link>http://example.org/braindump/note_taking/</link>
+      <link>https://mkschleg.github.io/braindump/note_taking/</link>
       <pubDate>Sun, 03 May 2020 15:21:56 -0600</pubDate>
       
-      <guid>http://example.org/braindump/note_taking/</guid>
+      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
       <description>Backlinks 2 Backlinks Zettelkasten method R:Note-Taking
 How to Take Smart Notes with Org-mode R:Thinking, R:Note-Taking</description>
     </item>
     
     <item>
       <title>Math</title>
-      <link>http://example.org/braindump/math/</link>
+      <link>https://mkschleg.github.io/braindump/math/</link>
       <pubDate>Sun, 03 May 2020 15:21:49 -0600</pubDate>
       
-      <guid>http://example.org/braindump/math/</guid>
+      <guid>https://mkschleg.github.io/braindump/math/</guid>
       <description>Backlinks 2 Backlinks Linear Algebra Math
 Matrix Linear Algebra, Math</description>
     </item>
     
     <item>
       <title>Linear Algebra</title>
-      <link>http://example.org/braindump/linear_algebra/</link>
+      <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
       <pubDate>Sun, 03 May 2020 15:21:41 -0600</pubDate>
       
-      <guid>http://example.org/braindump/linear_algebra/</guid>
+      <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
       <description>tags Math  Backlinks 1 Backlinks Matrix Linear Algebra, Math</description>
     </item>
     
     <item>
       <title>Brain</title>
-      <link>http://example.org/braindump/brain/</link>
+      <link>https://mkschleg.github.io/braindump/brain/</link>
       <pubDate>Sun, 03 May 2020 15:21:31 -0600</pubDate>
       
-      <guid>http://example.org/braindump/brain/</guid>
+      <guid>https://mkschleg.github.io/braindump/brain/</guid>
       <description>Backlinks 1 Backlinks Sign Theory Philosophy, Brain, Perception</description>
     </item>
     
