@@ -2,29 +2,3 @@
 
 
 
-.float-left {
-    float: left;
-    width: 50%;
-    border-radius: 25px;
-    padding: 20px;
-}
-
-.fifty-perc {
-    width: 50%;
-}
-
-.seventyfive-perc{
-    width: 75%
-}
-
-@media (max-width: 64em) {
-
-    .float-left {
-        float: none;
-        width: 50%;
-        border-radius: 25px;
-        padding: 0px;
-    }
-
-}
-

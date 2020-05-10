@@ -1,14 +1,4 @@
 
 
-.post-tags {
-    display: flex;
-    flex-direction: row;
-    margin-left: 25px;
-}
 
-.post-tags h4{
-    margin: 0;
-    margin-right: 10px;
-    line-height: 1.5;
-}
 
