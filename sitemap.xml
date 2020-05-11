@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
+    <lastmod>2020-05-10T16:18:00-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2020-05-10T16:13:57-06:00</lastmod>
+    <lastmod>2020-05-10T16:18:00-06:00</lastmod>
   </url>
   
   <url>
@@ -118,11 +123,6 @@
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
-    <lastmod>2020-05-10T16:13:49-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mkschleg.github.io/braindump/neuroscience/</loc>
     <lastmod>2020-05-10T15:58:42-06:00</lastmod>
   </url>
@@ -130,11 +130,6 @@
   <url>
     <loc>https://mkschleg.github.io/braindump/anatomy/</loc>
     <lastmod>2020-05-10T15:58:37-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/visual_system_/</loc>
-    <lastmod>2020-05-10T15:24:39-06:00</lastmod>
   </url>
   
   <url>
