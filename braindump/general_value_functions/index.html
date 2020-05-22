@@ -14,7 +14,7 @@
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/gaussian_elimination.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/general_value_functions.md%29%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -42,7 +42,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://mkschleg.github.io/braindump/gaussian_elimination/">
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/general_value_functions/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -50,15 +50,15 @@
   <meta property="twitter:creator" content="@mattschleg">
   
   <meta property="og:site_name" content="Matthew Schlegel">
-  <meta property="og:url" content="https://mkschleg.github.io/braindump/gaussian_elimination/">
-  <meta property="og:title" content="Gaussian Elimination | Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/general_value_functions/">
+  <meta property="og:title" content="General Value Functions | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2020-05-22T16:51:39-06:00">
   <meta property="article:modified_time" content="2020-05-22T16:51:39-06:00">
   
 
-  <title>Gaussian Elimination | Matthew Schlegel</title>
+  <title>General Value Functions | Matthew Schlegel</title>
 
   
 
@@ -193,7 +193,7 @@
 
 				<article class="post" itemscope itemtype="http://schema.org/Article">
   <div class="post-container">
-    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/gaussian_elimination/">Gaussian Elimination</a></h1>
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/general_value_functions/">General Value Functions</a></h1>
 
     
       
@@ -215,47 +215,14 @@
 
     <div class="post-style" itemprop="articleBody">
       
-      <dl>
-<dt>tags</dt>
-<dd><a href="/braindump/linear_algebra/">Linear Algebra</a>, <a href="/braindump/math/">Math</a></dd>
-</dl>
-<p>Elimination is all about <em>solving linear equations</em> (which is central to linear algebra generally). As an example we have two equations with two unknowns</p>
-<p>\begin{align*}
-1x + 2y = 3 \\\<br>
-4x + 5y = 6
-\end{align*} (from [[file:../linear_algebra_and_its_applications.org][Linear Algebra and its Applications]])</p>
-<p>To solve for the unknowns $x$ and $y$ we can use elimination:</p>
-<ol>
-<li>
-<p>subtract 4 times the first equation from the second equation (eliminates $x$ from the second equation)</p>
-<p>\[(4x + 5y) - 4(1x + 2y) = 6 - 4*3 \hspace{0.3cm} \rightarrow \hspace{0.3cm} -3y=-6 \]</p>
-<p>From this we know that $y=2$.</p>
-</li>
-<li>
-<p>Back-substitution: We then put in the known $y=2$ into the first equation</p>
-<p>\[ 1x + 2(2) = 3 \hspace{0.3cm} \rightarrow \hspace{0.3cm} x = -1\]</p>
-</li>
-</ol>
-<p>This simple example illustrates how useful gaussian elimination can be. We can look at another set of equations to understand how the method extends beyond two equations</p>
-<p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
-4 u-6 v &amp;= -2 \\\<br>
--2 u+7 v+2 w &amp;= 9
-\end{align*}</p>
-<p>The method starts by <strong>substracting multiples of the first equation from the other equations</strong>. The coefficient 2 is the <strong>first pivot</strong>. To find the right multipliers to subtract we take the first pivot and dived it into the numbers in the subsequent numbers underneath.</p>
-<p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
--8v - 2w &amp;= -12 \\\<br>
-8v + 3w &amp;= 14
-\end{align*}</p>
-<p>The next pivot is the first coefficient in the second equation, where we now only consider equations below this to remove the second unknown.</p>
-<p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
--8v - 2w &amp;= -12 \\\<br>
-1w &amp;= 2
-\end{align*}</p>
-<p>The system is then solved from bottom to top through <strong>back-substitution</strong>. The forward elimination produced the pivots 2, -8, 1. It subtracted multiples of each row from the rows beneath to reach a <strong>trangular</strong> system, which is solved in reverse order.</p>
-<p>This method is simple and more efficient than its <a href="/braindump/determinant/">Determinant</a> counterpart. It is also useful to consider when this simple algorithm will break down. The most obvious case is when we encounter a pivot which is 0. By definition, elimination breaks down and must stop. This can occur when the system is singular or when it is non-singular. If the system is non-signular, than this can be fixed by changing the order of equations and restarting elimination. The singular case is incurable, as there is no solution to be found.</p>
+      <h2 id="backlinks">Backlinks</h2>
+<h2 id="3-backlinks">3 Backlinks</h2>
+<h3 id="sutton2011-horde-a-scalable-real-time-architecture-for-learning-knowledge-from-unsupervised-sensorimotor-interaction"><a href="/braindump/sutton2011/">sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction</a></h3>
+<p><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></p>
+<h3 id="white2015-developing-a-predictive-approach-to-knowledge"><a href="/braindump/white2015/">white2015: Developing a predictive approach to knowledge</a></h3>
+<p><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></p>
+<h3 id="reinforcement-learning"><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a></h3>
+<p><a href="/braindump/general_value_functions/">General Value Functions</a></p>
 
     </div>
 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/liu2018_breaking_the_curse_of_horizon_infinite-horizon_off-policy_estimation.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/liu2018/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/liu2018/">
+  <meta property="og:title" content="liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-22T16:51:46-06:00">
+  <meta property="article:modified_time" content="2020-05-22T16:51:46-06:00">
+  
+
+  <title>liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/liu2018/">liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-05-22 16:51:46 -0600 MDT" itemprop="datePublished dateModified">
+      May 22, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/off_policy/">Off-Policy</a></dd>
+<dt>source</dt>
+<dd><a href="http://papers.nips.cc/paper/7781-breaking-the-curse-of-horizon-infinite-horizon-off-policy-estimation">paper</a></dd>
+<dt>authors</dt>
+<dd>Liu, Q., Li, L., Tang, Z., &amp; Zhou, D.</dd>
+<dt>year</dt>
+<dd>2018</dd>
+</dl>
+<p>The key contribution of this paper is a new approach to estimating the density ratio of two stationary state distributions. This is significant for correcting the data distributions, as we can directly correct both action and state distributions using a single step horizon of IS ratios. This reduces the potential variance of IS style approaches.</p>
+<p>Many state-of-the-art off-policy estimation methods are based on IS (as we know). When the trajectory is long, the usual method for applying IS ratios is to take a product across all the IS ratios in a trajectory. This results in a high variance estimator, with increasing variance as the trajectory length increases. They coin this as &ldquo;the curse of horizon&rdquo; in off-policy learning.</p>
+<p>They instead suggest to apply IS to the average visitation distribution of single steps of state-action pairs, rather than on the whole trajectories.</p>
+<p>The background described for an MDP is standard. They assume finite state and action spaces for all the theory, but empirically the methods extend beyond this setting.</p>
+<p>They setup the <em>infinite horizon</em> problem, where there is no terminating states in the MDP. \(p_\pi(\cdot)\) is the distribution of trajectory \(\tau = \{s_t, a_t, r_t\}_{t=0}^{\infty}\) under policy \(\pi\). The expected reward combines both the average reward case and typical case as</p>
+<p>\[R_\pi \triangleq \lim_{T\rightarrow \infty} \mathbb{E}_{\tau \sim p_\pi} [R^T(\tau)]\]</p>
+<p>where we specify</p>
+<p>\[R^T(\tau) \triangleq \frac{\sum_{t=0}^T \gamma^t r_t}{\sum_{t=0}^T \gamma^t}\].</p>
+<p>The average reward case occurs when \(\gamma = 1\), and the discounted reward \(0&lt;\gamma&lt;1\).</p>
+<p>They then describe the background for Value functions and Importance sampling. I will forgoe these, as they are straightforward.</p>
+<p><strong>The Curse of Horizon</strong></p>
+<p>The importance weight \(w_{0:T} = \prod_{t=0}^T \frac{\pi(a_t|s_t)}{\pi_0(a_t|s_t)}\) is a product of T density ratios, whose variance can grow exponentially with T. While WIS estimators can empirically have reduced variance, the exponential dependence on horizon is unavoidable in general. This is coined the <em>curse of horizon</em>.</p>
+<h2 id="off-policy-estimation-via-stationary-state-density-ratio-estimation">Off-Policy estimation via Stationary State Density Ratio Estimation</h2>
+<p>They show through a simple example that applying importance weighting on the state space, rather than the trajectory space, can significantly reduce the variance (which seems pretty obvious). This reduces the dependency on the trajectory length. The average visitation distribution is</p>
+<p>\[d_\pi(s) = \lim_{T\rightarrow\infty} \frac{(\sum_{t=0}^T \gamma^t d_{\pi, t}(s))}{\sum_{t=0}^T \gamma^t}\]</p>
+<p>This can be split into the discounted case \(d_\pi(s) = (1-\gamma)\sum_{t=0}^\infty \gamma^t d_{\pi, t}(s)\) when \(\gamma \in (0,1)\); and the average reward case \(d_\pi(s) = lim_{T\rightarrow\infty} \frac{1}{T+1} \sum_{t=0}^T d_{\pi, t}(s)\).</p>
+<p>We can then construct a (weighted-)IS estimator to the desired quantity \(R_\pi\) with samples obtained from \(d_{\pi_0}(s,a) = d_{\pi_0}(s)\pi_0(a|s)\).</p>
+<p>\[\hat{R}_{\pi}=\sum_{i=1}^{m} \sum_{t=0}^{T} w_{t}^{i} r_{t}^{i},
+\quad \quad \text { where } \quad
+w_{t}^{i} :=\frac{\gamma^{t} w_{\pi / \pi_{0}}\left(s_{t}^{i}\right) \beta_{\pi / \pi_{0}}\left(a_{t}^{i} | s_{t}^{i}\right)}{\sum_{t^{\prime}, i^{\prime}} \gamma^{t} w_{\pi / \pi_{0}}\left(s_{t^{\prime}}^{i^\prime}\right) \beta_{\pi / \pi_{0}}\left(a_{t^{\prime}}^{i^\prime} | s_{t^{\prime}}^{i^{\prime}}\right)}\]</p>
+<p>This estimator works in the space of \((s,a)\) instead of trajectories, potentially having a significant impact on the variance of the estimator.</p>
+<p>While this estimator falls from the prior discussion rapidly, the task of estimating the stationary distributions (or their ratio) is still of concern.</p>
+<p>They show the stationary ratio can be estimated with the following loss function in the discounted case</p>
+<p>\[L(w, f)=\gamma \mathbb{E}_{\left(s, a, s^{\prime}\right) \sim d_{\pi_{0}}}\left[\Delta\left(w ; s, a, s^{\prime}\right) f\left(s^{\prime}\right)\right]+(1-\gamma) \mathbb{E}_{s \sim d_{0}}[(1-w(s)) f(s)]\]</p>
+<p>They show through theorem 4 that \(w(s) = w_{\pi/\pi_0}(s)\) if and only if \(L(w, f) = 0\). So minimizing this objective will lead to a good estimation of the density ratio. When \(\gamma=1\) this reduces to their prescribed average reward case, which only guarantees \(w(s) \propto w_{\pi/\pi_0}(s)\). Thy then provide some more guarantees to the estimator, even providing theoretical bounds.</p>
+<h2 id="experiments">Experiments</h2>
+<h3 id="taxi-environment">Taxi Environment</h3>
+<p>This is a relatively classic domain for off-policy control type algorithms, where the goal is to pick up or drop off passengers. This is simulated in a simple 2D grid world. They extend the domain to be continuous. They test their algorithm using a policy learned through Q-learning over 1000 iterations and another policy which was learned after 950 transitions.</p>
+<ul>
+<li><strong>QUESTION</strong>: How off-policy is this actually? For policy evaluation we want arbitrarily distant policies. How do we create a study of this nature?</li>
+</ul>
+<p><strong>Results</strong>: their method does the best</p>
+<h3 id="pendulum">Pendulum</h3>
+<p>They follow a similar methodology as above. Their results are relatively similar&hellip;</p>
+<h3 id="sumo">SUMO</h3>
+<p>This is an open-source traffic simulator, with predefined interfaces. The domain seems pretty simple. The goal is to reduce traffic congestion by controlling the traffic light.</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>

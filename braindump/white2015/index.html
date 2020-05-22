@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/white2015_developing_a_predictive_approach_to_knowledge.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/white2015/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/white2015/">
+  <meta property="og:title" content="white2015: Developing a predictive approach to knowledge | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-22T16:51:47-06:00">
+  <meta property="article:modified_time" content="2020-05-22T16:51:47-06:00">
+  
+
+  <title>white2015: Developing a predictive approach to knowledge | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/white2015/">white2015: Developing a predictive approach to knowledge</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-05-22 16:51:47 -0600 MDT" itemprop="datePublished dateModified">
+      May 22, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></dd>
+<dt>source</dt>
+<dd><a href="https://sites.ualberta.ca/~amw8/phd.pdf">thesis</a></dd>
+<dt>authors</dt>
+<dd>White, A.</dd>
+<dt>year</dt>
+<dd>2015</dd>
+</dl>
+<p>This is a thesis from Adam White encompassing and developing what predictive knowledge is, and how it can specify world knowledge. He develops a system, horde, which is a knowledge representation built from value function predictions. The main premise of this knowledge representation is that value-function predictions can encompass all forms of predictive knowledge.</p>
+<h2 id="sensorimotor-data-streams-and-robots-secwhite2015sensorimotor">Sensorimotor data streams and robots {#sec:white2015:sensorimotor}</h2>
+<p>This chapter describes learning predictions from and about low-level data produced by robots. They describe two robots capable of generating data suitable for this task and are used in later chapters.</p>
+<h3 id="learning-about-sensorimotor-data">Learning about sensorimotor data</h3>
+<p>The data will be a stream of instantaneous uninterpreted sensor readings generated by a mobile robot. The agent wants to predict the sensorimotor data itself, but not any external variables such as the coordinates.</p>
+<h3 id="some-stats-on-the-critterbot">Some stats on the critterbot</h3>
+<ul>
+<li>The critterbot can produce 19 million sensor readings an hour</li>
+<li>150 million readings a day (8 hour cycles)</li>
+<li>222 Gigabytes of raw sensor data a year.</li>
+</ul>
+<p>The data collected is very complex, and the data can be arbitrarily different under different conditions and policies.</p>
+<h2 id="general-value-functions-secwhite2015gvfs">General Value Functions {#sec:white2015:gvfs}</h2>
+<p>This chapter lays out the foundations of General Value Functions (GVFs). We will discuss this in detail, as the formulation is useful beyond the thesis.</p>
+<p>The learning system receives a stream of sensorimotor data. The objective of the system is to estimate a scalar signal \(G_t \in \mathbb{R}\), the target. The agent makes a prediction \(V_t \in \mathbb{R}\) of the target at each time step \(t=1,2,3,\ldots\). We can define how accurate the prediction is to the target through simple metrics such as the error \(V_t - G_t\) assuming we have the exact target. The main crux here is the target can be though of as specifying a <em>question</em> about the agent&rsquo;s interaction with the world. The prediction can be thought of as the agent&rsquo;s <em>prediction</em>.</p>
+<p>We define the target in terms of a monte carlo return, and formulate further into the typical TD-target framework. The cumulant (synonymous with the reward) \(Z_t \in \mathbb{R}\). The target accumulates future values of the cumulant (much like a monte carlo return of the reward function). Like in typical RL frameworks we define a termination signal (discount factor) \(\gamma_t \in [0,1]\). The target is then built in the typical fashion</p>
+<p>\[G_t = Z_{t+1} + \gamma_{t+1}Z_{t+2} + \gamma_{t+1}\gamma{t+2}Z_{t+2} + \ldots = \sum_{k=0}^{\infty}\left(\product_{j=1}^k \gamma_{t+j}\right) Z_{t+k+1}\].</p>
+<p>With these components we can finally define a GVF as a function \(v : \mathcal{S} \rightarrow \mathbb{R}\) with three auxiliary functional inputs:</p>
+<ul>
+<li>a <em>target policy</em> \(\pi : \mathcal{S} \times \mathcal{A} \rightarrow [0,1]\),</li>
+<li>a termination (or continuation) function \(\gamma: \mathcal{S} \rightarrow [0,1]\),</li>
+<li>and \(z: \mathcal{S} \rightarrow \mathbb{R}\).</li>
+</ul>
+<p>The GVF specifies the expected value of the target, with actions specified via a policy</p>
+<p>\[v(s; \pi, \gamma, z) \triangleq \mathbb{E}_\pi \right[G_t | S_t = s\left] \]</p>
+<p>This can also be defined in terms of action state value functions as expected.</p>
+<h3 id="learning-gvfs">Learning GVFs</h3>
+<p>They use the usual approximate notation \(\hat{v}(s, \mathbf{w}) \approx v(s; \pi, \gamma, z)\). where \(\mathbf{w} \in \mathbb{R}^n\). This paper primarily uses linear function approximation \(V_t \triangleq \hat{v}(S_t, \mathbf{w}_t) = \mathbf{x}_t^\top \mathbf{w}\). Because of this formulation, we can learn any GVF using typical RL algorithms (TD(\(\lambda\)), GTD(\(\lambda\)), GQ(\(\lambda\)), \(\ldots\) ).</p>
+<p>Another important quality is that of Independence of Span  &ldquo;<a href="https://arxiv.org/abs/1508.04582">link</a>&quot;. We will not discuss this in detail, but at a basic level the TD algorithm (with some minor corrections) emerges from an analytical study looking for an algorithm to predict independent of span.</p>
+<h3 id="a-horde-of-demons">A Horde of Demons</h3>
+<p>Parallel GVF learning, pretty straight forward.</p>
+<h2 id="papers-secwhite2015papers">Papers {#sec:white2015:papers}</h2>
+<h3 id="nexting-secwhite2015nexting">Nexting {#sec:white2015:nexting}</h3>
+<p>This is a term used in psychology to refer to the natural inclination of people and animals to continually predict what will happen next. This chapter goes into detail about the nexting paper  &ldquo;<a href="https://journals.sagepub.com/doi/full/10.1177/1059712313511648">link</a>&quot;. We will not discuss this in detail.</p>
+<h3 id="experiments-with-gvfs-on-robots-secwhite2015robots">Experiments with GVFs on robots {#sec:white2015:robots}</h3>
+<p>This provides more empirical evidence of GVF learning in real-time on a mobile robot, with many various signals and functions.</p>
+<h3 id="estimating-off-policy-progress-secwhite2015offpolicy-progress">Estimating Off-policy progress {#sec:white2015:offpolicy-progress}</h3>
+<p>This chapter describes RUPEE.</p>
+<h3 id="adapting-the-behavior-policy-secwhite2015behavior">Adapting the behavior policy {#sec:white2015:behavior}</h3>
+<p>This chapter describes how a policy can be changed based on the agents demons.</p>
+<h2 id="references">References</h2>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
