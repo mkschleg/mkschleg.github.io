@@ -6,77 +6,56 @@
     <description>Recent content in Braindumps on Matthew Schlegel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2020 10:19:58 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2020 15:05:53 -0600</lastBuildDate>
     
 	<atom:link href="https://mkschleg.github.io/braindump/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Predictive Processing</title>
-      <link>https://mkschleg.github.io/braindump/predictive_processing/</link>
-      <pubDate>Thu, 21 May 2020 10:19:58 -0600</pubDate>
+      <title>prinz1990: A Common Coding Approach to Perception and Action</title>
+      <link>https://mkschleg.github.io/braindump/prinz1990/</link>
+      <pubDate>Fri, 22 May 2020 15:05:53 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/predictive_processing/</guid>
-      <description>Backlinks 3 Backlinks Free-Energy Principle Predictive Processing,
-Prediction, cognition and the brain Predictive Processing, Brain
-Whatever next? Predictive brains, situated agents, and the future of cognitive science Predictive Processing, Perception</description>
+      <guid>https://mkschleg.github.io/braindump/prinz1990/</guid>
+      <description>tags Perception, Brain In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.
+  Separate Coding This view holds that the afferent and efferent codes are incommensurate at all levels of the coding.</description>
+    </item>
+    
+    <item>
+      <title>bubic2010: Prediction, cognition and the brain</title>
+      <link>https://mkschleg.github.io/braindump/bubic2010/</link>
+      <pubDate>Fri, 22 May 2020 15:05:40 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/bubic2010/</guid>
+      <description>tags Predictive Processing, Brain source https://www.frontiersin.org/articles/10.3389/fnhum.2010.00025/full  This paper acts as an introduction to the vast literature considering the brain as a predictive processing machine. Specifically, it is looking at terms which have been introduced such as prediction, prospection, anticipation, expectation, preparation, as well as violations of expectations or prediction errors. All these terms have different nuances and levels of abstraction associated with human behavior, and should be treated separately.</description>
     </item>
     
     <item>
       <title>Reinforcement Learning</title>
       <link>https://mkschleg.github.io/braindump/reinforcement_learning/</link>
-      <pubDate>Thu, 21 May 2020 10:19:58 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:12 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/reinforcement_learning/</guid>
       <description>Backlinks 5 Backlinks Rich Sutton People, Reinforcement Learning
 Temporal Difference Learning Reinforcement Learning
 Value Function Reinforcement Learning
-Learning to predict by the methods of temporal differences. 1988, Sutton, R.S. Impact*: This paper has had a long lasting impact. Primarily, in establishing temporal difference learning and in the process establishing the Reinforcement Learning field.
+sutton1988: Learning to predict by the methods of temporal differences Impact: This paper has had a long lasting impact. Primarily, in establishing temporal difference learning and in the process establishing the Reinforcement Learning field.
 Reinforcement Learning</description>
     </item>
     
     <item>
       <title>Thinking</title>
       <link>https://mkschleg.github.io/braindump/thinking/</link>
-      <pubDate>Thu, 21 May 2020 10:19:58 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:12 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/thinking/</guid>
       <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
     </item>
     
     <item>
-      <title>Neuroscience</title>
-      <link>https://mkschleg.github.io/braindump/neuroscience/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/neuroscience/</guid>
-      <description>Backlinks 2 Backlinks Afferent Codes Brain, Neuroscience
-Visual System Brain, Neuroscience, Anatomy</description>
-    </item>
-    
-    <item>
-      <title>Note-Taking</title>
-      <link>https://mkschleg.github.io/braindump/note_taking/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
-      <description>Backlinks 2 Backlinks Zettelkasten method Note-Taking
-How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
-    </item>
-    
-    <item>
-      <title>Optimizers</title>
-      <link>https://mkschleg.github.io/braindump/optimizers/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
-      <description>Backlinks 1 Backlinks ADAM Optimizers, Neural Network</description>
-    </item>
-    
-    <item>
       <title>People</title>
       <link>https://mkschleg.github.io/braindump/people/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:11 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/people/</guid>
       <description>Backlinks 2 Backlinks Hermann von Helmholtz People
@@ -86,7 +65,7 @@ Rich Sutton People, Reinforcement Learning</description>
     <item>
       <title>Perception</title>
       <link>https://mkschleg.github.io/braindump/perception/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:11 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/perception/</guid>
       <description></description>
@@ -95,52 +74,27 @@ Rich Sutton People, Reinforcement Learning</description>
     <item>
       <title>Philosophy</title>
       <link>https://mkschleg.github.io/braindump/philosophy/</link>
-      <pubDate>Thu, 21 May 2020 10:19:57 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:11 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/philosophy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linear Algebra</title>
-      <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
-      <pubDate>Thu, 21 May 2020 10:19:56 -0600</pubDate>
+      <title>Predictive Processing</title>
+      <link>https://mkschleg.github.io/braindump/predictive_processing/</link>
+      <pubDate>Fri, 22 May 2020 15:05:11 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
-      <description>tags Math  Backlinks 5 Backlinks Linear Algebra and its Applications Linear Algebra, Math
-Determinant Linear Algebra, Math
-Gaussian Elimination Linear Algebra, Math
-Hadamard product Linear Algebra
-Matrix Linear Algebra, Math</description>
-    </item>
-    
-    <item>
-      <title>Linear Algebra and its Applications</title>
-      <link>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</link>
-      <pubDate>Thu, 21 May 2020 10:19:56 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</guid>
-      <description>tags Linear Algebra, Math  Author: Gilbert Strang Available at: Biblio
-It is a bit thick and maybe too detailed in the calculations of the certain properties. Really, all I need is understanding the properties of objects, rather than worrying about the details of computation.
-I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other books.</description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://mkschleg.github.io/braindump/machine_learning/</link>
-      <pubDate>Thu, 21 May 2020 10:19:56 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/machine_learning/</guid>
-      <description>Backlinks 4 Backlinks Neural Network Machine Learning
-LSTM Recurrent Neural Network, Neural Network, Machine Learning
-Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies Recurrent Neural Network, Machine Learning
-On Multiplicative Integration with Recurrent Neural Networks Recurrent Neural Network, Neural Network, Machine Learning</description>
+      <guid>https://mkschleg.github.io/braindump/predictive_processing/</guid>
+      <description>Backlinks 3 Backlinks Free-Energy Principle Predictive Processing,
+Prediction, cognition and the brain Predictive Processing, Brain
+clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science Predictive Processing, Perception</description>
     </item>
     
     <item>
       <title>Math</title>
       <link>https://mkschleg.github.io/braindump/math/</link>
-      <pubDate>Thu, 21 May 2020 10:19:56 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:10 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/math/</guid>
       <description>Backlinks 8 Backlinks Linear Algebra Math
@@ -156,39 +110,49 @@ Morphism Math, Category Theory</description>
     <item>
       <title>Neural Network</title>
       <link>https://mkschleg.github.io/braindump/neural_network/</link>
-      <pubDate>Thu, 21 May 2020 10:19:56 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:10 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/neural_network/</guid>
       <description>tags Machine Learning  Backlinks 5 Backlinks ADAM Optimizers, Neural Network
 LSTM Recurrent Neural Network, Neural Network, Machine Learning
 Recurrent Neural Network Neural Network
 ReLU Activation Neural Network
-On Multiplicative Integration with Recurrent Neural Networks Recurrent Neural Network, Neural Network, Machine Learning</description>
+wu2016: On Multiplicative Integration with Recurrent Neural Networks Recurrent Neural Network, Neural Network, Machine Learning</description>
     </item>
     
     <item>
-      <title>A Common Coding Approach to Perception and Action</title>
-      <link>https://mkschleg.github.io/braindump/prinz1990/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <title>Neuroscience</title>
+      <link>https://mkschleg.github.io/braindump/neuroscience/</link>
+      <pubDate>Fri, 22 May 2020 15:05:10 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/prinz1990/</guid>
-      <description>tags Perception, Brain In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.
-  Separate Coding This view holds that the afferent and efferent codes are incommensurate at all levels of the coding.</description>
+      <guid>https://mkschleg.github.io/braindump/neuroscience/</guid>
+      <description>Backlinks 2 Backlinks Afferent Codes Brain, Neuroscience
+Visual System Brain, Neuroscience, Anatomy</description>
     </item>
     
     <item>
-      <title>Anatomy</title>
-      <link>https://mkschleg.github.io/braindump/anatomy/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <title>Note-Taking</title>
+      <link>https://mkschleg.github.io/braindump/note_taking/</link>
+      <pubDate>Fri, 22 May 2020 15:05:10 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/anatomy/</guid>
-      <description>Backlinks 1 Backlinks Visual System Brain, Neuroscience, Anatomy</description>
+      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
+      <description>Backlinks 2 Backlinks Zettelkasten method Note-Taking
+How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
+    </item>
+    
+    <item>
+      <title>Optimizers</title>
+      <link>https://mkschleg.github.io/braindump/optimizers/</link>
+      <pubDate>Fri, 22 May 2020 15:05:10 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
+      <description>Backlinks 1 Backlinks ADAM Optimizers, Neural Network</description>
     </item>
     
     <item>
       <title>Brain</title>
       <link>https://mkschleg.github.io/braindump/brain/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:09 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/brain/</guid>
       <description></description>
@@ -197,7 +161,7 @@ On Multiplicative Integration with Recurrent Neural Networks Recurrent Neural Ne
     <item>
       <title>Category Theory</title>
       <link>https://mkschleg.github.io/braindump/category_theory/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:09 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/category_theory/</guid>
       <description>Backlinks 2 Backlinks Isomorphism Math, Category Theory
@@ -205,9 +169,55 @@ Morphism Math, Category Theory</description>
     </item>
     
     <item>
+      <title>Linear Algebra</title>
+      <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
+      <pubDate>Fri, 22 May 2020 15:05:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
+      <description>tags Math  Backlinks 5 Backlinks Linear Algebra and its Applications Linear Algebra, Math
+Determinant Linear Algebra, Math
+Gaussian Elimination Linear Algebra, Math
+Hadamard product Linear Algebra
+Matrix Linear Algebra, Math</description>
+    </item>
+    
+    <item>
+      <title>Linear Algebra and its Applications</title>
+      <link>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</link>
+      <pubDate>Fri, 22 May 2020 15:05:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</guid>
+      <description>tags Linear Algebra, Math  Author: Gilbert Strang Available at: Biblio
+It is a bit thick and maybe too detailed in the calculations of the certain properties. Really, all I need is understanding the properties of objects, rather than worrying about the details of computation.
+I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other books.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://mkschleg.github.io/braindump/machine_learning/</link>
+      <pubDate>Fri, 22 May 2020 15:05:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/machine_learning/</guid>
+      <description>Backlinks 5 Backlinks Neural Network Machine Learning
+LSTM Recurrent Neural Network, Neural Network, Machine Learning
+chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies Recurrent Neural Network, Machine Learning
+goudreau1994: First-order versus second-order single-layer recurrent neural networks Recurrent Neural Network, Machine Learning
+wu2016: On Multiplicative Integration with Recurrent Neural Networks Recurrent Neural Network, Neural Network, Machine Learning</description>
+    </item>
+    
+    <item>
+      <title>Anatomy</title>
+      <link>https://mkschleg.github.io/braindump/anatomy/</link>
+      <pubDate>Fri, 22 May 2020 15:05:08 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/anatomy/</guid>
+      <description>Backlinks 1 Backlinks Visual System Brain, Neuroscience, Anatomy</description>
+    </item>
+    
+    <item>
       <title>How to Take Smart Notes with Org-mode</title>
       <link>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:08 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</guid>
       <description>tags Thinking, Note-Taking source How to Take Smart Notes With Org-mode | blog  This is a blog about how the author of org-roam (Jethro Kuan) takes notes and utilizes org-roam to organize his thinking.
@@ -218,9 +228,18 @@ Process of writing:
     </item>
     
     <item>
-      <title>On Multiplicative Integration with Recurrent Neural Networks</title>
+      <title>sutton1988: Learning to predict by the methods of temporal differences</title>
+      <link>https://mkschleg.github.io/braindump/sutton1988/</link>
+      <pubDate>Fri, 22 May 2020 15:05:08 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/sutton1988/</guid>
+      <description>tags Reinforcement Learning source https://link.springer.com/article/10.1007/BF00115009  TLDR: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action. He finally proves convergence and optimality (under certain assumptions) for these types of methods.</description>
+    </item>
+    
+    <item>
+      <title>wu2016: On Multiplicative Integration with Recurrent Neural Networks</title>
       <link>https://mkschleg.github.io/braindump/wu2016/</link>
-      <pubDate>Thu, 21 May 2020 10:19:55 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:08 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/wu2016/</guid>
       <description>tags Recurrent Neural Network, Neural Network, Machine Learning source http://papers.nips.cc/paper/6215-on-multiplicative-integration-with-recurrent-neural-networks  This paper explores a new architectural building block for recurrent neural networks, specifically one which integrates information from the internal state of the unit and the data stream through a multiplicative update. They use the Hadamard product to integrate this information together, although there are other choices here which they don&amp;rsquo;t discuss (such as various tensor products).
@@ -228,18 +247,9 @@ Additive building block:</description>
     </item>
     
     <item>
-      <title>Learning to predict by the methods of temporal differences. 1988, Sutton, R.S.</title>
-      <link>https://mkschleg.github.io/braindump/learning_to_predict_by_the_methods_of_temporal_differences_1988_sutton_r_s/</link>
-      <pubDate>Thu, 21 May 2020 10:19:54 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/learning_to_predict_by_the_methods_of_temporal_differences_1988_sutton_r_s/</guid>
-      <description>tags Reinforcement Learning source https://link.springer.com/article/10.1007/BF00115009  TLDR: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action. He finally proves convergence and optimality (under certain assumptions) for these types of methods.</description>
-    </item>
-    
-    <item>
-      <title>Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</title>
+      <title>chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</title>
       <link>https://mkschleg.github.io/braindump/chandar2019/</link>
-      <pubDate>Thu, 21 May 2020 10:19:54 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:07 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/chandar2019/</guid>
       <description>tags Recurrent Neural Network, Machine Learning source https://www.aaai.org/ojs/index.php/AAAI/article/view/4200  In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).
@@ -247,9 +257,9 @@ Additive building block:</description>
     </item>
     
     <item>
-      <title>Whatever next? Predictive brains, situated agents, and the future of cognitive science</title>
+      <title>clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science</title>
       <link>https://mkschleg.github.io/braindump/clark2013/</link>
-      <pubDate>Thu, 21 May 2020 10:19:54 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:07 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/clark2013/</guid>
       <description>tags Predictive Processing, Perception source https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9  Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of (Rao 1999) and others in developing the brain as a inference machine.
@@ -257,27 +267,20 @@ Introduction: Prediction Machines From Helmholtz to action-oriented predictive p
     </item>
     
     <item>
-      <title>Prediction, cognition and the brain</title>
-      <link>https://mkschleg.github.io/braindump/bubic2010/</link>
-      <pubDate>Thu, 21 May 2020 10:19:53 -0600</pubDate>
+      <title>goudreau1994: First-order versus second-order single-layer recurrent neural networks</title>
+      <link>https://mkschleg.github.io/braindump/goudreau1994/</link>
+      <pubDate>Fri, 22 May 2020 15:05:07 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/bubic2010/</guid>
-      <description>tags Predictive Processing, Brain source https://www.frontiersin.org/articles/10.3389/fnhum.2010.00025/full  This paper acts as an introduction to the vast literature considering the brain as a predictive processing machine. Specifically, it is looking at terms which have been introduced such as prediction, prospection, anticipation, expectation, preparation, as well as violations of expectations or prediction errors. All these terms have different nuances and levels of abstraction associated with human behavior, and should be treated separately.</description>
-    </item>
-    
-    <item>
-      <title>Sign Theory</title>
-      <link>https://mkschleg.github.io/braindump/sign_theory/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/sign_theory/</guid>
-      <description>tags Philosophy, Brain, Perception  Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
+      <guid>https://mkschleg.github.io/braindump/goudreau1994/</guid>
+      <description>tags Recurrent Neural Network, Machine Learning source paper authors Goudreau, M., Giles, C., Chakradhar, S., &amp;amp; Chen, D. year 1994  This paper goes through the difference between first and second-order recurrent neural networks.
+Notation:
+ \(\mathbf{x}^t \in \mathbb{R}^N\) is the input vector at time \(t\) \(\mathbf{h}^{t-1} \in \mathbb{R}^M\) is the hidden state at time \(t-1\) \(\mathbf{W}\) is the RNN weight matrix \(\mathbf{z}^{t} = [\mathbf{x}^t; \mathbf{h}^{t-1}]\)  First order</description>
     </item>
     
     <item>
       <title>Surjective</title>
       <link>https://mkschleg.github.io/braindump/surjective/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:05 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/surjective/</guid>
       <description>Backlinks 1 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.</description>
@@ -286,19 +289,19 @@ Introduction: Prediction Machines From Helmholtz to action-oriented predictive p
     <item>
       <title>Temporal Difference Learning</title>
       <link>https://mkschleg.github.io/braindump/temporal_difference_learning/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:05 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/temporal_difference_learning/</guid>
       <description>tags Reinforcement Learning  This is a method for learning Value Functions and was first described by (Sutton 1988).
 References
 (Sutton 1988) Richard S. Sutton, Learning to Predict by the Methods of Temporal Differences, Machine Learning, , pp. (1988). .
-Backlinks 1 Backlinks Learning to predict by the methods of temporal differences. 1988, Sutton, R.S. TLDR*: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches.</description>
+Backlinks 1 Backlinks sutton1988: Learning to predict by the methods of temporal differences TLDR: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches.</description>
     </item>
     
     <item>
       <title>Value Function</title>
       <link>https://mkschleg.github.io/braindump/value_function/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:05 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/value_function/</guid>
       <description>tags Reinforcement Learning  Backlinks 1 Backlinks Temporal Difference Learning This is a method for learning Value Functions and was first described by sutton1988.</description>
@@ -307,16 +310,16 @@ Backlinks 1 Backlinks Learning to predict by the methods of temporal differences
     <item>
       <title>Visual System</title>
       <link>https://mkschleg.github.io/braindump/visual_system_/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:05 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/visual_system_/</guid>
-      <description>tags Brain, Neuroscience, Anatomy source https://nba.uth.tmc.edu/neuroscience/s2/chapter14.html  Components    Backlinks 1 Backlinks Whatever next? Predictive brains, situated agents, and the future of cognitive science hosoya2005&amp;lsquo;s hosoya2005account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure.</description>
+      <description>tags Brain, Neuroscience, Anatomy source https://nba.uth.tmc.edu/neuroscience/s2/chapter14.html  Components    Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science hosoya2005&amp;lsquo;s hosoya2005account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure.</description>
     </item>
     
     <item>
       <title>Zettelkasten method</title>
       <link>https://mkschleg.github.io/braindump/zettelkasten_method/</link>
-      <pubDate>Thu, 21 May 2020 10:19:52 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:05 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/zettelkasten_method/</guid>
       <description>tags Note-Taking source zettelkasten.de  This is a method for note taking developed by Niklas Luhmann. There are several principles under which the method derives it&amp;rsquo;s workflow:
@@ -324,41 +327,21 @@ Backlinks 1 Backlinks Learning to predict by the methods of temporal differences
     </item>
     
     <item>
-      <title>Morphism</title>
-      <link>https://mkschleg.github.io/braindump/morphism/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/morphism/</guid>
-      <description>tags Math, Category Theory source https://en.wikipedia.org/wiki/Morphism  A morphism is a map between mathematical objects of the same type. This map is structure preserving.
-Backlinks 1 Backlinks Isomorphism definition*: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping).</description>
-    </item>
-    
-    <item>
-      <title>Preimage</title>
-      <link>https://mkschleg.github.io/braindump/preimage/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/preimage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Recurrent Neural Network</title>
       <link>https://mkschleg.github.io/braindump/recurrent_neural_network/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:04 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/recurrent_neural_network/</guid>
-      <description>tags Neural Network  See other extensions: LSTM, (Wu 2016), (Chandar 2019)
+      <description>tags Neural Network  See other extensions: LSTM, (Wu 2016), (Chandar 2019), (Goudreau 1994)
 (Wu 2016) Yuhuai Wu; Saizheng Zhang; Ying Zhang; Yoshua Bengio and Russ R Salakhutdinov, On {{Multiplicative Integration}} with {{Recurrent Neural Networks}}, (2016).
 (Chandar 2019) Sarath Chandar; Chinnadhurai Sankar; Eugene Vorontsov; Samira Ebrahimi Kahou and Yoshua Bengio, Towards {{Non}}-Saturating {{Recurrent Units}} for {{Modelling Long}}-Term {{Dependencies}}, {{AAAI}}(2019).
-Backlinks 4 Backlinks LSTM Recurrent Neural Network, Neural Network, Machine Learning
-Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies Recurrent Neural Network, Machine Learning</description>
+(Goudreau 1994) M.W. Goudreau; C.L. Giles; S.T. Chakradhar and D. Chen, First-Order versus Second-Order Single-Layer Recurrent Neural Networks, IEEE Transactions on Neural Networks, , pp.</description>
     </item>
     
     <item>
       <title>ReLU Activation</title>
       <link>https://mkschleg.github.io/braindump/relu_activation/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:04 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/relu_activation/</guid>
       <description>tags Neural Network  A simple activation function which clips the output of the internal operations to be positive.
@@ -370,63 +353,43 @@ The main hallmark of this activation function is the smaller effect of the vanis
     <item>
       <title>Rich Sutton</title>
       <link>https://mkschleg.github.io/braindump/rich_sutton/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:04 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/rich_sutton/</guid>
-      <description>tags People, Reinforcement Learning website http://incompleteideas.net  Backlinks 1 Backlinks Learning to predict by the methods of temporal differences. 1988, Sutton, R.S. TLDR*: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action.</description>
+      <description>tags People, Reinforcement Learning website http://incompleteideas.net  Backlinks 1 Backlinks sutton1988: Learning to predict by the methods of temporal differences TLDR: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action.</description>
     </item>
     
     <item>
       <title>Richard Feynman</title>
       <link>https://mkschleg.github.io/braindump/richard_feynman/</link>
-      <pubDate>Thu, 21 May 2020 10:19:51 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:04 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/richard_feynman/</guid>
       <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Quote from Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;</description>
     </item>
     
     <item>
-      <title>Image</title>
-      <link>https://mkschleg.github.io/braindump/image/</link>
-      <pubDate>Thu, 21 May 2020 10:19:50 -0600</pubDate>
+      <title>Sign Theory</title>
+      <link>https://mkschleg.github.io/braindump/sign_theory/</link>
+      <pubDate>Fri, 22 May 2020 15:05:04 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/image/</guid>
-      <description>Backlinks 2 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.
-A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa.</description>
-    </item>
-    
-    <item>
-      <title>Injective</title>
-      <link>https://mkschleg.github.io/braindump/injective/</link>
-      <pubDate>Thu, 21 May 2020 10:19:50 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/injective/</guid>
-      <description>Backlinks 1 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.</description>
-    </item>
-    
-    <item>
-      <title>Isomorphism</title>
-      <link>https://mkschleg.github.io/braindump/isomorph/</link>
-      <pubDate>Thu, 21 May 2020 10:19:50 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/isomorph/</guid>
-      <description>tags Math, Category Theory  definition: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping). More formally an isomorphism is a bijective morphism.
-Backlinks 1 Backlinks Whatever next? Predictive brains, situated agents, and the future of cognitive science Isomorphism: any mathematical mapping (morphism) which can be inversed through an inverse morphism.</description>
+      <guid>https://mkschleg.github.io/braindump/sign_theory/</guid>
+      <description>tags Philosophy, Brain, Perception  Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
     </item>
     
     <item>
       <title>LSTM</title>
       <link>https://mkschleg.github.io/braindump/lstm/</link>
-      <pubDate>Thu, 21 May 2020 10:19:50 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:03 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/lstm/</guid>
-      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source https://colah.github.io/posts/2015-08-Understanding-LSTMs/  Backlinks 2 Backlinks Recurrent Neural Network See other extensions: LSTM, wu2016, chandar2019Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).</description>
+      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source https://colah.github.io/posts/2015-08-Understanding-LSTMs/  Backlinks 2 Backlinks Recurrent Neural Network See other extensions: LSTM, wu2016, chandar2019, goudreau1994chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).</description>
     </item>
     
     <item>
       <title>Matrix</title>
       <link>https://mkschleg.github.io/braindump/matrix/</link>
-      <pubDate>Thu, 21 May 2020 10:19:50 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:03 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/matrix/</guid>
       <description>tags Linear Algebra, Math  We star with a set of equations with nine coefficients, three unknowns, and three right-hand sides.
@@ -437,9 +400,105 @@ We represent the right hand side with a column vector (or a 1 by 3 matrix). The 
     </item>
     
     <item>
+      <title>Morphism</title>
+      <link>https://mkschleg.github.io/braindump/morphism/</link>
+      <pubDate>Fri, 22 May 2020 15:05:03 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/morphism/</guid>
+      <description>tags Math, Category Theory source https://en.wikipedia.org/wiki/Morphism  A morphism is a map between mathematical objects of the same type. This map is structure preserving.
+Backlinks 1 Backlinks Isomorphism definition*: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping).</description>
+    </item>
+    
+    <item>
+      <title>Preimage</title>
+      <link>https://mkschleg.github.io/braindump/preimage/</link>
+      <pubDate>Fri, 22 May 2020 15:05:03 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/preimage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hermann von Helmholtz</title>
+      <link>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</guid>
+      <description>tags People source https://plato.stanford.edu/entries/hermann-helmholtz/  Backlinks 3 Backlinks Sign Theory Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
+    </item>
+    
+    <item>
+      <title>Hierarchical Predictive Coding</title>
+      <link>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</guid>
+      <description>Backlinks 3 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science This work by brown2011generalizes the basic Hierarchical Predictive Coding model to include action. The fundamental attraction of these accounts lies in their ability to offer a deeply unified account of perception, cognition, and action.
+The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &amp;ldquo;virtual version&amp;rdquo; of the sensory data via a deep multilevel cascade lies at the heart of Hierarchical Predictive Coding rao1999.</description>
+    </item>
+    
+    <item>
+      <title>Ideomotor Principle</title>
+      <link>https://mkschleg.github.io/braindump/ideomotor_principle/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/ideomotor_principle/</guid>
+      <description>Backlinks 1 Backlinks A Common Coding Approach to Perception and Action In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.</description>
+    </item>
+    
+    <item>
+      <title>Image</title>
+      <link>https://mkschleg.github.io/braindump/image/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/image/</guid>
+      <description>Backlinks 2 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.
+A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa.</description>
+    </item>
+    
+    <item>
+      <title>Injective</title>
+      <link>https://mkschleg.github.io/braindump/injective/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/injective/</guid>
+      <description>Backlinks 1 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.</description>
+    </item>
+    
+    <item>
+      <title>Isomorphism</title>
+      <link>https://mkschleg.github.io/braindump/isomorph/</link>
+      <pubDate>Fri, 22 May 2020 15:05:02 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/isomorph/</guid>
+      <description>tags Math, Category Theory  definition: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping). More formally an isomorphism is a bijective morphism.
+Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science Isomorphism: any mathematical mapping (morphism) which can be inversed through an inverse morphism.</description>
+    </item>
+    
+    <item>
+      <title>Binocular rivalry</title>
+      <link>https://mkschleg.github.io/braindump/binocular_rivalry/</link>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/binocular_rivalry/</guid>
+      <description>tags Brain, Perception source https://www.sciencedirect.com/topics/neuroscience/binocular-rivalry  Also called Binocular contour rivalry
+Discovered by Porta in 1593 (Wade 1996). The essence is the interplay of perception with vision when you separate the visual stimuli of each eye. Each eye is presented with a separate image with a partition separating the effective visual field. A continuous cycle of the two images being recognizable (each in its own turn) with brief periods of mixed forms appearing.</description>
+    </item>
+    
+    <item>
+      <title>Determinant</title>
+      <link>https://mkschleg.github.io/braindump/determinant/</link>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/determinant/</guid>
+      <description>tags Linear Algebra, Math  Uses There are four main uses for the determinant of a Matrix defined by a series of equations.
+ They test for invertibility. If the determinant of A is zero, then A is singular. If the determinant is non-zero than the matrix can be inverted, meaning there is at least one solution to the set of equations. The determinant of a matrix is the volume of a box in n-dimensional space.</description>
+    </item>
+    
+    <item>
       <title>Efferent Codes</title>
       <link>https://mkschleg.github.io/braindump/efferent_codes/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/efferent_codes/</guid>
       <description>Backlinks 1 Backlinks A Common Coding Approach to Perception and Action Efferent Codes the actions (act, react, behavior&amp;hellip;)</description>
@@ -448,16 +507,16 @@ We represent the right hand side with a column vector (or a 1 by 3 matrix). The 
     <item>
       <title>Free-Energy Principle</title>
       <link>https://mkschleg.github.io/braindump/free_energy_principle/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/free_energy_principle/</guid>
-      <description>tags Predictive Processing,  Backlinks 1 Backlinks Whatever next? Predictive brains, situated agents, and the future of cognitive science Free-Energy Principle: all the quantities that can change; i.e. that are part of the system, will change to minimize free-energy.</description>
+      <description>tags Predictive Processing,  Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science Free-Energy Principle: all the quantities that can change; i.e. that are part of the system, will change to minimize free-energy.</description>
     </item>
     
     <item>
       <title>Gaussian Elimination</title>
       <link>https://mkschleg.github.io/braindump/gaussian_elimination/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/gaussian_elimination/</guid>
       <description>tags Linear Algebra, Math  Elimination is all about solving linear equations (which is central to linear algebra generally). As an example we have two equations with two unknowns
@@ -470,7 +529,7 @@ To solve for the unknowns $x$ and $y$ we can use elimination:
     <item>
       <title>Hadamard product</title>
       <link>https://mkschleg.github.io/braindump/hadamard_product/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:01 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/hadamard_product/</guid>
       <description>tags Linear Algebra  This is an element wise product between two vectors or matrices.
@@ -485,47 +544,19 @@ It is quite simply the element-wise produce between two matrices: \(\mathcal{A},
     </item>
     
     <item>
-      <title>Hermann von Helmholtz</title>
-      <link>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</guid>
-      <description>tags People source https://plato.stanford.edu/entries/hermann-helmholtz/  Backlinks 3 Backlinks Sign Theory Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
-    </item>
-    
-    <item>
-      <title>Hierarchical Predictive Coding</title>
-      <link>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</guid>
-      <description>Backlinks 3 Backlinks Whatever next? Predictive brains, situated agents, and the future of cognitive science This work by brown2011generalizes the basic Hierarchical Predictive Coding model to include action. The fundamental attraction of these accounts lies in their ability to offer a deeply unified account of perception, cognition, and action.
-The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &amp;ldquo;virtual version&amp;rdquo; of the sensory data via a deep multilevel cascade lies at the heart of Hierarchical Predictive Coding rao1999.</description>
-    </item>
-    
-    <item>
-      <title>Ideomotor Principle</title>
-      <link>https://mkschleg.github.io/braindump/ideomotor_principle/</link>
-      <pubDate>Thu, 21 May 2020 10:19:49 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/ideomotor_principle/</guid>
-      <description>Backlinks 1 Backlinks A Common Coding Approach to Perception and Action In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.</description>
-    </item>
-    
-    <item>
       <title>ADAM</title>
       <link>https://mkschleg.github.io/braindump/adam/</link>
-      <pubDate>Thu, 21 May 2020 10:19:48 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:00 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/adam/</guid>
       <description>tags Optimizers, Neural Network  An optimizer which effectively combines RMSProp and Momentum.
-Backlinks 1 Backlinks On Multiplicative Integration with Recurrent Neural Networks First they look at the gradients when the RNNs have linear activation mappings (to focus on the internal mechanisms). They measure the log of the L2-norm of the gradient for each epoch (averaged over the training set) using the Penn-Treebank dataset using the ADAM optimizer. They are able to show the norm of the gradient grows much more in vanilla architecture (using additive operations) vs what occurs in the new architecture.</description>
+Backlinks 1 Backlinks wu2016: On Multiplicative Integration with Recurrent Neural Networks First they look at the gradients when the RNNs have linear activation mappings (to focus on the internal mechanisms). They measure the log of the L2-norm of the gradient for each epoch (averaged over the training set) using the Penn-Treebank dataset using the ADAM optimizer. They are able to show the norm of the gradient grows much more in vanilla architecture (using additive operations) vs what occurs in the new architecture.</description>
     </item>
     
     <item>
       <title>Afferent Codes</title>
       <link>https://mkschleg.github.io/braindump/afferent_codes/</link>
-      <pubDate>Thu, 21 May 2020 10:19:48 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:00 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/afferent_codes/</guid>
       <description>tags Brain, Neuroscience  Backlinks 1 Backlinks A Common Coding Approach to Perception and Action Afferent Codes The perceptions (recieve, input, sense&amp;hellip;)</description>
@@ -534,31 +565,11 @@ Backlinks 1 Backlinks On Multiplicative Integration with Recurrent Neural Networ
     <item>
       <title>Bijective</title>
       <link>https://mkschleg.github.io/braindump/bijective/</link>
-      <pubDate>Thu, 21 May 2020 10:19:48 -0600</pubDate>
+      <pubDate>Fri, 22 May 2020 15:05:00 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/bijective/</guid>
       <description>tags Math source https://en.wikipedia.org/wiki/Bijection  A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.
 Backlinks 1 Backlinks Isomorphism definition*: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups.</description>
-    </item>
-    
-    <item>
-      <title>Binocular rivalry</title>
-      <link>https://mkschleg.github.io/braindump/binocular_rivalry/</link>
-      <pubDate>Thu, 21 May 2020 10:19:48 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/binocular_rivalry/</guid>
-      <description>tags Brain, Perception source https://www.sciencedirect.com/topics/neuroscience/binocular-rivalry  Also called Binocular contour rivalry
-Discovered by Porta in 1593 (Wade 1996). The essence is the interplay of perception with vision when you separate the visual stimuli of each eye. Each eye is presented with a separate image with a partition separating the effective visual field. A continuous cycle of the two images being recognizable (each in its own turn) with brief periods of mixed forms appearing.</description>
-    </item>
-    
-    <item>
-      <title>Determinant</title>
-      <link>https://mkschleg.github.io/braindump/determinant/</link>
-      <pubDate>Thu, 21 May 2020 10:19:48 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/determinant/</guid>
-      <description>tags Linear Algebra, Math  Uses There are four main uses for the determinant of a Matrix defined by a series of equations.
- They test for invertibility. If the determinant of A is zero, then A is singular. If the determinant is non-zero than the matrix can be inverted, meaning there is at least one solution to the set of equations. The determinant of a matrix is the volume of a box in n-dimensional space.</description>
     </item>
     
   </channel>
