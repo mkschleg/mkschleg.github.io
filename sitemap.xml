@@ -4,17 +4,102 @@
   
   <url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2020-05-22T16:51:51-06:00</lastmod>
+    <lastmod>2020-05-26T13:19:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/sutskever2011/</loc>
+    <lastmod>2020-05-26T13:19:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/recurrent_neural_network/</loc>
+    <lastmod>2020-05-26T13:13:20-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
+    <lastmod>2020-05-25T15:58:23-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/efferent_codes/</loc>
+    <lastmod>2020-05-25T15:56:59-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/predictive_processing/</loc>
-    <lastmod>2020-05-22T16:51:51-06:00</lastmod>
+    <lastmod>2020-05-25T13:56:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/rao1999/</loc>
+    <lastmod>2020-05-25T13:55:45-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/synofzik2013/</loc>
+    <lastmod>2020-05-25T13:55:23-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/soga2009/</loc>
+    <lastmod>2020-05-25T13:53:07-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/stock2004/</loc>
+    <lastmod>2020-05-25T13:47:58-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/machine_learning/</loc>
+    <lastmod>2020-05-25T13:14:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/byrd2019/</loc>
+    <lastmod>2020-05-25T13:13:39-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/mohamed2019/</loc>
+    <lastmod>2020-05-25T13:11:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/vanhasselt2015/</loc>
+    <lastmod>2020-05-25T11:43:09-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/reinforcement_learning/</loc>
-    <lastmod>2020-05-22T16:51:51-06:00</lastmod>
+    <lastmod>2020-05-25T11:37:20-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/theory/</loc>
+    <lastmod>2020-05-25T11:35:08-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/white2017/</loc>
+    <lastmod>2020-05-25T11:34:56-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/kostas2019/</loc>
+    <lastmod>2020-05-25T11:31:37-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/representation/</loc>
+    <lastmod>2020-05-25T10:37:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/sutton2011/</loc>
+    <lastmod>2020-05-25T10:30:39-06:00</lastmod>
   </url>
   
   <url>
@@ -58,11 +143,6 @@
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/machine_learning/</loc>
-    <lastmod>2020-05-22T16:51:49-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mkschleg.github.io/braindump/math/</loc>
     <lastmod>2020-05-22T16:51:49-06:00</lastmod>
   </url>
@@ -100,11 +180,6 @@
   <url>
     <loc>https://mkschleg.github.io/braindump/linear_algebra/</loc>
     <lastmod>2020-05-22T16:51:48-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/sutton2011/</loc>
-    <lastmod>2020-05-22T16:51:47-06:00</lastmod>
   </url>
   
   <url>
@@ -213,11 +288,6 @@
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/recurrent_neural_network/</loc>
-    <lastmod>2020-05-22T16:51:41-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mkschleg.github.io/braindump/ideomotor_principle/</loc>
     <lastmod>2020-05-22T16:51:40-06:00</lastmod>
   </url>
@@ -283,22 +353,12 @@
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/efferent_codes/</loc>
-    <lastmod>2020-05-22T16:51:38-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mkschleg.github.io/braindump/free_energy_principle/</loc>
     <lastmod>2020-05-22T16:51:38-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/adam/</loc>
-    <lastmod>2020-05-22T16:51:37-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
     <lastmod>2020-05-22T16:51:37-06:00</lastmod>
   </url>
   

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/white2017_unifying_task_specification_in_reinforcement_learning.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/white2017/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/white2017/">
+  <meta property="og:title" content="white2017: Unifying Task Specification in Reinforcement Learning | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-25T11:34:56-06:00">
+  <meta property="article:modified_time" content="2020-05-25T11:34:56-06:00">
+  
+
+  <title>white2017: Unifying Task Specification in Reinforcement Learning | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/white2017/">white2017: Unifying Task Specification in Reinforcement Learning</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-05-25 11:34:56 -0600 MDT" itemprop="datePublished dateModified">
+      May 25, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/theory/">Theory</a></dd>
+<dt>source</dt>
+<dd><a href="https://dl.acm.org/citation.cfm?id=3306068">paper</a></dd>
+<dt>authors</dt>
+<dd>White, M.</dd>
+<dt>year</dt>
+<dd>2017</dd>
+</dl>
+<p>The main contribution of this paper is the formalization of a unified task specification for reinforcement learning. Specifically, this paper unifies our concept of episodic and continuing tasks, and bridges our understanding of options and general value functions.</p>
+<p><strong>Generalized problem formulation</strong></p>
+<p>The environment an agent interacts with is formalized as a Markov decision process (MDP): \((\states, actions, \mathcal{P})\) where</p>
+<ul>
+<li>\(\states\) is the set of states</li>
+<li>\(\actions\) is the set of actions</li>
+<li>\(\mathcal{P}: \states \times \actions \times states \rightarrow [0,1]\) is the transition probability function.</li>
+</ul>
+<p>A <strong>reinforcement learning task</strong> is specified on top of the dynamics as \((\Pi, r, \gamma, \mathbf{i})\) where</p>
+<ul>
+<li>\(\Pi\) is a set of policyes \(\pi: \states \times \actions \rightarrow [0,1]\)</li>
+<li>the reward function \(r: \states\times\actions\times\states \rightarrow \reals\) specifies reward received from \((s,a,s^\prime)\)</li>
+<li>\(\gamma: \states \times \actions \times \states \rightarrow [0,1]\) is a transition-based discount function</li>
+<li>\(\mathbf{i}: \states \rightarrow [0,\infty)\) defines an interest function</li>
+</ul>
+<p>For either control or prediction, we evaluate a value function which is the expected discounted return:</p>
+<p>\[ G_t = \sum_{i=0}^\infty \left( \prod_{j=0}^{i-1} \gamma(s_{t+j}, a_{t+1}, s_{t+1+j})\right) R_{t+1+i} \]</p>
+<p>where \(\prod_{j=0}^{-1} \gamma(\cdot) = 1\). This formulation subsumes both the episodic and continuous cases (when the discount is some constant). We can even define an option in terms of an RL task.</p>
+<p>An option is typically defined as \((\pi, \beta, \mathcal{I})\) with <em>policy</em> \(\pi: \states \times \actions \rightarrow [0,1]\), <em>termination function</em> \(\beta: \states \rightarrow [0,1]\), and an <em>initiation set</em> \(\mathcal{I} \subset \states\). We can redefine these in terms of an RL tasks as \(\gamma(s,a,s^\prime) = 1 - \beta(s^\prime)\) for all \(s,a,s^\prime\) specifies termination, and \(\mathbf{i}(s) = 1\) if \(s\in\mathcal{I}\) and \(\mathbf{i}(s) = 0\) otherwise.</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>

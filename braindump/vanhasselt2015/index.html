@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/vanhasselt2015_learning_to_predict_independent_of_span.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/vanhasselt2015/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/vanhasselt2015/">
+  <meta property="og:title" content="vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-05-25T11:43:09-06:00">
+  <meta property="article:modified_time" content="2020-05-25T11:43:09-06:00">
+  
+
+  <title>vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/vanhasselt2015/">vanhasselt2015: Learning to Predict Independent of Span</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-05-25 11:43:09 -0600 MDT" itemprop="datePublished dateModified">
+      May 25, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/theory/">Theory</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></dd>
+<dt>source</dt>
+<dd><a href="https://arxiv.org/abs/1508.04582">paper</a></dd>
+<dt>authors</dt>
+<dd>van Hasselt, Hado, &amp; Sutton, R. S.</dd>
+<dt>year</dt>
+<dd>2015</dd>
+</dl>
+<p>This paper is dedicated to deriving algorithms which learning to make prediction &ldquo;independent of span&rdquo;</p>
+<p><strong>Span</strong>: The <em>span</em> of a multi-step prediction is the number of steps elapsing between when the prediction is made and when its target or ideal value is known.
+For example:</p>
+<ul>
+<li>If we make predictions on each day and predict the stock market&rsquo;s price in 30 days, then the span=30</li>
+<li>If we make predictions on every hour and the prediction is made in 30 days, the span=24 * 30=720.</li>
+</ul>
+<p>The span of a prediction may also very over time. The prediction made in 30 days has a shorter span than the prediction made several months into the future. We will consider the overall span of the prediction to be the maximal span. This can occur if predictions are made a long time-scales or with a short time between predictions.</p>
+<p><strong>Main Goal</strong>: This paper focuses on the construction of learning algorithms whose computational complexity per time step (in both time and memory) is constant (i.e. doesn&rsquo;t scale with time) and independent of span.</p>
+<ol>
+<li>Derive a span-independent algorithm to update the prediction for single final outcome <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a></li>
+<li>Derive span-independent updates that update the predictions <em>online</em> towards interim targets that temporarily stand in for the final outcome <a href="#sec:vanhasselt2015:online">sec:vanhasselt2015:online</a></li>
+<li>Consider how to do these algorithms efficiently <a href="#sec:vanhasselt2015:efficiency">sec:vanhasselt2015:efficiency</a></li>
+<li>Formalize these ideas and show they lead naturally to a form of TD(\(\lambda\)) <a href="#sec:vanhasselt2015:tdlambda">sec:vanhasselt2015:tdlambda</a></li>
+<li>Show how to combine all prior ideas into a single algorithm <a href="#sec:vanhasselt2015:onetorulethem">sec:vanhasselt2015:onetorulethem</a></li>
+<li>Two important generalizations: cumulative returns, and soft terminations <a href="#sec:vanhasselt2015:generalizations">sec:vanhasselt2015:generalizations</a></li>
+<li>Convergence of the new algorithm <a href="#sec:vanhasselt2015:convergence">sec:vanhasselt2015:convergence</a></li>
+<li>Discussion/Conclusions <a href="#sec:vanhasselt2015:discussion">sec:vanhasselt2015:discussion</a></li>
+</ol>
+<h2 id="independence-of-span-and-the-emergence-of-traces-secvanhasselt2015traces">Independence of span and the emergence of traces {#sec:vanhasselt2015:traces}</h2>
+<p><strong>Notations</strong>:</p>
+<ul>
+<li>\(t\) time step with \(t=0\) as the initial point</li>
+<li>\(\boldsymbol{\theta}_t\) for the feature vector produced at time step \(t\)</li>
+<li>\(Z\) the final outcome occurring at time step \(T\)</li>
+</ul>
+<p>Here we are considering the general case of multi-step predictions (\(T&gt;1\)) where predictions are made at each time step. In the supervised learning case the predictor will only make a single prediction for the entire episode (or time sequence \(t=0&hellip;T\)).</p>
+<ul>
+<li>Predictions are linear with learned weight vector at time t \(\boldsymbol{\theta}_t\) and prediction at time t \(\boldsymbol{\theta}_t^\top \boldsymbol{\phi}_t\)</li>
+</ul>
+<p>When the final time is reached we can make an update assuming the LMS loss function:</p>
+<p>\[\boldsymbol{\theta}_{t+1} \doteq \boldsymbol{\theta}_{t}+\alpha_{t} \boldsymbol{\phi}_{t}\left(Z-\boldsymbol{\phi}_{t}^{\top} \boldsymbol{\theta}_{t}\right), \quad t=0, \ldots, T-1\]</p>
+<p>This is called the <em>forward view</em> as you have to look forward to the end of the episode to update the weight vector. All resources (memory and computation) scale with the length of the episode as you have to store each feature vector, and calculate each weight at the end of the episode.</p>
+<p>With some careful analysis we can find a computationally spread way of dealing with this update. See paper for a fuller explanation. In the end we get to</p>
+<p>\[\boldsymbol{\theta}_T=\underbrace{\mathbf{F}_{T-1} \mathbf{F}_{T-2} \cdots \mathbf{F}_{0} \boldsymbol{\theta}_{0}}_{\dot{=} \boldsymbol{a}_{T-1}}+\underbrace{\left(\sum_{t=0}^{T-1} \mathbf{F}_{T-1} \mathbf{F}_{T-2} \cdots \mathbf{F}_{t+1} \alpha_{t} \phi_{t}\right)}_{\dot{\doteq} \boldsymbol{e}_{T-1}} Z\]</p>
+<p>where \(\mathbf{F}_{t} \doteq \mathbf{I}-\alpha_{t} \boldsymbol{\phi}_{t} \boldsymbol{\phi}_{t}^{\top}\).</p>
+<p>We can then define both updates to \(\boldsymbol{a}_t\) and \(\boldsymbol{e}_t\) in incremental terms where the eligibility vector is analogous to the conventional eligibility trace using <em>dutch traces</em>! This suggests that eligibility traces are not specific to TD learning at all; and are more fundamental to predictions over time. This span-independent algorithm is denoted as the backwards view and can be summarized as:</p>
+<p>\begin{align}
+{\mathbf{a}_{0} \doteq \theta_{0}, \quad \text { then } a_{t+1} \doteq a_{t}+\alpha_{t} \phi_{t}\left(0-\phi_{t}^{\top} a_{t}\right), \quad t=1, \ldots, T-1} \nonumber \\\<br>
+{e_{-1} \doteq 0, \quad \text { then } e_{t} \doteq e_{t-1}+\alpha_{t} \phi_{t}\left(1-\phi_{t}^{\top} e_{t-1}\right), \quad t=0, \ldots, T-1} \\\<br>
+{\boldsymbol{\theta}_{T} \doteq \boldsymbol{a}_{T-1}+Z \boldsymbol{e}_{T-1}} \nonumber
+\end{align}</p>
+<p>While the overall computation (\(O(Tn)\)) is still the same, the amount of memory has been significantly reduced \(O(n)\), meaning the memory is constant wrt the span of the prediction.</p>
+<h2 id="online-updating-and-the-emergence-of-td-errors-secvanhasselt2015online">Online Updating and the emergence of TD errors {#sec:vanhasselt2015:online}</h2>
+<h2 id="unifying-online-and-offline-learning-and-the-emergence-of-averaging-secvanhasselt2015efficiency">Unifying online and offline learning and the emergence of averaging {#sec:vanhasselt2015:efficiency}</h2>
+<h2 id="bootstrapping-secvanhasselt2015tdlambda">Bootstrapping {#sec:vanhasselt2015:tdlambda}</h2>
+<h2 id="combining-two-notions-of-trust-and-the-emergence-of-averaged-tdlambda-secvanhasselt2015onetorulethem">Combining two notions of trust and the emergence of averaged TD(\(\lambda\)) {#sec:vanhasselt2015:onetorulethem}</h2>
+<h2 id="generalizing-to-cumulative-returns-and-soft-terminations-secvanhasselt2015generalizations">Generalizing to cumulative returns and soft terminations {#sec:vanhasselt2015:generalizations}</h2>
+<h2 id="convergence-analysis-secvanhasselt2015convergence">Convergence Analysis {#sec:vanhasselt2015:convergence}</h2>
+<h2 id="discussion-secvanhasselt2015discussion">Discussion {#sec:vanhasselt2015:discussion}</h2>
+<p>This is the discussion section</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
