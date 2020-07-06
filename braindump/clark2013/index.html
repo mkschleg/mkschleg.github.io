@@ -54,8 +54,8 @@
   <meta property="og:title" content="clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-05-22T16:51:45-06:00">
-  <meta property="article:modified_time" content="2020-05-22T16:51:45-06:00">
+  <meta property="article:published_time" content="2020-07-06T13:48:45-06:00">
+  <meta property="article:modified_time" content="2020-07-06T13:48:45-06:00">
   
 
   <title>clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-05-22 16:51:45 -0600 MDT" itemprop="datePublished dateModified">
-      May 22, 2020
+    <time datetime="2020-07-06 13:48:45 -0600 MDT" itemprop="datePublished dateModified">
+      Jul 6, 2020
     </time>
   </span>
 
@@ -221,7 +221,7 @@
 <dt>source</dt>
 <dd><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9">https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9</a></dd>
 </dl>
-<p>Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of (Rao 1999) and others in developing the brain as a inference machine.</p>
+<p>Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of <a href="/braindump/rao1999/">(Rao 1999)</a> and others in developing the brain as a inference machine.</p>
 <h2 id="introduction-prediction-machines">Introduction: Prediction Machines</h2>
 <h3 id="from-helmholtz-to-action-oriented-predictive-processing">From Helmholtz to action-oriented predictive processing</h3>
 <p>&ldquo;The whole function of the brain is summed up in: error correction.&rdquo; - W. Ross Ashby</p>
@@ -229,12 +229,12 @@
 <p>These hierarchical models follow from <a href="/braindump/hermann_von_helmholtz/">Hermann von Helmholtz</a> (1860) in depicting perception as a process of probabilistic, knowledge-driven inference.</p>
 <p>This insight informed many who followed in the &ldquo;analysis-by-synthesis&rdquo; paradigm. This paradigm suggest the brain does not build its current model of distal causes simply by accumulating from the bottom-up, but instead tries to predict the current suite of cues from its best models of the possible causes.</p>
 <p>Work in connectionist networks was also inspired by <a href="/braindump/hermann_von_helmholtz/">Hermann von Helmholtz</a> (specifically Hinton, McClelland, Rumelhart&hellip;). Specifically, the Helmholtz machin sought to learn new representations in a multilevel system without requiring the provision of copious pre-classified samples (i.e. a generative model).</p>
-<p>The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &ldquo;virtual version&rdquo; of the sensory data via a deep multilevel cascade lies at the heart of <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> (Rao 1999). These approaches combine the use of top-down probabilistic generative models with a specific vision of how the downward influence might operate. Specifically, <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> depicts the top-down flow as attempting to predict and fully &ldquo;explain awa&rdquo; the driving sensory signal, leaving only residual &ldquo;prediction errors&rdquo;.</p>
+<p>The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &ldquo;virtual version&rdquo; of the sensory data via a deep multilevel cascade lies at the heart of <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> <a href="/braindump/rao1999/">(Rao 1999)</a>. These approaches combine the use of top-down probabilistic generative models with a specific vision of how the downward influence might operate. Specifically, <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> depicts the top-down flow as attempting to predict and fully &ldquo;explain awa&rdquo; the driving sensory signal, leaving only residual &ldquo;prediction errors&rdquo;.</p>
 <h3 id="escaping-the-black-box">Escaping the black box</h3>
 <p>The task of the brain, or really any learning/intelligent system, when viewed from a certain distance can seem impossible. It must discover information about the likely causes of impinging signals without any form of direct access to their source.</p>
 <p><em>Notice how different this conception is to ones in which the problem is posed as one of estabilishing a mapping relation between environmental and inner states. The task is not to find such a mapping but to infer the nature of the signal source (the world) from just the varying input signal itself.</em></p>
 <p>Such a scheme as predictive coding suggests the backward connections from V2 to V1 would carry a prediction of expected activity in V1, while forward connections for V1 to V2 would carry forward the error signal indicating residual activity.</p>
-<p>Rao  implemented a simple bidirectional hierarchical network of such predictive estimators. The model displayed hierarchical structure (i.e. the lower level indicating edges, while the higher level combining such edges), &ldquo;extra-classical receptive field&rdquo; effects (suggesting such non-classical surround effects) which may be a rather direct consequence of the use of hierarchical predictive coding.</p>
+<p><a href="/braindump/rao1999/">Rao</a> implemented a simple bidirectional hierarchical network of such predictive estimators. The model displayed hierarchical structure (i.e. the lower level indicating edges, while the higher level combining such edges), &ldquo;extra-classical receptive field&rdquo; effects (suggesting such non-classical surround effects) which may be a rather direct consequence of the use of hierarchical predictive coding.</p>
 <h3 id="dynamic-predictive-coding-by-the-retina">Dynamic predictive coding by the retina</h3>
 <p>Hosoya  &lsquo;s 2005  account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure. The saves bandwidth and highlights the &ldquo;news-worthy&rdquo; aspects of the incoming signal. Hosoya predicted that, in the interestes of efficient, adaptively potent, encoding, the behavior of the <a href="/braindump/visual_system_/">retinal ganglion cell</a> should vary as a result of adaptation to the current scene or context, exhibiting what they term &ldquo;dynamic predictive coding&rdquo;.</p>
 <h3 id="binocular-rivalry--dot-dot-notes-binocular-rivalry-dot-md"><a href="/braindump/binocular_rivalry/">Binocular rivalry</a></h3>

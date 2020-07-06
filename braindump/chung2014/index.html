@@ -14,7 +14,7 @@
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/brain.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/chung2014_empirical_evaluation_of_gated_recurrent_neural_networks_on_sequence_modeling.md%29%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -42,7 +42,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://mkschleg.github.io/braindump/brain/">
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/chung2014/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -50,15 +50,15 @@
   <meta property="twitter:creator" content="@mattschleg">
   
   <meta property="og:site_name" content="Matthew Schlegel">
-  <meta property="og:url" content="https://mkschleg.github.io/braindump/brain/">
-  <meta property="og:title" content="Brain | Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/chung2014/">
+  <meta property="og:title" content="chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-07-06T13:48:50-06:00">
-  <meta property="article:modified_time" content="2020-07-06T13:48:50-06:00">
+  <meta property="article:published_time" content="2020-07-06T13:48:45-06:00">
+  <meta property="article:modified_time" content="2020-07-06T13:48:45-06:00">
   
 
-  <title>Brain | Matthew Schlegel</title>
+  <title>chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling | Matthew Schlegel</title>
 
   
 
@@ -193,7 +193,7 @@
 
 				<article class="post" itemscope itemtype="http://schema.org/Article">
   <div class="post-container">
-    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/brain/">Brain</a></h1>
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/chung2014/">chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a></h1>
 
     
       
@@ -202,7 +202,7 @@
 
   <span class="post-date">
     
-    <time datetime="2020-07-06 13:48:50 -0600 MDT" itemprop="datePublished dateModified">
+    <time datetime="2020-07-06 13:48:45 -0600 MDT" itemprop="datePublished dateModified">
       Jul 6, 2020
     </time>
   </span>
@@ -215,7 +215,76 @@
 
     <div class="post-style" itemprop="articleBody">
       
-      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/recurrent_neural_network/">Recurrent Neural Network</a>, <a href="/braindump/machine_learning/">Machine Learning</a></dd>
+<dt>source</dt>
+<dd><a href="https://arxiv.org/abs/1412.3555">Paper</a></dd>
+<dt>authors</dt>
+<dd>Chung, J., Gulcehre, C., Cho, K., &amp; Bengio, Y.</dd>
+<dt>year</dt>
+<dd>2014</dd>
+</dl>
+<p>This paper does an empirical evaluation of several recurrent gates including <a href="/braindump/lstm/">LSTM</a>s (Hochreiter 1997), <a href="/braindump/lstm/">GRU</a> (Cho 2014), and Vanilla <a href="/braindump/recurrent_neural_network/">RNN</a>s. The paper also provides descriptions for the different cells tested and a nice high level description of the generative model employed by RNNs.</p>
+<p><strong>Results</strong></p>
+<ul>
+<li>They find that GRUs are competitive to LSTMs on the tasks they tested (i.e. Music Datasets and Ubisoft Datasets).</li>
+<li>GRUs Needed less Wall time as well to learn adequately, and were competitive in terms of number of epochs (as compared w/ the LSTMs they are much better in walltime).</li>
+</ul>
+
     </div>
 
     
