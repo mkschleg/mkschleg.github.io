@@ -1,3 +1,40 @@
+
+
+
+body {
+  /* Set "my-sec-counter" to 0 */
+    counter-reset: thm-counter;
+    counter-reset: lem-counter;
+    
+}
+
+.theorem {
+display: block;
+font-style: italic;
+}
+.theorem:before {
+    counter-increment: thm-counter;
+    content: "Theorem " counter(thm-counter) ": ";
+    font-weight: bold;
+    font-style: normal;
+}
+.theorem[text]:before {
+    content: "Theorem " counter(thm-counter) ": ";
+}
+
+.lemma {
+display: block;
+}
+.lemma:before {
+    counter-increment: thm-counter;
+    content: "Lemma " counter(lem-counter) ": ";
+    font-weight: bold;
+    font-style: normal;
+}
+.lemma[text]:before {
+    content: "Lemma " counter(lem-counter) ": ";
+}
+
 /* .post-tags { */
 /*     display: flex; */
 /*     flex-direction: row; */

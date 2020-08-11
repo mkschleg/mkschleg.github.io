@@ -7,107 +7,278 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 06 Jul 2020 13:48:56 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 17:39:37 -0600</lastBuildDate>
     
 	<atom:link href="https://mkschleg.github.io/braindump/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>huang2011: Predictive Coding</title>
-      <link>https://mkschleg.github.io/braindump/huang2011/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:56 -0600</pubDate>
+      <title>Hoeffding Inequality</title>
+      <link>https://mkschleg.github.io/braindump/hoeffding_inequality/</link>
+      <pubDate>Mon, 10 Aug 2020 17:39:37 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/huang2011/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Predictive Processing, Hierarchical Predictive Coding source paper authors Huang, Y., &amp;amp; Rao, R.</description>
+      <guid>https://mkschleg.github.io/braindump/hoeffding_inequality/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Math, Statistics sources http://cs229.stanford.edu/extra-notes/hoeffding.pdf   Let \(X_1, X_2, \ldots, X_n\) be independent bounded random variables with bound \(X_i \in [a, b]\) for all \(i\), where \(-\infty &amp;lt; a \leq b &amp;lt; \infty\).</description>
+    </item>
+    
+    <item>
+      <title>Empirical Risk Minimization</title>
+      <link>https://mkschleg.github.io/braindump/empirical_risk_minimization/</link>
+      <pubDate>Mon, 10 Aug 2020 12:25:47 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/empirical_risk_minimization/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Machine Learning, Statistics source http://www.cs.cmu.edu/~aarti/Class/10704%5FFall16/lec11.pdf  Empirical risk minimization is a fundamental building block of modern machine learning, and almost every paper is (either explicitly or implicitly) using the idea to learn a function.</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://mkschleg.github.io/braindump/statistics/</link>
+      <pubDate>Mon, 10 Aug 2020 12:11:20 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/statistics/</guid>
+      <description> tags Math  </description>
+    </item>
+    
+    <item>
+      <title>Intelligence</title>
+      <link>https://mkschleg.github.io/braindump/intelligence/</link>
+      <pubDate>Sun, 02 Aug 2020 12:58:18 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/intelligence/</guid>
+      <description>Backlinks 2 Backlinks Artificial Intelligence Intelligence
+sutton2020john: John McCarthy&amp;rsquo;s definition of intelligence Artificial Intelligence, Intelligence</description>
+    </item>
+    
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://mkschleg.github.io/braindump/artificial_intelligence/</link>
+      <pubDate>Sun, 02 Aug 2020 12:58:12 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/artificial_intelligence/</guid>
+      <description>Intelligence
+Backlinks 1 Backlinks sutton2020john: John McCarthy&amp;rsquo;s definition of intelligence Artificial Intelligence, Intelligence</description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://mkschleg.github.io/braindump/math/</link>
+      <pubDate>Sun, 02 Aug 2020 12:50:28 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/math/</guid>
+      <description>Backlinks 13 Backlinks Elementary Differential Equations and Boundary Value Problems Math
+DiffEQ Math
+Linear Algebra Math
+Linear Algebra and its Applications Linear Algebra, Math
+Bijective Math
+Determinant Linear Algebra, Math
+Function Space Math
+Gaussian Elimination Linear Algebra, Math
+Integral Transform Math, DiffEQ
+Isomorphism Math, Category Theory
+Laplace Transform Math, DiffEQ
+Matrix Linear Algebra, Math
+Morphism Math, Category Theory</description>
+    </item>
+    
+    <item>
+      <title>mohamed2019: Monte Carlo Gradient Estimation in Machine Learning</title>
+      <link>https://mkschleg.github.io/braindump/mohamed2019/</link>
+      <pubDate>Sun, 02 Aug 2020 12:50:27 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/mohamed2019/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Machine Learning source https://arxiv.org/abs/1906.10652 authors Mohamed, S., Rosca, M., Figurnov, M., &amp;amp; Mnih, A.</description>
     </item>
     
     <item>
       <title>Reinforcement Learning</title>
       <link>https://mkschleg.github.io/braindump/reinforcement_learning/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:53 -0600</pubDate>
+      <pubDate>Sun, 02 Aug 2020 12:50:24 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/reinforcement_learning/</guid>
       <description>Major categories of reinforcement learning:
- Off-Policy General Value Functions Theory  ({van Hasselt} 2015)
- Misc  Backlinks 11 Backlinks Rich Sutton People, Reinforcement Learning
+ Off-Policy General Value Functions Theory Misc  Textbooks:
+ Reinforcement Learning: An Introduction (Sutton 2018)  (Sutton 2020)
+Backlinks 14 Backlinks Reinforcement Learning: An Introduction Reinforcement Learning
+Rich Sutton People, Reinforcement Learning
 Temporal Difference Learning Reinforcement Learning
 Value Function Reinforcement Learning
-kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock Reinforcement Learning, Representation
-sutton1988: Learning to predict by the methods of temporal differences Impact*: This paper has had a long lasting impact.</description>
+badia2020: Agent57: Outperforming the Atari Human Benchmark Reinforcement Learning
+kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock Reinforcement Learning, Representation</description>
     </item>
     
     <item>
-      <title>Representation</title>
-      <link>https://mkschleg.github.io/braindump/representation/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:53 -0600</pubDate>
+      <title>sutton2020john: John McCarthy&#39;s definition of intelligence</title>
+      <link>https://mkschleg.github.io/braindump/sutton2020john/</link>
+      <pubDate>Sun, 02 Aug 2020 12:37:34 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/representation/</guid>
-      <description>Backlinks 1 Backlinks kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock Reinforcement Learning, Representation</description>
+      <guid>https://mkschleg.github.io/braindump/sutton2020john/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Artificial Intelligence, Intelligence source http://www.incompleteideas.net/papers/Sutton-JAGI-2020.pdf authors Sutton, R. S. year 2020  In this paper, the authors take John McCarthy&amp;rsquo;s statement on artificial intelligence being</description>
     </item>
     
     <item>
-      <title>Theory</title>
-      <link>https://mkschleg.github.io/braindump/theory/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:53 -0600</pubDate>
+      <title>badia2020: Agent57: Outperforming the Atari Human Benchmark</title>
+      <link>https://mkschleg.github.io/braindump/badia2020/</link>
+      <pubDate>Fri, 31 Jul 2020 12:24:06 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/theory/</guid>
-      <description>Backlinks 3 Backlinks vanhasselt2015: Learning to Predict Independent of Span Reinforcement Learning, Theory, General Value Functions
-white2017: Unifying Task Specification in Reinforcement Learning Reinforcement Learning, Theory
-Reinforcement Learning Theory</description>
+      <guid>https://mkschleg.github.io/braindump/badia2020/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Reinforcement Learning source https://deepmind.com/blog/article/Agent57-Outperforming-the-human-Atari-benchmark authors Badia, Adri\`a Puigdom\`enech, Piot, B., Kapturowski, S.</description>
     </item>
     
     <item>
-      <title>Thinking</title>
-      <link>https://mkschleg.github.io/braindump/thinking/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:53 -0600</pubDate>
+      <title>Reinforcement Learning: An Introduction</title>
+      <link>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</link>
+      <pubDate>Thu, 30 Jul 2020 12:11:48 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/thinking/</guid>
-      <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
+      <guid>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</guid>
+      <description>Table of Contents  Chapter 1 Chapter 2 Finite Markov Decision Processes  The Agent-Environment Interface Goals and Rewards Returns and Episodes Unified Notation for Episodic and Continuing Tasks Policies and Value Functions Optimal Policies and Optimal Value Functions Optimality and Approximation   Dynamic Programming  Policy Evaluation (prediction) Policy Improvement Policy Iteration Value Iteration Asynchronous Dynamic Programming Generalized Policy Iteration Efficiency of Dynamic Programming   Monte Carlo Methods  Monte Carlo Prediction Monte Carlo Estimation of Action Values Monte Carlo Control Monte Carlo Control without Exploring Starts Off-policy Prediction via Importance Sampling Incremental Implementation Off-policy Monte Carlo Control Discounting-aware Importance Sampling Per-decision Importance Sampling   Temporal-Difference Learning  TD Prediction Advantages of TD Prediction Methods Optimality of TD(0) Sarsa: On-policy TD Control Q-learning: Off-policy TD Control Expected Sarsa Maximization Bias and Double Learning Games Afterstates, and Other Special Cases   Chapter 7 Planning and Learning with Tabular Methods  Models and Planning Dyna: Integrated Planning, Acting, and Learning When the Model Is Wrong Prioritized Sweeping Expected vs.</description>
     </item>
     
     <item>
-      <title>Off-Policy</title>
-      <link>https://mkschleg.github.io/braindump/off_policy/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
+      <title>mnih2014: Recurrent Models of Visual Attention</title>
+      <link>https://mkschleg.github.io/braindump/mnih2014/</link>
+      <pubDate>Tue, 28 Jul 2020 14:08:03 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/off_policy/</guid>
-      <description>Backlinks 2 Backlinks liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation Reinforcement Learning, Off-Policy
-Reinforcement Learning Off-Policy</description>
-    </item>
-    
-    <item>
-      <title>Optimizers</title>
-      <link>https://mkschleg.github.io/braindump/optimizers/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
-      <description>Backlinks 1 Backlinks ADAM Optimizers, Neural Network</description>
-    </item>
-    
-    <item>
-      <title>People</title>
-      <link>https://mkschleg.github.io/braindump/people/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/people/</guid>
-      <description>Backlinks 2 Backlinks Hermann von Helmholtz People
-Rich Sutton People, Reinforcement Learning</description>
+      <guid>https://mkschleg.github.io/braindump/mnih2014/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Perception source http://papers.nips.cc/paper/5542-recurrent-models-of-visual-attention authors Mnih, V., Heess, N., Graves, A., &amp;amp; kavukcuoglu, koray year 2014  The authors propose a model for visual perception in machine learning combining a sequence based learning scheme modeled more closely after how the retina works.</description>
     </item>
     
     <item>
       <title>Perception</title>
       <link>https://mkschleg.github.io/braindump/perception/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
+      <pubDate>Tue, 28 Jul 2020 12:48:00 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/perception/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Integral Transform</title>
+      <link>https://mkschleg.github.io/braindump/integral_transform/</link>
+      <pubDate>Mon, 27 Jul 2020 13:30:55 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/integral_transform/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Math, DiffEQ sources Elementary Differential Equations and Boundary Value Problems, https://en.wikipedia.org/wiki/Integral%5Ftransform  An integral transform maps a function \(f(\cdot)\) from its original Function Space to another Function Space via integration.</description>
+    </item>
+    
+    <item>
+      <title>Function Space</title>
+      <link>https://mkschleg.github.io/braindump/function_space/</link>
+      <pubDate>Mon, 27 Jul 2020 13:24:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/function_space/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Math source https://en.wikipedia.org/wiki/Function%5Fspace  A function space is the set of functions between two fixed sets.</description>
+    </item>
+    
+    <item>
+      <title>Laplace Transform</title>
+      <link>https://mkschleg.github.io/braindump/laplace_transform/</link>
+      <pubDate>Mon, 27 Jul 2020 13:21:05 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/laplace_transform/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Math, DiffEQ source https://en.wikipedia.org/wiki/Laplace%5Ftransform, Elementary Differential Equations and Boundary Value Problems  The Laplace Transform is a particular type of Integral Transform.</description>
+    </item>
+    
+    <item>
+      <title>DiffEQ</title>
+      <link>https://mkschleg.github.io/braindump/diffeq/</link>
+      <pubDate>Mon, 27 Jul 2020 13:16:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/diffeq/</guid>
+      <description> tags Math  </description>
+    </item>
+    
+    <item>
+      <title>Elementary Differential Equations and Boundary Value Problems</title>
+      <link>https://mkschleg.github.io/braindump/elementary_differential_equations_and_boundary_value_problems/</link>
+      <pubDate>Mon, 27 Jul 2020 13:14:37 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/elementary_differential_equations_and_boundary_value_problems/</guid>
+      <description> tags Math authors William E. Boyce, Richard C. DiPrima  </description>
+    </item>
+    
+    <item>
+      <title>spratling2017: A review of predictive coding algorithms</title>
+      <link>https://mkschleg.github.io/braindump/spratling2017/</link>
+      <pubDate>Mon, 27 Jul 2020 13:05:06 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/spratling2017/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Hierarchical Predictive Coding source link authors Spratling, M. W. year 2017  Linear Predictive Coding (digital signal processing) This form of predictive coding was designed for the manipulation and analysis of a continuous signal sampled discretely (i.</description>
+    </item>
+    
+    <item>
+      <title>huang2011: Predictive Coding</title>
+      <link>https://mkschleg.github.io/braindump/huang2011/</link>
+      <pubDate>Mon, 27 Jul 2020 12:53:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/huang2011/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Predictive Processing, Hierarchical Predictive Coding source paper authors Huang, Y., &amp;amp; Rao, R.</description>
+    </item>
+    
+    <item>
+      <title>Biased Competition</title>
+      <link>https://mkschleg.github.io/braindump/biased_competition/</link>
+      <pubDate>Mon, 27 Jul 2020 12:51:50 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/biased_competition/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+Backlinks 1 Backlinks spratling2017: A review of predictive coding algorithms This is a reformulation of rao1999 &amp;lsquo;s PC model to be compatible w/ Biased Competition theories of cortical function.</description>
+    </item>
+    
+    <item>
+      <title>Efficient Coding</title>
+      <link>https://mkschleg.github.io/braindump/efficient_coding/</link>
+      <pubDate>Mon, 27 Jul 2020 12:27:20 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/efficient_coding/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)</description>
+    </item>
+    
+    <item>
+      <title>Autocorrelation</title>
+      <link>https://mkschleg.github.io/braindump/autocorrelation/</link>
+      <pubDate>Mon, 27 Jul 2020 12:26:46 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/autocorrelation/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+Backlinks 1 Backlinks spratling2017: A review of predictive coding algorithms There are several classical time-series approaches which have been developed the learn this kind of signal (i.</description>
+    </item>
+    
+    <item>
+      <title>Hierarchical Predictive Coding</title>
+      <link>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</link>
+      <pubDate>Sat, 25 Jul 2020 13:16:19 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</guid>
+      <description>Theory Unconscious Inference: Hermann von Helmholtz
+(Rao 1999), (Huang 2011), (Spratling 2017), (Spratling 2017)
+ Understanding Predictive coding in the context of Efficient and Sparse Coding: (Chalk 2017) Problems with Predictive Coding and the Bayesian Brain: (Kwisthout 2013)   Evidence (Heilbron 2018), (Huang 2011)
+Implementations in ML and RL  Deep Predictive coding networks (PredNets)   Active Inference References (Rao 1999) Rajesh P. N. Rao and Dana H. Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, Nature Neuroscience, , pp.</description>
+    </item>
+    
+    <item>
+      <title>Thinking</title>
+      <link>https://mkschleg.github.io/braindump/thinking/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:41 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/thinking/</guid>
+      <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
+    </item>
+    
+    <item>
       <title>Philosophy</title>
       <link>https://mkschleg.github.io/braindump/philosophy/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:40 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/philosophy/</guid>
       <description></description>
@@ -116,7 +287,7 @@ Rich Sutton People, Reinforcement Learning</description>
     <item>
       <title>Predictive Processing</title>
       <link>https://mkschleg.github.io/braindump/predictive_processing/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:52 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:40 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/predictive_processing/</guid>
       <description>(Huang 2011)
@@ -129,20 +300,68 @@ soga2009: Predictive and postdictive mechanisms jointly contribute to visual awa
     </item>
     
     <item>
-      <title>Linear Algebra and its Applications</title>
-      <link>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
+      <title>Representation</title>
+      <link>https://mkschleg.github.io/braindump/representation/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:40 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</guid>
-      <description>tags Linear Algebra, Math  Author: Gilbert Strang Available at: Biblio
-It is a bit thick and maybe too detailed in the calculations of the certain properties. Really, all I need is understanding the properties of objects, rather than worrying about the details of computation.
-I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other books.</description>
+      <guid>https://mkschleg.github.io/braindump/representation/</guid>
+      <description>Backlinks 1 Backlinks kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock Reinforcement Learning, Representation</description>
+    </item>
+    
+    <item>
+      <title>Theory</title>
+      <link>https://mkschleg.github.io/braindump/theory/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:40 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/theory/</guid>
+      <description>Backlinks 3 Backlinks vanhasselt2015: Learning to Predict Independent of Span Reinforcement Learning, Theory, General Value Functions
+white2017: Unifying Task Specification in Reinforcement Learning Reinforcement Learning, Theory
+Reinforcement Learning Theory</description>
+    </item>
+    
+    <item>
+      <title>Note-Taking</title>
+      <link>https://mkschleg.github.io/braindump/note_taking/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:39 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
+      <description>Backlinks 2 Backlinks Zettelkasten method Note-Taking
+How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
+    </item>
+    
+    <item>
+      <title>Off-Policy</title>
+      <link>https://mkschleg.github.io/braindump/off_policy/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:39 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/off_policy/</guid>
+      <description>Backlinks 2 Backlinks liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation Reinforcement Learning, Off-Policy
+Reinforcement Learning Off-Policy</description>
+    </item>
+    
+    <item>
+      <title>Optimizers</title>
+      <link>https://mkschleg.github.io/braindump/optimizers/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:39 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
+      <description>Backlinks 1 Backlinks ADAM Optimizers, Neural Network</description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>https://mkschleg.github.io/braindump/people/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:39 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/people/</guid>
+      <description>Backlinks 2 Backlinks Hermann von Helmholtz People
+Rich Sutton People, Reinforcement Learning</description>
     </item>
     
     <item>
       <title>Machine Learning</title>
       <link>https://mkschleg.github.io/braindump/machine_learning/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:38 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/machine_learning/</guid>
       <description>Backlinks 9 Backlinks Neural Network Machine Learning
@@ -154,25 +373,18 @@ goudreau1994: First-order versus second-order single-layer recurrent neural netw
     </item>
     
     <item>
-      <title>Math</title>
-      <link>https://mkschleg.github.io/braindump/math/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
+      <title>Meta-Learning</title>
+      <link>https://mkschleg.github.io/braindump/meta_learning/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:38 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/math/</guid>
-      <description>Backlinks 8 Backlinks Linear Algebra Math
-Linear Algebra and its Applications Linear Algebra, Math
-Bijective Math
-Determinant Linear Algebra, Math
-Gaussian Elimination Linear Algebra, Math
-Isomorphism Math, Category Theory
-Matrix Linear Algebra, Math
-Morphism Math, Category Theory</description>
+      <guid>https://mkschleg.github.io/braindump/meta_learning/</guid>
+      <description>Backlinks 1 Backlinks wang2017: Learning to reinforcement learn Reinforcement Learning, Meta-Learning</description>
     </item>
     
     <item>
       <title>Neural Network</title>
       <link>https://mkschleg.github.io/braindump/neural_network/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:38 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/neural_network/</guid>
       <description>tags Machine Learning  Backlinks 5 Backlinks ADAM Optimizers, Neural Network
@@ -185,7 +397,7 @@ wu2016: On Multiplicative Integration with Recurrent Neural Networks Recurrent N
     <item>
       <title>Neuroscience</title>
       <link>https://mkschleg.github.io/braindump/neuroscience/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:38 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/neuroscience/</guid>
       <description>Backlinks 3 Backlinks Afferent Codes Brain, Neuroscience
@@ -194,19 +406,9 @@ Visual System Brain, Neuroscience, Anatomy</description>
     </item>
     
     <item>
-      <title>Note-Taking</title>
-      <link>https://mkschleg.github.io/braindump/note_taking/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:51 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
-      <description>Backlinks 2 Backlinks Zettelkasten method Note-Taking
-How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
-    </item>
-    
-    <item>
       <title>Anatomy</title>
       <link>https://mkschleg.github.io/braindump/anatomy/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:37 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/anatomy/</guid>
       <description>Backlinks 1 Backlinks Visual System Brain, Neuroscience, Anatomy</description>
@@ -215,7 +417,7 @@ How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
     <item>
       <title>Brain</title>
       <link>https://mkschleg.github.io/braindump/brain/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:37 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/brain/</guid>
       <description></description>
@@ -224,7 +426,7 @@ How to Take Smart Notes with Org-mode Thinking, Note-Taking</description>
     <item>
       <title>Category Theory</title>
       <link>https://mkschleg.github.io/braindump/category_theory/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:37 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/category_theory/</guid>
       <description>Backlinks 2 Backlinks Isomorphism Math, Category Theory
@@ -232,22 +434,9 @@ Morphism Math, Category Theory</description>
     </item>
     
     <item>
-      <title>How to Take Smart Notes with Org-mode</title>
-      <link>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</guid>
-      <description>tags Thinking, Note-Taking source How to Take Smart Notes With Org-mode | blog  This is a blog about how the author of org-roam (Jethro Kuan) takes notes and utilizes org-roam to organize his thinking.
-&amp;ldquo;Note-taking is Not Just a Precursor to Writing&amp;rdquo;
-Quote from Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;
-Process of writing:
- Find topic/research question Research/find literature Read and take notes Draw conclusions/ outline text Write  This suggests writing is linear, but infact research and writing are non-linear processes with all these ideas taking place together.</description>
-    </item>
-    
-    <item>
       <title>Linear Algebra</title>
       <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:37 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
       <description>tags Math  Backlinks 5 Backlinks Linear Algebra and its Applications Linear Algebra, Math
@@ -258,39 +447,33 @@ Matrix Linear Algebra, Math</description>
     </item>
     
     <item>
-      <title>wu2016: On Multiplicative Integration with Recurrent Neural Networks</title>
-      <link>https://mkschleg.github.io/braindump/wu2016/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:50 -0600</pubDate>
+      <title>Linear Algebra and its Applications</title>
+      <link>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:37 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/wu2016/</guid>
-      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source http://papers.nips.cc/paper/6215-on-multiplicative-integration-with-recurrent-neural-networks  This paper explores a new architectural building block for recurrent neural networks, specifically one which integrates information from the internal state of the unit and the data stream through a multiplicative update. They use the Hadamard product to integrate this information together, although there are other choices here which they don&amp;rsquo;t discuss (such as various tensor products).
-Additive building block:</description>
+      <guid>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</guid>
+      <description>tags Linear Algebra, Math  Author: Gilbert Strang Available at: Biblio
+It is a bit thick and maybe too detailed in the calculations of the certain properties. Really, all I need is understanding the properties of objects, rather than worrying about the details of computation.
+I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other books.</description>
     </item>
     
     <item>
-      <title>synofzik2013: The experience of agency: an interplay between prediction and postdiction</title>
-      <link>https://mkschleg.github.io/braindump/synofzik2013/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:49 -0600</pubDate>
+      <title>How to Take Smart Notes with Org-mode</title>
+      <link>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:36 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/synofzik2013/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Predictive Processing, Brain source paper authors Synofzik, M., Vosgerau, G., &amp;amp; Voss, M.</description>
-    </item>
-    
-    <item>
-      <title>vanhasselt2015: Learning to Predict Independent of Span</title>
-      <link>https://mkschleg.github.io/braindump/vanhasselt2015/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:49 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/vanhasselt2015/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Reinforcement Learning, Theory, General Value Functions source paper authors van Hasselt, Hado, &amp;amp; Sutton, R.</description>
+      <guid>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</guid>
+      <description>tags Thinking, Note-Taking source How to Take Smart Notes With Org-mode | blog  This is a blog about how the author of org-roam (Jethro Kuan) takes notes and utilizes org-roam to organize his thinking.
+&amp;ldquo;Note-taking is Not Just a Precursor to Writing&amp;rdquo;
+Quote from Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;
+Process of writing:
+ Find topic/research question Research/find literature Read and take notes Draw conclusions/ outline text Write  This suggests writing is linear, but infact research and writing are non-linear processes with all these ideas taking place together.</description>
     </item>
     
     <item>
       <title>white2015: Developing a predictive approach to knowledge</title>
       <link>https://mkschleg.github.io/braindump/white2015/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:49 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:36 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/white2015/</guid>
       <description>tags Reinforcement Learning, General Value Functions source thesis authors White, A. year 2015  This is a thesis from Adam White encompassing and developing what predictive knowledge is, and how it can specify world knowledge. He develops a system, horde, which is a knowledge representation built from value function predictions. The main premise of this knowledge representation is that value-function predictions can encompass all forms of predictive knowledge.
@@ -300,7 +483,7 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     <item>
       <title>white2017: Unifying Task Specification in Reinforcement Learning</title>
       <link>https://mkschleg.github.io/braindump/white2017/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:49 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:36 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/white2017/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -308,19 +491,39 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     </item>
     
     <item>
-      <title>soga2009: Predictive and postdictive mechanisms jointly contribute to visual awareness</title>
-      <link>https://mkschleg.github.io/braindump/soga2009/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:48 -0600</pubDate>
+      <title>wu2016: On Multiplicative Integration with Recurrent Neural Networks</title>
+      <link>https://mkschleg.github.io/braindump/wu2016/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:36 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/soga2009/</guid>
+      <guid>https://mkschleg.github.io/braindump/wu2016/</guid>
+      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source http://papers.nips.cc/paper/6215-on-multiplicative-integration-with-recurrent-neural-networks  This paper explores a new architectural building block for recurrent neural networks, specifically one which integrates information from the internal state of the unit and the data stream through a multiplicative update. They use the Hadamard product to integrate this information together, although there are other choices here which they don&amp;rsquo;t discuss (such as various tensor products).
+Additive building block:</description>
+    </item>
+    
+    <item>
+      <title>vanhasselt2015: Learning to Predict Independent of Span</title>
+      <link>https://mkschleg.github.io/braindump/vanhasselt2015/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:35 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/vanhasselt2015/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Predictive Processing, Brain source paper authors Soga, R., Akaishi, R., &amp;amp; Sakai, K.</description>
+ tags Reinforcement Learning, Theory, General Value Functions source paper authors van Hasselt, Hado, &amp;amp; Sutton, R.</description>
+    </item>
+    
+    <item>
+      <title>wang2017: Learning to reinforcement learn</title>
+      <link>https://mkschleg.github.io/braindump/wang2017/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:35 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/wang2017/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Reinforcement Learning, Meta-Learning source https://arxiv.org/abs/1611.05763 authors Wang, J. X., Kurth-Nelson, Zeb, Tirumala, D.</description>
     </item>
     
     <item>
       <title>stock2004: A short history of ideo-motor action</title>
       <link>https://mkschleg.github.io/braindump/stock2004/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:48 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:34 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/stock2004/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -330,7 +533,7 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     <item>
       <title>sutskever2011: Generating text with recurrent neural networks</title>
       <link>https://mkschleg.github.io/braindump/sutskever2011/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:48 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:34 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/sutskever2011/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -340,45 +543,26 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     <item>
       <title>sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction</title>
       <link>https://mkschleg.github.io/braindump/sutton2011/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:48 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:34 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/sutton2011/</guid>
       <description>tags Reinforcement Learning, General Value Functions source paper authors Sutton, R. S., Modayil, J., Delp, M., Degris, T., Pilarski, P. M., White, A., &amp;amp; Precup, D. year 2011  This paper focuses on building world knowledge through value function predictions on the sensorimotor stream. This new class of sensorimotor predictions are coined General Value Functions, and posited to be able to encapsulate the model of the world through gradient temporal-difference training.</description>
     </item>
     
     <item>
-      <title>liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation</title>
-      <link>https://mkschleg.github.io/braindump/liu2018/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:47 -0600</pubDate>
+      <title>synofzik2013: The experience of agency: an interplay between prediction and postdiction</title>
+      <link>https://mkschleg.github.io/braindump/synofzik2013/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:34 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/liu2018/</guid>
-      <description>tags Reinforcement Learning, Off-Policy source paper authors Liu, Q., Li, L., Tang, Z., &amp;amp; Zhou, D. year 2018  The key contribution of this paper is a new approach to estimating the density ratio of two stationary state distributions. This is significant for correcting the data distributions, as we can directly correct both action and state distributions using a single step horizon of IS ratios. This reduces the potential variance of IS style approaches.</description>
-    </item>
-    
-    <item>
-      <title>mohamed2019: Monte Carlo Gradient Estimation in Machine Learning</title>
-      <link>https://mkschleg.github.io/braindump/mohamed2019/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:47 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/mohamed2019/</guid>
+      <guid>https://mkschleg.github.io/braindump/synofzik2013/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Machine Learning source https://arxiv.org/abs/1906.10652 authors Mohamed, S., Rosca, M., Figurnov, M., &amp;amp; Mnih, A.</description>
-    </item>
-    
-    <item>
-      <title>prinz1990: A Common Coding Approach to Perception and Action</title>
-      <link>https://mkschleg.github.io/braindump/prinz1990/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:47 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/prinz1990/</guid>
-      <description>tags Perception, Brain In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.
-  Separate Coding This view holds that the afferent and efferent codes are incommensurate at all levels of the coding.</description>
+ tags Predictive Processing, Brain source paper authors Synofzik, M., Vosgerau, G., &amp;amp; Voss, M.</description>
     </item>
     
     <item>
       <title>rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects</title>
       <link>https://mkschleg.github.io/braindump/rao1999/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:47 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:33 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/rao1999/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -386,9 +570,38 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     </item>
     
     <item>
+      <title>soga2009: Predictive and postdictive mechanisms jointly contribute to visual awareness</title>
+      <link>https://mkschleg.github.io/braindump/soga2009/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:33 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/soga2009/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Predictive Processing, Brain source paper authors Soga, R., Akaishi, R., &amp;amp; Sakai, K.</description>
+    </item>
+    
+    <item>
+      <title>liu2018: Breaking the Curse of Horizon: Infinite-Horizon Off-Policy Estimation</title>
+      <link>https://mkschleg.github.io/braindump/liu2018/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:32 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/liu2018/</guid>
+      <description>tags Reinforcement Learning, Off-Policy source paper authors Liu, Q., Li, L., Tang, Z., &amp;amp; Zhou, D. year 2018  The key contribution of this paper is a new approach to estimating the density ratio of two stationary state distributions. This is significant for correcting the data distributions, as we can directly correct both action and state distributions using a single step horizon of IS ratios. This reduces the potential variance of IS style approaches.</description>
+    </item>
+    
+    <item>
+      <title>prinz1990: A Common Coding Approach to Perception and Action</title>
+      <link>https://mkschleg.github.io/braindump/prinz1990/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:32 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/prinz1990/</guid>
+      <description>tags Perception, Brain In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.
+  Separate Coding This view holds that the afferent and efferent codes are incommensurate at all levels of the coding.</description>
+    </item>
+    
+    <item>
       <title>kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock</title>
       <link>https://mkschleg.github.io/braindump/kostas2019/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:46 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:31 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/kostas2019/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -398,36 +611,16 @@ Sensorimotor data streams and robots {#sec:white2015:sensorimotor} This chapter 
     <item>
       <title>sutton1988: Learning to predict by the methods of temporal differences</title>
       <link>https://mkschleg.github.io/braindump/sutton1988/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:46 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:31 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/sutton1988/</guid>
       <description>tags Reinforcement Learning source https://link.springer.com/article/10.1007/BF00115009  TLDR: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action. He finally proves convergence and optimality (under certain assumptions) for these types of methods.</description>
     </item>
     
     <item>
-      <title>chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</title>
-      <link>https://mkschleg.github.io/braindump/chandar2019/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:45 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/chandar2019/</guid>
-      <description>tags Recurrent Neural Network, Machine Learning source https://www.aaai.org/ojs/index.php/AAAI/article/view/4200  In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).
- The study and use of non-saturating activation functions (i.e. ReLU Activations) for the non-linear transfer functions They separate out a memory vector from the hidden state which can be a different size to the hidden state.</description>
-    </item>
-    
-    <item>
-      <title>chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</title>
-      <link>https://mkschleg.github.io/braindump/chung2014/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:45 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/chung2014/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
- tags Recurrent Neural Network, Machine Learning source Paper authors Chung, J., Gulcehre, C., Cho, K.</description>
-    </item>
-    
-    <item>
       <title>clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science</title>
       <link>https://mkschleg.github.io/braindump/clark2013/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:45 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:30 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/clark2013/</guid>
       <description>tags Predictive Processing, Perception source https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9  Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of (Rao 1999) and others in developing the brain as a inference machine.
@@ -437,7 +630,7 @@ Introduction: Prediction Machines From Helmholtz to action-oriented predictive p
     <item>
       <title>goudreau1994: First-order versus second-order single-layer recurrent neural networks</title>
       <link>https://mkschleg.github.io/braindump/goudreau1994/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:45 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:30 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/goudreau1994/</guid>
       <description>tags Recurrent Neural Network, Machine Learning source paper authors Goudreau, M., Giles, C., Chakradhar, S., &amp;amp; Chen, D. year 1994  This paper goes through the difference between first and second-order recurrent neural networks.
@@ -448,7 +641,7 @@ Notation:
     <item>
       <title>bubic2010: Prediction, cognition and the brain</title>
       <link>https://mkschleg.github.io/braindump/bubic2010/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:44 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:29 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/bubic2010/</guid>
       <description>tags Predictive Processing, Brain source https://www.frontiersin.org/articles/10.3389/fnhum.2010.00025/full  This paper acts as an introduction to the vast literature considering the brain as a predictive processing machine. Specifically, it is looking at terms which have been introduced such as prediction, prospection, anticipation, expectation, preparation, as well as violations of expectations or prediction errors. All these terms have different nuances and levels of abstraction associated with human behavior, and should be treated separately.</description>
@@ -457,7 +650,7 @@ Notation:
     <item>
       <title>byrd2019: What is the Effect of Importance Weighting in Deep Learning?</title>
       <link>https://mkschleg.github.io/braindump/byrd2019/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:44 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:29 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/byrd2019/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
@@ -465,55 +658,39 @@ Notation:
     </item>
     
     <item>
-      <title>Visual System</title>
-      <link>https://mkschleg.github.io/braindump/visual_system_/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:35 -0600</pubDate>
+      <title>chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</title>
+      <link>https://mkschleg.github.io/braindump/chandar2019/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:29 -0600</pubDate>
       
-      <guid>https://mkschleg.github.io/braindump/visual_system_/</guid>
-      <description>tags Brain, Neuroscience, Anatomy source https://nba.uth.tmc.edu/neuroscience/s2/chapter14.html  Components    Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science hosoya2005&amp;lsquo;s hosoya2005account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure.</description>
+      <guid>https://mkschleg.github.io/braindump/chandar2019/</guid>
+      <description>tags Recurrent Neural Network, Machine Learning source https://www.aaai.org/ojs/index.php/AAAI/article/view/4200  In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).
+ The study and use of non-saturating activation functions (i.e. ReLU Activations) for the non-linear transfer functions They separate out a memory vector from the hidden state which can be a different size to the hidden state.</description>
+    </item>
+    
+    <item>
+      <title>chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</title>
+      <link>https://mkschleg.github.io/braindump/chung2014/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:29 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/chung2014/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
+ tags Recurrent Neural Network, Machine Learning source Paper authors Chung, J., Gulcehre, C., Cho, K.</description>
     </item>
     
     <item>
       <title>Zettelkasten method</title>
       <link>https://mkschleg.github.io/braindump/zettelkasten_method/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:35 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:28 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/zettelkasten_method/</guid>
       <description>tags Note-Taking source zettelkasten.de  This is a method for note taking developed by Niklas Luhmann. There are several principles under which the method derives it&amp;rsquo;s workflow:
- Your notes should be atomic: This means topics should be placed into a single note, butthe scope of the topic should be small. This makes it easier to link and categorize throughout your notes. Your notes (or collection of notes) should be interconnected: This means you should continually make connections with notes previously written and place new notes into this structure.</description>
-    </item>
-    
-    <item>
-      <title>Rich Sutton</title>
-      <link>https://mkschleg.github.io/braindump/rich_sutton/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/rich_sutton/</guid>
-      <description>tags People, Reinforcement Learning website http://incompleteideas.net  Backlinks 1 Backlinks sutton1988: Learning to predict by the methods of temporal differences TLDR*: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action.</description>
-    </item>
-    
-    <item>
-      <title>Richard Feynman</title>
-      <link>https://mkschleg.github.io/braindump/richard_feynman/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/richard_feynman/</guid>
-      <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Quote from Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>Sign Theory</title>
-      <link>https://mkschleg.github.io/braindump/sign_theory/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/sign_theory/</guid>
-      <description>tags Philosophy, Brain, Perception  Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
+ Your notes should be atomic: This means topics should be placed into a single note, but the scope of the topic should be small. This makes it easier to link and categorize throughout your notes. Your notes (or collection of notes) should be interconnected: This means you should continually make connections with notes previously written and place new notes into this structure.</description>
     </item>
     
     <item>
       <title>Surjective</title>
       <link>https://mkschleg.github.io/braindump/surjective/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:27 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/surjective/</guid>
       <description>Backlinks 1 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.</description>
@@ -522,7 +699,7 @@ Notation:
     <item>
       <title>Temporal Difference Learning</title>
       <link>https://mkschleg.github.io/braindump/temporal_difference_learning/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:27 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/temporal_difference_learning/</guid>
       <description>tags Reinforcement Learning  This is a method for learning Value Functions and was first described by (Sutton 1988).
@@ -534,16 +711,87 @@ Backlinks 1 Backlinks sutton1988: Learning to predict by the methods of temporal
     <item>
       <title>Value Function</title>
       <link>https://mkschleg.github.io/braindump/value_function/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:34 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:27 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/value_function/</guid>
       <description>tags Reinforcement Learning  Backlinks 1 Backlinks Temporal Difference Learning This is a method for learning Value Functions and was first described by sutton1988.</description>
     </item>
     
     <item>
+      <title>Visual System</title>
+      <link>https://mkschleg.github.io/braindump/visual_system_/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:27 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/visual_system_/</guid>
+      <description>tags Brain, Neuroscience, Anatomy source https://nba.uth.tmc.edu/neuroscience/s2/chapter14.html  Components    Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science hosoya2005 &amp;lsquo;s hosoya2005 account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure.</description>
+    </item>
+    
+    <item>
+      <title>Recurrent Neural Network</title>
+      <link>https://mkschleg.github.io/braindump/recurrent_neural_network/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/recurrent_neural_network/</guid>
+      <description>tags Neural Network  See other extensions: LSTM, (Wu 2016), (Chandar 2019), (Goudreau 1994), (Sutskever 2011), (Cho 2014)
+(Wu 2016) Yuhuai Wu; Saizheng Zhang; Ying Zhang; Yoshua Bengio and Russ R Salakhutdinov, On {{Multiplicative Integration}} with {{Recurrent Neural Networks}}, (2016).
+(Chandar 2019) Sarath Chandar; Chinnadhurai Sankar; Eugene Vorontsov; Samira Ebrahimi Kahou and Yoshua Bengio, Towards {{Non}}-Saturating {{Recurrent Units}} for {{Modelling Long}}-Term {{Dependencies}}, {{AAAI}}(2019).
+(Goudreau 1994) M.W. Goudreau; C.L. Giles; S.</description>
+    </item>
+    
+    <item>
+      <title>ReLU Activation</title>
+      <link>https://mkschleg.github.io/braindump/relu_activation/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/relu_activation/</guid>
+      <description>tags Neural Network  A simple activation function which clips the output of the internal operations to be positive.
+\[ f(\mathbf{x}_i) = \begin{cases} \mathbf{x}_i, &amp;amp; \text{ for } \mathbf{x_i} \ge 0 \\\
+0 &amp;amp; \text{ o.w.} \end{cases} \]
+The main hallmark of this activation function is the smaller effect of the vanishing gradient problem in deep neural networks. This comes at a cost of stability and the greater risk of dead neurons.</description>
+    </item>
+    
+    <item>
+      <title>Rich Sutton</title>
+      <link>https://mkschleg.github.io/braindump/rich_sutton/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/rich_sutton/</guid>
+      <description>tags People, Reinforcement Learning website http://incompleteideas.net  Backlinks 1 Backlinks sutton1988: Learning to predict by the methods of temporal differences TLDR*: This is Rich Sutton&amp;lsquo;s seminal work where he establishes Temporal Difference as a class of methods for multi-step prediction, and contrasts these methods with previous approaches. He also introduces eligibility traces and relates these to other styles of supervised learning. He then provides several examples of TD working in action.</description>
+    </item>
+    
+    <item>
+      <title>Richard Feynman</title>
+      <link>https://mkschleg.github.io/braindump/richard_feynman/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/richard_feynman/</guid>
+      <description>Backlinks 1 Backlinks How to Take Smart Notes with Org-mode Quote from Richard Feynman : &amp;ldquo;Notes aren&amp;rsquo;t a record of my thinking process. They are my thinking process.&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Sign Theory</title>
+      <link>https://mkschleg.github.io/braindump/sign_theory/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:26 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/sign_theory/</guid>
+      <description>tags Philosophy, Brain, Perception  Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
+    </item>
+    
+    <item>
+      <title>LSTM</title>
+      <link>https://mkschleg.github.io/braindump/lstm/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:25 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/lstm/</guid>
+      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source https://colah.github.io/posts/2015-08-Understanding-LSTMs/  Backlinks 5 Backlinks Recurrent Neural Network See other extensions: LSTM, wu2016, chandar2019, goudreau1994, sutskever2011, cho2014
+chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).
+chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling This paper does an empirical evaluation of several recurrent gates including LSTMs hochreiter1997, GRU cho2014, and Vanilla RNNs.</description>
+    </item>
+    
+    <item>
       <title>Matrix</title>
       <link>https://mkschleg.github.io/braindump/matrix/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:33 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:25 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/matrix/</guid>
       <description>tags Linear Algebra, Math  We star with a set of equations with nine coefficients, three unknowns, and three right-hand sides.
@@ -556,7 +804,7 @@ We represent the right hand side with a column vector (or a 1 by 3 matrix). The 
     <item>
       <title>Morphism</title>
       <link>https://mkschleg.github.io/braindump/morphism/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:33 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:25 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/morphism/</guid>
       <description>tags Math, Category Theory source https://en.wikipedia.org/wiki/Morphism  A morphism is a map between mathematical objects of the same type. This map is structure preserving.
@@ -566,50 +814,16 @@ Backlinks 1 Backlinks Isomorphism definition*: An isomorphism is a mapping betwe
     <item>
       <title>Preimage</title>
       <link>https://mkschleg.github.io/braindump/preimage/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:33 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:25 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/preimage/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Recurrent Neural Network</title>
-      <link>https://mkschleg.github.io/braindump/recurrent_neural_network/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:33 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/recurrent_neural_network/</guid>
-      <description>tags Neural Network  See other extensions: LSTM, (Wu 2016), (Chandar 2019), (Goudreau 1994), (Sutskever 2011), (Cho 2014)
-(Wu 2016) Yuhuai Wu; Saizheng Zhang; Ying Zhang; Yoshua Bengio and Russ R Salakhutdinov, On {{Multiplicative Integration}} with {{Recurrent Neural Networks}}, (2016).
-(Chandar 2019) Sarath Chandar; Chinnadhurai Sankar; Eugene Vorontsov; Samira Ebrahimi Kahou and Yoshua Bengio, Towards {{Non}}-Saturating {{Recurrent Units}} for {{Modelling Long}}-Term {{Dependencies}}, {{AAAI}}(2019).
-(Goudreau 1994) M.W. Goudreau; C.L. Giles; S.</description>
-    </item>
-    
-    <item>
-      <title>ReLU Activation</title>
-      <link>https://mkschleg.github.io/braindump/relu_activation/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:33 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/relu_activation/</guid>
-      <description>tags Neural Network  A simple activation function which clips the output of the internal operations to be positive.
-\[ f(\mathbf{x}_i) = \begin{cases} \mathbf{x}_i, &amp;amp; \text{ for } \mathbf{x_i} \ge 0 \\\
-0 &amp;amp; \text{ o.w.} \end{cases} \]
-The main hallmark of this activation function is the smaller effect of the vanishing gradient problem in deep neural networks. This comes at a cost of stability and the greater risk of dead neurons.</description>
-    </item>
-    
-    <item>
-      <title>Hierarchical Predictive Coding</title>
-      <link>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</guid>
-      <description>Backlinks 6 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science This work by brown2011generalizes the basic Hierarchical Predictive Coding model to include action. The fundamental attraction of these accounts lies in their ability to offer a deeply unified account of perception, cognition, and action.
-The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &amp;ldquo;virtual version&amp;rdquo; of the sensory data via a deep multilevel cascade lies at the heart of Hierarchical Predictive Coding rao1999.</description>
-    </item>
-    
-    <item>
       <title>Ideomotor Principle</title>
       <link>https://mkschleg.github.io/braindump/ideomotor_principle/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:24 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/ideomotor_principle/</guid>
       <description>Backlinks 1 Backlinks prinz1990: A Common Coding Approach to Perception and Action In this chapter, Prinz goes over evidence suggesting a shared coding between action and perception. He lays out empirical and theoretical evidence for a shared coding, and criticism for the separate coding approach. This is more directly linked to the Ideomotor Principle, and is some good evidence for having perception being dependent or apart of the behavioral responses.</description>
@@ -618,7 +832,7 @@ The strategy of using top-down connections to try to generate, using high-level 
     <item>
       <title>Image</title>
       <link>https://mkschleg.github.io/braindump/image/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:24 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/image/</guid>
       <description>Backlinks 2 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.
@@ -628,7 +842,7 @@ A bijection is a function between two sets where each element in the preimage ha
     <item>
       <title>Injective</title>
       <link>https://mkschleg.github.io/braindump/injective/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:24 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/injective/</guid>
       <description>Backlinks 1 Backlinks Bijective A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.</description>
@@ -637,7 +851,7 @@ A bijection is a function between two sets where each element in the preimage ha
     <item>
       <title>Isomorphism</title>
       <link>https://mkschleg.github.io/braindump/isomorph/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:24 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/isomorph/</guid>
       <description>tags Math, Category Theory  definition: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping). More formally an isomorphism is a bijective morphism.
@@ -645,39 +859,9 @@ Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agen
     </item>
     
     <item>
-      <title>LSTM</title>
-      <link>https://mkschleg.github.io/braindump/lstm/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:32 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/lstm/</guid>
-      <description>tags Recurrent Neural Network, Neural Network, Machine Learning source https://colah.github.io/posts/2015-08-Understanding-LSTMs/  Backlinks 5 Backlinks Recurrent Neural Network See other extensions: LSTM, wu2016, chandar2019, goudreau1994, sutskever2011, cho2014chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies In this paper they introduce a new recurrent cell named &amp;ldquo;NRU&amp;rdquo; for Non-saturating Recurrent Unit. There are two main contributions in this architecture which make it unique from other cells (i.e LSTM).
-chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling This paper does an empirical evaluation of several recurrent gates including LSTMs hochreiter1997, GRU cho2014, and Vanilla RNNs.</description>
-    </item>
-    
-    <item>
-      <title>Determinant</title>
-      <link>https://mkschleg.github.io/braindump/determinant/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/determinant/</guid>
-      <description>tags Linear Algebra, Math  Uses There are four main uses for the determinant of a Matrix defined by a series of equations.
- They test for invertibility. If the determinant of A is zero, then A is singular. If the determinant is non-zero than the matrix can be inverted, meaning there is at least one solution to the set of equations. The determinant of a matrix is the volume of a box in n-dimensional space.</description>
-    </item>
-    
-    <item>
-      <title>Efferent Codes</title>
-      <link>https://mkschleg.github.io/braindump/efferent_codes/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/efferent_codes/</guid>
-      <description>tags Brain, Neuroscience source https://en.wikipedia.org/wiki/Efferent%5Fnerve%5Ffiber  Efferent codes or nerve fibers are outgoing or axonal projections which exit a region. Generally these are going to other parts of the brain, or they are going to the periphery (i.e. extremities). These are the opposite of Afferent Codes.
-Backlinks 2 Backlinks Afferent Codes Afferent codes (or afferent nerve fibers) are information (or axons) which carry information from the periphery (i.e. the extremities) to the central nervous system.</description>
-    </item>
-    
-    <item>
       <title>Free-Energy Principle</title>
       <link>https://mkschleg.github.io/braindump/free_energy_principle/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:23 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/free_energy_principle/</guid>
       <description>tags Predictive Processing,  Backlinks 1 Backlinks clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science Free-Energy Principle: all the quantities that can change; i.e. that are part of the system, will change to minimize free-energy.</description>
@@ -686,7 +870,7 @@ Backlinks 2 Backlinks Afferent Codes Afferent codes (or afferent nerve fibers) a
     <item>
       <title>Gaussian Elimination</title>
       <link>https://mkschleg.github.io/braindump/gaussian_elimination/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:23 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/gaussian_elimination/</guid>
       <description>tags Linear Algebra, Math  Elimination is all about solving linear equations (which is central to linear algebra generally). As an example we have two equations with two unknowns
@@ -699,7 +883,7 @@ To solve for the unknowns $x$ and $y$ we can use elimination:
     <item>
       <title>General Value Functions</title>
       <link>https://mkschleg.github.io/braindump/general_value_functions/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:23 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/general_value_functions/</guid>
       <description>Backlinks 4 Backlinks sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction Reinforcement Learning, General Value Functions
@@ -711,7 +895,7 @@ Reinforcement Learning General Value Functions</description>
     <item>
       <title>Hadamard product</title>
       <link>https://mkschleg.github.io/braindump/hadamard_product/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:23 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/hadamard_product/</guid>
       <description>tags Linear Algebra  This is an element wise product between two vectors or matrices.
@@ -728,26 +912,16 @@ It is quite simply the element-wise produce between two matrices: \(\mathcal{A},
     <item>
       <title>Hermann von Helmholtz</title>
       <link>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:31 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:23 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</guid>
       <description>tags People source https://plato.stanford.edu/entries/hermann-helmholtz/  Backlinks 3 Backlinks Sign Theory Sign theory is a theory of perception developed by Hermann von Helmholtz of how the brain processes and propagates information (i.e. a theory of perception). The main contribution of the theory is that stimuli present themselves as signals and those signals are modified as they propagate forward. The mind makes a series of &amp;ldquo;unconscious inferences&amp;rdquo;, or mental adjustments, to construct a &amp;ldquo;picture&amp;rdquo; of the experience.</description>
     </item>
     
     <item>
-      <title>ADAM</title>
-      <link>https://mkschleg.github.io/braindump/adam/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:30 -0600</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/adam/</guid>
-      <description>tags Optimizers, Neural Network  An optimizer which effectively combines RMSProp and Momentum.
-Backlinks 1 Backlinks wu2016: On Multiplicative Integration with Recurrent Neural Networks First they look at the gradients when the RNNs have linear activation mappings (to focus on the internal mechanisms). They measure the log of the L2-norm of the gradient for each epoch (averaged over the training set) using the Penn-Treebank dataset using the ADAM optimizer. They are able to show the norm of the gradient grows much more in vanilla architecture (using additive operations) vs what occurs in the new architecture.</description>
-    </item>
-    
-    <item>
       <title>Afferent Codes</title>
       <link>https://mkschleg.github.io/braindump/afferent_codes/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:30 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:22 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/afferent_codes/</guid>
       <description>tags Brain, Neuroscience source https://en.wikipedia.org/wiki/Afferent%5Fnerve%5Ffiber  Afferent codes (or afferent nerve fibers) are information (or axons) which carry information from the periphery (i.e. the extremities) to the central nervous system. These flow in the opposite direction of Efferent Codes.
@@ -757,7 +931,7 @@ Backlinks 2 Backlinks Efferent Codes Efferent codes or nerve fibers are outgoing
     <item>
       <title>Bijective</title>
       <link>https://mkschleg.github.io/braindump/bijective/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:30 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:22 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/bijective/</guid>
       <description>tags Math source https://en.wikipedia.org/wiki/Bijection  A bijection is a function between two sets where each element in the preimage has exactly one element in the image and visa versa. This means all elements in the preimage and all objects in the image have a unique pair which the function transforms from preimage set to image set. A bijective mapping is both surjective and injective.
@@ -767,11 +941,41 @@ Backlinks 1 Backlinks Isomorphism definition*: An isomorphism is a mapping betwe
     <item>
       <title>Binocular rivalry</title>
       <link>https://mkschleg.github.io/braindump/binocular_rivalry/</link>
-      <pubDate>Mon, 06 Jul 2020 13:48:30 -0600</pubDate>
+      <pubDate>Tue, 07 Jul 2020 11:26:22 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/binocular_rivalry/</guid>
       <description>tags Brain, Perception source https://www.sciencedirect.com/topics/neuroscience/binocular-rivalry  Also called Binocular contour rivalry
 Discovered by Porta in 1593 (Wade 1996). The essence is the interplay of perception with vision when you separate the visual stimuli of each eye. Each eye is presented with a separate image with a partition separating the effective visual field. A continuous cycle of the two images being recognizable (each in its own turn) with brief periods of mixed forms appearing.</description>
+    </item>
+    
+    <item>
+      <title>Determinant</title>
+      <link>https://mkschleg.github.io/braindump/determinant/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:22 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/determinant/</guid>
+      <description>tags Linear Algebra, Math  Uses There are four main uses for the determinant of a Matrix defined by a series of equations.
+ They test for invertibility. If the determinant of A is zero, then A is singular. If the determinant is non-zero than the matrix can be inverted, meaning there is at least one solution to the set of equations. The determinant of a matrix is the volume of a box in n-dimensional space.</description>
+    </item>
+    
+    <item>
+      <title>Efferent Codes</title>
+      <link>https://mkschleg.github.io/braindump/efferent_codes/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:22 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/efferent_codes/</guid>
+      <description>tags Brain, Neuroscience source https://en.wikipedia.org/wiki/Efferent%5Fnerve%5Ffiber  Efferent codes or nerve fibers are outgoing or axonal projections which exit a region. Generally these are going to other parts of the brain, or they are going to the periphery (i.e. extremities). These are the opposite of Afferent Codes.
+Backlinks 2 Backlinks Afferent Codes Afferent codes (or afferent nerve fibers) are information (or axons) which carry information from the periphery (i.e. the extremities) to the central nervous system.</description>
+    </item>
+    
+    <item>
+      <title>ADAM</title>
+      <link>https://mkschleg.github.io/braindump/adam/</link>
+      <pubDate>Tue, 07 Jul 2020 11:26:21 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/adam/</guid>
+      <description>tags Optimizers, Neural Network  An optimizer which effectively combines RMSProp and Momentum.
+Backlinks 1 Backlinks wu2016: On Multiplicative Integration with Recurrent Neural Networks First they look at the gradients when the RNNs have linear activation mappings (to focus on the internal mechanisms). They measure the log of the L2-norm of the gradient for each epoch (averaged over the training set) using the Penn-Treebank dataset using the ADAM optimizer. They are able to show the norm of the gradient grows much more in vanilla architecture (using additive operations) vs what occurs in the new architecture.</description>
     </item>
     
   </channel>

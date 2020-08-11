@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/spratling2017_a_review_of_predictive_coding_algorithms.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/spratling2017/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/spratling2017/">
+  <meta property="og:title" content="spratling2017: A review of predictive coding algorithms | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-07-27T13:05:06-06:00">
+  <meta property="article:modified_time" content="2020-07-27T13:05:06-06:00">
+  
+
+  <title>spratling2017: A review of predictive coding algorithms | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/spratling2017/">spratling2017: A review of predictive coding algorithms</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-07-27 13:05:06 -0600 MDT" itemprop="datePublished dateModified">
+      Jul 27, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a></dd>
+<dt>source</dt>
+<dd><a href="https://www.sciencedirect.com/science/article/pii/S027826261530035X?casa%5Ftoken=InNrJSl5f4QAAAAA:PBmcJF887TTbvY-o5oAjUxTxRSc2zJh8OtlXDO61erpnGmXMzlHRVeFeAVEc4Sb0ISGM%5FsYvYUg">link</a></dd>
+<dt>authors</dt>
+<dd>Spratling, M. W.</dd>
+<dt>year</dt>
+<dd>2017</dd>
+</dl>
+<h2 id="linear-predictive-coding--digital-signal-processing">Linear Predictive Coding (digital signal processing)</h2>
+<p>This form of predictive coding was designed for the manipulation and analysis of a continuous signal sampled discretely (i.e. a &ldquo;time-series&rdquo; signal). Linear predictive coding assumes that the sample at a given time-step can be predicted according to the previous n steps through a linear approximator:</p>
+<p>\[
+x_t \approx r_t = w_1 x_{t-1} + w_2 x_{t-2} + \ldots + w_n x_{t-n}
+\]</p>
+<p>where \(x_t\) is the signal of interest at time step \(t\) and the vector \(\wvec \in \reals\) is the linear model learned through linear regression or some other algorithm to minimize the sum of squared errors of the time-series in a certain frame determined by the discrete set \(\boldsymbol{\tau}\)</p>
+<p>\[
+\mathcal{L} = \sum_{t \in \boldsymbol{\tau}} (x_t - r_t)^2
+\]</p>
+<p>There are several classical time-series approaches which have been developed the learn this kind of signal (i.e. <a href="/braindump/autocorrelation/">Autocorrelation</a>).</p>
+<h2 id="predictive-coding-in-the-retina">Predictive Coding in the Retina</h2>
+<p>The core idea of modeling the Retinal using predictive coding is that the predictable component of the signal is removed from the signal and the residual (i.e. the error) is transmitted. This reduces the effective range of the transmitted signal allowing for more efficient transmission.</p>
+<p>The residual error is simple
+\[
+e_t = x_t - r_t
+\]</p>
+<p>While initially discussed in terms of temporal predictions, this has also been formulated for spatial prediction. This is to say the predictive local intensity value is calculated from intensity values measured at nearby locations as well as those with preceding time (Srinivasan 1982).</p>
+<p>It has been proposed that the coefficients average the intensity of light, and this average is subtracted from the retinal signals (Srinivasan 1982). This is an interesting take, and quite possible for the retina, specifically in understanding the differences between low light and high light settings possibly not appearing later down stream.</p>
+<p>The process can be thought of through the lens of redundancy reduction or said to be an <a href="/braindump/efficient_coding/">Efficient Coding</a>.</p>
+<div class="note">
+  <div></div>
+<p>If only the residual error is transmitted, then the receiver (in the case of the retina this would be the lateral geniculate nucleaus and cortex) cannot recover the components of the signal that have been removed. Redundancy is not being reduced, but entirely removed.</p>
+</div>
+<h2 id="predictive-coding-in-the-cortex-rao-and-ballard">Predictive Coding in the Cortex: Rao and Ballard</h2>
+<p><a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s model for cortical function proposes the cortex is built of several layers of predictive coding networks. Each layer implements the predictive coding algorithm described above for spatial inputs (as far as I can tell) instead of time-series inputs, although both could be used. The output of each cortical region is the residual error. The feed forward connections are believed to transmit these errors while the cortical feedback connections are predicted &ldquo;causes&rdquo;. This hypothesizes that cortical feedback connections act to suppress information which is predicted by higher-level cortical region.</p>
+<p>The linear version of <a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s algorithm is:</p>
+<p>\begin{align*}
+\yvec^{Si} &amp;\leftarrow \nu \yvec^{Si} + \mu \Wmat^{Si} \evec^{Si-1} - \eta \evec^{Si} \\\<br>
+\evec^{Si-1} &amp;= \yvec^{Si-1} - \Vmat^{Si}\yvec^{Si}.
+\end{align*}</p>
+<p>where \(\nu\), \(\eta\), and \(\mu\) are non-negative parameters and \(\Wmat = \Vmat^\top\)</p>
+<h2 id="predictive-coding-in-the-cortex-predcoding-biased-competation-dim">Predictive Coding in the Cortex: PredCoding/Biased Competation - DIM</h2>
+<p>This is a reformulation of <a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s PC model to be compatible w/ <a href="/braindump/biased_competition/">Biased Competition</a> theories of cortical function. Specifically,</p>
+<p>\begin{align*}
+\evec &amp;= \xvec \oslash (\epsilon_2 + \Vmat \yvec) \\\<br>
+\yvec &amp;\leftarrow (\epsilon_1 + \yvec) \otimes \Wmat\evec
+\end{align*}</p>
+<p>This formulation solves several issues with the <a href="/braindump/rao1999/">(Rao 1999)</a> proposal:</p>
+<ol>
+<li>No longer requires neurons be able to produce both positive and negative firing rates. In the new algorithm activations are bounded to be non-negative inherently.</li>
+<li>PC/BC-DIM is related to a particular method of performing non-negative matrix factorisation (NMF), and thus gets around the need to use gradient descent to find the coefficient values (which can be slow or unstable if \(\mu\) is small or large respectively). This stability and speed has enabled the development of large scale simulations containing 10s of millions of neurons and 100s of billions of connections.</li>
+<li>A different grouping of neurons which is more biologically feasible.</li>
+<li>The requirement that \(\Wmat = \Vmat^\top\) is related w/ the PC/BC-DIM variant.</li>
+</ol>
+<h2 id="predictive-coding-in-the-cortex-free-energy">Predictive Coding in the Cortex: Free energy</h2>
+<p>This scheme is similar to <a href="/braindump/rao1999/">(Rao 1999)</a>, but unlike the above algorithms the variables in the free energy model represent the statistics of the signals rather than the values of the signals. The network is thus not representing individual samples, but reconstructs the underlying probability distribution (or at least what is reconstructible given the observations).</p>
+<h2 id="references">References</h2>
+<p>(Srinivasan 1982)  Mandyam Veerambudi Srinivasan;  Simon Barry Laughlin;  A. Dubs and  George Adrian Horridge, <em>Predictive Coding: A Fresh View of Inhibition in the Retina</em>, Proceedings of the Royal Society of London. Series B. Biological Sciences, , pp.  (1982). <nil>.</p>
+<p>(Rao 1999)  Rajesh P. N. Rao and  Dana H. Ballard, <em>Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects</em>, Nature Neuroscience, , pp.  (1999). <nil>.</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
