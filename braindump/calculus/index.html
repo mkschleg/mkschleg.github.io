@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/calculus.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/calculus/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/calculus/">
+  <meta property="og:title" content="Calculus | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2020-08-26T09:01:42-06:00">
+  <meta property="article:modified_time" content="2020-08-26T09:01:42-06:00">
+  
+
+  <title>Calculus | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/calculus/">Calculus</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2020-08-26 09:01:42 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 26, 2020
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/math/">Math</a></dd>
+</dl>
+<p>source
+:</p>
+<h2 id="introduction">Introduction</h2>
+<p>Calculus is a large subject, and a subject with many interpretations and derivations. Instead of trying to cover all such interpretations, we will look at a more geometric based interpretation with some intuition derived from a physical perspective. It is my hard felt belief that many of these topics are fully realized and appreciated in the study of physical systems (either classical mechanics or electrostatics/electrodynamics). While I could have created this page of notes entirely from the perspective of a physicist, tackling the more general interpretations and forms of these constructs is more useful for the typical machine learning researcher.</p>
+<p>In these notes, I assume you have been exposed to several concepts in mathematics:</p>
+<ul>
+<li>Algebra</li>
+<li>Limits (including L&rsquo;Hopital&rsquo;s rule)</li>
+<li>Geometry</li>
+</ul>
+<p>In the final section (section <a href="#CFMLR:ML">CFMLR:ML</a>), there will be many topics discussed that are critical for doing machine learning research. We assume some passing knowledge of these topics</p>
+<ul>
+<li>Probability and Statistics</li>
+<li>Deep Learning</li>
+<li>Supervised Learning</li>
+</ul>
+<p>I&rsquo;ve separated these notes into several sections (sections you would often see in any introductory calculus text):</p>
+<ul>
+<li>Differential Calculus: Building up intuition and definitions for derivatives, gradients, and higher order operations.</li>
+<li>Integral Calculus: Starting with the fundamental theory of calculus we will uncover the relation between rate of change and the area under the curve.</li>
+<li>Calculus for Machine Learning: Now that we have some intuition and rigor built up around the concepts of calculus, we will discuss some of the most used notions from a machine learning context.</li>
+</ul>
+<h3 id="resources-used-while-making-these-notes">Resources used while making these notes:</h3>
+<p>I don&rsquo;t do a good job at citing various calculations, or concepts. Much of what I&rsquo;ve learned about this subject has come from my physics background with two main resources:</p>
+<ul>
+<li>An introduction to Electromagnitism</li>
+<li>Classical Mechanics.</li>
+</ul>
+<p>I also pulled much of the formal language from</p>
+<ul>
+<li>Vector Calculus</li>
+<li>Wikipedia</li>
+<li>Mathpedia</li>
+<li>Wolframalpha</li>
+</ul>
+<p>This should not be used as a primary resource for calculus or as a substitution for a more formal book, but a first introduction to the ideas of calculus and how they can apply to machine learning. As such there are many things missing, and many nuanced ideas flattened to be easily digested by many types of Machine Learning researchers.</p>
+<h2 id="differential-calculus-cfmlrdiff">Differential Calculus {#CFMLR:DIFF}</h2>
+<p>If you have never taken a calculus class before, you may be wandering to yourself &ldquo;what is a derivative or a gradient?&rdquo; How do they relate to integrals? If you are a machine learning researcher, you may be asking &ldquo;I know I need gradients to perform (Stochastic) Gradient Descent, but why should we use the gradient and not some other direction?&rdquo; These are all good questions, and answerable within the context of these notes. This section will dive into the first question.</p>
+<p>We will start our discussion with single variate derivatives to make visualization and intuition much easier. As we get into higher dimensional functions (really anything beyond 4 or 5) intuition tends to fly out the window and visualization becomes mostly impossible (at least visualization without projection). With the tools and intuition we build in the single variate case, we will be able to reason about higher dimensional functions. This gives us a powerful tool to understand and work with high dimensional data and function approximators without needing to visualize these functions. If you are familiar with differential calculus, feel free to move on to the next section, but encourage you to read these sections as a review (or to feel pleased about how far you&rsquo;ve come in your mathematical understanding).</p>
+<p>We will then move to higher dimensional functions, discuss higher order (more than one derivative) operators, different uses of the gradient operator, a special case for non-smooth functions, and finally a discussion on several useful techniques for taking derivatives.</p>
+<h3 id="single-variate-derivatives">Single variate derivatives</h3>
+<p>Lets start by thinking about a hard ball being dropped from a reasonable distance, say at the top of a ladder. Say we wanted to come up with some function of how long the ball will fall in a certain amount of time. One way to do this (requiring the least amount of experimental setup) would be to measure the time a ball dropped at varying heights and then fit this data to some function of time. If we were to take these measurements, the simplest function (approximating the distance rather well) is a parabola</p>
+<p>\[\text{Distance the ball travels after dropping} = f(t) = c t^2 \quad \text{where } c \in \reals, t \ge 0\].</p>
+<aside>
+  <aside></aside>
+<p>You may be asking where does the ball hit the ground (i.e. what is my stopping condition?). The stopping condition will be the distance the ball has to travel to hit the ground, or the initial position of the ball relative to the release point. While this could be modeled in the above equation, it is easier to just ignore this and reason about a ball that is falling infinitely (with no air resistance) with gravity set at sea level. Trust me when I say these assumptions make the calculations significantly easier to manage, and are more than reasonable for our purposes here.</p>
+<p>\vspace{0.2cm}</p>
+<p>You may also be wondering about what the constant is representing. Well under normal conditions on earth (i.e. sea level) \(c\approx \frac{1}{2} * 9.8\frac{m}{s}\).  You can derive this quantity from your measurements to a reasonable amount of accuracy.</p>
+</aside>
+<p>Given this equations, we could ask ourselves how much further has the ball fallen at some time \(t=2\). This is quite easy to calculate \(f(t=2) = c * 4\). At \(t=0\), we trivially shouldn&rsquo;t fall any distance \(f(t=0) = c*0 = 0\). We may also ask, starting at a certain time \(t\), how much distance will I fall after some amount of time \(dt\). Many of you may be thinking &ldquo;isn&rsquo;t this related to the velocity or speed of the ball?&quot;, and the answer is a resounding YES! But obviously not the velocity of the ball at time \(t\) or at time \(t+dt\). So what would the velocity be? Well if you remember from algebra, we can find the rate of change between two points as the slope of the line intersecting both points</p>
+<p>\[\text{Rate of change} = \frac{f(t+dt) - f(t)}{t + dt - t} = \frac{f(t+dt) - f(t)}{dt}\].</p>
+<p>This will give us the average rate of change or average velocity of the ball over the interval \([t+dt,t]\). Another reasonable question you may ask yourself is, &ldquo;how would I get the exact velocity of the ball at time \(t\)?&quot;. This means what happens to my velocity equation as my change in time decreases to zero. We can&rsquo;t just set \(dt=0\) and substitute in, as this would be undefined! Instead we must look at the trend of the function as \(dt\) approaches 0. This is known as a limit, leading us to</p>
+<p>\[\text{velocity}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \].</p>
+<p>This is the exact definition of a derivative, and we can state</p>
+<p>\[\frac{d f(t)}{dt} = f^\prime(t) = \dot{f}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \].</p>
+<aside>
+  <aside></aside>
+<p>\textbf{A Note on Notation}: We will mostly be using Leibniz&rsquo;s notation (\(\frac{d f(t)}{dt}\)) as this easily transitions to higher dimensional functions. But it would be good to know several notation conventions exist and are widely used:</p>
+<ul>
+<li>Newton Notation: \(\dot{f}(t) \defeq \frac{d f(t)}{dt}\)</li>
+<li>Lagrange Notation: \(f^\prime(t) \defeq \frac{d f(t)}{dt}\)</li>
+</ul>
+<p>It should be clear why Leibniz&rsquo;s notation is preferred, as it clearly denotes the variable our derivative is being taken over. This will become important when we move to the multi-variate case!</p>
+</aside>
+<p>You can imagine the two points you are drawing a line through getting extremely close together until they become the same point! This quantity specifies the slope of the tangent line to the function \(f(t)\). We can now calculate our first derivative together (using our parabola function)</p>
+<p>\begin{align*}
+\frac{d f(t)}{dt} &amp;= \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \\\<br>
+&amp;= \lim_{dt \rightarrow 0} \frac{c(t+dt)^2-ct^2}{dt}	\\\<br>
+&amp;= \lim_{dt \rightarrow 0} \frac{ct^2+ 2ct*dt + dt^2-ct^2}{dt}\\\<br>
+&amp;= \lim_{dt \rightarrow 0} \frac{2ct*dt + dt^2}{dt}\\\<br>
+&amp;= \lim_{dt \rightarrow 0} 2ct + dt\\\<br>
+\frac{d f(t)}{dt} &amp;= 2ct
+\end{align*}</p>
+<p>Because we used a variable \(t\) instead of an actual value, we can now ask what velocity our ball is at any place along the parabola!</p>
+<aside>
+  <aside></aside>
+<p>Another way of thinking about a derivative is to consider \(dx\) as some perturbation to our function \(f(x)\). The derivative tells us for a given input \(x\), how \(f(x)\) will vary over these perturbations (i.e. how f(x) will vary along the tangent line). This is an incredibly useful value for machine learning as we will see later, and tells us the best search direction in optimizing our function approximators.</p>
+</aside>
+<p>We can now make this a little bit more formal (although we have covered all the important bits above).</p>
+<div class="definition">
+  <div></div>
+<p>\textbf{Derivative: } Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
+\[\lim_{dx-&gt;0^-} \frac{f(a+dx) - f(a)}{dx} = \lim_{dx-&gt;0^+} \frac{f(a+dx) - f(a)}{dx}\].</p>
+<p>We say \(f(x)\) is of differentiability class \(C^{k&gt;1}\) if it is differentiable at all \(a \in domain(f)\). We define the derivative with respect to its input \(x\) as:
+\[\frac{d f(x)}{dx} = \lim_{dx-&gt;0} \frac{f(x+dx) - f(x)}{dx}\]</p>
+</div>
+<!--list-separator-->
+<ul>
+<li>
+<p>Second order single-variate derivatives</p>
+<p>We know now that the derivative of a function is the instantaneous rate of change, or in the physical context the derivative of an object&rsquo;s position function is the velocity of the object. The next question we should ask is &ldquo;what happens if I take the derivative again?&rdquo; Well, the answer is quite straightforward: the derivative of the velocity is the instantaneous rate of change of the velocity at time t or the acceleration.</p>
+<p>If we vary the parameter of our function \(f(t)\) from left to right, the double derivative gives us a sense of the trend of the function. If the double derivative is positive we would expect the velocity of our function to be increasing meaning our function should eventually be heading towards positive infinity. The inverse is true when the double derivative is negative. In more concrete terms, the second derivative is measuring the <strong>concavity</strong> of our function.</p>
+ <div class="definition">
+   <div></div>
+<p>\textbf{Concavity} The concavity (or convexity) of a function is an important concept for machine learning and optimization.</p>
+ </div>
+<p>We can determine if our function \(f(x)\) is concave up (convex) or concave down  at any point in its domain \(x^\prime\) using the value of the second derivative. This is a very simple procedure: if the second derivative is positive \(\frac{d^2 f(x^\prime)}{dx^2} &gt; 0\) then the function is concave up (also known as convex), if the second derivative is negative \(\frac{d^2 f(x^\prime)}{dx^2} &lt; 0\) the second derivative is concave down. What if the second derivative is zero \(\frac{d^2 f(x^\prime)}{dx^2} = 0\)?</p>
+ <div class="definition">
+   <div></div>
+<p>\textbf{Inflection point} any point where the second derivative of our function is zero and there is a sign change. A bit more formally with \(\epsilon\) as a small positive real number, \(x^\prime\) is an inflection point of a function \(f(x)\) if</p>
+<p>\begin{align*}
+&amp;\frac{d^2 f(x^\prime)}{dx^2} = 0 \\\<br>
+&amp;sign(\frac{d^2 f(x^\prime + \epsilon)}{dx^2}) \neq sign(\frac{d^2 f(x^\prime - \epsilon)}{dx^2})
+\end{align*}</p>
+<p>This only holds as long as \(x^\prime + \epsilon\) and \(x^\prime + \epsilon\) are in the neighborhood of \(x^\prime\). There are other sufficiency conditions for an inflection point, which may be covered at a latter time in these notes.</p>
+ </div>
+ <aside>
+   <aside></aside>
+<p>We can start constructing classes of functions according to their derivatives, which we denote as differentiability class or smoothness class. We first start with the \(C^{0}\) set of functions which contains all continuous functions. The next class \(C^{1}\) contains all functions such that their derivatives are in \(C^{0}\) (i.e. continuous). We can define the kth class as \(C^{k}\) with functions whose \([1, 2, \ldots, kth]\) -derivatives are continuous. We declare a function smooth if it is infinitely differentiable and of the set \(C^{\infty}\). One such function is the exponential, also the cosine and sinusoidal functions.</p>
+ </aside>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>A note on extrema</p>
+<p>With the derivative and second derivative, we have finally built up enough tools to find the extrema of our function! An extrema point of a function are broken into two categories: minima and maxima. We can also specify whether these extrema hold over the functions domain (i.e. they are globally extreme) or if they are only extreme to the local region of the point. A function may have many local extrema, but will only have up to one global minima and up to one global maxima. Also, any given function is not guaranteed to have any extrema (for instance a line with slope \(\neq 0\))!</p>
+<p>If you stare at a visual representation of our parabola function \(f(t) = at^2 + bt + c\) it is quite clear where the minima is, but how do we find this for any function we could possibly dream up? You may notice at the mimima our function changes direction, and in fact this is a shared property of all extrema (but not a sufficient condition). We can construct a set of candidate points for a functions extrema \(\tilde{E}_x \subset domain(f)\) by finding the set of points where the derivative is zero:</p>
+<p>\[\text{The set of candidate extrema } E_x = \{x \in domain(f) \text{ such that } \frac{d f(x)}{dx} = 0\}\].</p>
+<p>Now that we have our candidate set \(\tilde{E}_x\) we need to test to see if these points are minima or maxima. The most straightforward method of doing this is through the second derivative test! From our discussion above it should be clear what this entails, but for completeness a point \(x^\prime \in \tilde{E}_x\) is a</p>
+<ul>
+<li>a minima if \(\frac{d^2 f(x^\prime)}{dx^2} &gt; 0\)</li>
+<li>a maxima if \(\frac{d^2 f(x^\prime)}{dx^2} &lt; 0\).</li>
+</ul>
+<p>Unfortunately, this test is insufficient to check for minima, or maxima if the second derivative is zero! In these instances you will need to check higher order tests to determine the type of extrema. These higher order tests are out of the scope of these notes, but are easily found in any calculus textbook or online.</p>
+</li>
+</ul>
+<h3 id="the-gradient-operator">The Gradient Operator</h3>
+<p>We now know how to take the derivative with respect to a single variable, and actually this gives us enough tooling to move straight to higher dimensions! We are going to make some assumptions about our function which we will loosen as we progress in our study. First, our function \(f(\cdot)\) is continuous and smooth. We can actually specify how smooth a function is using derivatives, but we will discuss this later. Our function also has a range \(\in \reals\). This means it can take any value in the real number set (or a subset of this) and is a scalar value. We will look at what happens if our function is a vector in the next section.</p>
+<p>Now that the we have our assumptions specified, lets think about what a derivative may mean with higher dimensional domains. How might we do this? We could imagine perturbing each dimension jointly. Say for a two parameter function \(f(x,y)\), we could perturb along the vector \([dx, dy]\) and take the limits together using the above formulation (assuming our space follows the Euclidean metric)</p>
+<p>\[\lim_{dx \rightarrow 0} \lim_{dy \rightarrow 0} \frac{f(x+dx, y+dy) - f(x,y)}{\sqrt{(x+dx - x)^2 + (y+dy - y)^2}}
+= \lim_{dx \rightarrow 0} \lim_{dy \rightarrow 0}\frac{f(x+dx, y+dy) - f(x,y)}{\sqrt{(dx)^2 + (dy)^2}}\].</p>
+<p>Something you may notice is the inner limit can be immediately applied, as the denominator will not become problematic until both limits are applied. We then recover our usual notion of a gradient, but for a single variable of our multi-variate function. This is called a <strong>partial derivative</strong></p>
+<p>\[\frac{\partial}{\partial x} f(x, y) = \lim_{dx \rightarrow 0} \frac{f(x+dx, y) - f(x, y)}{dx}\]</p>
+<p>Intuitively this gives us how much the function will change if we only apply a perturbation to the x component. We can also construct a partial for the second parameter of our function</p>
+<p>\[\frac{\partial}{\partial y} f(x, y) = \lim_{dy \rightarrow 0} \frac{f(x, y + dy) - f(x, y + dy)}{dy}\].</p>
+<p>Now that we have derivatives representing the rate of change of each variable we can construct vectors from the partial derivatives to get the exact direction the function is moving in the space. We have finally come to one definition of the gradient!</p>
+<p>\[\text{Gradient of $f(x,y)$} \defeq \begin{bmatrix} \frac{\partial}{\partial x} f(x,y) \ \frac{\partial}{\partial y} f(x,y)\end{bmatrix} = \begin{bmatrix} \frac{\partial}{\partial x} \ \frac{\partial}{\partial y} \end{bmatrix} f(x,y) = \vec{\nabla} f(x,y) = \nabla f(x,y)\]</p>
+<p>Notice that the gradient operator is a vector operator it self, and is sometimes referred as the <em>vector differential operator</em> or <em>del</em>. By convention we leave off the vector identification and always assume the gradient is a vector with the same length as the number of parameters our function takes. Another convention is the operator always appearing on the left of a scalar function (or really any function). If you are familiar with linear algebra, you should see why (i.e. a left product <em>could</em> be different from a right product). We will also treat the gradient as a column vector from here on out.</p>
+<p>Thus far we have defined the gradient over only two dimensions, but of course we can easily extend this to n dimensions.</p>
+<p>\[\nabla \defeq \begin{bmatrix} \partialderiv{}{x_1}\ \vdots \ \partialderiv{}{x_n} \end{bmatrix}\]</p>
+<h3 id="gradients-over-vector-fields">Gradients over vector fields</h3>
+<p>The functions we have been considering thus far have been <strong>scalar fields</strong> where \(f: A \subset \reals^n \rightarrow \reals\). Now that we know how gradients work over scalar functions, we will look at how gradients will work over vector fields.</p>
+<div class="definition">
+  <div></div>
+<p>\textbf{Vector Fields}: a \textbf{vector field} in \(\reals^n\) is a map \(\mathbf{F}: A \subset \reals^n \mapsto \reals^n\) that assigns to each point \(\xvec\) in its domain A a vector \(\mathbf{F}(\xvec)\). If n = 2, \(\mathbf{F}\) is called a \textbf{vector field in the plane}, and if n=3, \(\mathbf{F}\) is a \textbf{vector field in space}.</p>
+<p>We have already covertly encountered a vector field in these notes! Specifically, the gradient of any scalar function is a vector field over the domain of the scalar function!</p>
+</div>
+<aside>
+  <aside></aside>
+<p>We are only considering vector fields in these notes, but you could imagine functional maps such as \(\mathbf{F}: A \subset \reals^n \mapsto \reals^m\). We revisit this type of function in our study of the Jacobian (to make the definition more general). There are several interesting properties which pop up when we consider functions of this form, but leave a discussion on these as beyond the scope of these notes.</p>
+</aside>
+<p>There are three ways the gradient operator can interact with a vector field. We will explore each separately starting with the Jacobian</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Jacobian</p>
+<p>The Jacobian is the outer product of the gradient operator and our vector field. More concretely</p>
+<p>\[\text{The Jacobian: } \jacobian \defeq \nabla \otimes \Fmat =
+\left[\partialderiv{\Fmat}{x_1}, \cdots, \partialderiv{\Fmat}{x_n}\right] =
+\left[\begin{array}{ccc}{
+\frac{\partial \Fmat_{1}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{1}}{\partial x_{n}}} \\\<br>
+{\vdots} &amp; {\ddots} &amp; {\vdots} \\\<br>
+{\frac{\partial \Fmat_{m}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{m}}{\partial x_{n}}}
+\end{array}\right]\]</p>
+<p>Some properties:</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Divergence</p>
+<p>The divergence is the inner product of the gradient operator and a vector field \(\Fmat\),</p>
+<p>\[\text{The Divergence: } div(\Fmat) \defeq \nabla \cdot \Fmat = \sum_{i=i}^n \partialderiv{\Fmat_i}{x_i}\]</p>
+<p>Some properties:</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Curl</p>
+<p>The curl is the cross product of the gradient operator and a vector field \(\Fmat\). We will only consider the curl up to three dimensions for simplicity.</p>
+<p>\[\text{The Curl: } curl(\Fmat) \defeq \nabla \times \Fmat =
+\left|\begin{array}{ccc}
+{\hat{\imath}} &amp; {\hat{\jmath}} &amp; {\hat{k}} \\\<br>
+{\frac{\partial}{\partial x}} &amp; {\frac{\partial}{\partial y}} &amp; {\frac{\partial}{\partial z}} \\\<br>
+{\Fmat_{x}} &amp; {\Fmat_{y}} &amp; {\Fmat_{z}}\end{array}\right|\]</p>
+</li>
+</ul>
+<h3 id="higher-order-operators">Higher Order Operators</h3>
+<p>Now that we have covered a gradients interactions with vector fields we can consider higher order gradients (analogous to higher order derivatives). As you may have already noticed, when we apply the gradient operator on to a function of the form \(f: \reals^d \mapsto \reals\) we produce a new function which is a vector field! This observation allows for multiple ways of constructing second order operators, two of which we cover below.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Hessian</p>
+<p>The Hessian is an important construct for machine learning, particularly in optimization and step-size adaptation where the Hessian is often evoked (although not computed). We will look at Newtonian methods in section <a href="#CFMLR:ML">CFMLR:ML</a>.</p>
+<p>To construct the Hessian, we will simply take the Jacobian of the gradient of our function.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Laplace Operator</p>
+<p>While the Hessian is more widely used in Machine Learning contexts, the Laplace operator is still good to know about. It is significantly simpler as a construct, and is constructed as the divergence of the gradient of our function.</p>
+</li>
+</ul>
+<h3 id="finding-extrema">Finding Extrema</h3>
+<p>We look for extrema in the multi-variate case just as we did for the single variate case. We look for points which have gradients equal to the zero vector. We then use the multi-variate second derivative test.</p>
+<h3 id="sub-gradients">Sub-gradients</h3>
+<ul>
+<li>Non-continuous functions (absolute value, relu).</li>
+</ul>
+<h3 id="some-useful-techniques-and-derivatives">Some useful techniques and derivatives</h3>
+<p>We will look at several useful techniques and formulas for calculating derivatives. While not an exhaustive list, many of these techniques consistently appear in machine learning.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Product Rule</p>
+<p>\[\nabla_{\xvec} f(\xvec)g(\xvec) = f(\xvec) \nabla_{\xvec} g(\xvec) + g(\xvec) \nabla_{\xvec} f(\xvec)\]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Chain Rule</p>
+<p>\[\nabla_{\xvec} (f \circ g)(\xvec) = \nabla_g f(g(\xvec)) \nabla_{\xvec}g(\xvec)\]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Implicit Differentiation</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Useful Derivatives</p>
+<ul>
+<li>\(x^n\)
+\[\partialderiv{}{x} x^n = nx^{n-1} \quad \triangleright \quad n \neq 0, n\in\reals\]</li>
+<li>\(e^x\)
+\[\partialderiv{}{x} e^x = e^x\]
+\[\partialderiv{}{x} a^x = \ln(a)*a^x \quad \triangleright \quad a &gt; 0\]</li>
+<li>\(ln(x)\)
+\[\partialderiv{}{x} \ln(x) = \frac{1}{x}\]
+\[\partialderiv{}{x} \log_{a}(x) = \frac{1}{x\ln(a)} \quad \triangleright \quad a &gt; 0\]</li>
+<li>trig</li>
+</ul>
+</li>
+</ul>
+<h2 id="integral-calculus-cfmlrint">Integral Calculus {#CFMLR:INT}</h2>
+<h3 id="riemmanian-sums">Riemmanian sums</h3>
+<h3 id="line-integrals--riemmanian-integrals">Line Integrals (Riemmanian Integrals)</h3>
+<h3 id="fundamental-theorem-of-calculus">Fundamental Theorem of Calculus</h3>
+<h3 id="anti-derivative">&ldquo;Anti-derivative&rdquo;</h3>
+<h3 id="useful-techniques">Useful techniques</h3>
+<!--list-separator-->
+<ul>
+<li>By Parts</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Substitution</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li></li>
+</ul>
+<h2 id="calculus-for-machine-learning-cfmlrml">Calculus for Machine Learning {#CFMLR:ML}</h2>
+<h3 id="critical-points-and-optimization">Critical Points and Optimization</h3>
+<h3 id="projection">Projection</h3>
+<h3 id="probability">Probability</h3>
+<h3 id="deep-learning">Deep Learning</h3>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
