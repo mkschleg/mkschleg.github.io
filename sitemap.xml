@@ -4,557 +4,597 @@
   
   <url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2020-08-26T09:01:42-06:00</lastmod>
+    <lastmod>2020-09-16T14:45:52-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/calculus/</loc>
-    <lastmod>2020-08-26T09:01:42-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/singh2003learning/</loc>
+    <lastmod>2020-09-16T14:45:52-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/converges/</loc>
-    <lastmod>2020-08-18T09:26:26-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/james2004/</loc>
+    <lastmod>2020-09-16T11:06:19-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/behavior_suite/</loc>
-    <lastmod>2020-08-18T09:26:01-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/psr/</loc>
+    <lastmod>2020-09-16T10:54:34-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/cauchy_criterion/</loc>
-    <lastmod>2020-08-17T09:44:44-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/hypothesis/</loc>
+    <lastmod>2020-09-16T10:18:49-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/analysis/</loc>
-    <lastmod>2020-08-17T09:29:18-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/littman2002/</loc>
+    <lastmod>2020-09-15T12:47:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/pomdp/</loc>
+    <lastmod>2020-09-15T12:46:58-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/john_hopfield/</loc>
+    <lastmod>2020-09-02T14:29:35-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/hilbert_space/</loc>
-    <lastmod>2020-08-13T10:26:41-06:00</lastmod>
+    <lastmod>2020-09-02T14:29:02-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/metric_space/</loc>
-    <lastmod>2020-08-13T10:08:47-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/subbasis/</loc>
-    <lastmod>2020-08-13T10:08:35-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/converges/</loc>
+    <lastmod>2020-09-02T14:28:46-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/topology/</loc>
-    <lastmod>2020-08-13T10:07:37-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/inner_product_space/</loc>
-    <lastmod>2020-08-13T09:58:22-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/intelligence/</loc>
-    <lastmod>2020-08-12T14:37:24-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/machine_learning/</loc>
-    <lastmod>2020-08-12T14:37:23-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</loc>
-    <lastmod>2020-08-12T14:37:21-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/linear_map/</loc>
-    <lastmod>2020-08-12T14:25:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/conjugate/</loc>
-    <lastmod>2020-08-12T14:22:59-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/statistics/</loc>
-    <lastmod>2020-08-12T14:03:26-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:26-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/theory/</loc>
-    <lastmod>2020-08-12T14:03:26-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:25-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/thinking/</loc>
-    <lastmod>2020-08-12T14:03:26-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/predictive_processing/</loc>
-    <lastmod>2020-08-12T14:03:25-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/reinforcement_learning/</loc>
-    <lastmod>2020-08-12T14:03:25-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:25-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/representation/</loc>
-    <lastmod>2020-08-12T14:03:25-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/statistics/</loc>
+    <lastmod>2020-08-28T10:46:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/predictive_processing/</loc>
+    <lastmod>2020-08-28T10:46:23-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/reinforcement_learning/</loc>
+    <lastmod>2020-08-28T10:46:23-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/perception/</loc>
-    <lastmod>2020-08-12T14:03:24-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:22-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/philosophy/</loc>
-    <lastmod>2020-08-12T14:03:24-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/off_policy/</loc>
-    <lastmod>2020-08-12T14:03:23-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:22-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/optimizers/</loc>
-    <lastmod>2020-08-12T14:03:23-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:21-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/people/</loc>
-    <lastmod>2020-08-12T14:03:23-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/neural_network/</loc>
-    <lastmod>2020-08-12T14:03:22-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:21-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/neuroscience/</loc>
-    <lastmod>2020-08-12T14:03:22-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:20-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/note_taking/</loc>
-    <lastmod>2020-08-12T14:03:22-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:20-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/math/</loc>
-    <lastmod>2020-08-12T14:03:21-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/off_policy/</loc>
+    <lastmod>2020-08-28T10:46:20-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/meta_learning/</loc>
-    <lastmod>2020-08-12T14:03:21-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:19-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/linear_algebra/</loc>
-    <lastmod>2020-08-12T14:03:20-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/neural_network/</loc>
+    <lastmod>2020-08-28T10:46:19-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/math/</loc>
+    <lastmod>2020-08-28T10:46:18-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</loc>
-    <lastmod>2020-08-12T14:03:20-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/machine_learning/</loc>
+    <lastmod>2020-08-28T10:46:17-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/intelligence/</loc>
+    <lastmod>2020-08-28T10:46:16-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/linear_algebra/</loc>
+    <lastmod>2020-08-28T10:46:16-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/category_theory/</loc>
-    <lastmod>2020-08-12T14:03:19-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:15-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/diffeq/</loc>
-    <lastmod>2020-08-12T14:03:19-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:15-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/anatomy/</loc>
-    <lastmod>2020-08-12T14:03:18-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/calculus/</loc>
+    <lastmod>2020-08-28T10:46:14-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/artificial_intelligence/</loc>
-    <lastmod>2020-08-12T14:03:18-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:12-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/brain/</loc>
-    <lastmod>2020-08-12T14:03:18-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:12-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/analysis/</loc>
+    <lastmod>2020-08-28T10:46:11-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/anatomy/</loc>
+    <lastmod>2020-08-28T10:46:11-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/how_to_take_smart_notes_with_org_mode/</loc>
-    <lastmod>2020-08-12T14:02:40-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:10-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/wu2016/</loc>
-    <lastmod>2020-08-12T14:02:40-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/white2015/</loc>
-    <lastmod>2020-08-12T14:02:39-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:10-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/white2017/</loc>
-    <lastmod>2020-08-12T14:02:39-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:09-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/vanhasselt2015/</loc>
-    <lastmod>2020-08-12T14:02:38-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/white2015/</loc>
+    <lastmod>2020-08-28T10:46:08-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/wang2017/</loc>
-    <lastmod>2020-08-12T14:02:38-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:07-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/vanhasselt2015/</loc>
+    <lastmod>2020-08-28T10:46:06-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/synofzik2013/</loc>
-    <lastmod>2020-08-12T14:02:37-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:05-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/sutton2011/</loc>
-    <lastmod>2020-08-12T14:02:36-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:04-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/sutton2020john/</loc>
-    <lastmod>2020-08-12T14:02:36-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/stock2004/</loc>
-    <lastmod>2020-08-12T14:02:35-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:04-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/sutskever2011/</loc>
-    <lastmod>2020-08-12T14:02:35-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:03-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/stock2004/</loc>
+    <lastmod>2020-08-28T10:46:02-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/spratling2017/</loc>
-    <lastmod>2020-08-12T14:02:34-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:01-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/soga2009/</loc>
-    <lastmod>2020-08-12T14:02:33-06:00</lastmod>
+    <lastmod>2020-08-28T10:46:00-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/rao1999/</loc>
-    <lastmod>2020-08-12T14:02:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/mohamed2019/</loc>
-    <lastmod>2020-08-12T14:02:31-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:59-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/prinz1990/</loc>
-    <lastmod>2020-08-12T14:02:31-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:58-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/mohamed2019/</loc>
+    <lastmod>2020-08-28T10:45:57-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/mnih2014/</loc>
-    <lastmod>2020-08-12T14:02:30-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:56-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/liu2018/</loc>
-    <lastmod>2020-08-12T14:02:29-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/sutton1988/</loc>
-    <lastmod>2020-08-12T14:02:29-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/huang2011/</loc>
-    <lastmod>2020-08-12T14:02:28-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:55-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/kostas2019/</loc>
-    <lastmod>2020-08-12T14:02:28-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:54-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/sutton1988/</loc>
+    <lastmod>2020-08-28T10:45:54-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/hopfield1985neural/</loc>
+    <lastmod>2020-08-28T10:45:52-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/huang2011/</loc>
+    <lastmod>2020-08-28T10:45:52-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/goudreau1994/</loc>
-    <lastmod>2020-08-12T14:02:27-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:51-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/clark2013/</loc>
-    <lastmod>2020-08-12T14:02:26-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/chandar2019/</loc>
-    <lastmod>2020-08-12T14:02:25-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/chung2014/</loc>
-    <lastmod>2020-08-12T14:02:25-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:49-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/chandar2019/</loc>
+    <lastmod>2020-08-28T10:45:48-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/bubic2010/</loc>
-    <lastmod>2020-08-12T14:02:24-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:47-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/byrd2019/</loc>
-    <lastmod>2020-08-12T14:02:24-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:47-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/badia2020/</loc>
-    <lastmod>2020-08-12T14:02:22-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/vector_space/</loc>
-    <lastmod>2020-08-12T14:02:21-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/visual_system_/</loc>
-    <lastmod>2020-08-12T14:02:21-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:45-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/zettelkasten_method/</loc>
-    <lastmod>2020-08-12T14:02:21-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:44-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/surjective/</loc>
-    <lastmod>2020-08-12T14:02:20-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/vector_space/</loc>
+    <lastmod>2020-08-28T10:45:43-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/visual_system_/</loc>
+    <lastmod>2020-08-28T10:45:43-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/temporal_difference_learning/</loc>
-    <lastmod>2020-08-12T14:02:20-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:42-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/value_function/</loc>
-    <lastmod>2020-08-12T14:02:20-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:42-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/rich_sutton/</loc>
-    <lastmod>2020-08-12T14:02:19-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/subbasis/</loc>
+    <lastmod>2020-08-28T10:45:41-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/richard_feynman/</loc>
-    <lastmod>2020-08-12T14:02:19-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/surjective/</loc>
+    <lastmod>2020-08-28T10:45:41-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/sign_theory/</loc>
-    <lastmod>2020-08-12T14:02:19-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:40-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/recurrent_neural_network/</loc>
-    <lastmod>2020-08-12T14:02:18-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/rich_sutton/</loc>
+    <lastmod>2020-08-28T10:45:39-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/richard_feynman/</loc>
+    <lastmod>2020-08-28T10:45:39-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/relu_activation/</loc>
-    <lastmod>2020-08-12T14:02:18-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:38-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/recurrent_neural_network/</loc>
+    <lastmod>2020-08-28T10:45:37-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/metric_space/</loc>
+    <lastmod>2020-08-28T10:45:33-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/morphism/</loc>
-    <lastmod>2020-08-12T14:02:17-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:33-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/preimage/</loc>
-    <lastmod>2020-08-12T14:02:17-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/lstm/</loc>
-    <lastmod>2020-08-12T14:02:16-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:33-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/matrix/</loc>
-    <lastmod>2020-08-12T14:02:16-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:32-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/lstm/</loc>
+    <lastmod>2020-08-28T10:45:31-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/laplace_transform/</loc>
-    <lastmod>2020-08-12T14:02:15-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:30-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/isomorph/</loc>
-    <lastmod>2020-08-12T14:02:14-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/linear_map/</loc>
+    <lastmod>2020-08-28T10:45:30-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/kernel_function/</loc>
-    <lastmod>2020-08-12T14:02:14-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/image/</loc>
-    <lastmod>2020-08-12T14:02:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/injective/</loc>
-    <lastmod>2020-08-12T14:02:13-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:29-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/integral_transform/</loc>
-    <lastmod>2020-08-12T14:02:13-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:28-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/homogeneity/</loc>
-    <lastmod>2020-08-12T14:02:12-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/isomorph/</loc>
+    <lastmod>2020-08-28T10:45:28-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/injective/</loc>
+    <lastmod>2020-08-28T10:45:27-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/inner_product_space/</loc>
+    <lastmod>2020-08-28T10:45:27-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/ideomotor_principle/</loc>
-    <lastmod>2020-08-12T14:02:12-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:26-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/image/</loc>
+    <lastmod>2020-08-28T10:45:26-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/hoeffding_inequality/</loc>
-    <lastmod>2020-08-12T14:02:11-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:25-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/hadamard_product/</loc>
-    <lastmod>2020-08-12T14:02:10-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/homogeneity/</loc>
+    <lastmod>2020-08-28T10:45:25-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/hierarchical_predictive_coding/</loc>
+    <lastmod>2020-08-28T10:45:24-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/hermann_von_helmholtz/</loc>
-    <lastmod>2020-08-12T14:02:10-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/free_energy_principle/</loc>
-    <lastmod>2020-08-12T14:02:09-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/function_space/</loc>
-    <lastmod>2020-08-12T14:02:09-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:23-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/gaussian_elimination/</loc>
-    <lastmod>2020-08-12T14:02:09-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:22-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/general_value_functions/</loc>
-    <lastmod>2020-08-12T14:02:09-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/hadamard_product/</loc>
+    <lastmod>2020-08-28T10:45:22-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/free_energy_principle/</loc>
+    <lastmod>2020-08-28T10:45:21-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/function_space/</loc>
+    <lastmod>2020-08-28T10:45:21-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/efficient_coding/</loc>
-    <lastmod>2020-08-12T14:02:08-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:20-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/empirical_risk_minimization/</loc>
-    <lastmod>2020-08-12T14:02:08-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/determinant/</loc>
-    <lastmod>2020-08-12T14:02:07-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:20-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/dirac_delta_function/</loc>
-    <lastmod>2020-08-12T14:02:07-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:19-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/efferent_codes/</loc>
-    <lastmod>2020-08-12T14:02:07-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:19-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/bijective/</loc>
-    <lastmod>2020-08-12T14:02:06-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/conjugate/</loc>
+    <lastmod>2020-08-28T10:45:18-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/determinant/</loc>
+    <lastmod>2020-08-28T10:45:18-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/binocular_rivalry/</loc>
-    <lastmod>2020-08-12T14:02:06-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:17-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
-    <lastmod>2020-08-12T14:02:05-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/autocorrelation/</loc>
-    <lastmod>2020-08-12T14:02:05-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/cauchy_criterion/</loc>
+    <lastmod>2020-08-28T10:45:17-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/biased_competition/</loc>
-    <lastmod>2020-08-12T14:02:05-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:16-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mkschleg.github.io/braindump/adam/</loc>
-    <lastmod>2020-08-12T14:02:04-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/bijective/</loc>
+    <lastmod>2020-08-28T10:45:16-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/autocorrelation/</loc>
+    <lastmod>2020-08-28T10:45:15-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/behavior_suite/</loc>
+    <lastmod>2020-08-28T10:45:15-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/additivity/</loc>
-    <lastmod>2020-08-12T14:02:04-06:00</lastmod>
+    <lastmod>2020-08-28T10:45:14-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/afferent_codes/</loc>
+    <lastmod>2020-08-28T10:45:14-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/adam/</loc>
+    <lastmod>2020-08-28T10:45:13-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</loc>
-    <lastmod>2020-08-12T14:01:58-06:00</lastmod>
+    <lastmod>2020-08-28T10:44:55-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/braindump/elementary_differential_equations_and_boundary_value_problems/</loc>
-    <lastmod>2020-08-12T14:01:54-06:00</lastmod>
+    <lastmod>2020-08-28T10:44:51-06:00</lastmod>
   </url>
   
   <url>
