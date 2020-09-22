@@ -54,8 +54,8 @@
   <meta property="og:title" content="vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-28T10:46:06-06:00">
-  <meta property="article:modified_time" content="2020-08-28T10:46:06-06:00">
+  <meta property="article:published_time" content="2020-09-18T10:14:15-04:00">
+  <meta property="article:modified_time" content="2020-09-18T10:14:15-04:00">
   
 
   <title>vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-28 10:46:06 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 28, 2020
+    <time datetime="2020-09-18 10:14:15 -0400 EDT" itemprop="datePublished dateModified">
+      Sep 18, 2020
     </time>
   </span>
 
@@ -217,7 +217,9 @@
       
       <p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -265,6 +267,7 @@
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -288,6 +291,10 @@ For example:</p>
 </ul>
 <p>The span of a prediction may also very over time. The prediction made in 30 days has a shorter span than the prediction made several months into the future. We will consider the overall span of the prediction to be the maximal span. This can occur if predictions are made a long time-scales or with a short time between predictions.</p>
 <p><strong>Main Goal</strong>: This paper focuses on the construction of learning algorithms whose computational complexity per time step (in both time and memory) is constant (i.e. doesn&rsquo;t scale with time) and independent of span.</p>
+<aside>
+  <aside></aside>
+<p>For much of this document they discuss &ldquo;trust&rdquo; of a Target. And as I think more on this, the LMS rule they are deriving from is assuming Z is the perfect target for what they are trying to predict. Instead, Z should be pulled from a distribution and we need to average (or some other operation) multiple weights together to come to some reasonable algorithm. This is assuming our sequence of features will always end in a single outcome. But maybe this is a reasonable assumption? I guess given enough information in the feature vector we could say this is correct in a deterministic setting that only appears stochastic with insufficient information.</p>
+</aside>
 <ol>
 <li>Derive a span-independent algorithm to update the prediction for single final outcome <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a></li>
 <li>Derive span-independent updates that update the predictions <em>online</em> towards interim targets that temporarily stand in for the final outcome <a href="#sec:vanhasselt2015:online">sec:vanhasselt2015:online</a></li>
@@ -323,6 +330,30 @@ For example:</p>
 \end{align}</p>
 <p>While the overall computation (\(O(Tn)\)) is still the same, the amount of memory has been significantly reduced \(O(n)\), meaning the memory is constant wrt the span of the prediction.</p>
 <h2 id="online-updating-and-the-emergence-of-td-errors-secvanhasselt2015online">Online Updating and the emergence of TD errors {#sec:vanhasselt2015:online}</h2>
+<p>The main thesis of this section revolves around the fact that an online algorithm cannot update it&rsquo;s prediction weights towards the final outcome \(Z\) during the episode. This is because \(Z\) is only available at the end of an episode. This becomes problematic when we want to make interim predictions based on what we believe the outcome could be. The main idea is to use interim targets (based on all the data available up to the horizon) denoted by \(Z^h\) where \(h\) is the timestep the target is presented to the algorithm.</p>
+<div class="note">
+  <div></div>
+<p>They use the convention of</p>
+<ul>
+<li>The superscript denoting the upper limit of the data considered available in an online update</li>
+<li>The subscript is used for the time step whose prediction is being modified (i.e. the weights).</li>
+</ul>
+</div>
+<p>The following clarifies notation, where we use the previously defined algorithm to learn a new set of weights \(\theta_h^h\) for each new interim target where \(\theta_T^T = \theta_T\).</p>
+<p>\begin{array}{ll}
+\boldsymbol{\theta}_{0}^{h} &amp;\doteq \boldsymbol{\theta}_{0}, &amp; h=0, \ldots, T \\\<br>
+\boldsymbol{\theta}_{t+1}^{h} &amp;\doteq \boldsymbol{\theta}_{t}^{h}+\alpha_{t} \boldsymbol{\phi}_{t}\left(Z^{h}-\boldsymbol{\phi}_{t}^{\top} \boldsymbol{\theta}_{t}^{h}\right), &amp; t=0, \ldots, h-1, \quad h=1, \ldots, T \\\<br>
+&amp; =\mathbf{F}_{t} \boldsymbol{\theta}_{t}^{h}+\alpha_{t} \boldsymbol{\phi}_{t} Z^{h} .
+\end{array}</p>
+<p>This creates a set of all possible weights which can be written as the lower triangular matrix, where each row is the new horizon and the diagonal denotes the weights learned by the algorithm derived in <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a> for each interim target. The authors then set out to develop an algorithm which is able to traverse the diagonal without having to calculate the entire lower triangular matrix of weights. To do this they follow the same technique as in <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a>: take the forward view algorithm and unroll to create the backward view variant. The resulting algorithm (by combining this unrolling and the forward view to traverse the diagonal) is</p>
+<p>\begin{array}{ll}
+\traces_{t} &amp;\doteq \traces_{t-1} + \alpha_t\phivec_t(1-\phivec_t^\trans \traces_{t-1}) \quad \triangleright \traces_{-1} \doteq \mathbf{0} \\\<br>
+\thetavec_{t+1} &amp;\doteq \thetavec_{t} + \traces_t (Z^{t+1} - Z^t) + \alpha_t \phivec_t (Z^t - \phivec_t^\trans\thetavec_t), \quad t=0, \ldots, T-1
+\end{array}</p>
+<div class="note">
+  <div></div>
+<p>Although the backward view algorithm yields different predictions during the episode, the final weights \(\thetavec_T\) is exactly the same as those computed by the conventional LMS algorithm that constituted the first, offline, forward view algorithm considered in this paper. And in fact all three algorithms they&rsquo;ve so far developed result in the same final weights (which is the desired effect thus far).</p>
+</div>
 <h2 id="unifying-online-and-offline-learning-and-the-emergence-of-averaging-secvanhasselt2015efficiency">Unifying online and offline learning and the emergence of averaging {#sec:vanhasselt2015:efficiency}</h2>
 <h2 id="bootstrapping-secvanhasselt2015tdlambda">Bootstrapping {#sec:vanhasselt2015:tdlambda}</h2>
 <h2 id="combining-two-notions-of-trust-and-the-emergence-of-averaged-tdlambda-secvanhasselt2015onetorulethem">Combining two notions of trust and the emergence of averaged TD(\(\lambda\)) {#sec:vanhasselt2015:onetorulethem}</h2>
