@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-28T10:45:54-06:00">
-  <meta property="article:modified_time" content="2020-08-28T10:45:54-06:00">
+  <meta property="article:published_time" content="2021-02-09T14:14:38-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:14:38-07:00">
   
 
   <title>kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-28 10:45:54 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 28, 2020
+    <time datetime="2021-02-09 14:14:38 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -217,7 +217,9 @@
       
       <p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -265,6 +267,7 @@
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -306,9 +309,9 @@
 <p><strong>Coagent policy gradient theorm (CPGT)</strong>: If \(\theta\) is fixed and all coagents update their parameters following unbiased estimates of <a href="#eqn:kostas2019:local-policy-gradient">eqn:kostas2019:local-policy-gradient</a> then the entire network will follow an unbiased estimator of \(\nabla J(\theta)\), or the <em>global policy gradient</em>.</p>
 <h3 id="conjugate-markov-decision-process--comdp">Conjugate Markov Decision Process (CoMDP)</h3>
 <p>The CoMDP (or environment) of the \(i^\text{th}\), \(M^i \triangleq (\mathcal{X}^i, \mathcal{U}^i, \rewards^i, \transition^i, R^i, d_0^i, \gamma_i)\). Each component follows the normal MDP scheme laid out above. Here we will denote all random variables of the CoMDP with a tilde to clarify the distinction, for example \(\tilde{X}^i_t\) is the state of coagent \(i\) at time \(t\). The reward set and discount are the same as the MDP. We also define the transition and reward dynamics as</p>
-<p>\[\transition^i(x, u, x&rsquo;, \bar{\theta}_i) \triangleq \pi_i^\text{pre}(x&rsquo;.s, x&rsquo;.u_\text{pre}) \sum_{a \in \actions} \transition(x.s, a, x&rsquo;.s) \pi_i^\text{post}(x, u, a)\]</p>
-<p>\[R^i(x, u, x&rsquo;, r, \bar{\theta}_i) \triangleq
-\sum_{a\in\actions} R(x.s, a, x&rsquo;.s, r) \frac{\transition(x.s, a, x&rsquo;.s) \pi_i^\text{post}(x, u, a)}{\sum_{\hat{a} \in \actions}\transition(x.s, \hat{a}, x&rsquo;.s) \pi_i^\text{post}(x,u,\hat{a})}\]</p>
+<p>\[\transition^i(x, u, x', \bar{\theta}_i) \triangleq \pi_i^\text{pre}(x'.s, x'.u_\text{pre}) \sum_{a \in \actions} \transition(x.s, a, x'.s) \pi_i^\text{post}(x, u, a)\]</p>
+<p>\[R^i(x, u, x', r, \bar{\theta}_i) \triangleq
+\sum_{a\in\actions} R(x.s, a, x'.s, r) \frac{\transition(x.s, a, x'.s) \pi_i^\text{post}(x, u, a)}{\sum_{\hat{a} \in \actions}\transition(x.s, \hat{a}, x'.s) \pi_i^\text{post}(x,u,\hat{a})}\]</p>
 <p>They assume that given the same parameters \(\theta_i\), the \(i^\text{th}\) coagent has the same policy in both the original MDP and the \(i^\text{th}\) CoMDP.</p>
 <p>The properties of the CoMDP are relatively straightforward from basic probability and algebraic manipulations. Something to keep in mind is the notion that the objective functions are equivalent (i.e. \(J(\theta) = J_i(\theta_i)\)). How this plays out in the network makes some amount of sense, as each coagent needs to act in such a way the whole agent can maximize the return.</p>
 <p>I wonder if:</p>

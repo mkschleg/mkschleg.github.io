@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="white2015: Developing a predictive approach to knowledge | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-28T10:46:08-06:00">
-  <meta property="article:modified_time" content="2020-08-28T10:46:08-06:00">
+  <meta property="article:published_time" content="2021-02-09T14:14:43-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:14:43-07:00">
   
 
   <title>white2015: Developing a predictive approach to knowledge | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-28 10:46:08 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 28, 2020
+    <time datetime="2021-02-09 14:14:43 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -253,12 +253,12 @@
 <p>This can also be defined in terms of action state value functions as expected.</p>
 <h3 id="learning-gvfs">Learning GVFs</h3>
 <p>They use the usual approximate notation \(\hat{v}(s, \mathbf{w}) \approx v(s; \pi, \gamma, z)\). where \(\mathbf{w} \in \mathbb{R}^n\). This paper primarily uses linear function approximation \(V_t \triangleq \hat{v}(S_t, \mathbf{w}_t) = \mathbf{x}_t^\top \mathbf{w}\). Because of this formulation, we can learn any GVF using typical RL algorithms (TD(\(\lambda\)), GTD(\(\lambda\)), GQ(\(\lambda\)), \(\ldots\) ).</p>
-<p>Another important quality is that of Independence of Span  &ldquo;<a href="https://arxiv.org/abs/1508.04582">link</a>&quot;. We will not discuss this in detail, but at a basic level the TD algorithm (with some minor corrections) emerges from an analytical study looking for an algorithm to predict independent of span.</p>
+<p>Another important quality is that of Independence of Span  &ldquo;<a href="https://arxiv.org/abs/1508.04582">link</a>&rdquo;. We will not discuss this in detail, but at a basic level the TD algorithm (with some minor corrections) emerges from an analytical study looking for an algorithm to predict independent of span.</p>
 <h3 id="a-horde-of-demons">A Horde of Demons</h3>
 <p>Parallel GVF learning, pretty straight forward.</p>
 <h2 id="papers-secwhite2015papers">Papers {#sec:white2015:papers}</h2>
 <h3 id="nexting-secwhite2015nexting">Nexting {#sec:white2015:nexting}</h3>
-<p>This is a term used in psychology to refer to the natural inclination of people and animals to continually predict what will happen next. This chapter goes into detail about the nexting paper  &ldquo;<a href="https://journals.sagepub.com/doi/full/10.1177/1059712313511648">link</a>&quot;. We will not discuss this in detail.</p>
+<p>This is a term used in psychology to refer to the natural inclination of people and animals to continually predict what will happen next. This chapter goes into detail about the nexting paper  &ldquo;<a href="https://journals.sagepub.com/doi/full/10.1177/1059712313511648">link</a>&rdquo;. We will not discuss this in detail.</p>
 <h3 id="experiments-with-gvfs-on-robots-secwhite2015robots">Experiments with GVFs on robots {#sec:white2015:robots}</h3>
 <p>This provides more empirical evidence of GVF learning in real-time on a mobile robot, with many various signals and functions.</p>
 <h3 id="estimating-off-policy-progress-secwhite2015offpolicy-progress">Estimating Off-policy progress {#sec:white2015:offpolicy-progress}</h3>

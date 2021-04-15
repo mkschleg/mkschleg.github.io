@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="james2004: Learning and Discovery of Predictive State Representations in Dynamical Systems with Reset | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-09-16T11:06:19-04:00">
-  <meta property="article:modified_time" content="2020-09-16T11:06:19-04:00">
+  <meta property="article:published_time" content="2021-02-09T14:14:37-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:14:37-07:00">
   
 
   <title>james2004: Learning and Discovery of Predictive State Representations in Dynamical Systems with Reset | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-09-16 11:06:19 -0400 EDT" itemprop="datePublished dateModified">
-      Sep 16, 2020
+    <time datetime="2021-02-09 14:14:37 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -219,6 +219,7 @@
 \newcommand{\actions}{\mathcal{A}}
 \newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -266,6 +267,7 @@
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -280,7 +282,7 @@
 <dt>year</dt>
 <dd>2004</dd>
 </dl>
-<p>This paper provides a new algorithm for learning linear-PSRs in partially observable dynamical systems w/ reset and a new algorithm for the discovery of PSRs from data. Overall, the algorithm works better than previous attempts (i.e. (Singh 2004), (Singh 2003)).</p>
+<p>This paper provides a new algorithm for learning linear-PSRs in partially observable dynamical systems w/ reset and a new algorithm for the discovery of PSRs from data. Overall, the algorithm works better than previous attempts (i.e. (Singh 2004), <a href="/braindump/singh2003learning/">(Singh 2003)</a>).</p>
 <p>While the algorithm does better than previously and the discovery algorithm is definitely a start, relying on a reset action seems to be a hard limitation in many more interesting dynamical systems. Particularly the examples used (i.e. the classic POMDP suite of experiments) had to be altered for the algorithm to work.</p>
 <h2 id="references">References</h2>
 <p>(Singh 2004)  Satinder Singh;  Michael R. James and  Matthew R. Rudary, <em>Predictive {{State Representations}}: {{A New Theory}} for {{Modeling Dynamical Systems}}</em>, Proceedings of the 20th {{Conference}} on {{Uncertainty}} in {{Artificial Intelligence}}(2004).</p>

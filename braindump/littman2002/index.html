@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="littman2002: Predictive Representations of State | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-09-15T12:47:01-04:00">
-  <meta property="article:modified_time" content="2020-09-15T12:47:01-04:00">
+  <meta property="article:published_time" content="2021-02-09T14:14:38-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:14:38-07:00">
   
 
   <title>littman2002: Predictive Representations of State | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-09-15 12:47:01 -0400 EDT" itemprop="datePublished dateModified">
-      Sep 15, 2020
+    <time datetime="2021-02-09 14:14:38 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -219,6 +219,7 @@
 \newcommand{\actions}{\mathcal{A}}
 \newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -266,6 +267,7 @@
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -288,11 +290,19 @@
 </ul>
 <p>A history is considered a test forming an initial stream of experience. We characterize an environment by a probability distribution over all possible histories, \(P: \{\observations | \actions\}^* \mapsto [0,1]\) where \(P(o_1, o_2, \ldots, o_t | a_1, a_2, \ldots, a_t)\) is the probability of observations being generated (in the specified order) if the actions are taken (in the specified order). The probability of a test t conditioned on a history h is \(P(t|h) = \frac{P(th)}{P(h)}\) is a prediction.</p>
 <p>A <a href="/braindump/psr/">PSR</a> is a set of q core-tests that is sufficient information to determine the prediction for all possible other tests (a sufficient statistic).</p>
-<p>The core-tests are a sufficient statistic when for any test and history there exists some <em>prediction function</em> \(f_t: [0,1]^q \mapsto [0,1]\) s.t.
+<p>The core-tests are a <a href="/braindump/sufficient_statistic/">sufficient statistic</a> when for any test and history there exists some <em>prediction function</em> \(f_t: [0,1]^q \mapsto [0,1]\) s.t.
 \[
 P(t|h) = f_t([P(t_1|h), P(t_2|h), \ldots, P(t_q|h)]) = f_t(P(h))
 \]</p>
-<p>You can construct a <a href="/braindump/psr/">PSR</a> from a <a href="/braindump/pomdp/">POMDP</a> (i.e. a PSR is no more complex than a POMDP)</p>
+<p>You can construct a <a href="/braindump/psr/">PSR</a> from a <a href="/braindump/pomdp/">POMDP</a> (i.e. a PSR is no more complex than a POMDP). This is discussed as the main result:</p>
+<div class="theorem">
+  <div></div>
+<p>For any environment that can be represented by a finite POMDP model, there exists a linear PSR with number of tests no larger than the number of states in the minimal POMDP model.</p>
+</div>
+<div class="proof">
+  <div></div>
+<p>This proof has three parts. They first review how probabilities are assigned to tests given the POMDP. They then define an algorithm which takes the n-state POMDP model to produce a set of n or fewer tests. They then show that the PSR induces the same probability distribution over histories. To see the proof in full, please see the paper.</p>
+</div>
 <h2 id="references">References</h2>
 
     </div>

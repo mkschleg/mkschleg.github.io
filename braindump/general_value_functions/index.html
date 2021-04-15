@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="General Value Functions | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-28T10:45:22-06:00">
-  <meta property="article:modified_time" content="2020-08-28T10:45:22-06:00">
+  <meta property="article:published_time" content="2021-02-09T14:22:12-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:22:12-07:00">
   
 
   <title>General Value Functions | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-28 10:45:22 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 28, 2020
+    <time datetime="2021-02-09 14:22:12 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -215,12 +215,109 @@
 
     <div class="post-style" itemprop="articleBody">
       
-      <h2 id="backlinks">Backlinks</h2>
-<h2 id="4-backlinks">4 Backlinks</h2>
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\)</p>
+<p>General value functions (GVFs) are a generalization of value functions to predict signals other than the reward. They were introduced in <a href="/braindump/sutton2011/">(Sutton 2011)</a> and further explored in (Modayil 2014) and <a href="/braindump/white2015/">(White 2015)</a>, where the authors demonstrated their capabilities on a robot system (the <a href="/braindump/critterbot/">critterbot</a>). The goal of this demonstration was to show what can be learned using GVFs, and how the prediction making capabilities scale computationally.</p>
+<p>A GVF is defined as the expected discounted return of a cumulant:</p>
+<p>\[
+v_{c, \gamma, \pi}(s) = \expected\left[\sum_{k=t}^\infty \left(\prod_{i=t+1}^k \gamma(S_i)\right) c_{k+1} \middle| S_t = s, A_{t:\infty} \sim \pi\right].
+\]</p>
+<ul>
+<li>
+<p>Cumulant (\(c\))</p>
+<p>The cumlant is a function of any real-valued signal the agent has access to. Some possible values</p>
+<ul>
+<li>Observations</li>
+<li>Reward</li>
+<li>Other predictions</li>
+<li>Agent-state.</li>
+</ul>
+<p>This is like the reward function, and details what signal the GVF is predicting.</p>
+</li>
+<li>
+<p>Continuation function (\(\gamma\))</p>
+<p>The continuation function (also known as the discount or termination function) and defines the temporal horizon of the prediction. This function should have values \(\in [0,1]\), and for at least one state the value must be \(&lt;1\).</p>
+</li>
+<li>
+<p>Policy (\(\pi\))</p>
+<p>The policy determines the prediction&rsquo;s target policy. Off-policy prediction is an important factor in GVFs, and when thinking about the predictions in terms of knowledge off-policy predictions can be seen as a form of counter-factual reasoning as it enables the agent to &ldquo;think&rdquo; or make predictions about different ways of acting.</p>
+</li>
+</ul>
+<h2 id="uses">Uses</h2>
+<p>General value functions are relatively new. Unfortunately, there have not been a lot of uses of GVFs explored in literature.</p>
+<h3 id="general-value-function-networks--gvfns">General Value Function Networks (GVFNs)</h3>
+<p>This work was spearheaded by me in (Schlegel 2020). The main idea is to constrict the hidden state of an <a href="/braindump/recurrent_neural_network/">RNN</a> to</p>
+<h3 id="general-value-functions-for-auxiliary-tasks">General Value Functions for Auxiliary Tasks</h3>
+<h3 id="predicting-surprise">Predicting Surprise</h3>
+<h3 id="estimating-variance">Estimating variance</h3>
+<h2 id="references">References</h2>
+<p>(Sutton 2011)  Richard S. Sutton;  Joseph Modayil;  Michael Delp;  Thomas Degris;  Patrick M. Pilarski;  Adam White and  Doina Precup, <em>Horde: {{A Scalable Real}}-Time {{Architecture}} for {{Learning Knowledge}} from {{Unsupervised Sensorimotor Interaction}}</em>, The 10th {{International Conference}} on {{Autonomous Agents}} and {{Multiagent Systems}} - {{Volume}} 2(2011).</p>
+<p>(Modayil 2014)  Joseph Modayil;  Adam White and  Richard S Sutton, <em>Multi-Timescale {{Nexting}} in a {{Reinforcement Learning Robot}}</em>, Adaptive Behavior, , pp.  (2014). <nil>.</p>
+<p>(White 2015)  Adam White, <em>Developing a Predictive Approach to Knowledge</em>, University of Alberta, , pp.  (2015). <nil>.</p>
+<p>(Schlegel 2020)  Matthew Schlegel;  Andrew Jacobsen;  Zaheer Abbas;  Andrew Patterson;  Adam White and  Martha White, <em>General {{Value Function Networks}}</em>, Journal of Artificial Intelligence Research, , pp.  (2020). <nil>.</p>
+<h2 id="backlinks">Backlinks</h2>
+<h2 id="5-backlinks">5 Backlinks</h2>
 <h3 id="sutton2011-horde-a-scalable-real-time-architecture-for-learning-knowledge-from-unsupervised-sensorimotor-interaction"><a href="/braindump/sutton2011/">sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction</a></h3>
 <p><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></p>
 <h3 id="vanhasselt2015-learning-to-predict-independent-of-span"><a href="/braindump/vanhasselt2015/">vanhasselt2015: Learning to Predict Independent of Span</a></h3>
 <p><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/theory/">Theory</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></p>
+<h3 id="veeriah2019-discovery-of-useful-questions-as-auxiliary-tasks"><a href="/braindump/veeriah2019/">veeriah2019: Discovery of Useful Questions as Auxiliary Tasks</a></h3>
+<p><a href="/braindump/general_value_functions/">General Value Functions</a>, <a href="/braindump/reinforcement_learning/">Reinforcement Learning</a><a href="/braindump/deep_reinforcement_learning/">Deep Reinforcement Learning</a></p>
 <h3 id="white2015-developing-a-predictive-approach-to-knowledge"><a href="/braindump/white2015/">white2015: Developing a predictive approach to knowledge</a></h3>
 <p><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/general_value_functions/">General Value Functions</a></p>
 <h3 id="reinforcement-learning"><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a></h3>

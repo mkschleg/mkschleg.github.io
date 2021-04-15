@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="spratling2017: A review of predictive coding algorithms | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-28T10:46:01-06:00">
-  <meta property="article:modified_time" content="2020-08-28T10:46:01-06:00">
+  <meta property="article:published_time" content="2021-02-09T14:14:40-07:00">
+  <meta property="article:modified_time" content="2021-02-09T14:14:40-07:00">
   
 
   <title>spratling2017: A review of predictive coding algorithms | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-28 10:46:01 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 28, 2020
+    <time datetime="2021-02-09 14:14:40 -0700 MST" itemprop="datePublished dateModified">
+      Feb 9, 2021
     </time>
   </span>
 
@@ -217,7 +217,9 @@
       
       <p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -265,6 +267,7 @@
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -303,15 +306,15 @@ e_t = x_t - r_t
 <p>If only the residual error is transmitted, then the receiver (in the case of the retina this would be the lateral geniculate nucleaus and cortex) cannot recover the components of the signal that have been removed. Redundancy is not being reduced, but entirely removed.</p>
 </div>
 <h2 id="predictive-coding-in-the-cortex-rao-and-ballard">Predictive Coding in the Cortex: Rao and Ballard</h2>
-<p><a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s model for cortical function proposes the cortex is built of several layers of predictive coding networks. Each layer implements the predictive coding algorithm described above for spatial inputs (as far as I can tell) instead of time-series inputs, although both could be used. The output of each cortical region is the residual error. The feed forward connections are believed to transmit these errors while the cortical feedback connections are predicted &ldquo;causes&rdquo;. This hypothesizes that cortical feedback connections act to suppress information which is predicted by higher-level cortical region.</p>
-<p>The linear version of <a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s algorithm is:</p>
+<p><a href="/braindump/rao1999/">(Rao 1999)</a> &rsquo;s model for cortical function proposes the cortex is built of several layers of predictive coding networks. Each layer implements the predictive coding algorithm described above for spatial inputs (as far as I can tell) instead of time-series inputs, although both could be used. The output of each cortical region is the residual error. The feed forward connections are believed to transmit these errors while the cortical feedback connections are predicted &ldquo;causes&rdquo;. This hypothesizes that cortical feedback connections act to suppress information which is predicted by higher-level cortical region.</p>
+<p>The linear version of <a href="/braindump/rao1999/">(Rao 1999)</a> &rsquo;s algorithm is:</p>
 <p>\begin{align*}
 \yvec^{Si} &amp;\leftarrow \nu \yvec^{Si} + \mu \Wmat^{Si} \evec^{Si-1} - \eta \evec^{Si} \\\<br>
 \evec^{Si-1} &amp;= \yvec^{Si-1} - \Vmat^{Si}\yvec^{Si}.
 \end{align*}</p>
 <p>where \(\nu\), \(\eta\), and \(\mu\) are non-negative parameters and \(\Wmat = \Vmat^\top\)</p>
 <h2 id="predictive-coding-in-the-cortex-predcoding-biased-competation-dim">Predictive Coding in the Cortex: PredCoding/Biased Competation - DIM</h2>
-<p>This is a reformulation of <a href="/braindump/rao1999/">(Rao 1999)</a> &lsquo;s PC model to be compatible w/ <a href="/braindump/biased_competition/">Biased Competition</a> theories of cortical function. Specifically,</p>
+<p>This is a reformulation of <a href="/braindump/rao1999/">(Rao 1999)</a> &rsquo;s PC model to be compatible w/ <a href="/braindump/biased_competition/">Biased Competition</a> theories of cortical function. Specifically,</p>
 <p>\begin{align*}
 \evec &amp;= \xvec \oslash (\epsilon_2 + \Vmat \yvec) \\\<br>
 \yvec &amp;\leftarrow (\epsilon_1 + \yvec) \otimes \Wmat\evec
