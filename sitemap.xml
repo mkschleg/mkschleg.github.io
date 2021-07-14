@@ -4,12 +4,17 @@
   
   <url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2021-04-08T09:07:35-06:00</lastmod>
+    <lastmod>2021-05-26T14:45:34-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://mkschleg.github.io/</loc>
-    <lastmod>2021-04-08T09:07:35-06:00</lastmod>
+    <lastmod>2021-05-26T14:45:34-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</loc>
+    <lastmod>2021-05-26T14:45:34-06:00</lastmod>
   </url>
   
   <url>
@@ -680,11 +685,6 @@
   <url>
     <loc>https://mkschleg.github.io/braindump/atari/</loc>
     <lastmod>2021-02-09T14:14:22-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</loc>
-    <lastmod>2021-02-09T14:14:21-07:00</lastmod>
   </url>
   
   <url>

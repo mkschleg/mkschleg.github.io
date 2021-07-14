@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 08 Apr 2021 09:07:35 -0600</lastBuildDate><atom:link href="https://mkschleg.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 May 2021 14:45:34 -0600</lastBuildDate><atom:link href="https://mkschleg.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reinforcement Learning: An Introduction</title>
+      <link>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</link>
+      <pubDate>Wed, 26 May 2021 14:45:34 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</guid>
+      <description>Table of Contents  Introduction  Reinforcement Learning   Chapter 2 Finite Markov Decision Processes  The Agent-Environment Interface Goals and Rewards Returns and Episodes Unified Notation for Episodic and Continuing Tasks Policies and Value Functions Optimal Policies and Optimal Value Functions Optimality and Approximation   Dynamic Programming  Policy Evaluation (prediction) Policy Improvement Policy Iteration Value Iteration Asynchronous Dynamic Programming Generalized Policy Iteration Efficiency of Dynamic Programming   Monte Carlo Methods  Monte Carlo Prediction Monte Carlo Estimation of Action Values Monte Carlo Control Monte Carlo Control without Exploring Starts Off-policy Prediction via Importance Sampling Incremental Implementation Off-policy Monte Carlo Control Discounting-aware Importance Sampling Per-decision Importance Sampling   Temporal-Difference Learning  TD Prediction Advantages of TD Prediction Methods Optimality of TD(0) Sarsa: On-policy TD Control Q-learning: Off-policy TD Control Expected Sarsa Maximization Bias and Double Learning Games Afterstates, and Other Special Cases   Chapter 7 Planning and Learning with Tabular Methods  Models and Planning Dyna: Integrated Planning, Acting, and Learning When the Model Is Wrong Prioritized Sweeping Expected vs.</description>
+    </item>
+    
     <item>
       <title>Mountain Car</title>
       <link>https://mkschleg.github.io/braindump/mountain_car/</link>
@@ -1410,15 +1419,6 @@ Backlinks 2 Backlinks Efferent Codes Efferent codes or nerve fibers are outgoing
       <guid>https://mkschleg.github.io/braindump/atari/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\expected}{\mathbb{E}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \)
 The set of atari games used heavily in Deep Reinforcement Learning research.</description>
-    </item>
-    
-    <item>
-      <title>Reinforcement Learning: An Introduction</title>
-      <link>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</link>
-      <pubDate>Tue, 09 Feb 2021 14:14:21 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</guid>
-      <description>Table of Contents  Introduction  Reinforcement Learning   Chapter 2 Finite Markov Decision Processes  The Agent-Environment Interface Goals and Rewards Returns and Episodes Unified Notation for Episodic and Continuing Tasks Policies and Value Functions Optimal Policies and Optimal Value Functions Optimality and Approximation   Dynamic Programming  Policy Evaluation (prediction) Policy Improvement Policy Iteration Value Iteration Asynchronous Dynamic Programming Generalized Policy Iteration Efficiency of Dynamic Programming   Monte Carlo Methods  Monte Carlo Prediction Monte Carlo Estimation of Action Values Monte Carlo Control Monte Carlo Control without Exploring Starts Off-policy Prediction via Importance Sampling Incremental Implementation Off-policy Monte Carlo Control Discounting-aware Importance Sampling Per-decision Importance Sampling   Temporal-Difference Learning  TD Prediction Advantages of TD Prediction Methods Optimality of TD(0) Sarsa: On-policy TD Control Q-learning: Off-policy TD Control Expected Sarsa Maximization Bias and Double Learning Games Afterstates, and Other Special Cases   Chapter 7 Planning and Learning with Tabular Methods  Models and Planning Dyna: Integrated Planning, Acting, and Learning When the Model Is Wrong Prioritized Sweeping Expected vs.</description>
     </item>
     
     <item>
