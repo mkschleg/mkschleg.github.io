@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="ADAM | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:22-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:22-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:08-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:08-06:00">
   
 
   <title>ADAM | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:22 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:08 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -223,12 +223,12 @@
 </dl>
 <p>An optimizer which effectively combines RMSProp and Momentum. The algorithm is as follows. Using the gradient \(g_t\), we compute moving averages (or decaying averages) of the first and second moments.</p>
 <p>\begin{align*}
-m_t &amp;= \beta_m m_{t-1} + (1-beta_m) g_t \\\<br>
+m_t &amp;= \beta_m m_{t-1} + (1-beta_m) g_t \\\
 v_t &amp;= \beta_v v_{t-1} + (1-beta_v) g^2_t
 \end{align*}</p>
 <p>Both of these estimated averages are biased towards zero, and thus to unbias these moving averages we scale by \(\frac{1}{1-\beta^t}\)</p>
 <p>\begin{align*}
-\hat{m}_t &amp;= \frac{m_t}{1-\beta_m^t} \\\<br>
+\hat{m}_t &amp;= \frac{m_t}{1-\beta_m^t} \\\
 \hat{v}_t &amp;= \frac{v_t}{1-\beta_v^t}
 \end{align*}</p>
 <p>The first and second moments are then used to calculate the update to the weights:</p>
@@ -238,14 +238,10 @@ v_t &amp;= \beta_v v_{t-1} + (1-beta_v) g^2_t
 <p>Where \(\eta, \epsilon, \beta_m, \beta_v\) are all hyper parameters.</p>
 <p>Typical settings:</p>
 <p>\begin{align*}
-\beta_m &amp;= 0.9 \\\<br>
-\beta_v &amp;= 0.999 \\\<br>
+\beta_m &amp;= 0.9 \\\
+\beta_v &amp;= 0.999 \\\
 \epsilon &amp;= 10^{-8}
 \end{align*}</p>
-<h2 id="backlinks">Backlinks</h2>
-<h2 id="1-backlinks">1 Backlinks</h2>
-<h3 id="wu2016-on-multiplicative-integration-with-recurrent-neural-networks"><a href="/braindump/wu2016/">wu2016: On Multiplicative Integration with Recurrent Neural Networks</a></h3>
-<p>First they look at the gradients when the <a href="/braindump/recurrent_neural_network/">RNNs</a> have linear activation mappings (to focus on the internal mechanisms).  They measure the log of the L2-norm of the gradient for each epoch (averaged over the training set) using the Penn-Treebank dataset using the <a href="/braindump/adam/">ADAM</a> optimizer. They are able to show the norm of the gradient grows much more in vanilla architecture (using additive operations) vs what occurs in the new architecture.</p>
 
     </div>
 

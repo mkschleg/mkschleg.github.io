@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="Gaussian Elimination | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:26-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:26-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:18-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:18-06:00">
   
 
   <title>Gaussian Elimination | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:26 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:18 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -221,9 +221,9 @@
 </dl>
 <p>Elimination is all about <em>solving linear equations</em> (which is central to linear algebra generally). As an example we have two equations with two unknowns</p>
 <p>\begin{align*}
-1x + 2y = 3 \\\<br>
+1x + 2y = 3 \\\
 4x + 5y = 6
-\end{align*} (from [[file:../linear_algebra_and_its_applications.org][Linear Algebra and its Applications]])</p>
+\end{align*} (from [[id:F614A77A-E9CF-47C7-8C96-5B21D3673D4B][Linear Algebra and its Applications]])</p>
 <p>To solve for the unknowns $x$ and $y$ we can use elimination:</p>
 <ol>
 <li>
@@ -238,20 +238,20 @@
 </ol>
 <p>This simple example illustrates how useful gaussian elimination can be. We can look at another set of equations to understand how the method extends beyond two equations</p>
 <p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
-4 u-6 v &amp;= -2 \\\<br>
+2 u+v+w &amp;= 5 \\\
+4 u-6 v &amp;= -2 \\\
 -2 u+7 v+2 w &amp;= 9
 \end{align*}</p>
 <p>The method starts by <strong>substracting multiples of the first equation from the other equations</strong>. The coefficient 2 is the <strong>first pivot</strong>. To find the right multipliers to subtract we take the first pivot and dived it into the numbers in the subsequent numbers underneath.</p>
 <p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
--8v - 2w &amp;= -12 \\\<br>
+2 u+v+w &amp;= 5 \\\
+-8v - 2w &amp;= -12 \\\
 8v + 3w &amp;= 14
 \end{align*}</p>
 <p>The next pivot is the first coefficient in the second equation, where we now only consider equations below this to remove the second unknown.</p>
 <p>\begin{align*}
-2 u+v+w &amp;= 5 \\\<br>
--8v - 2w &amp;= -12 \\\<br>
+2 u+v+w &amp;= 5 \\\
+-8v - 2w &amp;= -12 \\\
 1w &amp;= 2
 \end{align*}</p>
 <p>The system is then solved from bottom to top through <strong>back-substitution</strong>. The forward elimination produced the pivots 2, -8, 1. It subtracted multiples of each row from the rows beneath to reach a <strong>trangular</strong> system, which is solved in reverse order.</p>

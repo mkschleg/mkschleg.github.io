@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="Determinant | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:25-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:25-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:16-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:16-06:00">
   
 
   <title>Determinant | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:25 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:16 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -236,13 +236,13 @@
 <li>
 <p>The determinant changes sign when (any) two rows are exchanged</p>
 <p>\[\text{det} \left(\begin{array}{cc}
-c &amp; d \\\<br>
+c &amp; d \\\
 a &amp; b
 \end{array} \right) = \left|\begin{array}{cc}
-c &amp; d \\\<br>
+c &amp; d \\\
 a &amp; b
 \end{array} \right| = -\det\left(\begin{matrix}
-a &amp; b \\\<br>
+a &amp; b \\\
 c &amp; d \end{matrix}\right)\]</p>
 </li>
 <li>
@@ -273,28 +273,24 @@ c &amp; d \end{matrix}\right)\]</p>
 <h2 id="calculating-the-determinant">Calculating the Determinant</h2>
 <p>First for a two by two matrix:</p>
 <p>\[ \left |\begin{array}{cc}
-a &amp; b \\\<br>
+a &amp; b \\\
 c &amp; d
 \end{array}\right| = ad - bc\]</p>
 <p>Then a three by three matrix:</p>
 <p>\[ \left |\begin{array}{ccc}
-a &amp; b &amp; c\\\<br>
-d &amp; e &amp; f\\\<br>
+a &amp; b &amp; c\\\
+d &amp; e &amp; f\\\
 g &amp; h &amp; i =
 \end{array}\right| =a \cdot\left|\begin{array}{ll}
-e &amp; f \\\<br>
+e &amp; f \\\
 h &amp; i
 \end{array}\right|-b \cdot\left|\begin{array}{ll}
-d &amp; f \\\<br>
+d &amp; f \\\
 g &amp; i
 \end{array}\right|+c \cdot\left|\begin{array}{ll}
-d &amp; e \\\<br>
+d &amp; e \\\
 g &amp; h
 \end{array}\right|\]</p>
-<h2 id="backlinks">Backlinks</h2>
-<h2 id="1-backlinks">1 Backlinks</h2>
-<h3 id="gaussian-elimination"><a href="/braindump/gaussian_elimination/">Gaussian Elimination</a></h3>
-<p>This method is simple and more efficient than its <a href="/braindump/determinant/">Determinant</a> counterpart. It is also useful to consider when this simple algorithm will break down. The most obvious case is when we encounter a pivot which is 0. By definition, elimination breaks down and must stop. This can occur when the system is singular or when it is non-singular. If the system is non-signular, than this can be fixed by changing the order of equations and restarting elimination. The singular case is incurable, as there is no solution to be found.</p>
 
     </div>
 

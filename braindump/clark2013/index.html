@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:36-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:36-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:14-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:14-06:00">
   
 
   <title>clark2013: Whatever next? Predictive brains, situated agents, and the future of cognitive science | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:36 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:14 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -221,7 +221,7 @@
 <dt>source</dt>
 <dd><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9">https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/whatever-next-predictive-brains-situated-agents-and-the-future-of-cognitive-science/33542C736E17E3D1D44E8D03BE5F4CD9</a></dd>
 </dl>
-<p>Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of <a href="/braindump/rao1999/">(Rao 1999)</a> and others in developing the brain as a inference machine.</p>
+<p>Clark argues for the notion that brains are prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is inspired by the work of <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> and others in developing the brain as a inference machine.</p>
 <h2 id="introduction-prediction-machines">Introduction: Prediction Machines</h2>
 <h3 id="from-helmholtz-to-action-oriented-predictive-processing">From Helmholtz to action-oriented predictive processing</h3>
 <p>&ldquo;The whole function of the brain is summed up in: error correction.&rdquo; - W. Ross Ashby</p>
@@ -229,20 +229,29 @@
 <p>These hierarchical models follow from <a href="/braindump/hermann_von_helmholtz/">Hermann von Helmholtz</a> (1860) in depicting perception as a process of probabilistic, knowledge-driven inference.</p>
 <p>This insight informed many who followed in the &ldquo;analysis-by-synthesis&rdquo; paradigm. This paradigm suggest the brain does not build its current model of distal causes simply by accumulating from the bottom-up, but instead tries to predict the current suite of cues from its best models of the possible causes.</p>
 <p>Work in connectionist networks was also inspired by <a href="/braindump/hermann_von_helmholtz/">Hermann von Helmholtz</a> (specifically Hinton, McClelland, Rumelhart&hellip;). Specifically, the Helmholtz machin sought to learn new representations in a multilevel system without requiring the provision of copious pre-classified samples (i.e. a generative model).</p>
-<p>The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &ldquo;virtual version&rdquo; of the sensory data via a deep multilevel cascade lies at the heart of <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> <a href="/braindump/rao1999/">(Rao 1999)</a>. These approaches combine the use of top-down probabilistic generative models with a specific vision of how the downward influence might operate. Specifically, <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> depicts the top-down flow as attempting to predict and fully &ldquo;explain awa&rdquo; the driving sensory signal, leaving only residual &ldquo;prediction errors&rdquo;.</p>
+<p>The strategy of using top-down connections to try to generate, using high-level knowledge, a kind of &ldquo;virtual version&rdquo; of the sensory data via a deep multilevel cascade lies at the heart of <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup>. These approaches combine the use of top-down probabilistic generative models with a specific vision of how the downward influence might operate. Specifically, <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> depicts the top-down flow as attempting to predict and fully &ldquo;explain awa&rdquo; the driving sensory signal, leaving only residual &ldquo;prediction errors&rdquo;.</p>
 <h3 id="escaping-the-black-box">Escaping the black box</h3>
 <p>The task of the brain, or really any learning/intelligent system, when viewed from a certain distance can seem impossible. It must discover information about the likely causes of impinging signals without any form of direct access to their source.</p>
 <p><em>Notice how different this conception is to ones in which the problem is posed as one of estabilishing a mapping relation between environmental and inner states. The task is not to find such a mapping but to infer the nature of the signal source (the world) from just the varying input signal itself.</em></p>
 <p>Such a scheme as predictive coding suggests the backward connections from V2 to V1 would carry a prediction of expected activity in V1, while forward connections for V1 to V2 would carry forward the error signal indicating residual activity.</p>
-<p><a href="/braindump/rao1999/">Rao</a> implemented a simple bidirectional hierarchical network of such predictive estimators. The model displayed hierarchical structure (i.e. the lower level indicating edges, while the higher level combining such edges), &ldquo;extra-classical receptive field&rdquo; effects (suggesting such non-classical surround effects) which may be a rather direct consequence of the use of hierarchical predictive coding.</p>
+<p><sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> implemented a simple bidirectional hierarchical network of such predictive estimators. The model displayed hierarchical structure (i.e. the lower level indicating edges, while the higher level combining such edges), &ldquo;extra-classical receptive field&rdquo; effects (suggesting such non-classical surround effects) which may be a rather direct consequence of the use of hierarchical predictive coding.</p>
 <h3 id="dynamic-predictive-coding-by-the-retina">Dynamic predictive coding by the retina</h3>
-<p>Hosoya  &rsquo;s 2005  account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure. The saves bandwidth and highlights the &ldquo;news-worthy&rdquo; aspects of the incoming signal. Hosoya predicted that, in the interestes of efficient, adaptively potent, encoding, the behavior of the <a href="/braindump/visual_system_/">retinal ganglion cell</a> should vary as a result of adaptation to the current scene or context, exhibiting what they term &ldquo;dynamic predictive coding&rdquo;.</p>
-<h3 id="binocular-rivalry--dot-dot-notes-binocular-rivalry-dot-md"><a href="/braindump/binocular_rivalry/">Binocular rivalry</a></h3>
+<p><sup id="8c0df6e004a59bbb491cb14582298625"><a href="#hosoya2005" title="Hosoya, Baccus \&amp; Meister, Dynamic Predictive Coding by the Retina, {Nature}, v(), (2005).">hosoya2005</a></sup> &rsquo;s <sup id="8c0df6e004a59bbb491cb14582298625"><a href="#hosoya2005" title="Hosoya, Baccus \&amp; Meister, Dynamic Predictive Coding by the Retina, {Nature}, v(), (2005).">hosoya2005</a></sup> account of dynamic predictive coding moves context center states. The neural circuits predict, on the basis of local image characteristics, the likely image characteristics of nearby spots in space and time. The encoded value is not the raw image data, but the residual or departures from the predictable structure. The saves bandwidth and highlights the &ldquo;news-worthy&rdquo; aspects of the incoming signal. Hosoya predicted that, in the interestes of efficient, adaptively potent, encoding, the behavior of the <a href="/braindump/visual_system_/">retinal ganglion cell</a> should vary as a result of adaptation to the current scene or context, exhibiting what they term &ldquo;dynamic predictive coding&rdquo;.</p>
+<h3 id="binocular-rivalry--binocular-rivalry-dot-md"><a href="/braindump/binocular_rivalry/">Binocular rivalry</a></h3>
 <p>This occurs when each eye is presented a separate image. The viewers report perceiving various parts of the two images pop in and out until a single image becomes dominant. A cycle of the two images is continuous. The predictive coding hypothesis explains this more effectively than other hypothesis, for reasons not discussed in these notes.</p>
 <h3 id="action-oriented-predictive-processing">Action-oriented predictive processing</h3>
-<p>This work by (Brown 2011) generalizes the basic <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> model to include action. The fundamental attraction of these accounts lies in their ability to offer a deeply unified account of perception, cognition, and action.</p>
+<p>This work by <sup id="f7d5ffe1736b45c297a57caf90833a3d"><a href="#brown2011" title="Brown, Friston \&amp; Bestmann, Active {{Inference}}, {{Attention}}, and {{Motor Preparation}}, {Frontiers in Psychology}, v(), (2011).">brown2011</a></sup> generalizes the basic <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a> model to include action. The fundamental attraction of these accounts lies in their ability to offer a deeply unified account of perception, cognition, and action.</p>
 <h3 id="the-free-energy-formulation">The free energy formulation</h3>
-<p>Free-energy formulations originate in statistical physics and were introduced into the machine-learning literature in treatments that include (Neal 1998) (among others). These formulations can arguably be used (Friston 2010) to display the prediction error minimization strategy as itself a consequence of a more fundamental mandate to minimize an information-theoretic isomorph of thermodynamic free-energy in a system&rsquo;s exchanges with the environment.</p>
+<p>Free-energy formulations originate in statistical physics and were introduced into the machine-learning literature in treatments that include <sup id="382cce5db5cc745c548748857f8e84c0"><a href="#neal1998" title="@incollection{neal1998,
+title = {A {{View}} of the {{Em Algorithm}} That {{Justifies Incremental}}, {{Sparse}}, and Other {{Variants}}},
+booktitle = {Learning in {{Graphical Models}}},
+author = {Neal, Radford M. and Hinton, Geoffrey E.},
+editor = {Jordan, Michael I.},
+year = {1998},
+series = {{{NATO ASI Series}}},
+publisher = {{Springer Netherlands}},
+address = {{Dordrecht}}
+}">neal1998</a></sup> (among others). These formulations can arguably be used <sup id="d5dc231e89276f53220efecdf8608db4"><a href="#friston2010" title="Friston, The Free-Energy Principle: A Unified Brain Theory?, {Nature Reviews Neuroscience}, v(), (2010).">friston2010</a></sup> to display the prediction error minimization strategy as itself a consequence of a more fundamental mandate to minimize an information-theoretic isomorph of thermodynamic free-energy in a system&rsquo;s exchanges with the environment.</p>
 <p><a href="/braindump/isomorph/">Isomorphism</a>: any mathematical mapping (morphism) which can be inversed through an inverse morphism.</p>
 <p>Thermodynamic free energy is a measure of the energy available to do useful work. Transposed to the cognitive/information domain, it emerges as the difference between the way the world is represented as being, and the way it actually is. The better the fit, the lower the information-theoretic free energy (i.e. more of the system&rsquo;s resources are being put to &ldquo;effective work&rdquo; in representing the world). We can say prediction error reports the information-theoretic free energy.</p>
 <p><a href="/braindump/free_energy_principle/">Free-Energy Principle</a>: all the quantities that can change; i.e. that are part of the system, will change to minimize free-energy.</p>
@@ -267,11 +276,21 @@
 <h3 id="the-delicate-dance-between-top-down-and-bottom-up">The delicate dance between top-down and bottom-up</h3>
 <h3 id="summary-so-far">Summary so far</h3>
 <h2 id="references">References</h2>
-<p>(Rao 1999)  Rajesh P. N. Rao and  Dana H. Ballard, <em>Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects</em>, Nature Neuroscience, , pp.  (1999). <nil>.</p>
-<p>(Hosoya 2005)  Toshihiko Hosoya;  Stephen A. Baccus and  Markus Meister, <em>Dynamic Predictive Coding by the Retina</em>, Nature, , pp.  (2005). <nil>.</p>
-<p>(Brown 2011)  Harriet Brown;  Karl J. Friston and  Sven Bestmann, <em>Active {{Inference}}, {{Attention}}, and {{Motor Preparation}}</em>, Frontiers in Psychology, , pp.  (2011). <nil>.</p>
-<p>(Neal 1998)  Radford M. Neal and  Geoffrey E. Hinton, <em>A {{View}} of the {{Em Algorithm}} That {{Justifies Incremental}}, {{Sparse}}, and Other {{Variants}}</em>, (1998).</p>
-<p>(Friston 2010)  Karl Friston, <em>The Free-Energy Principle: A Unified Brain Theory?</em>, Nature Reviews Neuroscience, , pp.  (2010). <nil>.</p>
+<h1 id="bibliography">Bibliography</h1>
+<p><a id="rao1999"></a>[rao1999] Rao &amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, <i>Nature Neuroscience</i>,  (1999). <a href="#7b979f5b998905dc446bf66499306a20">↩</a></p>
+<p><a id="hosoya2005"></a>[hosoya2005] Hosoya, Baccus &amp; Meister, Dynamic Predictive Coding by the Retina, <i>Nature</i>,  (2005). <a href="#8c0df6e004a59bbb491cb14582298625">↩</a></p>
+<p><a id="brown2011"></a>[brown2011] Brown, Friston &amp; Bestmann, Active Inference, Attention, and Motor Preparation, <i>Frontiers in Psychology</i>,  (2011). <a href="#f7d5ffe1736b45c297a57caf90833a3d">↩</a></p>
+<p><a id="neal1998"></a>[neal1998] @incollectionneal1998,
+title = A View of the Em Algorithm That Justifies Incremental, Sparse, and Other Variants,
+booktitle = Learning in Graphical Models,
+author = Neal, Radford M. and Hinton, Geoffrey E.,
+editor = Jordan, Michael I.,
+year = 1998,
+series = NATO ASI Series,
+publisher = Springer Netherlands,
+address = Dordrecht
+<a href="#382cce5db5cc745c548748857f8e84c0">↩</a></p>
+<p><a id="friston2010"></a>[friston2010] Friston, The Free-Energy Principle: A Unified Brain Theory?, <i>Nature Reviews Neuroscience</i>,  (2010). <a href="#d5dc231e89276f53220efecdf8608db4">↩</a></p>
 
     </div>
 

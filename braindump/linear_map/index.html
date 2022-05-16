@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/linear_function.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/linear_map.md%29%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -54,8 +54,8 @@
   <meta property="og:title" content="Linear Map | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2020-08-12T13:50:31-06:00">
-  <meta property="article:modified_time" content="2020-08-12T13:50:31-06:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:26-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:26-06:00">
   
 
   <title>Linear Map | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2020-08-12 13:50:31 -0600 -0600" itemprop="datePublished dateModified">
-      Aug 12, 2020
+    <time datetime="2021-09-13 14:17:26 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -217,7 +217,9 @@
       
       <p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
@@ -264,7 +266,9 @@
 \newcommand{\Vmat}{\mathbf{V}}
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Qmat}{\mathbf{Q}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
@@ -275,7 +279,11 @@
 <dt>source</dt>
 <dd><a href="https://en.wikipedia.org/wiki/Linear%5Fmap">https://en.wikipedia.org/wiki/Linear%5Fmap</a></dd>
 </dl>
-<p>A Linear map is</p>
+<p>A linear map \(f: V \mapsto W\) is a map between two <a href="/braindump/vector_space/">Vector Space</a>s \(V\) and \(W\) over the same field \(\mathbb{F}\) and is said to be linear if for \(\uvec, \vvec \in V\) and \(c\in\mathbb{F}\)</p>
+<ol>
+<li><a href="/braindump/additivity/">Additivity</a>: \(f(\uvec + \vvec) = f(\uvec) + f(\vvec)\)</li>
+<li><a href="/braindump/homogeneity/">Homogeneity</a>: \(f(c\uvec) = c f(\uvec)\)</li>
+</ol>
 
     </div>
 

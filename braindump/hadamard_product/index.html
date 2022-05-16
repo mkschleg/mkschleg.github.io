@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="Hadamard product | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:27-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:27-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:19-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:19-06:00">
   
 
   <title>Hadamard product | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:27 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:19 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -223,42 +223,36 @@
 <p>It is quite simply the element-wise produce between two matrices: \(\mathcal{A}, \mathcal{B}: n \times m\).</p>
 <p>\begin{align*}
 \left[\begin{array}{cc}
-{A_{11}} &amp; {A_{12}} \\\<br>
-{A_{21}} &amp; {A_{22}} \\\<br>
+{A_{11}} &amp; {A_{12}} \\\
+{A_{21}} &amp; {A_{22}} \\\
 {A_{31}} &amp; {A_{32}}
 \end{array}\right]
 \odot \left[\begin{array}{cc}
-{B_{11}} &amp; {B_{12}} \\\<br>
-{B_{21}} &amp; {B_{22}} \\\<br>
+{B_{11}} &amp; {B_{12}} \\\
+{B_{21}} &amp; {B_{22}} \\\
 {B_{31}} &amp; {B_{32}}
 \end{array}\right]
 &amp;= \left[\begin{array}{ll}
-{A_{11}B_{11}} &amp; {A_{12}B_{12}} \\\<br>
-{A_{21}B_{21}} &amp; {A_{22}B_{22}} \\\<br>
+{A_{11}B_{11}} &amp; {A_{12}B_{12}} \\\
+{A_{21}B_{21}} &amp; {A_{22}B_{22}} \\\
 {A_{31}B_{31}} &amp; {A_{32}B_{32}}
-\end{array}\right] \\\<br>
+\end{array}\right] \\\
 \left[\begin{array}{cc}
-{2} &amp; {1} \\\<br>
-{3} &amp; {0} \\\<br>
+{2} &amp; {1} \\\
+{3} &amp; {0} \\\
 {0} &amp; {4}
 \end{array}\right]
 \odot \left[\begin{array}{cc}
-{1} &amp; {2} \\\<br>
-{-3} &amp; {1} \\\<br>
+{1} &amp; {2} \\\
+{-3} &amp; {1} \\\
 {1} &amp; {2}
 \end{array}\right]
 &amp;= \left[\begin{array}{ll}
-{2} &amp; {2} \\\<br>
-{-9} &amp; {0} \\\<br>
+{2} &amp; {2} \\\
+{-9} &amp; {0} \\\
 {0} &amp; {8}
 \end{array}\right]
 \end{align*}</p>
-<h2 id="backlinks">Backlinks</h2>
-<h2 id="2-backlinks">2 Backlinks</h2>
-<h3 id="matrix"><a href="/braindump/matrix/">Matrix</a></h3>
-<p><a href="/braindump/hadamard_product/">Hadamard product</a></p>
-<h3 id="wu2016-on-multiplicative-integration-with-recurrent-neural-networks"><a href="/braindump/wu2016/">wu2016: On Multiplicative Integration with Recurrent Neural Networks</a></h3>
-<p>This paper explores a new architectural building block for recurrent neural networks, specifically one which integrates information from the internal state of the unit and the data stream through a multiplicative update. They use the <a href="/braindump/hadamard_product/">Hadamard product</a> to integrate this information together, although there are other choices here which they don&rsquo;t discuss (such as various tensor products).</p>
 
     </div>
 

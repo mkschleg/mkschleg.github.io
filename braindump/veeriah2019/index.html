@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="veeriah2019: Discovery of Useful Questions as Auxiliary Tasks | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:43-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:43-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:41-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:41-06:00">
   
 
   <title>veeriah2019: Discovery of Useful Questions as Auxiliary Tasks | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:43 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:41 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -266,6 +266,7 @@
 \newcommand{\Vmat}{\mathbf{V}}
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Qmat}{\mathbf{Q}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -282,7 +283,7 @@
 <dt>year</dt>
 <dd>2019</dd>
 </dl>
-<p>This paper considers how to &ldquo;discover&rdquo; a set of GVF questions for auxiliary tasks (Jaderberg 2017) using meta-gradient descent. They consider a multi-step meta-loss function (unlike previous approaches which only consider a single step function).</p>
+<p>This paper considers how to &ldquo;discover&rdquo; a set of GVF questions for auxiliary tasks <sup id="b7fd6e9e5809238a69c909aefb245768"><a href="#jaderberg2017" title="Jaderberg, Mnih, Czarnecki, Schaul, Leibo, Silver \&amp; Kavukcuoglu, {{REINFORCEMENT LEARNING WITH UNSUPERVISED AUXILIARY TASKS}}, {International Conference on Representation Learning}, v(), (2017).">jaderberg2017</a></sup> using meta-gradient descent. They consider a multi-step meta-loss function (unlike previous approaches which only consider a single step function).</p>
 <p>They use two neural networks:</p>
 <ol>
 <li>The main architecture which is responsible for learning the answers to the GVF questions and learning the main task (i.e. the action-state value function or policy parameterization). This architecture takes the last i observations \(\obs_{t-i+1:t}\) as inputs. Parameterized by \(\theta\)</li>
@@ -291,7 +292,19 @@
 <p>They argue the having the wait j-steps to learn the GVFs is reasonable as the question and answer networks are only used during training, and neither is needed for action selection. I&rsquo;m not sure I buy the justification.</p>
 <p>They set up three loss functions (two normal losses and one meta-loss).</p>
 <ol>
-<li>The canonical <a href="/braindump/deep_reinforcement_learning/">DRL</a> loss \(\mathcal{L}^{RL}\) which is used to find the main task policy \(\pi_t\) (either directly through policy search algorithms (Williams 1992) or through value function based approaches (Watkins 1989)).</li>
+<li>The canonical <a href="/braindump/deep_reinforcement_learning/">DRL</a> loss \(\mathcal{L}^{RL}\) which is used to find the main task policy \(\pi_t\) (either directly through policy search algorithms <sup id="972b5cafcdddd5e9844535cdc7870538"><a href="#williams1992" title="@incollection{williams1992,
+title = {Simple {{Statistical Gradient}}-{{Following Algorithms}} for {{Connectionist Reinforcement Learning}}},
+booktitle = {Reinforcement {{Learning}}},
+author = {Williams, Ronald J.},
+year = {1992},
+series = {The {{Springer International Series}} in {{Engineering}} and {{Computer Science}}},
+publisher = {{Springer, Boston, MA}}
+}">williams1992</a></sup> or through value function based approaches <sup id="813c364b402bc49c1d8af7f0e043bed4"><a href="#watkins1989learning" title="@phdthesis{watkins1989learning,
+title = {Learning from Delayed Rewards},
+author = {Watkins, Christopher John Cornish Hellaby},
+year = {1989},
+school = {King's College, Cambridge}
+}">watkins1989learning</a></sup>).</li>
 <li>The auxiliary task loss function \(\mathcal{L}^{ans}\) which will likely take the form of a mini-batch semi-gradient TD (maybe multi-step) update.</li>
 <li>The meta loss \(m\) which is the sum of the \(\mathcal{L}^{RL}\) associated with the main task updates \(\mathcal{L}^{Meta} = \sum_{k=1}^L \mathcal{L}^{RL}(\theta_{t,k})\)</li>
 </ol>
@@ -316,9 +329,22 @@
 </ol>
 <p>They show the usual minor improvements or similar results to previous experiments.</p>
 <h2 id="references">References</h2>
-<p>(Jaderberg 2017)  Max Jaderberg;  Volodymyr Mnih;  Wojciech Marian Czarnecki;  Tom Schaul;  Joel Z Leibo;  David Silver and  Koray Kavukcuoglu, <em>{{REINFORCEMENT LEARNING WITH UNSUPERVISED AUXILIARY TASKS}}</em>, International Conference on Representation Learning, , pp.  (2017). <nil>.</p>
-<p>(Williams 1992)  Ronald J. Williams, <em>Simple {{Statistical Gradient}}-{{Following Algorithms}} for {{Connectionist Reinforcement Learning}}</em>, (1992).</p>
-<p>(Watkins 1989)  Christopher John Cornish Hellaby Watkins, <em>Learning from Delayed Rewards</em>, King&rsquo;s College, Cambridge(1989).</p>
+<h1 id="bibliography">Bibliography</h1>
+<p><a id="jaderberg2017"></a>[jaderberg2017] Jaderberg, Mnih, Czarnecki, Schaul, Leibo, Silver &amp; Kavukcuoglu, REINFORCEMENT LEARNING WITH UNSUPERVISED AUXILIARY TASKS, <i>International Conference on Representation Learning</i>,  (2017). <a href="#b7fd6e9e5809238a69c909aefb245768">↩</a></p>
+<p><a id="williams1992"></a>[williams1992] @incollectionwilliams1992,
+title = Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning,
+booktitle = Reinforcement Learning,
+author = Williams, Ronald J.,
+year = 1992,
+series = The Springer International Series in Engineering and Computer Science,
+publisher = Springer, Boston, MA
+<a href="#972b5cafcdddd5e9844535cdc7870538">↩</a></p>
+<p><a id="watkins1989learning"></a>[watkins1989learning] @phdthesiswatkins1989learning,
+title = Learning from Delayed Rewards,
+author = Watkins, Christopher John Cornish Hellaby,
+year = 1989,
+school = King&rsquo;s College, Cambridge
+<a href="#813c364b402bc49c1d8af7f0e043bed4">↩</a></p>
 
     </div>
 

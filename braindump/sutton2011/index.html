@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:41-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:41-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:38-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:38-06:00">
   
 
   <title>sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:41 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:38 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -227,10 +227,10 @@
 </dl>
 <p>This paper focuses on building world knowledge through value function predictions on the sensorimotor stream. This new class of sensorimotor predictions are coined General Value Functions, and posited to be able to encapsulate the model of the world through gradient temporal-difference training. They also posit that this architecture, deemed the Horde, is a step towards a real-time architecture for efficient learning.</p>
 <h2 id="the-problem-of-expressive-and-learnable-knowledge">The Problem of Expressive and Learnable Knowledge</h2>
-<p>They make the claim that knowledge representation is hard, which is a reasonable claim and one I agree with. They posit that prior approaches are either limited from their abstraction away from the data stream (first-order predicate logic), or lack of generality (differential equations and state-transition matrices). They argue that a class of value predictions will produce a more general form of knowledge (predictive knowledge), which will better encapsulate the agent&rsquo;s knowledge of the world. Several other approaches and theories of the representation of knowledge learned through the sensorimotor stream have been proposed including: (Drescher 1991), (Cunningham 2013), (Becker 1973).</p>
+<p>They make the claim that knowledge representation is hard, which is a reasonable claim and one I agree with. They posit that prior approaches are either limited from their abstraction away from the data stream (first-order predicate logic), or lack of generality (differential equations and state-transition matrices). They argue that a class of value predictions will produce a more general form of knowledge (predictive knowledge), which will better encapsulate the agent&rsquo;s knowledge of the world. Several other approaches and theories of the representation of knowledge learned through the sensorimotor stream have been proposed including: <sup id="6559eff0f05dfd4be9c8d6726d937b72"><a href="#drescher1991" title="Drescher, Made-{{Up Minds}} : {{A Constructivist Approach}} to {{Artificial Intelligence}}, {The MIT Press} (1991).">drescher1991</a></sup>, <sup id="5b398cfbcb2305295f2d74a4f0698fd0"><a href="#cunningham2013intelligence" title="Cunningham, Intelligence: {{Its}} Organization and Development, {Elsevier} (2013).">cunningham2013intelligence</a></sup>, <sup id="de504f8eba81fc76f28f894ea7b665dd"><a href="#becker1973model" title="Becker, A {{Model}} for the {{Encoding}} of {{Experiential Information}}. {{Computer Models}} of {{Thought}} and {{Language}}. {{RC Schank}} and {{KM Colby}}, v(), (1973).">becker1973model</a></sup>.</p>
 <ul>
-<li>(Drescher 1991) explored a simulated robot baby learning conditional probability tables for boolean events</li>
-<li>(Ring 1997) explored continual learning of a hierarchical representation of sequences</li>
+<li><sup id="6559eff0f05dfd4be9c8d6726d937b72"><a href="#drescher1991" title="Drescher, Made-{{Up Minds}} : {{A Constructivist Approach}} to {{Artificial Intelligence}}, {The MIT Press} (1991).">drescher1991</a></sup> explored a simulated robot baby learning conditional probability tables for boolean events</li>
+<li><sup id="87e79d486dd48b577ba1a9f855458a30"><a href="#ring1997" title="Ring, {{CHILD}}: {{A First Step Towards Continual Learning}}, {Machine Learning}, v(), (1997).">ring1997</a></sup> explored continual learning of a hierarchical representation of sequences</li>
 </ul>
 <p>These systems among others learned knowledge but remained far from learning from sensorimotor data. They claim that a knowledge representation built on predictions made from value functions will provide a broader knowledge representation.</p>
 <h2 id="value-functions-as-semantics">Value functions as semantics</h2>
@@ -275,10 +275,11 @@ Semantically the same, except the policy is now the stopping policy, and the rew
 <p>They also tacitly imply that value functions are the only form of knowledge looked at which has semantic meaning in the data (which I&rsquo;m unclear if this is accurate).</p>
 </li>
 </ul>
-<p>(Drescher 1991)  Gary L. Drescher, <em>Made-{{Up Minds}} : {{A Constructivist Approach}} to {{Artificial Intelligence}}</em>, (1991).</p>
-<p>(Cunningham 2013)  Michael Cunningham, <em>Intelligence: {{Its}} Organization and Development</em>, (2013).</p>
-<p>(Becker 1973)  JD Becker, <em>A {{Model}} for the {{Encoding}} of {{Experiential Information}}. {{Computer Models}} of {{Thought}} and {{Language}}. {{RC Schank}} and {{KM Colby}}</em>, , , pp.  (1973). <nil>.</p>
-<p>(Ring 1997)  Mark B. Ring, <em>{{CHILD}}: {{A First Step Towards Continual Learning}}</em>, Machine Learning, , pp.  (1997). <nil>.</p>
+<h1 id="bibliography">Bibliography</h1>
+<p><a id="drescher1991"></a>[drescher1991] Drescher, Made-Up Minds : A Constructivist Approach to Artificial Intelligence, The MIT Press (1991). <a href="#6559eff0f05dfd4be9c8d6726d937b72">↩</a></p>
+<p><a id="cunningham2013intelligence"></a>[cunningham2013intelligence] Cunningham, Intelligence: Its Organization and Development, Elsevier (2013). <a href="#5b398cfbcb2305295f2d74a4f0698fd0">↩</a></p>
+<p><a id="becker1973model"></a>[becker1973model] Becker, A Model for the Encoding of Experiential Information. Computer Models of Thought and Language. RC Schank and KM Colby, <i></i>,  (1973). <a href="#de504f8eba81fc76f28f894ea7b665dd">↩</a></p>
+<p><a id="ring1997"></a>[ring1997] Ring, CHILD: A First Step Towards Continual Learning, <i>Machine Learning</i>,  (1997). <a href="#87e79d486dd48b577ba1a9f855458a30">↩</a></p>
 
     </div>
 

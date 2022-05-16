@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-02-09T14:14:42-07:00">
-  <meta property="article:modified_time" content="2021-02-09T14:14:42-07:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:40-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:40-06:00">
   
 
   <title>vanhasselt2015: Learning to Predict Independent of Span | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-02-09 14:14:42 -0700 -0700" itemprop="datePublished dateModified">
-      Feb 9, 2021
+    <time datetime="2021-09-13 14:17:40 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -266,6 +266,7 @@
 \newcommand{\Vmat}{\mathbf{V}}
 \newcommand{\Wmat}{\mathbf{W}}
 \newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Qmat}{\mathbf{Q}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -305,7 +306,7 @@ For example:</p>
 <li>Convergence of the new algorithm <a href="#sec:vanhasselt2015:convergence">sec:vanhasselt2015:convergence</a></li>
 <li>Discussion/Conclusions <a href="#sec:vanhasselt2015:discussion">sec:vanhasselt2015:discussion</a></li>
 </ol>
-<h2 id="independence-of-span-and-the-emergence-of-traces-secvanhasselt2015traces">Independence of span and the emergence of traces {#sec:vanhasselt2015:traces}</h2>
+<h2 id="sec:vanhasselt2015:traces">Independence of span and the emergence of traces</h2>
 <p><strong>Notations</strong>:</p>
 <ul>
 <li>\(t\) time step with \(t=0\) as the initial point</li>
@@ -324,12 +325,12 @@ For example:</p>
 <p>where \(\mathbf{F}_{t} \doteq \mathbf{I}-\alpha_{t} \boldsymbol{\phi}_{t} \boldsymbol{\phi}_{t}^{\top}\).</p>
 <p>We can then define both updates to \(\boldsymbol{a}_t\) and \(\boldsymbol{e}_t\) in incremental terms where the eligibility vector is analogous to the conventional eligibility trace using <em>dutch traces</em>! This suggests that eligibility traces are not specific to TD learning at all; and are more fundamental to predictions over time. This span-independent algorithm is denoted as the backwards view and can be summarized as:</p>
 <p>\begin{align}
-{\mathbf{a}_{0} \doteq \theta_{0}, \quad \text { then } a_{t+1} \doteq a_{t}+\alpha_{t} \phi_{t}\left(0-\phi_{t}^{\top} a_{t}\right), \quad t=1, \ldots, T-1} \nonumber \\\<br>
-{e_{-1} \doteq 0, \quad \text { then } e_{t} \doteq e_{t-1}+\alpha_{t} \phi_{t}\left(1-\phi_{t}^{\top} e_{t-1}\right), \quad t=0, \ldots, T-1} \\\<br>
+{\mathbf{a}_{0} \doteq \theta_{0}, \quad \text { then } a_{t+1} \doteq a_{t}+\alpha_{t} \phi_{t}\left(0-\phi_{t}^{\top} a_{t}\right), \quad t=1, \ldots, T-1} \nonumber \\\
+{e_{-1} \doteq 0, \quad \text { then } e_{t} \doteq e_{t-1}+\alpha_{t} \phi_{t}\left(1-\phi_{t}^{\top} e_{t-1}\right), \quad t=0, \ldots, T-1} \\\
 {\boldsymbol{\theta}_{T} \doteq \boldsymbol{a}_{T-1}+Z \boldsymbol{e}_{T-1}} \nonumber
 \end{align}</p>
 <p>While the overall computation (\(O(Tn)\)) is still the same, the amount of memory has been significantly reduced \(O(n)\), meaning the memory is constant wrt the span of the prediction.</p>
-<h2 id="online-updating-and-the-emergence-of-td-errors-secvanhasselt2015online">Online Updating and the emergence of TD errors {#sec:vanhasselt2015:online}</h2>
+<h2 id="sec:vanhasselt2015:online">Online Updating and the emergence of TD errors</h2>
 <p>The main thesis of this section revolves around the fact that an online algorithm cannot update it&rsquo;s prediction weights towards the final outcome \(Z\) during the episode. This is because \(Z\) is only available at the end of an episode. This becomes problematic when we want to make interim predictions based on what we believe the outcome could be. The main idea is to use interim targets (based on all the data available up to the horizon) denoted by \(Z^h\) where \(h\) is the timestep the target is presented to the algorithm.</p>
 <div class="note">
   <div></div>
@@ -341,25 +342,25 @@ For example:</p>
 </div>
 <p>The following clarifies notation, where we use the previously defined algorithm to learn a new set of weights \(\theta_h^h\) for each new interim target where \(\theta_T^T = \theta_T\).</p>
 <p>\begin{array}{ll}
-\boldsymbol{\theta}_{0}^{h} &amp;\doteq \boldsymbol{\theta}_{0}, &amp; h=0, \ldots, T \\\<br>
-\boldsymbol{\theta}_{t+1}^{h} &amp;\doteq \boldsymbol{\theta}_{t}^{h}+\alpha_{t} \boldsymbol{\phi}_{t}\left(Z^{h}-\boldsymbol{\phi}_{t}^{\top} \boldsymbol{\theta}_{t}^{h}\right), &amp; t=0, \ldots, h-1, \quad h=1, \ldots, T \\\<br>
+\boldsymbol{\theta}_{0}^{h} &amp;\doteq \boldsymbol{\theta}_{0}, &amp; h=0, \ldots, T \\\
+\boldsymbol{\theta}_{t+1}^{h} &amp;\doteq \boldsymbol{\theta}_{t}^{h}+\alpha_{t} \boldsymbol{\phi}_{t}\left(Z^{h}-\boldsymbol{\phi}_{t}^{\top} \boldsymbol{\theta}_{t}^{h}\right), &amp; t=0, \ldots, h-1, \quad h=1, \ldots, T \\\
 &amp; =\mathbf{F}_{t} \boldsymbol{\theta}_{t}^{h}+\alpha_{t} \boldsymbol{\phi}_{t} Z^{h} .
 \end{array}</p>
 <p>This creates a set of all possible weights which can be written as the lower triangular matrix, where each row is the new horizon and the diagonal denotes the weights learned by the algorithm derived in <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a> for each interim target. The authors then set out to develop an algorithm which is able to traverse the diagonal without having to calculate the entire lower triangular matrix of weights. To do this they follow the same technique as in <a href="#sec:vanhasselt2015:traces">sec:vanhasselt2015:traces</a>: take the forward view algorithm and unroll to create the backward view variant. The resulting algorithm (by combining this unrolling and the forward view to traverse the diagonal) is</p>
 <p>\begin{array}{ll}
-\traces_{t} &amp;\doteq \traces_{t-1} + \alpha_t\phivec_t(1-\phivec_t^\trans \traces_{t-1}) \quad \triangleright \traces_{-1} \doteq \mathbf{0} \\\<br>
+\traces_{t} &amp;\doteq \traces_{t-1} + \alpha_t\phivec_t(1-\phivec_t^\trans \traces_{t-1}) \quad \triangleright \traces_{-1} \doteq \mathbf{0} \\\
 \thetavec_{t+1} &amp;\doteq \thetavec_{t} + \traces_t (Z^{t+1} - Z^t) + \alpha_t \phivec_t (Z^t - \phivec_t^\trans\thetavec_t), \quad t=0, \ldots, T-1
 \end{array}</p>
 <div class="note">
   <div></div>
 <p>Although the backward view algorithm yields different predictions during the episode, the final weights \(\thetavec_T\) is exactly the same as those computed by the conventional LMS algorithm that constituted the first, offline, forward view algorithm considered in this paper. And in fact all three algorithms they&rsquo;ve so far developed result in the same final weights (which is the desired effect thus far).</p>
 </div>
-<h2 id="unifying-online-and-offline-learning-and-the-emergence-of-averaging-secvanhasselt2015efficiency">Unifying online and offline learning and the emergence of averaging {#sec:vanhasselt2015:efficiency}</h2>
-<h2 id="bootstrapping-secvanhasselt2015tdlambda">Bootstrapping {#sec:vanhasselt2015:tdlambda}</h2>
-<h2 id="combining-two-notions-of-trust-and-the-emergence-of-averaged-tdlambda-secvanhasselt2015onetorulethem">Combining two notions of trust and the emergence of averaged TD(\(\lambda\)) {#sec:vanhasselt2015:onetorulethem}</h2>
-<h2 id="generalizing-to-cumulative-returns-and-soft-terminations-secvanhasselt2015generalizations">Generalizing to cumulative returns and soft terminations {#sec:vanhasselt2015:generalizations}</h2>
-<h2 id="convergence-analysis-secvanhasselt2015convergence">Convergence Analysis {#sec:vanhasselt2015:convergence}</h2>
-<h2 id="discussion-secvanhasselt2015discussion">Discussion {#sec:vanhasselt2015:discussion}</h2>
+<h2 id="sec:vanhasselt2015:efficiency">Unifying online and offline learning and the emergence of averaging</h2>
+<h2 id="sec:vanhasselt2015:tdlambda">Bootstrapping</h2>
+<h2 id="sec:vanhasselt2015:onetorulethem">Combining two notions of trust and the emergence of averaged TD(\(\lambda\))</h2>
+<h2 id="sec:vanhasselt2015:generalizations">Generalizing to cumulative returns and soft terminations</h2>
+<h2 id="sec:vanhasselt2015:convergence">Convergence Analysis</h2>
+<h2 id="sec:vanhasselt2015:discussion">Discussion</h2>
 <p>This is the discussion section</p>
 
     </div>

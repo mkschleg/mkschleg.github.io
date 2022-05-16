@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.91.2" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="barreto2018a: Successor Features for Transfer in Reinforcement Learning | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-04-07T11:00:15-06:00">
-  <meta property="article:modified_time" content="2021-04-07T11:00:15-06:00">
+  <meta property="article:published_time" content="2021-09-13T14:17:10-06:00">
+  <meta property="article:modified_time" content="2021-09-13T14:17:10-06:00">
   
 
   <title>barreto2018a: Successor Features for Transfer in Reinforcement Learning | Matthew Schlegel</title>
@@ -202,8 +202,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-04-07 11:00:15 -0600 -0600" itemprop="datePublished dateModified">
-      Apr 7, 2021
+    <time datetime="2021-09-13 14:17:10 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 13, 2021
     </time>
   </span>
 
@@ -285,7 +285,7 @@
 </dl>
 <p>The two main ideas presented in this paper:</p>
 <ul>
-<li>Successor features are an extension of <a href="/braindump/dayan1993/">(Dayan 1993)</a> Successor Representations to the non-tabular setting.</li>
+<li>Successor features are an extension of <sup id="bc5263c9f3dd76d28c158c06782b4407"><a href="#dayan1993" title="Dayan, Improving {{Generalization}} for {{Temporal Difference Learning}}: {{The Successor Representation}}, {Neural Computation}, v(), (1993).">dayan1993</a></sup> Successor Representations to the non-tabular setting.</li>
 <li>General Policy Improvement, a principled way to do <a href="/braindump/policy_improvement/">Policy Improvement</a> when you are learning multiple policies.</li>
 </ul>
 <p>These ideas are presented to do transfer in <a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>.</p>
@@ -294,8 +294,8 @@
 \[ r(s,a,s^\prime) = \phivec(s, a, s^\prime)^\trans \wvec \]</p>
 <p>where \(\wvec\) is a learned vector. If this is the case, we can rewrite the state-action value function as</p>
 <p>\begin{align*}
-Q^\pi(s, a) &amp;= \expected^\pi [ r_{t+1} + \gamma_{t+1} r_{t+2} + \ldots | S_t = s, A_t = a] \\\<br>
-&amp;= \expected^\pi [ \phivec_{t+1}^\trans \wvec + \gamma_{t+1} \phivec_{t+2}^\trans \wvec + \ldots | S_t = s, A_t = a] \\\<br>
+Q^\pi(s, a) &amp;= \expected^\pi [ r_{t+1} + \gamma_{t+1} r_{t+2} + \ldots | S_t = s, A_t = a] \\\
+&amp;= \expected^\pi [ \phivec_{t+1}^\trans \wvec + \gamma_{t+1} \phivec_{t+2}^\trans \wvec + \ldots | S_t = s, A_t = a] \\\
 &amp;= \expected^\pi [\sum_{i=t}^\infty (\prod^i_{j=t+1} \gamma_{j+1}) \phi_{i+1}] ^\trans \wvec = \psi^{\pi, \gamma}(s,a)
 \end{align*}</p>
 <p>With the successor feature vector \(\psi^{\pi, \gamma}(s,a)\), we can transfer to new cumulant (or reward) specs readily. We just need to learn the new one-step reward model vector \(\wvec\).</p>
@@ -305,7 +305,8 @@ Q^\pi(s, a) &amp;= \expected^\pi [ r_{t+1} + \gamma_{t+1} r_{t+2} + \ldots | S_t
 <p>This is then applied to transfer when using successor features.</p>
 <h2 id="four-rooms-enivronment">Four Rooms Enivronment</h2>
 <h2 id="references">References</h2>
-<p>(Dayan 1993)  Peter Dayan, <em>Improving {{Generalization}} for {{Temporal Difference Learning}}: {{The Successor Representation}}</em>, Neural Computation, , pp.  (1993). <nil>.</p>
+<h1 id="bibliography">Bibliography</h1>
+<p><a id="dayan1993"></a>[dayan1993] Dayan, Improving Generalization for Temporal Difference Learning: The Successor Representation, <i>Neural Computation</i>,  (1993). <a href="#bc5263c9f3dd76d28c158c06782b4407">↩</a></p>
 
     </div>
 
