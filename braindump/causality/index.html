@@ -54,8 +54,8 @@
   <meta property="og:title" content="Causality | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-10-11T11:31:35-04:00">
-  <meta property="article:modified_time" content="2021-10-11T11:31:35-04:00">
+  <meta property="article:published_time" content="2022-06-06T20:35:39-06:00">
+  <meta property="article:modified_time" content="2022-06-06T20:35:39-06:00">
   
 
   <title>Causality | Matthew Schlegel</title>
@@ -180,6 +180,9 @@
     <a class="hover" href="/about">About</a>
     
     
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
     <a class="hover" href="/publications">Publications</a>
     
     
@@ -202,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-10-11 11:31:35 -0400 -0400" itemprop="datePublished dateModified">
-      Oct 11, 2021
+    <time datetime="2022-06-06 20:35:39 -0600 MDT" itemprop="datePublished dateModified">
+      Jun 6, 2022
     </time>
   </span>
 
@@ -277,22 +280,20 @@
 <p>This note will talk about the <a href="/braindump/statistics/">Statistics</a> and <a href="/braindump/artificial_intelligence/">AI</a> notions of causality. This will also host as a place to link to various resources and notes on these resources.</p>
 <h2 id="common-cause-principle">Common Cause principle</h2>
 <p>It is well known that statistical properties alone do not determine causal structures.</p>
-<p><a id="org792ea8c"></a></p>
+<p><a id="figure--fig:reichenbach-cpp-fig"></a></p>
 <figure><img src="/ox-hugo/reichenbach_ccp_fig.png"
-         alt="Figure 1: Reichenbach&amp;rsquo;s common cause principle establishes a link between statistical properties and causal structures. A statistical dependence between two observables \(X\) and \(Y\) indicates taht they are caused by a (potentially new) variable \(Z\). In the figures cause is denoted through arrows."/><figcaption>
-            <p>Figure 1: Reichenbach&rsquo;s common cause principle establishes a link between statistical properties and causal structures. A statistical dependence between two observables \(X\) and \(Y\) indicates taht they are caused by a (potentially new) variable \(Z\). In the figures cause is denoted through arrows.</p>
+         alt="Figure 1: Reichenbach&amp;rsquo;s common cause principle establishes a link between statistical properties and causal structures. A statistical dependence between two observables (X) and (Y) indicates taht they are caused by a (potentially new) variable (Z). In the figures cause is denoted through arrows."/><figcaption>
+            <p><span class="figure-number">Figure 1: </span>Reichenbach&rsquo;s common cause principle establishes a link between statistical properties and causal structures. A statistical dependence between two observables (X) and (Y) indicates taht they are caused by a (potentially new) variable (Z). In the figures cause is denoted through arrows.</p>
         </figcaption>
 </figure>
 
 <div class="principle">
-  <div></div>
 <div class="title">
-  <div></div>
 <p>Reichenbach&rsquo;s common cause principle:</p>
 </div>
 <p>If two random variables X and Y are statistically dependent, then there exists a third variable Z that causally influences both. (As a special case, Z may coincide with either X or Y.) Furthermore, this variable Z screens X and Y from each other in the sense that given Z, they become independent.</p>
 </div>
-<p>While this principle lays out a primal causal model, estimating such a model from data (especially if the data isn&rsquo;t <a href="#causal-sufficiency">causally sufficient</a>) is extremely difficult and in many cases the model is not identifiable. While this should give us pause into the motivations of using causality in machine learning, making assumptions about the data generation process without hard assumptions on the agent&rsquo;s used internal <a href="#causal-model">Causal Model</a> might produce powerful techniques or insights into designing algorithms. This direction might also provide groundwork for understanding when problems in perception are hopeless <sup id="b00c0ffe2b498797f6925d0886d290da"><a href="#scholkopf" title="Sch\olkopf, Janzing, Peters, Sgouritsa, Zhang \&amp; Mooij, On {{Causal}} and {{Anticausal Learning}}, v(), ().">scholkopf</a></sup>. With this in mind we will cautiously move forward.</p>
+<p>While this principle lays out a primal causal model, estimating such a model from data (especially if the data isn&rsquo;t <a href="#causal-sufficiency">causally sufficient</a>) is extremely difficult and in many cases the model is not identifiable. While this should give us pause into the motivations of using causality in machine learning, making assumptions about the data generation process without hard assumptions on the agent&rsquo;s used internal <a href="#causal-model">Causal Model</a> might produce powerful techniques or insights into designing algorithms. This direction might also provide groundwork for understanding when problems in perception are hopeless <scholkopf>. With this in mind we will cautiously move forward.</p>
 <h2 id="terms-and-special-cases">Terms and special cases</h2>
 <h3 id="disentangled-model">Disentangled model</h3>
 <p><a href="https://arxiv.org/abs/2102.11107">https://arxiv.org/abs/2102.11107</a></p>
@@ -327,16 +328,18 @@
 <p>If we are using a causal model to build some type of way to do counterfactual reasoning, how can we measure performance of models? In toy domains it is easy to do generate the correct distributions, but my time in RL has taught me that nothing is so simple when moving beyond toy problems. (i.e. distribution shifts can have major implications for the space the agent is in vs where it has seen before). Acting in the world begets distributional change, which effects the original problem. Does causal inference reason about these distributional shifts? What are the knock on effects?</p>
 <h3 id="inferring-which-causal-model-is-correct-from-data">Inferring which causal model is correct from data</h3>
 <p>Given the toy examples and two causal models, can we infer which model is correct given the observed data. I suspect the answer to this is no, and we need to do interventions to uncover the actual causal model. But then I&rsquo;m confused by the motivation. We are motivated to learn the causal structure of a problem w/o being able to do A/B testing&hellip; If we can&rsquo;t uncover the causal structure w/o intervention and A/B testing, then what is the point of causal inference?</p>
-<p>Apparently this can be done w/ additive noise models and nonlinear causal relationships with an extremely simple mechanism described by <sup id="a94adfeafb37f4427d6434d2810495ef"><a href="#hoyer2009" title="Hoyer, Janzing, Mooij, Peters \&amp; Sch\olkopf, Nonlinear Causal Discovery with Additive Noise Models, in in: {Advances in {{Neural Information Processing Systems}}}, edited by {Curran Associates, Inc.} (2009)">hoyer2009</a></sup>. (i.e. do n regressions and check the causal relationship based on the correlation with the resulting irreducible error).</p>
+<p>Apparently this can be done w/ additive noise models and nonlinear causal relationships with an extremely simple mechanism described by <hoyer2009>. (i.e. do n regressions and check the causal relationship based on the correlation with the resulting irreducible error).</p>
 <h3 id="is-the-independence-of-mechanism-and-input-a-reasonable-assumption-for-learning-systems">Is the independence of mechanism and input a reasonable assumption for learning systems?</h3>
 <p>I&rsquo;m reminded of weapons of math destruction. Can we assume the underlying mechanisms for generating effects are independent of the distributions we use? I guess you can always separate out the different functions for different variables, i.e. instead of \(C \rightarrow_\psi E\) you have \((C_1, C_2, C_3, \ldots) \rightarrow_\psi E\). So in this instance we will have a multi-input causal structure.</p>
 <h3 id="is-the-restriction-to-non-linear-w-additive-gaussian-noise-true-or-is-it-just-invertability-of-the-causal-mechanism">Is the restriction to non-linear w/ additive gaussian noise true, or is it just invertability of the causal mechanism?</h3>
 <h3 id="can-we-infer-between-various-causal-graphs-with-un-seen-latent-causes">Can we infer between various causal graphs with un-seen latent causes?</h3>
-<h3 id="how-does-the-causal-inference-in-depend-on-model-performance">How does the causal inference in <sup id="a94adfeafb37f4427d6434d2810495ef"><a href="#hoyer2009" title="Hoyer, Janzing, Mooij, Peters \&amp; Sch\olkopf, Nonlinear Causal Discovery with Additive Noise Models, in in: {Advances in {{Neural Information Processing Systems}}}, edited by {Curran Associates, Inc.} (2009)">hoyer2009</a></sup> depend on model performance?</h3>
-<h3 id=""></h3>
+<h3 id="how-does-the-causal-inference-in-hoyer2009-depend-on-model-performance">How does the causal inference in <hoyer2009> depend on model performance?</h3>
+<h3 id="d41d8c"></h3>
 <h2 id="causal-state-representations">Causal State Representations</h2>
 <ul>
-<li><sup id="cf8e9083815e9b7d8318497cd8335abc"><a href="#zhang2021" title="Zhang, Lipton, Pineda, Azizzadenesheli, Anandkumar, Itti, Pineau \&amp; Furlanello, Learning {{Causal State Representations}} of {{Partially Observable Environments}}, {arXiv:1906.10437 [cs, stat]}, v(), (2021).">zhang2021</a></sup></li>
+<li>
+<zhang2021>
+</li>
 </ul>
 <h2 id="reading-list">Reading list</h2>
 <h3 id="causal-state-representations">Causal state representations</h3>
@@ -349,18 +352,24 @@
 <h3 id="nonlinear-causal-discovery-with-additive-noise-models">Nonlinear causal discovery with additive noise models</h3>
 <p><a href="https://papers.nips.cc/paper/2008/file/f7664060cc52bc6f3d620bcedc94a4b6-Paper.pdf">https://papers.nips.cc/paper/2008/file/f7664060cc52bc6f3d620bcedc94a4b6-Paper.pdf</a></p>
 <h3 id="granger-causality">Granger Causality</h3>
-<h3 id=""><sup id="ddc8f7a086caeb6d5bd95f9b7cdc5334"><a href="#scholkopf2019" title="Scholkopf, Causality for {{Machine Learning}}, {arXiv:1911.10500 [cs, stat]}, v(), (2019).">scholkopf2019</a></sup></h3>
+<h3 id="scholkopf2019"><scholkopf2019></h3>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="scholkopf"></a>[scholkopf] Sch&quot;olkopf, Janzing, Peters, Sgouritsa, Zhang &amp; Mooij, On Causal and Anticausal Learning, <i></i>,  . <a href="#b00c0ffe2b498797f6925d0886d290da">↩</a></p>
-<p><a id="hoyer2009"></a>[hoyer2009] Hoyer, Janzing, Mooij, Peters &amp; Sch&quot;olkopf, Nonlinear Causal Discovery with Additive Noise Models, in in: Advances in Neural Information Processing Systems, edited by Curran Associates, Inc. (2009) <a href="#a94adfeafb37f4427d6434d2810495ef">↩</a></p>
-<p><a id="zhang2021"></a>[zhang2021] Zhang, Lipton, Pineda, Azizzadenesheli, Anandkumar, Itti, Pineau &amp; Furlanello, Learning Causal State Representations of Partially Observable Environments, <i>arXiv:1906.10437 [cs, stat]</i>,  (2021). <a href="#cf8e9083815e9b7d8318497cd8335abc">↩</a></p>
-<p><a id="scholkopf2019"></a>[scholkopf2019] Scholkopf, Causality for Machine Learning, <i>arXiv:1911.10500 [cs, stat]</i>,  (2019). <a href="#ddc8f7a086caeb6d5bd95f9b7cdc5334">↩</a></p>
+<p>&lt;/Users/Matt/GD/bib/full_library.bib&gt;</p>
 
     </div>
 
     
     
+
+
+<div class="post-tags">
+  <h4> Tags: </h4>
+  
+  <a href="/tags/Causality">Causality</a>
+  
+</div>
+
+
 
     
 
