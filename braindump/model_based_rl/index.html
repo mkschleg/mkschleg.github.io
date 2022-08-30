@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/model_based_rl.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/model_based_rl/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/model_based_rl/">
+  <meta property="og:title" content="Model-based RL | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2022-08-30T12:54:15-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:54:15-06:00">
+  
+
+  <title>Model-based RL | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/model_based_rl/">Model-based RL</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2022-08-30 12:54:15 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a></dd>
+</dl>
+<p>Model-based reinforcement learning is the combination of planning and reinforcement learning. An agent constructs a world model which is used to simulate expected experience. This, in theory, can be significantly more sample efficient than model-free reinforcement learning as an agent can learn behaviours through interacting with the internal world model while avoid the, potentially, costly data collection from the real environment. While there are many model-based approaches which have shown promise with known models (<a href="#citeproc_bib_item_14">Silver et al. 2016</a>) (<a href="#citeproc_bib_item_15">Silver et al. 2017</a>), approaches with learned models have only recently become competitive with model-free approaches (<a href="#citeproc_bib_item_13">Schrittwieser et al. 2020</a>) (<a href="#citeproc_bib_item_5">Hafner et al. 2021</a>). This is because of several failure modes which can occur when learning a model leading to samples which do not represent the real world.</p>
+<p>In the below section, I will go over the general approach to MBRL, and then discuss some of the considerations which need to be made when building a world model.</p>
+<h2 id="background">Background</h2>
+<p>For a more detailed explanation of mbrl please see (<a href="#citeproc_bib_item_10">Moerland, Broekens, and Jonker 2021</a>) or chapter 8 of (<a href="#citeproc_bib_item_16">Sutton and Barto 2018</a>). We focus on the problem of learning an optimal policy for a Markov decision process, from on-policy interaction.
+A Markov decision process consists of \((\states, \actions, \transition, \rewards,\gamma)\) where
+\(\states\) is the set of states;
+\(\actions\) is the set of actions;
+\(\transition: \states \times \actions \times \states \rightarrow [0,\infty)\) provides the transition probabilities;
+\(\rewards: \states \times \actions \times \states \rightarrow \reals\) is the reward function;
+and \(\gamma:  \states \times \actions \times \states \rightarrow [0,1]\) is the transition-based discount function which enables either continuing or episodic problems to be specified \citep{white2017unifying}.
+On each step, the agent selects action \(A_t\) in state \(S_t\),  and transitions to \(S_{t+1}\), according to \(\transition\), receiving reward
+\(R_{t+1} = \rewards(S_t, A_t, S_{t+1})\) and discount \(\gamma_{t+1} = \gamma(S_t, A_t, S_{t+1})\).
+For a policy \(\pi: \states \times \actions \rightarrow [0,1]\), where \(\sum_{a\in \actions} \pi(s,a) = 1 \; \forall s \in \states\),
+the value at a give state \(s\), taking action \(a\),
+is the expected discounted sum of future rewards, with actions selected according to \(\pi\) into the future,</p>
+<p>\begin{align*}
+\!\!\!\! Q^\pi\!(s, a) \!=\! \expected\Big[\!R_{t+1} \!+\! \gamma_{t+1} \!\!\sum_{a \in \actions} \!\!\pi\!(S_{t+1}, \!a) Q^\pi\!(S_{t+1}, \!a) \Big| S_t \!=\! s,\! A_t \!=\! a \Big]
+\end{align*}</p>
+<p>In model based RL, our goal is the same as model free. We wish to learn a value function or a policy which maximizes the cumulative discounted sum of rewards into the future. Unlike model-free RL, we have access to a model (which is either learned or known) which provides functions \(\tilde{p}(\approx \transition): \states \times \actions \rightarrow \states\) and \(\tilde{r} (\approx\rewards): \states \times \states \rightarrow \reals\) which approximate the dynamics of the environment. There are several types of models, but in this document we will focus on this specification (which is known as a <em>forward</em> model). The specific type of forward model discussed here is also known as a generative model (i.e. where we generate new examples sampled over a distribution). While there exists algorithms for planning over descriptive models, the focus of the current literature is often on generative models (<a href="#citeproc_bib_item_13">Schrittwieser et al. 2020</a>; <a href="#citeproc_bib_item_5">Hafner et al. 2021</a>).</p>
+<p>This model is used for <em>planning</em>, which is (to over anthropomorphize) the agent imagining experience using its world model to learn behaviours or do policy evaluation. One well known algorithm to do this is known as Dyna, which simply samples transitions from its world model and uses them to directly.</p>
+<h2 id="some-issues-well-known-in-the-literature-for-mbrl">Some issues well known in the literature for MBRL</h2>
+<p>Below are some known issues with learning a world model to use in planning for an RL agent.</p>
+<h3 id="stochasticity">Stochasticity</h3>
+<p>If the MDP is stochastic&ndash;i.e. for any given state action pair there is a distribution over next states instead of a single returned state&ndash;then the learned prediction of a model using a non-distribution based loss will learn the mean of the next state distribution. While this is not necessarily bad&ndash;and in fact can be used to plan for linear value functions&ndash;an approach which models the full distribution (i.e. a generative approach) would provide more options when planning.</p>
+<h3 id="uncertainty">Uncertainty</h3>
+<p>Uncertainty due to limited data (or epistemic uncertainty) is a large problem for models in MBRL. As environments grow, it is unlikely to have many samples throughout the state space to train a model. Thus it would be beneficial to estimate the model&rsquo;s uncertainty in parts of the state space: see (<a href="#citeproc_bib_item_1">Abbas et al. 2020</a>). This uncertainty can be used to determine whether we should use the model to plan or avoid planning in the current state.</p>
+<h3 id="partial-observability">Partial-observability</h3>
+<p>Partial observability is when the agent only observes incomplete information about the environment (i.e. a non-markov state of the environment). This is a property of almost any non-trivial task, and ignoring this property often leads to failure cases.</p>
+<p>There have been several ways to deal with partial observability:</p>
+<ul>
+<li>Windowing</li>
+<li>Belief States and Pred Reps of State</li>
+<li><strong>Recurrency</strong></li>
+<li>External Memory</li>
+</ul>
+<h3 id="non-stationarity">Non-stationarity</h3>
+<p>When the graph of the mdp change over time. This can be changes in the transition dynamics or in the reward function. If the agent trusts its model when the environment changes this could lead to the agent learning wrong policies (see (<a href="#citeproc_bib_item_16">Sutton and Barto 2018</a>) section 8).</p>
+<h3 id="multi-step-prediction">Multi-step prediction</h3>
+<p>When planning, using trajectories beyond a single step by feeding the generated state vector into the model has been shown to be beneficial when the model is accurate. Unfortunately, because many models aren&rsquo;t built with multi-step prediction in mind errors can compound when making multi-step predictions.</p>
+<h3 id="state-abstraction">State abstraction</h3>
+<p>Representations are important for all parts of a ML/RL system. This is no different for building a model to predict/generate transitions. But there are several additional considerations beyond what model-free approaches need to account.</p>
+<ol>
+<li>How do we ensure that we can plan at a latent level?</li>
+<li>How may we better structure our models to emphasize objects and their physical interactions?</li>
+<li>How may we construct loss functions that retrieve more informative representations?</li>
+</ol>
+<h3 id="temporal-abstraction">Temporal abstraction</h3>
+<p>Much like state abstraction, we can have representations/abstractions which span the temporal axis of an MDP.</p>
+<h2 id="state-of-the-art-in-mbrl">State of the Art in MBRL: (<a href="#citeproc_bib_item_4">Hafner et al. 2020</a>), (<a href="#citeproc_bib_item_5">Hafner et al. 2021</a>)</h2>
+<p>The so called DreamerV1 and DreamerV2 architectures use a latent distribution model to reach human performance on the Atari domain for the first time for a MB approach.</p>
+<h2 id="other-notable-models">Other notable models</h2>
+<h3 id="c268b0">(<a href="#citeproc_bib_item_11">Oh et al. 2015</a>)</h3>
+<h3 id="6fd2b9">(<a href="#citeproc_bib_item_3">Goyal et al. 2020</a>)</h3>
+<h3 id="9e2979">(<a href="#citeproc_bib_item_7">Kipf, van der Pol, and Welling 2020</a>)</h3>
+<h2 id="approaches-to-mbrl-through-a-causal-lens">Approaches to MBRL through a causal lens</h2>
+<h3 id="5fbf00">(<a href="#citeproc_bib_item_2">Gasse et al. 2021</a>)</h3>
+<p>In this paper, the focus is on learning a world model for MBRL from both interventional (online) and observational (offline) data. The main idea is to use a formulation of RL in terms of do-calculus to analyze the viability of incorporating both interventional (online) and observational (offline) data. The problem with incorporating these two data sets is the observational data may be making decisions on components not available to the learning agent (think a column left off for privacy).</p>
+<h3 id="a4d653">(<a href="#citeproc_bib_item_6">Ke et al. 2021</a>)</h3>
+<p>This paper does a systematic study over different inductive biases introduced in learning world models. Specifically they look at two types of structured networks&ndash;graph neural networks (<a href="#citeproc_bib_item_7">Kipf, van der Pol, and Welling 2020</a>), and modular networks (<a href="#citeproc_bib_item_3">Goyal et al. 2020</a>)&ndash; and monolithic networks which contain no inductive bias other than the layers used.</p>
+<p>In these experiments, they learn the world models and test their ability to perform as causal induction for MBRL. They use two environments to test this, see the paper for details.</p>
+<p>They show that structured networks can have a positive effect on the world models ability to predict and perform causal inference, with modular networks being best, which is exasperated as the causal graphs of the underlying problems become more complicated.</p>
+<p>While they test these models on their ability to perform causal inference, none of the models seem to use causality explicitly in their derivation.</p>
+<h3 id="71f3f4">(<a href="#citeproc_bib_item_12">Rezende et al. 2020</a>)</h3>
+<p>In MBRL, one type of model looked at is a set partial models (i.e. smaller models each focused on a subset of the observational space). This paper shows these models are causally incorrect, with their predictions relying on parts of the observational space not considered in the local model. They propose a Causal Partial Model, which accounts for changes in the agent&rsquo;s behaviour when making predictions (but not other forms of transfer).</p>
+<h3 id="bc1359">(<a href="#citeproc_bib_item_9">Mesnard et al. 2020</a>)</h3>
+<p>While principally a model-free approach to learning policy gradients, this paper details a new way to take advantage of hindsight for counterfactual credit assignment. The algorithm can be viewed in the lens of the environment being constructed as an SCM, and the principle algorithm can be recovered through successive relaxations of the assumption that the agent must know the model the environment (and have access to the RNG) until the agent is completely model-free (recovering their algorithm). This is mostly of interest for this document for its description of MDPs in terms of SCMs (appendix E and F).</p>
+<h3 id="e347b1">(<a href="#citeproc_bib_item_8">Luczkow 2021</a>)</h3>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

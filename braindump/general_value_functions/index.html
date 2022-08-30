@@ -54,8 +54,8 @@
   <meta property="og:title" content="General Value Functions | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:18-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:18-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:52:47-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:52:47-06:00">
   
 
   <title>General Value Functions | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:18 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:52:47 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,8 +275,9 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
-<p>General value functions (GVFs) are a generalization of value functions to predict signals other than the reward. They were introduced in <sup id="da5cbde783710a32df63b84e8f26841e"><a href="#sutton2011" title="Sutton, Modayil, Delp, Degris, Pilarski, White \&amp; Precup, Horde: {{A Scalable Real}}-Time {{Architecture}} for {{Learning Knowledge}} from {{Unsupervised Sensorimotor Interaction}}, in in: {The 10th {{International Conference}} on {{Autonomous Agents}} and {{Multiagent Systems}} - {{Volume}} 2}, edited by {International Foundation for Autonomous Agents and Multiagent Systems} (2011)">sutton2011</a></sup> and further explored in <sup id="6fceb69e8c4a6a5252651a794873ca9f"><a href="#modayil2014" title="Modayil, White \&amp; Sutton, Multi-Timescale {{Nexting}} in a {{Reinforcement Learning Robot}}, {Adaptive Behavior}, v(), (2014).">modayil2014</a></sup> and <sup id="4ab499feaa94f45a15c71f81805a132c"><a href="#white2015" title="White, Developing a Predictive Approach to Knowledge, {University of Alberta}, v(), (2015).">white2015</a></sup>, where the authors demonstrated their capabilities on a robot system (the <a href="/braindump/critterbot/">critterbot</a>). The goal of this demonstration was to show what can be learned using GVFs, and how the prediction making capabilities scale computationally.</p>
+<p>General value functions (GVFs) are a generalization of value functions to predict signals other than the reward. They were introduced in (<a href="#citeproc_bib_item_3">Sutton et al. 2011</a>) and further explored in (<a href="#citeproc_bib_item_1">Modayil, White, and Sutton 2014</a>) and (<a href="#citeproc_bib_item_4">White 2015</a>), where the authors demonstrated their capabilities on a robot system (the <a href="/braindump/critterbot/">critterbot</a>). The goal of this demonstration was to show what can be learned using GVFs, and how the prediction making capabilities scale computationally.</p>
 <p>A GVF is defined as the expected discounted return of a cumulant:</p>
 <p>\[
 v_{c, \gamma, \pi}(s) = \expected\left[\sum_{k=t}^\infty \left(\prod_{i=t+1}^k \gamma(S_i)\right) c_{k+1} \middle| S_t = s, A_{t:\infty} \sim \pi\right].
@@ -305,17 +306,17 @@ v_{c, \gamma, \pi}(s) = \expected\left[\sum_{k=t}^\infty \left(\prod_{i=t+1}^k \
 <h2 id="uses">Uses</h2>
 <p>General value functions are relatively new. Unfortunately, there have not been a lot of uses of GVFs explored in literature.</p>
 <h3 id="general-value-function-networks--gvfns">General Value Function Networks (GVFNs)</h3>
-<p>This work was spearheaded by me in <sup id="74f08b054b2897fd17312dc85196f769"><a href="#schlegel2020" title="Schlegel, Jacobsen, Abbas, Patterson, White \&amp; White, General {{Value Function Networks}}, {Journal of Artificial Intelligence Research}, v(), (2020).">schlegel2020</a></sup>. The main idea is to constrict the hidden state of an <a href="/braindump/recurrent_neural_network/">RNN</a> to</p>
+<p>This work was spearheaded by me in (<a href="#citeproc_bib_item_2">Schlegel et al. 2020</a>). The main idea is to constrict the hidden state of an <a href="/braindump/recurrent_neural_network/">RNN</a> to</p>
 <h3 id="general-value-functions-for-auxiliary-tasks">General Value Functions for Auxiliary Tasks</h3>
 <h3 id="predicting-surprise">Predicting Surprise</h3>
 <h3 id="estimating-variance">Estimating variance</h3>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="sutton2011"></a>[sutton2011] Sutton, Modayil, Delp, Degris, Pilarski, White &amp; Precup, Horde: A Scalable Real-Time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction, in in: The 10th International Conference on Autonomous Agents and Multiagent Systems - Volume 2, edited by International Foundation for Autonomous Agents and Multiagent Systems (2011) <a href="#da5cbde783710a32df63b84e8f26841e">↩</a></p>
-<p><a id="modayil2014"></a>[modayil2014] Modayil, White &amp; Sutton, Multi-Timescale Nexting in a Reinforcement Learning Robot, <i>Adaptive Behavior</i>,  (2014). <a href="#6fceb69e8c4a6a5252651a794873ca9f">↩</a></p>
-<p><a id="white2015"></a>[white2015] White, Developing a Predictive Approach to Knowledge, <i>University of Alberta</i>,  (2015). <a href="#4ab499feaa94f45a15c71f81805a132c">↩</a></p>
-<p><a id="schlegel2020"></a>[schlegel2020] Schlegel, Jacobsen, Abbas, Patterson, White &amp; White, General Value Function Networks, <i>Journal of Artificial Intelligence Research</i>,  (2020). <a href="#74f08b054b2897fd17312dc85196f769">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Modayil, Joseph, Adam White, and Richard S Sutton. 2014. “Multi-Timescale Nexting in a Reinforcement Learning Robot.” <i>Adaptive Behavior</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Schlegel, Matthew, Andrew Jacobsen, Zaheer Abbas, Andrew Patterson, Adam White, and Martha White. 2020. “General Value Function Networks.” <i>Journal of Artificial Intelligence Research</i>. <a href="https://arxiv.org/abs/1807.06763">https://arxiv.org/abs/1807.06763</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Sutton, Richard S., Joseph Modayil, Michael Delp, Thomas Degris, Patrick M. Pilarski, Adam White, and Doina Precup. 2011. “Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction.” In <i>The 10th International Conference on Autonomous Agents and Multiagent Systems - Volume 2</i>. AAMAS ’11. Richland, SC: International Foundation for Autonomous Agents and Multiagent Systems.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>White, Adam. 2015. “Developing a Predictive Approach to Knowledge.” <i>University of Alberta</i>.</div>
+</div>
     </div>
 
     
@@ -335,6 +336,425 @@ v_{c, \gamma, \pi}(s) = \expected\left[\sum_{k=t}^\infty \left(\prod_{i=t+1}^k \
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/jaderberg2017/">jaderberg2017: Reinforcement Learning with Unsupervised Auxiliary Tasks</a></li>
+       
+          <li><a href="/braindump/white2015/">white2015: Developing a predictive approach to knowledge</a></li>
+       
+          <li><a href="/braindump/veeriah2019/">veeriah2019: Discovery of Useful Questions as Auxiliary Tasks</a></li>
+       
+          <li><a href="/braindump/vanhasselt2015/">vanhasselt2015: Learning to Predict Independent of Span</a></li>
+       
+          <li><a href="/braindump/sutton2011/">sutton2011: Horde: A Scalable Real-time Architecture for Learning Knowledge from Unsupervised Sensorimotor Interaction</a></li>
+       
+          <li><a href="/braindump/predictive_knowledge/">Predictive Knowledge</a></li>
+       
+          <li><a href="/braindump/kearney2019/">kearney2019: Making Meaning: Semiotics Within Predictive Knowledge Architectures</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
 			</section>
 		</div>
 	</article>
@@ -350,3 +770,4 @@ v_{c, \gamma, \pi}(s) = \expected\left[\sum_{k=t}^\infty \left(\prod_{i=t+1}^k \
 
   </body>
 </html>
+

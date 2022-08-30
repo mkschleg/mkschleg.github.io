@@ -54,8 +54,8 @@
   <meta property="og:title" content="spratling2017: A review of predictive coding algorithms | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:36-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:36-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:55:23-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:55:23-06:00">
   
 
   <title>spratling2017: A review of predictive coding algorithms | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:36 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:55:23 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,12 +275,13 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
 <dd><a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a></dd>
 <dt>source</dt>
-<dd><a href="https://www.sciencedirect.com/science/article/pii/S027826261530035X?casa%5Ftoken=InNrJSl5f4QAAAAA:PBmcJF887TTbvY-o5oAjUxTxRSc2zJh8OtlXDO61erpnGmXMzlHRVeFeAVEc4Sb0ISGM%5FsYvYUg">link</a></dd>
+<dd><a href="https://www.sciencedirect.com/science/article/pii/S027826261530035X?casa_token=InNrJSl5f4QAAAAA:PBmcJF887TTbvY-o5oAjUxTxRSc2zJh8OtlXDO61erpnGmXMzlHRVeFeAVEc4Sb0ISGM_sYvYUg">link</a></dd>
 <dt>authors</dt>
 <dd>Spratling, M. W.</dd>
 <dt>year</dt>
@@ -302,28 +303,27 @@ x_t \approx r_t = w_1 x_{t-1} + w_2 x_{t-2} + \ldots + w_n x_{t-n}
 \[
 e_t = x_t - r_t
 \]</p>
-<p>While initially discussed in terms of temporal predictions, this has also been formulated for spatial prediction. This is to say the predictive local intensity value is calculated from intensity values measured at nearby locations as well as those with preceding time <sup id="d99e6ac5b4c5ec160fcf0e921d0d097c"><a href="#srinivasan1982" title="Srinivasan, Laughlin, Dubs \&amp; Horridge, Predictive Coding: A Fresh View of Inhibition in the Retina, {Proceedings of the Royal Society of London. Series B. Biological Sciences}, v(), (1982).">srinivasan1982</a></sup>.</p>
-<p>It has been proposed that the coefficients average the intensity of light, and this average is subtracted from the retinal signals <sup id="d99e6ac5b4c5ec160fcf0e921d0d097c"><a href="#srinivasan1982" title="Srinivasan, Laughlin, Dubs \&amp; Horridge, Predictive Coding: A Fresh View of Inhibition in the Retina, {Proceedings of the Royal Society of London. Series B. Biological Sciences}, v(), (1982).">srinivasan1982</a></sup>. This is an interesting take, and quite possible for the retina, specifically in understanding the differences between low light and high light settings possibly not appearing later down stream.</p>
+<p>While initially discussed in terms of temporal predictions, this has also been formulated for spatial prediction. This is to say the predictive local intensity value is calculated from intensity values measured at nearby locations as well as those with preceding time (<a href="#citeproc_bib_item_2">Srinivasan et al. 1982</a>).</p>
+<p>It has been proposed that the coefficients average the intensity of light, and this average is subtracted from the retinal signals (<a href="#citeproc_bib_item_2">Srinivasan et al. 1982</a>). This is an interesting take, and quite possible for the retina, specifically in understanding the differences between low light and high light settings possibly not appearing later down stream.</p>
 <p>The process can be thought of through the lens of redundancy reduction or said to be an <a href="/braindump/efficient_coding/">Efficient Coding</a>.</p>
 <div class="note">
-  <div></div>
 <p>If only the residual error is transmitted, then the receiver (in the case of the retina this would be the lateral geniculate nucleaus and cortex) cannot recover the components of the signal that have been removed. Redundancy is not being reduced, but entirely removed.</p>
 </div>
 <h2 id="predictive-coding-in-the-cortex-rao-and-ballard">Predictive Coding in the Cortex: Rao and Ballard</h2>
-<p><sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> &rsquo;s model for cortical function proposes the cortex is built of several layers of predictive coding networks. Each layer implements the predictive coding algorithm described above for spatial inputs (as far as I can tell) instead of time-series inputs, although both could be used. The output of each cortical region is the residual error. The feed forward connections are believed to transmit these errors while the cortical feedback connections are predicted &ldquo;causes&rdquo;. This hypothesizes that cortical feedback connections act to suppress information which is predicted by higher-level cortical region.</p>
-<p>The linear version of <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> &rsquo;s algorithm is:</p>
+<p>(<a href="#citeproc_bib_item_1">Rao and Ballard 1999</a>) &rsquo;s model for cortical function proposes the cortex is built of several layers of predictive coding networks. Each layer implements the predictive coding algorithm described above for spatial inputs (as far as I can tell) instead of time-series inputs, although both could be used. The output of each cortical region is the residual error. The feed forward connections are believed to transmit these errors while the cortical feedback connections are predicted &ldquo;causes&rdquo;. This hypothesizes that cortical feedback connections act to suppress information which is predicted by higher-level cortical region.</p>
+<p>The linear version of (<a href="#citeproc_bib_item_1">Rao and Ballard 1999</a>) &rsquo;s algorithm is:</p>
 <p>\begin{align*}
-\yvec^{Si} &amp;\leftarrow \nu \yvec^{Si} + \mu \Wmat^{Si} \evec^{Si-1} - \eta \evec^{Si} \\\
+\yvec^{Si} &amp;\leftarrow \nu \yvec^{Si} + \mu \Wmat^{Si} \evec^{Si-1} - \eta \evec^{Si} \\
 \evec^{Si-1} &amp;= \yvec^{Si-1} - \Vmat^{Si}\yvec^{Si}.
 \end{align*}</p>
 <p>where \(\nu\), \(\eta\), and \(\mu\) are non-negative parameters and \(\Wmat = \Vmat^\top\)</p>
 <h2 id="predictive-coding-in-the-cortex-predcoding-biased-competation-dim">Predictive Coding in the Cortex: PredCoding/Biased Competation - DIM</h2>
-<p>This is a reformulation of <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> &rsquo;s PC model to be compatible w/ <a href="/braindump/biased_competition/">Biased Competition</a> theories of cortical function. Specifically,</p>
+<p>This is a reformulation of (<a href="#citeproc_bib_item_1">Rao and Ballard 1999</a>) &rsquo;s PC model to be compatible w/ <a href="/braindump/biased_competition/">Biased Competition</a> theories of cortical function. Specifically,</p>
 <p>\begin{align*}
-\evec &amp;= \xvec \oslash (\epsilon_2 + \Vmat \yvec) \\\
+\evec &amp;= \xvec \oslash (\epsilon_2 + \Vmat \yvec) \\
 \yvec &amp;\leftarrow (\epsilon_1 + \yvec) \otimes \Wmat\evec
 \end{align*}</p>
-<p>This formulation solves several issues with the <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> proposal:</p>
+<p>This formulation solves several issues with the (<a href="#citeproc_bib_item_1">Rao and Ballard 1999</a>) proposal:</p>
 <ol>
 <li>No longer requires neurons be able to produce both positive and negative firing rates. In the new algorithm activations are bounded to be non-negative inherently.</li>
 <li>PC/BC-DIM is related to a particular method of performing non-negative matrix factorisation (NMF), and thus gets around the need to use gradient descent to find the coefficient values (which can be slow or unstable if \(\mu\) is small or large respectively). This stability and speed has enabled the development of large scale simulations containing 10s of millions of neurons and 100s of billions of connections.</li>
@@ -331,12 +331,12 @@ e_t = x_t - r_t
 <li>The requirement that \(\Wmat = \Vmat^\top\) is related w/ the PC/BC-DIM variant.</li>
 </ol>
 <h2 id="predictive-coding-in-the-cortex-free-energy">Predictive Coding in the Cortex: Free energy</h2>
-<p>This scheme is similar to <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup>, but unlike the above algorithms the variables in the free energy model represent the statistics of the signals rather than the values of the signals. The network is thus not representing individual samples, but reconstructs the underlying probability distribution (or at least what is reconstructible given the observations).</p>
+<p>This scheme is similar to (<a href="#citeproc_bib_item_1">Rao and Ballard 1999</a>), but unlike the above algorithms the variables in the free energy model represent the statistics of the signals rather than the values of the signals. The network is thus not representing individual samples, but reconstructs the underlying probability distribution (or at least what is reconstructible given the observations).</p>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="srinivasan1982"></a>[srinivasan1982] Srinivasan, Laughlin, Dubs &amp; Horridge, Predictive Coding: A Fresh View of Inhibition in the Retina, <i>Proceedings of the Royal Society of London. Series B. Biological Sciences</i>,  (1982). <a href="#d99e6ac5b4c5ec160fcf0e921d0d097c">↩</a></p>
-<p><a id="rao1999"></a>[rao1999] Rao &amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, <i>Nature Neuroscience</i>,  (1999). <a href="#7b979f5b998905dc446bf66499306a20">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Rao, Rajesh P. N., and Dana H. Ballard. 1999. “Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects.” <i>Nature Neuroscience</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Srinivasan, Mandyam Veerambudi, Simon Barry Laughlin, A. Dubs, and George Adrian Horridge. 1982. “Predictive Coding: A Fresh View of Inhibition in the Retina.” <i>Proceedings of the Royal Society of London. Series B. Biological Sciences</i>. Royal Society.</div>
+</div>
     </div>
 
     
@@ -356,6 +356,388 @@ e_t = x_t - r_t
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -371,3 +753,4 @@ e_t = x_t - r_t
 
   </body>
 </html>
+

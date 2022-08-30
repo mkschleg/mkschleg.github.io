@@ -54,8 +54,8 @@
   <meta property="og:title" content="Matrix | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:28-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:28-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:54:06-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:54:06-06:00">
   
 
   <title>Matrix | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:28 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:54:06 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -224,16 +224,16 @@
 </dl>
 <p>We star with a set of equations with nine coefficients, three unknowns, and three right-hand sides.</p>
 <p>\begin{align*}
-2u + v + w &amp;= 5 \\\
-4u - 6v &amp;=-2 \\\
+2u + v + w &amp;= 5 \\
+4u - 6v &amp;=-2 \\
 -2u + 7v + 2w &amp;=9
 \end{align*}</p>
 <p>We represent the right hand side with a <strong>column vector</strong> (or a 1 by 3 matrix). The unknowns of the system are represented as a column vector as well.</p>
-<p>\[x=\left[\begin{array}{l}{u} \ {v} \ {w}\end{array}\right]\]</p>
+<p>\[x=\left[\begin{array}{l}{u} \\ {v} \\ {w}\end{array}\right]\]</p>
 <p>We define a square 3 by 3 matrix of the coefficients</p>
 <p>\[A=\left[\begin{array}{ccc}
-{2} &amp; {1} &amp; {1} \\\
-{4} &amp; {-6} &amp; {0} \\\
+{2} &amp; {1} &amp; {1} \\
+{4} &amp; {-6} &amp; {0} \\
 {-2} &amp; {7} &amp; {2}
 \end{array}\right]\]</p>
 <p>While we present a square matrix here, matrices can be rectangular generally with \(m\) rows and \(n\) columns called an \(m\) by \(n\) matrix.</p>
@@ -246,18 +246,18 @@ A x &amp;= b \\ \left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6
 <p>This is straightforward. We add each coefficient of the lhs to the corresponding coefficient in the rhs.</p>
 <p>\begin{align*}
 \left[\begin{array}{cc}
-{2} &amp; {1} \\\
-{3} &amp; {0} \\\
+{2} &amp; {1} \\
+{3} &amp; {0} \\
 {0} &amp; {4}
 \end{array}\right] +
 \left[\begin{array}{cc}
-{1} &amp; {2} \\\
-{-3} &amp; {1} \\\
+{1} &amp; {2} \\
+{-3} &amp; {1} \\
 {1} &amp; {2}
 \end{array}\right]
 = \left[\begin{array}{ll}
-{3} &amp; {3} \\\
-{0} &amp; {1} \\\
+{3} &amp; {3} \\
+{0} &amp; {1} \\
 {1} &amp; {6}
 \end{array}\right]
 \end{align*}</p>
@@ -267,16 +267,16 @@ A x &amp;= b \\ \left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6
 <p>We can also define a product between two matrices \(\mathbf{A}: n \times m\) and \(\mathbf{B}: m \times k\).</p>
 <p>\begin{align*}
 \left[\begin{array}{ccc}
-{A_{11}} &amp; {A_{12}} &amp; {A_{13}} \\\
+{A_{11}} &amp; {A_{12}} &amp; {A_{13}} \\
 {A_{21}} &amp; {A_{22}} &amp; {A_{23}}
 \end{array}\right]
 \times \left[\begin{array}{cc}
-{B_{11}} &amp; {B_{12}} \\\
-{B_{21}} &amp; {B_{22}} \\\
+{B_{11}} &amp; {B_{12}} \\
+{B_{21}} &amp; {B_{22}} \\
 {B_{31}} &amp; {B_{32}}
 \end{array}\right]
 &amp;= \left[\begin{array}{ll}
-{\sum_{i=1}^3 A_{1i} B_{i1}} &amp; {\sum_{i=1}^3 A_{1i} B_{i2}} \\\
+{\sum_{i=1}^3 A_{1i} B_{i1}} &amp; {\sum_{i=1}^3 A_{1i} B_{i2}} \\
 {\sum_{i=1}^3 A_{2i} B_{i1}} &amp; {\sum_{i=1}^3 A_{2i} B_{i2}}
 \end{array}\right]
 \end{align*}</p>
@@ -287,33 +287,33 @@ A x &amp;= b \\ \left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6
 <p>The Hadamard product is often used in machine learning. It is quite simply the element-wise produce between two matrices: \(\mathcal{A}, \mathcal{B}: n \times m\).</p>
 <p>\begin{align*}
 \left[\begin{array}{cc}
-{A_{11}} &amp; {A_{12}} \\\
-{A_{21}} &amp; {A_{22}} \\\
+{A_{11}} &amp; {A_{12}} \\
+{A_{21}} &amp; {A_{22}} \\
 {A_{31}} &amp; {A_{32}}
 \end{array}\right]
 \odot \left[\begin{array}{cc}
-{B_{11}} &amp; {B_{12}} \\\
-{B_{21}} &amp; {B_{22}} \\\
+{B_{11}} &amp; {B_{12}} \\
+{B_{21}} &amp; {B_{22}} \\
 {B_{31}} &amp; {B_{32}}
 \end{array}\right]
 &amp;= \left[\begin{array}{ll}
-{A_{11}B_{11}} &amp; {A_{12}B_{12}} \\\
-{A_{21}B_{21}} &amp; {A_{22}B_{22}} \\\
+{A_{11}B_{11}} &amp; {A_{12}B_{12}} \\
+{A_{21}B_{21}} &amp; {A_{22}B_{22}} \\
 {A_{31}B_{31}} &amp; {A_{32}B_{32}}
-\end{array}\right] \\\
+\end{array}\right] \\
 \left[\begin{array}{cc}
-{2} &amp; {1} \\\
-{3} &amp; {0} \\\
+{2} &amp; {1} \\
+{3} &amp; {0} \\
 {0} &amp; {4}
 \end{array}\right]
 \odot \left[\begin{array}{cc}
-{1} &amp; {2} \\\
-{-3} &amp; {1} \\\
+{1} &amp; {2} \\
+{-3} &amp; {1} \\
 {1} &amp; {2}
 \end{array}\right]
 &amp;= \left[\begin{array}{ll}
-{2} &amp; {2} \\\
-{-9} &amp; {0} \\\
+{2} &amp; {2} \\
+{-9} &amp; {0} \\
 {0} &amp; {8}
 \end{array}\right]
 \end{align*}</p>
@@ -376,6 +376,433 @@ A x &amp;= b \\ \left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/vanhasselt2015/">vanhasselt2015: Learning to Predict Independent of Span</a></li>
+       
+          <li><a href="/braindump/spratling2017/">spratling2017: A review of predictive coding algorithms</a></li>
+       
+          <li><a href="/braindump/reinforcement_learning_an_introduction/">Reinforcement Learning: An Introduction</a></li>
+       
+          <li><a href="/braindump/rao1999/">rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects</a></li>
+       
+          <li><a href="/braindump/hadamard_product/">Hadamard product</a></li>
+       
+          <li><a href="/braindump/goudreau1994/">goudreau1994: First-order versus second-order single-layer recurrent neural networks</a></li>
+       
+          <li><a href="/braindump/determinant/">Determinant</a></li>
+       
+          <li><a href="/braindump/dayan1993/">dayan1993: Improving Generalization for Temporal Difference Learning: The Successor Representation</a></li>
+       
+          <li><a href="/braindump/calculus/">Calculus</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
 			</section>
 		</div>
 	</article>
@@ -391,3 +818,4 @@ A x &amp;= b \\ \left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6
 
   </body>
 </html>
+

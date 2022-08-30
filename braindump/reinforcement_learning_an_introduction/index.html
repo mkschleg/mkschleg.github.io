@@ -54,8 +54,8 @@
   <meta property="og:title" content="Reinforcement Learning: An Introduction | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:34-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:34-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:54:59-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:54:59-06:00">
   
 
   <title>Reinforcement Learning: An Introduction | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:34 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:54:59 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -219,7 +219,6 @@
     <div class="post-style" itemprop="articleBody">
       
       <div class="ox-hugo-toc toc">
-<div></div>
 <div class="heading">Table of Contents</div>
 <ul>
 <li><a href="#introduction">Introduction</a>
@@ -294,7 +293,7 @@
 <li><a href="#on-policy-prediction-with-approximation">On-policy Prediction with Approximation</a>
 <ul>
 <li><a href="#value-function-approximation">Value-function Approximation</a></li>
-<li><a href="#the-prediction-objective---bar-ve">The Prediction Objective (\(\bar{VE}\))</a></li>
+<li><a href="#the-prediction-objective--bar-ve">The Prediction Objective (\(\bar{VE}\))</a></li>
 <li><a href="#stochastic-gradient-and-semi-gradient-methods">Stochastic-gradient and Semi-gradient Methods</a></li>
 <li><a href="#linear-methods">Linear Methods</a></li>
 <li><a href="#feature-construction-for-linear-methods">Feature Construction for Linear Methods</a></li>
@@ -383,6 +382,7 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
@@ -408,11 +408,9 @@
 <p>That all of what we mean by goals and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal (called reward).</p>
 </blockquote>
 <aside>
-  <aside></aside>
 <p>This &ldquo;hypothesis&rdquo; is vacuous in my opinion. There are no useful tests which could draw out to a broader understanding of what it means for an agent to have a goal or purpose. I believe this hypothesis cannot be tested just from two ambiguous statements; &ldquo;what we mean by&rdquo; and &ldquo;well thought of&rdquo;; which make any counters impossible as the counter can be &ldquo;that isn&rsquo;t what we mean&rdquo; or &ldquo;we can still think of it as&rdquo;. It is much better phrased as an assumption or axiom, as long as goals and purposes are more fully described. It is annoying to have circuitous on this: &ldquo;what is the agent&rsquo;s goal&rdquo; well it is to maximize reward, &ldquo;what is the reward&rdquo; well it is a signal defining the goal.</p>
 </aside>
 <div class="question">
-  <div></div>
 <p>Why is the reward hypothesis a hypothesis and not an assumption or axiom.</p>
 </div>
 <h3 id="returns-and-episodes">Returns and Episodes</h3>
@@ -444,15 +442,15 @@ v_{\pi}(s) \defeq \expected_{\pi}\left[G_{t} | S_{t}=s\right]=\expected_{\pi}\le
 <p>\begin{equation} \label{eqn:RLI:actionvaluefunc}
 q_{\pi}(s, a) \defeq \expected_{\pi}\left[G_{t} | S_{t}=s, A_{t}=a\right]=\expected_{\pi}\left[\sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1} | S_{t}=s, A_{t}=a\right].
 \end{equation}</p>
-<p>A fundamental property of value functions used throughout reinforcement learning and dynamic programming is that they satisfy recursive relationships (similar to equation <a href="#eqn:RLI:return">eqn:RLI:return</a>)! For any policy \(\pi\) and any state \(s\), the following consistency condition holds:</p>
+<p>A fundamental property of value functions used throughout reinforcement learning and dynamic programming is that they satisfy recursive relationships (similar to equation <a href="eqn:RLI:return">eqn:RLI:return</a>)! For any policy \(\pi\) and any state \(s\), the following consistency condition holds:</p>
 <p>\begin{align}
 v_{\pi}(s)
-&amp;\defeq \mathbb{E}_{\pi}\left[G_{t} | S_{t}=s\right] \nonumber \\\
-&amp;=\expected_{\pi}\left[R_{t+1}+\gamma G_{t+1} | S_{t}=s\right] \nonumber \\\
-&amp;=\sum_{a} \pi(a | s) \sum_{s^{\prime}} \sum_{r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma \expected_{\pi}\left[G_{t+1} | S_{t+1}=s^{\prime}\right]\right] \nonumber\\\
+&amp;\defeq \mathbb{E}_{\pi}\left[G_{t} | S_{t}=s\right] \nonumber \\
+&amp;=\expected_{\pi}\left[R_{t+1}+\gamma G_{t+1} | S_{t}=s\right] \nonumber \\
+&amp;=\sum_{a} \pi(a | s) \sum_{s^{\prime}} \sum_{r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma \expected_{\pi}\left[G_{t+1} | S_{t+1}=s^{\prime}\right]\right] \nonumber\\
 &amp;=\sum_{a} \pi(a | s) \sum_{s^{\prime}, r} p\left(s^{\prime}, r | s, a\right)\left[r+\gamma v_{\pi}\left(s^{\prime}\right)\right], \quad \text { for all } s \in \mathcal{S} \label{eqn:RLI:bellman}
 \end{align}</p>
-<p>The recursive form defined in equation <a href="#eqn:RLI:bellman">eqn:RLI:bellman</a> is known as the <em>Bellman equation for \(v_\pi\)</em>. It expresses the relationship between the value of a state and the values of its successor states. The value function \(v_\pi\) is the unique solution to its Bellman equation.</p>
+<p>The recursive form defined in equation <a href="eqn:RLI:bellman">eqn:RLI:bellman</a> is known as the <em>Bellman equation for \(v_\pi\)</em>. It expresses the relationship between the value of a state and the values of its successor states. The value function \(v_\pi\) is the unique solution to its Bellman equation.</p>
 <h3 id="optimal-policies-and-optimal-value-functions">Optimal Policies and Optimal Value Functions</h3>
 <p>Value functions define a partial ordering over policies. A policy π is defined to be better than or equal to another policy π' if its expected return is greater than or equal to that of π' for all states. More clearly, \(\pi\geq\pi'\) iff \(v_\pi(s) \geq v_{\pi'}(s)\) for all \(s\in\states\). We will denote all optimal policies by \(\pi_\star\). All optimal polices share the same value function</p>
 <p>\begin{equation}
@@ -464,7 +462,7 @@ q_\star (s,a)\defeq \max_\pi q_\pi(s,a) \quad \text{for all } s\in\states, a\in\
 \end{equation}</p>
 <p>We can also define a special Bellman equation for the optimal value function called the <em>Bellman optimality equation</em></p>
 <p>\begin{align}
-v_\star(s)  &amp;= \max_a \sum_{s',r} p(s', r | s, a) \left[r+\gamma v_\star(s')\right] \\\
+v_\star(s)  &amp;= \max_a \sum_{s',r} p(s', r | s, a) \left[r+\gamma v_\star(s')\right] \\
 q_\star(s,a) &amp;= \sum_{s',r} p(s',r|s,a)\left[r+\gamma \max_{a'}q_\star (s', a')\right]
 \end{align}</p>
 <p>For finite MDPs, the Bellman optimality equation has a unique solution independent of the policy. While we can explicitly solve the Bellman optimality equation, there are a number of assumptions that are rarely true in real world examples:</p>
@@ -481,12 +479,12 @@ q_\star(s,a) &amp;= \sum_{s',r} p(s',r|s,a)\left[r+\gamma \max_{a'}q_\star (s', 
 <h3 id="policy-evaluation--prediction">Policy Evaluation (prediction)</h3>
 <p><strong>Policy Evaluation</strong>: compute the state-value function \(v_\pi\) for an arbitrary policy \(\pi\). Also known as the prediction problem. Recall from Chapter 3:</p>
 <p>\begin{align}
-v_\pi(s) &amp;\defeq \expected_\pi[G_t | S_t=s] \nonumber\\\
+v_\pi(s) &amp;\defeq \expected_\pi[G_t | S_t=s] \nonumber\\
 &amp;= \sum_{a}\pi(a|s)\sum_{s', r} p(s', r|s, a)[r+\gamma v_\pi(s')] \label{eqn:RLI:dp:valuefunc}
 \end{align}</p>
 <p>If the environment&rsquo;s dynamics are completely known, then \ref{eqn:RLI:dp:valuefunc} is a system of \(|\states|\) simultaneous linear equations in \(|\states|\) unknowns. This calculation is straightforward but tedious. For our purposes, iterative solution methods are most suitable. If \(v_0\) is chosen arbitrarily (except for any terminal states which must be 0), then we can iteratively solve for the value function</p>
 <p>\begin{align*}
-v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\\
+v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 &amp; = \sum_{a}\pi(a|s)\sum_{s', r} p(s', r|s, a)[r+\gamma v_{k}(s')] \label{eqn:RLI:dp:iterative}
 \end{align*}</p>
 <p>The sequence of \(v_k\) can be shown to converge to \(v_\pi\) in general as \(k\rightarrow\infty\). This algorithm is called <em>iterative policy evaluation</em>. This algorithm can also be done in-place.</p>
@@ -500,7 +498,6 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <h3 id="policy-iteration">Policy Iteration</h3>
 <p>Once a policy π has been improved using \(v_\pi\) to yield a better policy π', we can then compute \(v_{\pi'}\) and improve it again to yield an even better policy! We can create a chain of evaluations and improvements continuing until we get to a policy which is no longer changing. Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations. This is called <strong>policy iteration</strong>.</p>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \State 1. Initialization
 \State $V(s) \in \reals$ and $\pi(s) \in \actions(s)$ arbitrarily for $s\in\states$
@@ -531,7 +528,6 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <p>\[v_{k+1}(s) \defeq \max_a \sum_{s',r} p(s', r|s,a)[r+\gamma v_k(s')] \quad \triangleright \quad \forall s\in\states\].</p>
 <p>Value iteration effectively combines one sweep of policy evaluation and one sweep of policy improvement. Faster convergence is often achieved by interposing multiple policy evaluation sweeps between each policy improvement sweep. In general, the entire class of truncated policy iteration algorithms can be through of as sequences of sweeps.</p>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \State Algorithm parameter: a small threshold $\theta &gt; 0$ determining accuracy of estimation.
 \State Initialize $V(s)$, for all $s\in\states^+$, arbitrarily except that $V(terminal)=0$
@@ -562,9 +558,8 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <li><em>first-visit</em> MC estimates \(v_\pi(s)\) as the average of the returns following first visits to \(s\).</li>
 <li><em>every-visit</em> MC averages the returns following all visits to \(s\).</li>
 </ul>
-<p>Both the above methods are well known and converge to the optimal, albeit with slightly different theoretical properties. It is quite easy to see why first-visit converges (by the law of large numbers). Every-visit still converges quadratically, but is a bit more onerous <sup id="318b65fbb285afc312c42c938fb1206a"><a href="#singh1996" title="Singh \&amp; Sutton, Reinforcement {{Learning}} with {{Replacing Eligibility Traces}}, {Machine Learning}, v(), (1996).">singh1996</a></sup>.</p>
+<p>Both the above methods are well known and converge to the optimal, albeit with slightly different theoretical properties. It is quite easy to see why first-visit converges (by the law of large numbers). Every-visit still converges quadratically, but is a bit more onerous (<a href="#citeproc_bib_item_3">Singh and Sutton 1996</a>).</p>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \State Input: a policy $\pi$ to be evaluated
 \State Initialize: $V(s)\in\reals \forall s\in\states$, $Returns(s) \leftarrow$ empty list.
@@ -583,14 +578,12 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <p>\caption{First-visit MC prediction, for estimating $V \approx v_\pi$}</p>
 </div>
 <aside>
-  <aside></aside>
-<p>According to <sup id="318b65fbb285afc312c42c938fb1206a"><a href="#singh1996" title="Singh \&amp; Sutton, Reinforcement {{Learning}} with {{Replacing Eligibility Traces}}, {Machine Learning}, v(), (1996).">singh1996</a></sup> every-visit Monte Carlo methods resolve to a TD update with accumulating traces, and first-visit Monte Carlo methods resolve to a TD update with replacing traces. This will become more clear when we discuss eligibility traces in section  <a href="#sec:RLI:traces">sec:RLI:traces</a>.</p>
+<p>According to (<a href="#citeproc_bib_item_3">Singh and Sutton 1996</a>) every-visit Monte Carlo methods resolve to a TD update with accumulating traces, and first-visit Monte Carlo methods resolve to a TD update with replacing traces. This will become more clear when we discuss eligibility traces in section  <a href="sec:RLI:traces">sec:RLI:traces</a>.</p>
 </aside>
 <h3 id="monte-carlo-estimation-of-action-values">Monte Carlo Estimation of Action Values</h3>
-<p>Without a model of the environment, estimating state value functions is not enough to prepare behavior. Instead, one must estimate action-state value functions (as discussed in section <a href="#sec:RLI:mdps">sec:RLI:mdps</a>). The evaluation algorithm is very similar to that of state value functions. The one modification to the original algorithm is the need for the agent to explore (even when given a deterministic policy) to estimate the return for each action from every state.</p>
+<p>Without a model of the environment, estimating state value functions is not enough to prepare behavior. Instead, one must estimate action-state value functions (as discussed in section <a href="sec:RLI:mdps">sec:RLI:mdps</a>). The evaluation algorithm is very similar to that of state value functions. The one modification to the original algorithm is the need for the agent to explore (even when given a deterministic policy) to estimate the return for each action from every state.</p>
 <h3 id="monte-carlo-control">Monte Carlo Control</h3>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \State Initialize:
 \State $\quad\pi(s) \in \actions(s)$ (arbitrarily)
@@ -616,10 +609,9 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <p>In the case that the prior assumption of &ldquo;exploring starts&rdquo; is not met, the easiest way to fulfill the assumption that all actions are chosen infinitely often is for the agent to continue to select them. This section details an on-policy version of the above algorithm which accomplishes this, in the next section an off-policy method will be introduced.</p>
 <p>In on-policy control the policy is generally soft (i.e. \(\pi(a | s) &gt; 0 \quad \forall s \in \states \text{ and } a \in \actions\) ) and gradually shifted to the deterministic optimal policy.</p>
 <div class="note">
-  <div></div>
 <p>This Assumes there is an optimal deterministic policy, which depending on the problem setting may not be true. But this assumption is reasonable in the MDP setting as stated.</p>
 </div>
-<p>The on-policy method in this setting uses what are called $ε$-greedy policies. Effectively they assign probability \(1-\epsilon + \frac{\epsilon}{|\actions(s)|}\) to the action with the highest estimated value and \(frac{\epsilon}{|\actions(s)|}\) to the remaining values. While not shown here, one can find the sketch of a proof showing policy improvement works for $ε$-greedy policies in a similar way to deterministic policies w/ exploring starts in <sup id="5a0669b0762614b466036f7acb283805"><a href="#sutton2018" title="Sutton \&amp; Barto, Reinforcement Learning: An Introduction, {The MIT Press} (2018).">sutton2018</a></sup> page 101.</p>
+<p>The on-policy method in this setting uses what are called $ε$-greedy policies. Effectively they assign probability \(1-\epsilon + \frac{\epsilon}{|\actions(s)|}\) to the action with the highest estimated value and \(frac{\epsilon}{|\actions(s)|}\) to the remaining values. While not shown here, one can find the sketch of a proof showing policy improvement works for $ε$-greedy policies in a similar way to deterministic policies w/ exploring starts in (<a href="#citeproc_bib_item_5">Sutton and Barto 2018</a>) page 101.</p>
 <h3 id="off-policy-prediction-via-importance-sampling">Off-policy Prediction via Importance Sampling</h3>
 <p>This section introduces the notion of learning from data which is generated from a policy which is different from the policy of interest (i.e. the optimal). These learning strategies are called off-policy.</p>
 <ul>
@@ -636,7 +628,7 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 <p>\[
 V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 \]</p>
-<p>These can also be defined w/ OIS and WIS (see <sup id="5a0669b0762614b466036f7acb283805"><a href="#sutton2018" title="Sutton \&amp; Barto, Reinforcement Learning: An Introduction, {The MIT Press} (2018).">sutton2018</a></sup> page 109).</p>
+<p>These can also be defined w/ OIS and WIS (see (<a href="#citeproc_bib_item_5">Sutton and Barto 2018</a>) page 109).</p>
 <h3 id="off-policy-monte-carlo-control">Off-policy Monte Carlo Control</h3>
 <p>This is a straightforward extension of the off-policy Monte Carlo prediction algorithms presented above to GPI.</p>
 <h3 id="discounting-aware-importance-sampling">Discounting-aware Importance Sampling</h3>
@@ -683,7 +675,7 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <li><em>Direct RL</em>: it can be used to directly improve the value function and policy using and <em>model-free</em> method.</li>
 </ul>
 <p>When using simulated experience (from the model) to learn, this is called <em>indirect RL</em>.</p>
-<p>Dyna-Q includes all of the above processes occuring continually. The planning method is the random-sample one-step tabular Q-planning method (simply sampling a transition from a model from a randomly chosen state action pair; see page 161 of <sup id="5a0669b0762614b466036f7acb283805"><a href="#sutton2018" title="Sutton \&amp; Barto, Reinforcement Learning: An Introduction, {The MIT Press} (2018).">sutton2018</a></sup>). The model-learning method is table-based and assumes the environment is deterministic (making this the least usable model learning approach beyond tabular domains).</p>
+<p>Dyna-Q includes all of the above processes occuring continually. The planning method is the random-sample one-step tabular Q-planning method (simply sampling a transition from a model from a randomly chosen state action pair; see page 161 of (<a href="#citeproc_bib_item_5">Sutton and Barto 2018</a>)). The model-learning method is table-based and assumes the environment is deterministic (making this the least usable model learning approach beyond tabular domains).</p>
 <p>They show an example of a maze comparing Q-learning (Dyna-Q with \(n=0\) planning steps), and Dyna-Q with \(n=\{5, 50\}\) planning steps. It quite clearly shows model-based methods working better than model-free methods, but this result can only be generalized to tabular settings. It is quite straightforward with a deterministic tabular environment, a model is accurate from basic experience. Unfortunately, such models are hard to learn/uncover.</p>
 <h3 id="when-the-model-is-wrong">When the Model Is Wrong</h3>
 <p>When the model is incorrect, the planning process is likely to compute a suboptimal policy. This is shown in the blocking maze experiment. Another method was introduced, Dyna-Q+, which introduces a heuristic (i.e. reward shaping and state counting) to determine when the environment might change, or when the agent should go and explore parts of the environment again. This is again not possible in larger environments, as model based learning is hard in such environments to achieve the fidelity needed to perform well.</p>
@@ -715,7 +707,7 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <h3 id="heuristic-search">Heuristic Search</h3>
 <p>For each state encountered, a large tree of possible continuations is considered. The approximate value function is applied to the leaf nodes and then backed up toward the current state at the root.</p>
 <h3 id="rollout-algorithms">Rollout Algorithms</h3>
-<p>These algorithms are based on Monte Carlo control applied to simulated trajectories that all begin at the current environment state. They estimate action values for a given policy by averaging the returns of many simulated trajectories that start with each possible action and then follow the given policy. These algorithms were described by <sup id="8380ad54de0b40408a899400432e2467"><a href="#tesauro1994" title="Tesauro, {{TD}}-{{Gammon}}, a {{Self}}-{{Teaching Backgammon Program}}, {{Achieves Master}}-{{Level Play}}, {Neural Computation}, v(), (1994).">tesauro1994</a></sup> in their self-learning backgammon agent.</p>
+<p>These algorithms are based on Monte Carlo control applied to simulated trajectories that all begin at the current environment state. They estimate action values for a given policy by averaging the returns of many simulated trajectories that start with each possible action and then follow the given policy. These algorithms were described by (<a href="#citeproc_bib_item_6">Tesauro 1994</a>) in their self-learning backgammon agent.</p>
 <p>The goal of a rollout algorithm is to improve on the rollout policy, not to find the one-step optimal policy.</p>
 <h3 id="monte-carlo-tree-search">Monte Carlo Tree Search</h3>
 <p>This is an example of a rollout algorithm enhanced by the addition of a means for accumulating value estimates obtained from the Monte Carlo simulations in order to successively direct simulations toward more highly-rewarding trajectories.</p>
@@ -735,17 +727,16 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <li>n-step TD update: \(S_t\mapsto G_{t:t+n}\).</li>
 <li>DP policy-evaluation update: \(s\mapsto \expected_{\pi}[R_{t+1} + \gamma \hat{v}(S_{t+1}, \wvec_t) | S_t = s]\).</li>
 </ul>
-<h3 id="the-prediction-objective---bar-ve">The Prediction Objective (\(\bar{VE}\))</h3>
+<h3 id="the-prediction-objective--bar-ve">The Prediction Objective (\(\bar{VE}\))</h3>
 <p>The most obvious objective is the <em>Mean Squared Value Error</em> \(\overline{VE}\), where it is constructed as you would expect, except weighted by the state distribution induced by the behavior</p>
 <p>\begin{equation} \label{eqn:RLI:VE}
 \overline{VE}(\wvec) \defeq \sum_{s\in\states} \mu(s) \left[ v_{\pi}(s) - \hat{v}(s, \wvec) \right]^2
 \end{equation}</p>
 <p>The square root of this measure gives a rough measure of how much the approximate values differ from the true values and is often used in plots.</p>
 <div class="tcolorbox">
-  <div></div>
 <p>In an episodic task, the on-policy distribution depends on how the initial states of the episodes are chosen. Let \(h(s)\) be the starting state distribution,</p>
 <p>\begin{align*}
-\eta(s) &amp;= h(s) + \sum_{\bar{s}} \eta(\bar{s}) \sum_{a} \pi(a|\bar{s}) p(s|\bar{s}, a) \\\
+\eta(s) &amp;= h(s) + \sum_{\bar{s}} \eta(\bar{s}) \sum_{a} \pi(a|\bar{s}) p(s|\bar{s}, a) \\
 \mu(s) &amp;= \frac{\eta(s)}{\sum_{s'} \eta(s')}, \text{ for all } s\in\states
 \end{align*}</p>
 <p>When there is discounting, \(\gamma\) can be included in the second term of \(\eta(s)\).</p>
@@ -753,11 +744,10 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <h3 id="stochastic-gradient-and-semi-gradient-methods">Stochastic-gradient and Semi-gradient Methods</h3>
 <p>This is a pretty straightforward derivation of gradient Monte Carlo and semi-gradient TD(0).</p>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \Require the policy $\pi$ to be evaluated
-\Require a differentiable function $\hat{v}: \states \times \reals^d \rightarrow \reals$ \\\
-\Comment step size $\alpha &gt; 0$\\\
+\Require a differentiable function $\hat{v}: \states \times \reals^d \rightarrow \reals$ \\
+\Comment step size $\alpha &gt; 0$\\
 \Comment Initialize value-function weights $\wvec\in\reals^d$ arbitrarily
 \Loop forever (for each episode)
 \State Generate an episode using $\pi$
@@ -769,11 +759,10 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>\caption{Gradient Monte Carlo Algorithm}</p>
 </div>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \Require the policy $\pi$ to be evaluated
-\Require a differentiable function $\hat{v}: \states \times \reals^d \rightarrow \reals$ \\\
-\Comment step size $\alpha &gt; 0$\\\
+\Require a differentiable function $\hat{v}: \states \times \reals^d \rightarrow \reals$ \\
+\Comment step size $\alpha &gt; 0$\\
 \Comment Initialize value-function weights $\wvec\in\reals^d$ arbitrarily
 \Loop{forever (for each episode)}
 \State Initialize S
@@ -799,7 +788,6 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>Under linear function approximation the Monte Carlo algorithm presented above converges to the global optimum of the \(\overline{VE}\) objective under the normal constraints.</p>
 <p>Semi-gradient TD(0) also converges, but to a local optimum. See the box for more details.</p>
 <div class="tcolorbox">
-  <div></div>
 <p>We first need to rewrite the above update \ref{eqn:RLI:linear-update}</p>
 <p>\[\wvec_{t+1} = \wvec_t + \alpha\left( R_{t+1} \xvec_t - \xvec_t(\xvec_t - \gamma\xvec_{t+1})^\trans \wvec_t \right)\]</p>
 <p>Once the system reaches a steady state, the expected next weight vector can be written</p>
@@ -813,15 +801,15 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>We can rewrite this matrix:</p>
 <p>\begin{align*}
 \Amat
-&amp;= \sum_s \mu(s) \sum_a \pi(a|s) \sum_{r,s'} p(r, s'|s, a)\xvec(s)(\xvec(s) - \gamma \xvec(s'))^\trans \\\
-&amp;= \sum_s \mu(s)\xvec(s) \left( \xvec(s) - \gamma \sum_{s'} p(s'|s)\xvec(s') \right) \\\
+&amp;= \sum_s \mu(s) \sum_a \pi(a|s) \sum_{r,s'} p(r, s'|s, a)\xvec(s)(\xvec(s) - \gamma \xvec(s'))^\trans \\
+&amp;= \sum_s \mu(s)\xvec(s) \left( \xvec(s) - \gamma \sum_{s'} p(s'|s)\xvec(s') \right) \\
 &amp;= \Xmat^\trans \Dmat (\eye - \gamma \Pmat)\Xmat
 \end{align*}</p>
-<p>From here, it is clear that the inner matrix is key to determining the positive definiteness of \(\Amat\). It has been shown prior that a matrix of this form is positive definite if all of its columns sum to a nonnegative number. See <sup id="a2b0ff3680c1d8d6588c0033630d19e8"><a href="#sutton1988" title="Sutton, Learning to Predict by the Methods of Temporal Differences, {Machine Learning}, v(), (1988).">sutton1988</a></sup> for a detailed proof. Also note that \(\muvec\), which is the \(|\states|\) vector of the \(\mu(s)\) distribution, is a stationary distribution thus \(\muvec = \Pmat^\trans\muvec\) The column sums of this matrix is then:</p>
+<p>From here, it is clear that the inner matrix is key to determining the positive definiteness of \(\Amat\). It has been shown prior that a matrix of this form is positive definite if all of its columns sum to a nonnegative number. See (<a href="#citeproc_bib_item_4">Sutton 1988</a>) for a detailed proof. Also note that \(\muvec\), which is the \(|\states|\) vector of the \(\mu(s)\) distribution, is a stationary distribution thus \(\muvec = \Pmat^\trans\muvec\) The column sums of this matrix is then:</p>
 <p>\begin{align*}
 \mathbf{1}^\trans \Dmat(\eye - \gamma \Pmat)
-&amp;= \muvec^\trans(\eye - \gamma \Pmat) \\\
-&amp;= \muvec^\trans - \gamma \muvec^\trans \Pmat \\\
+&amp;= \muvec^\trans(\eye - \gamma \Pmat) \\
+&amp;= \muvec^\trans - \gamma \muvec^\trans \Pmat \\
 &amp;= (1-\gamma)\muvec^\trans
 \end{align*}</p>
 <p>All the components of \((1-\gamma)\muvec^\trans\) are positive, and therefore \(\Amat\) is positive definite, and TD(0) is stable.</p>
@@ -829,12 +817,11 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>\[\overline{VE}(\wvec_{TD}) \leq \frac{1}{1-\gamma} \min_{\wvec} \overline{VE}(\wvec)\]</p>
 </div>
 <div class="algorithm">
-  <div></div>
 <p>\begin{algorithmic}
 \Require the policy $\pi$ to be evaluated
 \Require a differentiable function $\hat{v}: \states \times \reals^d \rightarrow \reals$
-\Require All store and access operations ($S_t$ and $R_t$) can take their index mod $n+1$ \\\
-\Comment step size $\alpha &gt; 0$\\\
+\Require All store and access operations ($S_t$ and $R_t$) can take their index mod $n+1$ \\
+\Comment step size $\alpha &gt; 0$\\
 \Comment Initialize value-function weights $\wvec\in\reals^d$ arbitrarily
 \For{each episode}
 \State Initialize and store $S_0 \neq \text{terminal}$
@@ -875,8 +862,8 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>Fourier Basis</p>
 <p>This feature creation technique is based on the Fourier series. You can represent any <em>even</em> function, or a function which is symmetric about the origin with interval \([0,\tau/2]\), with only a cosine basis. You can represent an <em>odd</em> function with only sinusoidal basis. We focus on <em>even</em> functions here, setting \(\tau=2\) so the features are defined over the half-τ interval \([0,1]\). The one-dimensional order-n Fourier cosine basis is</p>
 <p>\[x_i = cos(i\pi s), s\in[0,1], i = 0, \ldots, n\]</p>
-<p>This can also be applied in the multi-dimensional state case as well, but not discussed in these notes (see <sup id="5a0669b0762614b466036f7acb283805"><a href="#sutton2018" title="Sutton \&amp; Barto, Reinforcement Learning: An Introduction, {The MIT Press} (2018).">sutton2018</a></sup> page 213).</p>
-<p>If using a Fourier cosine feature creation method, it has been found useful to define a learning rate for each feature separately. <sup id="320678e895b68f1c62a427926c99a29f"><a href="#konidaris2011" title="Konidaris, Osentoski \&amp; Thomas, Value {{Function Approximation}} in {{Reinforcement Learning Using}} the {{Fourier Basis}}, in in: {Twenty-{{Fifth AAAI Conference}} on {{Artificial Intelligence}}}, edited by (2011)">konidaris2011</a></sup> suggest setting the learning rate parameter for features \(x_i\) to \(\alpha_i = \alpha/\sqrt{(c^i_1)^2 + \ldots + (c^i_k)^2}\).</p>
+<p>This can also be applied in the multi-dimensional state case as well, but not discussed in these notes (see (<a href="#citeproc_bib_item_5">Sutton and Barto 2018</a>) page 213).</p>
+<p>If using a Fourier cosine feature creation method, it has been found useful to define a learning rate for each feature separately. (<a href="#citeproc_bib_item_2">Konidaris, Osentoski, and Thomas 2011</a>) suggest setting the learning rate parameter for features \(x_i\) to \(\alpha_i = \alpha/\sqrt{(c^i_1)^2 + \ldots + (c^i_k)^2}\).</p>
 </li>
 </ul>
 <!--list-separator-->
@@ -915,7 +902,7 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>In coarse coding this simply resolves to
 \[\alpha = \frac{1}{\tau \times \text{number of active features (tilings)}}\]</p>
 <h3 id="nonlinear-function-approximation-artificial-neural-networks">Nonlinear Function Approximation: Artificial Neural Networks</h3>
-<p>This is a straightforward treatment of ANNs, although this book is quite biased towards linear methods as exemplified by the sheer lack of details in this sections. There are many other books that go through these much clearer, specifically for RL <sup id="d9b91a5606614353557e52db6d05df3c"><a href="#MAL-071" title="Fran\c cois-Lavet, Henderson, Islam, Bellemare \&amp; Pineau, An {{Introduction}} to {{Deep Reinforcement Learning}}, {Foundations and Trends\textregistered{} in Machine Learning}, v(), (2018).">MAL-071</a></sup>.</p>
+<p>This is a straightforward treatment of ANNs, although this book is quite biased towards linear methods as exemplified by the sheer lack of details in this sections. There are many other books that go through these much clearer, specifically for RL (<a href="#citeproc_bib_item_1">François-Lavet et al. 2018</a>).</p>
 <h3 id="least-squares-td">Least-Squares TD</h3>
 <p>Least-squares TD is a straightforward algorithm which solves for the fixed point weights (i.e. \(\wvec_{TD} = \Amat^\inv \bvec\)) directly rather than through an iterative process. As a reminder</p>
 <p>\[\bvec \defeq \expected[R_{t+1}\xvec_t] \in \reals^d
@@ -937,7 +924,6 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 {1 + (\xvec_t - \gamma\xvec_{t+1})^\trans \widehat{\Amat}_{t-1}^\inv \xvec_t}
 \end{equation}</p>
 <div class="tcolorbox">
-  <div></div>
 <p>\begin{theorem}
 Suppose $\Amat \in \reals^{n \times n}$ is an /invertable square matrix/ and $\uvec, \vvec \in \reals^n$ are column vectors. Then $\Amat + \uvec\vvec^\trans$ is invertable iff $1 + \vvec^\trans\Amat^\inv\uvec \neq 0$. Specifically,</p>
 <p>\[(\Amat + \uvec\vvec^\trans)^\inv = \Amat^\inv - \frac{A^\inv \uvec\vvec^\trans \Amat^\inv}{1+\vvec^\trans\Amat^\inv\uvec}\]</p>
@@ -946,15 +932,15 @@ Suppose $\Amat \in \reals^{n \times n}$ is an /invertable square matrix/ and $\u
 <p>We prove this in the backward direction, and do this by verifing the properties of the inverse. Specifically ($\Xmat = (\Amat + \uvec\vvec^\trans)$),</p>
 <p>\begin{align*}
 \Xmat\Xmat^\inv
-&amp;= (\Amat + \uvec\vvec^\trans)\left(\Amat^\inv - \frac{A^\inv \uvec\vvec^\trans \Amat^\inv}{1+\vvec^\trans\Amat^\inv\uvec} \right) \\\
+&amp;= (\Amat + \uvec\vvec^\trans)\left(\Amat^\inv - \frac{A^\inv \uvec\vvec^\trans \Amat^\inv}{1+\vvec^\trans\Amat^\inv\uvec} \right) \\
 &amp;= \Amat\Amat^\inv + \uvec\vvec^\trans \Amat^\inv -
 \frac{\Amat\Amat^\inv\uvec\vvec^\trans\Amat^\inv + \uvec\vvec^\trans\Amat^\inv\uvec\vvec^\trans\Amat^\inv}
-{1 + \vvec^\trans\Amat^\inv\uvec} \\\
+{1 + \vvec^\trans\Amat^\inv\uvec} \\
 &amp;= \eye + \uvec\vvec^\trans \Amat^\inv -
 \frac{\uvec(1 + \vvec^\trans\Amat^\inv\uvec)\vvec^\trans\Amat^\inv}
-{1 + \vvec^\trans\Amat^\inv\uvec} \\\
+{1 + \vvec^\trans\Amat^\inv\uvec} \\
 &amp;= \eye + \uvec\vvec^\trans \Amat^\inv - \uvec\vvec^\trans \Amat^\inv
-\hspace{1cm} \triangleright 1 + \vvec^\trans \Amat^\inv \uvec \in \reals, \neq 0 \\\
+\hspace{1cm} \triangleright 1 + \vvec^\trans \Amat^\inv \uvec \in \reals, \neq 0 \\
 &amp;= \eye
 \end{align*}</p>
 <p>Reciprocally, if $1 + \vvec^\trans \Amat^\inv \uvec = 0$, then $x=\Amat^\inv\uvec$, we can see $(\Amat + \uvec\vvec^\trans)x = 0$ and therefore $(\Amat + \uvec\vvec^\trans)$ has a non-trivial kernel and is therefore not invertible.</p>
@@ -974,7 +960,7 @@ Suppose $\Amat \in \reals^{n \times n}$ is an /invertable square matrix/ and $\u
 <h3 id="looking-deeper-at-on-policy-learning-interest-and-emphasis">Looking Deeper at On-policy Learning: Interest and Emphasis</h3>
 <p>Instead of treating each state uniformly, we can also treat states according to some <em>interest</em> function \(I_t\) indicating the degree to which we are interested in accurately.</p>
 <p>\begin{align*}
-\wvec_{t+n} &amp;\defeq \wvec_{t+n-1} + \alpha M_t[G_{t:t+n} - \hat{v}(S_t, \wvec_{t+n-1})]\nabla \hat{v}(S_t, \wvec_{t+n-1}), 0\leq t &lt; T \\\
+\wvec_{t+n} &amp;\defeq \wvec_{t+n-1} + \alpha M_t[G_{t:t+n} - \hat{v}(S_t, \wvec_{t+n-1})]\nabla \hat{v}(S_t, \wvec_{t+n-1}), 0\leq t &lt; T \\
 M_t &amp;= I_t + \gamma^n M_{t-1}
 \end{align*}</p>
 <h2 id="chapter-10">Chapter 10</h2>
@@ -1020,14 +1006,7 @@ The performance measure:
 <p>\[\nabla J(\thetavec) \propto \mathbb{E}_\pi \left[\sum_a q_{\pi}(S_t, a) \nabla \pi(a|S_t, \thetavec) \right]\]</p>
 <p>We could stop here and instantiate stochastic gradient ascent here, where we approximate the value function. We can continue down the line of reasoning presented in the policy gradient theorem and remove the weighting of the policy and replace the value function with the return. This results in</p>
 <p>\[\nabla J(\thetavec) \approx \mathbb{E}_\pi \left[ G_t \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \right]\]</p>
-<p>yielding the REINFORCE with Monte Carlo update <sup id="972b5cafcdddd5e9844535cdc7870538"><a href="#williams1992" title="@incollection{williams1992,
-title = {Simple {{Statistical Gradient}}-{{Following Algorithms}} for {{Connectionist Reinforcement Learning}}},
-booktitle = {Reinforcement {{Learning}}},
-author = {Williams, Ronald J.},
-year = {1992},
-series = {The {{Springer International Series}} in {{Engineering}} and {{Computer Science}}},
-publisher = {{Springer, Boston, MA}}
-}">williams1992</a></sup>:</p>
+<p>yielding the REINFORCE with Monte Carlo update (<a href="#citeproc_bib_item_7">Williams 1992</a>):</p>
 <p>\[\Delta \theta_t = \alpha G_t \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \]</p>
 <p>We can change out the comparison of the action value to an arbitrary baseline b(s) resulting in an update</p>
 <p>\[\Delta \theta_t = \alpha (G_t - b(S_t)) \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \]</p>
@@ -1036,11 +1015,11 @@ publisher = {{Springer, Boston, MA}}
 <p>We can use the same methods used for TD(0), Sarsa(0), and other algorithms for estimating the return and using it as a critic in the policy gradient framework.</p>
 <p>\begin{align*}
 \Delta \theta_t
-&amp;= \alpha (G_{t:t+1} - \hat{v}(S_t|\wvec)) \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \\\
-&amp;= \alpha (R_{t+1} + \gamma \hat{v}(S_{t+1}|\wvec) - \hat{v}(S_t|\wvec)) \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \\\
+&amp;= \alpha (G_{t:t+1} - \hat{v}(S_t|\wvec)) \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \\
+&amp;= \alpha (R_{t+1} + \gamma \hat{v}(S_{t+1}|\wvec) - \hat{v}(S_t|\wvec)) \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)} \\
 &amp;= \alpha \delta_t \frac{\nabla \pi(A_t | S_t \thetavec)}{\pi(A_t | S_t \thetavec)}
 \end{align*}</p>
-<p>This generalizations for n-step and λ-return methods is straightforward, and not specified in these notes. See page 332 of <sup id="5a0669b0762614b466036f7acb283805"><a href="#sutton2018" title="Sutton \&amp; Barto, Reinforcement Learning: An Introduction, {The MIT Press} (2018).">sutton2018</a></sup></p>
+<p>This generalizations for n-step and λ-return methods is straightforward, and not specified in these notes. See page 332 of (<a href="#citeproc_bib_item_5">Sutton and Barto 2018</a>)</p>
 <h3 id="policy-gradient-for-continuing-problems">Policy Gradient for Continuing Problems</h3>
 <p>The performance metric for the continuing problem is in terms of the average rate of reward per time step:</p>
 <p>\[J(\thetavec) \defineq r(\pi) \defineq \lim_{h\rightarrow\infty} \frac{1}{h} \expected [R_t| S_0, A_{0:t-1} \sim \pi] \]</p>
@@ -1051,22 +1030,15 @@ publisher = {{Springer, Boston, MA}}
 <h2 id="chapter-15">Chapter 15</h2>
 <h2 id="chapter-16">Chapter 16</h2>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="singh1996"></a>[singh1996] Singh &amp; Sutton, Reinforcement Learning with Replacing Eligibility Traces, <i>Machine Learning</i>,  (1996). <a href="#318b65fbb285afc312c42c938fb1206a">↩</a></p>
-<p><a id="sutton2018"></a>[sutton2018] Sutton &amp; Barto, Reinforcement Learning: An Introduction, The MIT Press (2018). <a href="#5a0669b0762614b466036f7acb283805">↩</a></p>
-<p><a id="tesauro1994"></a>[tesauro1994] Tesauro, TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play, <i>Neural Computation</i>,  (1994). <a href="#8380ad54de0b40408a899400432e2467">↩</a></p>
-<p><a id="sutton1988"></a>[sutton1988] Sutton, Learning to Predict by the Methods of Temporal Differences, <i>Machine Learning</i>,  (1988). <a href="#a2b0ff3680c1d8d6588c0033630d19e8">↩</a></p>
-<p><a id="konidaris2011"></a>[konidaris2011] Konidaris, Osentoski &amp; Thomas, Value Function Approximation in Reinforcement Learning Using the Fourier Basis, in in: Twenty-Fifth AAAI Conference on Artificial Intelligence, edited by (2011) <a href="#320678e895b68f1c62a427926c99a29f">↩</a></p>
-<p><a id="MAL-071"></a>[MAL-071] Fran\c cois-Lavet, Henderson, Islam, Bellemare &amp; Pineau, An Introduction to Deep Reinforcement Learning, <i>Foundations and Trends\textregistered in Machine Learning</i>,  (2018). <a href="#d9b91a5606614353557e52db6d05df3c">↩</a></p>
-<p><a id="williams1992"></a>[williams1992] @incollectionwilliams1992,
-title = Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning,
-booktitle = Reinforcement Learning,
-author = Williams, Ronald J.,
-year = 1992,
-series = The Springer International Series in Engineering and Computer Science,
-publisher = Springer, Boston, MA
-<a href="#972b5cafcdddd5e9844535cdc7870538">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>François-Lavet, Vincent, Peter Henderson, Riashat Islam, Marc G. Bellemare, and Joelle Pineau. 2018. “An Introduction to Deep Reinforcement Learning.” <i>Foundations and Trends in Machine Learning</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Konidaris, George, Sarah Osentoski, and Philip Thomas. 2011. “Value Function Approximation in Reinforcement Learning Using the Fourier Basis.” In <i>Twenty-Fifth AAAI Conference on Artificial Intelligence</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Singh, Satinder P., and Richard S. Sutton. 1996. “Reinforcement Learning with Replacing Eligibility Traces.” <i>Machine Learning</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Sutton, Richard S. 1988. “Learning to Predict by the Methods of Temporal Differences.” <i>Machine Learning</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Sutton, Richard S., and Andrew G. Barto. 2018. <i>Reinforcement Learning: An Introduction</i>. Second edition. Adaptive Computation and Machine Learning Series. Cambridge, Massachusetts: The MIT Press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Tesauro, Gerald. 1994. “TD-Gammon, a Self-Teaching Backgammon Program, Achieves Master-Level Play.” <i>Neural Computation</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Williams, Ronald J. 1992. “Simple Statistical Gradient-Following Algorithms for Connectionist Reinforcement Learning.” In <i>Reinforcement Learning</i>. The Springer International Series in Engineering and Computer Science. Springer, Boston, MA.</div>
+</div>
     </div>
 
     
@@ -1086,6 +1058,388 @@ publisher = Springer, Boston, MA
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -1101,3 +1455,4 @@ publisher = Springer, Boston, MA
 
   </body>
 </html>
+

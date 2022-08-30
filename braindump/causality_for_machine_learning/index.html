@@ -54,8 +54,8 @@
   <meta property="og:title" content="scholkopf2019: Causality for Machine Learning | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:35-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:35-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:55:12-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:55:12-06:00">
   
 
   <title>scholkopf2019: Causality for Machine Learning | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:35 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:55:12 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,6 +275,7 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
@@ -300,7 +301,7 @@
 <li>
 <p>Temporal structure</p>
 <p>While it is true that the core of supervised learning research doesn&rsquo;t interact with these properties, there are several parts of the community which do.</p>
-<p>To start the most obvious is <a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>. An RL agent generates its own data through interacting with its world. It must deal with domain shifts of the underlying environment as well as distributional shifts which occur from its own policy. The agent must, especially when the markov assumption isn&rsquo;t meet, abstract temporally and build up beliefs about its current state. While causality does change the problem specification, it doesn&rsquo;t do so in as satisfying a way as RL. In RL an agent builds a policy by maximizing the reward function. It is unclear where behaviour is derived in a causal AI system. In all likelihood, RL agents should be making causal assumptions about the underlying dynamcis and testing these through interventions. It is possible <sup id="cf8e9083815e9b7d8318497cd8335abc"><a href="#zhang2021" title="Zhang, Lipton, Pineda, Azizzadenesheli, Anandkumar, Itti, Pineau \&amp; Furlanello, Learning {{Causal State Representations}} of {{Partially Observable Environments}}, {arXiv:1906.10437 [cs, stat]}, v(), (2021).">zhang2021</a></sup> has something to say about this, in that we can generate causal belief states which can be explored through causal mechanisms. While this is an interesting directions, building behaviour around this type of approach seems difficult but might be done through an intrinsic mechanism.</p>
+<p>To start the most obvious is <a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>. An RL agent generates its own data through interacting with its world. It must deal with domain shifts of the underlying environment as well as distributional shifts which occur from its own policy. The agent must, especially when the markov assumption isn&rsquo;t meet, abstract temporally and build up beliefs about its current state. While causality does change the problem specification, it doesn&rsquo;t do so in as satisfying a way as RL. In RL an agent builds a policy by maximizing the reward function. It is unclear where behaviour is derived in a causal AI system. In all likelihood, RL agents should be making causal assumptions about the underlying dynamcis and testing these through interventions. It is possible (<a href="#citeproc_bib_item_1">Zhang et al. 2021</a>) has something to say about this, in that we can generate causal belief states which can be explored through causal mechanisms. While this is an interesting directions, building behaviour around this type of approach seems difficult but might be done through an intrinsic mechanism.</p>
 <p>Temporal forecasting is also a well established part of the ML community. While not interacting with the data streams generation process, they still generate beliefs about the process to make future predictions.</p>
 </li>
 </ul>
@@ -308,15 +309,25 @@
 <p>The IID assumption is problematic, and that is well known. Some take this an mean all of deep learning is useless, while others try and make the best of the tools we have. Often these arguments are propped up by human&rsquo;s/animal&rsquo;s abilities to &ldquo;domain shift&rdquo; or to &ldquo;generalize&rdquo;. While it is true that organisms w/ a nervous system can often generalize well, that is ignoring a significant amount of priors underneath the policy building process. Now this can be taken to mean that animals are building causal graphs of the underlying world or uncovering statistical correlations. I&rsquo;m not sure which, and an argument attacking the issues with one while ignoring the issues of the other are slightly disingenuous. Causal methods have issues in that they can only work if there are strong priors on the causal model. These priors can&rsquo;t always be derived by data (i.e. the observed distributions can be equivalent for different causal structures), while only focusing on correlations means the agent may make many egregious mistakes in the meaning of a prediction.</p>
 <h2 id="the-adversarial-issues-w-ml">The adversarial issues w/ ML</h2>
 <p>It is known that certain transformations of observations can cause issues with deep learning agents. This is seen as bad as the changes are &ldquo;imperceptible to humans&rdquo;. While likely problematic for future applications, these issues are failing to understand how this relates back to human falability. While humans will see this and believe it is something we and other organics don&rsquo;t suffer, I argue it is something we suffer from as well. Not only are there many ways to fool the human eye, but the changes we make to trick humans can&rsquo;t interact with the human visual system as the DL adversarial attacks can. For example the imperceptible noise is often derived from directly differentiating through the model giving detailed information about the agent. These algorithms are also making changes at a different layer in the perceptual process. They aren&rsquo;t working in the light emitting properties, but after the first layer in the brain. I&rsquo;d argue that if we could attack this part of the human perceptual process we would also be deeply fallible. A better place to test if these networks are vulnerable for robotics/RL/deployed systems on hardware would be to play with the light generation process not an intermediate representation of that.</p>
-<h2 id=""></h2>
+<h2 id="d41d8c"></h2>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="zhang2021"></a>[zhang2021] Zhang, Lipton, Pineda, Azizzadenesheli, Anandkumar, Itti, Pineau &amp; Furlanello, Learning Causal State Representations of Partially Observable Environments, <i>arXiv:1906.10437 [cs, stat]</i>,  (2021). <a href="#cf8e9083815e9b7d8318497cd8335abc">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Zhang, Amy, Zachary C. Lipton, Luis Pineda, Kamyar Azizzadenesheli, Anima Anandkumar, Laurent Itti, Joelle Pineau, and Tommaso Furlanello. 2021. “Learning Causal State Representations of Partially Observable Environments.” <i>arXiv:1906.10437 [Cs, Stat]</i>. <a href="https://arxiv.org/abs/1906.10437">https://arxiv.org/abs/1906.10437</a>.</div>
+</div>
     </div>
 
     
     
+
+
+<div class="post-tags">
+  <h4> Tags: </h4>
+  
+  <a href="/tags/Causality">Causality</a>
+  
+</div>
+
+
 
     
 
@@ -331,6 +342,388 @@
 
   </div>
 </article>
+
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
 
 			</section>
 		</div>
@@ -347,3 +740,4 @@
 
   </body>
 </html>
+

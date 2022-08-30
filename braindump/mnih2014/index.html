@@ -54,8 +54,8 @@
   <meta property="og:title" content="mnih2014: Recurrent Models of Visual Attention | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:28-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:28-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:54:11-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:54:11-06:00">
   
 
   <title>mnih2014: Recurrent Models of Visual Attention | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:28 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:54:11 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,6 +275,7 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
@@ -304,25 +305,11 @@ There are two action sets and thus two policy networks deciding what actions to 
 <p><strong>Rewards</strong>:
 The rewards structure is dictated by the environment in the usual RL way and is usually sparse. They define the rewards for object recognition if the object is classified correctly after T (set a priori) steps.</p>
 <h3 id="training">Training</h3>
-<p>The network is trained through the REINFORCE algorithm with a baseline of the average reward <sup id="f92357491a8e0e2eb96e86e338e23324"><a href="#sutton2000" title="@incollection{sutton2000,
-title = {Policy {{Gradient Methods}} for {{Reinforcement Learning}} with {{Function Approximation}}},
-booktitle = {Advances in {{Neural Information Processing Systems}} 12},
-author = {Sutton, Richard S and McAllester, David A. and Singh, Satinder P. and Mansour, Yishay},
-editor = {Solla, S. A. and Leen, T. K. and M{\u}ller, K.},
-year = {2000},
-publisher = {{MIT Press}}
-}">sutton2000</a></sup>. They also define a hybrid supervised loss for the object classification tasks.</p>
+<p>The network is trained through the REINFORCE algorithm with a baseline of the average reward (<a href="#citeproc_bib_item_1">Sutton et al. 2000</a>). They also define a hybrid supervised loss for the object classification tasks.</p>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="sutton2000"></a>[sutton2000] @incollectionsutton2000,
-title = Policy Gradient Methods for Reinforcement Learning with Function Approximation,
-booktitle = Advances in Neural Information Processing Systems 12,
-author = Sutton, Richard S and McAllester, David A. and Singh, Satinder P. and Mansour, Yishay,
-editor = Solla, S. A. and Leen, T. K. and M&quot;uller, K.,
-year = 2000,
-publisher = MIT Press
-<a href="#f92357491a8e0e2eb96e86e338e23324">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Sutton, Richard S, David A. McAllester, Satinder P. Singh, and Yishay Mansour. 2000. “Policy Gradient Methods for Reinforcement Learning with Function Approximation.” In <i>Advances in Neural Information Processing Systems 12</i>, edited by S. A. Solla, T. K. Leen, and K. Müller. MIT Press.</div>
+</div>
     </div>
 
     
@@ -342,6 +329,388 @@ publisher = MIT Press
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -357,3 +726,4 @@ publisher = MIT Press
 
   </body>
 </html>
+

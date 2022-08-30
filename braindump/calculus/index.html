@@ -54,8 +54,8 @@
   <meta property="og:title" content="Calculus | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:12-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:12-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:51:58-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:51:58-06:00">
   
 
   <title>Calculus | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:12 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:51:58 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,6 +275,7 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
@@ -290,7 +291,7 @@
 <li>Limits (including L&rsquo;Hopital&rsquo;s rule)</li>
 <li>Geometry</li>
 </ul>
-<p>In the final section (section <a href="#CFMLR:ML">CFMLR:ML</a>), there will be many topics discussed that are critical for doing machine learning research. We assume some passing knowledge of these topics</p>
+<p>In the final section (section <a href="CFMLR:ML">CFMLR:ML</a>), there will be many topics discussed that are critical for doing machine learning research. We assume some passing knowledge of these topics</p>
 <ul>
 <li>Probability and Statistics</li>
 <li>Deep Learning</li>
@@ -324,7 +325,6 @@
 <p>Lets start by thinking about a hard ball being dropped from a reasonable distance, say at the top of a ladder. Say we wanted to come up with some function of how long the ball will fall in a certain amount of time. One way to do this (requiring the least amount of experimental setup) would be to measure the time a ball dropped at varying heights and then fit this data to some function of time. If we were to take these measurements, the simplest function (approximating the distance rather well) is a parabola</p>
 <p>\[\text{Distance the ball travels after dropping} = f(t) = c t^2 \quad \text{where } c \in \reals, t \ge 0\].</p>
 <aside>
-  <aside></aside>
 <p>You may be asking where does the ball hit the ground (i.e. what is my stopping condition?). The stopping condition will be the distance the ball has to travel to hit the ground, or the initial position of the ball relative to the release point. While this could be modeled in the above equation, it is easier to just ignore this and reason about a ball that is falling infinitely (with no air resistance) with gravity set at sea level. Trust me when I say these assumptions make the calculations significantly easier to manage, and are more than reasonable for our purposes here.</p>
 <p>\vspace{0.2cm}</p>
 <p>You may also be wondering about what the constant is representing. Well under normal conditions on earth (i.e. sea level) \(c\approx \frac{1}{2} * 9.8\frac{m}{s}\).  You can derive this quantity from your measurements to a reasonable amount of accuracy.</p>
@@ -336,7 +336,6 @@
 <p>This is the exact definition of a derivative, and we can state</p>
 <p>\[\frac{d f(t)}{dt} = f^\prime(t) = \dot{f}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \].</p>
 <aside>
-  <aside></aside>
 <p>\textbf{A Note on Notation}: We will mostly be using Leibniz&rsquo;s notation (\(\frac{d f(t)}{dt}\)) as this easily transitions to higher dimensional functions. But it would be good to know several notation conventions exist and are widely used:</p>
 <ul>
 <li>Newton Notation: \(\dot{f}(t) \defeq \frac{d f(t)}{dt}\)</li>
@@ -346,21 +345,19 @@
 </aside>
 <p>You can imagine the two points you are drawing a line through getting extremely close together until they become the same point! This quantity specifies the slope of the tangent line to the function \(f(t)\). We can now calculate our first derivative together (using our parabola function)</p>
 <p>\begin{align*}
-\frac{d f(t)}{dt} &amp;= \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \\\
-&amp;= \lim_{dt \rightarrow 0} \frac{c(t+dt)^2-ct^2}{dt}	\\\
-&amp;= \lim_{dt \rightarrow 0} \frac{ct^2+ 2ct*dt + dt^2-ct^2}{dt}\\\
-&amp;= \lim_{dt \rightarrow 0} \frac{2ct*dt + dt^2}{dt}\\\
-&amp;= \lim_{dt \rightarrow 0} 2ct + dt\\\
+\frac{d f(t)}{dt} &amp;= \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \\
+&amp;= \lim_{dt \rightarrow 0} \frac{c(t+dt)^2-ct^2}{dt}	\\
+&amp;= \lim_{dt \rightarrow 0} \frac{ct^2+ 2ct*dt + dt^2-ct^2}{dt}\\
+&amp;= \lim_{dt \rightarrow 0} \frac{2ct*dt + dt^2}{dt}\\
+&amp;= \lim_{dt \rightarrow 0} 2ct + dt\\
 \frac{d f(t)}{dt} &amp;= 2ct
 \end{align*}</p>
 <p>Because we used a variable \(t\) instead of an actual value, we can now ask what velocity our ball is at any place along the parabola!</p>
 <aside>
-  <aside></aside>
 <p>Another way of thinking about a derivative is to consider \(dx\) as some perturbation to our function \(f(x)\). The derivative tells us for a given input \(x\), how \(f(x)\) will vary over these perturbations (i.e. how f(x) will vary along the tangent line). This is an incredibly useful value for machine learning as we will see later, and tells us the best search direction in optimizing our function approximators.</p>
 </aside>
 <p>We can now make this a little bit more formal (although we have covered all the important bits above).</p>
 <div class="definition">
-  <div></div>
 <p>\textbf{Derivative: } Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
 \[\lim_{dx-&gt;0^-} \frac{f(a+dx) - f(a)}{dx} = \lim_{dx-&gt;0^+} \frac{f(a+dx) - f(a)}{dx}\].</p>
 <p>We say \(f(x)\) is of differentiability class \(C^{k&gt;1}\) if it is differentiable at all \(a \in domain(f)\). We define the derivative with respect to its input \(x\) as:
@@ -373,21 +370,18 @@
 <p>We know now that the derivative of a function is the instantaneous rate of change, or in the physical context the derivative of an object&rsquo;s position function is the velocity of the object. The next question we should ask is &ldquo;what happens if I take the derivative again?&rdquo; Well, the answer is quite straightforward: the derivative of the velocity is the instantaneous rate of change of the velocity at time t or the acceleration.</p>
 <p>If we vary the parameter of our function \(f(t)\) from left to right, the double derivative gives us a sense of the trend of the function. If the double derivative is positive we would expect the velocity of our function to be increasing meaning our function should eventually be heading towards positive infinity. The inverse is true when the double derivative is negative. In more concrete terms, the second derivative is measuring the <strong>concavity</strong> of our function.</p>
  <div class="definition">
-   <div></div>
 <p>\textbf{Concavity} The concavity (or convexity) of a function is an important concept for machine learning and optimization.</p>
  </div>
 <p>We can determine if our function \(f(x)\) is concave up (convex) or concave down  at any point in its domain \(x^\prime\) using the value of the second derivative. This is a very simple procedure: if the second derivative is positive \(\frac{d^2 f(x^\prime)}{dx^2} &gt; 0\) then the function is concave up (also known as convex), if the second derivative is negative \(\frac{d^2 f(x^\prime)}{dx^2} &lt; 0\) the second derivative is concave down. What if the second derivative is zero \(\frac{d^2 f(x^\prime)}{dx^2} = 0\)?</p>
  <div class="definition">
-   <div></div>
 <p>\textbf{Inflection point} any point where the second derivative of our function is zero and there is a sign change. A bit more formally with \(\epsilon\) as a small positive real number, \(x^\prime\) is an inflection point of a function \(f(x)\) if</p>
 <p>\begin{align*}
-&amp;\frac{d^2 f(x^\prime)}{dx^2} = 0 \\\
+&amp;\frac{d^2 f(x^\prime)}{dx^2} = 0 \\
 &amp;sign(\frac{d^2 f(x^\prime + \epsilon)}{dx^2}) \neq sign(\frac{d^2 f(x^\prime - \epsilon)}{dx^2})
 \end{align*}</p>
 <p>This only holds as long as \(x^\prime + \epsilon\) and \(x^\prime + \epsilon\) are in the neighborhood of \(x^\prime\). There are other sufficiency conditions for an inflection point, which may be covered at a latter time in these notes.</p>
  </div>
  <aside>
-   <aside></aside>
 <p>We can start constructing classes of functions according to their derivatives, which we denote as differentiability class or smoothness class. We first start with the \(C^{0}\) set of functions which contains all continuous functions. The next class \(C^{1}\) contains all functions such that their derivatives are in \(C^{0}\) (i.e. continuous). We can define the kth class as \(C^{k}\) with functions whose \([1, 2, \ldots, kth]\) -derivatives are continuous. We declare a function smooth if it is infinitely differentiable and of the set \(C^{\infty}\). One such function is the exponential, also the cosine and sinusoidal functions.</p>
  </aside>
 </li>
@@ -417,19 +411,17 @@
 <p>Intuitively this gives us how much the function will change if we only apply a perturbation to the x component. We can also construct a partial for the second parameter of our function</p>
 <p>\[\frac{\partial}{\partial y} f(x, y) = \lim_{dy \rightarrow 0} \frac{f(x, y + dy) - f(x, y + dy)}{dy}\].</p>
 <p>Now that we have derivatives representing the rate of change of each variable we can construct vectors from the partial derivatives to get the exact direction the function is moving in the space. We have finally come to one definition of the gradient!</p>
-<p>\[\text{Gradient of $f(x,y)$} \defeq \begin{bmatrix} \frac{\partial}{\partial x} f(x,y) \ \frac{\partial}{\partial y} f(x,y)\end{bmatrix} = \begin{bmatrix} \frac{\partial}{\partial x} \ \frac{\partial}{\partial y} \end{bmatrix} f(x,y) = \vec{\nabla} f(x,y) = \nabla f(x,y)\]</p>
+<p>\[\text{Gradient of $f(x,y)$} \defeq \begin{bmatrix} \frac{\partial}{\partial x} f(x,y) \\ \frac{\partial}{\partial y} f(x,y)\end{bmatrix} = \begin{bmatrix} \frac{\partial}{\partial x} \\ \frac{\partial}{\partial y} \end{bmatrix} f(x,y) = \vec{\nabla} f(x,y) = \nabla f(x,y)\]</p>
 <p>Notice that the gradient operator is a vector operator it self, and is sometimes referred as the <em>vector differential operator</em> or <em>del</em>. By convention we leave off the vector identification and always assume the gradient is a vector with the same length as the number of parameters our function takes. Another convention is the operator always appearing on the left of a scalar function (or really any function). If you are familiar with linear algebra, you should see why (i.e. a left product <em>could</em> be different from a right product). We will also treat the gradient as a column vector from here on out.</p>
 <p>Thus far we have defined the gradient over only two dimensions, but of course we can easily extend this to n dimensions.</p>
-<p>\[\nabla \defeq \begin{bmatrix} \partialderiv{}{x_1}\ \vdots \ \partialderiv{}{x_n} \end{bmatrix}\]</p>
+<p>\[\nabla \defeq \begin{bmatrix} \partialderiv{}{x_1}\\ \vdots \\ \partialderiv{}{x_n} \end{bmatrix}\]</p>
 <h3 id="gradients-over-vector-fields">Gradients over vector fields</h3>
 <p>The functions we have been considering thus far have been <strong>scalar fields</strong> where \(f: A \subset \reals^n \rightarrow \reals\). Now that we know how gradients work over scalar functions, we will look at how gradients will work over vector fields.</p>
 <div class="definition">
-  <div></div>
 <p>\textbf{Vector Fields}: a \textbf{vector field} in \(\reals^n\) is a map \(\mathbf{F}: A \subset \reals^n \mapsto \reals^n\) that assigns to each point \(\xvec\) in its domain A a vector \(\mathbf{F}(\xvec)\). If n = 2, \(\mathbf{F}\) is called a \textbf{vector field in the plane}, and if n=3, \(\mathbf{F}\) is a \textbf{vector field in space}.</p>
 <p>We have already covertly encountered a vector field in these notes! Specifically, the gradient of any scalar function is a vector field over the domain of the scalar function!</p>
 </div>
 <aside>
-  <aside></aside>
 <p>We are only considering vector fields in these notes, but you could imagine functional maps such as \(\mathbf{F}: A \subset \reals^n \mapsto \reals^m\). We revisit this type of function in our study of the Jacobian (to make the definition more general). There are several interesting properties which pop up when we consider functions of this form, but leave a discussion on these as beyond the scope of these notes.</p>
 </aside>
 <p>There are three ways the gradient operator can interact with a vector field. We will explore each separately starting with the Jacobian</p>
@@ -441,8 +433,8 @@
 <p>\[\text{The Jacobian: } \jacobian \defeq \nabla \otimes \Fmat =
 \left[\partialderiv{\Fmat}{x_1}, \cdots, \partialderiv{\Fmat}{x_n}\right] =
 \left[\begin{array}{ccc}{
-\frac{\partial \Fmat_{1}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{1}}{\partial x_{n}}} \\\
-{\vdots} &amp; {\ddots} &amp; {\vdots} \\\
+\frac{\partial \Fmat_{1}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{1}}{\partial x_{n}}} \\
+{\vdots} &amp; {\ddots} &amp; {\vdots} \\
 {\frac{\partial \Fmat_{m}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{m}}{\partial x_{n}}}
 \end{array}\right]\]</p>
 <p>Some properties:</p>
@@ -467,8 +459,8 @@
 <p>The curl is the cross product of the gradient operator and a vector field \(\Fmat\). We will only consider the curl up to three dimensions for simplicity.</p>
 <p>\[\text{The Curl: } curl(\Fmat) \defeq \nabla \times \Fmat =
 \left|\begin{array}{ccc}
-{\hat{\imath}} &amp; {\hat{\jmath}} &amp; {\hat{k}} \\\
-{\frac{\partial}{\partial x}} &amp; {\frac{\partial}{\partial y}} &amp; {\frac{\partial}{\partial z}} \\\
+{\hat{\imath}} &amp; {\hat{\jmath}} &amp; {\hat{k}} \\
+{\frac{\partial}{\partial x}} &amp; {\frac{\partial}{\partial y}} &amp; {\frac{\partial}{\partial z}} \\
 {\Fmat_{x}} &amp; {\Fmat_{y}} &amp; {\Fmat_{z}}\end{array}\right|\]</p>
 </li>
 </ul>
@@ -478,7 +470,7 @@
 <ul>
 <li>
 <p>Hessian</p>
-<p>The Hessian is an important construct for machine learning, particularly in optimization and step-size adaptation where the Hessian is often evoked (although not computed). We will look at Newtonian methods in section <a href="#CFMLR:ML">CFMLR:ML</a>.</p>
+<p>The Hessian is an important construct for machine learning, particularly in optimization and step-size adaptation where the Hessian is often evoked (although not computed). We will look at Newtonian methods in section <a href="CFMLR:ML">CFMLR:ML</a>.</p>
 <p>To construct the Hessian, we will simply take the Jacobian of the gradient of our function.</p>
 </li>
 </ul>
@@ -575,6 +567,401 @@
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/model_based_rl/">Model-based RL</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
 			</section>
 		</div>
 	</article>
@@ -590,3 +977,4 @@
 
   </body>
 </html>
+

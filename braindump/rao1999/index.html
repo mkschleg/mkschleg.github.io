@@ -54,8 +54,8 @@
   <meta property="og:title" content="rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:32-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:32-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:54:53-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:54:53-06:00">
   
 
   <title>rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:32 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:54:53 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,12 +275,13 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
 <dd><a href="/braindump/predictive_processing/">Predictive Processing</a>, <a href="/braindump/brain/">Brain</a></dd>
 <dt>source</dt>
-<dd><a href="https://idp.nature.com/authorize/casa?redirect%5Furi=https://www.nature.com/articles/nn0199%5F79&amp;casa%5Ftoken=WctFb6PYsUMAAAAA:-fI3shY2s4cPPa6NEjYBQ5Tj0OSB7uLzWAnN5ULaVXJqfzQaumGNyv8QrFn%5F4b2Sz0zeNwq2ggKhnqvLqQ">paper</a></dd>
+<dd><a href="https://idp.nature.com/authorize/casa?redirect_uri=https://www.nature.com/articles/nn0199_79&amp;casa_token=WctFb6PYsUMAAAAA:-fI3shY2s4cPPa6NEjYBQ5Tj0OSB7uLzWAnN5ULaVXJqfzQaumGNyv8QrFn_4b2Sz0zeNwq2ggKhnqvLqQ">paper</a></dd>
 <dt>authors</dt>
 <dd>Rao, R. P. N., &amp; Ballard, D. H.</dd>
 <dt>year</dt>
@@ -293,13 +294,13 @@
 <p>Each level in the hierarchical model network attempts to predict the responses at the next lower level via feedback connections. The error between the prediction and the actual response is then sent back to the higher level via feedforward connections.</p>
 <figure><img src="/ox-hugo/predictive_coding.png"
          alt="Figure 1: General Architecture of the hierarchical predictive coding model."/><figcaption>
-            <p>Figure 1: General Architecture of the hierarchical predictive coding model.</p>
+            <p><span class="figure-number">Figure 1: </span>General Architecture of the hierarchical predictive coding model.</p>
         </figcaption>
 </figure>
 
 <p>The prediction and error mechanisms occur concurrently throughout the hierarchy (top-down information influences bottom-up). Lower levels operate on smaller spatial (and possibly temporal scales) regions of th image, and the effective RF size of units increases progressively until the highest level&rsquo;s RF spans the totality of the image. Like all models, the underlying assumption is that the external environment generates natural signals hierarchically via interacting hidden physical causes (partial observability). The goal of the visual system is to optimally estimate the hidden variable at each scale of the input image.</p>
 <h3 id="hierarchical-predictive-coding-of-natural-images">Hierarchical Predictive Coding of Natural Images</h3>
-<p>The model described in the above section suggests feedback connections from a higher area to a lower area carry prediction of expected neural activity, whereas feedforward connections convey the residual activity (or unexplained activations) not predicted by the higher area. This was tested through simulation using a three-level hierarchical network of predictive estimators. The details on how this model is constructed and trained are left to the methods section <a href="#sec:rao1999:methods">sec:rao1999:methods</a>, but here we give a high level overview:</p>
+<p>The model described in the above section suggests feedback connections from a higher area to a lower area carry prediction of expected neural activity, whereas feedforward connections convey the residual activity (or unexplained activations) not predicted by the higher area. This was tested through simulation using a three-level hierarchical network of predictive estimators. The details on how this model is constructed and trained are left to the methods section <a href="sec:rao1999:methods">sec:rao1999:methods</a>, but here we give a high level overview:</p>
 <ul>
 <li>The hierarchical internal model is trained by maximizing the posterior probability of generating the observed natural images.</li>
 <li>The internal model is encoded in a distributed manner within the synapses of model neurons at each level</li>
@@ -312,7 +313,7 @@ Example: The image input at the zeroth level can be predicted as an appropriate 
 <h3 id="endstopped-responses-interpreted-as-error-signals">Endstopped Responses Interpreted as Error Signals</h3>
 <p>They show that they are able to illicit large error responses (feedback responses) based on the lack of contextual information (i.e. a bar within a single neurons RF or across multiple RFs). With contextual information the response of specific neurons are inhibited due to the input being predicted at higher-levels (i.e. the error-signal of the feed-forward connections are small). This is similar to the endstopped property of neurons discussed earlier.</p>
 <h3 id="predictive-feedback-and-extra-classical-rf-effects">Predictive Feedback and Extra-Classical RF Effects</h3>
-<p>They computed the percentage of endstopping (really the inverse as they report \(%\) maximum response). They find that feedback connections are critical to the endstopping phenomenon in their model.</p>
+<p>They computed the percentage of endstopping (really the inverse as they report \(\%\) maximum response). They find that feedback connections are critical to the endstopping phenomenon in their model.</p>
 <h3 id="other-extra-classical-rf-effects-in-the-model">Other Extra-Classical RF Effects in the Model</h3>
 <h2 id="discussion">Discussion</h2>
 <ul>
@@ -368,6 +369,388 @@ Example: The image input at the zeroth level can be predicted as an appropriate 
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -383,3 +766,4 @@ Example: The image input at the zeroth level can be predicted as an appropriate 
 
   </body>
 </html>
+

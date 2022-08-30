@@ -54,8 +54,8 @@
   <meta property="og:title" content="kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:24-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:24-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:53:39-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:53:39-06:00">
   
 
   <title>kostas2019: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:24 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:53:39 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,6 +275,7 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
@@ -291,7 +292,7 @@
 <ul>
 <li><em>stochastic computation graphs</em> - proposed to describe networks with a mixture of stochastic and deterministic nodes, with supervised, unsupervised, and RL applications.</li>
 <li><em>Stochastic neural networks</em> - A type of ANN which builds in random variations to the network, either through a stochastic transfer function, or stochastic weights.</li>
-<li>Multi-agent RL - <sup id="c8f8e458d9201e6e5e6e0a1d32d26c11"><a href="#liu2014" title="Liu, Singh, Lewis \&amp; Qin, Optimal {{Rewards}} for {{Cooperative Agents}}, {IEEE Transactions on Autonomous Mental Development}, v(), (2014).">liu2014</a></sup>: showed that multi-agent systems sometimes learn more quickly when agents are given individualized rewards.</li>
+<li>Multi-agent RL - (<a href="#citeproc_bib_item_1">Liu et al. 2014</a>): showed that multi-agent systems sometimes learn more quickly when agents are given individualized rewards.</li>
 </ul>
 <h2 id="background">Background</h2>
 <p>Consider the MDP, \((M=(\states, \actions, \rewards, \transition, R, d_0, \gamma))\). where the \(\states\) is all possible states, \(\actions\) set of all possible actions, and \(\rewards\) the set of all possible rewards (All finite sets). \(\transition: \states \by \actions \by \states \rightarrow [0,1], R: \states \by \actions \by \states \rightarrow [0,1], d_0(s) \triangleq Pr(S_0=s)\) are the transition function, reward distribution, and initial state distribution respectively.</p>
@@ -310,7 +311,7 @@
 \Delta_i(\theta_i) \triangleq \expected\left[\sum_{t=0}^\infty \gamma^t G_t \partialderiv{\ln(\pi_i(X_t, U_t, \theta_i))}{\theta_i} \vert \theta\right] \label{eqn:kostas2019:local-policy-gradient}
 \end{equation}</p>
 <p>What would happen if all coagents updated according to the local policy gradient updates?</p>
-<p><strong>Coagent policy gradient theorm (CPGT)</strong>: If \(\theta\) is fixed and all coagents update their parameters following unbiased estimates of <a href="#eqn:kostas2019:local-policy-gradient">eqn:kostas2019:local-policy-gradient</a> then the entire network will follow an unbiased estimator of \(\nabla J(\theta)\), or the <em>global policy gradient</em>.</p>
+<p><strong>Coagent policy gradient theorm (CPGT)</strong>: If \(\theta\) is fixed and all coagents update their parameters following unbiased estimates of <a href="eqn:kostas2019:local-policy-gradient">eqn:kostas2019:local-policy-gradient</a> then the entire network will follow an unbiased estimator of \(\nabla J(\theta)\), or the <em>global policy gradient</em>.</p>
 <h3 id="conjugate-markov-decision-process--comdp">Conjugate Markov Decision Process (CoMDP)</h3>
 <p>The CoMDP (or environment) of the \(i^\text{th}\), \(M^i \triangleq (\mathcal{X}^i, \mathcal{U}^i, \rewards^i, \transition^i, R^i, d_0^i, \gamma_i)\). Each component follows the normal MDP scheme laid out above. Here we will denote all random variables of the CoMDP with a tilde to clarify the distinction, for example \(\tilde{X}^i_t\) is the state of coagent \(i\) at time \(t\). The reward set and discount are the same as the MDP. We also define the transition and reward dynamics as</p>
 <p>\[\transition^i(x, u, x', \bar{\theta}_i) \triangleq \pi_i^\text{pre}(x'.s, x'.u_\text{pre}) \sum_{a \in \actions} \transition(x.s, a, x'.s) \pi_i^\text{post}(x, u, a)\]</p>
@@ -333,9 +334,9 @@
 <h2 id="empirical-support-of-cpgt">Empirical Support of CPGT</h2>
 <p>They provide some empirical evidence on a toy problem that the gradient estimates are similar to the back prop example. They show the directions are relatively similar as the number of estimate episodes increases.</p>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="liu2014"></a>[liu2014] Liu, Singh, Lewis &amp; Qin, Optimal Rewards for Cooperative Agents, <i>IEEE Transactions on Autonomous Mental Development</i>,  (2014). <a href="#c8f8e458d9201e6e5e6e0a1d32d26c11">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Liu, Bingyao, Satinder Singh, Richard L. Lewis, and Shiyin Qin. 2014. “Optimal Rewards for Cooperative Agents.” <i>IEEE Transactions on Autonomous Mental Development</i>.</div>
+</div>
     </div>
 
     
@@ -355,6 +356,388 @@
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -370,3 +753,4 @@
 
   </body>
 </html>
+

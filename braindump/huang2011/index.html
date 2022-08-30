@@ -54,8 +54,8 @@
   <meta property="og:title" content="huang2011: Predictive Coding | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2021-09-13T14:17:21-06:00">
-  <meta property="article:modified_time" content="2021-09-13T14:17:21-06:00">
+  <meta property="article:published_time" content="2022-08-30T12:53:11-06:00">
+  <meta property="article:modified_time" content="2022-08-30T12:53:11-06:00">
   
 
   <title>huang2011: Predictive Coding | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2021-09-13 14:17:21 -0600 MDT" itemprop="datePublished dateModified">
-      Sep 13, 2021
+    <time datetime="2022-08-30 12:53:11 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 30, 2022
     </time>
   </span>
 
@@ -275,18 +275,19 @@
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <dl>
 <dt>tags</dt>
 <dd><a href="/braindump/predictive_processing/">Predictive Processing</a>, <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a></dd>
 <dt>source</dt>
-<dd><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/wcs.142?casa%5Ftoken=pm63SatbadEAAAAA:LyhNDX5OM3rN3R5W9HvOIOCdGjB7wb1V4fBqJm57wXYFI28Waka3r0vDIma%5FoF5zjBkXOoSFhyb3EKg">paper</a></dd>
+<dd><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/wcs.142?casa_token=pm63SatbadEAAAAA:LyhNDX5OM3rN3R5W9HvOIOCdGjB7wb1V4fBqJm57wXYFI28Waka3r0vDIma_oF5zjBkXOoSFhyb3EKg">paper</a></dd>
 <dt>authors</dt>
 <dd>Huang, Y., &amp; Rao, R. P. N.</dd>
 <dt>year</dt>
 <dd>2011</dd>
 </dl>
-<p>This paper surveys the <a href="/braindump/hierarchical_predictive_coding/">Predictive Coding</a> literature from the original <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> to work recent at original publication (i.e. 2011). As laid out by <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup>, predictive coding is a framework for describing several neural phenomenon in the visual cortex and other parts of the brain. The core idea is the use of top-down connections to predict incoming signals and only feed the residual information back through the feed-forward connections.</p>
+<p>This paper surveys the <a href="/braindump/hierarchical_predictive_coding/">Predictive Coding</a> literature from the original (<a href="#citeproc_bib_item_2">Rao and Ballard 1999</a>) to work recent at original publication (i.e. 2011). As laid out by (<a href="#citeproc_bib_item_2">Rao and Ballard 1999</a>), predictive coding is a framework for describing several neural phenomenon in the visual cortex and other parts of the brain. The core idea is the use of top-down connections to predict incoming signals and only feed the residual information back through the feed-forward connections.</p>
 <h2 id="predictive-coding-in-space">Predictive coding in space</h2>
 <p>The main idea here is to use the surrounding intensity information of a pixel in an image to encode the information of the current pixel. Mathematically, they model this as a linear weighting of \(2N\) pixel intensities \(x_{-N}, x_{-N+1}, \ldots x_{N}\),</p>
 <p>\[
@@ -300,15 +301,15 @@
 <h2 id="predictive-coding-in-time">Predictive coding in time</h2>
 <p>The main difference here is the &ldquo;neighboring&rdquo; intensities from the spatial predictive coding scheme are instead based on the history of the pixel.</p>
 <h2 id="predictive-coding-in-the-nervous-system">Predictive Coding in the Nervous System</h2>
-<p><sup id="8c0df6e004a59bbb491cb14582298625"><a href="#hosoya2005" title="Hosoya, Baccus \&amp; Meister, Dynamic Predictive Coding by the Retina, {Nature}, v(), (2005).">hosoya2005</a></sup> describes how the retina encodes information through predictive coding, and that there are several phenomenon which are accurately described by a predictive coding scheme. There are not only spatial correlates but also temporal correlates.</p>
+<p>(<a href="#citeproc_bib_item_1">Hosoya, Baccus, and Meister 2005</a>) describes how the retina encodes information through predictive coding, and that there are several phenomenon which are accurately described by a predictive coding scheme. There are not only spatial correlates but also temporal correlates.</p>
 <p>&ldquo;An efficient visual encoder should learn the statistical regularities of the input image and adapt its encoding strategy accordingly.&rdquo;</p>
 <p>It has also been suggested that the LGN uses predictive coding to decorrelate the signal from the retina.</p>
-<p>Finally, it was suggested by <sup id="7b979f5b998905dc446bf66499306a20"><a href="#rao1999" title="Rao \&amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, {Nature Neuroscience}, v(), (1999).">rao1999</a></sup> that the visual cortex also implements a form of predictive coding (see <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a>).</p>
+<p>Finally, it was suggested by (<a href="#citeproc_bib_item_2">Rao and Ballard 1999</a>) that the visual cortex also implements a form of predictive coding (see <a href="/braindump/hierarchical_predictive_coding/">Hierarchical Predictive Coding</a>).</p>
 <h2 id="references">References</h2>
-<h1 id="bibliography">Bibliography</h1>
-<p><a id="rao1999"></a>[rao1999] Rao &amp; Ballard, Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects, <i>Nature Neuroscience</i>,  (1999). <a href="#7b979f5b998905dc446bf66499306a20">↩</a></p>
-<p><a id="hosoya2005"></a>[hosoya2005] Hosoya, Baccus &amp; Meister, Dynamic Predictive Coding by the Retina, <i>Nature</i>,  (2005). <a href="#8c0df6e004a59bbb491cb14582298625">↩</a></p>
-
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hosoya, Toshihiko, Stephen A. Baccus, and Markus Meister. 2005. “Dynamic Predictive Coding by the Retina.” <i>Nature</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Rao, Rajesh P. N., and Dana H. Ballard. 1999. “Predictive Coding in the Visual Cortex: A Functional Interpretation of Some Extra-Classical Receptive-Field Effects.” <i>Nature Neuroscience</i>.</div>
+</div>
     </div>
 
     
@@ -328,6 +329,388 @@
   </div>
 </article>
 
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
 			</section>
 		</div>
 	</article>
@@ -343,3 +726,4 @@
 
   </body>
 </html>
+
