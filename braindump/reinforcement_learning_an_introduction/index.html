@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.102.1" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -400,7 +400,7 @@
 <p>The learner and decision maker is called the <em>agent</em>. The thing it interacts with, comprising everything outside the agent, is the <em>environment</em>. These two systems interact continually, the agent selecting actions and the environment responding to these action and presenting new situations to the agent. The environment also gives rise to the rewards, special observations that the agent seeks to maximize over time. More specifically, the agent and environment interact at each of a sequence of discrete time steps, \(t=0,1,2,3,\ldots\). At each step \(t\), the agent receives some representation of the environment&rsquo;s <em>state</em>, \(S_t \in \states\), and on that basis selects and <em>action</em>, \(A_t \in \actions(s)\). At step \(t+1\) the agent receives a numerical <em>reward</em>, \(R_{t+1} \in \rewards \subset \reals\) and a new state \(S_{t+1}\). The assumption is there exists some relationship between the agent&rsquo;s action and the environment&rsquo;s reaction. This gives rise to a <em>trajectory</em></p>
 <p>\[S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, \ldots\].</p>
 <p>If the MDP is <em>finite</em> the states, actions, and rewards (\(\states\), \(\actions\), and \(\rewards\)) all have a finite number of elements. The random variables \(R_t\) and \(S_t\) have well defined discrete probability distributions dependent only on the preceding state and action</p>
-<p>\[p(s', r | s, a) \defeq Pr\{S_t=s', R_t=r | S_{t-1}=s, A_{t-1} = a\} \quad \triangleright \text{forall } s',s\in\states, r\in \rewards, a\in\actions(s) \].</p>
+<p>\[p(s&rsquo;, r | s, a) \defeq Pr\{S_t=s&rsquo;, R_t=r | S_{t-1}=s, A_{t-1} = a\} \quad \triangleright \text{forall } s&rsquo;,s\in\states, r\in \rewards, a\in\actions(s) \].</p>
 <p>The function \(p: \states\times\rewards\times\states\times\actions\) defines the <em>dynamics</em> of the MDP.</p>
 <h3 id="goals-and-rewards">Goals and Rewards</h3>
 <p>A core axiom on which reinforcement learning stands is noted as the <em>reward hypothesis</em></p>
@@ -452,7 +452,7 @@ v_{\pi}(s)
 \end{align}</p>
 <p>The recursive form defined in equation <a href="eqn:RLI:bellman">eqn:RLI:bellman</a> is known as the <em>Bellman equation for \(v_\pi\)</em>. It expresses the relationship between the value of a state and the values of its successor states. The value function \(v_\pi\) is the unique solution to its Bellman equation.</p>
 <h3 id="optimal-policies-and-optimal-value-functions">Optimal Policies and Optimal Value Functions</h3>
-<p>Value functions define a partial ordering over policies. A policy π is defined to be better than or equal to another policy π' if its expected return is greater than or equal to that of π' for all states. More clearly, \(\pi\geq\pi'\) iff \(v_\pi(s) \geq v_{\pi'}(s)\) for all \(s\in\states\). We will denote all optimal policies by \(\pi_\star\). All optimal polices share the same value function</p>
+<p>Value functions define a partial ordering over policies. A policy π is defined to be better than or equal to another policy π&rsquo; if its expected return is greater than or equal to that of π&rsquo; for all states. More clearly, \(\pi\geq\pi&rsquo;\) iff \(v_\pi(s) \geq v_{\pi&rsquo;}(s)\) for all \(s\in\states\). We will denote all optimal policies by \(\pi_\star\). All optimal polices share the same value function</p>
 <p>\begin{equation}
 v_\star (s) \defeq \max_\pi v_\pi(s) \quad \text{for all } s\in\states.
 \end{equation}</p>
@@ -462,8 +462,8 @@ q_\star (s,a)\defeq \max_\pi q_\pi(s,a) \quad \text{for all } s\in\states, a\in\
 \end{equation}</p>
 <p>We can also define a special Bellman equation for the optimal value function called the <em>Bellman optimality equation</em></p>
 <p>\begin{align}
-v_\star(s)  &amp;= \max_a \sum_{s',r} p(s', r | s, a) \left[r+\gamma v_\star(s')\right] \\
-q_\star(s,a) &amp;= \sum_{s',r} p(s',r|s,a)\left[r+\gamma \max_{a'}q_\star (s', a')\right]
+v_\star(s)  &amp;= \max_a \sum_{s&rsquo;,r} p(s&rsquo;, r | s, a) \left[r+\gamma v_\star(s&rsquo;)\right] \\
+q_\star(s,a) &amp;= \sum_{s&rsquo;,r} p(s&rsquo;,r|s,a)\left[r+\gamma \max_{a&rsquo;}q_\star (s&rsquo;, a&rsquo;)\right]
 \end{align}</p>
 <p>For finite MDPs, the Bellman optimality equation has a unique solution independent of the policy. While we can explicitly solve the Bellman optimality equation, there are a number of assumptions that are rarely true in real world examples:</p>
 <ol>
@@ -480,23 +480,23 @@ q_\star(s,a) &amp;= \sum_{s',r} p(s',r|s,a)\left[r+\gamma \max_{a'}q_\star (s', 
 <p><strong>Policy Evaluation</strong>: compute the state-value function \(v_\pi\) for an arbitrary policy \(\pi\). Also known as the prediction problem. Recall from Chapter 3:</p>
 <p>\begin{align}
 v_\pi(s) &amp;\defeq \expected_\pi[G_t | S_t=s] \nonumber\\
-&amp;= \sum_{a}\pi(a|s)\sum_{s', r} p(s', r|s, a)[r+\gamma v_\pi(s')] \label{eqn:RLI:dp:valuefunc}
+&amp;= \sum_{a}\pi(a|s)\sum_{s&rsquo;, r} p(s&rsquo;, r|s, a)[r+\gamma v_\pi(s&rsquo;)] \label{eqn:RLI:dp:valuefunc}
 \end{align}</p>
 <p>If the environment&rsquo;s dynamics are completely known, then \ref{eqn:RLI:dp:valuefunc} is a system of \(|\states|\) simultaneous linear equations in \(|\states|\) unknowns. This calculation is straightforward but tedious. For our purposes, iterative solution methods are most suitable. If \(v_0\) is chosen arbitrarily (except for any terminal states which must be 0), then we can iteratively solve for the value function</p>
 <p>\begin{align*}
 v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
-&amp; = \sum_{a}\pi(a|s)\sum_{s', r} p(s', r|s, a)[r+\gamma v_{k}(s')] \label{eqn:RLI:dp:iterative}
+&amp; = \sum_{a}\pi(a|s)\sum_{s&rsquo;, r} p(s&rsquo;, r|s, a)[r+\gamma v_{k}(s&rsquo;)] \label{eqn:RLI:dp:iterative}
 \end{align*}</p>
 <p>The sequence of \(v_k\) can be shown to converge to \(v_\pi\) in general as \(k\rightarrow\infty\). This algorithm is called <em>iterative policy evaluation</em>. This algorithm can also be done in-place.</p>
 <h3 id="policy-improvement">Policy Improvement</h3>
 <p>Once we have a state value function \(v_\pi\), we would like to use it to find a better policy (if one exists). The most straightforward method is to construct an action value function</p>
 <p>\[q_\pi(s,a) \defeq \expected[R_{t+1} + \gamma v_\pi(S_{t+1}) | S_t =s, A_t = a].\]</p>
-<p>If \(q_\pi(s,a) &gt; v_\pi(s)\) then you can improve the policy \(\pi\) by selecting action \(a\) in state \(s\) and then following \(\pi\) elsewhere. This is a special case of the <em>policy improvement theorem</em>. Let π and π' be any pair of deterministic policies such that</p>
-<p>\[q_\pi(s, \pi'(s)) \ge v_\pi(s) \quad \triangleright \quad \forall s \in \states\].</p>
-<p>Then the policy π' must be as good as, or better than π, meaning \(v_{\pi'}(s) \ge v_\pi(s)\).</p>
-<p>Instead of focusing on changing the policy at a a single state, we can improve the policy over all states simultaneously: \(\pi' \defeq \argmax_a q_\pi(s,a)\).</p>
+<p>If \(q_\pi(s,a) &gt; v_\pi(s)\) then you can improve the policy \(\pi\) by selecting action \(a\) in state \(s\) and then following \(\pi\) elsewhere. This is a special case of the <em>policy improvement theorem</em>. Let π and π&rsquo; be any pair of deterministic policies such that</p>
+<p>\[q_\pi(s, \pi&rsquo;(s)) \ge v_\pi(s) \quad \triangleright \quad \forall s \in \states\].</p>
+<p>Then the policy π&rsquo; must be as good as, or better than π, meaning \(v_{\pi&rsquo;}(s) \ge v_\pi(s)\).</p>
+<p>Instead of focusing on changing the policy at a a single state, we can improve the policy over all states simultaneously: \(\pi&rsquo; \defeq \argmax_a q_\pi(s,a)\).</p>
 <h3 id="policy-iteration">Policy Iteration</h3>
-<p>Once a policy π has been improved using \(v_\pi\) to yield a better policy π', we can then compute \(v_{\pi'}\) and improve it again to yield an even better policy! We can create a chain of evaluations and improvements continuing until we get to a policy which is no longer changing. Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations. This is called <strong>policy iteration</strong>.</p>
+<p>Once a policy π has been improved using \(v_\pi\) to yield a better policy π&rsquo;, we can then compute \(v_{\pi&rsquo;}\) and improve it again to yield an even better policy! We can create a chain of evaluations and improvements continuing until we get to a policy which is no longer changing. Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations. This is called <strong>policy iteration</strong>.</p>
 <div class="algorithm">
 <p>\begin{algorithmic}
 \State 1. Initialization
@@ -507,7 +507,7 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 \State $\Delta \leftarrow 0$
 \ForAll{$s \in \states$}
 \State $v \leftarrow V(s)$
-\State $V(s) \leftarrow \sum_{s',r}p(s',r|s,\pi(s)) [r+\gamma V(s')]$
+\State $V(s) \leftarrow \sum_{s&rsquo;,r}p(s&rsquo;,r|s,\pi(s)) [r+\gamma V(s&rsquo;)]$
 \State $\Delta \leftarrow max(\Delta, |v-V(s)|)$
 \EndFor
 \Until{$\Delta &lt; \theta$}
@@ -516,7 +516,7 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 \State $policy\_stable \leftarrow true$
 \ForAll{$s\in\states$}
 \State $old-action\leftarrow\pi(s)$
-\State $\pi(s) \leftarrow \argmax_a \sum_{s',r}p(s',r|s,\pi(s)) [r+\gamma V(s')]$
+\State $\pi(s) \leftarrow \argmax_a \sum_{s&rsquo;,r}p(s&rsquo;,r|s,\pi(s)) [r+\gamma V(s&rsquo;)]$
 \State If $old\_action \neq \pi(s)$, then $policy\_stable \leftarrow false$
 \EndFor
 \State If $policy\_stable$, then stop and return $V\approx v_\star$ and $\pi \approx \pi_\star$; else go to 2.
@@ -525,7 +525,7 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 </div>
 <h3 id="value-iteration">Value Iteration</h3>
 <p>Instead of having a full policy evaluation step in-between policy improvement steps, we can truncate policy evaluation to a single sweep through the state-space without changing the convergence properties of the algorithm. This algorithm is known as <em>value iteration</em> and can be written simply as</p>
-<p>\[v_{k+1}(s) \defeq \max_a \sum_{s',r} p(s', r|s,a)[r+\gamma v_k(s')] \quad \triangleright \quad \forall s\in\states\].</p>
+<p>\[v_{k+1}(s) \defeq \max_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma v_k(s&rsquo;)] \quad \triangleright \quad \forall s\in\states\].</p>
 <p>Value iteration effectively combines one sweep of policy evaluation and one sweep of policy improvement. Faster convergence is often achieved by interposing multiple policy evaluation sweeps between each policy improvement sweep. In general, the entire class of truncated policy iteration algorithms can be through of as sequences of sweeps.</p>
 <div class="algorithm">
 <p>\begin{algorithmic}
@@ -535,12 +535,12 @@ v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
 \State $\Delta \leftarrow 0$
 \ForAll{$s\in\states$}
 \State $v\leftarrow V(s)$
-\State $V(s) \leftarrow \max_a \sum_{s',r} p(s', r|s,a)[r+\gamma V(s')]$
+\State $V(s) \leftarrow \max_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma V(s&rsquo;)]$
 \State $\Delta \leftarrow \max(\Delta, |v-V(s)|)$
 \EndFor
 \Until{$\Delta &lt; \theta$}
 \State Output a deterministic policy, $\pi \approx\pi_\star$, such that
-\State $\pi(s) = \argmax_a \sum_{s',r} p(s', r|s,a)[r+\gamma V(s')]$
+\State $\pi(s) = \argmax_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma V(s&rsquo;)]$
 \end{algorithmic}</p>
 <p>\caption{Value Iteration, for estimating $\pi\approx\pi^\star$}</p>
 </div>
@@ -737,7 +737,7 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>In an episodic task, the on-policy distribution depends on how the initial states of the episodes are chosen. Let \(h(s)\) be the starting state distribution,</p>
 <p>\begin{align*}
 \eta(s) &amp;= h(s) + \sum_{\bar{s}} \eta(\bar{s}) \sum_{a} \pi(a|\bar{s}) p(s|\bar{s}, a) \\
-\mu(s) &amp;= \frac{\eta(s)}{\sum_{s'} \eta(s')}, \text{ for all } s\in\states
+\mu(s) &amp;= \frac{\eta(s)}{\sum_{s&rsquo;} \eta(s&rsquo;)}, \text{ for all } s\in\states
 \end{align*}</p>
 <p>When there is discounting, \(\gamma\) can be included in the second term of \(\eta(s)\).</p>
 </div>
@@ -768,9 +768,9 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 \State Initialize S
 \For{each step of episode}
 \State Choose $A \sim \pi(\cdot|S)$
-\State Take action $A$, observe $R, S'$
-\State $\wvec \leftarrow \wvec + \alpha [R + \gamma\hat{v}(S', \wvec) - \hat{v}(S,\wvec)]\nabla \hat{v}(S_t, \wvec)$
-\State $S \leftarrow S'$
+\State Take action $A$, observe $R, S&rsquo;$
+\State $\wvec \leftarrow \wvec + \alpha [R + \gamma\hat{v}(S&rsquo;, \wvec) - \hat{v}(S,\wvec)]\nabla \hat{v}(S_t, \wvec)$
+\State $S \leftarrow S&rsquo;$
 \EndFor
 \EndLoop
 \end{algorithmic}</p>
@@ -801,8 +801,8 @@ V_{n+1} = V_n + \frac{1}{n} [G_n - V_n].
 <p>We can rewrite this matrix:</p>
 <p>\begin{align*}
 \Amat
-&amp;= \sum_s \mu(s) \sum_a \pi(a|s) \sum_{r,s'} p(r, s'|s, a)\xvec(s)(\xvec(s) - \gamma \xvec(s'))^\trans \\
-&amp;= \sum_s \mu(s)\xvec(s) \left( \xvec(s) - \gamma \sum_{s'} p(s'|s)\xvec(s') \right) \\
+&amp;= \sum_s \mu(s) \sum_a \pi(a|s) \sum_{r,s&rsquo;} p(r, s&rsquo;|s, a)\xvec(s)(\xvec(s) - \gamma \xvec(s&rsquo;))^\trans \\
+&amp;= \sum_s \mu(s)\xvec(s) \left( \xvec(s) - \gamma \sum_{s&rsquo;} p(s&rsquo;|s)\xvec(s&rsquo;) \right) \\
 &amp;= \Xmat^\trans \Dmat (\eye - \gamma \Pmat)\Xmat
 \end{align*}</p>
 <p>From here, it is clear that the inner matrix is key to determining the positive definiteness of \(\Amat\). It has been shown prior that a matrix of this form is positive definite if all of its columns sum to a nonnegative number. See (<a href="#citeproc_bib_item_4">Sutton 1988</a>) for a detailed proof. Also note that \(\muvec\), which is the \(|\states|\) vector of the \(\mu(s)\) distribution, is a stationary distribution thus \(\muvec = \Pmat^\trans\muvec\) The column sums of this matrix is then:</p>
@@ -970,7 +970,7 @@ M_t &amp;= I_t + \gamma^n M_{t-1}
 <p>This chapter considers policy gradient methods, or methods which search for the policy directly rather than through an <em>action-value methods</em>. The policy gradient methods directly parameterize a policy to select actions (either deterministically or through some stochastic process).</p>
 <p>The notation is standard in this chapter:</p>
 <ul>
-<li>\(\thetavec \in \reals^{d'}\) for the policy&rsquo;s parameter vector,</li>
+<li>\(\thetavec \in \reals^{d&rsquo;}\) for the policy&rsquo;s parameter vector,</li>
 <li>\(\pi(a|s,\thetavec) = \text{Pr}\{A_t=a | S_t=s, \thetavec=\theta\}\) for the probability that action a is taken at time t given the parameterization and state of the environment,</li>
 <li>\(\wvec \in \reals^d\) is the value function parameterization where \(\hat{v}(s,\wvec)\) is the estimated value.</li>
 </ul>
@@ -984,7 +984,7 @@ M_t &amp;= I_t + \gamma^n M_{t-1}
 <p>The only requirement for a policy gradient method is \(\pi(a|s, \thetavec)\) must be continuous and differentiable wrt its parameters over all \(a\in\actions, s\in\states\). We also never want the policy to become deterministic!</p>
 <h3 id="policy-approximation-and-its-advantages">Policy approximation and its advantages</h3>
 <p>The most natural of parameterization is to form parameterized numerical preferences \(h(s,a,\thetavec)\in\reals\). The policy is then defined through the soft-max distribution called the <em>soft-max in action preferences</em>:</p>
-<p>\[\pi(a|s, \thetavec) = \frac{e^(h(s,a,\thetavec))}{\sum_{a'} h(s,a',\thetavec)}\].</p>
+<p>\[\pi(a|s, \thetavec) = \frac{e^(h(s,a,\thetavec))}{\sum_{a&rsquo;} h(s,a&rsquo;,\thetavec)}\].</p>
 <p>Some advantages:</p>
 <ul>
 <li>The approximate policy can approach a deterministic policy (as opposed to something like ε-greedy).</li>

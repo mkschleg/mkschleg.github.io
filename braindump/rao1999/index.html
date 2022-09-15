@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.102.1" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-08-30T12:54:53-06:00">
-  <meta property="article:modified_time" content="2022-08-30T12:54:53-06:00">
+  <meta property="article:published_time" content="2022-08-30T16:30:54-06:00">
+  <meta property="article:modified_time" content="2022-08-30T16:30:54-06:00">
   
 
   <title>rao1999: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel</title>
@@ -205,7 +205,7 @@
 
   <span class="post-date">
     
-    <time datetime="2022-08-30 12:54:53 -0600 MDT" itemprop="datePublished dateModified">
+    <time datetime="2022-08-30 16:30:54 -0600 MDT" itemprop="datePublished dateModified">
       Aug 30, 2022
     </time>
   </span>
@@ -292,12 +292,7 @@
 <h2 id="results">Results</h2>
 <h3 id="hierarchical-predictive-coding-model">Hierarchical Predictive Coding Model</h3>
 <p>Each level in the hierarchical model network attempts to predict the responses at the next lower level via feedback connections. The error between the prediction and the actual response is then sent back to the higher level via feedforward connections.</p>
-<figure><img src="/ox-hugo/predictive_coding.png"
-         alt="Figure 1: General Architecture of the hierarchical predictive coding model."/><figcaption>
-            <p><span class="figure-number">Figure 1: </span>General Architecture of the hierarchical predictive coding model.</p>
-        </figcaption>
-</figure>
-
+<p>&lt; figure src=&quot;/ox-hugo/predictive_coding.png&quot; caption=<span class=figure-number>Figure 1: </span>General Architecture of the hierarchical predictive coding model. &gt;</p>
 <p>The prediction and error mechanisms occur concurrently throughout the hierarchy (top-down information influences bottom-up). Lower levels operate on smaller spatial (and possibly temporal scales) regions of th image, and the effective RF size of units increases progressively until the highest level&rsquo;s RF spans the totality of the image. Like all models, the underlying assumption is that the external environment generates natural signals hierarchically via interacting hidden physical causes (partial observability). The goal of the visual system is to optimally estimate the hidden variable at each scale of the input image.</p>
 <h3 id="hierarchical-predictive-coding-of-natural-images">Hierarchical Predictive Coding of Natural Images</h3>
 <p>The model described in the above section suggests feedback connections from a higher area to a lower area carry prediction of expected neural activity, whereas feedforward connections convey the residual activity (or unexplained activations) not predicted by the higher area. This was tested through simulation using a three-level hierarchical network of predictive estimators. The details on how this model is constructed and trained are left to the methods section <a href="sec:rao1999:methods">sec:rao1999:methods</a>, but here we give a high level overview:</p>

@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.102.1" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -284,18 +284,18 @@
 <h3 id="sbatch">Sbatch</h3>
 <p>So sbatch takes a script as argument. There are several nice arguments that can be placed at the top of the script to determine the resource allocation for a specific job.</p>
 <p>You run sbatch</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">     <span style="color:#75715e">#!/path/to/shell</span>
-     <span style="color:#75715e"># Number of parallel tasks in your job.</span>
-     <span style="color:#75715e">#SBATCH --ntasks=1</span>
-     <span style="color:#75715e"># Max-Time &lt;d|hh|mm&gt;</span>
-     <span style="color:#75715e">#SBATCH --time=6:00:00</span>
-     <span style="color:#75715e"># Memory per cpu used.</span>
-     <span style="color:#75715e">#SBATCH --mem-per-cpu=1000M</span>
-     <span style="color:#75715e"># Number of cpus per task</span>
-     <span style="color:#75715e">#SBATCH --cpus-per-task=1</span>
-     <span style="color:#75715e"># Resource allocation used by this job.</span>
-     <span style="color:#75715e">#SBATCH --account=def-whitem</span>
-</code></pre></div><p>`sbatch` is convenient for allocating a number of large jobs with many small jobs running concurrently, and this is a typical workflow I use. Within the script one can you gnu-parallel to run multiple jobs in parallel. Amazingly sbatch will also pass inline arguments to your script which can be accessed in the standard way for your scripting language. While I typically will use zsh, you can use any scripting language really including but not limited to Python and Julia only needing to specify at the top of the file where the language interpreter/compiler is in the usual shell way (`#!/path/to/shell/zsh`).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>     <span style="color:#75715e">#!/path/to/shell</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e"># Number of parallel tasks in your job.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#SBATCH --ntasks=1</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e"># Max-Time &lt;d|hh|mm&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#SBATCH --time=6:00:00</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e"># Memory per cpu used.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#SBATCH --mem-per-cpu=1000M</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e"># Number of cpus per task</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#SBATCH --cpus-per-task=1</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e"># Resource allocation used by this job.</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#SBATCH --account=def-whitem</span>
+</span></span></code></pre></div><p>`sbatch` is convenient for allocating a number of large jobs with many small jobs running concurrently, and this is a typical workflow I use. Within the script one can you gnu-parallel to run multiple jobs in parallel. Amazingly sbatch will also pass inline arguments to your script which can be accessed in the standard way for your scripting language. While I typically will use zsh, you can use any scripting language really including but not limited to Python and Julia only needing to specify at the top of the file where the language interpreter/compiler is in the usual shell way (`#!/path/to/shell/zsh`).</p>
 <h2 id="interactive-jobs">Interactive Jobs</h2>
 <p>You can use salloc to open an interactive job for testing. This is highly recommended as you can test your code without allocating the full resources you require.</p>
 <p>Some caveats:</p>
@@ -310,8 +310,8 @@
 <h3 id="mp2b">MP2b</h3>
 <h3 id="beluga">Beluga</h3>
 <p>To start julia</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">module load nixpkgs/16.09  gcc/7.3.0 julia/1.1.0
-</code></pre></div><h2 id="tensorflow-plus-python3">Tensorflow + Python3</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>module load nixpkgs/16.09  gcc/7.3.0 julia/1.1.0
+</span></span></code></pre></div><h2 id="tensorflow-plus-python3">Tensorflow + Python3</h2>
 <h2 id="julia">Julia</h2>
 
     </div>
