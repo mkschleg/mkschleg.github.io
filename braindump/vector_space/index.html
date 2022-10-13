@@ -54,8 +54,8 @@
   <meta property="og:title" content="Vector Space | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-08-30T12:55:56-06:00">
-  <meta property="article:modified_time" content="2022-08-30T12:55:56-06:00">
+  <meta property="article:published_time" content="2022-10-12T11:23:57-06:00">
+  <meta property="article:modified_time" content="2022-10-12T11:23:57-06:00">
   
 
   <title>Vector Space | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-08-30 12:55:56 -0600 MDT" itemprop="datePublished dateModified">
-      Aug 30, 2022
+    <time datetime="2022-10-12 11:23:57 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 12, 2022
     </time>
   </span>
 
@@ -226,7 +226,11 @@
 \newcommand{\transition}{P}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
 \newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
 \newcommand{\by}{\times}
 \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
@@ -281,6 +285,44 @@
 <dt>tags</dt>
 <dd><a href="/braindump/linear_algebra/">Linear Algebra</a>, <a href="/braindump/math/">Math</a></dd>
 </dl>
+<p>A <strong>vector space</strong> is a set of vectors together with rules for vector addition and multiplication by scalars. The addition and multiplication rules must be consistent with the following properties (for \(x\in\mathbb{F}^n\), \(c\in\mathbb{F}\), \(\mathbb{F} = \{\mathbb{R}, \mathbb{C}\}\) ):</p>
+<ol>
+<li>\(\xvec+\yvec = \yvec+\xvec\)</li>
+<li>\(\xvec+(\yvec+\zvec) = (\xvec+\yvec) + \zvec\)</li>
+<li>There is a unique zero vector \(\mathbf{0} + \xvec = \xvec\)</li>
+<li>For each \(\xvec\) there is a unique vector \(-\xvec\) such that \(\xvec + (-\xvec) = \mathbf{0}\).</li>
+<li>\(1\xvec = \xvec\)</li>
+<li>\((c_1c_2)\xvec = c_1(c_2\xvec)\)</li>
+<li>\(c(\xvec + \yvec) = c\xvec + c\yvec\)</li>
+<li>\((c_1 + c_2)\xvec = c_1\xvec + c_2\xvec\)</li>
+</ol>
+<div class="definition">
+<p>A <strong>vector space</strong> is a set of vectors which is closed under rules for vector addition and multiplication by scalars (i.e. rules to take linear combinations of vectors).</p>
+</div>
+<h2 id="vector-subspaces">Vector Subspaces</h2>
+<p>A <strong>vector subspace</strong> is a non-empyt subset of a vector space which is closed under the same linear combination rules. The most trivial vector subspace of \(\reals^n\) is the set containing the zero vector.</p>
+<div class="definition">
+<p>A <strong>subspace</strong> of a vector space is a nonempty subset that satisfies the requirements for a vector space: <strong>Linear combinations stay in the subspace</strong>.</p>
+</div>
+<h2 id="column--row--space-of-a-matrix">Column (row) space of a matrix</h2>
+<p>The column space of a matrix is all possible linear combinations of the columns of a matrix. The row space is the same except with linear combinations of the rows of a matrix.</p>
+<h2 id="nullspace-of-a-matrix">Nullspace of a matrix</h2>
+<div class="definition">
+<p>Given a matrix \(\Amat \in \reals^{M\times N}\). The <strong>nullspace</strong> of \(\Amat\) is all vectors \(\xvec\) such that \(\Amat\xvec = \mathbf{0}\).</p>
+</div>
+<p>The nullspace is:</p>
+<ul>
+<li>A subspace of \(\reals^M\)</li>
+</ul>
+<h2 id="dual-space">Dual Space</h2>
+<p>The dual vector space is the set \(V^\star\) of all <strong>linear functionals</strong> \(f: V \mapsto \mathbb{F}\). Since linear functionals are vector space homomorphisms this is sometimes denoted as \(Hom(V, \mathbb{F})\). The dual space is itself a vector space, meaning (for \(\phi, \psi \in V^\star\) and \(\xvec \in V\))</p>
+<ol>
+<li>\((\phi + \psi)(\xvec) = \phi(\xvec) + \psi(\xvec)\)</li>
+<li>\((\alpha \phi)(\xvec) = \alpha\phi(\xvec)\).</li>
+</ol>
+<p>The dual vector space has the same dimensions as the original vector space, and has a canonical dual basis (or <strong>cobasis</strong>) \(\theta^j\) defined by the original basis \(e_i\)</p>
+<p>\[\langle e_i, \theta^j \rangle = \delta^j_i \quad \triangleright \delta^j_i \text{ is the Kronecker delta function}\].</p>
+<p>Notation gets a bit confusing in higher order linear algebra and tensor algebra. Typically, I will attempt to denote an index of the cobasis as an upstairs index while the basis as a downstairs index.</p>
 
     </div>
 
@@ -491,30 +533,6 @@
    
 
    
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
    
 
@@ -528,6 +546,36 @@
       
    
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    

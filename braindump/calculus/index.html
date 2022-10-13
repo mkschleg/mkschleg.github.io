@@ -54,8 +54,8 @@
   <meta property="og:title" content="Calculus | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-08-30T12:51:58-06:00">
-  <meta property="article:modified_time" content="2022-08-30T12:51:58-06:00">
+  <meta property="article:published_time" content="2022-10-11T20:58:26-06:00">
+  <meta property="article:modified_time" content="2022-10-11T20:58:26-06:00">
   
 
   <title>Calculus | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-08-30 12:51:58 -0600 MDT" itemprop="datePublished dateModified">
-      Aug 30, 2022
+    <time datetime="2022-10-11 20:58:26 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 11, 2022
     </time>
   </span>
 
@@ -227,6 +227,7 @@
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
 \newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
 \newcommand{\by}{\times}
 \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
@@ -323,18 +324,17 @@
 <p>We will then move to higher dimensional functions, discuss higher order (more than one derivative) operators, different uses of the gradient operator, a special case for non-smooth functions, and finally a discussion on several useful techniques for taking derivatives.</p>
 <h3 id="single-variate-derivatives">Single variate derivatives</h3>
 <p>Lets start by thinking about a hard ball being dropped from a reasonable distance, say at the top of a ladder. Say we wanted to come up with some function of how long the ball will fall in a certain amount of time. One way to do this (requiring the least amount of experimental setup) would be to measure the time a ball dropped at varying heights and then fit this data to some function of time. If we were to take these measurements, the simplest function (approximating the distance rather well) is a parabola</p>
-<p>\[\text{Distance the ball travels after dropping} = f(t) = c t^2 \quad \text{where } c \in \reals, t \ge 0\].</p>
+<p>\[\text{Distance the ball travels after dropping} = f(t) = c t^2 \quad \text{where } c \in \reals, t \ge 0.\]</p>
 <aside>
 <p>You may be asking where does the ball hit the ground (i.e. what is my stopping condition?). The stopping condition will be the distance the ball has to travel to hit the ground, or the initial position of the ball relative to the release point. While this could be modeled in the above equation, it is easier to just ignore this and reason about a ball that is falling infinitely (with no air resistance) with gravity set at sea level. Trust me when I say these assumptions make the calculations significantly easier to manage, and are more than reasonable for our purposes here.</p>
-<p>\vspace{0.2cm}</p>
 <p>You may also be wondering about what the constant is representing. Well under normal conditions on earth (i.e. sea level) \(c\approx \frac{1}{2} * 9.8\frac{m}{s}\).  You can derive this quantity from your measurements to a reasonable amount of accuracy.</p>
 </aside>
 <p>Given this equations, we could ask ourselves how much further has the ball fallen at some time \(t=2\). This is quite easy to calculate \(f(t=2) = c * 4\). At \(t=0\), we trivially shouldn&rsquo;t fall any distance \(f(t=0) = c*0 = 0\). We may also ask, starting at a certain time \(t\), how much distance will I fall after some amount of time \(dt\). Many of you may be thinking &ldquo;isn&rsquo;t this related to the velocity or speed of the ball?&rdquo;, and the answer is a resounding YES! But obviously not the velocity of the ball at time \(t\) or at time \(t+dt\). So what would the velocity be? Well if you remember from algebra, we can find the rate of change between two points as the slope of the line intersecting both points</p>
-<p>\[\text{Rate of change} = \frac{f(t+dt) - f(t)}{t + dt - t} = \frac{f(t+dt) - f(t)}{dt}\].</p>
+<p>\[\text{Rate of change} = \frac{f(t+dt) - f(t)}{t + dt - t} = \frac{f(t+dt) - f(t)}{dt}.\]</p>
 <p>This will give us the average rate of change or average velocity of the ball over the interval \([t+dt,t]\). Another reasonable question you may ask yourself is, &ldquo;how would I get the exact velocity of the ball at time \(t\)?&rdquo;. This means what happens to my velocity equation as my change in time decreases to zero. We can&rsquo;t just set \(dt=0\) and substitute in, as this would be undefined! Instead we must look at the trend of the function as \(dt\) approaches 0. This is known as a limit, leading us to</p>
-<p>\[\text{velocity}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \].</p>
+<p>\[\text{velocity}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt}. \]</p>
 <p>This is the exact definition of a derivative, and we can state</p>
-<p>\[\frac{d f(t)}{dt} = f^\prime(t) = \dot{f}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt} \].</p>
+<p>\[\frac{d f(t)}{dt} = f^\prime(t) = \dot{f}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt}. \]</p>
 <aside>
 <p>\textbf{A Note on Notation}: We will mostly be using Leibniz&rsquo;s notation (\(\frac{d f(t)}{dt}\)) as this easily transitions to higher dimensional functions. But it would be good to know several notation conventions exist and are widely used:</p>
 <ul>
@@ -358,8 +358,8 @@
 </aside>
 <p>We can now make this a little bit more formal (although we have covered all the important bits above).</p>
 <div class="definition">
-<p>\textbf{Derivative: } Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
-\[\lim_{dx-&gt;0^-} \frac{f(a+dx) - f(a)}{dx} = \lim_{dx-&gt;0^+} \frac{f(a+dx) - f(a)}{dx}\].</p>
+<p><strong>Derivative:</strong> Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
+\[\lim_{dx-&gt;0^-} \frac{f(a+dx) - f(a)}{dx} = \lim_{dx-&gt;0^+} \frac{f(a+dx) - f(a)}{dx}.\]</p>
 <p>We say \(f(x)\) is of differentiability class \(C^{k&gt;1}\) if it is differentiable at all \(a \in domain(f)\). We define the derivative with respect to its input \(x\) as:
 \[\frac{d f(x)}{dx} = \lim_{dx-&gt;0} \frac{f(x+dx) - f(x)}{dx}\]</p>
 </div>
@@ -573,6 +573,18 @@
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -730,10 +742,6 @@
 
    
       
-   
-
-   
-
    
 
    
@@ -954,6 +962,8 @@
     <h4>Links to this note</h4>
     <div class="backlinks">
       <ul>
+       
+          <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
        
           <li><a href="/braindump/model_based_rl/">Model-based RL</a></li>
        

@@ -3,118 +3,66 @@
 
 body {
   /* Set "my-sec-counter" to 0 */
-    counter-reset: thm-counter;
-    counter-reset: lem-counter;
-    
+  counter-reset: thrm-counter lemm-counter inst-counter def-counter;
+}
+
+.braindump-note h3{
+    margin: 0;
+}
+
+aside:before {
+    content: "Aside:";
+    font-weight: bold;
+    font-style: normal;    
+}
+
+aside, .definition, .instance, .theorem, .lemma{
+    background-color: white;
+    margin: 2em;
+    padding: 0em 0em 0em 0em;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+aside p, .definition p, .instance p, .theorem p, .lemma p{
+    padding: 0em 1em 0em 2em;
 }
 
 .theorem {
-display: block;
-font-style: italic;
+    font-style: italic;
 }
+
+.definition:before, .theorem:before, .lemma:before, .instance:before {
+    font-weight: bold;
+    font-style: normal;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    padding: 0.3em;
+    padding-left: 1em;
+    display: block;
+}
+
+.definition:before {
+    counter-increment: def-counter;
+    content: "Definition " counter(def-counter) ": ";
+    background-color: #71A568;
+}
+
 .theorem:before {
-    counter-increment: thm-counter;
-    content: "Theorem " counter(thm-counter) ": ";
-    font-weight: bold;
-    font-style: normal;
-}
-.theorem[text]:before {
-    content: "Theorem " counter(thm-counter) ": ";
+    counter-increment: thrm-counter;
+    content: "Theorem " counter(thrm-counter) ": ";
+    background-color: #71A568;
 }
 
-.lemma {
-display: block;
-}
 .lemma:before {
-    counter-increment: thm-counter;
-    content: "Lemma " counter(lem-counter) ": ";
-    font-weight: bold;
-    font-style: normal;
-}
-.lemma[text]:before {
-    content: "Lemma " counter(lem-counter) ": ";
+    counter-increment: lemm-counter;
+    content: "Lemma " counter(lemm-counter) ": ";
+    background-color: #71A568;
 }
 
-/* .post-tags { */
-/*     display: flex; */
-/*     flex-direction: row; */
-/*     margin-left: 25px; */
-/* } */
+.instance:before {
+    counter-increment: inst-counter;
+    content: "Example " counter(inst-counter) ": ";
+    background-color: #71A568;
+}
 
-/* .post-tags h4{ */
-/*     margin: 0; */
-/*     margin-right: 10px; */
-/*     line-height: 1.5; */
-/* } */
-
-/* /\* Images *\/ */
-/* .float-left { */
-/*     float: left; */
-/*     width: 50%; */
-/*     border-radius: 25px; */
-/*     padding: 20px; */
-/* } */
-
-/* .fifty-perc { */
-/*     width: 50%; */
-/* } */
-
-/* .seventyfive-perc{ */
-/*     width: 75% */
-/* } */
-
-/* @media (max-width: 64em) { */
-
-/*     .float-left { */
-/*         float: none; */
-/*         width: 50%; */
-/*         border-radius: 25px; */
-/*         padding: 0px; */
-/*     } */
-
-/* } */
-
-/* .postcard-link { */
-/*     text-decoration: none; */
-/* } */
-
-/* .postcard { */
-/*     display: flex; */
-/*     padding: 10px; */
-/*     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-/*     width: 250px; */
-/*     min-height: 300px; */
-/*     margin-right: 30px; */
-/*     text-align: center; */
-/*     flex-direction: column; */
-/*     justify-content: center; */
-/* } */
-
-/* .postcard h2 { */
-/*     margin: 0; */
-/* } */
-
-/* .postcard p { */
-/*     color: black; */
-/* } */
-
-/* .postcard h2 a{ */
-/*     text-decoration: none; */
-/* } */
-
-/* .postcard-container { */
-/*     display: flex; */
-/*     flex-direction: row; */
-/*     justify-content: flex-start; */
-/*     align-items: flex-start; */
-/*     flex-wrap: wrap; */
-/* } */
-
-/* @media (max-width: 64em) { */
-/*     h1 { */
-/*         text-align: center; */
-/*     } */
-/*     .postcard-container { */
-/*         justify-content: center; */
-/*     } */
-/* } */

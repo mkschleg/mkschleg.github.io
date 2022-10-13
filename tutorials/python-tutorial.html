@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-09-22 Sun 14:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brief Introduction to Python for CMPUT 466/566</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Matthew Schlegel" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Brief Introduction to Python for CMPUT 466/566</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2c1d01b">1. Installing Python and the Required Packages</a>
+<ul>
+<li><a href="#org0e5b2d6">1.1. Using Virtual Environments</a></li>
+<li><a href="#org374f8ce">1.2. Jupyter</a></li>
+<li><a href="#org838375d">1.3. Packages required for the course:</a></li>
+</ul>
+</li>
+<li><a href="#orgff35103">2. Introduction to basic python syntax</a>
+<ul>
+<li><a href="#orgd68ff40">2.1. Importing Libraries</a></li>
+<li><a href="#orga402ecf">2.2. Functions</a></li>
+<li><a href="#org27483d4">2.3. Classes</a>
+<ul>
+<li><a href="#orgd235746">2.3.1. Inheritance</a></li>
+<li><a href="#orgc1a9691">2.3.2. Running Code from command line/terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfa8356e">3. Numpy and Numerical Computing in Python</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2c1d01b" class="outline-2">
+<h2 id="org2c1d01b"><span class="section-number-2">1</span> Installing Python and the Required Packages</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+In this course we will be using <code>python3</code> for all course related code and examples. For details on how to install python3 on your preferred platform see <a href="https://realpython.com/installing-python/">this link</a> or any of the following:
+</p>
+<ul class="org-ul">
+<li><a href="https://docs.python-guide.org/starting/install3/osx/">macos</a></li>
+<li><a href="https://docs.python-guide.org/starting/install3/linux/">ubuntu</a></li>
+<li><a href="https://docs.python-guide.org/starting/install3/win/">windows</a></li>
+</ul>
+
+
+<p>
+The default method for installing packages is through a program called <code>pip</code> which will come with your installation of python. In the following examples we will assume your version of pip is associated with a python3 installation (which you will possibly need to call through <code>pip3</code> depending on your platform). If you are running into issues see a TA!
+</p>
+
+<p>
+To install a package input the following command into your command line or terminal.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">    pip install numpy
+</pre>
+</div>
+
+<p>
+This will install <code>numpy</code>, which is a python library for linear algebra computations (you will need this for some of the below examples). 
+</p>
+</div>
+
+<div id="outline-container-org0e5b2d6" class="outline-3">
+<h3 id="org0e5b2d6"><span class="section-number-3">1.1</span> Using Virtual Environments</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Virtual environments silo different project's dependencies to avoid conflicts and maintain proper version control. There are a number of places you can go to take advantage of virtual environments:
+</p>
+
+<ul class="org-ul">
+<li>pyenv</li>
+<li>pyvenv</li>
+<li>virtualenv</li>
+<li>Anaconda/Miniconda (conda)</li>
+<li>docker</li>
+<li>etc&#x2026;</li>
+</ul>
+
+<p>
+If you run into problems with setting up a virtual environment, or want to see what others do either ask the TAs or your peers. There are a lot of ways of setting up your working environment as there is no good default (maybe pyvenv?). There are also a number of resources on setting up virtual environments online:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/">https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/</a></li>
+<li><a href="https://amaral.northwestern.edu/resources/guides/pyenv-tutorial">https://amaral.northwestern.edu/resources/guides/pyenv-tutorial</a></li>
+<li><a href="https://docs.conda.io/en/latest/">https://docs.conda.io/en/latest/</a></li>
+</ul>
+
+<p>
+<b>Note</b>: for MacOS users. If you use `pyvenv` you may run into issues with Matplotlib not working. I recommend using miniconda if you have problems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org374f8ce" class="outline-3">
+<h3 id="org374f8ce"><span class="section-number-3">1.2</span> Jupyter</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Another useful tool is a piece of software called <a href="https://jupyter.org">jupyter</a>. Jupyter provides a platform for interactively running code and visualizing results. There are pros and cons with relying on jupyter notebooks for machine learning research. In this course we focus on a command line work flow for assignments (and require assignments to be returned in this format), but encourage students to explore many types of working environments as they develop their research pipeline. If you have any questions about using jupyter, or are curious about some of the issues which arise when using notebooks for general research ask one of the TAs (surprise we all have different opinions on this)!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org838375d" class="outline-3">
+<h3 id="org838375d"><span class="section-number-3">1.3</span> Packages required for the course:</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><a href="https://numpy.org">Numpy</a></li>
+<li><a href="https://matplotlib.org">Matplotlib</a></li>
+<li><a href="https://scikit-learn.org/stable/">Scikit-learn</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff35103" class="outline-2">
+<h2 id="orgff35103"><span class="section-number-2">2</span> Introduction to basic python syntax</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgd68ff40" class="outline-3">
+<h3 id="orgd68ff40"><span class="section-number-3">2.1</span> Importing Libraries</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+In the top of all your files you should import the libraries you are using in the current file. There are a few ways to import modules and functions. A subset (the subset we recommend) is as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">import</span> math <span style="color: #75715E;"># </span><span style="color: #75715E;">This imports all of the math module with the namespace math.</span>
+<span style="color: #F92672;">import</span> numpy <span style="color: #F92672;">as</span> np <span style="color: #75715E;"># </span><span style="color: #75715E;">This imports all of numpy with the namespace np</span>
+<span style="color: #F92672;">from</span> csv <span style="color: #F92672;">import</span> reader <span style="color: #75715E;"># </span><span style="color: #75715E;">This imports the reader function from the module csv</span>
+</pre>
+</div>
+
+<p>
+You may be tempted to import all functions into your current names space using the <code>from csv import *</code>. We highly recommend against this as it will increase the potential for names to conflict (which may cause you to call the wrong function).
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga402ecf" class="outline-3">
+<h3 id="orga402ecf"><span class="section-number-3">2.2</span> Functions</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+In the tradition of learning a new language, lets start with defining a function. A function can be thought of as a mapping from inputs to outputs. In python the syntax for defining a function is as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">def</span> <span style="color: #A6E22E;">greeting</span><span style="color: #AE81FF;">()</span>:
+    <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Hello, World!"</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python">greeting<span style="color: #AE81FF;">()</span>
+</pre>
+</div>
+
+<pre class="example">
+Hello, World!
+
+
+
+</pre>
+
+<p>
+Key attributes are the `def` keyword, and the colon at the end of the first line. These are special indicators to tell python that the following indented code is apart of a function called `greeting` which takes no arguments. If we want to have our function work on an argument we do the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">def</span> <span style="color: #A6E22E;">another_greeting</span><span style="color: #AE81FF;">(</span>name<span style="color: #AE81FF;">)</span>:
+      <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Hello, {0}!"</span>.<span style="color: #F92672;">format</span><span style="color: #66D9EF;">(</span>name<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+
+another_greeting<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Doctor"</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+Hello, Doctor!
+
+
+
+</pre>
+
+<p>
+When we run this function with the call: <code>another_greeting("Doctor")</code> we should see the line "Hello, Doctor!" printed on the results line. For this course it is important to understand how python manages the underlying references in a function call (i.e. what is copied and what is passed by reference). Python's default is to pass an object (or any complex structure) as a reference. This means the function can modify this argument, causing a side effect (i.e. your outer-scope state could change by calling a function). Primitive types (such as Integers and Floating point numbers) are passed by a copy operation and won't be effected by the internal operations of a function. The following example shows this:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #FD971F;">complex_datastructure</span> = <span style="color: #AE81FF;">[</span>1, 2, 3, 4, 5<span style="color: #AE81FF;">]</span>
+<span style="color: #FD971F;">base_type</span> = 0.1
+
+<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">test_references</span><span style="color: #AE81FF;">(</span>cd, bt<span style="color: #AE81FF;">)</span>:
+    <span style="color: #FD971F;">cd</span><span style="color: #AE81FF;">[</span>2<span style="color: #AE81FF;">]</span> = 100
+    <span style="color: #FD971F;">bt</span> = 0.4
+
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Pre-Function:"</span><span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Datastructure: "</span>, complex_datastructure<span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Basic Type: "</span>, base_type<span style="color: #AE81FF;">)</span>
+
+test_references<span style="color: #AE81FF;">(</span>
+    complex_datastructure,
+    base_type<span style="color: #AE81FF;">)</span>
+
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Post-Function"</span><span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Datastructure: "</span>, complex_datastructure<span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Basic Type: "</span>, base_type<span style="color: #AE81FF;">)</span>
+
+</pre>
+</div>
+
+<pre class="example">
+Pre-Function:
+Datastructure:  [1, 2, 3, 4, 5]
+Basic Type:  0.1
+Post-Function
+Datastructure:  [1, 2, 100, 4, 5]
+Basic Type:  0.1
+
+
+
+</pre>
+
+
+<p>
+Functions in python can also take an unknown number of positional arguments and keyword arguments. The following two functions give some example on their use, but are not extensive in their treatment.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">def</span> <span style="color: #A6E22E;">args_and_kwargs</span><span style="color: #AE81FF;">(</span>*args, **kwargs<span style="color: #AE81FF;">)</span>:
+    <span style="color: #F92672;">for</span> arg <span style="color: #F92672;">in</span> args:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"another arg through *args :"</span>, arg<span style="color: #AE81FF;">)</span>
+    <span style="color: #F92672;">for</span> kwarg <span style="color: #F92672;">in</span> kwargs:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"another kwarg through **kwargs"</span>, kwarg, kwargs<span style="color: #66D9EF;">[</span>kwarg<span style="color: #66D9EF;">]</span><span style="color: #AE81FF;">)</span>
+
+<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">safe_get_kwargs</span><span style="color: #AE81FF;">(</span>**kwargs<span style="color: #AE81FF;">)</span>:
+    <span style="color: #FD971F;">opt_x</span> = kwargs.pop<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">'x'</span>, 100<span style="color: #AE81FF;">)</span>
+    <span style="color: #FD971F;">opt_y</span> = kwargs.pop<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">'y'</span>, 20<span style="color: #AE81FF;">)</span>
+
+    <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"x={0}, y={1}"</span>.<span style="color: #F92672;">format</span><span style="color: #66D9EF;">(</span>opt_x, opt_y<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+
+    <span style="color: #F92672;">for</span> kwarg <span style="color: #F92672;">in</span> kwargs:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"another kwarg through **kwargs"</span>, kwarg, kwargs<span style="color: #66D9EF;">[</span>kwarg<span style="color: #66D9EF;">]</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+You can run the above functions with the following:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Args and Kwargs:"</span><span style="color: #AE81FF;">)</span>
+args_and_kwargs<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"these"</span>, <span style="color: #E6DB74;">"are"</span>, <span style="color: #E6DB74;">"positional"</span>, <span style="color: #E6DB74;">"args"</span>, x=<span style="color: #E6DB74;">"kwargs"</span>, y=<span style="color: #E6DB74;">"are"</span>, z=<span style="color: #E6DB74;">"fun"</span>, a=<span style="color: #E6DB74;">"too!"</span><span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">""</span><span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Safe Get Args:"</span><span style="color: #AE81FF;">)</span>
+safe_get_kwargs<span style="color: #AE81FF;">(</span>x=55, z=10239<span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+Args and Kwargs:
+another arg through *args : these
+another arg through *args : are
+another arg through *args : positional
+another arg through *args : args
+another kwarg through **kwargs x kwargs
+another kwarg through **kwargs y are
+another kwarg through **kwargs z fun
+another kwarg through **kwargs a too!
+
+Safe Get Args:
+
+
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-org27483d4" class="outline-3">
+<h3 id="org27483d4"><span class="section-number-3">2.3</span> Classes</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Python is an object oriented language at its core, which means we have the ability to define custom types as classes and make use of inheritance! Lets first start with a simple class definition.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">class</span> <span style="color: #66D9EF;">MyClass</span>:
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__init__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span>, x<span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Class Constructor"</span><span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">self</span>.x = x
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__str__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Creating string from object of type myclass"</span><span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">return</span> <span style="color: #E6DB74;">"MyClass: {0}"</span>.<span style="color: #F92672;">format</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span>.x<span style="color: #AE81FF;">)</span>
+        <span style="color: #75715E;"># </span><span style="color: #75715E;">return "MyClass: " + str(self.x)</span>
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">my_print</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">str</span><span style="color: #66D9EF;">(</span><span style="color: #F92672;">self</span><span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+The above example declares a class with the name <code>MyClass</code>. The <code>__init__</code> function defines the object constructor. When you run the line <code>myc = MyClass(10)</code> you will instantiate an object of type <code>MyClass</code> with a member <code>x</code> with the value <code>10</code>. The <code>__str__</code> function is another special function, which is called when you run <code>str(myc)</code>. This makes printing classes convenient as you can see in the <code>my_print</code> method. The <code>__str__</code> method also shows a convenient way to format strings inline.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #FD971F;">myc</span> = MyClass<span style="color: #AE81FF;">(</span>10<span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span>myc<span style="color: #AE81FF;">)</span>
+myc.my_print<span style="color: #AE81FF;">()</span>
+</pre>
+</div>
+
+<pre class="example">
+Class Constructor
+Creating string from object of type myclass
+MyClass: 10
+Creating string from object of type myclass
+MyClass: 10
+
+
+
+</pre>
+</div>
+
+<div id="outline-container-orgd235746" class="outline-4">
+<h4 id="orgd235746"><span class="section-number-4">2.3.1</span> Inheritance</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+While we can do a lot with just a single layer of classes, inheritance allows more code to be reused (or at least in theory). We give a simple example of a <code>Student</code> class which inherits from <code>Person</code>. We will not go into too much detail in this document, but a fuller explanation can be found <a href="https://www.w3schools.com/python/python_inheritance.asp">here</a>.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">class</span> <span style="color: #66D9EF;">Person</span>:
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__init__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span>, fname, lname<span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">self</span>.first_name = fname
+        <span style="color: #F92672;">self</span>.last_name = lname
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__str__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">return</span> <span style="color: #E6DB74;">"{0} {1} is a normal person"</span>.<span style="color: #F92672;">format</span><span style="color: #AE81FF;">(</span>
+            <span style="color: #F92672;">self</span>.first_name, <span style="color: #F92672;">self</span>.last_name<span style="color: #AE81FF;">)</span>
+
+<span style="color: #F92672;">class</span> <span style="color: #66D9EF;">Student</span><span style="color: #AE81FF;">(</span>Person<span style="color: #AE81FF;">)</span>:
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__init__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span>, fname, lname, stress<span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">super</span><span style="color: #AE81FF;">()</span>.__init__<span style="color: #AE81FF;">(</span>fname, lname<span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">self</span>.stress_level = stress
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">work</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">self</span>.stress_level += 1
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">relax</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">self</span>.stress_level = <span style="color: #F92672;">max</span><span style="color: #AE81FF;">(</span>0, <span style="color: #F92672;">self</span>.stress_level-1<span style="color: #AE81FF;">)</span>
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">get_stress_level_str</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #FD971F;">sl</span> = <span style="color: #F92672;">self</span>.stress_level
+        <span style="color: #F92672;">if</span> sl == 0:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"infinitesimally stressed"</span>
+        <span style="color: #F92672;">elif</span> sl &lt;= 3:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"barely stressed"</span>
+        <span style="color: #F92672;">elif</span> sl &lt;= 6:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"moderately stressed"</span>
+        <span style="color: #F92672;">elif</span> sl &lt;= 9:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"highly stressed"</span>
+        <span style="color: #F92672;">elif</span> sl &lt;= 12:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"extremely stressed"</span>
+        <span style="color: #F92672;">else</span>:
+            <span style="color: #FD971F;">ss</span> = <span style="color: #E6DB74;">"dead."</span>
+        <span style="color: #F92672;">return</span> ss
+    <span style="color: #F92672;">def</span> <span style="color: #A6E22E;">__str__</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">self</span><span style="color: #AE81FF;">)</span>:
+        <span style="color: #F92672;">return</span> <span style="color: #E6DB74;">"the student, {0} {1}, is {2}"</span>.<span style="color: #F92672;">format</span><span style="color: #AE81FF;">(</span>
+            <span style="color: #F92672;">self</span>.first_name,
+            <span style="color: #F92672;">self</span>.last_name,
+            <span style="color: #F92672;">self</span>.get_stress_level_str<span style="color: #66D9EF;">()</span><span style="color: #AE81FF;">)</span>
+
+<span style="color: #FD971F;">luke</span> = Student<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Luke"</span>, <span style="color: #E6DB74;">"Skywalker"</span>, 0<span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">for</span> i <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #AE81FF;">(</span>0,14<span style="color: #AE81FF;">)</span>:
+    <span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span>luke<span style="color: #AE81FF;">)</span>
+    luke.work<span style="color: #AE81FF;">()</span>
+
+<span style="color: #FD971F;">vader</span> = Person<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">"Darth"</span>, <span style="color: #E6DB74;">"Vader"</span><span style="color: #AE81FF;">)</span>
+<span style="color: #F92672;">print</span><span style="color: #AE81FF;">(</span>vader<span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+the student, Luke Skywalker, is infinitesimally stressed
+the student, Luke Skywalker, is barely stressed
+the student, Luke Skywalker, is barely stressed
+the student, Luke Skywalker, is barely stressed
+the student, Luke Skywalker, is moderately stressed
+the student, Luke Skywalker, is moderately stressed
+the student, Luke Skywalker, is moderately stressed
+the student, Luke Skywalker, is highly stressed
+the student, Luke Skywalker, is highly stressed
+the student, Luke Skywalker, is highly stressed
+the student, Luke Skywalker, is extremely stressed
+the student, Luke Skywalker, is extremely stressed
+the student, Luke Skywalker, is extremely stressed
+the student, Luke Skywalker, is dead.
+Darth Vader is a normal person
+
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc1a9691" class="outline-4">
+<h4 id="orgc1a9691"><span class="section-number-4">2.3.2</span> Running Code from command line/terminal</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+You may notice in some of the files we provide, there is a if statement following the main body of code. Usually following the below general syntax:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">if</span> <span style="color: #F92672;">__name__</span> == <span style="color: #E6DB74;">"__main__"</span>:
+    <span style="color: #75715E;"># </span><span style="color: #75715E;">More Code goes here</span>
+    <span style="color: #75715E;"># </span><span style="color: #75715E;">.....</span>
+    <span style="color: #75715E;"># </span><span style="color: #75715E;">.....</span>
+    main<span style="color: #AE81FF;">(</span>some_arguments<span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+This statement is telling python to only run the code after the conditional if the file is called through <code>python my_file.py</code>. If you have some code in this file that you want to import into another file, you can do so without the <code>main(some_arguments)</code> code being run!
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgfa8356e" class="outline-2">
+<h2 id="orgfa8356e"><span class="section-number-2">3</span> Numpy and Numerical Computing in Python</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Now that we have the basics of python syntax down we can discuss numpy operations and why numpy is imperative to mathematical computing with python. Whenever using <code>numpy</code> you will need to import the module, which is typically done with the name <code>np</code> (as above and below)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">import</span> numpy <span style="color: #F92672;">as</span> np <span style="color: #75715E;"># </span><span style="color: #75715E;">import numpy</span>
+<span style="color: #F92672;">import</span> random <span style="color: #75715E;"># </span><span style="color: #75715E;">imported for random numbers in the below example</span>
+</pre>
+</div>
+
+<p>
+Numpy is a module which wraps BLAS operations written in c (or fortran). This allows python to perform linear algebra operations much more efficiently than doing these operations in the python interpretor. Take for instance a simple inner product between two vectors:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #F92672;">def</span> <span style="color: #A6E22E;">my_inner_product</span><span style="color: #AE81FF;">(</span>l1, l2<span style="color: #AE81FF;">)</span>:
+    <span style="color: #FD971F;">res</span> = 0.0
+    <span style="color: #F92672;">for</span> idx, v <span style="color: #F92672;">in</span> <span style="color: #F92672;">enumerate</span><span style="color: #AE81FF;">(</span>l1<span style="color: #AE81FF;">)</span>:
+        <span style="color: #FD971F;">res</span> += v*l2<span style="color: #AE81FF;">[</span>idx<span style="color: #AE81FF;">]</span>
+    <span style="color: #F92672;">return</span> res
+
+<span style="color: #FD971F;">list_1</span> = <span style="color: #AE81FF;">[</span>random.random<span style="color: #66D9EF;">()</span> <span style="color: #F92672;">for</span> i <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #66D9EF;">(</span>0,1000<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">]</span>
+<span style="color: #FD971F;">list_2</span> = <span style="color: #AE81FF;">[</span>random.random<span style="color: #66D9EF;">()</span> <span style="color: #F92672;">for</span> i <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #66D9EF;">(</span>0,1000<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">]</span>
+
+%time my_inner_product<span style="color: #AE81FF;">(</span>list_1, list_2<span style="color: #AE81FF;">)</span>
+
+<span style="color: #FD971F;">a1</span> = np.random.random<span style="color: #AE81FF;">(</span>1000<span style="color: #AE81FF;">)</span>
+<span style="color: #FD971F;">a2</span> = np.random.random<span style="color: #AE81FF;">(</span>1000<span style="color: #AE81FF;">)</span>
+
+%time np.dot<span style="color: #AE81FF;">(</span>a1, a2<span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+
+<p>
+You should see <code>np.dot</code> significantly outperform <code>my_inner_product</code> in terms of performance, and as we get into more complex operations the pure python approach will become considerably burdened by the interpretor. And you will even see <code>np.dot</code> outperform <code>my_innter_product</code> when you past the python lists as arguments (i.e. <code>np.dot(list_1, list_2)</code>). This means you <b><span class="underline">should never do math in pure python</span></b> and instead favor numpy (or other fully-featured linear algebra packages).
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Matthew Schlegel</p>
+<p class="date">Created: 2019-09-22 Sun 14:31</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

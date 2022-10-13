@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.102.1" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/interview_review_material.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/interview_review_material/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/interview_review_material/">
+  <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2022-10-13T12:49:28-06:00">
+  <meta property="article:modified_time" content="2022-10-13T12:49:28-06:00">
+  
+
+  <title>Interview Review Material | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/post">Posts</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/interview_review_material/">Interview Review Material</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2022-10-13 12:49:28 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 13, 2022
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\)</p>
+<p>This document is meant as a source to review material for studying for machine learning interviews. I&rsquo;m hoping the construction of this document will help in reviewing the basics, and fortify the foundations of my own notebase.</p>
+<h2 id="basic-mathematics">Basic Mathematics</h2>
+<h3 id="probability">Probability</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Random variables and probability functions</p>
+<p>First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:</p>
+<ol>
+<li>\(\Prob(A) \geq 0 \forall A\)</li>
+<li>\(\Prob(\Sigma) = \sum_{A \in \Sigma} \Prob(A) = 1\)</li>
+<li>If the events are disjoint then</li>
+</ol>
+<p>\[\Prob(\cup_{i} A_i) = \sum_i \Prob(A_i)\]</p>
+<p>A Random Variable is a mapping from outcome spaces to real numbers \(X: \Sigma \rightarrow \reals\) that assigns a real value to \(X(\omega)\) to each outcome \(\omega\).</p>
+<p>Given a random variable \(X\) we can define the cumulative distribution function (CDF) \(F_X: \reals \rightarrow [0, 1]\) of a random variable \(X\) is defined by
+\[
+F_X(x) = \Prob(X \leq x)
+\]</p>
+ <div class="instance">
+<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman, n.d.</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
+\[
+F_{X}(x) = \begin{cases}
+0 \quad &amp;x&lt;0 \\
+\frac{1}{4} \quad &amp;0 \leq x &lt; 1 \\
+\frac{3}{4} \quad &amp;1 \leq x &lt; 2 \\
+1 \quad &amp;x \geq 2.
+\end{cases}
+\]</p>
+ </div>
+<p>A function F which maps the real line to \([0, 1]\) is a CDF if and only if:</p>
+<ol>
+<li>F is non-decreasing: \(x_1 &lt; x_2 \rightarrow F(x_1) \leq F(x_2)\)</li>
+<li>F is normalized: \(\lim_{x\rightarrow-\infty} F(x) = 0\) and \(\lim_{x\rightarrow\infty} F(x) = 1\)</li>
+<li>F is right continuous: \(F(x) = F(x^+)\) where \(x^+\) implies approaching \(x\) from above.</li>
+</ol>
+<p>We must define two probability functions depending on whether the random variable \(X\) is <a href="/braindump/discrete/">discrete</a> or <a href="/braindump/continuous/">continuous</a>. If the variable is discrete then we define the probability mass function for \(X\) by
+\[
+f_X(x) = \Prob(X=x).
+\]</p>
+<p>If the random variable \(X\) is <a href="/braindump/continuous/">continuous</a> if there exits a function \(f_X\) such that</p>
+<ul>
+<li>\(f_X(x) \geq 0 \forall x \in X\)</li>
+<li>\(\int_{-\infty}^{\infty} f_X(x)dx = 1\)</li>
+<li>and for every \(a \leq b\)
+\[
+\Prob(x &lt; X &lt; b) = \int_a^b f_X(x)dx.
+\]</li>
+</ul>
+<p>The function \(f_X\) is called a probability density function we have that
+\[
+F_X(x) = \int_{-\infty}^{x} f_X(t)dt
+\]</p>
+<p>and \(f_X(x) = F^\prime_X(x)\) at all points \(x\) at which \(F_X\) is differentiable.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Expectations and moments of a random variable</p>
+<p>The expected value, or mean, or first moment of \(X\) is defined to be
+\[
+\expected(X) = \int x dF(x) = \begin{cases}
+\sum_x xf(x) \quad &amp;\text{if $X$ is discrete}\\
+\int xf(x)dx \quad &amp;\text{if $X$ is continuous}
+\end{cases}
+\]
+assuming that the sum (or integral) is well-defined.</p>
+<p><strong>Some properties:</strong></p>
+<ol>
+<li>If \(X_1, \ldots, X_2\) are random variables and \(a_1, \ldots, a_n\) are constants, then
+\[\expected\left(\sum_i a_i X_i \right) = \sum_i a_i \expected(X_i).\]</li>
+<li>Let \(X_1, \ldots, X_2\) be independent random variables. Then,
+\[\expected\left(\prod_{i=1}^n X_i \right) = \prod_i \expected(X_i)\]</li>
+</ol>
+<p>The variance of a distribution is the &ldquo;spread&rdquo; of the distribution. The variance of a random variable \(X\) with mean \(\mu\) is defined by
+\[
+\sigma^2 = \var(X) = \expected(X-\mu)^2= \int (x-\mu)^2 dF(x)
+\]</p>
+<p>assuming this expectation exists. The <em>standard deviation</em> is \(sd(X) = \sqrt{\var(X)}\). The variance has the following properties:</p>
+<ol>
+<li>\(\var(X) = \expected(X^2) - \mu^2\).</li>
+<li>If \(a\) and \(b\) are constants then \(\var(aX + b) = a^2\var(X)\).</li>
+<li>If \(X_1,\ldots,X_n\) are independent and \(a_1,\ldots,a_n\) are constants, then
+\[\var\left(\sum_{i=1}^n a_i X_i \right) = \sum_{i=1}^n a_i^2 \var(X_i)\].</li>
+</ol>
+<p>If X and Y are random variables with means \(\mu_X\) and \(\mu_Y\) and standard deviations \(\sigma_X\) and \(\sigma_Y\), the <strong>covariance</strong> between \(X\) and \(Y\) is defined as
+\[\text{Cov}(X, Y) = \expected[(X-\mu_X)(Y-\mu_Y)]\]
+and the correlation by
+\[\rho_{X, Y} = \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}\]</p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>Moments of a random variable</p>
+<p>The nth-moment of a random variable is defined as:
+\[
+\mu_n = \expected[(X - c)^n] = \int_{-\infty}^{\infty} (x-c)^n f(x) dx
+\]</p>
+<p>The raw moment is defined as the moment centered around zero (i.e. \(c=0\) above). The first raw moment is the mean of the random variable. We can also define the central moments by setting \(c=\mu\) or the the center of the moment to the mean of the random variable.
+\[
+\expected[(X-\expected[X])^n]
+\]
+The second central moment is the variance. Finally, we can normalize the moment by powers of the standard deviation creating <em>standardized moments</em>
+\[
+\expected[\frac{(X-\expected[X])^n}{\sigma^2}]
+\]
+where \(\sigma=\sqrt{\var(X)}\) is the standard deviation.</p>
+<p>The <strong>skewness</strong> and <strong>kurtosis</strong> are the 3rd and 4th standardized moments respectively. The <strong>skewness</strong> of a distribution is how &ldquo;skewed&rdquo; or asymmetric it is around the mean. This gives an indication on where the tail is in a unimodal distribution (i.e. left or right side). The kurtosis describes how much &ldquo;tail&rdquo; the distribution has, or its &ldquo;tailedness&rdquo;.</p>
+</li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Basic Inequalities</p>
+<p>There are a few basic inequalities that everyone should know imho.</p>
+ <!--list-separator-->
+<ul>
+<li>
+<p>Markov Inequality</p>
+ <div class="theorem">
+<p>Let \(X\) be a non-negative random variable and suppose that \(\expected(X)\) exists. For any t&gt;0
+\[\Prob(X&gt;t) \leq \frac{\expected(X)}{t}.\]</p>
+ </div>
+</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>
+<p>Chebyshev&rsquo;s Inequality</p>
+ <div class="theorem">
+<p>Let \(\mu = \expected(X)\) and \(\sigma^2 = \var(X)\). Then
+\[\Prob(|X-\mu| \geq t) \leq \frac{\sigma^2}{t^2} \text{ and } \Prob(|Z|\geq k)\leq\frac{1}{k^2}\]
+where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \frac{1}{4}\) and \(\Prob(|Z| &gt; 3) \leq \frac{1}{9}\).</p>
+ </div>
+</li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Classical convergence theorems</p>
+ <div class="definition">
+<p>The <strong>law of large numbers</strong> says that sample average \(\bar{X}_n = n^\inv \sum_{i=1}^n X_i\) <strong>converges in probability</strong> to the expectation \(\mu = \expected(X)\).</p>
+ </div>
+ <div class="definition">
+<p>The <strong>central limit theorem</strong> says that sample average has approximately a Normal distribution for large \(n\). More exact, \(\sqrt{n}(\bar{X}_n - \mu)\) <strong>converges in distribution</strong> to a \(\text{Normal}(0, \sigma^2)\) distribution, where \(\sigma^2 = \var(X)\).</p>
+ </div>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Hypothesis testing and p-values</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Questions</p>
+<ul>
+<li>Central limit theorem</li>
+<li>Different kinds of probability distributions and when you would use them?</li>
+<li>What is PDF and CDF?</li>
+<li>What are the different moments and what do they mean?</li>
+<li>What is skewness?</li>
+<li>Different kinds of proving convergence.</li>
+</ul>
+</li>
+</ul>
+<h3 id="calculus">Calculus</h3>
+<p><a href="/braindump/calculus/">Calculus</a> is a large topic. Click the prior link to see a more complete set of notes on the topic for a brief introduction/review.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Questions</p>
+<ul>
+<li>What is a derivative</li>
+<li>Common rules of derivation.</li>
+<li>What is the derivative of common functions: e.g., e^x, sin(x), log(x)</li>
+<li>What is the jacobian and the hessian?</li>
+<li>What is the integral?</li>
+<li>Common integral tricks:
+<ul>
+<li>By parts</li>
+</ul>
+</li>
+<li>How do we estimate the value of an integral?</li>
+<li>Fundamental theorem of calculus</li>
+</ul>
+</li>
+</ul>
+<h3 id="linear-algebra">Linear Algebra</h3>
+<p>Linear algebra is the study of linear maps on finite-dimensional vector spaces. While this section covers some basics, a more detailed set of notes can be found in <a href="/braindump/linear_algebra/">Linear Algebra</a>.</p>
+<p>A <strong>scalar</strong> \(x\in\numfield\) is a single element of a <strong>number field</strong> \(\numfield = \reals, \complexs, \ldots\).</p>
+<p>#+being_definition
+A <strong>list</strong> of length \(n\in\naturals\) is an ordered collection of \(n\) elements separated by commas and surrounded by parentheses. This looks like:
+\[(x_1, \ldots, x_n).\]
+Two lists are equal if and only if they have the same length.
+#+end_definition</p>
+<p>Using the definition of <strong>list</strong> above, we can define the set of all lists of length \(n\) of elements from \(\numfield\).
+\[\numfield^n = \{(x_1, \ldots, x_n): x_j \in \numfield for j = 1, \ldots, n \}\]</p>
+<p>A <strong>vector space</strong> is a set \(V\) along with an addition on \(V\) and a scalar multiplication on \(V\) such that following properties hold:</p>
+<ul>
+<li><strong>commutativity</strong>: \(u+v = v+u \quad\forall u, v \in V\)</li>
+<li><strong>associativity</strong>: \((\uvec+\vvec) + \wvec = \uvec + (\vvec+\wvec)\) and \((ab)\vvec = a(b\vvec)\) for all \(\uvec,\vvec,\wvec\in V\) and all \(a, b \in \field\).</li>
+<li><strong>additive identity</strong>: there exists an element \(0\in V\) such that \(\vvec + 0 = \vvec\) for all \(\vvec \in V\)</li>
+<li><strong>additive inverse</strong>: for every \(\vvec \in V\), there exists \(\wvec\in V\) such that \(\vvec + \wvec = 0\)</li>
+<li><strong>multiplicative identity</strong>: \(1\vvec = \vvec \quad \forall \vvec\in V\)</li>
+<li><strong>distributive properties</strong>: \(a(\uvec + \vvec) = a\uvec + a\vvec\) and \((a+b)\vvec = a\vvec + b\vvec\) for all \(a,b\in\numfield\) and all \(\uvec,\vvec \in V\).</li>
+</ul>
+<p>While I&rsquo;ve defined some basics above, there is a lot to the intricacies of vector spaces and their interactions with linear maps and transformations. In the following, we will take the above for granted and deal with details more specific to basic machine learning and deep learning taken from (<a href="#citeproc_bib_item_1">Goodfellow, Bengio, and Courville, n.d.</a>). We will primarily focus on vector spaces on the field \(\reals\), while most of the content translates to \(\complexs\).</p>
+<p>A <strong>vector</strong> \(\vvec \in V\) is a element of a vector space \(V\). We will use the convention that all vectors are column vectors.
+\[
+\xvec = \begin{matrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n\\
+\end{matrix}
+\]</p>
+<p>with the usual coordinate <a href="/braindump/linear_algebra/#bases--linear-algebra">basis</a>.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Questions</p>
+<ul>
+<li>Different properties of a matrix</li>
+<li>What is a cross product</li>
+<li>What is linear independence</li>
+<li>What is an eigenvector and an eigenvalue</li>
+<li>SVD</li>
+<li>Inverse of a matrix, Pseudo inverse of a matrix</li>
+</ul>
+</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>Monte Carlo methods to approximate \(\pi\).</li>
+<li></li>
+</ul>
+<h2 id="computer-science">Computer Science</h2>
+<h3 id="sorting-algorithms">Sorting Algorithms</h3>
+<h3 id="big-oh-analysis">Big-Oh analysis</h3>
+<h3 id="halting-problem">Halting Problem</h3>
+<h3 id="turing-machine-tape-and-turing-complete">Turing machine, tape, and turing complete</h3>
+<h3 id="p-np-p-np">P, NP, P=NP</h3>
+<h3 id="stack-vs-heap">stack vs heap</h3>
+<h3 id="hash-tables">hash tables</h3>
+<h3 id="data-structures">Data Structures</h3>
+<h3 id="dynamic-programming">dynamic programming</h3>
+<h3 id="threads-vs-processes">Threads vs Processes</h3>
+<h3 id="compiled-interpreted-and-jit-oh-my">Compiled, Interpreted, and JIT oh my</h3>
+<h3 id="questions">Questions</h3>
+<ul>
+<li>Different sorting algorithms</li>
+<li>Big O analysis of memory and computational complexity</li>
+<li>What is the halting problem</li>
+<li>What is a turing machine; when is something turing complete</li>
+<li>What is P, NP, P=NP</li>
+<li>Stack vs Heap</li>
+<li>Hash tables</li>
+<li>Dynamic programming</li>
+<li>Working with lists (singly vs doubly linked)</li>
+<li>Big-O, Big-theta, Big-Omega</li>
+<li>Binary search trees and access (best, worst, usual)</li>
+<li>Threads vs Processes</li>
+<li>Compiled vs Interpreted vs Just-in-time</li>
+<li>Reading Stack-traces</li>
+</ul>
+<h2 id="languages">Languages</h2>
+<h3 id="python">Python</h3>
+<h3 id="c-plus-plus">C++</h3>
+<h3 id="julia">Julia</h3>
+<h2 id="machine-learning">Machine Learning</h2>
+<ul>
+<li>What is the curse of dimensionality</li>
+<li>What is supervised, self-supervised, and semi-supervised learning? Give examples of each?</li>
+<li>What is the learning rate/step-size and how does it impact learning?</li>
+<li>How do you do dimensionality reduction</li>
+<li>What is cross-validation?</li>
+<li>What are T-tests, what is standard error, and standard deviation? When would you use each?</li>
+<li>What is the kernel trick?</li>
+<li>What is Logistic regression?</li>
+<li>What is KL Divergence?</li>
+<li>What is batch-normalization</li>
+<li>What is weight and layer normalization?</li>
+<li>What is least-squares method?</li>
+<li>What is the bias variance tradeoff</li>
+<li>Name some loss functions; when would you use them?</li>
+<li>What is AUC?</li>
+<li>What is ROC?</li>
+<li>What is boosting and bagging?</li>
+<li>What are ensemble methods?</li>
+<li>What is an autoencoder?</li>
+<li>Exploding and vanishing gradients</li>
+<li>Generative Models</li>
+<li>Over and under-fitting</li>
+<li>Convergence guarantees for different learning methods</li>
+<li>What is a policy?</li>
+<li>What is backpropagation?</li>
+<li>ANNs</li>
+<li>SVMs</li>
+<li>Kernel trick</li>
+</ul>
+<h2 id="reinforcement-learning">Reinforcement Learning</h2>
+<ul>
+<li>What is the problem of reinforcement learning?</li>
+<li>What is a value function?</li>
+<li>What is a policy?</li>
+<li>What is the exploration-exploitation problem in reinforcement learning?</li>
+<li>Name three ways to learn value functions and the different tradeoffs.</li>
+<li>What are some of the differences between sarsa and q-learning?</li>
+<li>What is off-policy prediction/learning?</li>
+<li>What is the deadly triad?</li>
+<li>How does the deadly triad effect deep learning?</li>
+<li>Model-based vs Model-free reinforcement learning.</li>
+<li>Components of a deep-q network.</li>
+<li>What is an eligibility trace and how does it effect learning?</li>
+<li>Forward vs Backward view of n-step updates.</li>
+<li>What are the components of a Markov decision process?</li>
+<li>What makes a MDP partially observable? How might we solve this?</li>
+<li>If you were to construct an Agent to solve an un-tested reinforcement learning setting what architecture would you choose?
+<ul>
+<li>What types of inputs can I expect?</li>
+<li>What types of actions can I expect?</li>
+<li>What are the computational constraints?</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="hr-personality-interviews">HR/personality Interviews</h2>
+<ul>
+<li>Elevator pitch on your research.</li>
+<li>What would you do if you had a personal conflict w/ your manager?</li>
+<li>What is your biggest flaw, and how does it effect your research?</li>
+</ul>
+<h2 id="research-topics">Research Topics</h2>
+<ul>
+<li>Successor features/representations.</li>
+<li>Options/Option Models</li>
+<li>Predictive Knowledge and General Value Functions</li>
+<li></li>
+</ul>
+<h2 id="potential-interview-questions">Potential Interview Questions</h2>
+<h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. n.d. <i>Deep Learning</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. n.d. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>.</div>
+</div>
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+  </div>
+</article>
+
+                                
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+
