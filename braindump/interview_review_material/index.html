@@ -54,8 +54,8 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-13T12:49:28-06:00">
-  <meta property="article:modified_time" content="2022-10-13T12:49:28-06:00">
+  <meta property="article:published_time" content="2022-10-14T11:07:00-06:00">
+  <meta property="article:modified_time" content="2022-10-14T11:07:00-06:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-13 12:49:28 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 13, 2022
+    <time datetime="2022-10-14 11:07:00 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 14, 2022
     </time>
   </span>
 
@@ -218,7 +218,63 @@
 
     <div class="post-style" itemprop="articleBody">
       
-      <p>\( \newcommand{\states}{\mathcal{S}}
+      <div class="ox-hugo-toc toc">
+<div class="heading">Table of Contents</div>
+<ul>
+<li><a href="#probability">Probability</a>
+<ul>
+<li><a href="#expectations-of-a-random-variable">Expectations of a random variable</a></li>
+<li><a href="#moments-of-a-random-variable">Moments of a random variable</a></li>
+<li><a href="#basic-inequalities">Basic Inequalities</a></li>
+<li><a href="#classical-convergence-theorems-of-random-variables">Classical convergence theorems of random variables</a></li>
+<li><a href="#hypothesis-testing-and-p-values">Hypothesis testing and p-values</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#calculus">Calculus</a>
+<ul>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#linear-algebra">Linear Algebra</a>
+<ul>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#misc-math-concepts">Misc Math Concepts</a></li>
+<li><a href="#computer-science">Computer Science</a>
+<ul>
+<li><a href="#sorting-algorithms">Sorting Algorithms</a></li>
+<li><a href="#big-oh-analysis">Big-Oh analysis</a></li>
+<li><a href="#halting-problem">Halting Problem</a></li>
+<li><a href="#turing-machine-tape-and-turing-complete">Turing machine, tape, and turing complete</a></li>
+<li><a href="#p-np-p-np">P, NP, P=NP</a></li>
+<li><a href="#stack-vs-heap">stack vs heap</a></li>
+<li><a href="#hash-tables">hash tables</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#dynamic-programming">dynamic programming</a></li>
+<li><a href="#threads-vs-processes">Threads vs Processes</a></li>
+<li><a href="#compiled-interpreted-and-jit-oh-my">Compiled, Interpreted, and JIT oh my</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#languages">Languages</a>
+<ul>
+<li><a href="#python">Python</a></li>
+<li><a href="#c-plus-plus">C++</a></li>
+<li><a href="#julia">Julia</a></li>
+</ul>
+</li>
+<li><a href="#machine-learning">Machine Learning</a></li>
+<li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li><a href="#hr-personality-interviews">HR/personality Interviews</a></li>
+<li><a href="#research-topics">Research Topics</a></li>
+<li><a href="#potential-interview-questions">Potential Interview Questions</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<!--endtoc-->
+<p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
 \newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
@@ -295,12 +351,7 @@
 \newcommand{\ind}{\perp!!!!\perp}
 \)</p>
 <p>This document is meant as a source to review material for studying for machine learning interviews. I&rsquo;m hoping the construction of this document will help in reviewing the basics, and fortify the foundations of my own notebase.</p>
-<h2 id="basic-mathematics">Basic Mathematics</h2>
-<h3 id="probability">Probability</h3>
-<!--list-separator-->
-<ul>
-<li>
-<p>Random variables and probability functions</p>
+<h2 id="probability">Probability</h2>
 <p>First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:</p>
 <ol>
 <li>\(\Prob(A) \geq 0 \forall A\)</li>
@@ -308,12 +359,14 @@
 <li>If the events are disjoint then</li>
 </ol>
 <p>\[\Prob(\cup_{i} A_i) = \sum_i \Prob(A_i)\]</p>
+<div title="Random Variable" class="definition">
 <p>A Random Variable is a mapping from outcome spaces to real numbers \(X: \Sigma \rightarrow \reals\) that assigns a real value to \(X(\omega)\) to each outcome \(\omega\).</p>
+</div>
 <p>Given a random variable \(X\) we can define the cumulative distribution function (CDF) \(F_X: \reals \rightarrow [0, 1]\) of a random variable \(X\) is defined by
 \[
 F_X(x) = \Prob(X \leq x)
 \]</p>
- <div class="instance">
+<div class="instance">
 <p>(Example from (<a href="#citeproc_bib_item_2">Wasserman, n.d.</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
 \[
 F_{X}(x) = \begin{cases}
@@ -323,7 +376,7 @@ F_{X}(x) = \begin{cases}
 1 \quad &amp;x \geq 2.
 \end{cases}
 \]</p>
- </div>
+</div>
 <p>A function F which maps the real line to \([0, 1]\) is a CDF if and only if:</p>
 <ol>
 <li>F is non-decreasing: \(x_1 &lt; x_2 \rightarrow F(x_1) \leq F(x_2)\)</li>
@@ -348,12 +401,7 @@ f_X(x) = \Prob(X=x).
 F_X(x) = \int_{-\infty}^{x} f_X(t)dt
 \]</p>
 <p>and \(f_X(x) = F^\prime_X(x)\) at all points \(x\) at which \(F_X\) is differentiable.</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Expectations and moments of a random variable</p>
+<h3 id="expectations-of-a-random-variable">Expectations of a random variable</h3>
 <p>The expected value, or mean, or first moment of \(X\) is defined to be
 \[
 \expected(X) = \int x dF(x) = \begin{cases}
@@ -384,10 +432,7 @@ assuming that the sum (or integral) is well-defined.</p>
 \[\text{Cov}(X, Y) = \expected[(X-\mu_X)(Y-\mu_Y)]\]
 and the correlation by
 \[\rho_{X, Y} = \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}\]</p>
- <!--list-separator-->
-<ul>
-<li>
-<p>Moments of a random variable</p>
+<h3 id="moments-of-a-random-variable">Moments of a random variable</h3>
 <p>The nth-moment of a random variable is defined as:
 \[
 \mu_n = \expected[(X - c)^n] = \int_{-\infty}^{\infty} (x-c)^n f(x) dx
@@ -402,58 +447,29 @@ The second central moment is the variance. Finally, we can normalize the moment 
 \]
 where \(\sigma=\sqrt{\var(X)}\) is the standard deviation.</p>
 <p>The <strong>skewness</strong> and <strong>kurtosis</strong> are the 3rd and 4th standardized moments respectively. The <strong>skewness</strong> of a distribution is how &ldquo;skewed&rdquo; or asymmetric it is around the mean. This gives an indication on where the tail is in a unimodal distribution (i.e. left or right side). The kurtosis describes how much &ldquo;tail&rdquo; the distribution has, or its &ldquo;tailedness&rdquo;.</p>
-</li>
-</ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Basic Inequalities</p>
+<h3 id="basic-inequalities">Basic Inequalities</h3>
 <p>There are a few basic inequalities that everyone should know imho.</p>
- <!--list-separator-->
-<ul>
-<li>
-<p>Markov Inequality</p>
- <div class="theorem">
+<div title="Markov Inequality" class="theorem">
 <p>Let \(X\) be a non-negative random variable and suppose that \(\expected(X)\) exists. For any t&gt;0
 \[\Prob(X&gt;t) \leq \frac{\expected(X)}{t}.\]</p>
- </div>
-</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>
-<p>Chebyshev&rsquo;s Inequality</p>
- <div class="theorem">
+</div>
+<div title="Chebyshev’s Inequality" class="theorem">
 <p>Let \(\mu = \expected(X)\) and \(\sigma^2 = \var(X)\). Then
 \[\Prob(|X-\mu| \geq t) \leq \frac{\sigma^2}{t^2} \text{ and } \Prob(|Z|\geq k)\leq\frac{1}{k^2}\]
 where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \frac{1}{4}\) and \(\Prob(|Z| &gt; 3) \leq \frac{1}{9}\).</p>
- </div>
-</li>
-</ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Classical convergence theorems</p>
- <div class="definition">
+</div>
+<h3 id="classical-convergence-theorems-of-random-variables">Classical convergence theorems of random variables</h3>
+<p>There are a few classic results that are important when thinking about probability and statistics in learning theory.</p>
+<div title="Law of Large Numbers" class="definition">
 <p>The <strong>law of large numbers</strong> says that sample average \(\bar{X}_n = n^\inv \sum_{i=1}^n X_i\) <strong>converges in probability</strong> to the expectation \(\mu = \expected(X)\).</p>
- </div>
- <div class="definition">
+</div>
+<p>The <strong>law of large number</strong> tells us that as we sample from our data more, the sample average will converge to the actual expected value. This means that if we want a better estimate an easy solution is to gather more data, and this has been a common theme in recent machine learning research (i.e. Deep Learning soaks up data).</p>
+<div title="Central Limit Theorem" class="definition">
 <p>The <strong>central limit theorem</strong> says that sample average has approximately a Normal distribution for large \(n\). More exact, \(\sqrt{n}(\bar{X}_n - \mu)\) <strong>converges in distribution</strong> to a \(\text{Normal}(0, \sigma^2)\) distribution, where \(\sigma^2 = \var(X)\).</p>
- </div>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Hypothesis testing and p-values</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Questions</p>
+</div>
+<p>The <strong>central limit theorem</strong> gives us a way to reason about the variance of the sample averages. Because the random variable defined by the sample average will be distributed according \(\text{Normal}(\mu, \sigma^2)\) we can estimate the confidence intervals for our current estimate.</p>
+<h3 id="hypothesis-testing-and-p-values">Hypothesis testing and p-values</h3>
+<h3 id="questions">Questions</h3>
 <ul>
 <li>Central limit theorem</li>
 <li>Different kinds of probability distributions and when you would use them?</li>
@@ -462,38 +478,129 @@ where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \fr
 <li>What is skewness?</li>
 <li>Different kinds of proving convergence.</li>
 </ul>
-</li>
-</ul>
-<h3 id="calculus">Calculus</h3>
+<h2 id="calculus">Calculus</h2>
 <p><a href="/braindump/calculus/">Calculus</a> is a large topic. Click the prior link to see a more complete set of notes on the topic for a brief introduction/review.</p>
+<h3 id="questions">Questions</h3>
 <!--list-separator-->
 <ul>
 <li>
-<p>Questions</p>
+<p>What is a derivative?</p>
+<p>The derivative of a function \(f(\cdot)\) at point \(x\) is the instantaneous slope of the function at \(x\).
+\[\frac{d}{dx} f(x) = \lim_{dx-&gt;0} \frac{f(x+dx) - f(x)}{dx}\]</p>
+<p>Because the derivative is a function, the derivative can be continued to be taken to second, third, etc&hellip; order derivatives each representing the rate of change of the prior.</p>
+</li>
+</ul>
+<!--list-separator-->
 <ul>
-<li>What is a derivative</li>
-<li>Common rules of derivation.</li>
-<li>What is the derivative of common functions: e.g., e^x, sin(x), log(x)</li>
-<li>What is the jacobian and the hessian?</li>
+<li>
+<p>What is the gradient?</p>
+<p>The gradient can be seen as a linear operator on a function which maps \(f: \numfield^n \rightarrow \numfield^k\) where \(n, k &gt; 0\). This linear operator applies a partial derivative for each basis in the vector.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Common rules of derivation.</p>
+ <div title="Product Rule" class="definition">
+<p>\[\nabla_{\xvec} f(\xvec)g(\xvec) = f(\xvec) \nabla_{\xvec} g(\xvec) + g(\xvec) \nabla_{\xvec} f(\xvec)\]</p>
+ </div>
+ <div title="Chain Rule" class="definition">
+<p>\[\nabla_{\xvec} (f \circ g)(\xvec) = \nabla_g f(g(\xvec)) \nabla_{\xvec}g(\xvec)\]</p>
+ </div>
+ <div title="Implicit Differentiation" class="definition">
+<p>Implicit differentiation is finding the derivative of functions or variables when there isn&rsquo;t a clear form like \(y=f(x)\). This is best explained through an example. We want to find the derivative \(\frac{dy}{dx}\) from the function \(x^2 + y^2 = 1\).</p>
+<p>If we can solve for \(y\) (which would be simple here \(y = \mp \sqrt{1 - x^2}\)) this can be done easily. But for this example lets assume we cant. Instead, we can take the derivative from the starting function</p>
+<p>\begin{align*}
+\frac{d}{dx} (x^2 + y^2) &amp;= \frac{d}{dx} (1) \quad &amp;\text{Take the derivative.}\\
+2x + 2y \frac{dy}{dx} &amp;= 0 \quad &amp;\text{Distribute the derivative.}\\
+\frac{dy}{dx} &amp;= -\frac{x}{y} \quad &amp;\text{Solve for $\frac{dy}{dx}$}
+\end{align*}</p>
+ </div>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is the derivative of common functions: e.g., e^x, sin(x), log(x)</p>
+<p>\[\partialderiv{}{x} x^n = nx^{n-1} \quad \triangleright \quad n \neq 0, n\in\reals\]
+\[\partialderiv{}{x} e^x = e^x\]
+\[\partialderiv{}{x} a^x = \ln(a)*a^x \quad \triangleright \quad a &gt; 0\]
+\[\partialderiv{}{x} \ln(x) = \frac{1}{x}\]
+\[\partialderiv{}{x} \log_{a}(x) = \frac{1}{x\ln(a)} \quad \triangleright \quad a &gt; 0\]
+\[\partialderiv{}{x} \sin(x) = \cos(x)\]
+\[\partialderiv{}{x} \cos(x) = -\sin(x)\]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is the derivative of the `relu` function?</p>
+<p>The derivative of the \(relu(x)\) function is split into three parts.</p>
+<ol>
+<li>
+<p>\(x &lt; 0\)
+\[\frac{d}{dx}relu(x&lt;0)=0\]</p>
+</li>
+<li>
+<p>\(x = 0\)
+This is a non-differential point in the function. Here we can use a <a href="/braindump/calculus/#differential-calculus">subderivative</a> at the differential point. We choose to include this with the first part of the function where the derivative is
+\[\frac{d}{dx}relu(x=0)=0.\]</p>
+</li>
+<li>
+<p>\(x &gt; 0\)
+\[\frac{d}{dx}relu(x&gt;0)=1\]</p>
+</li>
+</ol>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is the jacobian and the hessian?</p>
+<p>Given a vector field \(\Fmat : \Amat \subset \reals^n \mapsto \reals^n\) we can apply the gradient operator several ways. The Jacobian is the outer product of the gradient operator and the vector field.</p>
+<p>\[\text{The Jacobian: } \jacobian \defeq \nabla \otimes \Fmat =
+\left[\partialderiv{\Fmat}{x_1}, \cdots, \partialderiv{\Fmat}{x_n}\right] =
+\left[\begin{array}{ccc}{
+\frac{\partial \Fmat_{1}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{1}}{\partial x_{n}}} \\
+{\vdots} &amp; {\ddots} &amp; {\vdots} \\
+{\frac{\partial \Fmat_{m}}{\partial x_{1}}} &amp; {\cdots} &amp; {\frac{\partial \Fmat_{m}}{\partial x_{n}}}
+\end{array}\right]\]</p>
+<p>Given a function \(f: \reals^n \mapsto \reals\) the Hessian is the jacobian of the gradient of \(f\).</p>
+<p>\[\nabla \otimes \nabla f(\xvec)\]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
 <li>What is the integral?</li>
-<li>Common integral tricks:
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Common integral tricks:</p>
 <ul>
 <li>By parts</li>
+<li>By substitution</li>
 </ul>
 </li>
+</ul>
+<!--list-separator-->
+<ul>
 <li>How do we estimate the value of an integral?</li>
+</ul>
+<!--list-separator-->
+<ul>
 <li>Fundamental theorem of calculus</li>
 </ul>
-</li>
-</ul>
-<h3 id="linear-algebra">Linear Algebra</h3>
+<h2 id="linear-algebra">Linear Algebra</h2>
 <p>Linear algebra is the study of linear maps on finite-dimensional vector spaces. While this section covers some basics, a more detailed set of notes can be found in <a href="/braindump/linear_algebra/">Linear Algebra</a>.</p>
 <p>A <strong>scalar</strong> \(x\in\numfield\) is a single element of a <strong>number field</strong> \(\numfield = \reals, \complexs, \ldots\).</p>
+<div title="List">
 <p>#+being_definition
 A <strong>list</strong> of length \(n\in\naturals\) is an ordered collection of \(n\) elements separated by commas and surrounded by parentheses. This looks like:
 \[(x_1, \ldots, x_n).\]
 Two lists are equal if and only if they have the same length.
 #+end_definition</p>
+</div>
 <p>Using the definition of <strong>list</strong> above, we can define the set of all lists of length \(n\) of elements from \(\numfield\).
 \[\numfield^n = \{(x_1, \ldots, x_n): x_j \in \numfield for j = 1, \ldots, n \}\]</p>
 <p>A <strong>vector space</strong> is a set \(V\) along with an addition on \(V\) and a scalar multiplication on \(V\) such that following properties hold:</p>
@@ -516,10 +623,7 @@ x_n\\
 \end{matrix}
 \]</p>
 <p>with the usual coordinate <a href="/braindump/linear_algebra/#bases--linear-algebra">basis</a>.</p>
-<!--list-separator-->
-<ul>
-<li>
-<p>Questions</p>
+<h3 id="questions">Questions</h3>
 <ul>
 <li>Different properties of a matrix</li>
 <li>What is a cross product</li>
@@ -528,9 +632,7 @@ x_n\\
 <li>SVD</li>
 <li>Inverse of a matrix, Pseudo inverse of a matrix</li>
 </ul>
-</li>
-</ul>
-<h3 id="misc">Misc</h3>
+<h2 id="misc-math-concepts">Misc Math Concepts</h2>
 <ul>
 <li>Monte Carlo methods to approximate \(\pi\).</li>
 <li></li>

@@ -10,11 +10,7 @@ body {
     margin: 0;
 }
 
-aside:before {
-    content: "Aside:";
-    font-weight: bold;
-    font-style: normal;    
-}
+
 
 aside, .definition, .instance, .theorem, .lemma{
     background-color: white;
@@ -32,7 +28,7 @@ aside p, .definition p, .instance p, .theorem p, .lemma p{
     font-style: italic;
 }
 
-.definition:before, .theorem:before, .lemma:before, .instance:before {
+aside:before, .definition:before, .theorem:before, .lemma:before, .instance:before {
     font-weight: bold;
     font-style: normal;
     border-top-left-radius: 23px;
@@ -42,10 +38,20 @@ aside p, .definition p, .instance p, .theorem p, .lemma p{
     display: block;
 }
 
+aside:before {
+    content: "Aside:";
+    background-color: #71A568;
+}
+
 .definition:before {
     counter-increment: def-counter;
-    content: "Definition " counter(def-counter) ": ";
     background-color: #71A568;
+    content: "Definition " counter(def-counter) ": ";
+    white-space: pre;
+}
+
+.definition[title]:before {
+    content: "Definition " counter(def-counter) " - " attr(title) ": ";
 }
 
 .theorem:before {
@@ -54,15 +60,27 @@ aside p, .definition p, .instance p, .theorem p, .lemma p{
     background-color: #71A568;
 }
 
+.theorem[title]:before {
+    content: "Theorem " counter(thrm-counter) " - " attr(title) ": ";
+}
+
 .lemma:before {
     counter-increment: lemm-counter;
     content: "Lemma " counter(lemm-counter) ": ";
     background-color: #71A568;
 }
 
+.lemma[title]:before {
+    content: "Lemma " counter(lemm-counter) " - " attr(title) ": ";
+}
+
 .instance:before {
     counter-increment: inst-counter;
     content: "Example " counter(inst-counter) ": ";
     background-color: #71A568;
+}
+
+.instance[title]:before {
+    content: "Example " counter(inst-counter) " - " attr(title) ": ";
 }
 
