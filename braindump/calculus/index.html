@@ -54,8 +54,8 @@
   <meta property="og:title" content="Calculus | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-14T10:36:58-06:00">
-  <meta property="article:modified_time" content="2022-10-14T10:36:58-06:00">
+  <meta property="article:published_time" content="2022-10-14T20:29:42-06:00">
+  <meta property="article:modified_time" content="2022-10-14T20:29:42-06:00">
   
 
   <title>Calculus | Matthew Schlegel</title>
@@ -205,7 +205,7 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-14 10:36:58 -0600 MDT" itemprop="datePublished dateModified">
+    <time datetime="2022-10-14 20:29:42 -0600 MDT" itemprop="datePublished dateModified">
       Oct 14, 2022
     </time>
   </span>
@@ -218,7 +218,47 @@
 
     <div class="post-style" itemprop="articleBody">
       
-      <p>\( \newcommand{\states}{\mathcal{S}}
+      <div class="ox-hugo-toc toc">
+<div class="heading">Table of Contents</div>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#resources-used-while-making-these-notes">Resources used while making these notes:</a></li>
+</ul>
+</li>
+<li><a href="#CFMLR:DIFF">Differential Calculus</a>
+<ul>
+<li><a href="#single-variate-derivatives">Single variate derivatives</a></li>
+<li><a href="#the-gradient-operator">The Gradient Operator</a></li>
+<li><a href="#gradients-over-vector-fields">Gradients over vector fields</a></li>
+<li><a href="#higher-order-operators">Higher Order Operators</a></li>
+<li><a href="#finding-extrema">Finding Extrema</a></li>
+<li><a href="#subgradients">Subgradients</a></li>
+<li><a href="#some-useful-techniques">Some useful techniques</a></li>
+<li><a href="#derivatives-of-common-functions">Derivatives of common functions</a></li>
+</ul>
+</li>
+<li><a href="#CFMLR:INT">Integral Calculus</a>
+<ul>
+<li><a href="#riemmanian-sums">Riemmanian sums</a></li>
+<li><a href="#line-integrals--riemmanian-integrals">Line Integrals (Riemmanian Integrals)</a></li>
+<li><a href="#fundamental-theorem-of-calculus">Fundamental Theorem of Calculus</a></li>
+<li><a href="#anti-derivative">&ldquo;Anti-derivative&rdquo;</a></li>
+<li><a href="#useful-techniques">Useful techniques</a></li>
+</ul>
+</li>
+<li><a href="#CFMLR:ML">Calculus for Machine Learning</a>
+<ul>
+<li><a href="#critical-points-and-optimization">Critical Points and Optimization</a></li>
+<li><a href="#projection">Projection</a></li>
+<li><a href="#probability">Probability</a></li>
+<li><a href="#deep-learning">Deep Learning</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!--endtoc-->
+<p>\( \newcommand{\states}{\mathcal{S}}
 \newcommand{\actions}{\mathcal{A}}
 \newcommand{\observations}{\mathcal{O}}
 \newcommand{\rewards}{\mathcal{R}}
@@ -298,8 +338,6 @@
 <dt>tags</dt>
 <dd><a href="/braindump/math/">Math</a></dd>
 </dl>
-<p>source
-:</p>
 <h2 id="introduction">Introduction</h2>
 <p>Calculus is a large subject, and a subject with many interpretations and derivations. Instead of trying to cover all such interpretations, we will look at a more geometric based interpretation with some intuition derived from a physical perspective. It is my hard felt belief that many of these topics are fully realized and appreciated in the study of physical systems (either classical mechanics or electrostatics/electrodynamics). While I could have created this page of notes entirely from the perspective of a physicist, tackling the more general interpretations and forms of these constructs is more useful for the typical machine learning researcher.</p>
 <p>In these notes, I assume you have been exposed to several concepts in mathematics:</p>
@@ -352,7 +390,7 @@
 <p>This is the exact definition of a derivative, and we can state</p>
 <p>\[\frac{d f(t)}{dt} = f^\prime(t) = \dot{f}(t) = \lim_{dt \rightarrow 0} \frac{f(t+dt)-f(t)}{dt}. \]</p>
 <aside>
-<p>\textbf{A Note on Notation}: We will mostly be using Leibniz&rsquo;s notation (\(\frac{d f(t)}{dt}\)) as this easily transitions to higher dimensional functions. But it would be good to know several notation conventions exist and are widely used:</p>
+<p><strong>A Note on Notation</strong>: We will mostly be using Leibniz&rsquo;s notation (\(\frac{d f(t)}{dt}\)) as this easily transitions to higher dimensional functions. But it would be good to know several notation conventions exist and are widely used:</p>
 <ul>
 <li>Newton Notation: \(\dot{f}(t) \defeq \frac{d f(t)}{dt}\)</li>
 <li>Lagrange Notation: \(f^\prime(t) \defeq \frac{d f(t)}{dt}\)</li>
@@ -373,8 +411,8 @@
 <p>Another way of thinking about a derivative is to consider \(dx\) as some perturbation to our function \(f(x)\). The derivative tells us for a given input \(x\), how \(f(x)\) will vary over these perturbations (i.e. how f(x) will vary along the tangent line). This is an incredibly useful value for machine learning as we will see later, and tells us the best search direction in optimizing our function approximators.</p>
 </aside>
 <p>We can now make this a little bit more formal (although we have covered all the important bits above).</p>
-<div class="definition">
-<p><strong>Derivative:</strong> Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
+<div title="Derivative" class="definition">
+<p>Given a continuous, smooth function \(f: \reals \mapsto \reals\). We say \(f(x)\) is differentiable at \(x=a\) if and only if
 \[\lim_{dx-&gt;0^-} \frac{f(a+dx) - f(a)}{dx} = \lim_{dx-&gt;0^+} \frac{f(a+dx) - f(a)}{dx}.\]</p>
 <p>We say \(f(x)\) is of differentiability class \(C^{k&gt;1}\) if it is differentiable at all \(a \in domain(f)\). We define the derivative with respect to its input \(x\) as:
 \[\frac{d f(x)}{dx} = \lim_{dx-&gt;0} \frac{f(x+dx) - f(x)}{dx}\]</p>
@@ -385,12 +423,12 @@
 <p>Second order single-variate derivatives</p>
 <p>We know now that the derivative of a function is the instantaneous rate of change, or in the physical context the derivative of an object&rsquo;s position function is the velocity of the object. The next question we should ask is &ldquo;what happens if I take the derivative again?&rdquo; Well, the answer is quite straightforward: the derivative of the velocity is the instantaneous rate of change of the velocity at time t or the acceleration.</p>
 <p>If we vary the parameter of our function \(f(t)\) from left to right, the double derivative gives us a sense of the trend of the function. If the double derivative is positive we would expect the velocity of our function to be increasing meaning our function should eventually be heading towards positive infinity. The inverse is true when the double derivative is negative. In more concrete terms, the second derivative is measuring the <strong>concavity</strong> of our function.</p>
- <div class="definition">
-<p>\textbf{Concavity} The concavity (or convexity) of a function is an important concept for machine learning and optimization.</p>
+ <div title="Concavity" class="definition">
+<p>The concavity (or convexity) of a function is an important concept for machine learning and optimization.</p>
  </div>
 <p>We can determine if our function \(f(x)\) is concave up (convex) or concave down  at any point in its domain \(x^\prime\) using the value of the second derivative. This is a very simple procedure: if the second derivative is positive \(\frac{d^2 f(x^\prime)}{dx^2} &gt; 0\) then the function is concave up (also known as convex), if the second derivative is negative \(\frac{d^2 f(x^\prime)}{dx^2} &lt; 0\) the second derivative is concave down. What if the second derivative is zero \(\frac{d^2 f(x^\prime)}{dx^2} = 0\)?</p>
- <div class="definition">
-<p>\textbf{Inflection point} any point where the second derivative of our function is zero and there is a sign change. A bit more formally with \(\epsilon\) as a small positive real number, \(x^\prime\) is an inflection point of a function \(f(x)\) if</p>
+ <div title="Inflection Point" class="definition">
+<p>An inflection point is any point where the second derivative of our function is zero and there is a sign change. A bit more formally with \(\epsilon\) as a small positive real number, \(x^\prime\) is an inflection point of a function \(f(x)\) if</p>
 <p>\begin{align*}
 &amp;\frac{d^2 f(x^\prime)}{dx^2} = 0 \\
 &amp;sign(\frac{d^2 f(x^\prime + \epsilon)}{dx^2}) \neq sign(\frac{d^2 f(x^\prime - \epsilon)}{dx^2})
@@ -433,8 +471,8 @@
 <p>\[\nabla \defeq \begin{bmatrix} \partialderiv{}{x_1}\\ \vdots \\ \partialderiv{}{x_n} \end{bmatrix}\]</p>
 <h3 id="gradients-over-vector-fields">Gradients over vector fields</h3>
 <p>The functions we have been considering thus far have been <strong>scalar fields</strong> where \(f: A \subset \reals^n \rightarrow \reals\). Now that we know how gradients work over scalar functions, we will look at how gradients will work over vector fields.</p>
-<div class="definition">
-<p>\textbf{Vector Fields}: a \textbf{vector field} in \(\reals^n\) is a map \(\mathbf{F}: A \subset \reals^n \mapsto \reals^n\) that assigns to each point \(\xvec\) in its domain A a vector \(\mathbf{F}(\xvec)\). If n = 2, \(\mathbf{F}\) is called a \textbf{vector field in the plane}, and if n=3, \(\mathbf{F}\) is a \textbf{vector field in space}.</p>
+<div title="Vector Field" class="definition">
+<p>A <strong>vector field</strong> in \(\reals^n\) is a map \(\mathbf{F}: A \subset \reals^n \mapsto \reals^n\) that assigns to each point \(\xvec\) in its domain A a vector \(\mathbf{F}(\xvec)\). If n = 2, \(\mathbf{F}\) is called a \textbf{vector field in the plane}, and if n=3, \(\mathbf{F}\) is a \textbf{vector field in space}.</p>
 <p>We have already covertly encountered a vector field in these notes! Specifically, the gradient of any scalar function is a vector field over the domain of the scalar function!</p>
 </div>
 <aside>

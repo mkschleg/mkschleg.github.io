@@ -54,8 +54,8 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-14T12:49:01-06:00">
-  <meta property="article:modified_time" content="2022-10-14T12:49:01-06:00">
+  <meta property="article:published_time" content="2022-10-18T09:08:56-06:00">
+  <meta property="article:modified_time" content="2022-10-18T09:08:56-06:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-14 12:49:01 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 14, 2022
+    <time datetime="2022-10-18 09:08:56 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 18, 2022
     </time>
   </span>
 
@@ -585,11 +585,23 @@ This is a non-differential point in the function. Here we can use a <a href="/br
 </ul>
 <!--list-separator-->
 <ul>
-<li>How do we estimate the value of an integral?</li>
+<li>
+<p>How do we estimate the value of an integral?</p>
+<ul>
+<li>Riemman sum</li>
+</ul>
+</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>Fundamental theorem of calculus</li>
+<li>
+<p>Fundamental theorem of calculus</p>
+ <div title="Fundamental Theorem of Calculus" class="theorem">
+<p>If \(f(x)\) is continuous over an interval \([a, b]\), and the function \(F(x)\) is defined by
+\[F(x) = \int_a^b f(t) dt, \]</p>
+<p>then \(\frac{d}{dx} F(x) = f(x)\) over interval \([a, b]\).</p>
+ </div>
+</li>
 </ul>
 <h2 id="linear-algebra">Linear Algebra</h2>
 <p>Linear algebra is the study of linear maps on finite-dimensional vector spaces. While this section covers some basics, a more detailed set of notes can be found in <a href="/braindump/linear_algebra/">Linear Algebra</a>.</p>
@@ -624,12 +636,58 @@ x_n\\
 \]</p>
 <p>with the usual coordinate <a href="/braindump/linear_algebra/#bases--linear-algebra">basis</a>.</p>
 <h3 id="questions">Questions</h3>
+<!--list-separator-->
 <ul>
-<li>Different properties of a matrix</li>
-<li>What is a cross product</li>
-<li>What is linear independence</li>
-<li>What is an eigenvector and an eigenvalue</li>
+<li>
+<p>Different properties of a matrix</p>
+<p>The properties of a matrix include:</p>
+<ul>
+<li>Definiteness</li>
+<li>Diagonality</li>
+<li>Upper or Lower Triangular</li>
+<li>block matrices</li>
+<li>Eigenvalues</li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is a cross product</p>
+<p>The cross product between two vectors</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is linear independence</p>
+<p>A set of vectors are said to be linearly independent if there is no non-trivial linear combination which results in the zero vector.
+\[
+\sum_i a_i \vvec_i = 0 \quad \text{Where $a_i \neq 0 \exists i$}
+\]</p>
+<p>This means that there is one, say \(a_1\neq0\), scalar not equal to zero. Which means we can trivially rewrite the equation above:
+\[
+\vvec_1 = \sum_{i=2}^n a_i \vvec_i
+\]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>What is an eigenvector and an eigenvalue</p>
+<p>An eigenspace of a matrix \(E_\lambda(\Mmat)\) is a vector space which contains the vectors (eigenvectors) which are scaled but not rotated by the linear transformation represented by \(Mmat\). Specifically,
+\[
+\Mmat\vvec = \lambda\vvec
+\]</p>
+<p>Above \(\vvec\) is called an eigenvector of \(\Mmat\) and \(\lambda\) is an eigenvalue (which is the amount the linear transform scales \(\vvec\)).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
 <li>SVD</li>
+</ul>
+<!--list-separator-->
+<ul>
 <li>Inverse of a matrix, Pseudo inverse of a matrix</li>
 </ul>
 <h2 id="misc-math-concepts">Misc Math Concepts</h2>

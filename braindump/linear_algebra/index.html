@@ -54,8 +54,8 @@
   <meta property="og:title" content="Linear Algebra | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-13T12:06:25-06:00">
-  <meta property="article:modified_time" content="2022-10-13T12:06:25-06:00">
+  <meta property="article:published_time" content="2022-10-18T08:52:59-06:00">
+  <meta property="article:modified_time" content="2022-10-18T08:52:59-06:00">
   
 
   <title>Linear Algebra | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-13 12:06:25 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 13, 2022
+    <time datetime="2022-10-18 08:52:59 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 18, 2022
     </time>
   </span>
 
@@ -338,6 +338,31 @@
 <p>\[\langle e_i, \theta^j \rangle = \delta^j_i \quad \triangleright \delta^j_i \text{ is the Kronecker delta function}\].</p>
 <p>Notation gets a bit confusing in higher order linear algebra and tensor algebra. Typically, I will attempt to denote an index of the cobasis as an upstairs index while the basis as a downstairs index.</p>
 <h2 id="bases--linear-algebra">Bases (Linear Algebra)</h2>
+<h2 id="vector-operations">Vector operations</h2>
+<h3 id="dot-product">Dot Product</h3>
+<p>The dot product between two vectors
+\[\vvec \cdot \wvec = \sum_i \vvec_i \wvec_i\]
+and can also be thought of as
+\[\lVert\vvec\rVert \lVert\wvec\rVert cos(\theta)\]
+where \(\theta\) is the angle between the two vectors. The angle can be found through
+\[
+\theta = \text{arccos}(\frac{\vvec \cdot \wvec}{\lVert\wvec\rVert \lVert\vvec\rVert})
+\]</p>
+<h3 id="cross-product">Cross Product</h3>
+<p>The cross product between two vectors in \(\reals^3\) under the canonical basis.
+\[
+\vvec \times \wvec = \begin{bmatrix}
+(\vvec_2\wvec_3 - \vvec_3\wvec_2) \\
+(\vvec_1\wvec_3 - \vvec_3\wvec_1) \\
+(\vvec_1\wvec_2 - \vvec_2\wvec_1)
+\end{bmatrix}
+\]</p>
+<p>It can also be through of more formally as a determinant of the matrix</p>
+<p>\begin{vmatrix}
+\ivec &amp; \jvec &amp; \kvec \\
+\vvec_1 &amp; \vvec_2 &amp; \vvec _3 \\
+\wvec_1 &amp; \wvec_2 &amp; \wvec_3
+\end{vmatrix}</p>
 <h2 id="matrices">Matrices</h2>
 <p>We first start from a set of linear equations, to build up intuition about what a matrix is representing. We will then move to a more general case and discuss operations of matrices</p>
 <h3 id="from-eqns-to-a-matrix">From Eqns to a Matrix</h3>
