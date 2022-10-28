@@ -54,8 +54,8 @@
   <meta property="og:title" content="SVD | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:24:33-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:24:33-06:00">
+  <meta property="article:published_time" content="2022-10-28T14:53:15-06:00">
+  <meta property="article:modified_time" content="2022-10-28T14:53:15-06:00">
   
 
   <title>SVD | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:24:33 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2022-10-28 14:53:15 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 28, 2022
     </time>
   </span>
 
@@ -343,14 +343,14 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
 </span></span><span style="display:flex;"><span>clrs <span style="color:#f92672">=</span> [mk_color(d_circ[<span style="color:#f92672">:</span>, i]) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(d_circ, <span style="color:#ae81ff">2</span>)]
 </span></span><span style="display:flex;"><span>plot_data(d_circ, clrs)
-</span></span></code></pre></div><figure><img src="/ox-hugo/d64bd40bfcb12b2907ce44901602ab2bc357fed0.svg"/>
+</span></span></code></pre></div><figure><img src="/ox-hugo/svd-data.svg"/>
 </figure>
 
 <p>Below we plot the full linear transformation.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
 </span></span><span style="display:flex;"><span>d_trans <span style="color:#f92672">=</span> M<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_trans, clrs)
-</span></span></code></pre></div><figure><img src="/ox-hugo/5b02fccc9c7f0f4e8ae44453a5faf3556405d2c2.svg"/>
+</span></span></code></pre></div><figure><img src="/ox-hugo/svd-transform.svg"/>
 </figure>
 
 <p>We now use julia to find the decomposition of our matrix \(M\).</p>
@@ -371,20 +371,20 @@
 </span></span></code></pre></div><p>With the decomposition created, we can now go through each operation in order. The first is \(\Vmat^*\) as a rotation.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_Vt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_Vt, clrs)
-</span></span></code></pre></div><figure><img src="/ox-hugo/11294d91b21e72ed86d3741978c750a86dc7304e.svg"/>
+</span></span></code></pre></div><figure><img src="/ox-hugo/svd-vt.svg"/>
 </figure>
 
 <p>Then \(\Sigmamat\) is a scaling along the new axis determined by the rotation from \(\Vmat^*\).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>Σ <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>diagm(M_svd<span style="color:#f92672">.</span>S)
 </span></span><span style="display:flex;"><span>d_ΣVt <span style="color:#f92672">=</span> Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_ΣVt, clrs)
-</span></span></code></pre></div><figure><img src="/ox-hugo/3dd1732098671bf7ea059b0d1f4f52bd45a824bd.svg"/>
+</span></span></code></pre></div><figure><img src="/ox-hugo/svd-sigvt.svg"/>
 </figure>
 
 <p>Finally, \(\Umat\) rotates the new scaled data to its final position.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_UΣVt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>U<span style="color:#f92672">*</span>Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_UΣVt, clrs)
-</span></span></code></pre></div><figure><img src="/ox-hugo/06c968fe0b8b3e53cc62d4559e2516627df30305.svg"/>
+</span></span></code></pre></div><figure><img src="/ox-hugo/svd-usigvt.svg"/>
 </figure>
 
 
@@ -415,9 +415,9 @@
    
 
    
-      
-   
 
+   
+      
    
 
    
