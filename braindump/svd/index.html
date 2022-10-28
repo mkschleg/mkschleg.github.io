@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/svd.md%29%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/svd/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/svd/">
+  <meta property="og:title" content="SVD | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2022-10-27T20:24:33-06:00">
+  <meta property="article:modified_time" content="2022-10-27T20:24:33-06:00">
+  
+
+  <title>SVD | Matthew Schlegel</title>
+
+  
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/svd/">SVD</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2022-10-27 20:24:33 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 27, 2022
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/linear_algebra/">Linear Algebra</a></dd>
+</dl>
+<p>Singular value decomposition (SVD) is a <a href="/braindump/linear_algebra/#matrix-factorizations">matrix factorization</a>. It generalizes <a href="/braindump/eigendecomposition/#eigendecomposition">eigendecomposition</a> of a square normal matrix to any complex matrix \(\Mmat \in \complexs^{m\times n} \). Specifically, it is a factorization of the form</p>
+<p>\[\Mmat = \Umat\boldsymbol{\Sigma}\Vmat^*.\]</p>
+<ul>
+<li>\(\Umat\) is a <a href="/braindump/linear_algebra/#unitary-matrix">complex unitary matrix</a>.</li>
+<li>\(\Sigmamat\) is a \(m\times n\) <a href="/braindump/linear_algebra/#diagonal-matrix">rectangular diagonal matrix</a> with non-negative real numbers on the diagonal.</li>
+<li>\(\Vmat\) is a  <a href="/braindump/linear_algebra/#unitary-matrix">complex unitary matrix</a>.</li>
+</ul>
+<p>This decomposition always exists for any complex rectangular matrix.</p>
+<h2 id="rotation-coordinate-scaling-and-reflection">Rotation, Coordinate Scaling, and reflection</h2>
+<p>One nice interpretation of singular value decomposition is as a series of rotations scalings. Every matrix can be seen as a linear function on a vector. To visualize this we will use julia and a random linear transform matrix \(M\).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Plots
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> LinearAlgebra<span style="color:#f92672">:</span> LinearAlgebra, svd
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Random
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> plot_data(dat, clrs)
+</span></span><span style="display:flex;"><span>    Plots<span style="color:#f92672">.</span>scatter([(dd[<span style="color:#ae81ff">1</span>], dd[<span style="color:#ae81ff">2</span>]) <span style="color:#66d9ef">for</span> dd <span style="color:#66d9ef">in</span> eachcol(dat)], color<span style="color:#f92672">=</span>clrs, xlim<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.5</span>), ylim<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), legend<span style="color:#f92672">=</span>false)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>plot_data (generic function with 1 method)
+</span></span></code></pre></div><p>Below we construct the data used in the shape of a circle to make the scaling and rotations very clear. We color each quadrant a different color to get the full effect.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>rng <span style="color:#f92672">=</span> Random<span style="color:#f92672">.</span>Xoshiro(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5000</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">.-</span> <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>ids <span style="color:#f92672">=</span> (d[<span style="color:#ae81ff">1</span>, <span style="color:#f92672">:</span>]<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">.+</span> d[<span style="color:#ae81ff">2</span>, <span style="color:#f92672">:</span>]<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">.&lt;=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>d_circ <span style="color:#f92672">=</span> d[<span style="color:#f92672">:</span>, ids]
+</span></span><span style="display:flex;"><span>mk_color(dt) <span style="color:#f92672">=</span> <span style="color:#66d9ef">begin</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> dt[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.0</span> <span style="color:#f92672">&amp;&amp;</span> dt[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">:green</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elseif</span> dt[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.0</span> <span style="color:#f92672">&amp;&amp;</span> dt[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">:yellow</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elseif</span> dt[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.0</span> <span style="color:#f92672">&amp;&amp;</span> dt[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">:blue</span>
+</span></span><span style="display:flex;"><span>    else
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span>red
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>clrs <span style="color:#f92672">=</span> [mk_color(d_circ[<span style="color:#f92672">:</span>, i]) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(d_circ, <span style="color:#ae81ff">2</span>)]
+</span></span><span style="display:flex;"><span>plot_data(d_circ, clrs)
+</span></span></code></pre></div><figure><img src="/ox-hugo/d64bd40bfcb12b2907ce44901602ab2bc357fed0.svg"/>
+</figure>
+
+<p>Below we plot the full linear transformation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>d_trans <span style="color:#f92672">=</span> M<span style="color:#f92672">*</span>d_circ
+</span></span><span style="display:flex;"><span>plot_data(d_trans, clrs)
+</span></span></code></pre></div><figure><img src="/ox-hugo/5b02fccc9c7f0f4e8ae44453a5faf3556405d2c2.svg"/>
+</figure>
+
+<p>We now use julia to find the decomposition of our matrix \(M\).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M_svd <span style="color:#f92672">=</span> svd(M)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LinearAlgebra.SVD{Float64, Float64, Matrix{Float64}, Vector{Float64}}
+</span></span><span style="display:flex;"><span>U factor:
+</span></span><span style="display:flex;"><span>2×2 Matrix{Float64}:
+</span></span><span style="display:flex;"><span> -0.864209  -0.503132
+</span></span><span style="display:flex;"><span> -0.503132   0.864209
+</span></span><span style="display:flex;"><span>singular values:
+</span></span><span style="display:flex;"><span>2-element Vector{Float64}:
+</span></span><span style="display:flex;"><span> 1.2239572979398925
+</span></span><span style="display:flex;"><span> 0.40347199419954716
+</span></span><span style="display:flex;"><span>Vt factor:
+</span></span><span style="display:flex;"><span>2×2 Matrix{Float64}:
+</span></span><span style="display:flex;"><span> -0.701446  -0.712723
+</span></span><span style="display:flex;"><span>  0.712723  -0.701446
+</span></span></code></pre></div><p>With the decomposition created, we can now go through each operation in order. The first is \(\Vmat^*\) as a rotation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_Vt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
+</span></span><span style="display:flex;"><span>plot_data(d_Vt, clrs)
+</span></span></code></pre></div><figure><img src="/ox-hugo/11294d91b21e72ed86d3741978c750a86dc7304e.svg"/>
+</figure>
+
+<p>Then \(\Sigmamat\) is a scaling along the new axis determined by the rotation from \(\Vmat^*\).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>Σ <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>diagm(M_svd<span style="color:#f92672">.</span>S)
+</span></span><span style="display:flex;"><span>d_ΣVt <span style="color:#f92672">=</span> Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
+</span></span><span style="display:flex;"><span>plot_data(d_ΣVt, clrs)
+</span></span></code></pre></div><figure><img src="/ox-hugo/3dd1732098671bf7ea059b0d1f4f52bd45a824bd.svg"/>
+</figure>
+
+<p>Finally, \(\Umat\) rotates the new scaled data to its final position.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_UΣVt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>U<span style="color:#f92672">*</span>Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
+</span></span><span style="display:flex;"><span>plot_data(d_UΣVt, clrs)
+</span></span></code></pre></div><figure><img src="/ox-hugo/06c968fe0b8b3e53cc62d4559e2516627df30305.svg"/>
+</figure>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

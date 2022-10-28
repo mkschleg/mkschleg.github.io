@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.102.1" />
+  <meta name="generator" content="Hugo 0.104.3" />
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -54,8 +54,8 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-18T09:08:56-06:00">
-  <meta property="article:modified_time" content="2022-10-18T09:08:56-06:00">
+  <meta property="article:published_time" content="2022-10-28T14:00:06-06:00">
+  <meta property="article:modified_time" content="2022-10-28T14:00:06-06:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-18 09:08:56 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 18, 2022
+    <time datetime="2022-10-28 14:00:06 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 28, 2022
     </time>
   </span>
 
@@ -238,7 +238,12 @@
 </li>
 <li><a href="#linear-algebra">Linear Algebra</a>
 <ul>
-<li><a href="#questions">Questions</a></li>
+<li><a href="#different-properties-of-a-matrix">Different properties of a matrix</a></li>
+<li><a href="#what-is-a-cross-product">What is a cross product</a></li>
+<li><a href="#what-is-linear-independence">What is linear independence</a></li>
+<li><a href="#what-is-an-eigenvector-and-an-eigenvalue">What is an eigenvector and an eigenvalue</a></li>
+<li><a href="#svd">SVD</a></li>
+<li><a href="#inverse-of-a-matrix-pseudo-inverse-of-a-matrix">Inverse of a matrix, Pseudo inverse of a matrix</a></li>
 </ul>
 </li>
 <li><a href="#misc-math-concepts">Misc Math Concepts</a></li>
@@ -250,11 +255,12 @@
 <li><a href="#turing-machine-tape-and-turing-complete">Turing machine, tape, and turing complete</a></li>
 <li><a href="#p-np-p-np">P, NP, P=NP</a></li>
 <li><a href="#stack-vs-heap">stack vs heap</a></li>
-<li><a href="#hash-tables">hash tables</a></li>
-<li><a href="#data-structures">Data Structures</a></li>
+<li><a href="#hash-tables">Hash Tables</a></li>
+<li><a href="#other-data-structures">Other Data Structures</a></li>
 <li><a href="#dynamic-programming">dynamic programming</a></li>
 <li><a href="#threads-vs-processes">Threads vs Processes</a></li>
 <li><a href="#compiled-interpreted-and-jit-oh-my">Compiled, Interpreted, and JIT oh my</a></li>
+<li><a href="#reading-stack-traces">Reading Stack-traces</a></li>
 <li><a href="#questions">Questions</a></li>
 </ul>
 </li>
@@ -265,8 +271,29 @@
 <li><a href="#julia">Julia</a></li>
 </ul>
 </li>
-<li><a href="#machine-learning">Machine Learning</a></li>
-<li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+<li><a href="#machine-learning">Machine Learning</a>
+<ul>
+<li><a href="#supervised-self-supervised-semi-supervised-unsupervised-learning">Supervised, self-supervised, semi-supervised, unsupervised learning</a></li>
+<li><a href="#linear-regression">Linear Regression</a></li>
+<li><a href="#logistic-regression">Logistic Regression</a></li>
+<li><a href="#gradient-descent">Gradient Descent</a></li>
+<li><a href="#convergence-guarantees">Convergence Guarantees</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#bias-and-variance-in-learning">Bias and variance in learning</a></li>
+<li><a href="#generalization">Generalization</a></li>
+<li><a href="#over-fitting-and-under-fitting">Over-fitting and Under-fitting</a></li>
+<li><a href="#regularization">Regularization</a></li>
+<li><a href="#evaluating-methods">Evaluating methods</a></li>
+<li><a href="#support-vector-machines">Support Vector Machines</a></li>
+<li><a href="#kernel-methods">Kernel Methods</a></li>
+<li><a href="#artificial-neural-networks">Artificial Neural Networks</a></li>
+<li><a href="#boosting-and-bagging">Boosting and bagging</a></li>
+<li><a href="#ensemble-methods">Ensemble methods</a></li>
+<li><a href="#advanced-neural-network-examples">Advanced Neural Network Examples</a></li>
+<li><a href="#questions">Questions</a></li>
+</ul>
+</li>
+<li><a href="#RL">Reinforcement Learning</a></li>
 <li><a href="#hr-personality-interviews">HR/personality Interviews</a></li>
 <li><a href="#research-topics">Research Topics</a></li>
 <li><a href="#potential-interview-questions">Potential Interview Questions</a></li>
@@ -302,15 +329,21 @@
 \newcommand{\cvec}{\mathbf{c}}
 \newcommand{\dvec}{\mathbf{d}}
 \newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
 \newcommand{\gvec}{\mathbf{g}}
 \newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
 \newcommand{\lvec}{\mathbf{l}}
 \newcommand{\mvec}{\mathbf{m}}
 \newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
 \newcommand{\pvec}{\mathbf{p}}
 \newcommand{\qvec}{\mathbf{q}}
 \newcommand{\rvec}{\mathbf{r}}
 \newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
 \newcommand{\uvec}{\mathbf{u}}
 \newcommand{\vvec}{\mathbf{v}}
 \newcommand{\wvec}{\mathbf{w}}
@@ -343,12 +376,15 @@
 \newcommand{\Xmat}{\mathbf{X}}
 \newcommand{\Ymat}{\mathbf{Y}}
 \newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
 \newcommand{\sigmavec}{\boldsymbol{\sigma}}
 \newcommand{\jacobian}{\mathbf{J}}
 \newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
 \)</p>
 <p>This document is meant as a source to review material for studying for machine learning interviews. I&rsquo;m hoping the construction of this document will help in reviewing the basics, and fortify the foundations of my own notebase.</p>
 <h2 id="probability">Probability</h2>
@@ -543,7 +579,7 @@ where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \fr
 </li>
 <li>
 <p>\(x = 0\)
-This is a non-differential point in the function. Here we can use a <a href="/braindump/calculus/#differential-calculus">subderivative</a> at the differential point. We choose to include this with the first part of the function where the derivative is
+This is a non-differential point in the function. Here we can use a <a href="/braindump/calculus/#subgradients">subderivative</a> at the differential point. We choose to include this with the first part of the function where the derivative is
 \[\frac{d}{dx}relu(x=0)=0.\]</p>
 </li>
 <li>
@@ -635,11 +671,7 @@ x_n\\
 \end{matrix}
 \]</p>
 <p>with the usual coordinate <a href="/braindump/linear_algebra/#bases--linear-algebra">basis</a>.</p>
-<h3 id="questions">Questions</h3>
-<!--list-separator-->
-<ul>
-<li>
-<p>Different properties of a matrix</p>
+<h3 id="different-properties-of-a-matrix">Different properties of a matrix</h3>
 <p>The properties of a matrix include:</p>
 <ul>
 <li>Definiteness</li>
@@ -648,19 +680,9 @@ x_n\\
 <li>block matrices</li>
 <li>Eigenvalues</li>
 </ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>What is a cross product</p>
+<h3 id="what-is-a-cross-product">What is a cross product</h3>
 <p>The cross product between two vectors</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>What is linear independence</p>
+<h3 id="what-is-linear-independence">What is linear independence</h3>
 <p>A set of vectors are said to be linearly independent if there is no non-trivial linear combination which results in the zero vector.
 \[
 \sum_i a_i \vvec_i = 0 \quad \text{Where $a_i \neq 0 \exists i$}
@@ -669,27 +691,23 @@ x_n\\
 \[
 \vvec_1 = \sum_{i=2}^n a_i \vvec_i
 \]</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>What is an eigenvector and an eigenvalue</p>
-<p>An eigenspace of a matrix \(E_\lambda(\Mmat)\) is a vector space which contains the vectors (eigenvectors) which are scaled but not rotated by the linear transformation represented by \(Mmat\). Specifically,
+<h3 id="what-is-an-eigenvector-and-an-eigenvalue">What is an eigenvector and an eigenvalue</h3>
+<p>An <a href="/braindump/eigendecomposition/">eigenspace</a> of a matrix \(E_\lambda(\Mmat)\) is a vector space which contains the vectors (eigenvectors) which are scaled but not rotated by the linear transformation represented by \(Mmat\). Specifically,
 \[
 \Mmat\vvec = \lambda\vvec
 \]</p>
 <p>Above \(\vvec\) is called an eigenvector of \(\Mmat\) and \(\lambda\) is an eigenvalue (which is the amount the linear transform scales \(\vvec\)).</p>
-</li>
-</ul>
-<!--list-separator-->
+<h3 id="svd">SVD</h3>
+<p><a href="/braindump/svd/">SVD</a> is a <a href="/braindump/linear_algebra/#matrix-factorizations">matrix decomposition</a> which exists for all rectangular matrices. It decomposes a matrix into three components:
+\[\Mmat = \Umat\Sigmamat\Vmat^*\]
+where \(\Vmat^*\) is the <a href="/braindump/linear_algebra/#matrix-transpose">conjugate transpose</a> of \(\Vmat\) (for real matrices \(\Vmat^* = \Vmat^\trans\)).</p>
 <ul>
-<li>SVD</li>
+<li>\(\Umat\) is a <a href="/braindump/linear_algebra/#unitary-matrix">complex unitary matrix</a>.</li>
+<li>\(\Sigmamat\) is a \(m\times n\) <a href="/braindump/linear_algebra/#diagonal-matrix">rectangular diagonal matrix</a> with non-negative real numbers on the diagonal.</li>
+<li>\(\Vmat\) is a  <a href="/braindump/linear_algebra/#unitary-matrix">complex unitary matrix</a>.</li>
 </ul>
-<!--list-separator-->
-<ul>
-<li>Inverse of a matrix, Pseudo inverse of a matrix</li>
-</ul>
+<p>Nice to think about properties of matrices in terms of their SVD decomposition.</p>
+<h3 id="inverse-of-a-matrix-pseudo-inverse-of-a-matrix">Inverse of a matrix, Pseudo inverse of a matrix</h3>
 <h2 id="misc-math-concepts">Misc Math Concepts</h2>
 <ul>
 <li>Monte Carlo methods to approximate \(\pi\).</li>
@@ -698,21 +716,102 @@ x_n\\
 <h2 id="computer-science">Computer Science</h2>
 <h3 id="sorting-algorithms">Sorting Algorithms</h3>
 <ul>
-<li>Merge Sort</li>
-<li>qsort</li>
+<li>
+<p>Merge Sort</p>
+<p>Merge sort uses the principle of divide and conquer. Where we break apart the list into a series of smaller lists to sort and then merge together. The steps are as follows:</p>
+<ol>
+<li>Divide the unsorted list into n sublists, each containing one element.</li>
+<li>Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.</li>
+</ol>
+<figure><img src="/ox-hugo/Merge-sort-example.gif"
+             alt="Figure 1: Merge Sort in action"/><figcaption>
+                <p><span class="figure-number">Figure 1: </span>Merge Sort in action</p>
+            </figcaption>
+    </figure>
+
+<p>There is another variant of merge sort called <strong>natural merge sort</strong> where which dividing the list you maintain sublists that are already sorted. This variant is said to be runs-optimal.</p>
+<p>The merge sort algorithm has an average and worst-case performance of \(\bigoh(n \log n)\)</p>
+</li>
+<li>
+<p>quicksort</p>
+<p>Quicksort is an in-place sorting algorithm. The procedure is as follows:</p>
+<ol>
+<li>If the range has fewer than two elements, return immediately.</li>
+<li>Pick a value, called a pivot, that occurs in the range (exact method depends on the routine, and can involve randomness)</li>
+<li>Partition the range: reorder its elements so that all elements with values less than the pivot come before the division, while all elements with value greater than the pivot come after.</li>
+<li>Recursively apply the quicksort to the sub-range up to the point of division and to the sub-range after it.</li>
+</ol>
+<figure><img src="/ox-hugo/Quicksort-example.gif"
+             alt="Figure 2: Quicksort in action! (From wikipedia)"/><figcaption>
+                <p><span class="figure-number">Figure 2: </span>Quicksort in action! (From wikipedia)</p>
+            </figcaption>
+    </figure>
+
+<p>Worst-case of this algorithm is when the most unbalanced partition occurs (i.e. when the list is sorted, or reverse sorted). This will result in \(\bigoh(n^2)\). The average case is \(\bigoh(n \log n)\) and the best case is \(\Omega(n)\).</p>
+</li>
+</ul>
+<!--listend-->
+<ul>
 <li>push sort</li>
 </ul>
 <h3 id="big-oh-analysis">Big-Oh analysis</h3>
 <p>Look for loops!</p>
 <h3 id="halting-problem">Halting Problem</h3>
+<p>This is the problem of determining, from a description of an arbitrary computer program and an input, whether the program will finish running or continue to run forever. This is a decision problement about the properties of computer programs on a fixed turing-complete model of computation (i.e. all programs that can be written in some given programming language that is general enough to be equivalent to a Turing machine).</p>
 <h3 id="turing-machine-tape-and-turing-complete">Turing machine, tape, and turing complete</h3>
+<p>A system of data manipulation tools is said to be Turing complete if it can be used to simulate any Turing machine. A Turing machine is an abstract model of computation which uses a finite set of instructions to manipulate an infinite tape. On the tape are symbols which are manipulated through read and write instructions, one at a time.</p>
+<p>More specifically a Turing machine contains:</p>
+<ul>
+<li>A <strong>tape</strong> divided into cells, one next to eachother, with each cell containing a symbol from a finite alphabet.</li>
+<li>A <strong>head</strong> that can read and write to a cell on the tape and move the tape left or right.</li>
+<li>A <strong>state register</strong> which stores the state of the turing machine (which is from a finite set of states)</li>
+<li>A <strong>finite table of instructions</strong>.</li>
+</ul>
 <h3 id="p-np-p-np">P, NP, P=NP</h3>
+<p>The general class of questions in which an algorithm can give an answer in polynomial time is &ldquo;<strong>P</strong>&rdquo; or &ldquo;<strong>class P</strong>&rdquo;. The class of questions in which an answer can be verified in polynomial time, but no algorithm is known to exist which provides an answer in polynomial time is known as &ldquo;<strong>nondeterministic polynomial time</strong>&rdquo; or <strong>NP</strong>.</p>
+<p>It is unknown if P=NP, and is an open question in theoretical computation. It is widely believed that P\(\neq\)NP, but a proof has yet to be discovered.</p>
+<p><strong>NP-complete</strong> problems are the set of NP problems who can be reduced to any other NP problem and whose answer is still verifiable in polynomial time. NP-hard problems are those whose verification may not be polynomial. All NP problems can be reduced to NP-hard problems.</p>
 <h3 id="stack-vs-heap">stack vs heap</h3>
-<h3 id="hash-tables">hash tables</h3>
-<h3 id="data-structures">Data Structures</h3>
+<p>The stack is a part of the computer&rsquo;s memory which stores temporary variables created by a function. This storage is temporary, and when exiting the scope of a function the data will be deleted. A heap is used to store global variables, or dynamically allocated variables (i.e. non-static arrays). The heap is not automatically managed by the CPU like the stack.</p>
+<h3 id="hash-tables">Hash Tables</h3>
+<p>A hash table is a data-structure which hashes a key using a deterministic hashing function and then stores a value at the location associated with the hashed key. It is a mapping from keys to values. This effectively has constant time access and write.</p>
+<p>Because the storage is finite, there will likely be hash conflicts. There are several ways to resolve this:</p>
+<ol>
+<li>Move one space forward until a free space is found</li>
+<li>Have each bucket point to a list of key-value pairs and either push or search through the list depending on the operation.</li>
+</ol>
+<p>To maintain amoratized \(\bigoh(1)\) as the <strong>load factor</strong> (i.e. how many hash conflicts are expected) increases, one should resize the hashtable to one that is double the size and move all the objects. There are other methods as well including <strong>linear hashing</strong> or maintaining two hash functions.</p>
+<h3 id="other-data-structures">Other Data Structures</h3>
+<ul>
+<li>Binary Tree</li>
+<li>Vector</li>
+<li>Queue</li>
+<li>Stack</li>
+<li>Linked-List</li>
+</ul>
 <h3 id="dynamic-programming">dynamic programming</h3>
+<p>Dynamic programming is both a mathematical optimization as well as a computer programming technique. It refers to taking a large complex problem and breaking it down into simpler sub-problems and then recursively finding the solution to those problems.</p>
+<p>Finding a <a href="/braindump/value_function/">Value Function</a> using <a href="/braindump/dynamic_programming/">Dynamic Programming</a> is simple using the <a href="/braindump/bellman_equation/">Bellman Equation</a>. See the <RL> section for more details.</p>
 <h3 id="threads-vs-processes">Threads vs Processes</h3>
+<p>A thread is a parallel execution tool which has a shared memory pool with other threads. A process by default has one thread. A process (created through fork or some other mechanism) is a parallel execution paradigm with a separate memory pool from the other processes.</p>
 <h3 id="compiled-interpreted-and-jit-oh-my">Compiled, Interpreted, and JIT oh my</h3>
+<ul>
+<li>
+<p>A compiled language is one which takes a program and converts it to machine code (through a series of steps including pre-compilation, compilation, linking, etc&hellip;) (C/C++, go, etc&hellip;).</p>
+</li>
+<li>
+<p>An interpreted language is one which does not get compiled and instead runs through another program which reads the code during execution and &ldquo;interprets&rdquo; this code, meaning it links the code to already pre-compiled objects which are then run. (Python)</p>
+</li>
+</ul>
+<p>A JIT compiled language is one which is compiled during execution. Python has some characteristics which compiles objects just in time, and you can use NUMBA to do this. Julia is a better example of a JIT language.</p>
+<h3 id="reading-stack-traces">Reading Stack-traces</h3>
+<ul>
+<li>Remain calm.</li>
+<li>Read the error.</li>
+<li>Find the first line a stack-trace has user-defined code.</li>
+<li>Read the previous errors to investigate what might be going wrong.</li>
+<li>Solve problem, research error online, or use a debugging tool to investigate parameters to function that is throwing error.</li>
+</ul>
 <h3 id="questions">Questions</h3>
 <ul>
 <li>Different sorting algorithms</li>
@@ -735,6 +834,116 @@ x_n\\
 <h3 id="c-plus-plus">C++</h3>
 <h3 id="julia">Julia</h3>
 <h2 id="machine-learning">Machine Learning</h2>
+<h3 id="supervised-self-supervised-semi-supervised-unsupervised-learning">Supervised, self-supervised, semi-supervised, unsupervised learning</h3>
+<p><a href="/braindump/supervised_learning/">Supervised Learning</a> is the typical starting point for most people learning about machine learning. This is setup with a set of features \(\Xmat\) and a corresponding set of labels \(Y\) which can either be classes (leading to classification) or real values (leading to regression).</p>
+<p><a href="/braindump/unsupervised_learning/">Unsupervised Learning</a> only starts with a set of features \(\Xmat\), where the goal is to discover patterns from the data.</p>
+<p><a href="/braindump/semi_supervised_learning/">Semi-supervised Learning</a> combines both <a href="/braindump/supervised_learning/">Supervised Learning</a> and <a href="/braindump/unsupervised_learning/">Unsupervised Learning</a> and has a set of features and labels as well as a collection of unlabeled examples. The goal is to use the unlabeled examples to learn about the data and then use the labeled examples to create an inference model.</p>
+<h3 id="linear-regression">Linear Regression</h3>
+<p>Linear regression is the simplest form of regression and is used to minimize the mean squared error (MSE). More specifically, we model the labels as a linear function with error
+\[
+\yvec = \Xmat \wvec + \boldsymbol{\varepsilon}
+\]
+where,</p>
+<p>\[\begin{align*}
+\yvec &amp;= \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} \\
+\Xmat &amp;= \begin{bmatrix}
+1 &amp; x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1p} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2p} \\
+1 &amp; x_{31} &amp; x_{32} &amp; \ldots &amp; x_{3p} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{np} \\
+\end{bmatrix} \\
+\boldsymbol{\varepsilon} &amp;= \begin{bmatrix}
+\varepsilon_1 \\
+\varepsilon_2 \\
+\vdots \\
+\varepsilon_n
+\end{bmatrix},
+\wvec = \begin{bmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_n
+\end{bmatrix}
+\end{align*}\]</p>
+<aside title="Ordering of Features">
+<p>Make note of the ordering of the features and the added bias bit in the features. The bias bit allows the linear equation to be affine (i.e. change the intersection of the decision plane). Each row is now an example, although we usually assume examples to be column vectors. This can be easily re-written, but it is a choice made likely because `c` (and many linear algebra packages) is row-major.</p>
+</aside>
+<p>The most commonly used technique is that of linear least squares. This procedure finds the global minima of the objective function</p>
+<p>\begin{align*}
+L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
+&amp;= (\Xmat\wvec - \yvec)^\trans (\Xmat\wvec - \yvec) \\
+&amp;= \yvec^\trans\yvec - \yvec^\trans\Xmat\wvec - \wvec^\trans\Xmat^\trans\yvec + \wvec^\trans\Xmat^\trans\Xmat\wvec
+\end{align*}</p>
+<p>Now taking the derivative and setting to zero we can find the global minimum at
+\[\wvec = (\Xmat^\trans \Xmat)^\inv \Xmat^\trans \yvec.\]</p>
+<p>With the condition that \(\Xmat^\trans\Xmat\) is not singular (i.e. the determinant is \(0\)).</p>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<p>Logistic regression is probably the most well known generalized linear model combining the Bernoulli distribution and a sigmoid transfer function. The model can be summarized as follows:</p>
+<ol>
+<li>\(p(y|\xvec) = \text{Bernoulli}(\alpha(\xvec))\) with \(\alpha(\xvec) = \expected[Y|\xvec]\)</li>
+<li>\(\expected[Y|\xvec] = \sigma(\wvec^\trans \xvec)\) or \(\text{logit}(\expected[Y|\xvec] = \wvec^\trans \xvec)\).</li>
+</ol>
+<div title="Sigmoid Function" class="definition">
+<p>Remember that the <a href="/braindump/sigmoid_function/">Sigmoid Function</a> is defined as
+\[\sigma(x) = \frac{1}{1+e^{-x}}\]</p>
+</div>
+<p>The <a href="/braindump/gradient_descent/#stochastic-gradient-descent">SGD</a> update for the logistic regression is:
+\[\wvec = \wvec - \eta\left( \sigma(\xvec_i ^\trans \wvec) - \yvec_i\right)\xvec_i\]</p>
+<p>Of course we can also use <a href="/braindump/maximum_likelihood_estimation/">Maximum Likelihood Estimation</a> (which actually will present as the <a href="/braindump/gradient_descent/">Batch Gradient Descent</a> optimizer.</p>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<p>Gradient descent is to most commonly used optimization technique in <a href="/braindump/machine_learning/">Machine Learning</a>. Effectively, it is</p>
+<div title="Gradient Descent" class="definition">
+<p><a href="/braindump/gradient_descent/">Gradient Descent</a> is a first-order iterative <a href="/braindump/optimization/">Optimization</a> algorithm for finding local minimum in a differentiable function. For a function \(f(\thetavec)\), \(\thetavec \in \reals^n\), and learning rate \(\alpha_i \in \reals\)</p>
+<p>\[ \thetavec_{k+1} = \thetavec_{k} + \alpha_{k+1} \nabla f(\thetavec) \]</p>
+</div>
+<h3 id="convergence-guarantees">Convergence Guarantees</h3>
+<p>What is guaranteed by our algorithms?</p>
+<p>The usual guarantees are those of convergence to some minimum (either local or global) with some conditions on the function space considered and on the learning rate used (in the case of <a href="/braindump/gradient_descent/">Batch Gradient Descent</a> and <a href="/braindump/gradient_descent/#stochastic-gradient-descent">SGD</a>.</p>
+<p>Typically, the more convex the manifold we are optimizing over is the better our guarantees.</p>
+<h3 id="features">Features</h3>
+<p>Features are the mysterious vector \(\xvec_i\) that has been used without definition in this note. This is a &ldquo;representation&rdquo; (through real-numbers) of the instance. I&rsquo;m using representation, again pretty loosly. But it is a vector of real numbers that are used to build a model. They have a monumental effect on the quality of an inference machine. Some methods to &ldquo;discover&rdquo; features</p>
+<ul>
+<li><a href="/braindump/neural_network/">Neural Network</a>s w/ <a href="/braindump/backpropagation/">Backpropagation</a></li>
+<li>Kernel Methods</li>
+<li>Tilecoding</li>
+<li>Bag-of-features</li>
+</ul>
+<h3 id="bias-and-variance-in-learning">Bias and variance in learning</h3>
+<p>The trade-off between bias and variance is well documented in <a href="/braindump/machine_learning/">Machine Learning</a>.</p>
+<h3 id="generalization">Generalization</h3>
+<p>The ability to perform well on previously unobserved inputs is called <strong>generalization</strong></p>
+<h3 id="over-fitting-and-under-fitting">Over-fitting and Under-fitting</h3>
+<h3 id="regularization">Regularization</h3>
+<h3 id="evaluating-methods">Evaluating methods</h3>
+<!--list-separator-->
+<ul>
+<li>AUC</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>ROC</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>T-test</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Standard error, Standard deviation, quantiles and more!</li>
+</ul>
+<h3 id="support-vector-machines">Support Vector Machines</h3>
+<h3 id="kernel-methods">Kernel Methods</h3>
+<h3 id="artificial-neural-networks">Artificial Neural Networks</h3>
+<h3 id="boosting-and-bagging">Boosting and bagging</h3>
+<h3 id="ensemble-methods">Ensemble methods</h3>
+<h3 id="advanced-neural-network-examples">Advanced Neural Network Examples</h3>
+<h3 id="questions">Questions</h3>
 <ul>
 <li>What is the curse of dimensionality</li>
 <li>What is supervised, self-supervised, and semi-supervised learning? Give examples of each?</li>
@@ -759,13 +968,12 @@ x_n\\
 <li>Generative Models</li>
 <li>Over and under-fitting</li>
 <li>Convergence guarantees for different learning methods</li>
-<li>What is a policy?</li>
 <li>What is backpropagation?</li>
 <li>ANNs</li>
 <li>SVMs</li>
 <li>Kernel trick</li>
 </ul>
-<h2 id="reinforcement-learning">Reinforcement Learning</h2>
+<h2 id="RL">Reinforcement Learning</h2>
 <ul>
 <li>What is the problem of reinforcement learning?</li>
 <li>What is a value function?</li>
@@ -789,7 +997,7 @@ x_n\\
 <li>What are the computational constraints?</li>
 </ul>
 </li>
-<li></li>
+<li>What is a policy?</li>
 </ul>
 <h2 id="hr-personality-interviews">HR/personality Interviews</h2>
 <ul>
@@ -810,6 +1018,7 @@ x_n\\
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. n.d. <i>Deep Learning</i>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. n.d. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>.</div>
 </div>
+
     </div>
 
     
@@ -829,6 +1038,28 @@ x_n\\
     
     
 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
