@@ -1,5 +1,84 @@
 
 
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+ul#notes-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+p.note-tags {
+    margin-left: 1rem;
+    font-size: 12pt;
+}
+
+li.notes-item a{
+    display: block;
+    color: inherit;
+    text-decoration: none !important;
+}
+
+li.notes-item{
+    list-style: none;
+}
+
+li.notes-item div.node-link{
+    display: block;
+    min-height: 12rem;
+    width: 15rem;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(25,121,9,1);
+    font-size: 12pt;
+}
+
+li.notes-item div.node-link:hover {
+    background-color: rgba(129,176,121,1);
+}
+
+li.notes-item h3 {
+    text-align: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin: 0;
+    background-color: rgba(129,176,121,1);
+    border-radius: 9px 9px 0 0;
+    border-bottom: 3px solid rgba(0,0,0,1);
+    color: black;
+}
+
+div.node-link{
+    display: block;
+}
+
+div.node-link h4{
+    margin-top: 1rem;
+}
+
+p.note-tags {
+    margin-top: 0.1rem;
+}
+
+div.note-item-content{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    color: rgba(255,255,255,.9)
+}
+
+
+
 
 /* span.figure_number { */
     
