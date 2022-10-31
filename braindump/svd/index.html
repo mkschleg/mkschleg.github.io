@@ -54,8 +54,8 @@
   <meta property="og:title" content="SVD | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-28T15:01:58-06:00">
-  <meta property="article:modified_time" content="2022-10-28T15:01:58-06:00">
+  <meta property="article:published_time" content="2022-10-31T13:34:43-06:00">
+  <meta property="article:modified_time" content="2022-10-31T13:34:43-06:00">
   
 
   <title>SVD | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-28 15:01:58 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 28, 2022
+    <time datetime="2022-10-31 13:34:43 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 31, 2022
     </time>
   </span>
 
@@ -314,6 +314,9 @@
 <li>\(\Sigmamat\) is a \(m\times n\) <a href="/braindump/linear_algebra/#diagonal-matrix">rectangular diagonal matrix</a> with non-negative real numbers on the diagonal.</li>
 <li>\(\Vmat\) is a  <a href="/braindump/linear_algebra/#unitary-matrix">complex unitary matrix</a>.</li>
 </ul>
+<p>Singular values are always positive (by convention) and are found from the two conditions:
+\[\Mmat \vvec = \sigma \uvec \text{ and } \Mmat^* \uvec = \sigma \vvec\]</p>
+<p>where \(\vvec\) and \(\uvec\) are called right and left singular vectors respectively.</p>
 <p>This decomposition always exists for any complex rectangular matrix.</p>
 <h2 id="rotation-coordinate-scaling-and-reflection">Rotation, Coordinate Scaling, and reflection</h2>
 <p>One nice interpretation of singular value decomposition is as a series of rotations scalings. Every matrix can be seen as a linear function on a vector. To visualize this we will use julia and a random linear transform matrix \(M\).</p>
@@ -411,17 +414,21 @@
    
 
    
-
-   
-
-   
-
-   
-
-   
-
-   
       
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    

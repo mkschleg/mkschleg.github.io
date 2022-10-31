@@ -14,7 +14,7 @@
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/probability_via_expectations.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/dimensionality_reduction.md%29%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -42,7 +42,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://mkschleg.github.io/braindump/probability_via_expectations/">
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/dimensionality_reduction/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -50,15 +50,15 @@
   <meta property="twitter:creator" content="@mattschleg">
   
   <meta property="og:site_name" content="Matthew Schlegel">
-  <meta property="og:url" content="https://mkschleg.github.io/braindump/probability_via_expectations/">
-  <meta property="og:title" content="Probability via Expectations | Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/dimensionality_reduction/">
+  <meta property="og:title" content="Dimensionality Reduction | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:20:30-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:20:30-06:00">
+  <meta property="article:published_time" content="2022-10-31T13:37:32-06:00">
+  <meta property="article:modified_time" content="2022-10-31T13:37:32-06:00">
   
 
-  <title>Probability via Expectations | Matthew Schlegel</title>
+  <title>Dimensionality Reduction | Matthew Schlegel</title>
 
   
 
@@ -196,7 +196,7 @@
 
 				<article class="post" itemscope itemtype="http://schema.org/Article">
   <div class="post-container">
-    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/probability_via_expectations/">Probability via Expectations</a></h1>
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/dimensionality_reduction/">Dimensionality Reduction</a></h1>
 
     
       
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:20:30 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2022-10-31 13:37:32 -0600 MDT" itemprop="datePublished dateModified">
+      Oct 31, 2022
     </time>
   </span>
 
@@ -303,6 +303,11 @@
 \newcommand{\ind}{\perp!!!!\perp}
 \newcommand{\bigoh}{\text{O}}
 \)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/linear_algebra/">Linear Algebra</a>, <a href="/braindump/machine_learning/">Machine Learning</a></dd>
+</dl>
+<p>Dimension reduction is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representations retails meaningful properties of the original data.</p>
 
     </div>
 
@@ -327,147 +332,149 @@
    
 
    
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
+      
    
 
    
 
    
       
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    
@@ -741,7 +748,9 @@
     <div class="backlinks">
       <ul>
        
-          <li><a href="/braindump/probability_theory/">Probability Theory</a></li>
+          <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
+       
+          <li><a href="/braindump/principle_component_analysis/">Principle Component Analysis</a></li>
        
      </ul>
     </div>
