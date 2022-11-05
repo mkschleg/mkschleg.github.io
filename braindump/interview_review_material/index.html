@@ -54,8 +54,8 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-31T17:47:04-06:00">
-  <meta property="article:modified_time" content="2022-10-31T17:47:04-06:00">
+  <meta property="article:published_time" content="2022-10-31T19:45:31-06:00">
+  <meta property="article:modified_time" content="2022-10-31T19:45:31-06:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
@@ -205,7 +205,7 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-31 17:47:04 -0600 MDT" itemprop="datePublished dateModified">
+    <time datetime="2022-10-31 19:45:31 -0600 MDT" itemprop="datePublished dateModified">
       Oct 31, 2022
     </time>
   </span>
@@ -229,6 +229,8 @@
 <li><a href="#basic-inequalities">Basic Inequalities</a></li>
 <li><a href="#classical-convergence-theorems-of-random-variables">Classical convergence theorems of random variables</a></li>
 <li><a href="#hypothesis-testing-and-p-values">Hypothesis testing and p-values</a></li>
+<li><a href="#some-discrete-distributions">Some Discrete Distributions</a></li>
+<li><a href="#some-continual-distributions">Some Continual Distributions</a></li>
 <li><a href="#questions">Questions</a></li>
 </ul>
 </li>
@@ -400,9 +402,10 @@
 </li>
 <li>Deep Learning Book</li>
 <li>Fill out the rest of the following note pages&hellip;</li>
-<li>Go through proble safams in <a href="https://huyenchip.com/ml-interviews-book/">this book</a> [hard]</li>
+<li>Go through problems in <a href="https://huyenchip.com/ml-interviews-book/">this book</a> [hard]</li>
 <li>Linear regression and its assumptions [easy]</li>
 <li>Practice deriving MLE and MAP estimators [medium]</li>
+<li>Backpropagation</li>
 <li>WTF is LDA again?</li>
 <li>Read and brush up on Support Vector Machines [medium]</li>
 <li>Naive Bayes [easy]</li>
@@ -557,6 +560,70 @@ where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \fr
 </div>
 <p>The <strong>central limit theorem</strong> gives us a way to reason about the variance of the sample averages. Because the random variable defined by the sample average will be distributed according \(\text{Normal}(\mu, \sigma^2)\) we can estimate the confidence intervals for our current estimate.</p>
 <h3 id="hypothesis-testing-and-p-values">Hypothesis testing and p-values</h3>
+<h3 id="some-discrete-distributions">Some Discrete Distributions</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Bernoulli</p>
+<p>Bernoulli distribution is that of a biased coin flip with a probability of getting heads (or a success) set to \(\alpha\). For a random variable \(X \in \{0, 1\}\) we define the Bernoulli distribution as:
+\[X \sim \text{Bernoulli}(\alpha) \rightarrow \Prob(X=x) = \alpha^x (1-\alpha)^{1-x} \]</p>
+<p>where the mean is \(\alpha\) and variance is \(\alpha(1-\alpha)\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Binomial</p>
+<p>The binomial distribution is the probability of k successes in n trials of random pulls from the Bernoulli distribution.
+\[X\sim \text{Binomial}(\alpha, n) \rightarrow \Prob(X=k; \alpha, n) = \frac{n!}{k! (n-k)!} \alpha^k (1-\alpha)^{n-k}\]</p>
+<p>where the mean is \(n\alpha\) and the variance is \(n\alpha(1-\alpha)\)</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Geometric</p>
+<p>The geometric distribution is how many trials we need to see before we see a successful trial.
+\[X\sim \text{Geometric}(\alpha) \rightarrow \Prob(X=k; \alpha)=\alpha(1-\alpha)^{k-1}\]</p>
+<p>with mean \(\frac{1}{\alpha}\) and variance \(\frac{1-\alpha}{\alpha^2}\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Poisson</p>
+<p>The Poisson distribution is the probability of seeing k independent events in a set interval with a rate \(\lambda\).
+\[X \sim \text{Poisson}(\lambda) \rightarrow \Prob(X=k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}\]</p>
+<p>where the mean and variance is \(\lambda\).</p>
+</li>
+</ul>
+<h3 id="some-continual-distributions">Some Continual Distributions</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Normal</p>
+<p>The normal (or gaussian) distribution is used quite often. For mean \(\mu\) and variance \(\sigma^2\)</p>
+<p>\[X \sim \text{Normal}(\mu, \sigma^2) \rightarrow f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Laplace</p>
+<p>The Laplace distribution is like two exponentials centered on the mean.</p>
+<p>\[X \sim \text{Laplace}(\mu, b) \rightarrow f_X(x) = \frac{1}{2b} e^{-\frac{\lvert x - \mu \rvert}{b}}\]</p>
+<p>with mean \(\mu\) and variance \(2b^2\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Gamma</p>
+<p>The gamma distribution is
+\[X \sim \text{Gamma}(\alpha, \beta) \rightarrow f_X(x) = x^{\alpha-1} e^{-\beta x} \frac{\beta^\alpha}{\Gamma(\alpha)}\]</p>
+<p>with mean \(\frac{\alpha}{\beta}\) and variance \(\frac{\alpha}{\beta^2}\)</p>
+</li>
+</ul>
 <h3 id="questions">Questions</h3>
 <ul>
 <li>Central limit theorem</li>
@@ -659,14 +726,33 @@ This is a non-differential point in the function. Here we can use a <a href="/br
 </ul>
 <!--list-separator-->
 <ul>
-<li>What is the integral?</li>
+<li>
+<p>What is the integral?</p>
+<p>We can define an integral through a Riemannian sum:
+\[\int_a^b f(x) dx = \lim_{k\rightarrow\infty} \sum_k f(x+k\delta x)\delta x\]</p>
+<p>where k is the number of sub intervals we break up range \([a, b]\).</p>
+</li>
 </ul>
 <!--list-separator-->
 <ul>
 <li>
 <p>Common integral tricks:</p>
 <ul>
-<li>By parts</li>
+<li>
+<p>By parts
+\[\int udv = uv - \int v du \]</p>
+<p>an example of \(\int ln(x) dx\):</p>
+<p>\begin{align*}
+\int ln(x) dx = \int ln(x) 1 dx \\
+u = ln(x) \quad du = \frac{1}{x} dx \\
+dv = 1 dx \quad v = x \\
+\int ln(x) dx = xln(x) - \int \frac{x}{x} dx \\
+\int ln(x) dx = xln(x) - x + C
+\end{align*}</p>
+</li>
+</ul>
+ <!--listend-->
+<ul>
 <li>By substitution</li>
 </ul>
 </li>
@@ -676,7 +762,7 @@ This is a non-differential point in the function. Here we can use a <a href="/br
 <li>
 <p>How do we estimate the value of an integral?</p>
 <ul>
-<li>Riemman sum</li>
+<li>Riemman sum with finite \(k\).</li>
 </ul>
 </li>
 </ul>
@@ -1104,6 +1190,22 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
     
     
 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 

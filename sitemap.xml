@@ -2,14 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2022-10-31T17:47:04-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/artificial_intelligence/</loc>
+    <lastmod>2022-11-05T16:51:21-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/interview_review_material/</loc>
-    <lastmod>2022-10-31T17:47:04-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/</loc>
+    <lastmod>2022-11-05T16:51:21-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/</loc>
-    <lastmod>2022-10-31T17:47:04-06:00</lastmod>
+    <lastmod>2022-11-05T16:51:21-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/causality/</loc>
+    <lastmod>2022-11-05T16:14:20-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/causality/</loc>
+    <lastmod>2022-11-05T16:14:20-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/</loc>
+    <lastmod>2022-11-05T16:14:20-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/cross_entropy/</loc>
+    <lastmod>2022-11-02T19:46:38-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/maximum_likelihood_estimation/</loc>
+    <lastmod>2022-11-02T19:46:04-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/classification/</loc>
+    <lastmod>2022-11-02T19:41:55-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/perpendicular_distance/</loc>
+    <lastmod>2022-11-02T19:41:50-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/kl_divergence/</loc>
+    <lastmod>2022-11-02T19:40:42-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/stationary_point/</loc>
+    <lastmod>2022-11-02T19:36:38-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/support_vector_machines/</loc>
+    <lastmod>2022-11-02T19:36:35-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/lagrange_multipliers/</loc>
+    <lastmod>2022-11-02T19:36:28-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/taylor_series_expansion/</loc>
+    <lastmod>2022-11-02T13:58:25-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/calculus/</loc>
+    <lastmod>2022-11-02T13:26:57-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/interview_review_material/</loc>
+    <lastmod>2022-10-31T19:45:31-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/principle_component_analysis/</loc>
     <lastmod>2022-10-31T14:55:57-06:00</lastmod>
@@ -40,9 +82,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/gradient_descent/</loc>
     <lastmod>2022-10-28T13:39:46-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/maximum_likelihood_estimation/</loc>
-    <lastmod>2022-10-28T13:30:13-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/hadamard_product/</loc>
     <lastmod>2022-10-27T20:26:45-06:00</lastmod>
@@ -134,9 +173,6 @@
     <loc>https://mkschleg.github.io/braindump/stochastic_processes/</loc>
     <lastmod>2022-10-27T20:21:05-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/tags/</loc>
-    <lastmod>2022-10-27T20:21:05-06:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/statistics/</loc>
     <lastmod>2022-10-27T20:21:03-06:00</lastmod>
   </url><url>
@@ -163,9 +199,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/self_supervised_learning/</loc>
     <lastmod>2022-10-27T20:20:52-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/causality/</loc>
-    <lastmod>2022-10-27T20:20:50-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/causality_for_machine_learning/</loc>
     <lastmod>2022-10-27T20:20:50-06:00</lastmod>
@@ -503,17 +536,11 @@
     <loc>https://mkschleg.github.io/braindump/chandar2019/</loc>
     <lastmod>2022-10-27T20:18:30-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/causality/</loc>
-    <lastmod>2022-10-27T20:18:29-06:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/cauchy_criterion/</loc>
     <lastmod>2022-10-27T20:18:27-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/category_theory/</loc>
     <lastmod>2022-10-27T20:18:26-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/calculus/</loc>
-    <lastmod>2022-10-27T20:18:25-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/byrd2019/</loc>
     <lastmod>2022-10-27T20:18:23-06:00</lastmod>
@@ -556,9 +583,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/atari/</loc>
     <lastmod>2022-10-27T20:18:08-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/artificial_intelligence/</loc>
-    <lastmod>2022-10-27T20:18:06-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/anatomy/</loc>
     <lastmod>2022-10-27T20:18:05-06:00</lastmod>

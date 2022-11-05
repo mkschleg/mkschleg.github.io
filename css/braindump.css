@@ -14,6 +14,11 @@
 ul#notes-list{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    overflow:hidden;
+    overflow-y:scroll;
+    max-height: 42rem;
+    gap: 10px;
+    /* grid-auto-flow: row dense; */
 }
 
 p.note-tags {
@@ -78,7 +83,32 @@ div.note-item-content{
 }
 
 
+@media (max-width: 45em) {
+    ul#notes-list {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    li.notes-item div.node-link {
+        width: inherit;
+        min-height: 5rem;
+    }
+    li.notes-item {
+        width: inherit;
+    }
 
+    div.note-item-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /* div.note-aliases-wrapper { */
+    /*     /\* float: left; *\/ */
+    /*     width: 50%; */
+    /* } */
+    /* div.note-tags-wrapper { */
+    /*     /\* float: left; *\/ */
+    /*     width: 50%; */
+    /* } */
+}
 
 /* span.figure_number { */
     
