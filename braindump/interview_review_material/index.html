@@ -54,8 +54,8 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-31T19:45:31-06:00">
-  <meta property="article:modified_time" content="2022-10-31T19:45:31-06:00">
+  <meta property="article:published_time" content="2022-11-08T14:52:41-07:00">
+  <meta property="article:modified_time" content="2022-11-08T14:52:41-07:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-31 19:45:31 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 31, 2022
+    <time datetime="2022-11-08 14:52:41 -0700 MST" itemprop="datePublished dateModified">
+      Nov 8, 2022
     </time>
   </span>
 
@@ -383,6 +383,7 @@
 \newcommand{\Zmat}{\mathbf{Z}}
 \newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
 \newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -458,7 +459,7 @@
 F_X(x) = \Prob(X \leq x)
 \]</p>
 <div class="instance">
-<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman, n.d.</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
+<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman 2004</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
 \[
 F_{X}(x) = \begin{cases}
 0 \quad &amp;x&lt;0 \\
@@ -798,7 +799,7 @@ Two lists are equal if and only if they have the same length.
 <li><strong>multiplicative identity</strong>: \(1\vvec = \vvec \quad \forall \vvec\in V\)</li>
 <li><strong>distributive properties</strong>: \(a(\uvec + \vvec) = a\uvec + a\vvec\) and \((a+b)\vvec = a\vvec + b\vvec\) for all \(a,b\in\numfield\) and all \(\uvec,\vvec \in V\).</li>
 </ul>
-<p>While I&rsquo;ve defined some basics above, there is a lot to the intricacies of vector spaces and their interactions with linear maps and transformations. In the following, we will take the above for granted and deal with details more specific to basic machine learning and deep learning taken from (<a href="#citeproc_bib_item_1">Goodfellow, Bengio, and Courville, n.d.</a>). We will primarily focus on vector spaces on the field \(\reals\), while most of the content translates to \(\complexs\).</p>
+<p>While I&rsquo;ve defined some basics above, there is a lot to the intricacies of vector spaces and their interactions with linear maps and transformations. In the following, we will take the above for granted and deal with details more specific to basic machine learning and deep learning taken from (<a href="#citeproc_bib_item_1">Goodfellow, Bengio, and Courville 2016</a>). We will primarily focus on vector spaces on the field \(\reals\), while most of the content translates to \(\complexs\).</p>
 <p>A <strong>vector</strong> \(\vvec \in V\) is a element of a vector space \(V\). We will use the convention that all vectors are column vectors.
 \[
 \xvec = \begin{matrix}
@@ -1167,8 +1168,8 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
 <h2 id="potential-interview-questions">Potential Interview Questions</h2>
 <h2 id="references">References</h2>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. n.d. <i>Deep Learning</i>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. n.d. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. 2016. <i>Deep Learning</i>. MIT Press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. 2004. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>. Springer.</div>
 </div>
 
     </div>
@@ -1190,12 +1191,6 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
     
     
 
-
-   
-
-   
-
-   
 
    
 
