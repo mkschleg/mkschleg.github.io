@@ -82,6 +82,11 @@ div.note-item-content{
     color: rgba(255,255,255,.9)
 }
 
+svg.rounded-lg {
+    width: 100%;
+    height: 500px;
+}
+
 
 @media (max-width: 45em) {
     ul#notes-list {

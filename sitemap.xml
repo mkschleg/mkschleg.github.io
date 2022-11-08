@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkschleg.github.io/braindump/artificial_intelligence/</loc>
-    <lastmod>2022-11-05T16:51:21-06:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2022-11-05T16:51:21-06:00</lastmod>
+    <lastmod>2022-11-07T21:09:22-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/linear_algebra/</loc>
+    <lastmod>2022-11-07T21:09:22-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/</loc>
+    <lastmod>2022-11-07T21:09:22-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/artificial_intelligence/</loc>
     <lastmod>2022-11-05T16:51:21-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/tags/causality/</loc>
@@ -358,9 +361,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/linear_algebra_and_its_applications/</loc>
     <lastmod>2022-10-27T20:19:46-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/linear_algebra/</loc>
-    <lastmod>2022-10-27T20:19:45-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/lehnert2017/</loc>
     <lastmod>2022-10-27T20:19:43-06:00</lastmod>
