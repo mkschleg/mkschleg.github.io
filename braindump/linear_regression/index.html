@@ -14,7 +14,7 @@
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/converges.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/linear_regression.md%29%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -42,7 +42,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://mkschleg.github.io/braindump/converges/">
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/linear_regression/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -50,15 +50,15 @@
   <meta property="twitter:creator" content="@mattschleg">
   
   <meta property="og:site_name" content="Matthew Schlegel">
-  <meta property="og:url" content="https://mkschleg.github.io/braindump/converges/">
-  <meta property="og:title" content="Converges | Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/linear_regression/">
+  <meta property="og:title" content="Linear Regression | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-11-08T14:19:13-07:00">
-  <meta property="article:modified_time" content="2022-11-08T14:19:13-07:00">
+  <meta property="article:published_time" content="2022-11-10T16:45:22-07:00">
+  <meta property="article:modified_time" content="2022-11-10T16:45:22-07:00">
   
 
-  <title>Converges | Matthew Schlegel</title>
+  <title>Linear Regression | Matthew Schlegel</title>
 
   
 
@@ -196,7 +196,7 @@
 
 				<article class="post" itemscope itemtype="http://schema.org/Article">
   <div class="post-container">
-    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/converges/">Converges</a></h1>
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/linear_regression/">Linear Regression</a></h1>
 
     
       
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-11-08 14:19:13 -0700 MST" itemprop="datePublished dateModified">
-      Nov 8, 2022
+    <time datetime="2022-11-10 16:45:22 -0700 MST" itemprop="datePublished dateModified">
+      Nov 10, 2022
     </time>
   </span>
 
@@ -306,8 +306,67 @@
 \)</p>
 <dl>
 <dt>tags</dt>
-<dd><a href="/braindump/math/">Math</a>, <a href="/braindump/analysis/">Analysis</a></dd>
+<dd><a href="/braindump/machine_learning/">Machine Learning</a>, <a href="/braindump/statistics/">Statistics</a></dd>
 </dl>
+<p>Linear regression is the simplest form of regression and is used to minimize the mean squared error (MSE). More specifically, we model the labels as a linear function with error
+\[
+\yvec = \Xmat \wvec + \boldsymbol{\varepsilon}
+\]
+where,</p>
+<p>\[\begin{align*}
+\yvec &amp;= \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix} \\
+\Xmat &amp;= \begin{bmatrix}
+1 &amp; x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1p} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2p} \\
+1 &amp; x_{31} &amp; x_{32} &amp; \ldots &amp; x_{3p} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_{n1} &amp; x_{n2} &amp; \ldots &amp; x_{np} \\
+\end{bmatrix} \\
+\boldsymbol{\varepsilon} &amp;= \begin{bmatrix}
+\varepsilon_1 \\
+\varepsilon_2 \\
+\vdots \\
+\varepsilon_n
+\end{bmatrix},
+\wvec = \begin{bmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_n
+\end{bmatrix}
+\end{align*}\]</p>
+<aside title="Ordering of Features">
+<p>Make note of the ordering of the features and the added bias bit in the features. The bias bit allows the linear equation to be affine (i.e. change the intersection of the decision plane). Each row is now an example, although we usually assume examples to be column vectors. This can be easily re-written, but it is a choice made likely because `c` (and many linear algebra packages) is row-major.</p>
+</aside>
+<p>We should also note that there are several assumptions that are taken on when using linear regression:</p>
+<ol>
+<li><strong>Independence</strong>: This is such a common assumption throughout statistics. This means all the data in our design matrix are sampled from the underlying distribution independently.</li>
+<li><strong>Normal Distribution</strong>: The data is distributed according to \(y_i \sim \mathcal{N}(\xvec_i^\trans \wvec, \sigma^2)\)</li>
+<li>(<strong>homoscedasticity</strong>) where the variance of the distribution \(\sigma^2\) is independent of the features or targets</li>
+<li>and the expectation of the target has a <strong>linear relationship</strong> with the features \(\expected[y_i] = \xvec_i^\trans \wvec\).</li>
+<li>No or very little <strong>multicolinearity</strong>: This means there is no exact relationship amongst &ldquo;exploratory&rdquo; variables, or the columns of the design matrix are not very correlated.</li>
+</ol>
+<h2 id="ordinary-least-squares">Ordinary Least Squares</h2>
+<p>The most commonly used technique is that of linear least squares. This procedure finds the global minima of the objective function</p>
+<p>\begin{align*}
+L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
+&amp;= (\Xmat\wvec - \yvec)^\trans (\Xmat\wvec - \yvec) \\
+&amp;= \yvec^\trans\yvec - \yvec^\trans\Xmat\wvec - \wvec^\trans\Xmat^\trans\yvec + \wvec^\trans\Xmat^\trans\Xmat\wvec
+\end{align*}</p>
+<p>Now taking the derivative and setting to zero we can find the global minimum at
+\[\wvec = (\Xmat^\trans \Xmat)^\inv \Xmat^\trans \yvec.\]</p>
+<p>With the condition that \(\Xmat^\trans\Xmat\) is not singular (i.e. the determinant is \(0\)).</p>
+<h3 id="maximum-likelihood-estimation--maximum-likelihood-estimation-dot-md--derivation"><a href="/braindump/maximum_likelihood_estimation/">Maximum Likelihood Estimation</a> Derivation</h3>
+<p>A natural question is &ldquo;why should we minimize the MSE?&rdquo; Where does this loss function come from? The Ordinary Least Squares solution is an excellent example of the application of <a href="/braindump/maximum_likelihood_estimation/">Maximum Likelihood Estimation</a> with a gaussian distribution!</p>
+<p>More exactly, lets start with the following distribution assumption on the targets
+\[y_i \sim \mathcal{N}(x_i^\trans w, \sigma^2).\]</p>
+<p>We want to maximize the likelihood of our target variable</p>
+<p>\[\prob[Y | X] &amp;= \frac{1}{\sqrt{2\pi\sigma^2}} e^{\frac{\lVert Y - X^\trans \wvec \rVert^2}{2\sigma^2}}\]</p>
 
     </div>
 
@@ -428,8 +487,6 @@
    
 
    
-      
-   
 
    
 
@@ -536,8 +593,6 @@
    
 
    
-      
-   
 
    
 
@@ -699,8 +754,6 @@
 
    
 
-   
-      
    
 
    
@@ -767,12 +820,6 @@
       <ul>
        
           <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
-       
-          <li><a href="/braindump/reinforcement_learning_an_introduction/">Reinforcement Learning: An Introduction</a></li>
-       
-          <li><a href="/braindump/rao1999predictive/">rao1999predictive: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects</a></li>
-       
-          <li><a href="/braindump/cauchy_criterion/">Cauchy Criterion</a></li>
        
      </ul>
     </div>
