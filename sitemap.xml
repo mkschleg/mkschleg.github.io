@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkschleg.github.io/braindump/autocorrelation/</loc>
-    <lastmod>2022-11-17T14:52:44-07:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/actor_critic/</loc>
+    <lastmod>2022-12-14T13:11:17-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2022-11-17T14:52:44-07:00</lastmod>
+    <lastmod>2022-12-14T13:11:17-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/</loc>
+    <lastmod>2022-12-14T13:11:17-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/bellman_equation/</loc>
+    <lastmod>2022-12-08T14:00:09-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/autocorrelation/</loc>
     <lastmod>2022-11-17T14:52:44-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/correlation/</loc>
@@ -568,9 +574,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/biased_competition/</loc>
     <lastmod>2022-11-08T14:18:45-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/bellman_equation/</loc>
-    <lastmod>2022-11-08T14:18:43-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/behavior_suite/</loc>
     <lastmod>2022-11-08T14:18:42-07:00</lastmod>
