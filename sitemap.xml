@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mkschleg.github.io/braindump/actor_critic/</loc>
-    <lastmod>2022-12-14T13:11:17-07:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2022-12-14T13:11:17-07:00</lastmod>
+    <lastmod>2023-02-17T20:17:16-04:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/curiosity/</loc>
+    <lastmod>2023-02-17T20:17:16-04:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/</loc>
+    <lastmod>2023-02-17T20:17:16-04:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/active_learning/</loc>
+    <lastmod>2023-02-02T13:10:28-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/niv2009reinforcement/</loc>
+    <lastmod>2023-01-31T13:54:29-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/dopamine/</loc>
+    <lastmod>2023-01-31T12:29:52-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/reinforcement_learning_in_the_brain/</loc>
+    <lastmod>2023-01-31T12:29:44-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/neurotransmitter/</loc>
+    <lastmod>2023-01-31T12:27:01-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/dopaminergic_neurons/</loc>
+    <lastmod>2023-01-31T12:26:15-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/actor_critic/</loc>
     <lastmod>2022-12-14T13:11:17-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/bellman_equation/</loc>
