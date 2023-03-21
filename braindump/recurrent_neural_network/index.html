@@ -54,8 +54,8 @@
   <meta property="og:title" content="Recurrent Neural Network | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-11-09T14:05:05-07:00">
-  <meta property="article:modified_time" content="2022-11-09T14:05:05-07:00">
+  <meta property="article:published_time" content="2023-03-20T12:43:36-06:00">
+  <meta property="article:modified_time" content="2023-03-20T12:43:36-06:00">
   
 
   <title>Recurrent Neural Network | Matthew Schlegel</title>
@@ -205,8 +205,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-11-09 14:05:05 -0700 MST" itemprop="datePublished dateModified">
-      Nov 9, 2022
+    <time datetime="2023-03-20 12:43:36 -0600 MDT" itemprop="datePublished dateModified">
+      Mar 20, 2023
     </time>
   </span>
 
@@ -223,6 +223,32 @@
 <dd><a href="/braindump/neural_network/">Neural Network</a></dd>
 </dl>
 <p>See other extensions: <a href="/braindump/lstm/">LSTM</a>, <a href="/braindump/gru/">GRU</a>, (<a href="#citeproc_bib_item_1">Chandar et al. 2019</a>), (<a href="#citeproc_bib_item_3">Goudreau et al. 1994</a>), (<a href="#citeproc_bib_item_4">Sutskever, Martens, and Hinton 2011</a>), (<a href="#citeproc_bib_item_2">Cho et al. 2014</a>)</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Some basic RNN resources. Here is some stuff to get you started:
+Really early RNN Work:</p>
+<ul>
+<li><a href="http://srsc-mac1.ulb.ac.be/axcWWW/papers/pdf/91-NC.pdf">http://srsc-mac1.ulb.ac.be/axcWWW/papers/pdf/91-NC.pdf</a></li>
+<li>(bptt) <a href="http://axon.cs.byu.edu/Dan/678/papers/Recurrent/Werbos.pdf">http://axon.cs.byu.edu/Dan/678/papers/Recurrent/Werbos.pdf</a></li>
+<li>(rtrl) <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.9724&amp;rep=rep1&amp;type=pdf">http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.9724&amp;rep=rep1&amp;type=pdf</a></li>
+</ul>
+<p>LSTMs:</p>
+<ul>
+<li><a href="http://www7.informatik.tu-muenchen.de/~hochreit">http://www7.informatik.tu-muenchen.de/~hochreit</a></li>
+<li><a href="https://www.researchgate.net/profile/Felix_Gers/publication/12292425_Learning_to_Forget_Continual_Prediction_with_LSTM/links/5759414608ae9a9c954e84c5/Learning-to-Forget-Continual-Prediction-with-LSTM.pdf">https://www.researchgate.net/profile/Felix_Gers/publication/12292425_Learning_to_Forget_Continual_Prediction_with_LSTM/links/5759414608ae9a9c954e84c5/Learning-to-Forget-Continual-Prediction-with-LSTM.pdf</a></li>
+<li>(In RL) <a href="http://papers.nips.cc/paper/1953-reinforcement-learning-with-long-short-term-memory.pdf">http://papers.nips.cc/paper/1953-reinforcement-learning-with-long-short-term-memory.pdf</a></li>
+</ul>
+<p>Some other useful things:</p>
+<ul>
+<li>(review on more modern learning techniques) <a href="https://ieeexplore.ieee.org/abstract/document/6639349">https://ieeexplore.ieee.org/abstract/document/6639349</a></li>
+<li>(On the difficulty of training) <a href="http://proceedings.mlr.press/v28/pascanu13.pdf">http://proceedings.mlr.press/v28/pascanu13.pdf</a></li>
+<li>(overview on some basic RNN algorithms) <a href="https://pdfs.semanticscholar.org/cccd/3fd7a45e7643f26391bd539ffbede0690f36.pdf">https://pdfs.semanticscholar.org/cccd/3fd7a45e7643f26391bd539ffbede0690f36.pdf</a></li>
+<li>(Colah’s blog) <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">https://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></li>
+</ul>
+<p>Some ideas that I believe could use some more research:</p>
+<ul>
+<li>(Echo State Netwoks) <a href="http://www.scholarpedia.org/article/Echo_state_network">http://www.scholarpedia.org/article/Echo_state_network</a></li>
+<li>(Bi Directional LSTMs/RNNs) <a href="https://ieeexplore.ieee.org/document/4288069">https://ieeexplore.ieee.org/document/4288069</a></li>
+</ul>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Chandar, Sarath, Chinnadhurai Sankar, Eugene Vorontsov, Samira Ebrahimi Kahou, and Yoshua Bengio. 2019. “Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies.” In <i>AAAI</i>. <a href="https://arxiv.org/abs/1902.06704">https://arxiv.org/abs/1902.06704</a>.</div>
   <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Cho, Kyunghyun, Bart van Merriënboer, Dzmitry Bahdanau, and Yoshua Bengio. 2014. “On the Properties of Neural Machine Translation: EncoderDecoder Approaches.” In <i>Proceedings of SSST-8, Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation</i>. Doha, Qatar: Association for Computational Linguistics.</div>
@@ -250,194 +276,12 @@
     
 
 
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
-   
-
-   
 
    
 
    
 
-   
-
-   
-      
    
 
    
@@ -605,6 +449,68 @@
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -656,6 +562,186 @@
 
    
 
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    
@@ -707,7 +793,7 @@
 
 
   <div class="bl-section">
-    <h4>Links to this note</h4>
+    <h4>Links to this note:</h4>
     <div class="backlinks">
       <ul>
        

@@ -7,14 +7,601 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 17 Feb 2023 20:17:16 -0400</lastBuildDate><atom:link href="https://mkschleg.github.io/braindump/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2023 15:12:32 -0600</lastBuildDate><atom:link href="https://mkschleg.github.io/braindump/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cognitive Revolution</title>
+      <link>https://mkschleg.github.io/braindump/cognitive_revolution/</link>
+      <pubDate>Tue, 21 Mar 2023 15:12:32 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/cognitive_revolution/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Current Learning Objectives</title>
+      <link>https://mkschleg.github.io/braindump/current_learning_objectives/</link>
+      <pubDate>Tue, 21 Mar 2023 15:07:31 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/current_learning_objectives/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Developmental Reinforcement Learning</title>
+      <link>https://mkschleg.github.io/braindump/developmental_reinforcement_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 12:51:31 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/developmental_reinforcement_learning/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Incentive Salience</title>
+      <link>https://mkschleg.github.io/braindump/incentive_salience/</link>
+      <pubDate>Tue, 21 Mar 2023 12:51:18 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/incentive_salience/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning in the Brain</title>
+      <link>https://mkschleg.github.io/braindump/reinforcement_learning_in_the_brain/</link>
+      <pubDate>Tue, 21 Mar 2023 12:24:31 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/reinforcement_learning_in_the_brain/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Incintive Salience</title>
+      <link>https://mkschleg.github.io/braindump/incintive_salience/</link>
+      <pubDate>Tue, 21 Mar 2023 12:22:00 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/incintive_salience/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Topology</title>
+      <link>https://mkschleg.github.io/braindump/topology/</link>
+      <pubDate>Tue, 21 Mar 2023 12:10:12 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/topology/</guid>
+      <description> tags Math source https://en.wikipedia.org/wiki/Topology </description>
+    </item>
+    
+    <item>
+      <title>Thinking</title>
+      <link>https://mkschleg.github.io/braindump/thinking/</link>
+      <pubDate>Tue, 21 Mar 2023 12:09:59 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/thinking/</guid>
+      <description>Thinking is an internal process on which you come to decisions to act on. Some consider this action itself, but the outward behavior of an agent could be masking the underlying thinking.
+I think therefore I am?</description>
+    </item>
+    
+    <item>
+      <title>Theory</title>
+      <link>https://mkschleg.github.io/braindump/theory/</link>
+      <pubDate>Tue, 21 Mar 2023 12:08:35 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://mkschleg.github.io/braindump/statistics/</link>
+      <pubDate>Tue, 21 Mar 2023 12:08:25 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/statistics/</guid>
+      <description> tags Math </description>
+    </item>
+    
+    <item>
+      <title>Reproducibility in Science</title>
+      <link>https://mkschleg.github.io/braindump/reproducibility_in_science/</link>
+      <pubDate>Tue, 21 Mar 2023 12:07:54 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/reproducibility_in_science/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Representation</title>
+      <link>https://mkschleg.github.io/braindump/representation/</link>
+      <pubDate>Tue, 21 Mar 2023 12:06:47 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/representation/</guid>
+      <description>tags Cognitive Science source https://plato.stanford.edu/entries/mental-representation/index.html A representation is in a sense a vector of features or a symbol which (ideally) uniquely correspond to an object (i.e. a noun) and properties of said object (verbs, descriptors, etc&amp;hellip;). Many modern interpretations of a representation are often traced back to Charles S. Peirce&amp;rsquo;s Semiotics.
+The Representational Theory of Mind source https://plato.stanford.edu/entries/mental-representation/index.html#Representational This theory of mind takes mental states (i.e. internal beliefs, perceptions, thoughts, etc.</description>
+    </item>
+    
+    <item>
+      <title>PSR</title>
+      <link>https://mkschleg.github.io/braindump/psr/</link>
+      <pubDate>Tue, 21 Mar 2023 12:06:12 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/psr/</guid>
+      <description>(Singh et al. 2003)</description>
+    </item>
+    
+    <item>
+      <title>Probability Theory</title>
+      <link>https://mkschleg.github.io/braindump/probability_theory/</link>
+      <pubDate>Tue, 21 Mar 2023 12:06:03 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/probability_theory/</guid>
+      <description>tags Math Random variables and probability functions First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:
+\(\Prob(A) \geq 0 \forall A\) \(\Prob(\Sigma) = \sum_{A \in \Sigma} \Prob(A) = 1\) If the events are disjoint then \[\Prob(\cup_{i} A_i) = \sum_i \Prob(A_i)\]</description>
+    </item>
+    
+    <item>
+      <title>Predictive Processing</title>
+      <link>https://mkschleg.github.io/braindump/predictive_processing/</link>
+      <pubDate>Tue, 21 Mar 2023 12:05:52 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/predictive_processing/</guid>
+      <description>Overall predictive processing is a large and varied field of study which takes the perspective that prediction is core to an organism&amp;rsquo;s perceptual system.
+We take a predictive perspective in Reinforcement Learning, as all behavior is driven by maximizing the expected sum of future Reward. While this drives most of the development in Representation learning indirectly through gradient descent on the Value Function or a set of Auxiliary Tasks. This is typically discussed in terms of the Predictive Knowledge framework (White 2015; Kearney and Oxton 2019)</description>
+    </item>
+    
+    <item>
+      <title>Philosophy</title>
+      <link>https://mkschleg.github.io/braindump/philosophy/</link>
+      <pubDate>Tue, 21 Mar 2023 12:04:11 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception</title>
+      <link>https://mkschleg.github.io/braindump/perception/</link>
+      <pubDate>Tue, 21 Mar 2023 12:04:00 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/perception/</guid>
+      <description>Projects Questions Literature </description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>https://mkschleg.github.io/braindump/people/</link>
+      <pubDate>Tue, 21 Mar 2023 12:03:23 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/people/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimizers</title>
+      <link>https://mkschleg.github.io/braindump/optimizers/</link>
+      <pubDate>Tue, 21 Mar 2023 12:02:54 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neuroscience</title>
+      <link>https://mkschleg.github.io/braindump/neuroscience/</link>
+      <pubDate>Tue, 21 Mar 2023 12:02:46 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/neuroscience/</guid>
+      <description> source https://ca.coursera.org/learn/computational-neuroscience </description>
+    </item>
+    
+    <item>
+      <title>Neural Network</title>
+      <link>https://mkschleg.github.io/braindump/neural_network/</link>
+      <pubDate>Tue, 21 Mar 2023 12:02:33 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/neural_network/</guid>
+      <description> tags Machine Learning, Deep Learning </description>
+    </item>
+    
+    <item>
+      <title>Meta-Learning</title>
+      <link>https://mkschleg.github.io/braindump/meta_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 12:02:14 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/meta_learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://mkschleg.github.io/braindump/math/</link>
+      <pubDate>Tue, 21 Mar 2023 12:02:04 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://mkschleg.github.io/braindump/deep_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 12:01:51 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/deep_learning/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://mkschleg.github.io/braindump/machine_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 12:01:40 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/machine_learning/</guid>
+      <description>Machine Learning is the general study of teaching machines from examples. There are many Types of Learning, but the typical style studied in classical machine learning textbooks is Supervised Learning, with brief explorations into Semi-supervised Learning and Unsupervised Learning.
+This note will act as a central note for basic concepts in machine learning, and will show all the notes linking back to this topic.</description>
+    </item>
+    
+    <item>
+      <title>Intelligence</title>
+      <link>https://mkschleg.github.io/braindump/intelligence/</link>
+      <pubDate>Tue, 21 Mar 2023 12:01:20 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/intelligence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Reinforcement Learning</title>
+      <link>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 12:01:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</guid>
+      <description>tags Reinforcement Learning, Deep Learning Deep reinforcement learning is Reinforcement Learning using deep Neural Networks. It is a field popularized by (Mnih et al. 2015), but using Connectionist Networks in RL has been persued much earlier (Tesauro 1994), (Bakker 2002), (Rummery and Niranjan 1994), (Williams 1992), (Liu and Zou 2017) and many others.
+References Bakker, Bram. 2002. “Reinforcement Learning with Long Short-Term Memory.” In Advances in Neural Information Processing Systems 14, edited by T.</description>
+    </item>
+    
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://mkschleg.github.io/braindump/artificial_intelligence/</link>
+      <pubDate>Tue, 21 Mar 2023 12:01:00 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/artificial_intelligence/</guid>
+      <description>tags Intelligence There are various forms of Artificial Intelligence, or what is thought to be artificial intelligence. It is a large field with many varying opinions. While my personal bent is towards Reinforcement Learning, this doesn&amp;rsquo;t preclude the large probability that other studies can enlighten our approaches brining a different perspective. In this note, I hope to go through various forms of AI over the past century, touching on various notable conversations that have occurred.</description>
+    </item>
+    
+    <item>
+      <title>Bootstrapping (statistics)</title>
+      <link>https://mkschleg.github.io/braindump/bootstrapping_statistics/</link>
+      <pubDate>Tue, 21 Mar 2023 11:59:41 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/bootstrapping_statistics/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>bouthillier2019unreproducible: Unreproducible Research is Reproducible</title>
+      <link>https://mkschleg.github.io/braindump/bouthillier2019unreproducible/</link>
+      <pubDate>Tue, 21 Mar 2023 11:58:59 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/bouthillier2019unreproducible/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Resampling</title>
+      <link>https://mkschleg.github.io/braindump/resampling/</link>
+      <pubDate>Tue, 21 Mar 2023 11:58:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/resampling/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Policy</title>
+      <link>https://mkschleg.github.io/braindump/policy/</link>
+      <pubDate>Tue, 21 Mar 2023 11:51:30 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/policy/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Off-policy Reinforcement Learning</title>
+      <link>https://mkschleg.github.io/braindump/off_policy_reinforcement_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 11:50:29 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/off_policy_reinforcement_learning/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://mkschleg.github.io/braindump/reinforcement_learning/</link>
+      <pubDate>Tue, 21 Mar 2023 11:45:36 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/reinforcement_learning/</guid>
+      <description>Questions Topics Off-policy Reinforcement Learning Deep Reinforcement Learning Recommended Reading Reinforcement Learning: An Introduction Deep Reinforcement Learning </description>
+    </item>
+    
+    <item>
+      <title>Connectionist Network</title>
+      <link>https://mkschleg.github.io/braindump/connectionist_network/</link>
+      <pubDate>Tue, 21 Mar 2023 11:40:46 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/connectionist_network/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>henderson2018deep: Deep Reinforcement Learning That Matters</title>
+      <link>https://mkschleg.github.io/braindump/henderson2018deep/</link>
+      <pubDate>Tue, 21 Mar 2023 11:26:50 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/henderson2018deep/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>goodman2016what: What Does Research Reproducibility Mean?</title>
+      <link>https://mkschleg.github.io/braindump/goodman2016what/</link>
+      <pubDate>Tue, 21 Mar 2023 11:23:50 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/goodman2016what/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Neurons</title>
+      <link>https://mkschleg.github.io/braindump/neurons/</link>
+      <pubDate>Tue, 21 Mar 2023 10:56:04 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/neurons/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Brain</title>
+      <link>https://mkschleg.github.io/braindump/brain/</link>
+      <pubDate>Tue, 21 Mar 2023 10:55:59 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/brain/</guid>
+      <description>The brain is a complex system of interconnected Neurons resulting in complex behavior in cognitive systems. The study of the electrical impulses of the brain is called Neuroscience, the systems level study of the brain is known as Cognitive Science, the study of the resulting behavior in organisms is called Behavioral Science, and finally the study of human behavior (and then associated treatment) is called Psychology.
+(Roy et al. 2018) (Chalmers 1995)</description>
+    </item>
+    
+    <item>
+      <title>Actor Critic</title>
+      <link>https://mkschleg.github.io/braindump/actor_critic/</link>
+      <pubDate>Mon, 20 Mar 2023 15:45:38 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/actor_critic/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>colombo2014deep: Deep and beautiful. The reward prediction error hypothesis of dopamine</title>
+      <link>https://mkschleg.github.io/braindump/colombo2014deep/</link>
+      <pubDate>Mon, 20 Mar 2023 15:34:57 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/colombo2014deep/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Deep and beautiful. The reward prediction error hypothesis of dopamine</title>
+      <link>https://mkschleg.github.io/braindump/deep_and_beautiful_the_reward_prediction_error_hypothesis_of_dopamine/</link>
+      <pubDate>Mon, 20 Mar 2023 15:33:30 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/deep_and_beautiful_the_reward_prediction_error_hypothesis_of_dopamine/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Shapley Values</title>
+      <link>https://mkschleg.github.io/braindump/shapley_values/</link>
+      <pubDate>Mon, 20 Mar 2023 14:55:46 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/shapley_values/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Peirce Semiotic</title>
+      <link>https://mkschleg.github.io/braindump/peirce_semiotic/</link>
+      <pubDate>Mon, 20 Mar 2023 14:13:17 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/peirce_semiotic/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Causality</title>
+      <link>https://mkschleg.github.io/braindump/causality/</link>
+      <pubDate>Mon, 20 Mar 2023 13:16:09 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/causality/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Category Theory</title>
+      <link>https://mkschleg.github.io/braindump/category_theory/</link>
+      <pubDate>Mon, 20 Mar 2023 13:04:00 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/category_theory/</guid>
+      <description> tags Math </description>
+    </item>
+    
+    <item>
+      <title>Order Theory</title>
+      <link>https://mkschleg.github.io/braindump/order_theory/</link>
+      <pubDate>Mon, 20 Mar 2023 12:59:13 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/order_theory/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Partially Ordered Set</title>
+      <link>https://mkschleg.github.io/braindump/partially_ordered_set/</link>
+      <pubDate>Mon, 20 Mar 2023 12:59:01 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/partially_ordered_set/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Infimum and Supremum</title>
+      <link>https://mkschleg.github.io/braindump/infimum_and_supremum/</link>
+      <pubDate>Mon, 20 Mar 2023 12:58:42 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/infimum_and_supremum/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>russell2004history: History of Western Philosophy</title>
+      <link>https://mkschleg.github.io/braindump/russell2004history/</link>
+      <pubDate>Mon, 20 Mar 2023 12:50:01 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/russell2004history/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>russellhistory: History of Western Philosophy</title>
+      <link>https://mkschleg.github.io/braindump/russellhistory/</link>
+      <pubDate>Mon, 20 Mar 2023 12:46:11 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/russellhistory/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Recurrent Neural Network</title>
+      <link>https://mkschleg.github.io/braindump/recurrent_neural_network/</link>
+      <pubDate>Mon, 20 Mar 2023 12:43:36 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/recurrent_neural_network/</guid>
+      <description>tags Neural Network See other extensions: LSTM, GRU, (Chandar et al. 2019), (Goudreau et al. 1994), (Sutskever, Martens, and Hinton 2011), (Cho et al. 2014)
+Getting Started Some basic RNN resources. Here is some stuff to get you started: Really early RNN Work:
+http://srsc-mac1.ulb.ac.be/axcWWW/papers/pdf/91-NC.pdf (bptt) http://axon.cs.byu.edu/Dan/678/papers/Recurrent/Werbos.pdf (rtrl) http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.52.9724&amp;amp;rep=rep1&amp;amp;type=pdf LSTMs:
+http://www7.informatik.tu-muenchen.de/~hochreit https://www.researchgate.net/profile/Felix_Gers/publication/12292425_Learning_to_Forget_Continual_Prediction_with_LSTM/links/5759414608ae9a9c954e84c5/Learning-to-Forget-Continual-Prediction-with-LSTM.pdf (In RL) http://papers.nips.cc/paper/1953-reinforcement-learning-with-long-short-term-memory.pdf Some other useful things:
+(review on more modern learning techniques) https://ieeexplore.ieee.org/abstract/document/6639349 (On the difficulty of training) http://proceedings.</description>
+    </item>
+    
+    <item>
+      <title>cogprints316: Facing Up to the Problem of Consciousness</title>
+      <link>https://mkschleg.github.io/braindump/cogprints316/</link>
+      <pubDate>Mon, 20 Mar 2023 12:39:36 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/cogprints316/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>roy2018editorial: Editorial: Representation in the Brain</title>
+      <link>https://mkschleg.github.io/braindump/roy2018editorial/</link>
+      <pubDate>Mon, 20 Mar 2023 12:38:13 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/roy2018editorial/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>sternberg2016cognitive: Cognitive Psychology</title>
+      <link>https://mkschleg.github.io/braindump/sternberg2016cognitive/</link>
+      <pubDate>Mon, 20 Mar 2023 12:12:17 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/sternberg2016cognitive/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Behaviorism</title>
+      <link>https://mkschleg.github.io/braindump/behaviorism/</link>
+      <pubDate>Mon, 20 Mar 2023 12:03:31 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/behaviorism/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Psychology</title>
+      <link>https://mkschleg.github.io/braindump/psychology/</link>
+      <pubDate>Mon, 20 Mar 2023 12:03:12 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/psychology/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Behavioral Science</title>
+      <link>https://mkschleg.github.io/braindump/behavioral_science/</link>
+      <pubDate>Mon, 20 Mar 2023 12:02:59 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/behavioral_science/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Note-Taking</title>
+      <link>https://mkschleg.github.io/braindump/note_taking/</link>
+      <pubDate>Mon, 20 Mar 2023 11:49:49 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Curiosity</title>
       <link>https://mkschleg.github.io/braindump/curiosity/</link>
-      <pubDate>Fri, 17 Feb 2023 20:17:16 -0400</pubDate>
+      <pubDate>Mon, 20 Mar 2023 11:49:37 -0600</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/curiosity/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Linear Algebra</title>
+      <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
+      <pubDate>Mon, 20 Mar 2023 11:45:59 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
+      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>DiffEQ</title>
+      <link>https://mkschleg.github.io/braindump/diffeq/</link>
+      <pubDate>Mon, 20 Mar 2023 11:45:37 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/diffeq/</guid>
+      <description> tags Math </description>
+    </item>
+    
+    <item>
+      <title>Calculus</title>
+      <link>https://mkschleg.github.io/braindump/calculus/</link>
+      <pubDate>Mon, 20 Mar 2023 11:45:15 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/calculus/</guid>
+      <description>Table of Contents Introduction Resources used while making these notes: Differential Calculus Single variate derivatives The Gradient Operator Gradients over vector fields Higher Order Operators Finding Extrema Subgradients Some useful techniques Derivatives of common functions Integral Calculus Riemmanian sums Line Integrals (Riemmanian Integrals) Fundamental Theorem of Calculus &amp;ldquo;Anti-derivative&amp;rdquo; Useful techniques Calculus for Machine Learning Critical Points and Optimization Projection Probability Deep Learning \( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
+    </item>
+    
+    <item>
+      <title>Analysis</title>
+      <link>https://mkschleg.github.io/braindump/analysis/</link>
+      <pubDate>Mon, 20 Mar 2023 11:45:05 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/analysis/</guid>
+      <description> tags Math </description>
+    </item>
+    
+    <item>
+      <title>Anatomy</title>
+      <link>https://mkschleg.github.io/braindump/anatomy/</link>
+      <pubDate>Mon, 20 Mar 2023 11:44:36 -0600</pubDate>
+      
+      <guid>https://mkschleg.github.io/braindump/anatomy/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -45,15 +632,6 @@
     </item>
     
     <item>
-      <title>Reinforcement Learning in the Brain</title>
-      <link>https://mkschleg.github.io/braindump/reinforcement_learning_in_the_brain/</link>
-      <pubDate>Tue, 31 Jan 2023 12:29:44 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/reinforcement_learning_in_the_brain/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
       <title>Neurotransmitter</title>
       <link>https://mkschleg.github.io/braindump/neurotransmitter/</link>
       <pubDate>Tue, 31 Jan 2023 12:27:01 -0700</pubDate>
@@ -68,15 +646,6 @@
       <pubDate>Tue, 31 Jan 2023 12:26:15 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/dopaminergic_neurons/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Actor Critic</title>
-      <link>https://mkschleg.github.io/braindump/actor_critic/</link>
-      <pubDate>Wed, 14 Dec 2022 13:11:17 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/actor_critic/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
     </item>
     
@@ -123,15 +692,6 @@
       
       <guid>https://mkschleg.github.io/braindump/lstm/</guid>
       <description>tags Recurrent Neural Network Neural Network, Machine Learning source https://colah.github.io/posts/2015-08-Understanding-LSTMs/ The Long-Short Term Memory recurrent unit was first developed in (Hochreiter and Urgen Schmidhuber 1997), who showed the architecture could extend the effective horizon of the predictions made by recurrent networks. The main idea of the architecture was to have a linear path back through time to deal with the vanishing gradient problem. This is exactly what they introduced, where they have a memory component which gets modified through various gates in the architecture, but whose temporal connection is always linear.</description>
-    </item>
-    
-    <item>
-      <title>Shapley Values</title>
-      <link>https://mkschleg.github.io/braindump/shapley_values/</link>
-      <pubDate>Fri, 11 Nov 2022 10:10:25 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/shapley_values/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
     </item>
     
     <item>
@@ -196,15 +756,6 @@ Discovered by Porta in 1593 (Wade 1996). The essence is the interplay of percept
       
       <guid>https://mkschleg.github.io/braindump/bubic2010prediction/</guid>
       <description>tags Predictive Processing, Brain source https://www.frontiersin.org/articles/10.3389/fnhum.2010.00025/full This paper acts as an introduction to the vast literature considering the brain as a predictive processing machine. Specifically, it is looking at terms which have been introduced such as prediction, prospection, anticipation, expectation, preparation, as well as violations of expectations or prediction errors. All these terms have different nuances and levels of abstraction associated with human behavior, and should be treated separately.</description>
-    </item>
-    
-    <item>
-      <title>Causality</title>
-      <link>https://mkschleg.github.io/braindump/causality/</link>
-      <pubDate>Wed, 09 Nov 2022 14:06:22 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/causality/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
     </item>
     
     <item>
@@ -430,26 +981,6 @@ Base agent is a CNN-LSTM ANN trained on-policy using A3C (Mnih et al. 2016) usin
     </item>
     
     <item>
-      <title>Predictive Processing</title>
-      <link>https://mkschleg.github.io/braindump/predictive_processing/</link>
-      <pubDate>Wed, 09 Nov 2022 14:05:07 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/predictive_processing/</guid>
-      <description>Overall predictive processing is a large and varied field of study which takes the perspective that prediction is core to an organism&amp;rsquo;s perceptual system. This note will be a breathing document and will be added to as time goes on. I will also be referring to various papers throughout my Zettelkasten method that will be linked.
-We take a predictive perspective in Reinforcement Learning, as all behavior is driven by maximizing the expected sum of future Reward.</description>
-    </item>
-    
-    <item>
-      <title>Recurrent Neural Network</title>
-      <link>https://mkschleg.github.io/braindump/recurrent_neural_network/</link>
-      <pubDate>Wed, 09 Nov 2022 14:05:05 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/recurrent_neural_network/</guid>
-      <description>tags Neural Network See other extensions: LSTM, GRU, (Chandar et al. 2019), (Goudreau et al. 1994), (Sutskever, Martens, and Hinton 2011), (Cho et al. 2014)
-Chandar, Sarath, Chinnadhurai Sankar, Eugene Vorontsov, Samira Ebrahimi Kahou, and Yoshua Bengio. 2019. “Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies.” In AAAI. https://arxiv.org/abs/1902.06704. Cho, Kyunghyun, Bart van Merriënboer, Dzmitry Bahdanau, and Yoshua Bengio. 2014. “On the Properties of Neural Machine Translation: EncoderDecoder Approaches.” In Proceedings of SSST-8, Eighth Workshop on Syntax, Semantics and Structure in Statistical Translation.</description>
-    </item>
-    
-    <item>
       <title>Reinforcement Learning: An Introduction</title>
       <link>https://mkschleg.github.io/braindump/reinforcement_learning_an_introduction/</link>
       <pubDate>Wed, 09 Nov 2022 14:05:03 -0700</pubDate>
@@ -570,32 +1101,12 @@ Sensorimotor data streams and robots This chapter describes learning predictions
     </item>
     
     <item>
-      <title>Probability Theory</title>
-      <link>https://mkschleg.github.io/braindump/probability_theory/</link>
-      <pubDate>Tue, 08 Nov 2022 15:13:57 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/probability_theory/</guid>
-      <description>tags Math Random variables and probability functions First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:
-\(\Prob(A) \geq 0 \forall A\) \(\Prob(\Sigma) = \sum_{A \in \Sigma} \Prob(A) = 1\) If the events are disjoint then \[\Prob(\cup_{i} A_i) = \sum_i \Prob(A_i)\]</description>
-    </item>
-    
-    <item>
       <title>Sufficient Statistic</title>
       <link>https://mkschleg.github.io/braindump/sufficient_statistic/</link>
       <pubDate>Tue, 08 Nov 2022 15:13:24 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/sufficient_statistic/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Reinforcement Learning</title>
-      <link>https://mkschleg.github.io/braindump/reinforcement_learning/</link>
-      <pubDate>Tue, 08 Nov 2022 15:08:18 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/reinforcement_learning/</guid>
-      <description>Some major categories of reinforcement learning:
-Off-policy Reading Reinforcement Learning: An Introduction </description>
     </item>
     
     <item>
@@ -682,33 +1193,6 @@ Additive building block:</description>
     </item>
     
     <item>
-      <title>Topology</title>
-      <link>https://mkschleg.github.io/braindump/topology/</link>
-      <pubDate>Tue, 08 Nov 2022 14:23:46 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/topology/</guid>
-      <description> tags Math source https://en.wikipedia.org/wiki/Topology </description>
-    </item>
-    
-    <item>
-      <title>Thinking</title>
-      <link>https://mkschleg.github.io/braindump/thinking/</link>
-      <pubDate>Tue, 08 Nov 2022 14:23:45 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Theory</title>
-      <link>https://mkschleg.github.io/braindump/theory/</link>
-      <pubDate>Tue, 08 Nov 2022 14:23:44 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Taylor Series Expansion</title>
       <link>https://mkschleg.github.io/braindump/taylor_series_expansion/</link>
       <pubDate>Tue, 08 Nov 2022 14:23:41 -0700</pubDate>
@@ -787,15 +1271,6 @@ Additive building block:</description>
       
       <guid>https://mkschleg.github.io/braindump/stochastic_processes/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>https://mkschleg.github.io/braindump/statistics/</link>
-      <pubDate>Tue, 08 Nov 2022 14:22:27 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/statistics/</guid>
-      <description> tags Math </description>
     </item>
     
     <item>
@@ -907,16 +1382,6 @@ Additive building block:</description>
     </item>
     
     <item>
-      <title>Representation</title>
-      <link>https://mkschleg.github.io/braindump/representation/</link>
-      <pubDate>Tue, 08 Nov 2022 14:22:03 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/representation/</guid>
-      <description>tags Cognitive Science source https://plato.stanford.edu/entries/mental-representation/index.html A representation is in a sense a vector of features or a symbol which (ideally) uniquely correspond to an object (i.e. a noun) and properties of said object (verbs, descriptors, etc&amp;hellip;). Many modern interpretations of a representation are often traced back to Charles S. Peirce&amp;rsquo;s Semiotics.
-The Representational Theory of Mind source https://plato.stanford.edu/entries/mental-representation/index.html#Representational This theory of mind takes mental states (i.e. internal beliefs, perceptions, thoughts, etc.</description>
-    </item>
-    
-    <item>
       <title>ReLU Activation</title>
       <link>https://mkschleg.github.io/braindump/relu_activation/</link>
       <pubDate>Tue, 08 Nov 2022 14:22:01 -0700</pubDate>
@@ -943,15 +1408,6 @@ The main hallmark of this activation function is the smaller effect of the vanis
       
       <guid>https://mkschleg.github.io/braindump/puddle_world/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>PSR</title>
-      <link>https://mkschleg.github.io/braindump/psr/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:52 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/psr/</guid>
-      <description>(Singh et al. 2003)</description>
     </item>
     
     <item>
@@ -1019,15 +1475,6 @@ Separate Coding This view holds that the afferent and efferent codes are incomme
     </item>
     
     <item>
-      <title>Philosophy</title>
-      <link>https://mkschleg.github.io/braindump/philosophy/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:18 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/philosophy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Perpendicular Distance</title>
       <link>https://mkschleg.github.io/braindump/perpendicular_distance/</link>
       <pubDate>Tue, 08 Nov 2022 14:21:17 -0700</pubDate>
@@ -1037,75 +1484,12 @@ Separate Coding This view holds that the afferent and efferent codes are incomme
     </item>
     
     <item>
-      <title>Perception</title>
-      <link>https://mkschleg.github.io/braindump/perception/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:15 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/perception/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>People</title>
-      <link>https://mkschleg.github.io/braindump/people/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:14 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/people/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Peirce Semiotic</title>
-      <link>https://mkschleg.github.io/braindump/peirce_semiotics/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:13 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/peirce_semiotics/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Optimizers</title>
-      <link>https://mkschleg.github.io/braindump/optimizers/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:11 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/optimizers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Optimization</title>
       <link>https://mkschleg.github.io/braindump/optimization/</link>
       <pubDate>Tue, 08 Nov 2022 14:21:10 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/optimization/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Note-Taking</title>
-      <link>https://mkschleg.github.io/braindump/note_taking/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:09 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/note_taking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Neuroscience</title>
-      <link>https://mkschleg.github.io/braindump/neuroscience/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:07 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/neuroscience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Neural Network</title>
-      <link>https://mkschleg.github.io/braindump/neural_network/</link>
-      <pubDate>Tue, 08 Nov 2022 14:21:06 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/neural_network/</guid>
-      <description> tags Machine Learning </description>
     </item>
     
     <item>
@@ -1145,40 +1529,12 @@ Separate Coding This view holds that the afferent and efferent codes are incomme
     </item>
     
     <item>
-      <title>Meta-Learning</title>
-      <link>https://mkschleg.github.io/braindump/meta_learning/</link>
-      <pubDate>Tue, 08 Nov 2022 14:20:54 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/meta_learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Math</title>
-      <link>https://mkschleg.github.io/braindump/math/</link>
-      <pubDate>Tue, 08 Nov 2022 14:20:51 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Markov Decisions Process</title>
       <link>https://mkschleg.github.io/braindump/markov_decisions_process/</link>
       <pubDate>Tue, 08 Nov 2022 14:20:50 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/markov_decisions_process/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://mkschleg.github.io/braindump/machine_learning/</link>
-      <pubDate>Tue, 08 Nov 2022 14:20:48 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/machine_learning/</guid>
-      <description>Machine Learning is the general study of teaching machines from examples. There are many Types of Learning, but the typical style studied in classical machine learning textbooks is Supervised Learning, with brief explorations into Semi-supervised Learning and Unsupervised Learning.
-This note will act as a central note for basic concepts in machine learning, and will show all the notes linking back to this topic.</description>
     </item>
     
     <item>
@@ -1217,15 +1573,6 @@ This note will act as a central note for basic concepts in machine learning, and
       <description>tags Linear Algebra, Math Author: Gilbert Strang Available at: Biblio
 It is a bit thick and maybe too detailed in the calculations of the certain properties. Really, all I need is understanding the properties of objects, rather than worrying about the details of computation.
 I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other books.</description>
-    </item>
-    
-    <item>
-      <title>Linear Algebra</title>
-      <link>https://mkschleg.github.io/braindump/linear_algebra/</link>
-      <pubDate>Tue, 08 Nov 2022 14:20:37 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/linear_algebra/</guid>
-      <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
     </item>
     
     <item>
@@ -1280,15 +1627,6 @@ I&amp;rsquo;ve only read bits and pieces of the book and am moving on to other b
       
       <guid>https://mkschleg.github.io/braindump/isomorph/</guid>
       <description>tags Math, Category Theory definition: An isomorphism is a mapping between two mathematical groups which maintains sets and relations of the elements of the groups. If two mathematical objects have an isomorphism this means they are effectively the same objects after all the elements are renamed (through the isomorph mapping). More formally an isomorphism is a bijective morphism.</description>
-    </item>
-    
-    <item>
-      <title>Intelligence</title>
-      <link>https://mkschleg.github.io/braindump/intelligence/</link>
-      <pubDate>Tue, 08 Nov 2022 14:20:14 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/intelligence/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -1553,30 +1891,12 @@ Notation:
     </item>
     
     <item>
-      <title>DiffEQ</title>
-      <link>https://mkschleg.github.io/braindump/diffeq/</link>
-      <pubDate>Tue, 08 Nov 2022 14:19:22 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/diffeq/</guid>
-      <description> tags Math </description>
-    </item>
-    
-    <item>
       <title>DeepMind Lab</title>
       <link>https://mkschleg.github.io/braindump/deepmind_lab/</link>
       <pubDate>Tue, 08 Nov 2022 14:19:20 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/deepmind_lab/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Deep Reinforcement Learning</title>
-      <link>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</link>
-      <pubDate>Tue, 08 Nov 2022 14:19:19 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</guid>
-      <description> tags Reinforcement Learning </description>
     </item>
     
     <item>
@@ -1670,39 +1990,12 @@ Notation:
     </item>
     
     <item>
-      <title>Category Theory</title>
-      <link>https://mkschleg.github.io/braindump/category_theory/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:54 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/category_theory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Calculus</title>
-      <link>https://mkschleg.github.io/braindump/calculus/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:53 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/calculus/</guid>
-      <description>Table of Contents Introduction Resources used while making these notes: Differential Calculus Single variate derivatives The Gradient Operator Gradients over vector fields Higher Order Operators Finding Extrema Subgradients Some useful techniques Derivatives of common functions Integral Calculus Riemmanian sums Line Integrals (Riemmanian Integrals) Fundamental Theorem of Calculus &amp;ldquo;Anti-derivative&amp;rdquo; Useful techniques Calculus for Machine Learning Critical Points and Optimization Projection Probability Deep Learning \( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
       <title>byrd2019what: What is the Effect of Importance Weighting in Deep Learning?</title>
       <link>https://mkschleg.github.io/braindump/byrd2019what/</link>
       <pubDate>Tue, 08 Nov 2022 14:18:52 -0700</pubDate>
       
       <guid>https://mkschleg.github.io/braindump/byrd2019what/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Brain</title>
-      <link>https://mkschleg.github.io/braindump/brain/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:49 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/brain/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -1739,33 +2032,6 @@ Notation:
       
       <guid>https://mkschleg.github.io/braindump/backpropagation/</guid>
       <description>\( \newcommand{\states}{\mathcal{S}} \newcommand{\actions}{\mathcal{A}} \newcommand{\observations}{\mathcal{O}} \newcommand{\rewards}{\mathcal{R}} \newcommand{\traces}{\mathbf{e}} \newcommand{\transition}{P} \newcommand{\reals}{\mathbb{R}} \newcommand{\naturals}{\mathbb{N}} \newcommand{\complexs}{\mathbb{C}} \newcommand{\field}{\mathbb{F}} \newcommand{\numfield}{\mathbb{F}} \newcommand{\expected}{\mathbb{E}} \newcommand{\var}{\mathbb{V}} \newcommand{\by}{\times} \newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}} \newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}} \newcommand{\eye}{\Imat} \newcommand{\hadamard}{\odot} \newcommand{\trans}{\top} \newcommand{\inv}{{-1}} \newcommand{\argmax}{\operatorname{argmax}} \newcommand{\Prob}{\mathbb{P}} \newcommand{\avec}{\mathbf{a}} \newcommand{\bvec}{\mathbf{b}} \newcommand{\cvec}{\mathbf{c}} \newcommand{\dvec}{\mathbf{d}} \newcommand{\evec}{\mathbf{e}} \newcommand{\fvec}{\mathbf{f}} \newcommand{\gvec}{\mathbf{g}} \newcommand{\hvec}{\mathbf{h}} \newcommand{\ivec}{\mathbf{i}} \newcommand{\jvec}{\mathbf{j}} \newcommand{\kvec}{\mathbf{k}} \newcommand{\lvec}{\mathbf{l}} \newcommand{\mvec}{\mathbf{m}} \newcommand{\nvec}{\mathbf{n}} \newcommand{\ovec}{\mathbf{o}} \newcommand{\pvec}{\mathbf{p}} \newcommand{\qvec}{\mathbf{q}} \newcommand{\rvec}{\mathbf{r}} \newcommand{\svec}{\mathbf{s}} \newcommand{\tvec}{\mathbf{t}} \newcommand{\uvec}{\mathbf{u}} \newcommand{\vvec}{\mathbf{v}} \newcommand{\wvec}{\mathbf{w}} \newcommand{\xvec}{\mathbf{x}} \newcommand{\yvec}{\mathbf{y}} \newcommand{\zvec}{\mathbf{z}} \newcommand{\Amat}{\mathbf{A}} \newcommand{\Bmat}{\mathbf{B}} \newcommand{\Cmat}{\mathbf{C}} \newcommand{\Dmat}{\mathbf{D}} \newcommand{\Emat}{\mathbf{E}} \newcommand{\Fmat}{\mathbf{F}} \newcommand{\Gmat}{\mathbf{G}} \newcommand{\Hmat}{\mathbf{H}} \newcommand{\Imat}{\mathbf{I}} \newcommand{\Jmat}{\mathbf{J}} \newcommand{\Kmat}{\mathbf{K}} \newcommand{\Lmat}{\mathbf{L}} \newcommand{\Mmat}{\mathbf{M}} \newcommand{\Nmat}{\mathbf{N}} \newcommand{\Omat}{\mathbf{O}} \newcommand{\Pmat}{\mathbf{P}} \newcommand{\Qmat}{\mathbf{Q}} \newcommand{\Rmat}{\mathbf{R}} \newcommand{\Smat}{\mathbf{S}} \newcommand{\Tmat}{\mathbf{T}} \newcommand{\Umat}{\mathbf{U}} \newcommand{\Vmat}{\mathbf{V}} \newcommand{\Wmat}{\mathbf{W}} \newcommand{\Xmat}{\mathbf{X}} \newcommand{\Ymat}{\mathbf{Y}} \newcommand{\Zmat}{\mathbf{Z}} \newcommand{\Sigmamat}{\boldsymbol{\Sigma}} \newcommand{\identity}{\Imat} \newcommand{\epsilonvec}{\boldsymbol{\epsilon}} \newcommand{\thetavec}{\boldsymbol{\theta}} \newcommand{\phivec}{\boldsymbol{\phi}} \newcommand{\muvec}{\boldsymbol{\mu}} \newcommand{\sigmavec}{\boldsymbol{\sigma}} \newcommand{\jacobian}{\mathbf{J}} \newcommand{\ind}{\perp!</description>
-    </item>
-    
-    <item>
-      <title>Artificial Intelligence</title>
-      <link>https://mkschleg.github.io/braindump/artificial_intelligence/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:31 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/artificial_intelligence/</guid>
-      <description>tags Intelligence There are various forms of Artificial Intelligence, or what is thought to be artificial intelligence. It is a large field with many varying opinions. While my personal bent is towards Reinforcement Learning, this doesn&amp;rsquo;t preclude the large probability that other studies can enlighten our approaches brining a different perspective. In this note, I hope to go through various forms of AI over the past century, touching on various notable conversations that have occurred.</description>
-    </item>
-    
-    <item>
-      <title>Anatomy</title>
-      <link>https://mkschleg.github.io/braindump/anatomy/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:30 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/anatomy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Analysis</title>
-      <link>https://mkschleg.github.io/braindump/analysis/</link>
-      <pubDate>Tue, 08 Nov 2022 14:18:28 -0700</pubDate>
-      
-      <guid>https://mkschleg.github.io/braindump/analysis/</guid>
-      <description> tags Math </description>
     </item>
     
     <item>
