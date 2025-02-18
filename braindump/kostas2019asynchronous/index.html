@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/kostas2019_asynchronous_coagent_networks_stochastic_networks_for_reinforcement_learning_without_backpropagation_or_a_clock.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/kostas2019asynchronous/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/kostas2019asynchronous/">
+  <meta property="og:title" content="kostas2019asynchronous: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2022-11-09T14:05:37-07:00">
+  
+  <meta property="article:modified_time" content="2022-11-09T14:05:37-07:00">
+  
+
+  <title>kostas2019asynchronous: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/kostas2019asynchronous/">kostas2019asynchronous: Asynchronous Coagent Networks: Stochastic Networks for Reinforcement Learning without Backpropagation or a Clock</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2022-11-09 14:05:37 -0700 MST" itemprop="datePublished dateModified">
+      Nov 9, 2022
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reinforcement_learning/">Reinforcement Learning</a>, <a href="/braindump/representation/">Representation</a></dd>
+<dt>source</dt>
+<dd><a href="http://all.cs.umass.edu/pubs/2019/Kostas%20et%20al%20-%20Asynchronous%20Coagent%20Networks.pdf">paper</a></dd>
+<dt>authors</dt>
+<dd>Kostas, J., Nota, C., &amp; Thomas, P. S.</dd>
+<dt>year</dt>
+<dd>2019</dd>
+</dl>
+<p>This paper continues the line of research into coagent networks, primarily looking at how these networks can be trained in an asynchronous way. Policy gradient coagent networks (PGCN) already have removed back-propagation as a requirement, meaning the updates require only information local to a particular coagent (or neuron in an ANN).</p>
+<p>Some literature connected to this work is:</p>
+<ul>
+<li><em>stochastic computation graphs</em> - proposed to describe networks with a mixture of stochastic and deterministic nodes, with supervised, unsupervised, and RL applications.</li>
+<li><em>Stochastic neural networks</em> - A type of ANN which builds in random variations to the network, either through a stochastic transfer function, or stochastic weights.</li>
+<li>Multi-agent RL - (<a href="#citeproc_bib_item_1">Liu et al. 2014</a>): showed that multi-agent systems sometimes learn more quickly when agents are given individualized rewards.</li>
+</ul>
+<h2 id="background">Background</h2>
+<p>Consider the MDP, \((M=(\states, \actions, \rewards, \transition, R, d_0, \gamma))\). where the \(\states\) is all possible states, \(\actions\) set of all possible actions, and \(\rewards\) the set of all possible rewards (All finite sets). \(\transition: \states \by \actions \by \states \rightarrow [0,1], R: \states \by \actions \by \states \rightarrow [0,1], d_0(s) \triangleq Pr(S_0=s)\) are the transition function, reward distribution, and initial state distribution respectively.</p>
+<p>The paper defines a parameterized policy as \(\pi: \states \by \actions \by \mathbb{R}^n \rightarrow [0,1]\)., such that for all \(\theta \in \reals^n\), \(\pi(\cdot, \cdot, \theta)\) is a policy. Assume \(\partialderiv{\pi(s,a,\theta)}{ \theta}\) exists for all \(s\in\states, a\in\actions\).</p>
+<p>An agents goal is to maximize the objective</p>
+<p>\[J(\pi) = \mathbb{E}[\sum_{t=0}^\infty \gamma^t R_t|A_t \sim \pi(\cdot, \cdot, \theta)]\]</p>
+<h3 id="how-coagent-networks-function">How coagent networks function</h3>
+<p>We can consider an acyclic network of nodes, where each node is an independently acting coagent</p>
+<p>The ith coagent has parameters \(\theta_i \in \reals^{n_i}\), where the remaining parameters of the network are \(\bar{\theta}_i \in \reals{n - n_i}\).</p>
+<p>We model the output of the previous coagents in the network through a parameterized distribution \(U_t^\text{pre} \sim \pi_i^{\text{pre}}(S_t, \cdot, \bar{theta}_i)\). The output of the previous coagents is a random variable \(U_t^\text{pre}\), which takes some discrete values in a set \(\mathcal{U}^\text{pre}\).</p>
+<p>The \(i^\text{th}\) coagent takes \(S_t\) and \(U_t^\text{pre}\) as input and produces \(U_t^i\), the conditional distribution of \(U^i_t\) is given by \(\pi(X_t^i, \cdot, \theta_i)\) where \(X_t^i = (S_t, U^\text{pre}_t)\). \(A_t\) is sampled according to a distribution \(\pi_i^\text{post}(X_t, U_t^i, \cdot, \bar{\theta_i})\).</p>
+<p>Each agents environment is modeled as a CoMDP (<em>conjugate Markov decision process</em>).</p>
+<h2 id="the-coagent-policy-gradient-theorem">The Coagent Policy Gradient Theorem</h2>
+<p>If we were to simpley implement an unbiased policy gradient algorithm (say REINFORCE), the expected update or the <em>local policy gradient</em> \(\Delta_i\) for the \(i^\text{th}\) coagent would be:</p>
+<p>\begin{equation}
+\Delta_i(\theta_i) \triangleq \expected\left[\sum_{t=0}^\infty \gamma^t G_t \partialderiv{\ln(\pi_i(X_t, U_t, \theta_i))}{\theta_i} \vert \theta\right] \label{eqn:kostas2019:local-policy-gradient}
+\end{equation}</p>
+<p>What would happen if all coagents updated according to the local policy gradient updates?</p>
+<p><strong>Coagent policy gradient theorm (CPGT)</strong>: If \(\theta\) is fixed and all coagents update their parameters following unbiased estimates of <a href="eqn:kostas2019:local-policy-gradient">eqn:kostas2019:local-policy-gradient</a> then the entire network will follow an unbiased estimator of \(\nabla J(\theta)\), or the <em>global policy gradient</em>.</p>
+<h3 id="conjugate-markov-decision-process--comdp">Conjugate Markov Decision Process (CoMDP)</h3>
+<p>The CoMDP (or environment) of the \(i^\text{th}\), \(M^i \triangleq (\mathcal{X}^i, \mathcal{U}^i, \rewards^i, \transition^i, R^i, d_0^i, \gamma_i)\). Each component follows the normal MDP scheme laid out above. Here we will denote all random variables of the CoMDP with a tilde to clarify the distinction, for example \(\tilde{X}^i_t\) is the state of coagent \(i\) at time \(t\). The reward set and discount are the same as the MDP. We also define the transition and reward dynamics as</p>
+<p>\[\transition^i(x, u, x&rsquo;, \bar{\theta}_i) \triangleq \pi_i^\text{pre}(x&rsquo;.s, x&rsquo;.u_\text{pre}) \sum_{a \in \actions} \transition(x.s, a, x&rsquo;.s) \pi_i^\text{post}(x, u, a)\]</p>
+<p>\[R^i(x, u, x&rsquo;, r, \bar{\theta}_i) \triangleq
+\sum_{a\in\actions} R(x.s, a, x&rsquo;.s, r) \frac{\transition(x.s, a, x&rsquo;.s) \pi_i^\text{post}(x, u, a)}{\sum_{\hat{a} \in \actions}\transition(x.s, \hat{a}, x&rsquo;.s) \pi_i^\text{post}(x,u,\hat{a})}\]</p>
+<p>They assume that given the same parameters \(\theta_i\), the \(i^\text{th}\) coagent has the same policy in both the original MDP and the \(i^\text{th}\) CoMDP.</p>
+<p>The properties of the CoMDP are relatively straightforward from basic probability and algebraic manipulations. Something to keep in mind is the notion that the objective functions are equivalent (i.e. \(J(\theta) = J_i(\theta_i)\)). How this plays out in the network makes some amount of sense, as each coagent needs to act in such a way the whole agent can maximize the return.</p>
+<p>I wonder if:</p>
+<ul>
+<li>Does the network ever collapse where each agent is selecting the same action? This could be a problem as it will force the network into a local optima, with no way out. If the policies are stochastic this should be avoidable.</li>
+<li>If the agents are dependent on the prior agents output, how can this be asynchronous? I&rsquo;m still a bit confused on how the forward pass is being performed.</li>
+<li>Can this go beyond each node being an agent? How else can we construct asynchronous networks?</li>
+</ul>
+<h2 id="asynchronous-recurrent-networks">Asynchronous Recurrent Networks</h2>
+<p>They allow for cyclic and asynchronous firings in straightforward ways. The cyclic structure is placed in \(\mathcal{X}_t\) which can contain prior firings of the coagent. The asynchronous firings are done through discritizing time into <em>atomic time steps</em> or really time steps which can be arbitrarily fine. Each coagent then has a probability of firing and any given <em>atomic time step</em>.</p>
+<p>They provide theoretical evidence these extensions are valid, which will not be discussed in detail here.</p>
+<h2 id="case-study-option-critic">Case Study: Option Critic</h2>
+<p>They show the CGPT can be applied to an option critic framework. This allows detailed analysis of several multi-component algorithms to be analyzed using a more general policy gradient algorithm.</p>
+<p>The details of this are skipped here.</p>
+<h2 id="empirical-support-of-cpgt">Empirical Support of CPGT</h2>
+<p>They provide some empirical evidence on a toy problem that the gradient estimates are similar to the back prop example. They show the directions are relatively similar as the number of estimate episodes increases.</p>
+<h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Liu, Bingyao, Satinder Singh, Richard L. Lewis, and Shiyin Qin. 2014. “Optimal Rewards for Cooperative Agents.” <i>IEEE Transactions on Autonomous Mental Development</i>.</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

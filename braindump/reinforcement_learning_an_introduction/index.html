@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/reinforcement_learning_an_introduction.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/reinforcement_learning_an_introduction.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="Reinforcement Learning: An Introduction | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:20:39-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:20:39-06:00">
+  <meta property="article:published_time" content="2022-11-09T14:05:03-07:00">
+  
+  <meta property="article:modified_time" content="2022-11-09T14:05:03-07:00">
   
 
   <title>Reinforcement Learning: An Introduction | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:20:39 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2022-11-09 14:05:03 -0700 MST" itemprop="datePublished dateModified">
+      Nov 9, 2022
     </time>
   </span>
 
@@ -402,6 +397,7 @@
 \newcommand{\Zmat}{\mathbf{Z}}
 \newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
 \newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -431,8 +427,7 @@
 <h3 id="goals-and-rewards">Goals and Rewards</h3>
 <p>A core axiom on which reinforcement learning stands is noted as the <em>reward hypothesis</em></p>
 <blockquote>
-<p>That all of what we mean by goals and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal (called reward).</p>
-</blockquote>
+<p>That all of what we mean by goals and purposes can be well thought of as the maximization of the expected value of the cumulative sum of a received scalar signal (called reward).</p></blockquote>
 <aside>
 <p>This &ldquo;hypothesis&rdquo; is vacuous in my opinion. There are no useful tests which could draw out to a broader understanding of what it means for an agent to have a goal or purpose. I believe this hypothesis cannot be tested just from two ambiguous statements; &ldquo;what we mean by&rdquo; and &ldquo;well thought of&rdquo;; which make any counters impossible as the counter can be &ldquo;that isn&rsquo;t what we mean&rdquo; or &ldquo;we can still think of it as&rdquo;. It is much better phrased as an assumption or axiom, as long as goals and purposes are more fully described. It is annoying to have circuitous on this: &ldquo;what is the agent&rsquo;s goal&rdquo; well it is to maximize reward, &ldquo;what is the reward&rdquo; well it is a signal defining the goal.</p>
 </aside>
@@ -1086,6 +1081,82 @@ The performance measure:
     
 
 
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    
@@ -1149,6 +1220,46 @@ The performance measure:
    
 
    
+      
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -1179,6 +1290,26 @@ The performance measure:
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -1489,8 +1620,41 @@ The performance measure:
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
 
 
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/policy/">Policy</a></li>
+       
+          <li><a href="/braindump/off_policy_reinforcement_learning/">Off-policy Reinforcement Learning</a></li>
+       
+          <li><a href="/braindump/bellman_equation/">Bellman Equation</a></li>
+       
+     </ul>
+    </div>
+  </div>
 
 
     

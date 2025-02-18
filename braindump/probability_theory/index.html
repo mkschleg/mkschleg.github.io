@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/probability_theory.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/probability_theory.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="Probability Theory | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:20:28-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:20:28-06:00">
+  <meta property="article:published_time" content="2023-08-08T13:30:27-06:00">
+  
+  <meta property="article:modified_time" content="2023-08-08T13:30:27-06:00">
   
 
   <title>Probability Theory | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:20:28 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2023-08-08 13:30:27 -0600 MDT" itemprop="datePublished dateModified">
+      Aug 8, 2023
     </time>
   </span>
 
@@ -222,7 +217,8 @@
 <dt>tags</dt>
 <dd><a href="/braindump/math/">Math</a></dd>
 </dl>
-<h2 id="random-variables-and-probability-functions">Random variables and probability functions</h2>
+<p>This is the broad note about probability theory, but should likely be split up to multiple notes, or at least each section should be made into its own note.</p>
+<h2 id="probability-spaces-and-random-variables--without-measure-theory">Probability spaces and random variables (without measure theory)</h2>
 <p>First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:</p>
 <ol>
 <li>\(\Prob(A) \geq 0 \forall A\)</li>
@@ -230,12 +226,15 @@
 <li>If the events are disjoint then</li>
 </ol>
 <p>\[\Prob(\cup_{i} A_i) = \sum_i \Prob(A_i)\]</p>
+<div title="Random Variable" class="definition">
 <p>A Random Variable is a mapping from outcome spaces to real numbers \(X: \Sigma \rightarrow \reals\) that assigns a real value to \(X(\omega)\) to each outcome \(\omega\).</p>
+</div>
 <p>Given a random variable \(X\) we can define the cumulative distribution function (CDF) \(F_X: \reals \rightarrow [0, 1]\) of a random variable \(X\) is defined by
 \[
 F_X(x) = \Prob(X \leq x)
 \]</p>
-<p>(Example from (<a href="#citeproc_bib_item_1">Wasserman, n.d.</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
+<div class="instance">
+<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman 2004</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
 \[
 F_{X}(x) = \begin{cases}
 0 \quad &amp;x&lt;0 \\
@@ -244,6 +243,7 @@ F_{X}(x) = \begin{cases}
 1 \quad &amp;x \geq 2.
 \end{cases}
 \]</p>
+</div>
 <p>A function F which maps the real line to \([0, 1]\) is a CDF if and only if:</p>
 <ol>
 <li>F is non-decreasing: \(x_1 &lt; x_2 \rightarrow F(x_1) \leq F(x_2)\)</li>
@@ -268,10 +268,126 @@ f_X(x) = \Prob(X=x).
 F_X(x) = \int_{-\infty}^{x} f_X(t)dt
 \]</p>
 <p>and \(f_X(x) = F^\prime_X(x)\) at all points \(x\) at which \(F_X\) is differentiable.</p>
-<h2 id="expectations-and-different-moments">Expectations and different moments</h2>
-<p>The expected value, or mean, or first moment of \(X\) is defined to be</p>
+<h2 id="expectations-of-a-random-variable">Expectations of a random variable</h2>
+<p>The expected value, or mean, or first moment of \(X\) is defined to be
+\[
+\expected(X) = \int x dF(x) = \begin{cases}
+\sum_x xf(x) \quad &amp;\text{if $X$ is discrete}\\
+\int xf(x)dx \quad &amp;\text{if $X$ is continuous}
+\end{cases}
+\]
+assuming that the sum (or integral) is well-defined.</p>
+<p><strong>Some properties:</strong></p>
+<ol>
+<li>If \(X_1, \ldots, X_2\) are random variables and \(a_1, \ldots, a_n\) are constants, then
+\[\expected\left(\sum_i a_i X_i \right) = \sum_i a_i \expected(X_i).\]</li>
+<li>Let \(X_1, \ldots, X_2\) be independent random variables. Then,
+\[\expected\left(\prod_{i=1}^n X_i \right) = \prod_i \expected(X_i)\]</li>
+</ol>
+<p>The variance of a distribution is the &ldquo;spread&rdquo; of the distribution. The variance of a random variable \(X\) with mean \(\mu\) is defined by
+\[
+\sigma^2 = \var(X) = \expected(X-\mu)^2= \int (x-\mu)^2 dF(x)
+\]</p>
+<p>assuming this expectation exists. The <em>standard deviation</em> is \(sd(X) = \sqrt{\var(X)}\). The variance has the following properties:</p>
+<ol>
+<li>\(\var(X) = \expected(X^2) - \mu^2\).</li>
+<li>If \(a\) and \(b\) are constants then \(\var(aX + b) = a^2\var(X)\).</li>
+<li>If \(X_1,\ldots,X_n\) are independent and \(a_1,\ldots,a_n\) are constants, then
+\[\var\left(\sum_{i=1}^n a_i X_i \right) = \sum_{i=1}^n a_i^2 \var(X_i)\].</li>
+</ol>
+<p>If X and Y are random variables with means \(\mu_X\) and \(\mu_Y\) and standard deviations \(\sigma_X\) and \(\sigma_Y\), the <strong>covariance</strong> between \(X\) and \(Y\) is defined as
+\[\text{Cov}(X, Y) = \expected[(X-\mu_X)(Y-\mu_Y)]\]
+and the correlation by
+\[\rho_{X, Y} = \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}\]</p>
+<h2 id="moments-of-a-random-variable">Moments of a random variable</h2>
+<p>The nth-moment of a random variable is defined as:
+\[
+\mu_n = \expected[(X - c)^n] = \int_{-\infty}^{\infty} (x-c)^n f(x) dx
+\]</p>
+<p>The raw moment is defined as the moment centered around zero (i.e. \(c=0\) above). The first raw moment is the mean of the random variable. We can also define the central moments by setting \(c=\mu\) or the the center of the moment to the mean of the random variable.
+\[
+\expected[(X-\expected[X])^n]
+\]
+The second central moment is the variance. Finally, we can normalize the moment by powers of the standard deviation creating <em>standardized moments</em>
+\[
+\expected[\frac{(X-\expected[X])^n}{\sigma^2}]
+\]
+where \(\sigma=\sqrt{\var(X)}\) is the standard deviation.</p>
+<p>The <strong>skewness</strong> and <strong>kurtosis</strong> are the 3rd and 4th standardized moments respectively. The <strong>skewness</strong> of a distribution is how &ldquo;skewed&rdquo; or asymmetric it is around the mean. This gives an indication on where the tail is in a unimodal distribution (i.e. left or right side). The kurtosis describes how much &ldquo;tail&rdquo; the distribution has, or its &ldquo;tailedness&rdquo;.</p>
 <h2 id="basic-inequalities">Basic Inequalities</h2>
-<h2 id="central-limit-theorem">Central Limit Theorem</h2>
+<p>There are a few basic inequalities that everyone should know imho.</p>
+<div title="Markov Inequality" class="theorem">
+<p>Let \(X\) be a non-negative random variable and suppose that \(\expected(X)\) exists. For any t&gt;0
+\[\Prob(X&gt;t) \leq \frac{\expected(X)}{t}.\]</p>
+</div>
+<div title="Chebyshev’s Inequality" class="theorem">
+<p>Let \(\mu = \expected(X)\) and \(\sigma^2 = \var(X)\). Then
+\[\Prob(|X-\mu| \geq t) \leq \frac{\sigma^2}{t^2} \text{ and } \Prob(|Z|\geq k)\leq\frac{1}{k^2}\]
+where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \frac{1}{4}\) and \(\Prob(|Z| &gt; 3) \leq \frac{1}{9}\).</p>
+</div>
+<h2 id="classical-convergence-theorems-of-random-variables">Classical convergence theorems of random variables</h2>
+<p>There are a few classic results that are important when thinking about probability and statistics in learning theory.</p>
+<div title="Law of Large Numbers" class="definition">
+<p>The <strong>law of large numbers</strong> says that sample average \(\bar{X}_n = n^\inv \sum_{i=1}^n X_i\) <strong>converges in probability</strong> to the expectation \(\mu = \expected(X)\).</p>
+</div>
+<p>The <strong>law of large number</strong> tells us that as we sample from our data more, the sample average will converge to the actual expected value. This means that if we want a better estimate an easy solution is to gather more data, and this has been a common theme in recent machine learning research (i.e. Deep Learning soaks up data).</p>
+<div title="Central Limit Theorem" class="definition">
+<p>The <strong>central limit theorem</strong> says that sample average has approximately a Normal distribution for large \(n\). More exact, \(\sqrt{n}(\bar{X}_n - \mu)\) <strong>converges in distribution</strong> to a \(\text{Normal}(0, \sigma^2)\) distribution, where \(\sigma^2 = \var(X)\).</p>
+</div>
+<p>The <strong>central limit theorem</strong> gives us a way to reason about the variance of the sample averages. Because the random variable defined by the sample average will be distributed according \(\text{Normal}(\mu, \sigma^2)\) we can estimate the confidence intervals for our current estimate.</p>
+<h2 id="hypothesis-testing-and-p-values">Hypothesis testing and p-values</h2>
+<p>Hypothesis testing is at the core of empirical science, which is a core facet of todays <a href="/braindump/machine_learning/">Machine Learning</a> research. Hypothesis testing gives us the ability to (with some certainty) measure differences or changes made by experimental interventions. For two methods, say one baseline and one new method designed by the scientist we test two hypotheses simultaneously:</p>
+<ul>
+<li><strong>The Null Hypothesis</strong>: The two algorithms perform the same.</li>
+<li><strong>The Alternative Hypothesis</strong>: The two algorithms do not perform the same.</li>
+</ul>
+<p>Our hope is that the null hypothesis can be rejected given the data collected (i.e. if the new algorithm considerably under or overperforms the baseline).</p>
+<h2 id="some-discrete-distributions">Some Discrete Distributions</h2>
+<h3 id="bernoulli">Bernoulli</h3>
+<p>Bernoulli distribution is that of a biased coin flip with a probability of getting heads (or a success) set to \(\alpha\). For a random variable \(X \in \{0, 1\}\) we define the Bernoulli distribution as:
+\[X \sim \text{Bernoulli}(\alpha) \rightarrow \Prob(X=x) = \alpha^x (1-\alpha)^{1-x} \]</p>
+<p>where the mean is \(\alpha\) and variance is \(\alpha(1-\alpha)\).</p>
+<h3 id="binomial">Binomial</h3>
+<p>The binomial distribution is the probability of k successes in n trials of random pulls from the Bernoulli distribution.
+\[X\sim \text{Binomial}(\alpha, n) \rightarrow \Prob(X=k; \alpha, n) = \frac{n!}{k! (n-k)!} \alpha^k (1-\alpha)^{n-k}\]</p>
+<p>where the mean is \(n\alpha\) and the variance is \(n\alpha(1-\alpha)\)</p>
+<h3 id="geometric">Geometric</h3>
+<p>The geometric distribution is how many trials we need to see before we see a successful trial.
+\[X\sim \text{Geometric}(\alpha) \rightarrow \Prob(X=k; \alpha)=\alpha(1-\alpha)^{k-1}\]</p>
+<p>with mean \(\frac{1}{\alpha}\) and variance \(\frac{1-\alpha}{\alpha^2}\).</p>
+<h3 id="poisson">Poisson</h3>
+<p>The Poisson distribution is the probability of seeing k independent events in a set interval with a rate \(\lambda\).
+\[X \sim \text{Poisson}(\lambda) \rightarrow \Prob(X=k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}\]</p>
+<p>where the mean and variance is \(\lambda\).</p>
+<h2 id="some-continual-distributions">Some Continual Distributions</h2>
+<h3 id="normal">Normal</h3>
+<p>The normal (or gaussian) distribution is used quite often. For mean \(\mu\) and variance \(\sigma^2\)</p>
+<p>\[X \sim \text{Normal}(\mu, \sigma^2) \rightarrow f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]</p>
+<h3 id="laplace">Laplace</h3>
+<p>The Laplace distribution is like two exponentials centered on the mean.</p>
+<p>\[X \sim \text{Laplace}(\mu, b) \rightarrow f_X(x) = \frac{1}{2b} e^{-\frac{\lvert x - \mu \rvert}{b}}\]</p>
+<p>with mean \(\mu\) and variance \(2b^2\).</p>
+<h3 id="gamma">Gamma</h3>
+<p>The gamma distribution is
+\[X \sim \text{Gamma}(\alpha, \beta) \rightarrow f_X(x) = x^{\alpha-1} e^{-\beta x} \frac{\beta^\alpha}{\Gamma(\alpha)}\]</p>
+<p>with mean \(\frac{\alpha}{\beta}\) and variance \(\frac{\alpha}{\beta^2}\)</p>
+<h2 id="measure-theory-based-ideas">Measure theory based ideas</h2>
+<p>I&rsquo;m grabbing most of these notes from (<a href="#citeproc_bib_item_1">Ross and Pekoz 2007</a>).</p>
+<p>Let \(\Sigma\) be the set of points in a sample space, with \(\mathcal{F}\) is a collection of subsets of \(\Sigma\). The subsets are called events (so I think \(\mathcal{F}\) is an event space?). A probability space is the triple \((\Sigma, \mathcal{F}, P\), where \(P\) is a function which gives the probability for any event in \(\mathcal{F}\).</p>
+<div class="definition">
+<p>The collection of sets \(\mathcal{F}\) is a sigma field, or a \(\sigma\)-field, if it has the following three properties:</p>
+<ol>
+<li>\(\Sigma \in \mathcal{F}\)</li>
+<li>\(A \in \mathcal{F} \rightarrow A^c \in \mathcal{F}\)</li>
+<li>\(A_1, A_2, \ldots \in \mathcal{F} \rightarrow \cup_{i=1}^\infty A_i \in \mathcal{F}\)</li>
+</ol>
+</div>
+<p>From the definition, these properties ensure that:</p>
+<ol>
+<li>The probability of the whole sample space can be calculated.</li>
+<li>The complement of any event has a well defined probability.</li>
+<li>The countable union of any sequence of events has a well defined probability.</li>
+</ol>
 <h2 id="questions">Questions</h2>
 <ul>
 <li>Central limit theorem</li>
@@ -284,7 +400,13 @@ F_X(x) = \int_{-\infty}^{x} f_X(t)dt
 <h2 id="books">Books</h2>
 <ul>
 <li><a href="/braindump/probability_via_expectations/">Probability via Expectations</a></li>
+<li>(<a href="#citeproc_bib_item_1">Ross and Pekoz 2007</a>)</li>
 </ul>
+<h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Ross, Sheldon M., and Erol A. Pekoz. 2007. <i>A Second Course in Probability</i>. Boston: www.ProbabilityBookstore.com.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. 2004. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>. Springer.</div>
+</div>
 
     </div>
 
@@ -306,6 +428,118 @@ F_X(x) = \int_{-\infty}^{x} f_X(t)dt
     
 
 
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    
@@ -619,6 +853,26 @@ F_X(x) = \int_{-\infty}^{x} f_X(t)dt
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -709,8 +963,37 @@ F_X(x) = \int_{-\infty}^{x} f_X(t)dt
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
 
 
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/kl_divergence/">KL Divergence</a></li>
+       
+     </ul>
+    </div>
+  </div>
 
 
     

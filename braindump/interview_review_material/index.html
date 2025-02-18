@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/interview_review_material.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/interview_review_material.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="Interview Review Material | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-28T14:00:06-06:00">
-  <meta property="article:modified_time" content="2022-10-28T14:00:06-06:00">
+  <meta property="article:published_time" content="2022-11-16T13:39:09-07:00">
+  
+  <meta property="article:modified_time" content="2022-11-16T13:39:09-07:00">
   
 
   <title>Interview Review Material | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-28 14:00:06 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 28, 2022
+    <time datetime="2022-11-16 13:39:09 -0700 MST" itemprop="datePublished dateModified">
+      Nov 16, 2022
     </time>
   </span>
 
@@ -221,6 +216,7 @@
       <div class="ox-hugo-toc toc">
 <div class="heading">Table of Contents</div>
 <ul>
+<li><a href="#things-left-to-study">Things left to study</a></li>
 <li><a href="#probability">Probability</a>
 <ul>
 <li><a href="#expectations-of-a-random-variable">Expectations of a random variable</a></li>
@@ -228,6 +224,8 @@
 <li><a href="#basic-inequalities">Basic Inequalities</a></li>
 <li><a href="#classical-convergence-theorems-of-random-variables">Classical convergence theorems of random variables</a></li>
 <li><a href="#hypothesis-testing-and-p-values">Hypothesis testing and p-values</a></li>
+<li><a href="#some-discrete-distributions">Some Discrete Distributions</a></li>
+<li><a href="#some-continual-distributions">Some Continual Distributions</a></li>
 <li><a href="#questions">Questions</a></li>
 </ul>
 </li>
@@ -287,8 +285,10 @@
 <li><a href="#support-vector-machines">Support Vector Machines</a></li>
 <li><a href="#kernel-methods">Kernel Methods</a></li>
 <li><a href="#artificial-neural-networks">Artificial Neural Networks</a></li>
-<li><a href="#boosting-and-bagging">Boosting and bagging</a></li>
+<li><a href="#boosting">Boosting</a></li>
+<li><a href="#bagging">Bagging</a></li>
 <li><a href="#ensemble-methods">Ensemble methods</a></li>
+<li><a href="#principle-component-analysis--principle-component-analysis-dot-md">Principle Component Analysis</a></li>
 <li><a href="#advanced-neural-network-examples">Advanced Neural Network Examples</a></li>
 <li><a href="#questions">Questions</a></li>
 </ul>
@@ -378,6 +378,7 @@
 \newcommand{\Zmat}{\mathbf{Z}}
 \newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
 \newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -387,6 +388,56 @@
 \newcommand{\bigoh}{\text{O}}
 \)</p>
 <p>This document is meant as a source to review material for studying for machine learning interviews. I&rsquo;m hoping the construction of this document will help in reviewing the basics, and fortify the foundations of my own notebase.</p>
+<h2 id="things-left-to-study">Things left to study</h2>
+<ol>
+<li>Finish anki cards [hard]
+<ul>
+<li>Lots of ML concepts to remember still&hellip;</li>
+<li></li>
+</ul>
+</li>
+<li>Deep Learning Book</li>
+<li>Fill out the rest of the following note pages&hellip;</li>
+<li>Go through problems in <a href="https://huyenchip.com/ml-interviews-book/">this book</a> [hard]</li>
+<li>Linear regression and its assumptions [easy] (see <a href="/braindump/linear_regression/">Linear Regression</a>)</li>
+<li>Practice deriving MLE and MAP estimators [medium] (see <a href="/braindump/maximum_likelihood_estimation/">MLE</a> for partial review, still need to fill out).</li>
+<li>Backpropagation</li>
+<li>WTF is LDA again? Linear discriminate analysis.</li>
+<li>Read and brush up on Support Vector Machines [medium] <a href="/braindump/support_vector_machines/">Support Vector Machines</a></li>
+<li>Naive Bayes [easy]</li>
+<li>Kernels and kernel functions
+<ul>
+<li>What is a RKHS again??</li>
+<li>Kernel funcs</li>
+</ul>
+</li>
+<li>Probability examples!!!!!</li>
+<li>XGBoost</li>
+<li>Code:
+<ul>
+<li>Naive Bayes</li>
+<li>SVMs</li>
+<li>Logistic Regression</li>
+<li>MC for calculating pi</li>
+<li>Linear Regression, Lasso, and Ridge regression.</li>
+<li>EM for GMMs</li>
+</ul>
+</li>
+<li>RL
+<ul>
+<li>Off-policy vs on-policy, some off-policy algs.</li>
+<li>Exploration vs exploitation</li>
+<li>Options and temporal abstractions</li>
+<li>Policy Evaluation, Value Iteration, Policy Iteration oh my!</li>
+<li>Traces</li>
+</ul>
+</li>
+<li>Why/when does SGD converge???</li>
+<li>More on hypothesis testing and more complex tests.</li>
+<li>Graphs and Causality!!!</li>
+<li>Box-cox transformation??? - deals with skewness??</li>
+<li>Jensen&rsquo;s Inequality</li>
+</ol>
 <h2 id="probability">Probability</h2>
 <p>First lets define some basic objects for thinking about the world probabilistically. For an event space \(\Sigma\) with events sampled from that space \(A \in \Sigma\). We assign a real value \(\Prob(A) \in \reals\) to every event in the space and call \(\Prob\) a probability distribution or probability measure if it follows the following axioms:</p>
 <ol>
@@ -403,7 +454,7 @@
 F_X(x) = \Prob(X \leq x)
 \]</p>
 <div class="instance">
-<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman, n.d.</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
+<p>(Example from (<a href="#citeproc_bib_item_2">Wasserman 2004</a>)) Flip a fair coin twice and let \(X\) be the number of heads. Then \(\Prob(X=0)=\Prob(X=2) = \frac{1}{4}\) and \(\Prob(X=1) = \frac{1}{2}\). The distribution function is
 \[
 F_{X}(x) = \begin{cases}
 0 \quad &amp;x&lt;0 \\
@@ -505,6 +556,76 @@ where \(Z = \frac{(X-\mu)}{\sigma}\). In particular, \(\Prob(|Z| &gt; 2)\leq \fr
 </div>
 <p>The <strong>central limit theorem</strong> gives us a way to reason about the variance of the sample averages. Because the random variable defined by the sample average will be distributed according \(\text{Normal}(\mu, \sigma^2)\) we can estimate the confidence intervals for our current estimate.</p>
 <h3 id="hypothesis-testing-and-p-values">Hypothesis testing and p-values</h3>
+<p>Hypothesis testing is at the core of empirical science, which is a core facet of todays <a href="/braindump/machine_learning/">Machine Learning</a> research. Hypothesis testing gives us the ability to (with some certainty) measure differences or changes made by experimental interventions. For two methods, say one baseline and one new method designed by the scientist we test two hypotheses simultaneously:</p>
+<ul>
+<li><strong>The Null Hypothesis</strong>: The two algorithms perform the same.</li>
+<li><strong>The Alternative Hypothesis</strong>: The two algorithms do not perform the same.</li>
+</ul>
+<p>Our hope is that the null hypothesis can be rejected given the data collected (i.e. if the new algorithm considerably under or overperforms the baseline).</p>
+<h3 id="some-discrete-distributions">Some Discrete Distributions</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Bernoulli</p>
+<p>Bernoulli distribution is that of a biased coin flip with a probability of getting heads (or a success) set to \(\alpha\). For a random variable \(X \in \{0, 1\}\) we define the Bernoulli distribution as:
+\[X \sim \text{Bernoulli}(\alpha) \rightarrow \Prob(X=x) = \alpha^x (1-\alpha)^{1-x} \]</p>
+<p>where the mean is \(\alpha\) and variance is \(\alpha(1-\alpha)\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Binomial</p>
+<p>The binomial distribution is the probability of k successes in n trials of random pulls from the Bernoulli distribution.
+\[X\sim \text{Binomial}(\alpha, n) \rightarrow \Prob(X=k; \alpha, n) = \frac{n!}{k! (n-k)!} \alpha^k (1-\alpha)^{n-k}\]</p>
+<p>where the mean is \(n\alpha\) and the variance is \(n\alpha(1-\alpha)\)</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Geometric</p>
+<p>The geometric distribution is how many trials we need to see before we see a successful trial.
+\[X\sim \text{Geometric}(\alpha) \rightarrow \Prob(X=k; \alpha)=\alpha(1-\alpha)^{k-1}\]</p>
+<p>with mean \(\frac{1}{\alpha}\) and variance \(\frac{1-\alpha}{\alpha^2}\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Poisson</p>
+<p>The Poisson distribution is the probability of seeing k independent events in a set interval with a rate \(\lambda\).
+\[X \sim \text{Poisson}(\lambda) \rightarrow \Prob(X=k; \lambda) = \frac{\lambda^k e^{-\lambda}}{k!}\]</p>
+<p>where the mean and variance is \(\lambda\).</p>
+</li>
+</ul>
+<h3 id="some-continual-distributions">Some Continual Distributions</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Normal</p>
+<p>The normal (or gaussian) distribution is used quite often. For mean \(\mu\) and variance \(\sigma^2\)</p>
+<p>\[X \sim \text{Normal}(\mu, \sigma^2) \rightarrow f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Laplace</p>
+<p>The Laplace distribution is like two exponentials centered on the mean.</p>
+<p>\[X \sim \text{Laplace}(\mu, b) \rightarrow f_X(x) = \frac{1}{2b} e^{-\frac{\lvert x - \mu \rvert}{b}}\]</p>
+<p>with mean \(\mu\) and variance \(2b^2\).</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Gamma</p>
+<p>The gamma distribution is
+\[X \sim \text{Gamma}(\alpha, \beta) \rightarrow f_X(x) = x^{\alpha-1} e^{-\beta x} \frac{\beta^\alpha}{\Gamma(\alpha)}\]</p>
+<p>with mean \(\frac{\alpha}{\beta}\) and variance \(\frac{\alpha}{\beta^2}\)</p>
+</li>
+</ul>
 <h3 id="questions">Questions</h3>
 <ul>
 <li>Central limit theorem</li>
@@ -607,14 +728,33 @@ This is a non-differential point in the function. Here we can use a <a href="/br
 </ul>
 <!--list-separator-->
 <ul>
-<li>What is the integral?</li>
+<li>
+<p>What is the integral?</p>
+<p>We can define an integral through a Riemannian sum:
+\[\int_a^b f(x) dx = \lim_{k\rightarrow\infty} \sum_k f(x+k\delta x)\delta x\]</p>
+<p>where k is the number of sub intervals we break up range \([a, b]\).</p>
+</li>
 </ul>
 <!--list-separator-->
 <ul>
 <li>
 <p>Common integral tricks:</p>
 <ul>
-<li>By parts</li>
+<li>
+<p>By parts
+\[\int udv = uv - \int v du \]</p>
+<p>an example of \(\int ln(x) dx\):</p>
+<p>\begin{align*}
+\int ln(x) dx = \int ln(x) 1 dx \\
+u = ln(x) \quad du = \frac{1}{x} dx \\
+dv = 1 dx \quad v = x \\
+\int ln(x) dx = xln(x) - \int \frac{x}{x} dx \\
+\int ln(x) dx = xln(x) - x + C
+\end{align*}</p>
+</li>
+</ul>
+ <!--listend-->
+<ul>
 <li>By substitution</li>
 </ul>
 </li>
@@ -624,7 +764,7 @@ This is a non-differential point in the function. Here we can use a <a href="/br
 <li>
 <p>How do we estimate the value of an integral?</p>
 <ul>
-<li>Riemman sum</li>
+<li>Riemman sum with finite \(k\).</li>
 </ul>
 </li>
 </ul>
@@ -660,7 +800,7 @@ Two lists are equal if and only if they have the same length.
 <li><strong>multiplicative identity</strong>: \(1\vvec = \vvec \quad \forall \vvec\in V\)</li>
 <li><strong>distributive properties</strong>: \(a(\uvec + \vvec) = a\uvec + a\vvec\) and \((a+b)\vvec = a\vvec + b\vvec\) for all \(a,b\in\numfield\) and all \(\uvec,\vvec \in V\).</li>
 </ul>
-<p>While I&rsquo;ve defined some basics above, there is a lot to the intricacies of vector spaces and their interactions with linear maps and transformations. In the following, we will take the above for granted and deal with details more specific to basic machine learning and deep learning taken from (<a href="#citeproc_bib_item_1">Goodfellow, Bengio, and Courville, n.d.</a>). We will primarily focus on vector spaces on the field \(\reals\), while most of the content translates to \(\complexs\).</p>
+<p>While I&rsquo;ve defined some basics above, there is a lot to the intricacies of vector spaces and their interactions with linear maps and transformations. In the following, we will take the above for granted and deal with details more specific to basic machine learning and deep learning taken from (<a href="#citeproc_bib_item_1">Goodfellow, Bengio, and Courville 2016</a>). We will primarily focus on vector spaces on the field \(\reals\), while most of the content translates to \(\complexs\).</p>
 <p>A <strong>vector</strong> \(\vvec \in V\) is a element of a vector space \(V\). We will use the convention that all vectors are column vectors.
 \[
 \xvec = \begin{matrix}
@@ -708,6 +848,9 @@ where \(\Vmat^*\) is the <a href="/braindump/linear_algebra/#matrix-transpose">c
 </ul>
 <p>Nice to think about properties of matrices in terms of their SVD decomposition.</p>
 <h3 id="inverse-of-a-matrix-pseudo-inverse-of-a-matrix">Inverse of a matrix, Pseudo inverse of a matrix</h3>
+<p>The inverse of a matrix is defined as
+\[AA^\inv = I\]
+where \(I\) is the identity matrix. A matrix is invertable if and only if it is not singular (i.e. its determinant is zero).</p>
 <h2 id="misc-math-concepts">Misc Math Concepts</h2>
 <ul>
 <li>Monte Carlo methods to approximate \(\pi\).</li>
@@ -724,9 +867,9 @@ where \(\Vmat^*\) is the <a href="/braindump/linear_algebra/#matrix-transpose">c
 <li>Repeatedly merge sublists to produce new sorted sublists until there is only one sublist remaining. This will be the sorted list.</li>
 </ol>
 <figure><img src="/ox-hugo/Merge-sort-example.gif"
-             alt="Figure 1: Merge Sort in action"/><figcaption>
-                <p><span class="figure-number">Figure 1: </span>Merge Sort in action</p>
-            </figcaption>
+        alt="Figure 1: Merge Sort in action"><figcaption>
+          <p><span class="figure-number">Figure 1: </span>Merge Sort in action</p>
+        </figcaption>
     </figure>
 
 <p>There is another variant of merge sort called <strong>natural merge sort</strong> where which dividing the list you maintain sublists that are already sorted. This variant is said to be runs-optimal.</p>
@@ -742,9 +885,9 @@ where \(\Vmat^*\) is the <a href="/braindump/linear_algebra/#matrix-transpose">c
 <li>Recursively apply the quicksort to the sub-range up to the point of division and to the sub-range after it.</li>
 </ol>
 <figure><img src="/ox-hugo/Quicksort-example.gif"
-             alt="Figure 2: Quicksort in action! (From wikipedia)"/><figcaption>
-                <p><span class="figure-number">Figure 2: </span>Quicksort in action! (From wikipedia)</p>
-            </figcaption>
+        alt="Figure 2: Quicksort in action! (From wikipedia)"><figcaption>
+          <p><span class="figure-number">Figure 2: </span>Quicksort in action! (From wikipedia)</p>
+        </figcaption>
     </figure>
 
 <p>Worst-case of this algorithm is when the most unbalanced partition occurs (i.e. when the list is sorted, or reverse sorted). This will result in \(\bigoh(n^2)\). The average case is \(\bigoh(n \log n)\) and the best case is \(\Omega(n)\).</p>
@@ -940,8 +1083,19 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
 <h3 id="support-vector-machines">Support Vector Machines</h3>
 <h3 id="kernel-methods">Kernel Methods</h3>
 <h3 id="artificial-neural-networks">Artificial Neural Networks</h3>
-<h3 id="boosting-and-bagging">Boosting and bagging</h3>
+<h3 id="boosting">Boosting</h3>
+<p>Boosting is using subsets of samples to create an ensemble of models and then combining the models together (reduces variance).</p>
+<h3 id="bagging">Bagging</h3>
+<p>Bagging is another ensemble method.</p>
 <h3 id="ensemble-methods">Ensemble methods</h3>
+<p>Combining many models together to form a better estimate:</p>
+<ol>
+<li>Random Forests (many decision trees)</li>
+<li>Boosting</li>
+<li>Stacking (uses logistic regression to find the best).</li>
+</ol>
+<h3 id="principle-component-analysis--principle-component-analysis-dot-md"><a href="/braindump/principle_component_analysis/">Principle Component Analysis</a></h3>
+<p>PCA is a <a href="/braindump/dimensionality_reduction/">Dimensionality Reduction</a> technique that creates a linear projection operator which projects the data onto the space defined by the first k <a href="/braindump/eigendecomposition/">eigenvector</a>s of the covariance (across features) matrix. This explains the majority of the variance responsible by the features. See <a href="/braindump/principle_component_analysis/">PCA</a> for more details.</p>
 <h3 id="advanced-neural-network-examples">Advanced Neural Network Examples</h3>
 <h3 id="questions">Questions</h3>
 <ul>
@@ -1015,8 +1169,8 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
 <h2 id="potential-interview-questions">Potential Interview Questions</h2>
 <h2 id="references">References</h2>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. n.d. <i>Deep Learning</i>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. n.d. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodfellow, Ian, Yashua Bengio, and Aaron Courville. 2016. <i>Deep Learning</i>. MIT Press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Wasserman, Larry. 2004. <i>All of Statistics: A Concise Course in Statistical Inference Brief Contents</i>. Springer.</div>
 </div>
 
     </div>
@@ -1038,6 +1192,154 @@ L(D, \wvec) &amp;= \lVert \Xmat\wvec - \yvec \rVert_2^2 \\
     
     
 
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 

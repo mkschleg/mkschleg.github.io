@@ -4,18 +4,17 @@
     <title>Collections on Matthew Schlegel</title>
     <link>https://mkschleg.github.io/collections/</link>
     <description>Recent content in Collections on Matthew Schlegel</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://mkschleg.github.io/collections/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mkschleg.github.io/collections/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CoffeeShop</title>
       <link>https://mkschleg.github.io/collections/coffeeshop/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://mkschleg.github.io/collections/coffeeshop/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

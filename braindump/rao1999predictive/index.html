@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/rao1999_predictive_coding_in_the_visual_cortex_a_functional_interpretation_of_some_extra-classical_receptive-field_effects.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/rao1999predictive/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/rao1999predictive/">
+  <meta property="og:title" content="rao1999predictive: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2022-11-08T14:21:55-07:00">
+  
+  <meta property="article:modified_time" content="2022-11-08T14:21:55-07:00">
+  
+
+  <title>rao1999predictive: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/rao1999predictive/">rao1999predictive: Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2022-11-08 14:21:55 -0700 MST" itemprop="datePublished dateModified">
+      Nov 8, 2022
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/predictive_processing/">Predictive Processing</a>, <a href="/braindump/brain/">Brain</a></dd>
+<dt>source</dt>
+<dd><a href="https://idp.nature.com/authorize/casa?redirect_uri=https://www.nature.com/articles/nn0199_79&amp;casa_token=WctFb6PYsUMAAAAA:-fI3shY2s4cPPa6NEjYBQ5Tj0OSB7uLzWAnN5ULaVXJqfzQaumGNyv8QrFn_4b2Sz0zeNwq2ggKhnqvLqQ">paper</a></dd>
+<dt>authors</dt>
+<dd>Rao, R. P. N., &amp; Ballard, D. H.</dd>
+<dt>year</dt>
+<dd>1999</dd>
+</dl>
+<p>This paper introduces predictive coding in which feedback connections from a higher- to a lower-order visual cortical area carry predictions of lower-level neural activities. The feedforward connections carry residual errors between the predictions and the actual lower-level activities.</p>
+<p>First, there is a curious property of neurons which respond optimally to line segments of a particular length (reported in prior studies). These neurons have the property of <strong>endstopping</strong> (or end-inhibition): a vigorous response to an optimally oriented line segment is reduced or eliminated when the same stimulus extends beyond the neuron&rsquo;s classical receptive field (RF). There have been several proposed explanations for this behaviour, but in this paper they present simulations which suggest the extra-classical RF effects may result directly from predictive coding of natural images.</p>
+<h2 id="results">Results</h2>
+<h3 id="hierarchical-predictive-coding-model">Hierarchical Predictive Coding Model</h3>
+<p>Each level in the hierarchical model network attempts to predict the responses at the next lower level via feedback connections. The error between the prediction and the actual response is then sent back to the higher level via feedforward connections.</p>
+<figure><img src="/ox-hugo/predictive_coding.png"
+    alt="Figure 1: General Architecture of the hierarchical predictive coding model."><figcaption>
+      <p><span class="figure-number">Figure 1: </span>General Architecture of the hierarchical predictive coding model.</p>
+    </figcaption>
+</figure>
+
+<p>The prediction and error mechanisms occur concurrently throughout the hierarchy (top-down information influences bottom-up). Lower levels operate on smaller spatial (and possibly temporal scales) regions of th image, and the effective RF size of units increases progressively until the highest level&rsquo;s RF spans the totality of the image. Like all models, the underlying assumption is that the external environment generates natural signals hierarchically via interacting hidden physical causes (partial observability). The goal of the visual system is to optimally estimate the hidden variable at each scale of the input image.</p>
+<h3 id="hierarchical-predictive-coding-of-natural-images">Hierarchical Predictive Coding of Natural Images</h3>
+<p>The model described in the above section suggests feedback connections from a higher area to a lower area carry prediction of expected neural activity, whereas feedforward connections convey the residual activity (or unexplained activations) not predicted by the higher area. This was tested through simulation using a three-level hierarchical network of predictive estimators. The details on how this model is constructed and trained are left to the methods section <a href="sec:rao1999:methods">sec:rao1999:methods</a>, but here we give a high level overview:</p>
+<ul>
+<li>The hierarchical internal model is trained by maximizing the posterior probability of generating the observed natural images.</li>
+<li>The internal model is encoded in a distributed manner within the synapses of model neurons at each level</li>
+<li>The weights of a neuron encode a single basis vector that, in conjunction with other basis vectors, predicts lower-level inputs.
+Example: The image input at the zeroth level can be predicted as an appropriate linear combination of the first-level basis vectors. The weighting coefficient for the kth basis vector is given by the response of the kth neuron in the first level.</li>
+<li>These are simulated by a first-order differential equation implementing the prediction and error-correction cycle.</li>
+<li>For any given input, the network converges to a set of neuronal responses optimal for predicting the input, which are used to adapt the synaptic basis vectors.</li>
+</ul>
+<p>The resulting weights resembled the Gabor or difference-of-Gaussians filters (studied prior) when using a Gaussian weighting profile to model the input. When using a sparse prior distribution the wavelet-like basis vectors code for local oriented structures rather than being centered in the input window.</p>
+<h3 id="endstopped-responses-interpreted-as-error-signals">Endstopped Responses Interpreted as Error Signals</h3>
+<p>They show that they are able to illicit large error responses (feedback responses) based on the lack of contextual information (i.e. a bar within a single neurons RF or across multiple RFs). With contextual information the response of specific neurons are inhibited due to the input being predicted at higher-levels (i.e. the error-signal of the feed-forward connections are small). This is similar to the endstopped property of neurons discussed earlier.</p>
+<h3 id="predictive-feedback-and-extra-classical-rf-effects">Predictive Feedback and Extra-Classical RF Effects</h3>
+<p>They computed the percentage of endstopping (really the inverse as they report \(\%\) maximum response). They find that feedback connections are critical to the endstopping phenomenon in their model.</p>
+<h3 id="other-extra-classical-rf-effects-in-the-model">Other Extra-Classical RF Effects in the Model</h3>
+<h2 id="discussion">Discussion</h2>
+<ul>
+<li>The simulations suggest certain extra-classical RF effects could be an emergent property of the cortex using an efficient hierarchical and predictive strategy for encoding natural images.</li>
+<li>These simulations also show that extra-classical RF effects can occur under predictive coding with either Gaussian or sparse kurtotic prior distributions for the network activities.</li>
+<li>These general ideas may help explain certain responses in other brain regions. Examples:
+<ul>
+<li>Some neurons in MT are suppressed when the direction of stimulus motion in the surrounding region matches that in the center of the classical RF.</li>
+<li>Certain neurons in the anterior inferotemporal (IT) cortex of alert behaving monkeys fire vigorously whenever a presented test stimulus does not match the item held in memory (showing little activation in the case of a match)</li>
+<li>The generation and subtraction of sensory expectations from actual inputs in cerebellum-like structures.</li>
+<li>The responses of dopaminergic neurons projecting to the cortex and striatum from the midbrain can often be characterized as encoding reward prediction errors: large responses are elicited whenever actual rewards do not match the predicted reward in behavioral tasks</li>
+</ul>
+</li>
+</ul>
+<h2 id="sec:rao1999:methods">Methods</h2>
+<p>They characterize each image \(\Imat\) (or higher level inputs) to have a relationship</p>
+<p>\[\Imat = f(\Umat \rvec) + \nvec\]</p>
+<ul>
+<li>\(\Imat\) is the image (or a part of an image)</li>
+<li>\(f\) is some activation function</li>
+<li>\(\Umat\) is a matrix with each column representing a basis vector for generating images</li>
+<li>\(\rvec\) are the causes of the image</li>
+<li>\(\nvec\) some stochastic noise process.</li>
+</ul>
+<p>We assume the causes \(\rvec\) can be represented by a set of higher-level causes \(\rvec^h\) potentially representing higher level abstractions.</p>
+<p>\[\rvec = \rvec^{td} + \nvec^{td}\]</p>
+<p>where</p>
+<p>\[\rvec^{td} = f(\Umat^h \rvec^h)\].</p>
+<p>We must limit the size of the image (or the main predictive signal) for a single predictive coding cell, and only consider a local region when developing predictions. Higher level cells will represent more abstract concepts and thus will span a larger image width. To allow prediction in time, the model can be exteded using a set of recurrent synaptic weights.</p>
+<p><strong>Optimization function</strong></p>
+<p>The goal is to estimate the coefficients \(\rvec\) for a given image and learn appropriate basis vectors \(\Umat_j\) for each hierarchical level. Assuming the noise terms \(\nvec\) and \(\nvec^{td}\) are zero mean Gaussians, we can write the optimization function:</p>
+<p>\[E_1 = \frac{1}{\sigmavec^2} (\Imat - f(\Umat \rvec))^\trans (\Imat - f(\Umat \rvec)) + \frac{1}{\sigmavec_{td}^2} (\rvec - \rvec^td)^\trans (\rvec - \rvec^td)\]</p>
+<p>For their simulations they also use prior distributions over the causes and synaptic weights making the final error</p>
+<p>\[E = E_1 + g(\rvec) + h(\Umat)\].</p>
+<p>Where g and h are the negative logarithms of the prior probabilities of \(\rvec\) and \(\Umat\) respectively (in their simulations they use Gaussian prior distributions \(g(\rvec) = \alpha \sum_i \rvec_i^2\)). Through bayes therom it can also be seen that minimizing \(E\) is equivalent to maximizing the posterior probability of the model parameters given the input data. For details on how to optimize this function through gradient descent see the paper.</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

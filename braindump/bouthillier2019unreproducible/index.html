@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/bouthillier2019unreproducible_unreproducible_research_is_reproducible.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/bouthillier2019unreproducible/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/bouthillier2019unreproducible/">
+  <meta property="og:title" content="bouthillier2019unreproducible: Unreproducible Research is Reproducible | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2023-03-21T11:58:59-06:00">
+  
+  <meta property="article:modified_time" content="2023-03-21T11:58:59-06:00">
+  
+
+  <title>bouthillier2019unreproducible: Unreproducible Research is Reproducible | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; PhD student at Amii, RLAI and UofA; Works on how machines perceive their world.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/bouthillier2019unreproducible/">bouthillier2019unreproducible: Unreproducible Research is Reproducible</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2023-03-21 11:58:59 -0600 MDT" itemprop="datePublished dateModified">
+      Mar 21, 2023
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/reproducibility_in_science/">Reproducibility in Science</a></dd>
+</dl>
+<p>source
+:</p>
+<dl>
+<dt>authors</dt>
+<dd>Bouthillier, X., Laurent, C\&rsquo;esar, &amp; Vincent, P.</dd>
+<dt>year</dt>
+<dd>2019</dd>
+</dl>
+<p>This paper focuses on what it is meant for experimental procedures to be <a href="/braindump/reproducibility_in_science/">reproducible</a>. They clearly lay out the terminology of three types of reproducibility, and discuss current methodological practices (showing an upper and lower bound on &ldquo;reproducibility&rdquo; in the field). The main goal of the work is to propose a new methodology to empirically compare two models. They also discuss and define the differences (benefits and detriments) of exploratory and empirical research, advocating for balance between the two in the field at large.</p>
+<h2 id="a-discussion-on-reproducibility-in-deep-learning">A discussion on reproducibility in Deep Learning</h2>
+<p>Before detailing the different types of reproducibility, the authors setup a typical <a href="/braindump/deep_learning/">Deep Learning</a> experiment. From this they identify several sources of variations:</p>
+<ul>
+<li>Initialization</li>
+<li>The order of the data presented during training</li>
+<li>Which particular finite data sample is used for training and testing.</li>
+</ul>
+<p>While setting the random seed to a specific value can help fix one of these issues (primarily the initialization of the model), this can lead to a loss of generality of a conclusion drawn from the study.</p>
+<p>There are two forms of reproducibility, which can interfere given haphazard experimental design.</p>
+<ol>
+<li>Reproduction of <em>results</em>: requires the conversion of a stochastic system into a deterministic one (e.g. the seeding process).</li>
+<li>Reproduction of <em>findings</em>: At odds with reproduction of <em>results</em>, where setting the seed to particular value dramatically weakens the generality of the conclusions.</li>
+</ol>
+<p>The authors adopt language set out by (<a href="#citeproc_bib_item_1">Goodman, Fanelli, and Ioannidis 2016</a>) who define three types of reproducibility:</p>
+<ol>
+<li><strong>Methods Reproducibility</strong>: A <em>method</em> is reproducible if reusing the original code leads to the same results.</li>
+<li><strong>Results Reproducibility</strong>: A <em>result</em> is reproducible if a reimplementation of the method generates statistically similar values.</li>
+<li><strong>Inferential Reproducibility</strong>: A <em>finding</em> or a <em>conclusion</em> is reproducible if one can draw it from a different experimental setup.</li>
+</ol>
+<p>The authors claim, the current computer science literature focus on <em>methods</em> reproducibility (the sharing of source code). This can also address <em>results</em> reproducibility, given sufficient information. But <em>inferential</em> reproducibility is still not addressed, and requires a modified methodology to determine well adjusted conclusions.</p>
+<h2 id="experiments">Experiments</h2>
+<p>The field&rsquo;s current practices can be bounded by a biased and unbiased protocol for selecting hyper-parameters:</p>
+<ul>
+<li><strong>Biased</strong> scenario: The optimizer hyper-parameters that are best for one specific model on one specific dataset are applied to all models and datasets.</li>
+<li><strong>UnBiased</strong> scenario: Hyper-parameters are selected for each model and dataset independently with an equal budget for the selection.</li>
+</ul>
+<p>These will be the two main methodologies tested in this paper.</p>
+<h3 id="setup">Setup</h3>
+<p>They choose 10 SOTA models and several datasets to benchmark performance.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Seed Replicates</p>
+<p>They use 10 difference seeds for each model, and report the average over the performance.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Hyper-parameter tuning for unbiased</p>
+<p>They Use AHSA from: (<a href="#citeproc_bib_item_2">Li et al. 2018</a>)</p>
+</li>
+</ul>
+<h3 id="results">Results</h3>
+<p><strong>Performance distributions over seed replicates</strong>:</p>
+<p>They present histograms for the seed replicates for different models over each dataset. They find that the overlaps in distribution do not significantly increase between the unbiased and biased scenarios. This can be used to assume the current observations would also hold in a faithful simulation of common practices.</p>
+<p>They also conclude that results on a single seed is too brittle, where a different seed will likely invalidate any prior ordering.</p>
+<p><strong>Ranking stability over seed replicates</strong>:</p>
+<p>They next perform <a href="/braindump/bootstrapping_statistics/">Bootstrapping (statistics)</a> with 1000 resamples over the seed replicates of each method to determine an ordering. This ranking makes it possible to compare model performances across several datasets.</p>
+<h2 id="limitations-of-the-current-work">Limitations of the current work</h2>
+<ul>
+<li>They only do experiments using the image classification setting. So it is yet unknown if these findings extend past this setting.</li>
+<li>The use of limited hyper-parameter optimization cycles could bias the final ordering in favor of easy-to-tune models.</li>
+<li>They also specify a number of other sources of variation within the experimental setup:
+<ul>
+<li>The sampling of the datasets</li>
+<li>The optimization procedure of the hyper-parameters (i.e. ASHA is a stochastic technique).</li>
+</ul>
+</li>
+</ul>
+<h2 id="exploratory-vs-empirical-science">Exploratory vs Empirical Science</h2>
+<p><strong>Empirical research</strong>: Its goal is to test a hypothesis. It aims to build a robust corpus of knowledge. It favors a stable progress of the field.</p>
+<p><strong>Exploratory research</strong>: Its goal is to explore a new subject and gather new observations. Aims to expand the research horizon with new corpus of knowledge and favors fast progress of a field.</p>
+<p>A too large proportion of the research devoted to exploratory research increases the risk of seeing lines of research collapsing. A too large proportion devoted to empirical research increases the risk of hampering the progress by limiting exploration. The proper balance is unknown to the field of machine learning at large.</p>
+<h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Goodman, Steven N., Daniele Fanelli, and John P. A. Ioannidis. 2016. <a href="https://www.ncbi.nlm.nih.gov/pubmed/27252173">“What Does Research Reproducibility Mean?</a>” <i>Science Translational Medicine</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Li, Liam, Kevin Jamieson, Afshin Rostamizadeh, Ekaterina Gonina, Moritz Hardt, Benjamin Recht, and Ameet Talwalkar. 2018. “Massively Parallel Hyperparameter Tuning.” <i>arXiv:1810.05934 [Cs, Stat]</i>. <a href="https://arxiv.org/abs/1810.05934">https://arxiv.org/abs/1810.05934</a>.</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

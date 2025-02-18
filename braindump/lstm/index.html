@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/lstm.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/lstm.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="LSTM | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:19:53-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:19:53-06:00">
+  <meta property="article:published_time" content="2022-11-11T10:53:21-07:00">
+  
+  <meta property="article:modified_time" content="2022-11-11T10:53:21-07:00">
   
 
   <title>LSTM | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:19:53 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2022-11-11 10:53:21 -0700 MST" itemprop="datePublished dateModified">
+      Nov 11, 2022
     </time>
   </span>
 
@@ -228,7 +223,7 @@
 <p>While the architecture was developed in (<a href="#citeproc_bib_item_1">Hochreiter and Urgen Schmidhuber 1997</a>), it became popular as it was later refined into what is most commonly used today using <a href="/braindump/backpropagation_through_time/">Backpropagation Through Time</a> as the base training algorithm.</p>
 <p>The architecture is made up of several gates: 2 Input Gates, a Forget Gate, and an Output Gate. The architecture has been modified considerably since, and several variants exist including the <a href="/braindump/gru/">GRU</a>.</p>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hochreiter, Sepp, and J Urgen Schmidhuber. 1997. “LONG SHORT-TERM MEMORY.” <i>Neural Computation</i>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Hochreiter, Sepp, and J Urgen Schmidhuber. 1997. “Long Short-Term Memory.” <i>Neural Computation</i>.</div>
 </div>
 
     </div>
@@ -263,161 +258,7 @@
     
 
 
-   
 
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
    
 
@@ -598,6 +439,60 @@
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
    
 
@@ -625,6 +520,254 @@
 
    
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    
@@ -678,17 +821,17 @@
 
 
   <div class="bl-section">
-    <h4>Links to this note</h4>
+    <h4>Links to this note:</h4>
     <div class="backlinks">
       <ul>
        
-          <li><a href="/braindump/sutskever2011/">sutskever2011: Generating text with recurrent neural networks</a></li>
-       
           <li><a href="/braindump/recurrent_neural_network/">Recurrent Neural Network</a></li>
        
-          <li><a href="/braindump/chung2014/">chung2014: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a></li>
+          <li><a href="/braindump/chandar2019nonsaturating/">chandar2019nonsaturating: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</a></li>
        
-          <li><a href="/braindump/chandar2019/">chandar2019: Towards Non-saturating Recurrent Units for Modelling Long-term Dependencies</a></li>
+          <li><a href="/braindump/sutskever2011generating/">sutskever2011generating: Generating text with recurrent neural networks</a></li>
+       
+          <li><a href="/braindump/chung2014empirical/">chung2014empirical: Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a></li>
        
      </ul>
     </div>

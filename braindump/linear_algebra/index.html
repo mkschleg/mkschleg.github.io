@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/linear_algebra.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/linear_algebra.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="Linear Algebra | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:19:45-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:19:45-06:00">
+  <meta property="article:published_time" content="2023-03-20T11:45:59-06:00">
+  
+  <meta property="article:modified_time" content="2023-03-20T11:45:59-06:00">
   
 
   <title>Linear Algebra | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:19:45 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2023-03-20 11:45:59 -0600 MDT" itemprop="datePublished dateModified">
+      Mar 20, 2023
     </time>
   </span>
 
@@ -295,6 +290,7 @@
 \newcommand{\Zmat}{\mathbf{Z}}
 \newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
 \newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -347,10 +343,7 @@
 <p>\[\langle e_i, \theta^j \rangle = \delta^j_i \quad \triangleright \delta^j_i \text{ is the Kronecker delta function}\].</p>
 <p>Notation gets a bit confusing in higher order linear algebra and tensor algebra. Typically, I will attempt to denote an index of the cobasis as an upstairs index while the basis as a downstairs index.</p>
 <h3 id="vector-operations">Vector operations</h3>
-<!--list-separator-->
-<ul>
-<li>
-<p>Dot Product</p>
+<h4 id="dot-product">Dot Product</h4>
 <p>The dot product between two vectors
 \[\vvec \cdot \wvec = \sum_i \vvec_i \wvec_i\]
 and can also be thought of as
@@ -359,12 +352,7 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 \[
 \theta = \text{arccos}(\frac{\vvec \cdot \wvec}{\lVert\wvec\rVert \lVert\vvec\rVert})
 \]</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Cross Product</p>
+<h4 id="cross-product">Cross Product</h4>
 <p>The cross product between two vectors in \(\reals^3\) under the canonical basis.
 \[
 \vvec \times \wvec = \begin{bmatrix}
@@ -379,8 +367,6 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 \vvec_1 &amp; \vvec_2 &amp; \vvec _3 \\
 \wvec_1 &amp; \wvec_2 &amp; \wvec_3
 \end{vmatrix}</p>
-</li>
-</ul>
 <h2 id="bases--linear-algebra">Bases (Linear Algebra)</h2>
 <h2 id="matrices">Matrices</h2>
 <p>We first start from a set of linear equations, to build up intuition about what a matrix is representing. We will then move to a more general case and discuss operations of matrices</p>
@@ -403,10 +389,7 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 <p>We can then define the equation as the <strong>matrix form</strong> \(Ax = b\)</p>
 <p>\[\text { Matrix form } A x=b \quad\left[\begin{array}{ccc}{2} &amp; {1} &amp; {1} \\ {4} &amp; {-6} &amp; {0} \\ {-2} &amp; {7} &amp; {2}\end{array}\right]\left[\begin{array}{c}{u} \\ {v} \\ {w}\end{array}\right]=\left[\begin{array}{c}{5} \\ {-2} \\ {9}\end{array}\right]\].</p>
 <h3 id="matrix-operations">Matrix Operations</h3>
-<!--list-separator-->
-<ul>
-<li>
-<p>Matrix Addition</p>
+<h4 id="matrix-addition">Matrix Addition</h4>
 <p>This is straightforward. We add each coefficient of the lhs to the corresponding coefficient in the rhs.</p>
 <p>\begin{equation}
 \left[\begin{array}{cc}
@@ -427,12 +410,7 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 \end{array}\right]
 \end{equation}</li>
 </ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Matrix Product</p>
+<h4 id="matrix-product">Matrix Product</h4>
 <p>The first straightforward product is the scalar product. This is straightforward and follows from the definition of addition</p>
 <p>\[2\Amat = \Amat + \Amat; \{\Amat \in \mathcal{R}^{m \times n}\}\]</p>
 <p>We can also define a product between two matrices \(\Amat: n \times m\) and \(\Bmat: m \times k\).</p>
@@ -451,10 +429,7 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 {\sum_{i=1}^3 A_{2i} B_{i1}} &amp; {\sum_{i=1}^3 A_{2i} B_{i2}}
 \end{array}\right]
 \end{align*}</p>
- <!--list-separator-->
-<ul>
-<li>
-<p>Hadamard Product</p>
+<h5 id="hadamard-product">Hadamard Product</h5>
 <p>The Hadamard product is often used in machine learning. It is quite simply the element-wise produce between two matrices: \(\Amat, \Bmat: n \times m\).</p>
 <p>\begin{align*}
 \begin{bmatrix}
@@ -473,7 +448,7 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 {A_{31}B_{31}} &amp; {A_{32}B_{32}}
 \end{bmatrix}
 \end{align*}</p>
- <div class="instance">
+<div class="instance">
 <p>\begin{bmatrix}
 {2} &amp; {1} \\
 {3} &amp; {0} \\
@@ -490,52 +465,24 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 {0} &amp; {8}
 \end{bmatrix}
 \end{align*}</p>
- </div>
-</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>Kronecker Product</li>
-</ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Matrix Transpose</p>
+</div>
+<h5 id="kronecker-product">Kronecker Product</h5>
+<h4 id="matrix-transpose">Matrix Transpose</h4>
 <p>Transpose mirrors a matrix along its diagonal starting from the top left corner.
 \[[\Amat^\trans]_{ji} = \Amat_{ij}\].</p>
- <!--list-separator-->
-<ul>
-<li>
-<p>Conjugate Transpose</p>
+<h5 id="conjugate-transpose">Conjugate Transpose</h5>
 <p>The conjugate transpose of a matrix is defined by</p>
 <p>\[
 \left(\Amat^H\right)_{ij} = \left(\overbar{\Amat}_{ji}\right)
 \]</p>
-</li>
-</ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Matrix Inverse</p>
+<h4 id="matrix-inverse">Matrix Inverse</h4>
 <p>The inverse of a matrix follows from the inverse of a scalar (i.e. \(\alpha \alpha^\inv = 1\)). For a matrix we instead want the product of a matrix and its inverse to be the identity matrix:</p>
 <p>\[\Amat\Amat^\inv = \eye\]</p>
 <p>The inverse for a square matrix exists iff its determinant is not zero \(\text{det}(\Amat) = |\Amat| \neq 0\). If this condition is met, we can calculate the inverse using the adjugate</p>
 <p>\[\Amat = \frac{1}{|\Amat|} \text{adj}(\Amat)\].</p>
 <p>See below for the adjugate of a matrix.</p>
- <!--list-separator-->
-<ul>
-<li>Moore-penrose Inverse</li>
-</ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Matrix Trace</p>
+<h5 id="moore-penrose-inverse">Moore-penrose Inverse</h5>
+<h4 id="matrix-trace">Matrix Trace</h4>
 <p>The trace of a matrix is the sum of arguments on the main diagonal.</p>
 <p>\[\text{tr}(\Amat) = \sum_{i=1}^n a_{ii}\]</p>
 <p><strong>Properties:</strong></p>
@@ -548,15 +495,8 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 = \text{tr}(\Bmat \Amat^{\top})
 =\sum_{i, j} \Amat_{i j} \Bmat_{i j}\)</li>
 </ul>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p><span class="org-todo todo TODO">TODO</span>  Matrix Adjugate</p>
+<h4 id="matrix-adjugate"><span class="org-todo todo TODO">TODO</span> Matrix Adjugate</h4>
 <p>The adjugate of a matrix is the transpose of the cofactor matrix. The cofactor matrix is</p>
-</li>
-</ul>
 <h3 id="matrix-definiteness">Matrix Definiteness</h3>
 <p>A matrix is positive (or negative) definite if all its eigen values are \(&gt;0\) (or \(&lt;0\)). Another way to say this is a matrix is positive definite if \(\xvec^\trans \Mmat  \xvec &gt; 0\) for all \(x\in\reals\).</p>
 <p>A matrix is semi-definite if its eigen values can be 0, or \(\xvec^\trans \Mmat \xvec \ge 0\).</p>
@@ -566,18 +506,10 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 <h3 id="symmetric-matrices">Symmetric matrices</h3>
 <h3 id="rank">Rank</h3>
 <h3 id="special-types-of-matrices">Special types of matrices</h3>
-<!--list-separator-->
-<ul>
-<li>
-<p>Normal Matrix</p>
+<h4 id="normal-matrix">Normal Matrix</h4>
 <p>A Normal matrix is a complex square matrix which commutes with its <a href="#matrix-transpose">Conjugate Transpose</a>.</p>
 <p>\[\Amat \Amat^* = \Amat^* \Amat\]</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Diagonal Matrix</p>
+<h4 id="diagonal-matrix">Diagonal Matrix</h4>
 <p>A diagonal matrix is a matrix which only has elements on its diagonal (starting in the top left corner) and the other elements are zero. A rectangular diagonal matrix is the same.</p>
 <p><strong>Some examples:</strong></p>
 <p>\begin{bmatrix}
@@ -590,61 +522,22 @@ where \(\theta\) is the angle between the two vectors. The angle can be found th
 0&amp; 21&amp; 0 &amp; 0 \\
 0&amp; 0 &amp; 32&amp; 0 \\
 \end{bmatrix}</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Triangle Matrix</p>
+<h4 id="triangle-matrix">Triangle Matrix</h4>
 <p>If all entries of \(\Amat\) below the main diagonal are zero, \(\Amat\) is called an <strong>upper triangular matrix</strong>. Similarly, if all the entries above the diagonal are zero, the matrix is called <strong>lower triangular matrix</strong>.</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>
-<p>Unitary Matrix</p>
+<h4 id="unitary-matrix">Unitary Matrix</h4>
 <p>A complex square matrix is <strong>unitary</strong> if its <a href="#matrix-transpose">conjugate transpose</a> is also its <a href="#matrix-inverse">inverse</a>.</p>
 <p>\[ \Umat^* \Umat = \Umat\Umat^* = \Umat \Umat^\inv = \Imat \]</p>
 <p>If the matrix \(\Umat\) is a real square matrix than it is <strong>orthogonal</strong> if
 \[ \Umat \Umat^\transpose = \Umat^\transpose \Umat = \Umat^\inv \Umat = \identity \]</p>
-</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Tridiagonal Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Block Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Sparse Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Hessenberg Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Hessian Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Vandermonde Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Stochastic Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>Hankel Matrix</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li>(0,1) Matrix</li>
-</ul>
+<h4 id="tridiagonal-matrix">Tridiagonal Matrix</h4>
+<h4 id="block-matrix">Block Matrix</h4>
+<h4 id="sparse-matrix">Sparse Matrix</h4>
+<h4 id="hessenberg-matrix">Hessenberg Matrix</h4>
+<h4 id="hessian-matrix">Hessian Matrix</h4>
+<h4 id="vandermonde-matrix">Vandermonde Matrix</h4>
+<h4 id="stochastic-matrix">Stochastic Matrix</h4>
+<h4 id="hankel-matrix">Hankel Matrix</h4>
+<h4 id="0-1--matrix">(0,1) Matrix</h4>
 <h2 id="determinant">Determinant</h2>
 <p>There are four main uses for the determinant of a <a href="#matrices">Matrix</a> defined by a series of equations.</p>
 <ol>
@@ -738,61 +631,7 @@ g &amp; h
     
 
 
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-      
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
 
-   
-
-   
-
-   
-
-   
 
    
 
@@ -933,14 +772,6 @@ g &amp; h
    
 
    
-      
-   
-
-   
-
-   
-
-   
 
    
 
@@ -958,8 +789,6 @@ g &amp; h
 
    
 
-   
-      
    
 
    
@@ -1041,6 +870,104 @@ g &amp; h
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
    
 
@@ -1089,6 +1016,128 @@ g &amp; h
    
 
    
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
    
 
@@ -1113,9 +1162,7 @@ g &amp; h
    
 
    
-
-   
-
+      
    
 
    
@@ -1165,27 +1212,33 @@ g &amp; h
 
 
   <div class="bl-section">
-    <h4>Links to this note</h4>
+    <h4>Links to this note:</h4>
     <div class="backlinks">
       <ul>
        
-          <li><a href="/braindump/svd/">SVD</a></li>
-       
           <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
        
-          <li><a href="/braindump/hadamard_product/">Hadamard product</a></li>
+          <li><a href="/braindump/svd/">SVD</a></li>
        
-          <li><a href="/braindump/linear_map/">Linear Map</a></li>
+          <li><a href="/braindump/principle_component_analysis/">Principle Component Analysis</a></li>
        
-          <li><a href="/braindump/inner_product_space/">Inner Product Space</a></li>
+          <li><a href="/braindump/perpendicular_distance/">Perpendicular Distance</a></li>
        
           <li><a href="/braindump/metric_space/">Metric Space</a></li>
        
+          <li><a href="/braindump/linear_map/">Linear Map</a></li>
+       
           <li><a href="/braindump/linear_algebra_and_its_applications/">Linear Algebra and its Applications</a></li>
+       
+          <li><a href="/braindump/inner_product_space/">Inner Product Space</a></li>
        
           <li><a href="/braindump/hilbert_space/">Hilbert Space</a></li>
        
+          <li><a href="/braindump/hadamard_product/">Hadamard product</a></li>
+       
           <li><a href="/braindump/eigendecomposition/">Eigenvalues and Eigenvectors</a></li>
+       
+          <li><a href="/braindump/dimensionality_reduction/">Dimensionality Reduction</a></li>
        
           <li><a href="/braindump/cauchy_criterion/">Cauchy Criterion</a></li>
        

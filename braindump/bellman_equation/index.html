@@ -9,12 +9,12 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.104.3" />
+  <meta name="generator" content="Hugo 0.144.1">
   <meta name="author" content="Matthew Schlegel">
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=Page%28/braindump/bellman_equation.md%29%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/bellman_equation.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -24,10 +24,6 @@
   <link rel="stylesheet" href="/css/braindump.css">
   
   <link rel="stylesheet" href="/css/post.css">
-  
-
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
@@ -54,13 +50,12 @@
   <meta property="og:title" content="Bellman Equation | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-10-27T20:18:16-06:00">
-  <meta property="article:modified_time" content="2022-10-27T20:18:16-06:00">
+  <meta property="article:published_time" content="2022-12-08T14:00:09-07:00">
+  
+  <meta property="article:modified_time" content="2022-12-08T14:00:09-07:00">
   
 
   <title>Bellman Equation | Matthew Schlegel</title>
-
-  
 
   
 <script type="text/javascript" async
@@ -205,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-10-27 20:18:16 -0600 MDT" itemprop="datePublished dateModified">
-      Oct 27, 2022
+    <time datetime="2022-12-08 14:00:09 -0700 MST" itemprop="datePublished dateModified">
+      Dec 8, 2022
     </time>
   </span>
 
@@ -295,6 +290,7 @@
 \newcommand{\Zmat}{\mathbf{Z}}
 \newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
 \newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
 \newcommand{\thetavec}{\boldsymbol{\theta}}
 \newcommand{\phivec}{\boldsymbol{\phi}}
 \newcommand{\muvec}{\boldsymbol{\mu}}
@@ -303,6 +299,26 @@
 \newcommand{\ind}{\perp!!!!\perp}
 \newcommand{\bigoh}{\text{O}}
 \)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/control_theory/">Control Theory</a>, <a href="/braindump/reinforcement_learning/">Reinforcement Learning</a></dd>
+<dt>source</dt>
+<dd><a href="https://en.wikipedia.org/wiki/Bellman_equation">wikipedia</a>, <a href="/braindump/reinforcement_learning_an_introduction/">Reinforcement Learning: An Introduction</a></dd>
+</dl>
+<p>The Bellman equation, named after <a href="/braindump/richard_ernest_bellman/">Richard Ernest Bellman</a>, is a necessary condition for the optimality associated with the mathematical <a href="/braindump/optimization/">Optimization</a> method known as <a href="/braindump/dynamic_programming/">Dynamic Programming</a>.</p>
+<ul>
+<li>necessary in that this condition needs to hold to be able to apply <a href="/braindump/dynamic_programming/">Dynamic Programming</a>.</li>
+</ul>
+<p>In a <a href="/braindump/markov_decisions_process/">Markov Decisions Process</a>, the Bellman equation is a recursion for expected rewards.
+\[
+V^\pi(s) = R(s, \pi(s)) + \gamma \sum_{s^\prime} P(s^\prime | s, \pi(s)) V^\pi(s^\prime)
+\]</p>
+<h2 id="bellman-optimality-equation">Bellman Optimality Equation</h2>
+<p>The bellman equation can be defined for the optimal policy as well:
+\[
+V^{\pi*}(s) = \max_a \left\{R(s, a) + \gamma \sum_{s^\prime} P(s^\prime | s, a) V^\pi(s^\prime)\right\}
+\]
+where we replace the policy in the previous example with the greedy policy \(\pi*\).</p>
 
     </div>
 
@@ -324,6 +340,212 @@
     
 
 
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    
@@ -437,117 +659,63 @@
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
    
 
    
@@ -735,9 +903,13 @@
 
 
   <div class="bl-section">
-    <h4>Links to this note</h4>
+    <h4>Links to this note:</h4>
     <div class="backlinks">
       <ul>
+       
+          <li><a href="/braindump/current_learning_objectives/">Current Learning Objectives</a></li>
+       
+          <li><a href="/braindump/inbox/">StudyPlan</a></li>
        
           <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
        

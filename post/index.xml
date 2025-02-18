@@ -4,37 +4,31 @@
     <title>Posts on Matthew Schlegel</title>
     <link>https://mkschleg.github.io/post/</link>
     <description>Recent content in Posts on Matthew Schlegel</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://mkschleg.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mkschleg.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raving for Rave Coffee</title>
       <link>https://mkschleg.github.io/post/2019-02-24-canmore-rave-coffe/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://mkschleg.github.io/post/2019-02-24-canmore-rave-coffe/</guid>
       <description>A caffeine induced rave about Rave</description>
     </item>
-    
     <item>
       <title>Creed(o) of Procrastination</title>
       <link>https://mkschleg.github.io/post/2018-11-13-credo-procrastination/</link>
       <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://mkschleg.github.io/post/2018-11-13-credo-procrastination/</guid>
-      <description>Ok. Look. I procrastinate. I procrastinate a lot. I have a reasonably sized talk tomorrow at Startup Edmonton (you should come! Details found here!), of which I have yet to finish, let alone practice. So instead of doing that I&amp;rsquo;ve decided to come and enjoy the ritual of an espresso at Credo Coffee. I&amp;rsquo;m not proud of my choices, but they are the choices that get made (either by me or at the whims of some biological process).</description>
+      <description>&lt;p&gt;Ok. Look. I procrastinate. I procrastinate a lot. I have a reasonably sized talk tomorrow at Startup Edmonton (you should come! Details found &lt;a href=&#34;https://www.eventbrite.ca/e/amiis-ai-meetup-tickets-51349544871&#34;&gt;here!&lt;/a&gt;), of which I have yet to finish, let alone practice. So instead of doing that I&amp;rsquo;ve decided to come and enjoy the ritual of an espresso at &lt;a href=&#34;https://credocoffee.ca/index.html&#34;&gt;Credo Coffee&lt;/a&gt;. I&amp;rsquo;m not proud of my choices, but they are the choices that get made (either by me or at the whims of some biological process). So why not talk about the espresso, get it out of my system, then head back to work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why am I blogging?</title>
       <link>https://mkschleg.github.io/post/2018-11-03-blog-state-of-purpose/</link>
       <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://mkschleg.github.io/post/2018-11-03-blog-state-of-purpose/</guid>
-      <description>So why am I starting a blog? And what is it going to be about? These are great questions, and hopefully this post will act as a launching pad for the content that will eventually be found here. Instead of having a long rant up front, I&amp;rsquo;m going to answer a bunch of questions you may have and you can easily skip sections if they are uninteresting.
-Who the heck are you?</description>
+      <description>&lt;p&gt;So why am I starting a blog? And what is it going to be about? These are great questions, and hopefully this post will act as a launching pad for the content that will eventually be found here. Instead of having a long rant up front, I&amp;rsquo;m going to answer a bunch of questions you may have and you can easily skip sections if they are uninteresting.&lt;/p&gt;&#xA;&lt;h2 id=&#34;who-the-heck-are-you&#34;&gt;Who the heck are you?&lt;/h2&gt;&#xA;&lt;p&gt;Well. I&amp;rsquo;m a PhD student at the University of Alberta in Edmonton, Alberta, Canada. I&amp;rsquo;ve found my way here through my current advisor, Martha White, who was initially an assistant professor (on tenure track) at Indiana University. I met her when I was finishing my first graduate degree in computer science at the now School of Informatics, Computing, and Engineering (SOIC when I was enrolled). I also have had the pleasure of working with Martha and her husband (who was a post-doc at IU and now a research scientist at the Edmonton Deep Mind office) in machine learning and reinforcement learning. I worked on many projects, mostly related to discovery of prototypes or predictions for representations (see my published works page!) and was offered a chance to continue my education at UofA when Martha was offered a position.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
