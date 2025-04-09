@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/website/content/braindump/offline_rl_modl.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/offline_rl_modl/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/offline_rl_modl/">
+  <meta property="og:title" content="Offline RL (Modl) | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2025-02-21T10:28:38-07:00">
+  
+  <meta property="article:modified_time" content="2025-02-21T10:28:38-07:00">
+  
+
+  <title>Offline RL (Modl) | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; Focused on RL and ML to improve the world; Research Scientist with a penchant for good software and alliteration.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/offline_rl_modl/">Offline RL (Modl)</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2025-02-21 10:28:38 -0700 MST" itemprop="datePublished dateModified">
+      Feb 21, 2025
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<p>This is just a short document to go over some research that is relevant to Modl for offline RL. The main thrust is to give an overview of some methods for offline reinforcement learning we should look into further, and some ideas for offline RL methods that might fit with our data better.</p>
+<p>First, lets just go over what offline reinforcement learning brings to the table over behavior cloning.</p>
+<p>In behavior cloning (i.e. imitation learning) the main idea is to use supervised learning to match the predicted action distribution with the action distribution of the data. We have a data set with tuples \(\ovec_t, a_{t+1}\) with actions \(a_{t+1} \sim P_a(a | s_t, a \in \actions\), observations \(\ovec_t = f_o(s_t) \in \observations\) and states \(s_t \sim P_s(s | s_{t-1}, a_{t}, s \in \states)\) (i.e. states are Markov). In basic imitation learning we aim to minimize the cross-entropy between the two distributions</p>
+<p>\[
+H(P_a, \hat{y}) = -\expected_{P_a}[\log \hat{y}].
+\]</p>
+<p>where \(\hat{y} = f_\theta(\ovec_t, a_{t-1})\) is the learned distribution.</p>
+<aside>
+<p>In the above description we are focused on feed forward networks. For recurrent networks or any history dependent networks we can arbitrarily add history to the functions as needed.</p>
+</aside>
+<aside>
+<p>Notice how we are separating state and observation. This is important when looking at literature to see whether or not algorithms assume they have a full Markovian state to work with, or if they are working with an observation which doesn&rsquo;t perfectly reflect this state. We use LSTMs/RNNs to attempt to bridge the gap, but not all methods will work as well with these approaches.</p>
+</aside>
+<p>As you can see above, the goal of behavior cloning is to match the policy from the data exactly. While this objective is straightforward, it has a number of drawbacks.</p>
+<ul>
+<li>You are limited to the policy represented by the data. With data that has a mixture of expert and non-expert data the policy will be hard to verify and could have degenerate behavior that doesn&rsquo;t represent the actual desirable policy. There are potential ways around this:
+<ul>
+<li>using player&rsquo;s MMR as an input: This is an interesting idea, but so far we have not had a reliable source of this information in our data.</li>
+<li>fine-tuning after training: this is problematic because NNs are known to loose plasticity/capacity as they are trained. This also means we have to label data to highlight behaviors we find &ldquo;desirable&rdquo;.</li>
+<li>Only using a subset of the data we want: some of the same issues as above, as well as reducing the amount of data we can use from a data collection event.</li>
+<li></li>
+</ul>
+</li>
+<li>No easy way to use simpler methods (i.e. non-humans) to generate data to learn the basic parts of the network.</li>
+</ul>
+<p>There are a number of ways around this issue. In this document, I&rsquo;ll go over two potential directions and discuss some papers which might be of immediate interest to Modl</p>
+<ul>
+<li>Offline reinforcement learning</li>
+<li>self-supervised learning</li>
+</ul>
+<h2 id="offline-reinforcement-learning">Offline Reinforcement Learning</h2>
+<p>Offline reinforcement learning overcomes the mixture of expert and non-expert data through changing the objective. Instead of raw behavior cloning, the goal is to learn a policy which maximizes the sum of cumulated rewards. Rewards are defined as \(r(s_{t-1}, a_t, s_t) \in \reals\) and the return is \(g_t = \sum_{i=t} \gamma^i r_(i+1)\). We learn a policy which maximizes \(\expected[g_t]\).</p>
+<aside>
+<p>Please be aware, the above introduction is an extremely simplified version and doesn&rsquo;t discuss the nuance that exists between all these moving parts. For brevity, I&rsquo;ve removed these parts. See any of the below papers for a better introduction to offline reinforcement learning. I personally quite like (<a href="#citeproc_bib_item_17">Xiao et al. 2022</a>) for an introduction to offline reinforcement learning.</p>
+</aside>
+<h3 id="why-offline-rl-for-our-settings">Why offline RL for our settings?</h3>
+<p>There are two papers which lead me to believe offline reinforcement learning (even when using cleaned expert data) might outperform behavior cloning techniques.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>(<a href="#citeproc_bib_item_9">Kumar et al. 2021</a>):</p>
+<p>This paper lays out the theoretical limits of how we should expect our algorithms to perform under different data characterizations. They then perform several experiments replicating these characterizations using a simulated robotics domain (Mujoco). The conclusions outlined are:</p>
+<ul>
+<li>Behavior Cloning does better when the set of starting conditions is small/not randomized and the expert data is not noisy.</li>
+<li>Offline RL tends to do better when the set of starting states is more randomized and there is noise in the expert data.</li>
+</ul>
+<p>The paper makes several other observations outlining the advantages offline RL can have, even when behavior cloning is</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>(<a href="#citeproc_bib_item_13">Schweighofer et al. 2022</a>)</p>
+<p>This paper shows similar obsevations as (<a href="#citeproc_bib_item_9">Kumar et al. 2021</a>) where datasets with larger variations/noise tend to favor offline reinforcement learning algorithms. Specifically (in this case) Critic Regularized Regression (<a href="#citeproc_bib_item_15">Wang et al. 2020</a>) and Conservative q-learning (<a href="#citeproc_bib_item_10">Kumar et al. 2020</a>). The ideas specified here are also interesting when thinking about self-supervised learning below.</p>
+</li>
+</ul>
+<h3 id="some-orl-algorithms-i-prefer">Some ORL algorithms I prefer</h3>
+<p>There are several algorithms worth considering in this direction:</p>
+<ul>
+<li>TD3+BC: (<a href="#citeproc_bib_item_6">Fujimoto and Gu 2021</a>)</li>
+<li>In-sample Actor Critic: (<a href="#citeproc_bib_item_17">Xiao et al. 2022</a>)</li>
+<li>AWAC (Advantage weighted actor critic): (<a href="#citeproc_bib_item_11">Nair et al. 2021</a>)</li>
+<li>InAC/AWAC + Tsallis Regulation (a bit better than InAC across different data mixtures) (<a href="#citeproc_bib_item_19">Zhu et al. 2024</a>).</li>
+</ul>
+<p>These algorithms all have slightly different properties, and need to be compared on our datasets. My preference is on first trying (<a href="#citeproc_bib_item_17">Xiao et al. 2022</a>) and (<a href="#citeproc_bib_item_19">Zhu et al. 2024</a>) based on the results from (<a href="#citeproc_bib_item_19">Zhu et al. 2024</a>). These approaches are better suited for unknown/broad mixtures of data as compared to some of the others. I also am most familiar w/ them (for obvious reasons).</p>
+<h3 id="the-reward-problem">The reward problem</h3>
+<p>A key issue with using offline reinforcement learning in our setting is the definition of a reward function. While I think hand designing a reward function could work for our needs, it is a difficult process and would require a longer iteration loop than we need for behavior cloning. The main way in literature around this issue is through inverse reinforcement learning (or other ways of learning a reward function). (<a href="#citeproc_bib_item_8">Ho and Ermon 2016</a>) (GAIL) is one version of this, but requires online interactions with the environment to work effectively (<a href="#citeproc_bib_item_20">Zolna et al. 2020</a>). Other more recent methods related to gail also use the environment (<a href="#citeproc_bib_item_16">Watson, Huang, and Heess 2023</a>), (<a href="#citeproc_bib_item_14">Viano et al. 2022</a>), etc&hellip;</p>
+<p>There are a lot of approaches to try ranging from utilizing fully unlabeled data and some labeled data. Below I list several possible approaches we could look into, but don&rsquo;t go into too much detail. We should focus only on methods that <strong>do not require environment interactions</strong>. Why? This is because we can&rsquo;t properly simulate an environment without other players, which would complicate the methods considerably.</p>
+<ul>
+<li>(<a href="#citeproc_bib_item_20">Zolna et al. 2020</a>): Uses labeled (with reward information) trajectories and contrasts these with unlabeled trajectories. They share three approaches. A naive (flat rewards) approach which can be applied almost immediately (similar to (<a href="#citeproc_bib_item_18">Yu et al. 2022</a>)). An approach which re-weights the objectives between the data, and a third advisarial approach which doesn&rsquo;t need to interact with the environment like gail. The naive approach seems to do quite well, outperforming the behavior cloning in several tests.</li>
+<li>(<a href="#citeproc_bib_item_18">Yu et al. 2022</a>): This just labels the unlabeled data with zero rewards. We then just need to label a subset of the expert data with rewards (maybe naively) to get the benefit of data sharing.</li>
+<li>(<a href="#citeproc_bib_item_1">Albaba et al. 2024</a>): This one does use the environment, but it seems like it would be a reasonable extension to learn multiple student agents (i.e. different playersq) in their framework.</li>
+</ul>
+<p>Another interesting direction is known as example based control which usues a classifier to direct an agent towards trajectories which are successful. While this is not quite applicable for us as there is no &ldquo;successful vs unsuccessful&rdquo; in a complex game, might be worth pursuing using win vs loss (or some other metrics based on a subset of data) (<a href="#citeproc_bib_item_5">Eysenbach, Levine, and Salakhutdinov 2021</a>), (<a href="#citeproc_bib_item_7">Hatch et al. 2022</a>).</p>
+<h2 id="self-supervised-learning">Self-supervised learning</h2>
+<p>Using self-supervised learning is much more straight forward than reinforcement learning. The main idea is to use contrastive learning objectives to create a base network and then fine-tune using imitation learning on expert behavior describing the policy we want to imitate (<a href="#citeproc_bib_item_2">Balestriero et al. 2023</a>) (<a href="#citeproc_bib_item_4">Endrawis et al. 2021</a>).</p>
+<p>Avoiding the obvious examples from large models, there are not many examples (that I&rsquo;ve found) yet showing the benefits of offline pre-training using self-supervised learning and then fine tuning using imitation learning. The main example I have is (<a href="#citeproc_bib_item_12">Schwarzer et al. 2021</a>) which pretrains representations for RL using a new set of objectives geared towards learning value functions/policies. While these are meant for reinforcement learning they give empirical evidence these work for behavior cloning as well. Another interesting paper is (<a href="#citeproc_bib_item_3">Carroll et al. 2022</a>) which shows the masking is a powerful device for sequential decision making pretraining just like in language models.</p>
+<p>The goal of any work in this direction is to try and relate the work in pre-training back to imitation learning/offline reinforcement learning in a sensor based application. I think given the few papers we have, there is a really good chance the pre-training ideas from both offline RL and large models can generalize to our use cases.</p>
+<h2 id="references">References</h2>
+<p>\printbibliography</p>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/offline_reinforcement_learning/">Offline Reinforcement Learning</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

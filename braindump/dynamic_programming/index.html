@@ -14,7 +14,7 @@
 
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/PrevProfessional/website/content/braindump/dynamic_programming.md%29">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/website/content/braindump/dynamic_programming.md%29">
   <link rel="stylesheet" href="/styles.css">
   
   <link rel="stylesheet" href="/css/header.css">
@@ -50,9 +50,9 @@
   <meta property="og:title" content="Dynamic Programming | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2022-11-08T14:19:28-07:00">
+  <meta property="article:published_time" content="2025-02-21T10:26:18-07:00">
   
-  <meta property="article:modified_time" content="2022-11-08T14:19:28-07:00">
+  <meta property="article:modified_time" content="2025-02-21T10:26:18-07:00">
   
 
   <title>Dynamic Programming | Matthew Schlegel</title>
@@ -200,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2022-11-08 14:19:28 -0700 MST" itemprop="datePublished dateModified">
-      Nov 8, 2022
+    <time datetime="2025-02-21 10:26:18 -0700 MST" itemprop="datePublished dateModified">
+      Feb 21, 2025
     </time>
   </span>
 
@@ -299,6 +299,81 @@
 \newcommand{\ind}{\perp!!!!\perp}
 \newcommand{\bigoh}{\text{O}}
 \)</p>
+<p><strong>Dynamic programming</strong> (DP) refers to a collection of algorithms that can be used to compute optimal policies given a <em>perfect model</em> of the environment as an MDP. These algorithms are of limited use to the full RL problem as they require a perfect model and have an immense up-front computational cost. These algorithms are still interesting theoretically, and provide a nice foundation to begin thinking about learning optimal policies. In this chapter, we will limit ourselves to finite MDPs. A key idea of DP, and of RL generally, is the use of value functions to organize and structure the search for good policies.</p>
+<h2 id="policy-evaluation--prediction">Policy Evaluation (prediction)</h2>
+<p><strong>Policy Evaluation</strong>: compute the state-value function \(v_\pi\) for an arbitrary policy \(\pi\). Also known as the prediction problem. Recall from Chapter 3:</p>
+<p>\begin{align}
+v_\pi(s) &amp;\defeq \expected_\pi[G_t | S_t=s] \nonumber\\
+&amp;= \sum_{a}\pi(a|s)\sum_{s&rsquo;, r} p(s&rsquo;, r|s, a)[r+\gamma v_\pi(s&rsquo;)] \label{eqn:RLI:dp:valuefunc}
+\end{align}</p>
+<p>If the environment&rsquo;s dynamics are completely known, then \ref{eqn:RLI:dp:valuefunc} is a system of \(|\states|\) simultaneous linear equations in \(|\states|\) unknowns. This calculation is straightforward but tedious. For our purposes, iterative solution methods are most suitable. If \(v_0\) is chosen arbitrarily (except for any terminal states which must be 0), then we can iteratively solve for the value function</p>
+<p>\begin{align*}
+v_{k+1}(s) &amp;\defeq \expected_\pi[R_{t+1} + \gamma v_k(S_{t+1}) | S_t = s] \\
+&amp; = \sum_{a}\pi(a|s)\sum_{s&rsquo;, r} p(s&rsquo;, r|s, a)[r+\gamma v_{k}(s&rsquo;)] \label{eqn:RLI:dp:iterative}
+\end{align*}</p>
+<p>The sequence of \(v_k\) can be shown to converge to \(v_\pi\) in general as \(k\rightarrow\infty\). This algorithm is called <em>iterative policy evaluation</em>. This algorithm can also be done in-place.</p>
+<h2 id="policy-improvement">Policy Improvement</h2>
+<p>Once we have a state value function \(v_\pi\), we would like to use it to find a better policy (if one exists). The most straightforward method is to construct an action value function</p>
+<p>\[q_\pi(s,a) \defeq \expected[R_{t+1} + \gamma v_\pi(S_{t+1}) | S_t =s, A_t = a].\]</p>
+<p>If \(q_\pi(s,a) &gt; v_\pi(s)\) then you can improve the policy \(\pi\) by selecting action \(a\) in state \(s\) and then following \(\pi\) elsewhere. This is a special case of the <em>policy improvement theorem</em>. Let π and π&rsquo; be any pair of deterministic policies such that</p>
+<p>\[q_\pi(s, \pi&rsquo;(s)) \ge v_\pi(s) \quad \triangleright \quad \forall s \in \states\].</p>
+<p>Then the policy π&rsquo; must be as good as, or better than π, meaning \(v_{\pi&rsquo;}(s) \ge v_\pi(s)\).</p>
+<p>Instead of focusing on changing the policy at a a single state, we can improve the policy over all states simultaneously: \(\pi&rsquo; \defeq \argmax_a q_\pi(s,a)\).</p>
+<h2 id="policy-iteration">Policy Iteration</h2>
+<p>Once a policy π has been improved using \(v_\pi\) to yield a better policy π&rsquo;, we can then compute \(v_{\pi&rsquo;}\) and improve it again to yield an even better policy! We can create a chain of evaluations and improvements continuing until we get to a policy which is no longer changing. Because a finite MDP has only a finite number of policies, this process must converge to an optimal policy and optimal value function in a finite number of iterations. This is called <strong>policy iteration</strong>.</p>
+<div class="algorithm">
+<p>\begin{algorithmic}
+\State 1. Initialization
+\State $V(s) \in \reals$ and $\pi(s) \in \actions(s)$ arbitrarily for $s\in\states$
+\State
+\State 2. Policy Evaluation
+\Repeat
+\State $\Delta \leftarrow 0$
+\ForAll{$s \in \states$}
+\State $v \leftarrow V(s)$
+\State $V(s) \leftarrow \sum_{s&rsquo;,r}p(s&rsquo;,r|s,\pi(s)) [r+\gamma V(s&rsquo;)]$
+\State $\Delta \leftarrow max(\Delta, |v-V(s)|)$
+\EndFor
+\Until{$\Delta &lt; \theta$}
+\State
+\State 3. Policy Improvement
+\State $policy\_stable \leftarrow true$
+\ForAll{$s\in\states$}
+\State $old-action\leftarrow\pi(s)$
+\State $\pi(s) \leftarrow \argmax_a \sum_{s&rsquo;,r}p(s&rsquo;,r|s,\pi(s)) [r+\gamma V(s&rsquo;)]$
+\State If $old\_action \neq \pi(s)$, then $policy\_stable \leftarrow false$
+\EndFor
+\State If $policy\_stable$, then stop and return $V\approx v_\star$ and $\pi \approx \pi_\star$; else go to 2.
+\end{algorithmic}</p>
+<p>\caption{Policy Iteration (using iterative policy evaluation) for estimating $\pi \approx \pi^*$}</p>
+</div>
+<h2 id="value-iteration">Value Iteration</h2>
+<p>Instead of having a full policy evaluation step in-between policy improvement steps, we can truncate policy evaluation to a single sweep through the state-space without changing the convergence properties of the algorithm. This algorithm is known as <em>value iteration</em> and can be written simply as</p>
+<p>\[v_{k+1}(s) \defeq \max_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma v_k(s&rsquo;)] \quad \triangleright \quad \forall s\in\states\].</p>
+<p>Value iteration effectively combines one sweep of policy evaluation and one sweep of policy improvement. Faster convergence is often achieved by interposing multiple policy evaluation sweeps between each policy improvement sweep. In general, the entire class of truncated policy iteration algorithms can be through of as sequences of sweeps.</p>
+<div class="algorithm">
+<p>\begin{algorithmic}
+\State Algorithm parameter: a small threshold $\theta &gt; 0$ determining accuracy of estimation.
+\State Initialize $V(s)$, for all $s\in\states^+$, arbitrarily except that $V(terminal)=0$
+\Repeat
+\State $\Delta \leftarrow 0$
+\ForAll{$s\in\states$}
+\State $v\leftarrow V(s)$
+\State $V(s) \leftarrow \max_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma V(s&rsquo;)]$
+\State $\Delta \leftarrow \max(\Delta, |v-V(s)|)$
+\EndFor
+\Until{$\Delta &lt; \theta$}
+\State Output a deterministic policy, $\pi \approx\pi_\star$, such that
+\State $\pi(s) = \argmax_a \sum_{s&rsquo;,r} p(s&rsquo;, r|s,a)[r+\gamma V(s&rsquo;)]$
+\end{algorithmic}</p>
+<p>\caption{Value Iteration, for estimating $\pi\approx\pi^\star$}</p>
+</div>
+<h2 id="asynchronous-dynamic-programming">Asynchronous Dynamic Programming</h2>
+<p><em>Asynchronous DP</em> algorithms: in-place iterative DP algorithms that are not organized in terms of systematic sweeps of the state set. These algorithms update the values of states in any order whatsoever, using whatever values of other states happen to be available. The only restriction for convergence is an asynchronous algorithm must continue to update the values of all the states.</p>
+<h2 id="generalized-policy-iteration">Generalized Policy Iteration</h2>
+<p><em>Generalized policy iteration</em> (GPI): the general idea of letting policy-evaluation and policy-improvement porcesses interact, independent of the granularity and other details of the two processes.</p>
+<h2 id="efficiency-of-dynamic-programming">Efficiency of Dynamic Programming</h2>
+<p>If \(n\) and \(k\) denote the number of states and actions, a DP method takes a number of computational operations that is less than some polynomial function of \(n\) and \(k\) (i.e. DP methods are in polynomial time). DP is sometimes through to be of limited applicability because of the <em>curse of dimensionality</em>, the fact that the number of states often grows exponentially with the number of state variables.</p>
 
     </div>
 
@@ -339,204 +414,6 @@
    
 
    
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-      
-   
-
-   
-
-   
-
-   
       
    
 
@@ -832,6 +709,238 @@
 
    
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    
@@ -889,11 +998,11 @@
        
           <li><a href="/braindump/current_learning_objectives/">Current Learning Objectives</a></li>
        
-          <li><a href="/braindump/inbox/">StudyPlan</a></li>
+          <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
        
           <li><a href="/braindump/bellman_equation/">Bellman Equation</a></li>
        
-          <li><a href="/braindump/interview_review_material/">Interview Review Material</a></li>
+          <li><a href="/braindump/inbox/">StudyPlan</a></li>
        
      </ul>
     </div>

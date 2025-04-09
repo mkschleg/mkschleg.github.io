@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/website/content/braindump/data_driven_pde_solvers.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">
+  <meta property="og:title" content="Data Driven PDE Solvers | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2025-04-09T09:34:25-06:00">
+  
+  <meta property="article:modified_time" content="2025-04-09T09:34:25-06:00">
+  
+
+  <title>Data Driven PDE Solvers | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; Focused on RL and ML to improve the world; Research Scientist with a penchant for good software and alliteration.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">Data Driven PDE Solvers</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2025-04-09 09:34:25 -0600 MDT" itemprop="datePublished dateModified">
+      Apr 9, 2025
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<h2 id="projects">Projects</h2>
+<h2 id="questions">Questions</h2>
+<h3 id="are-there-methods-for-learning-from-data-driven-by-controllers-how-well-does-this-work-on-real-world-data-can-we-get-better-explanations-of-how-the-controller-performs-can-we-learn-the-implicit-pde-of-a-controller-we-can-t-analyze-how-do-we-validate-we-have-learned-it-correctly">Are there methods for learning from data driven by controllers? How well does this work on real-world data? Can we get better explanations of how the controller performs? Can we learn the implicit PDE of a controller we can&rsquo;t analyze? How do we validate we have learned it correctly?</h3>
+<h2 id="notes">Notes</h2>
+<h3 id="background"><span class="org-todo todo TODO">TODO</span> Background</h3>
+<p>The idea is to try and estimate a PDE from data (i.e. no model).</p>
+<!--list-separator-->
+<ul>
+<li>What is the mathematical formulation of the problem?</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>What is the data used to estimate the mapping?</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>What PDEs can this approximate? And how do the different approaches approximate these PDEs?</li>
+</ul>
+<h3 id="finite-dimensional-operators--i-dot-e-dot-approximate-the-parametric-map-through-convolutional-networks">Finite-dimensional operators (i.e. approximate the parametric map through convolutional networks)</h3>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_3">Guo, Li, and Iorio 2016</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_6">Khoo, Lu, and Ying 2021</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_4">Jiang et al. 2020</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_1">Adler and Öktem 2017</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Side Ideas:</p>
+ <!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_12">Zhu and Zabaras 2018</a>)</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>Continuous convolution networks (<a href="#citeproc_bib_item_11">Ummenhofer et al. 2019</a>)</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_2">Bhatnagar et al. 2019</a>)</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li>Theoretical analysis of deep neural networks and parametric pdes (<a href="#citeproc_bib_item_8">Kutyniok et al. 2022</a>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="physics-informed-machine-learning">Physics informed machine learning</h3>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_5">Karniadakis et al. 2021</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Physics Informed Neural Networks (<a href="#citeproc_bib_item_10">Raissi, Perdikaris, and Karniadakis 2019</a>)</li>
+</ul>
+<h3 id="physics-informed-machine-learning"><span class="org-todo todo TODO">TODO</span> Physics Informed Machine Learning (<a href="#citeproc_bib_item_5">Karniadakis et al. 2021</a>)</h3>
+<h3 id="d41d8c"><span class="org-todo todo TODO">TODO</span> </h3>
+<h3 id="neural-operators">Neural Operators</h3>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_7">Kovachki et al. 2024</a>)</li>
+</ul>
+<h3 id="deeonets">DeeONets</h3>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_9">Lu et al. 2021</a>)</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li></li>
+</ul>
+<h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Adler, Jonas, and Ozan Öktem. 2017. “Solving Ill-Posed Inverse Problems Using Iterative Deep Neural Networks.” <i>Inverse Problems</i> 33 (12). IOP Publishing: 124007. doi:<a href="https://doi.org/10.1088/1361-6420/aa9581">10.1088/1361-6420/aa9581</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Bhatnagar, Saakaar, Yaser Afshar, Shaowu Pan, Karthik Duraisamy, and Shailendra Kaushik. 2019. “Prediction of Aerodynamic Flow Fields Using Convolutional Neural Networks.” <i>Computational Mechanics</i> 64 (2): 525–45. doi:<a href="https://doi.org/10.1007/s00466-019-01740-0">10.1007/s00466-019-01740-0</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Guo, Xiaoxiao, Wei Li, and Francesco Iorio. 2016. “Convolutional Neural Networks for Steady Flow Approximation.” In <i>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</i>, 481–90. KDD ’16. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/2939672.2939738">10.1145/2939672.2939738</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Jiang Chiyu “Max”, Soheil Esmaeilzadeh, Kamyar Azizzadenesheli, Karthik Kashinath, Mustafa Mustafa, Hamdi A. Tchelepi, Philip Marcus, Mr Prabhat, and Anima Anandkumar. 2020. “MESHFREEFLOWNET: A Physics-Constrained Deep Continuous Space-Time Super-Resolution Framework.” In <i>SC20: International Conference for High Performance Computing, Networking, Storage and Analysis</i>, 1–15. doi:<a href="https://doi.org/10.1109/SC41405.2020.00013">10.1109/SC41405.2020.00013</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Karniadakis, George Em, Ioannis G. Kevrekidis, Lu Lu, Paris Perdikaris, Sifan Wang, and Liu Yang. 2021. “Physics-Informed Machine Learning.” <i>Nature Reviews Physics</i> 3 (6). Nature Publishing Group: 422–40. doi:<a href="https://doi.org/10.1038/s42254-021-00314-5">10.1038/s42254-021-00314-5</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Khoo, Yuehaw, Jianfeng Lu, and Lexing Ying. 2021. “Solving Parametric PDE Problems with Artificial Neural Networks.” <i>European Journal of Applied Mathematics</i> 32 (3): 421–35. doi:<a href="https://doi.org/10.1017/S0956792520000182">10.1017/S0956792520000182</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Kovachki, Nikola, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2024. “Neural Operator: Learning Maps Between Function Spaces.” May 2. doi:<a href="https://doi.org/10.5555/3648699.3648788">10.5555/3648699.3648788</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Kutyniok, Gitta, Philipp Petersen, Mones Raslan, and Reinhold Schneider. 2022. “A Theoretical Analysis of Deep Neural Networks and Parametric PDEs.” <i>Constructive Approximation</i> 55 (1): 73–125. doi:<a href="https://doi.org/10.1007/s00365-021-09551-4">10.1007/s00365-021-09551-4</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>Lu, Lu, Pengzhan Jin, Guofei Pang, Zhongqiang Zhang, and George Em Karniadakis. 2021. “Learning Nonlinear Operators via DeepONet Based on the Universal Approximation Theorem of Operators.” <i>Nature Machine Intelligence</i> 3 (3). Nature Publishing Group: 218–29. doi:<a href="https://doi.org/10.1038/s42256-021-00302-5">10.1038/s42256-021-00302-5</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_10"></a>Raissi, M., P. Perdikaris, and G.E. Karniadakis. 2019. “Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations.” <i>Journal of Computational Physics</i> 378 (February): 686–707. doi:<a href="https://doi.org/10.1016/j.jcp.2018.10.045">10.1016/j.jcp.2018.10.045</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_11"></a>Ummenhofer, Benjamin, Lukas Prantl, Nils Thuerey, and Vladlen Koltun. 2019. “Lagrangian Fluid Simulation with Continuous Convolutions.” <a href="https://openreview.net/forum?id=B1lDoJSYDH">https://openreview.net/forum?id=B1lDoJSYDH</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_12"></a>Zhu, Yinhao, and Nicholas Zabaras. 2018. “Bayesian Deep Convolutional Encoder–Decoder Networks for Surrogate Modeling and Uncertainty Quantification.” <i>Journal of Computational Physics</i> 366 (August): 415–47. doi:<a href="https://doi.org/10.1016/j.jcp.2018.04.018">10.1016/j.jcp.2018.04.018</a>.</div>
+</div>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+
