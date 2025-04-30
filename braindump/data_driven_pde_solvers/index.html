@@ -47,15 +47,15 @@
   
   <meta property="og:site_name" content="Matthew Schlegel">
   <meta property="og:url" content="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">
-  <meta property="og:title" content="Data Driven PDE Solvers | Matthew Schlegel">
+  <meta property="og:title" content="Data Driven PDE Solvers for Power Systems | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2025-04-09T09:34:25-06:00">
+  <meta property="article:published_time" content="2025-04-30T15:44:49-06:00">
   
-  <meta property="article:modified_time" content="2025-04-09T09:34:25-06:00">
+  <meta property="article:modified_time" content="2025-04-30T15:44:49-06:00">
   
 
-  <title>Data Driven PDE Solvers | Matthew Schlegel</title>
+  <title>Data Driven PDE Solvers for Power Systems | Matthew Schlegel</title>
 
   
 <script type="text/javascript" async
@@ -191,7 +191,7 @@
 
 				<article class="post" itemscope itemtype="http://schema.org/Article">
   <div class="post-container">
-    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">Data Driven PDE Solvers</a></h1>
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/data_driven_pde_solvers/">Data Driven PDE Solvers for Power Systems</a></h1>
 
     
       
@@ -200,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2025-04-09 09:34:25 -0600 MDT" itemprop="datePublished dateModified">
-      Apr 9, 2025
+    <time datetime="2025-04-30 15:44:49 -0600 MDT" itemprop="datePublished dateModified">
+      Apr 30, 2025
     </time>
   </span>
 
@@ -299,102 +299,744 @@
 \newcommand{\ind}{\perp!!!!\perp}
 \newcommand{\bigoh}{\text{O}}
 \)</p>
-<h2 id="projects">Projects</h2>
-<h2 id="questions">Questions</h2>
-<h3 id="are-there-methods-for-learning-from-data-driven-by-controllers-how-well-does-this-work-on-real-world-data-can-we-get-better-explanations-of-how-the-controller-performs-can-we-learn-the-implicit-pde-of-a-controller-we-can-t-analyze-how-do-we-validate-we-have-learned-it-correctly">Are there methods for learning from data driven by controllers? How well does this work on real-world data? Can we get better explanations of how the controller performs? Can we learn the implicit PDE of a controller we can&rsquo;t analyze? How do we validate we have learned it correctly?</h3>
-<h2 id="notes">Notes</h2>
-<h3 id="background"><span class="org-todo todo TODO">TODO</span> Background</h3>
-<p>The idea is to try and estimate a PDE from data (i.e. no model).</p>
+<table>
+  <thead>
+      <tr>
+          <th>citation</th>
+          <th>estimate pde dynamics from data</th>
+          <th>estimate PDE parameters with model</th>
+          <th>estimate quantity described by pdes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>)</td>
+          <td>N</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_61">Stiasny et al. 2022</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>)</td>
+          <td>Y (Simulation)</td>
+          <td>N</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_64">Stiasny, Misyris, and Chatzivasileiadis 2023</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_48">Pagnier and Chertkov 2021</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_44">Nellikkath and Chatzivasileiadis 2021</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_45">Nellikkath and Chatzivasileiadis 2022</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>N</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>citation</th>
+          <th>example pdes/their field</th>
+          <th>Relevant to power systems</th>
+          <th>Novel NN approaches</th>
+          <th>Data Simulated</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>)</td>
+          <td>laminar flow of fluids around geometries</td>
+          <td>N</td>
+          <td>N (Conv Nets)</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>)</td>
+          <td><a href="/braindump/partial_differential_equations/#effective-conductance-in-a-non-homogeneous-media">NLSE</a>, Effective Conductance</td>
+          <td>N</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>)</td>
+          <td>Several</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>)</td>
+          <td>Several</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_61">Stiasny et al. 2022</a>)</td>
+          <td><a href="/braindump/power_systems_control/#the-north-sea-wind-power-hub">The North Sea Wind Power Hub</a></td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>)</td>
+          <td><a href="/braindump/power_systems_control/#single-machine-infinite-bus-system">Single Machine Infinite Bus system</a></td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>)</td>
+          <td>4-bus 2-generator power system</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>)</td>
+          <td><a href="/braindump/power_systems_control/#single-machine-infinite-bus-system">Single Machine Infinite Bus system</a></td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>N (No data)</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_64">Stiasny, Misyris, and Chatzivasileiadis 2023</a>)</td>
+          <td><a href="/braindump/power_systems_control/#kundur-two-area-system">Kundur Two-area system</a></td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_48">Pagnier and Chertkov 2021</a>)</td>
+          <td><a href="/braindump/power_systems_control/#ieee-bus-systems">IEEE Bus Systems</a> (14, 118), <a href="/braindump/power_systems_control/#pantagruel">PanTaGruEl</a></td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_44">Nellikkath and Chatzivasileiadis 2021</a>)</td>
+          <td>(<a href="#citeproc_bib_item_3">Babaeinejadsarookolaee et al. 2021</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_45">Nellikkath and Chatzivasileiadis 2022</a>)</td>
+          <td></td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Y</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>citation</th>
+          <th>generative</th>
+          <th>discriminative</th>
+          <th>Type of estimate</th>
+          <th>Category</th>
+          <th>Discretization/Sampling Method</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Field</td>
+          <td></td>
+          <td>Grid</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>Scalar</td>
+          <td></td>
+          <td>N/A</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>Function/Field</td>
+          <td></td>
+          <td><a href="/braindump/latin_hypercube_sampling/">Latin Hypercube Sampling</a>, fixed grid,</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Function/Field</td>
+          <td></td>
+          <td>Avoids discretization through NN architecture</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_61">Stiasny et al. 2022</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>Function/Field</td>
+          <td></td>
+          <td>Discretized on a set \(\Delta t\)</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>System ID, Sim</td>
+          <td></td>
+          <td>NA</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>)</td>
+          <td>Y</td>
+          <td>Y</td>
+          <td>System ID</td>
+          <td></td>
+          <td>NA</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Simulation</td>
+          <td></td>
+          <td>Variable time discretization</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_64">Stiasny, Misyris, and Chatzivasileiadis 2023</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>Simulation</td>
+          <td></td>
+          <td>Time and input space discretizaiton</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_48">Pagnier and Chertkov 2021</a>)</td>
+          <td>Y</td>
+          <td>N</td>
+          <td>simulation</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_44">Nellikkath and Chatzivasileiadis 2021</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>Parameter Est.</td>
+          <td></td>
+          <td><a href="/braindump/latin_hypercube_sampling/">Latin Hypercube Sampling</a></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_45">Nellikkath and Chatzivasileiadis 2022</a>)</td>
+          <td>N</td>
+          <td>Y</td>
+          <td>Parameter Est.</td>
+          <td></td>
+          <td><a href="/braindump/latin_hypercube_sampling/">Latin Hypercube Sampling</a></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>citation</th>
+          <th>problem domain</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>)</td>
+          <td>Fluid dynamics around a geometry</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>)</td>
+          <td>property estimation of PDEs</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>)</td>
+          <td>PINNs introduction</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>)</td>
+          <td>Neural Operators introduction</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_61">Stiasny et al. 2022</a>)</td>
+          <td>Security constrained stability margins</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>)</td>
+          <td>System identification (parameter estimation) in <a href="/braindump/power_systems_control/#power-flow">Power Flow</a>, some <a href="/braindump/power_systems_control/#electro-magnetic-transient-simulation">EMT simulation</a></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>)</td>
+          <td>system identification (parameter estimation) in <a href="/braindump/power_systems_control/#power-flow">Power Flow</a></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>)</td>
+          <td><a href="/braindump/power_systems_control/#electro-magnetic-transient-simulation">EMT simulation</a></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_64">Stiasny, Misyris, and Chatzivasileiadis 2023</a>)</td>
+          <td><a href="/braindump/power_systems_control/#stability-analysis">(Trainsient) Stability Analysis</a></td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_48">Pagnier and Chertkov 2021</a>)</td>
+          <td>Parameter estimation</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_44">Nellikkath and Chatzivasileiadis 2021</a>)</td>
+          <td><a href="/braindump/power_systems_control/#optimal-power-flow">DC-OPF</a>, parameter estimation (i.e. optimal contingency)</td>
+      </tr>
+      <tr>
+          <td>(<a href="#citeproc_bib_item_45">Nellikkath and Chatzivasileiadis 2022</a>)</td>
+          <td><a href="/braindump/power_systems_control/#optimal-power-flow">AC-OPF</a></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="questions-thoughts">Questions/Thoughts</h2>
+<ul>
+<li>Are there methods for learning from data driven by controllers? How well does this work on real-world data? Can we get better explanations of how the controller performs? Can we learn the implicit PDE of a controller we can&rsquo;t analyze? How do we validate we have learned it correctly?</li>
+<li>Can Data Driven PDEs be used for explainability in RL? What would that look like? Can we ask counterfactuals or specific stability related questions using</li>
+<li>Could we learn a mapping from rewards (a function over states) to policies (a function over states and actions) with samples from an off-policy dataset? What does the learning objective look like when we include stochasticity into the input and outputs (or must it only be deterministic?)</li>
+<li>Could we use a neural operator that learns over the PDE induced by the current agent&rsquo;s policy. This could then be used in the explainability space to understand what we expect the agent to do over time, and simulate the PDE into the future to give confidence to the human operator.</li>
+<li>Could we use this as input to the agent? What policy would the PDE depend on, maybe a set of experts? How much data would this take to train, and how much data would we need for the subsequent RL learning.</li>
+<li>How can Neural Operators be used to understand or predict how well an agent will do in the future? Can this be done? How reliable would it be? Would it give a human operator some confidence? Maybe as a comparison with experts.</li>
+<li>Can the parameters of an expert be a parameter that we can learn over in the set \(\mathcal{A}\)? Would we need to smoothly transition between experts? Would we need a new set of parameters per expert?</li>
+</ul>
+<h2 id="problem-settings">Problem Settings</h2>
+<p>In these papers, there are several problem settings that each have their own flavour of solution. Not all of these are relevant to our work, but it is good to have an idea of what all of them are so we can know what kinds of papers are worth incorporating into this literature review.</p>
+<h3 id="estimate-pde-dynamics-from-data">Estimate PDE dynamics from data</h3>
+<p>This is the most difficult problem setting. The goal is to be able to estimate the dynamics of a PDE from a set of conditions or measurements.</p>
+<p>One way this plays out is through knowing something about the physical characteristics of the underlying PDE. For instance, one can estimate the steady state flow of fluid around a geometry given a representation of that geometry (<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>). The output of the network should be a generative prediction of what the fluid flow output of a simulator would look like.</p>
+<p>Another way this can be done is by taking a set of measurements of a system and approximating its dynamics in a discretization agnostic manner as in (<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>). The interesting part of neural operators is that thy might not need to have knowledge of the underlying physical mechanics as (<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>) or (<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>) do. But a problem may arise in needing more data to estimate the actual PDE if it is complicated (my guess).</p>
+<h3 id="estimate-pde-model-parameters-from-data">Estimate PDE model parameters from data</h3>
+<p>The unknonw parameters of a PDE are difficult to ascertain, but by enabling gradients to be informed by the underlying PDEs we could use data to estimate the unknown parameters, or use this information to better estimate other quantities/forecasts (<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>). This is also known as system identification.</p>
+<h3 id="estimate-emergent-quantity-derived-from-pde-dynamics">Estimate emergent quantity derived from PDE dynamics</h3>
+<p>This is not really estimating PDEs, but is related in some ways. In (<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>), they estimate characteristic qualities of a system without needing to model the entire set of dynamics or learn the unknown variables of the underlying PDEs. This could be interesting for a number of applications in power systems related to stability analysis.</p>
+<h2 id="power-systems-domain">Power Systems domain</h2>
+<p>What we should do is:</p>
+<ol>
+<li>Organize the larger set of PDE solution methods into subsets based on the above table and general ideas from the literature (i.e. the</li>
+<li>Create</li>
+</ol>
+<h3 id="power-flow--power-systems-control-dot-md--analysis-for-steady-state-grid-networks"><a href="/braindump/power_systems_control/#power-flow">Power Flow</a> analysis for steady state grid networks</h3>
+<h3 id="optimal-power-flow--power-systems-control-dot-md"><a href="/braindump/power_systems_control/#optimal-power-flow">Optimal Power Flow</a></h3>
+<h3 id="stability-analysis--power-systems-control-dot-md"><a href="/braindump/power_systems_control/#stability-analysis">Stability Analysis</a></h3>
+<h3 id="emt-simulation--power-systems-control-dot-md"><a href="/braindump/power_systems_control/#electro-magnetic-transient-simulation">EMT simulation</a></h3>
+<h3 id="d41d8c"></h3>
+<h2 id="non-ml-based-power-systems-methods">Non ML based Power Systems methods</h2>
+<h3 id="model-order-reduction">Model Order Reduction</h3>
+<h3 id="model-analysis-techniques">Model Analysis Techniques</h3>
+<h3 id="d41d8c"></h3>
+<h2 id="power-systems-specific-applications">Power Systems Specific Applications</h2>
+<h3 id="closing-the-loop-a-framework-for-trustworthy-machine-learning-in-power-systems">(<a href="#citeproc_bib_item_61">Stiasny et al. 2022</a>): Closing the Loop: A Framework for Trustworthy Machine Learning in Power Systems</h3>
+<p>Proposes a method that uses (<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>) as it&rsquo;s core regulariztion method. It is following very closely to their previous works in (<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>; <a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>; <a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>). This requires data to be generated, and they don&rsquo;t seem to use realistic data, but the example <a href="/braindump/power_systems_control/#the-north-sea-wind-power-hub">The North Sea Wind Power Hub</a> is very interesting. Does a nice overview of all the problems related to using Machine Learning in power systems and how the community should be transparent in their research.</p>
+<p>This paper mostly has a nice trove of papers they cite which applies PINNs to power systems, and other applications of NNs in power systems (including work on generating formal/informal guarantees on a NNs outputs).</p>
+<h3 id="application-of-data-driven-methods-in-power-systems-analysis-and-control">(<a href="#citeproc_bib_item_4">Bertozzi et al. 2024</a>): Application of data-driven methods in power systems analysis and control</h3>
+<p>This is an ok review paper for a broad look at power systems research using data driven techniques. It does have some nice papers cited that
+should be looked through.</p>
+<p>Generally, they don&rsquo;t provide their own contribution a part from the review (the organization is surface level).</p>
+<h3 id="physics-informed-neural-networks-for-power-systems">(<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>): Physics-Informed Neural Networks for Power Systems</h3>
+<p>This is a direct application of physics informed neural networks (<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>) onto the <a href="/braindump/power_systems_control/#single-machine-infinite-bus-system">Single Machine Infinite Bus system</a>. The swing equation for this toy example is</p>
+<p>\[
+m_1 \ddot{\delta} + d_1 \dot{\delta} + B_{12} V_1 V_2 \text{sin}(\delta) - P_1 = 0
+\]</p>
+<p>with the equations being incorporated in through the equations</p>
+<p>\begin{align}
+u_\theta(t,x) &amp;=&amp; \delta(t, P_1) \\
+f_\delta(t, P_1) = m_1 \ddot{\delta} + d_1 \dot{\delta} + B_{12}V_1V_2 \text{sin}(\delta) - P_1
+\end{align}</p>
+<p>Where U is parameterized by weights \(\theta \subset \reals\) and the partials \(\ddot{\delta}\) and \(\dot{\delta}\) are taken with respect to time through an autodiff package.</p>
+<p>I highly recommend looking at <a href="https://github.com/gmisy/Physics-Informed-Neural-Networks-for-Power-Systems">https://github.com/gmisy/Physics-Informed-Neural-Networks-for-Power-Systems</a> for more details on how this is implemented. Specifically in the `net_f` functions.</p>
+<p>They do experiments in inference (when \(m_1\) and \(d_1\) are known), and in identification where \(m_1\) and \(d_1\) are unknown and need to be identified.</p>
+<h3 id="physics-informed-neural-networks-for-non-linear-system-identification-for-power-system-dynmaics">(<a href="#citeproc_bib_item_63">Stiasny, Misyris, and Chatzivasileiadis 2021</a>): Physics-Informed Neural Networks for Non-linear System Identification for Power System Dynmaics</h3>
+<p>This paper does exactly what (<a href="#citeproc_bib_item_41">Misyris, Venzke, and Chatzivasileiadis 2020</a>) but for a <a href="/braindump/power_systems_control/#4-bus-2-generator-system">4-Bus 2-Generator System</a> and focuses on system identification (i.e. estimating the parameters of the PDEs). They compare PINNs to Unscented Kalman Filters. The results are mixed, but generally the PINNs are much more flexible to various undesirable conditions (noise, missing data).</p>
+<h3 id="learning-without-data-physics-informed-neural-networks-for-fast-time-domain-simulation">(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>): Learning without Data: Physics-informed Neural Networks for Fast Time-Domain Simulation</h3>
+<p>This paper proposes a combination of Runga-Kutta and PINNs to perform time domain simulation with variable time-steps. The main idea is to use a neural network to estimate each of the stages in a Runga-Kutta step. From input \(\zvec_0 = [\xvec^0, \uvec]\) (where \(\xvec^0\) is the initial condition and \(\uvec\) is the control inputs to the system. The neural network makes predictions \(\yvec = [\hvec^1^\top, \ldots, \hvec^s^\top]^\top\) which are the individual stages of the Runga-Kutta method which can be calculated using the parametrized function \(\mathbf{f}\) describing the update rule of \(\xvec\). Note that this is not a PDE, and instead an ODE where the free variable for simulation is time once the initial condition \(\xvec_0\) is known and the external force \(\uvec\). WE ARE NOT DOING SYSTEM IDENTIFICATION.</p>
+<p>Using the property of each stage in RK being calculated via</p>
+<p>\[
+\hvec^k = \mathbf{f}\left ( t_0 + \gamma^k \Delta t, \xvec^0 + \Delta t \sum_{l=1}^{k-1} \hvec^l \right )
+\]</p>
+<p>we can define an error for each of the stages (which will be dependent on the previous layer).
+\[
+\epsilon^k(\xvec^0, \uvec) = \hvec^k - \mathbf{f}\left ( t_0 + \gamma^k \Delta t, \xvec^0 + \Delta t \sum_{l=1}^{k-1} \hvec^l \right ).
+\]</p>
+<p>We can use this to also train an RK algorithm with variable time-steps. Because the ODE is known, the goal is the estimate the simulation of the ODE in the time domain, without using data.</p>
+<p>They compare this method to full implicit RK schemes (with s set to 4 and 32), explicit RK-45, and Radau (an implicit RK method) on the <a href="/braindump/power_systems_control/#single-machine-infinite-bus-system">Single Machine Infinite Bus system</a>.</p>
+<p>This method is orders of magnitude faster than the baseline RK methods, and provide reasonable accuracy.</p>
+<h3 id="transient-stability-analysis-with-physics-informed-neural-networks">(<a href="#citeproc_bib_item_64">Stiasny, Misyris, and Chatzivasileiadis 2023</a>): Transient Stability Analysis with Physics-Informed Neural Networks</h3>
+<p>This paper looks at the application of PINNs (<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>) for power system transient stability assessment. &ldquo;At frequent intervales, operators assess if probable contingencies result in loss of synchronism, frequency instability, or violations of component limits during the transient phase.&rdquo; Modern grids add significant non-linearities and uncertainties through &ldquo;converter-connected devices&rdquo; and renewable sources of energy. This causes the computational complexity to increase drastically as a full <a href="/braindump/power_systems_control/#electro-magnetic-transient-simulation">EMT simulation</a> is often required to evaluate the contingencies.</p>
+<p>Some previous attempts to reduce the computational complexlity:</p>
+<ul>
+<li>SIME: (<a href="#citeproc_bib_item_83">Zhang et al. 1997</a>)</li>
+<li>Lyapunov functions (linear assumptions): (<a href="#citeproc_bib_item_17">Gless 1966</a>; <a href="#citeproc_bib_item_14">El-abiad and Nagappan 1966</a>)</li>
+<li>Lyapunov functions (non-linear assumptions): (<a href="#citeproc_bib_item_74">Vu and Turitsyn 2016</a>)</li>
+</ul>
+<p>The basic approach is to use a PINN to approximate <a href="/braindump/power_systems_control/#electro-magnetic-transient-simulation">EMT simulation</a>. From simulating the trajectories given a set of initial conditions you can see if there is a risk of instability at key time moments. They have three loss terms:</p>
+<ul>
+<li>Supervised learning loss: \(\mathscr{L}_x^i = \frac{1}{N_x} \sum_{j=1}^{N_x} (x^i_j - \hat{x}_i_j)^2.\)</li>
+<li>The state update function \(\mathbf{f}(t, x(t), \uvec)\) at the data matches the temporal derivative of the NNs approximation \(\frac{\partial}{\partial t} \hat{x}\) (calculated through autodiff)
+\[
+\mathscr{L}^i_{dt} = \frac{1}{N_x} \sum_{j=1}^{N_x} \left ( f^i(t_j, x_j, \uvec_j) - \(\frac{\partial}{\partial t} \hat{x}\) \right )^2
+\]</li>
+<li>Finally, using the governing equations we can estimate the governing equations with our estimate:
+\[</li>
+</ul>
+<p>\mathscr{L}^i<sub>f</sub> = \frac{1}{N_f} ∑<sub>j=1</sub><sup>N_f</sup> \left ( f^i(t_j, \hat{x}_j, \uvec_j) - \(\frac{\partial}{\partial t} \hat{x}\) \right )^2
+\]</p>
+<p>The data-points used for \(\mathscr{L}_f\) are called collocation points and can be any point in the input domain.</p>
+<p>In their results they show how faster PINNs can be compared with classical approaches like Runge-Kutta, but don&rsquo;t adequately show how well the PINNs can predict instable points. While they do an in-depth analysis on the accuracy/error of the approach, this isn&rsquo;t sufficient to get a full picture in my opinion. We need to see if there are scenarios in which this fails, does it miss instable points, how good can it generalize, etc.</p>
+<h3 id="physics-informed-graphical-neural-network-for-parameter-and-state-estimations-in-power-systems">(<a href="#citeproc_bib_item_48">Pagnier and Chertkov 2021</a>): Physics-Informed Graphical Neural Network for Parameter &amp; State Estimations in Power Systems</h3>
+<p>This paper proposes a graph neural network approach to estimate the state and parameters of a power system in partially observable scenarios (i.e. when not all the nodes of a power system which have <a href="/braindump/power_systems_control/#phasor-measurement-units">PMUs</a>. They do this by modeling the system using a graph nueral network whwere the graph of the neural network is a reduced form using only observed currents \(\mathbf{I}^{(o)}\) and voltages \(\mathbf{V}^{(o)}\):</p>
+<p>\[
+\mathbf{I}^{(o)} = \mathbf{Y}^{( r)} \mathbf{V}^{(o)}
+\]</p>
+<p>where the addmitance matrix \(\mathbf{Y}^{(o)}\) is a reduced form following the <a href="/braindump/kron_reduction/">Kron Reduction</a>.</p>
+<p>They aim to solve the following
+\[
+\min_{\psi, \mathbf{Y}^{( r)}} L_{\text{Power-GNN}}
+\]</p>
+<p>where
+\[
+L_{\text{Power-GNN}} = \frac{1}{N \mathcal{V}^{(o)}} \sum_{n=1}^N || \mathbf{S}_n^{(o)} - \Pi^{-1}_{\mathbf{Y}^{( r)}} (\mathbf{V}_n^{(o)}) - \sum_{\psi} (\mathcal{V}_n^{(o)}, S_n^{(o)}) ||^2 + R(\psi)
+\]</p>
+<p>They use three increasingly complex graphs:</p>
+<ul>
+<li><a href="/braindump/power_systems_control/#ieee-14-bus-system">IEEE 14 Bus System</a></li>
+<li><a href="/braindump/power_systems_control/#ieee-118-bus-system">IEEE 118 Bus System</a></li>
+<li><a href="/braindump/power_systems_control/#pantagruel">PanTaGruEl</a></li>
+</ul>
+<p>In their experiments, they find that the Power-GNN performs quite well, and is able to learn the addmitance matrix to a high degree of accuracy (which in-turn is able to estimate the state of the system to a high degree of accuracy). The method obviously outperforms the vanilla NN approach, but the comparison isn&rsquo;t fair. Hard to say if this is actually a good method.</p>
+<h3 id="physics-informed-neural-networks-for-minimising-worst-case-violations-in-dc-optimal-power-flow">(<a href="#citeproc_bib_item_44">Nellikkath and Chatzivasileiadis 2021</a>): Physics-Informed Neural Networks for Minimising Worst-Case violations in DC Optimal Power flow</h3>
+<p>This paper uses <a href="/braindump/physics_informed_neural_networks_a_deep_learning_framework_for_solving_forward_and_inverse_problems_involving_nonlinear_partial_differential_equations/">PINNs</a> with <a href="/braindump/karush_kuhn_tucker_conditions/">Karush-Kuhn-Tucker conditions</a> to predict <a href="/braindump/power_systems_control/#optimal-power-flow">DC-OPF</a> solutions. They use the simplified <a href="/braindump/power_systems_control/#optimal-power-flow">DC-OPF</a> problem setting as a way to gain insight on the application of <a href="/braindump/physics_informed_neural_networks_a_deep_learning_framework_for_solving_forward_and_inverse_problems_involving_nonlinear_partial_differential_equations/">PINNs</a> on <a href="/braindump/power_systems_control/#optimal-power-flow">AC-OPF</a>.</p>
+<p>Their method incorporates <a href="/braindump/karush_kuhn_tucker_conditions/">KKT-conditions</a> into the loss function for the <a href="/braindump/physics_informed_neural_networks_a_deep_learning_framework_for_solving_forward_and_inverse_problems_involving_nonlinear_partial_differential_equations/">PINNs</a>. See the paper for these specific conditions.</p>
+<p>Next they transform the PINN into a <a href="/braindump/mixed_integer_linear_program/">Mixed Integer Linear Program</a> to get worst case guarantees as done in their previous work (<a href="#citeproc_bib_item_72">Venzke et al. 2020</a>).</p>
+<p>They compare to a normal neural network in terms of average violations to the constraints and <a href="/braindump/mean_absolute_error/">Mean Absolute Error</a>. While they claim the <a href="/braindump/physics_informed_neural_networks_a_deep_learning_framework_for_solving_forward_and_inverse_problems_involving_nonlinear_partial_differential_equations/">PINNs</a> are superior, the results actually show a mixed bag. They also don&rsquo;t show and hyperparameter studies or confidence intervals to get a sense of how well the algorithms work in general.</p>
+<dl>
+<dt>code</dt>
+<dd><a href="https://github.com/RahulNellikkath/Physics-Informed-Neural-Network-for-DC-OPF">https://github.com/RahulNellikkath/Physics-Informed-Neural-Network-for-DC-OPF</a></dd>
+</dl>
+<h3 id="4ed449"><span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> (<a href="#citeproc_bib_item_26">Kim et al. 2019</a>)</h3>
+<h3 id="7de113"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_33">Liao et al. 2022</a>)</h3>
+<h3 id="da6920"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_21">Huang and Wang 2023</a>)</h3>
+<h3 id="e03c58"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_45">Nellikkath and Chatzivasileiadis 2022</a>)</h3>
+<h3 id="bc1f4c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_84">Zhao et al. 2019</a>)</h3>
+<h3 id="f4e4b5"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_66">Stock et al. 2024</a>)</h3>
+<h3 id="7df7dc"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_58">Singh et al. 2020</a>)</h3>
+<h3 id="88990a"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_13">Duchesne, Karangelos, and Wehenkel 2020</a>)</h3>
+<h3 id="ea2262"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_6">Bolz, Rueß, and Zell 2019</a>)</h3>
+<h3 id="c43601"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_32">Li et al. 2019</a>)</h3>
+<h3 id="25a8a0"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_34">Liao et al. 2021</a>)</h3>
+<h3 id="5a60df"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_57">Schweppe and Handschin 1974</a>)</h3>
+<h3 id="53eeef"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_77">Wu and Liu 1989</a>)</h3>
+<h3 id="7712e4"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_78">Zamzam, Fu, and Sidiropoulos 2019</a>)</h3>
+<h3 id="74ca38"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_81">Zhang, Wang, and Giannakis 2019</a>)</h3>
+<h3 id="61dbcf"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_12">Donon et al. 2019</a>)</h3>
+<h3 id="c17069"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_59">Singh, Kekatos, and Giannakis 2022</a>)</h3>
+<h3 id="90183e"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_36">Lin, Liu, and Zhu 2022</a>)</h3>
+<h3 id="b13734"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_15">Feng et al. 2025</a>)</h3>
+<h3 id="c7678d"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_9">Chen et al. 2020</a>)</h3>
+<h3 id="86b73b"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_40">Mestav, Luengo-Rozas, and Tong 2018</a>)</h3>
+<h3 id="ad8188"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_47">Owerko, Gama, and Ribeiro 2020</a>)</h3>
+<h3 id="1fe68a"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_72">Venzke et al. 2020</a>)</h3>
+<h3 id="4d013e"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_82">Zhang, Chen, and Zhang 2022</a>)</h3>
+<h3 id="f97169"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_79">Zamzam and Baker 2020</a>)</h3>
+<h3 id="60e8d1"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_49">Pan 2021</a>)</h3>
+<h3 id="a8ca8c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_50">Pan et al. 2021</a>)</h3>
+<h3 id="5ed6c1"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_16">Fioretto, Mak, and Hentenryck 2020</a>)</h3>
+<h3 id="other-resources-to-look-through">Other resources to look through</h3>
 <!--list-separator-->
 <ul>
-<li>What is the mathematical formulation of the problem?</li>
+<li><a href="http://www.chatziva.com/">http://www.chatziva.com/</a></li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>What is the data used to estimate the mapping?</li>
+<li><span class="org-todo todo TODO">TODO</span>  <a href="https://zicokolter.com/publications/">https://zicokolter.com/publications/</a></li>
+</ul>
+<h2 id="power-systems-related-papers-and-background">Power systems related papers and Background</h2>
+<h3 id="64dfc2"><span class="org-todo todo NEXT">NEXT</span> (<a href="#citeproc_bib_item_20">Hatziargyriou et al. 2021</a>)</h3>
+<h3 id="f7fa5e"><span class="org-todo todo NEXT">NEXT</span> (<a href="#citeproc_bib_item_18">Gomez-Exposito et al. 2011</a>)</h3>
+<h3 id="efficient-creation-of-datasets-for-data-driven-power-system-applications">(<a href="#citeproc_bib_item_71">Venzke, Molzahn, and Chatzivasileiadis 2021</a>): Efficient Creation of Datasets for Data-Driven Power System Applications</h3>
+<p>This paper, and their previous work (<a href="#citeproc_bib_item_68">Thams et al. 2020</a>), works to generate a balanced dataset of secure and insecure points for AC-OPF datasets. The main issue with current methods is they have to simulate the trajectories which is computationally complex. Because of the challenge of finding a balanced dataset of secure and insecure points often datasets do not have enough data to get a good approximation of the security envelope in ML methods. This paper proposes to use a convex relaxation of AC-OPF problems to consider N-1 security and uncertainty.</p>
+<p>The math/power systems related stuff is currently beyond me so this will be deferred until later (or until we need it).</p>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  Re-read (<a href="#citeproc_bib_item_71">Venzke, Molzahn, and Chatzivasileiadis 2021</a>)</li>
+</ul>
+<h3 id="kron-reduction--kron-reduction-dot-md"><a href="/braindump/kron_reduction/">Kron Reduction</a></h3>
+<h3 id="0790b0"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_42">Molzahn and Hiskens 2019</a>)</h3>
+<h3 id="81065e"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_67">Stott, Jardim, and Alsac 2009</a>)</h3>
+<h3 id="c45e96"><span class="org-todo todo NEXT">NEXT</span> (<a href="#citeproc_bib_item_3">Babaeinejadsarookolaee et al. 2021</a>)</h3>
+<h2 id="finite-dimensional-operators--i-dot-e-dot-approximate-the-parametric-map-through-convolutional-networks">Finite-dimensional operators (i.e. approximate the parametric map through convolutional networks)</h2>
+<h3 id="fa70bb">(<a href="#citeproc_bib_item_19">Guo, Li, and Iorio 2016</a>) <a href="#citeproc_bib_item_19">2016</a></h3>
+<p>This paper focuses on using convolutional neural networks to estimate the stead state laminar flow of air around arbitrary geometries. The main idea is to use supervised learning to estimate the output of an <a href="/braindump/lattice_boltzmann_method/">LCB</a> simulator and shorten the inference time of the design side. This paper is very specific to aerodynamics, and likely can&rsquo;t be extended to <a href="/braindump/power_systems_control/">Power Systems Control</a>. There are several issues that cannot be overcome.</p>
+<p>In any case, the pattern being set is gather data from a simulation and speed up inference time through an architecture and objective function designed for the problem setting.</p>
+<h3 id="850722">(<a href="#citeproc_bib_item_25">Khoo, Lu, and Ying 2021</a>) <a href="#citeproc_bib_item_25">2021</a></h3>
+<p>This paper focuses on two PDEs from physics:</p>
+<ul>
+<li><a href="/braindump/partial_differential_equations/#effective-conductance-in-a-non-homogeneous-media">Effective conductance in a non-homogeneous media</a></li>
+<li><a href="/braindump/partial_differential_equations/#nonlinear-schrodinger-equation">Nonlinear Schrodinger Equation</a></li>
+</ul>
+<p>The main goal is to estimate a quantity described by these PDEs and their <strong>random</strong> coefficients. Usually, Monte-carlo sampling is typically used for this problem, which has an inherently noisy estimate of the desired quantities.</p>
+<h3 id="9ed302"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_22">Jiang et al. 2020</a>) <a href="#citeproc_bib_item_22">2020</a></h3>
+<h3 id="6cba6c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_1">Adler and Öktem 2017</a>) <a href="#citeproc_bib_item_1">2017</a></h3>
+<h3 id="side-ideas">Side Ideas:</h3>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_85">Zhu and Zabaras 2018</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>What PDEs can this approximate? And how do the different approaches approximate these PDEs?</li>
-</ul>
-<h3 id="finite-dimensional-operators--i-dot-e-dot-approximate-the-parametric-map-through-convolutional-networks">Finite-dimensional operators (i.e. approximate the parametric map through convolutional networks)</h3>
-<!--list-separator-->
-<ul>
-<li>(<a href="#citeproc_bib_item_3">Guo, Li, and Iorio 2016</a>)</li>
+<li><span class="org-todo todo TODO">TODO</span>  Continuous convolution networks (<a href="#citeproc_bib_item_70">Ummenhofer et al. 2019</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>(<a href="#citeproc_bib_item_6">Khoo, Lu, and Ying 2021</a>)</li>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_5">Bhatnagar et al. 2019</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>(<a href="#citeproc_bib_item_4">Jiang et al. 2020</a>)</li>
+<li><span class="org-todo todo TODO">TODO</span>  Theoretical analysis of deep neural networks and parametric pdes (<a href="#citeproc_bib_item_30">Kutyniok et al. 2022</a>)</li>
+</ul>
+<h2 id="physics-informed-machine-learning">Physics informed machine learning</h2>
+<h3 id="fb2057">(<a href="#citeproc_bib_item_53">Raissi, Perdikaris, and Karniadakis 2019</a>)  <a href="#citeproc_bib_item_53">2019</a></h3>
+<p>The main idea of this paper is to use the underlying model derived from prior knowledge of the problem as a regularizer during the training phase of a neural network. This is a accomplished by allowing the auto differentiation tools to propogate through the space and time components of the input to the neural network.</p>
+<p>The system looks like</p>
+<p>\[
+u_t + \mathcal{N}[u; \lambda] = 0, x\in \Omega, t\in[0, T]
+\]</p>
+<p>Where \(u(t,x)\) denotes the latent solution, \(\mathcal{N}[u; \lambda]\) is a non-linear operator parameterized by \(\lambda\), and \(T, \Omega\) define the boundary spaces as a subset of the reals.</p>
+<p>This paper also introduces a nice set of categories for data driven approaches to solving PDEs:</p>
+<ul>
+<li><strong>Data-driven solutions of partial differential equations</strong>: Inference, filtering, and smoothing. Given a fixed model parameters \(\lambda\), what can be said about the unknown hidden state \(u(t,x)\) of the system?</li>
+<li><strong>Data-driven discovery of partial differential equations</strong>: which is learning, system identification, or data-driven discovery of PDEs, i.e. <em>What are the parameters \(\lambda\) which best describe the observed data?</em></li>
+</ul>
+<h3 id="87b46b"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_23">Karniadakis et al. 2021</a>)</h3>
+<h3 id="a48280"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_76">Willard et al. 2022</a>)</h3>
+<h3 id="runga-kutta-physics-informed-neural-networks">Runga-Kutta Physics Informed Neural Networks</h3>
+<!--list-separator-->
+<ul>
+<li>(<a href="#citeproc_bib_item_62">Stiasny, Chevalier, and Chatzivasileiadis 2021</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>(<a href="#citeproc_bib_item_1">Adler and Öktem 2017</a>)</li>
+<li>(<a href="#citeproc_bib_item_2">Akrivis, Makridakis, and Smaragdakis 2025</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>
-<p>Side Ideas:</p>
- <!--list-separator-->
-<ul>
-<li>(<a href="#citeproc_bib_item_12">Zhu and Zabaras 2018</a>)</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>Continuous convolution networks (<a href="#citeproc_bib_item_11">Ummenhofer et al. 2019</a>)</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>(<a href="#citeproc_bib_item_2">Bhatnagar et al. 2019</a>)</li>
-</ul>
- <!--list-separator-->
-<ul>
-<li>Theoretical analysis of deep neural networks and parametric pdes (<a href="#citeproc_bib_item_8">Kutyniok et al. 2022</a>)</li>
-</ul>
-</li>
-</ul>
-<h3 id="physics-informed-machine-learning">Physics informed machine learning</h3>
-<!--list-separator-->
-<ul>
-<li>(<a href="#citeproc_bib_item_5">Karniadakis et al. 2021</a>)</li>
+<li>(<a href="#citeproc_bib_item_80">Zhai, Tao, and Bao 2023</a>)</li>
 </ul>
 <!--list-separator-->
 <ul>
-<li>Physics Informed Neural Networks (<a href="#citeproc_bib_item_10">Raissi, Perdikaris, and Karniadakis 2019</a>)</li>
+<li>(<a href="#citeproc_bib_item_65">Stiasny and Chatzivasileiadis 2024</a>)</li>
 </ul>
-<h3 id="physics-informed-machine-learning"><span class="org-todo todo TODO">TODO</span> Physics Informed Machine Learning (<a href="#citeproc_bib_item_5">Karniadakis et al. 2021</a>)</h3>
-<h3 id="d41d8c"><span class="org-todo todo TODO">TODO</span> </h3>
-<h3 id="neural-operators">Neural Operators</h3>
-<!--list-separator-->
-<ul>
-<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_7">Kovachki et al. 2024</a>)</li>
-</ul>
-<h3 id="deeonets">DeeONets</h3>
-<!--list-separator-->
-<ul>
-<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_9">Lu et al. 2021</a>)</li>
-</ul>
-<!--list-separator-->
-<ul>
-<li></li>
-</ul>
+<h3 id="a5fc10"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_75">Wang, Teng, and Perdikaris 2021</a>)</h3>
+<h3 id="1c1bec">(<a href="#citeproc_bib_item_46">Ostrometzky et al. 2020</a>)</h3>
+<h2 id="neural-operators">Neural Operators</h2>
+<h3 id="f0829a"><span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> (<a href="#citeproc_bib_item_29">Kovachki et al. 2024</a>)</h3>
+<p>Neural operators are designed to learn general solutions for maps between two function spaces and to be discretization-invariant. Current data-driven solutions using neural networks are not discretization invariant and often require new networks/datasets/training for different levels of discretization. Neural operators describe a process to estimate these maps with the following properties:</p>
+<ol>
+<li>acts on any discretization of the input function, i.e. accepts any set of points in the input domain,</li>
+<li>can be evaluated at any point of the output domain</li>
+<li>converges toa  continuum operator as the discretization is refined. (Converging to a continuum operator means that as the discretization is refined, the function more closely estimates the true continuous function).</li>
+</ol>
+<p>While I think this is an interesting idea, I&rsquo;m worried about the amount of data it might take to estimate a steady state pde. It is also unclear how this would interact w/</p>
+<h3 id="95027b"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_8">Chen et al. 2025</a>)</h3>
+<h2 id="neural-ordinary-differential-equations">Neural Ordinary differential Equations</h2>
+<h3 id="90eba5"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_10">Chen et al. 2018</a>)</h3>
+<h2 id="deeponets">DeepONets</h2>
+<h3 id="4a42c1"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_38">Lu et al. 2021</a>)</h3>
+<h2 id="graph-neural-networks">Graph Neural Networks</h2>
+<h2 id="learning-networks-with-constaints">Learning networks with Constaints</h2>
+<h3 id="no-item-data-donti2021dc3"><span class="org-todo todo TODO">TODO</span> (NO_ITEM_DATA:donti2021dc3)</h3>
+<h3 id="7bf07e"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_43">Nandwani et al. 2019</a>)</h3>
+<h2 id="non-neural-network-approaches">Non-neural network approaches</h2>
+<h2 id="non-data-driven-approaches">Non-data-driven approaches</h2>
+<h3 id="2356c9"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_39">Matthies and Keese 2005</a>)</h3>
+<h2 id="uncatogorized-general-learning-approaches">Uncatogorized [ General Learning Approaches ]</h2>
+<h3 id="c79898"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_37">Long et al. 2018</a>)</h3>
+<h3 id="d56ac4"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_54">Rico-Martinez, Anderson, and Kevrekidis 1994</a>)</h3>
+<h3 id="4acd6c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_31">Lagaris, Likas, and Fotiadis 1998</a>)</h3>
+<h3 id="dd97b6"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_52">Psichogios and Ungar 1992</a>)</h3>
+<h3 id="c4073c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_56">Rudy et al. 2017</a>)</h3>
+<h3 id="cafa98"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_51">Parish and Duraisamy 2016</a>)</h3>
+<h3 id="118cc5"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_35">Lin, Tegmark, and Rolnick 2017</a>)</h3>
+<h3 id="4cafe7"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_28">Kondor and Trivedi 2018</a>)</h3>
+<h3 id="aa5a8d"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_73">Vlachas et al. 2018</a>)</h3>
+<h3 id="a6b9e9"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_7">Carleo and Troyer 2017</a>)</h3>
+<h3 id="ce3016"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_11">Cheng et al. 2013</a>)</h3>
+<h3 id="cc553c"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_24">Khoo, Lu, and Ying 2018</a>)</h3>
+<h3 id="bf4cbd"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_55">Rudd and Ferrari 2015</a>)</h3>
+<h3 id="c791c4"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_60">Stefanou 2009</a>)</h3>
+<h3 id="fdf163"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_69">Torlai and Melko 2016</a>)</h3>
+<h3 id="116832"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_27">Kondor 2018</a>)</h3>
 <h2 id="references">References</h2>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Adler, Jonas, and Ozan Öktem. 2017. “Solving Ill-Posed Inverse Problems Using Iterative Deep Neural Networks.” <i>Inverse Problems</i> 33 (12). IOP Publishing: 124007. doi:<a href="https://doi.org/10.1088/1361-6420/aa9581">10.1088/1361-6420/aa9581</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Bhatnagar, Saakaar, Yaser Afshar, Shaowu Pan, Karthik Duraisamy, and Shailendra Kaushik. 2019. “Prediction of Aerodynamic Flow Fields Using Convolutional Neural Networks.” <i>Computational Mechanics</i> 64 (2): 525–45. doi:<a href="https://doi.org/10.1007/s00466-019-01740-0">10.1007/s00466-019-01740-0</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Guo, Xiaoxiao, Wei Li, and Francesco Iorio. 2016. “Convolutional Neural Networks for Steady Flow Approximation.” In <i>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</i>, 481–90. KDD ’16. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/2939672.2939738">10.1145/2939672.2939738</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Jiang Chiyu “Max”, Soheil Esmaeilzadeh, Kamyar Azizzadenesheli, Karthik Kashinath, Mustafa Mustafa, Hamdi A. Tchelepi, Philip Marcus, Mr Prabhat, and Anima Anandkumar. 2020. “MESHFREEFLOWNET: A Physics-Constrained Deep Continuous Space-Time Super-Resolution Framework.” In <i>SC20: International Conference for High Performance Computing, Networking, Storage and Analysis</i>, 1–15. doi:<a href="https://doi.org/10.1109/SC41405.2020.00013">10.1109/SC41405.2020.00013</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Karniadakis, George Em, Ioannis G. Kevrekidis, Lu Lu, Paris Perdikaris, Sifan Wang, and Liu Yang. 2021. “Physics-Informed Machine Learning.” <i>Nature Reviews Physics</i> 3 (6). Nature Publishing Group: 422–40. doi:<a href="https://doi.org/10.1038/s42254-021-00314-5">10.1038/s42254-021-00314-5</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Khoo, Yuehaw, Jianfeng Lu, and Lexing Ying. 2021. “Solving Parametric PDE Problems with Artificial Neural Networks.” <i>European Journal of Applied Mathematics</i> 32 (3): 421–35. doi:<a href="https://doi.org/10.1017/S0956792520000182">10.1017/S0956792520000182</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Kovachki, Nikola, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2024. “Neural Operator: Learning Maps Between Function Spaces.” May 2. doi:<a href="https://doi.org/10.5555/3648699.3648788">10.5555/3648699.3648788</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Kutyniok, Gitta, Philipp Petersen, Mones Raslan, and Reinhold Schneider. 2022. “A Theoretical Analysis of Deep Neural Networks and Parametric PDEs.” <i>Constructive Approximation</i> 55 (1): 73–125. doi:<a href="https://doi.org/10.1007/s00365-021-09551-4">10.1007/s00365-021-09551-4</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>Lu, Lu, Pengzhan Jin, Guofei Pang, Zhongqiang Zhang, and George Em Karniadakis. 2021. “Learning Nonlinear Operators via DeepONet Based on the Universal Approximation Theorem of Operators.” <i>Nature Machine Intelligence</i> 3 (3). Nature Publishing Group: 218–29. doi:<a href="https://doi.org/10.1038/s42256-021-00302-5">10.1038/s42256-021-00302-5</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_10"></a>Raissi, M., P. Perdikaris, and G.E. Karniadakis. 2019. “Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations.” <i>Journal of Computational Physics</i> 378 (February): 686–707. doi:<a href="https://doi.org/10.1016/j.jcp.2018.10.045">10.1016/j.jcp.2018.10.045</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_11"></a>Ummenhofer, Benjamin, Lukas Prantl, Nils Thuerey, and Vladlen Koltun. 2019. “Lagrangian Fluid Simulation with Continuous Convolutions.” <a href="https://openreview.net/forum?id=B1lDoJSYDH">https://openreview.net/forum?id=B1lDoJSYDH</a>.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_12"></a>Zhu, Yinhao, and Nicholas Zabaras. 2018. “Bayesian Deep Convolutional Encoder–Decoder Networks for Surrogate Modeling and Uncertainty Quantification.” <i>Journal of Computational Physics</i> 366 (August): 415–47. doi:<a href="https://doi.org/10.1016/j.jcp.2018.04.018">10.1016/j.jcp.2018.04.018</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Akrivis, Georgios, Charalambos G. Makridakis, and Costas Smaragdakis. 2025. “Runge-Kutta Physics Informed Neural Networks: Formulation and Analysis.” January 18. doi:<a href="https://doi.org/10.48550/arXiv.2412.20575">10.48550/arXiv.2412.20575</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Babaeinejadsarookolaee, Sogol, Adam Birchfield, Richard D. Christie, Carleton Coffrin, Christopher DeMarco, Ruisheng Diao, Michael Ferris, et al. 2021. “The Power Grid Library for Benchmarking AC Optimal Power Flow Algorithms.” January 4. doi:<a href="https://doi.org/10.48550/arXiv.1908.02788">10.48550/arXiv.1908.02788</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Bertozzi, Otavio, Harold R. Chamorro, Edgar O. Gomez-Diaz, Michelle S. Chong, and Shehab Ahmed. 2024. “Application of Data-Driven Methods in Power Systems Analysis and Control.” <i>IET Energy Systems Integration</i> 6 (3): 197–212. doi:<a href="https://doi.org/10.1049/esi2.12122">10.1049/esi2.12122</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Bhatnagar, Saakaar, Yaser Afshar, Shaowu Pan, Karthik Duraisamy, and Shailendra Kaushik. 2019. “Prediction of Aerodynamic Flow Fields Using Convolutional Neural Networks.” <i>Computational Mechanics</i> 64 (2): 525–45. doi:<a href="https://doi.org/10.1007/s00466-019-01740-0">10.1007/s00466-019-01740-0</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Bolz, Valentin, Johannes Rueß, and Andreas Zell. 2019. “Power Flow Approximation Based on Graph Convolutional Networks.” In <i>2019 18th IEEE International Conference On Machine Learning And Applications (ICMLA)</i>, 1679–86. doi:<a href="https://doi.org/10.1109/ICMLA.2019.00274">10.1109/ICMLA.2019.00274</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Carleo, Giuseppe, and Matthias Troyer. 2017. “Solving the Quantum Many-Body Problem with Artificial Neural Networks.” <i>Science</i> 355 (6325). American Association for the Advancement of Science: 602–6. doi:<a href="https://doi.org/10.1126/science.aag2302">10.1126/science.aag2302</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Chen, Keyan, Yile Li, Da Long, Zhitong Xu, Wei Xing, Jacob Hochhalter, and Shandian Zhe. 2025. “Pseudo-Physics-Informed Neural Operators: Enhancing Operator Learning from Limited Data.” February 4. doi:<a href="https://doi.org/10.48550/arXiv.2502.02682">10.48550/arXiv.2502.02682</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>Chen, Kunjin, Jun Hu, Yu Zhang, Zhanqing Yu, and Jinliang He. 2020. “Fault Location in Power Distribution Systems via Deep Graph Convolutional Networks.” <i>IEEE Journal on Selected Areas in Communications</i> 38 (1): 119–31. doi:<a href="https://doi.org/10.1109/JSAC.2019.2951964">10.1109/JSAC.2019.2951964</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_10"></a>Chen, Ricky T. Q., Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud. 2018. “Neural Ordinary Differential Equations.” In <i>Advances in Neural Information Processing Systems</i>. Vol. 31. Curran Associates, Inc.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_11"></a>Cheng, Mulin, Thomas Y. Hou, Mike Yan, and Zhiwen Zhang. 2013. “A Data-Driven Stochastic Method for Elliptic PDEs with Random Coefficients.” <i>SIAM/ASA Journal on Uncertainty Quantification</i> 1 (1). Society for Industrial and Applied Mathematics: 452–93. doi:<a href="https://doi.org/10.1137/130913249">10.1137/130913249</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_12"></a>Donon, Balthazar, Benjamin Donnot, Isabelle Guyon, and Antoine Marot. 2019. “Graph Neural Solver for Power Systems.” In <i>2019 International Joint Conference on Neural Networks (IJCNN)</i>, 1–8. doi:<a href="https://doi.org/10.1109/IJCNN.2019.8851855">10.1109/IJCNN.2019.8851855</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_13"></a>Duchesne, Laurine, Efthymios Karangelos, and Louis Wehenkel. 2020. “Recent Developments in Machine Learning for Energy Systems Reliability Management.” <i>Proceedings of the IEEE</i> 108 (9): 1656–76. doi:<a href="https://doi.org/10.1109/JPROC.2020.2988715">10.1109/JPROC.2020.2988715</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_14"></a>El-abiad, Ahmed H., and K. Nagappan. 1966. “Transient Stability Regions of Multimachine Power Systems.” <i>IEEE Transactions on Power Apparatus and Systems</i> PAS-85 (2): 169–79. doi:<a href="https://doi.org/10.1109/TPAS.1966.291554">10.1109/TPAS.1966.291554</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_15"></a>Feng, Renhai, Khan Wajid, Muhammad Faheem, Jiang Wang, Fazal E. Subhan, and Muhammad Shoaib Bhutta. 2025. “Uniform Physics Informed Neural Network Framework for Microgrid and Its Application in Voltage Stability Analysis.” <i>IEEE Access</i> 13: 8110–26. doi:<a href="https://doi.org/10.1109/ACCESS.2025.3527047">10.1109/ACCESS.2025.3527047</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_16"></a>Fioretto, Ferdinando, Terrence W. K. Mak, and Pascal Van Hentenryck. 2020. “Predicting AC Optimal Power Flows: Combining Deep Learning and Lagrangian Dual Methods.” <i>Proceedings of the AAAI Conference on Artificial Intelligence</i> 34 (01, 01): 630–37. doi:<a href="https://doi.org/10.1609/aaai.v34i01.5403">10.1609/aaai.v34i01.5403</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_17"></a>Gless, G. E. 1966. “Direct Method of Liapunov Applied to Transient Power System Stability.” <i>IEEE Transactions on Power Apparatus and Systems</i> PAS-85 (2): 159–68. doi:<a href="https://doi.org/10.1109/TPAS.1966.291553">10.1109/TPAS.1966.291553</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_18"></a>Gomez-Exposito, Antonio, Ali Abur, Antonio de la Villa Jaen, and Catalina Gomez-Quiles. 2011. “A Multilevel State Estimation Paradigm for Smart Grids.” <i>Proceedings of the IEEE</i> 99 (6): 952–76. doi:<a href="https://doi.org/10.1109/JPROC.2011.2107490">10.1109/JPROC.2011.2107490</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_19"></a>Guo, Xiaoxiao, Wei Li, and Francesco Iorio. 2016. “Convolutional Neural Networks for Steady Flow Approximation.” In <i>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</i>, 481–90. KDD ’16. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/2939672.2939738">10.1145/2939672.2939738</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_20"></a>Hatziargyriou, Nikos, Jovica Milanovic, Claudia Rahmann, Venkataramana Ajjarapu, Claudio Canizares, Istvan Erlich, David Hill, et al. 2021. “Definition and Classification of Power System Stability – Revisited &#38; Extended.” <i>IEEE Transactions on Power Systems</i> 36 (4): 3271–81. doi:<a href="https://doi.org/10.1109/TPWRS.2020.3041774">10.1109/TPWRS.2020.3041774</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_21"></a>Huang, Bin, and Jianhui Wang. 2023. “Applications of Physics-Informed Neural Networks in Power Systems - A Review.” <i>IEEE Transactions on Power Systems</i> 38 (1): 572–88. doi:<a href="https://doi.org/10.1109/TPWRS.2022.3162473">10.1109/TPWRS.2022.3162473</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_22"></a>Jiang Chiyu “Max”, Soheil Esmaeilzadeh, Kamyar Azizzadenesheli, Karthik Kashinath, Mustafa Mustafa, Hamdi A. Tchelepi, Philip Marcus, Mr Prabhat, and Anima Anandkumar. 2020. “MESHFREEFLOWNET: A Physics-Constrained Deep Continuous Space-Time Super-Resolution Framework.” In <i>SC20: International Conference for High Performance Computing, Networking, Storage and Analysis</i>, 1–15. doi:<a href="https://doi.org/10.1109/SC41405.2020.00013">10.1109/SC41405.2020.00013</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_23"></a>Karniadakis, George Em, Ioannis G. Kevrekidis, Lu Lu, Paris Perdikaris, Sifan Wang, and Liu Yang. 2021. “Physics-Informed Machine Learning.” <i>Nature Reviews Physics</i> 3 (6). Nature Publishing Group: 422–40. doi:<a href="https://doi.org/10.1038/s42254-021-00314-5">10.1038/s42254-021-00314-5</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_24"></a>Khoo, Yuehaw, Jianfeng Lu, and Lexing Ying. 2018. “Solving for High-Dimensional Committor Functions Using Artificial Neural Networks.” <i>Research in the Mathematical Sciences</i> 6 (1): 1. doi:<a href="https://doi.org/10.1007/s40687-018-0160-2">10.1007/s40687-018-0160-2</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_25"></a>———. 2021. “Solving Parametric PDE Problems with Artificial Neural Networks.” <i>European Journal of Applied Mathematics</i> 32 (3): 421–35. doi:<a href="https://doi.org/10.1017/S0956792520000182">10.1017/S0956792520000182</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_26"></a>Kim, Cheolmin, Kibaek Kim, Prasanna Balaprakash, and Mihai Anitescu. 2019. “Graph Convolutional Neural Networks for Optimal Load Shedding under Line Contingency.” In <i>2019 IEEE Power &#38; Energy Society General Meeting (PESGM)</i>, 1–5. doi:<a href="https://doi.org/10.1109/PESGM40551.2019.8973468">10.1109/PESGM40551.2019.8973468</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_27"></a>Kondor, Risi. 2018. “N-Body Networks: A Covariant Hierarchical Neural Network Architecture for Learning Atomic Potentials.” March 5. doi:<a href="https://doi.org/10.48550/arXiv.1803.01588">10.48550/arXiv.1803.01588</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_28"></a>Kondor, Risi, and Shubhendu Trivedi. 2018. “On the Generalization of Equivariance and Convolution in Neural Networks to the Action of Compact Groups.” In <i>Proceedings of the 35th International Conference on Machine Learning</i>, 2747–55. PMLR.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_29"></a>Kovachki, Nikola, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik Bhattacharya, Andrew Stuart, and Anima Anandkumar. 2024. “Neural Operator: Learning Maps Between Function Spaces.” May 2. doi:<a href="https://doi.org/10.5555/3648699.3648788">10.5555/3648699.3648788</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_30"></a>Kutyniok, Gitta, Philipp Petersen, Mones Raslan, and Reinhold Schneider. 2022. “A Theoretical Analysis of Deep Neural Networks and Parametric PDEs.” <i>Constructive Approximation</i> 55 (1): 73–125. doi:<a href="https://doi.org/10.1007/s00365-021-09551-4">10.1007/s00365-021-09551-4</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_31"></a>Lagaris, I.E., A. Likas, and D.I. Fotiadis. 1998. “Artificial Neural Networks for Solving Ordinary and Partial Differential Equations.” <i>IEEE Transactions on Neural Networks</i> 9 (5): 987–1000. doi:<a href="https://doi.org/10.1109/72.712178">10.1109/72.712178</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_32"></a>Li, Wenting, Deepjyoti Deka, Michael Chertkov, and Meng Wang. 2019. “Real-Time Faulted Line Localization and PMU Placement in Power Systems Through Convolutional Neural Networks.” <i>IEEE Transactions on Power Systems</i> 34 (6): 4640–51. doi:<a href="https://doi.org/10.1109/TPWRS.2019.2917794">10.1109/TPWRS.2019.2917794</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_33"></a>Liao, Wenlong, Birgitte Bak-Jensen, Jayakrishnan Radhakrishna Pillai, Yuelong Wang, and Yusen Wang. 2022. “A Review of Graph Neural Networks and Their Applications in Power Systems.” <i>Journal of Modern Power Systems and Clean Energy</i> 10 (2): 345–60. doi:<a href="https://doi.org/10.35833/MPCE.2021.000058">10.35833/MPCE.2021.000058</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_34"></a>Liao, Wenlong, Dechang Yang, Yusen Wang, and Xiang Ren. 2021. “Fault Diagnosis of Power Transformers Using Graph Convolutional Network.” <i>CSEE Journal of Power and Energy Systems</i> 7 (2): 241–49. doi:<a href="https://doi.org/10.17775/CSEEJPES.2020.04120">10.17775/CSEEJPES.2020.04120</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_35"></a>Lin, Henry W., Max Tegmark, and David Rolnick. 2017. “Why Does Deep and Cheap Learning Work So Well?” <i>Journal of Statistical Physics</i> 168 (6): 1223–47. doi:<a href="https://doi.org/10.1007/s10955-017-1836-5">10.1007/s10955-017-1836-5</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_36"></a>Lin, Shanny, Shaohui Liu, and Hao Zhu. 2022. “Risk-Aware Learning for Scalable Voltage Optimization in Distribution Grids.” <i>Electric Power Systems Research</i> 212 (November): 108605. doi:<a href="https://doi.org/10.1016/j.epsr.2022.108605">10.1016/j.epsr.2022.108605</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_37"></a>Long, Zichao, Yiping Lu, Xianzhong Ma, and Bin Dong. 2018. “PDE-Net: Learning PDEs from Data.” In <i>Proceedings of the 35th International Conference on Machine Learning</i>, 3208–16. PMLR.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_38"></a>Lu, Lu, Pengzhan Jin, Guofei Pang, Zhongqiang Zhang, and George Em Karniadakis. 2021. “Learning Nonlinear Operators via DeepONet Based on the Universal Approximation Theorem of Operators.” <i>Nature Machine Intelligence</i> 3 (3). Nature Publishing Group: 218–29. doi:<a href="https://doi.org/10.1038/s42256-021-00302-5">10.1038/s42256-021-00302-5</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_39"></a>Matthies, Hermann G., and Andreas Keese. 2005. “Galerkin Methods for Linear and Nonlinear Elliptic Stochastic Partial Differential Equations.” <i>Computer Methods in Applied Mechanics and Engineering</i>, Special Issue on Computational Methods in Stochastic Mechanics and Reliability Analysis, 194 (12): 1295–1331. doi:<a href="https://doi.org/10.1016/j.cma.2004.05.027">10.1016/j.cma.2004.05.027</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_40"></a>Mestav, Kursat Rasim, Jaime Luengo-Rozas, and Lang Tong. 2018. “State Estimation for Unobservable Distribution Systems via Deep Neural Networks.” In <i>2018 IEEE Power &#38; Energy Society General Meeting (PESGM)</i>, 1–5. doi:<a href="https://doi.org/10.1109/PESGM.2018.8586649">10.1109/PESGM.2018.8586649</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_41"></a>Misyris, George S., Andreas Venzke, and Spyros Chatzivasileiadis. 2020. “Physics-Informed Neural Networks for Power Systems.” In <i>2020 IEEE Power &#38; Energy Society General Meeting (PESGM)</i>, 1–5. doi:<a href="https://doi.org/10.1109/PESGM41954.2020.9282004">10.1109/PESGM41954.2020.9282004</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_42"></a>Molzahn, Daniel K., and Ian A. Hiskens. 2019. “A Survey of Relaxations and Approximations of the Power Flow Equations.” <i>Foundations and Trends® in Electric Energy Systems</i> 4 (1--2). Now Publishers, Inc.: 1–221. doi:<a href="https://doi.org/10.1561/3100000012">10.1561/3100000012</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_43"></a>Nandwani, Yatin, Abhishek Pathak, Mausam, and Parag Singla. 2019. “A Primal Dual Formulation For Deep Learning With Constraints.” In <i>Advances in Neural Information Processing Systems</i>. Vol. 32. Curran Associates, Inc.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_44"></a>Nellikkath, Rahul, and Spyros Chatzivasileiadis. 2021. “Physics-Informed Neural Networks for Minimising Worst-Case Violations in DC Optimal Power Flow.” In <i>2021 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, 419–24. doi:<a href="https://doi.org/10.1109/SmartGridComm51999.2021.9632308">10.1109/SmartGridComm51999.2021.9632308</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_45"></a>———. 2022. “Physics-Informed Neural Networks for AC Optimal Power Flow.” <i>Electric Power Systems Research</i> 212 (November): 108412. doi:<a href="https://doi.org/10.1016/j.epsr.2022.108412">10.1016/j.epsr.2022.108412</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_46"></a>Ostrometzky, Jonatan, Konstantin Berestizshevsky, Andrey Bernstein, and Gil Zussman. 2020. “Physics-Informed Deep Neural Network Method for Limited Observability State Estimation.” February 16. doi:<a href="https://doi.org/10.48550/arXiv.1910.06401">10.48550/arXiv.1910.06401</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_47"></a>Owerko, Damian, Fernando Gama, and Alejandro Ribeiro. 2020. “Optimal Power Flow Using Graph Neural Networks.” In <i>ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</i>, 5930–34. doi:<a href="https://doi.org/10.1109/ICASSP40776.2020.9053140">10.1109/ICASSP40776.2020.9053140</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_48"></a>Pagnier, Laurent, and Michael Chertkov. 2021. “Physics-Informed Graphical Neural Network for Parameter &#38; State Estimations in Power Systems.” February 12. doi:<a href="https://doi.org/10.48550/arXiv.2102.06349">10.48550/arXiv.2102.06349</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_49"></a>Pan, Xiang. 2021. “DeepOPF: Deep Neural Networks for Optimal Power Flow.” In <i>Proceedings of the 8th ACM International Conference on Systems for Energy-Efficient Buildings, Cities, and Transportation</i>, 250–51. BuildSys ’21. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/3486611.3492390">10.1145/3486611.3492390</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_50"></a>Pan, Xiang, Tianyu Zhao, Minghua Chen, and Shengyu Zhang. 2021. “DeepOPF: A Deep Neural Network Approach for Security-Constrained DC Optimal Power Flow.” <i>IEEE Transactions on Power Systems</i> 36 (3): 1725–35. doi:<a href="https://doi.org/10.1109/TPWRS.2020.3026379">10.1109/TPWRS.2020.3026379</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_51"></a>Parish, Eric J., and Karthik Duraisamy. 2016. “A Paradigm for Data-Driven Predictive Modeling Using Field Inversion and Machine Learning.” <i>Journal of Computational Physics</i> 305 (January): 758–74. doi:<a href="https://doi.org/10.1016/j.jcp.2015.11.012">10.1016/j.jcp.2015.11.012</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_52"></a>Psichogios, Dimitris C., and Lyle H. Ungar. 1992. “A Hybrid Neural Network-First Principles Approach to Process Modeling.” <i>AIChE Journal</i> 38 (10): 1499–1511. doi:<a href="https://doi.org/10.1002/aic.690381003">10.1002/aic.690381003</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_53"></a>Raissi, M., P. Perdikaris, and G.E. Karniadakis. 2019. “Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations.” <i>Journal of Computational Physics</i> 378 (February): 686–707. doi:<a href="https://doi.org/10.1016/j.jcp.2018.10.045">10.1016/j.jcp.2018.10.045</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_54"></a>Rico-Martinez, R., J.S. Anderson, and I.G. Kevrekidis. 1994. “Continuous-Time Nonlinear Signal Processing: A Neural Network Based Approach for Gray Box Identification.” In <i>Proceedings of IEEE Workshop on Neural Networks for Signal Processing</i>, 596–605. doi:<a href="https://doi.org/10.1109/NNSP.1994.366006">10.1109/NNSP.1994.366006</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_55"></a>Rudd, Keith, and Silvia Ferrari. 2015. “A Constrained Integration (CINT) Approach to Solving Partial Differential Equations Using Artificial Neural Networks.” <i>Neurocomputing</i> 155 (May): 277–85. doi:<a href="https://doi.org/10.1016/j.neucom.2014.11.058">10.1016/j.neucom.2014.11.058</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_56"></a>Rudy, Samuel H., Steven L. Brunton, Joshua L. Proctor, and J. Nathan Kutz. 2017. “Data-Driven Discovery of Partial Differential Equations.” <i>Science Advances</i> 3 (4). American Association for the Advancement of Science: e1602614. doi:<a href="https://doi.org/10.1126/sciadv.1602614">10.1126/sciadv.1602614</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_57"></a>Schweppe, F.C., and E.J. Handschin. 1974. “Static State Estimation in Electric Power Systems.” <i>Proceedings of the IEEE</i> 62 (7): 972–82. doi:<a href="https://doi.org/10.1109/PROC.1974.9549">10.1109/PROC.1974.9549</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_58"></a>Singh, Manish K., Sarthak Gupta, Vassilis Kekatos, Guido Cavraro, and Andrey Bernstein. 2020. “Learning to Optimize Power Distribution Grids Using Sensitivity-Informed Deep Neural Networks.” In <i>2020 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, 1–6. doi:<a href="https://doi.org/10.1109/SmartGridComm47815.2020.9302942">10.1109/SmartGridComm47815.2020.9302942</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_59"></a>Singh, Manish K., Vassilis Kekatos, and Georgios B. Giannakis. 2022. “Learning to Solve the AC-OPF Using Sensitivity-Informed Deep Neural Networks.” <i>IEEE Transactions on Power Systems</i> 37 (4): 2833–46. doi:<a href="https://doi.org/10.1109/TPWRS.2021.3127189">10.1109/TPWRS.2021.3127189</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_60"></a>Stefanou, George. 2009. “The Stochastic Finite Element Method: Past, Present and Future.” <i>Computer Methods in Applied Mechanics and Engineering</i> 198 (9): 1031–51. doi:<a href="https://doi.org/10.1016/j.cma.2008.11.007">10.1016/j.cma.2008.11.007</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_61"></a>Stiasny, Jochen, Samuel Chevalier, Rahul Nellikkath, Brynjar Sævarsson, and Spyros Chatzivasileiadis. 2022. “Closing the Loop: A Framework for Trustworthy Machine Learning in Power Systems.” July 14. doi:<a href="https://doi.org/10.48550/arXiv.2203.07505">10.48550/arXiv.2203.07505</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_62"></a>Stiasny, Jochen, Samuel Chevalier, and Spyros Chatzivasileiadis. 2021. “Learning without Data: Physics-Informed Neural Networks for Fast Time-Domain Simulation.” In <i>2021 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, 438–43. doi:<a href="https://doi.org/10.1109/SmartGridComm51999.2021.9631995">10.1109/SmartGridComm51999.2021.9631995</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_63"></a>Stiasny, Jochen, George S. Misyris, and Spyros Chatzivasileiadis. 2021. “Physics-Informed Neural Networks for Non-linear System Identification for Power System Dynamics.” In <i>2021 IEEE Madrid PowerTech</i>, 1–6. doi:<a href="https://doi.org/10.1109/PowerTech46648.2021.9495063">10.1109/PowerTech46648.2021.9495063</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_64"></a>Stiasny, Jochen, Georgios S. Misyris, and Spyros Chatzivasileiadis. 2023. “Transient Stability Analysis with Physics-Informed Neural Networks.” March 15. doi:<a href="https://doi.org/10.48550/arXiv.2106.13638">10.48550/arXiv.2106.13638</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_65"></a>Stiasny, Jochen, and Spyros Chatzivasileiadis. 2024. “Error Estimation for Physics-Informed Neural Networks with Implicit Runge-Kutta Methods.” January 10. doi:<a href="https://doi.org/10.48550/arXiv.2401.05211">10.48550/arXiv.2401.05211</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_66"></a>Stock, Simon, Davood Babazadeh, Christian Becker, and Spyros Chatzivasileiadis. 2024. “Bayesian Physics-informed Neural Networks for System Identification of Inverter-dominated Power Systems.” March 20. doi:<a href="https://doi.org/10.48550/arXiv.2403.13602">10.48550/arXiv.2403.13602</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_67"></a>Stott, Brian, Jorge Jardim, and Ongun Alsac. 2009. “DC Power Flow Revisited.” <i>IEEE Transactions on Power Systems</i> 24 (3): 1290–1300. doi:<a href="https://doi.org/10.1109/TPWRS.2009.2021235">10.1109/TPWRS.2009.2021235</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_68"></a>Thams, Florian, Andreas Venzke, Robert Eriksson, and Spyros Chatzivasileiadis. 2020. “Efficient Database Generation for Data-Driven Security Assessment of Power Systems.” <i>IEEE Transactions on Power Systems</i> 35 (1): 30–41. doi:<a href="https://doi.org/10.1109/TPWRS.2018.2890769">10.1109/TPWRS.2018.2890769</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_69"></a>Torlai, Giacomo, and Roger G. Melko. 2016. “Learning Thermodynamics with Boltzmann Machines.” <i>Physical Review B</i> 94 (16). American Physical Society: 165134. doi:<a href="https://doi.org/10.1103/PhysRevB.94.165134">10.1103/PhysRevB.94.165134</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_70"></a>Ummenhofer, Benjamin, Lukas Prantl, Nils Thuerey, and Vladlen Koltun. 2019. “Lagrangian Fluid Simulation with Continuous Convolutions.”</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_71"></a>Venzke, Andreas, Daniel K. Molzahn, and Spyros Chatzivasileiadis. 2021. “Efficient Creation of Datasets for Data-Driven Power System Applications.” <i>Electric Power Systems Research</i> 190 (January): 106614. doi:<a href="https://doi.org/10.1016/j.epsr.2020.106614">10.1016/j.epsr.2020.106614</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_72"></a>Venzke, Andreas, Guannan Qu, Steven Low, and Spyros Chatzivasileiadis. 2020. “Learning Optimal Power Flow: Worst-Case Guarantees for Neural Networks.” In <i>2020 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, 1–7. doi:<a href="https://doi.org/10.1109/SmartGridComm47815.2020.9302963">10.1109/SmartGridComm47815.2020.9302963</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_73"></a>Vlachas, Pantelis R., Wonmin Byeon, Zhong Y. Wan, Themistoklis P. Sapsis, and Petros Koumoutsakos. 2018. “Data-Driven Forecasting of High-Dimensional Chaotic Systems with Long Short-Term Memory Networks.” <i>Proceedings of the Royal Society a: Mathematical, Physical and Engineering Sciences</i> 474 (2213). Royal Society: 20170844. doi:<a href="https://doi.org/10.1098/rspa.2017.0844">10.1098/rspa.2017.0844</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_74"></a>Vu, Thanh Long, and Konstantin Turitsyn. 2016. “Lyapunov Functions Family Approach to Transient Stability Assessment.” <i>IEEE Transactions on Power Systems</i> 31 (2): 1269–77. doi:<a href="https://doi.org/10.1109/TPWRS.2015.2425885">10.1109/TPWRS.2015.2425885</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_75"></a>Wang, Sifan, Yujun Teng, and Paris Perdikaris. 2021. “Understanding and Mitigating Gradient Flow Pathologies in Physics-Informed Neural Networks.” <i>SIAM Journal on Scientific Computing</i> 43 (5). Society for Industrial and Applied Mathematics: A3055–81. doi:<a href="https://doi.org/10.1137/20M1318043">10.1137/20M1318043</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_76"></a>Willard, Jared, Xiaowei Jia, Shaoming Xu, Michael Steinbach, and Vipin Kumar. 2022. “Integrating Scientific Knowledge with Machine Learning for Engineering and Environmental Systems.” <i>ACM Comput. Surv.</i> 55 (4): 66:1–66:37. doi:<a href="https://doi.org/10.1145/3514228">10.1145/3514228</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_77"></a>Wu, F.F., and W.-H.E. Liu. 1989. “Detection of Topology Errors by State Estimation (Power Systems).” <i>IEEE Transactions on Power Systems</i> 4 (1): 176–83. doi:<a href="https://doi.org/10.1109/59.32475">10.1109/59.32475</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_78"></a>Zamzam, Ahmed S., Xiao Fu, and Nicholas D. Sidiropoulos. 2019. “Data-Driven Learning-Based Optimization for Distribution System State Estimation.” <i>IEEE Transactions on Power Systems</i> 34 (6): 4796–4805. doi:<a href="https://doi.org/10.1109/TPWRS.2019.2909150">10.1109/TPWRS.2019.2909150</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_79"></a>Zamzam, Ahmed S., and Kyri Baker. 2020. “Learning Optimal Solutions for Extremely Fast AC Optimal Power Flow.” In <i>2020 IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm)</i>, 1–6. doi:<a href="https://doi.org/10.1109/SmartGridComm47815.2020.9303008">10.1109/SmartGridComm47815.2020.9303008</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_80"></a>Zhai, Weida, Dongwang Tao, and Yuequan Bao. 2023. “Parameter Estimation and Modeling of Nonlinear Dynamical Systems Based on Runge–Kutta Physics-Informed Neural Network.” <i>Nonlinear Dynamics</i> 111 (22): 21117–30. doi:<a href="https://doi.org/10.1007/s11071-023-08933-6">10.1007/s11071-023-08933-6</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_81"></a>Zhang, Liang, Gang Wang, and Georgios B. Giannakis. 2019. “Real-Time Power System State Estimation and Forecasting via Deep Unrolled Neural Networks.” <i>IEEE Transactions on Signal Processing</i> 67 (15): 4069–77. doi:<a href="https://doi.org/10.1109/TSP.2019.2926023">10.1109/TSP.2019.2926023</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_82"></a>Zhang, Ling, Yize Chen, and Baosen Zhang. 2022. “A Convex Neural Network Solver for DCOPF With Generalization Guarantees.” <i>IEEE Transactions on Control of Network Systems</i> 9 (2): 719–30. doi:<a href="https://doi.org/10.1109/TCNS.2021.3124283">10.1109/TCNS.2021.3124283</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_83"></a>Zhang, Y., L. Wehenkel, P. Rousseaux, and M. Pavella. 1997. “SIME: A Hybrid Approach to Fast Transient Stability Assessment and Contingency Selection.” <i>International Journal of Electrical Power &#38; Energy Systems</i> 19 (3): 195–208. doi:<a href="https://doi.org/10.1016/S0142-0615(96)00047-6">10.1016/S0142-0615(96)00047-6</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_84"></a>Zhao, Junbo, Antonio Gómez-Expósito, Marcos Netto, Lamine Mili, Ali Abur, Vladimir Terzija, Innocent Kamwa, et al. 2019. “Power System Dynamic State Estimation: Motivations, Definitions, Methodologies, and Future Work.” <i>IEEE Transactions on Power Systems</i> 34 (4): 3188–98. doi:<a href="https://doi.org/10.1109/TPWRS.2019.2894769">10.1109/TPWRS.2019.2894769</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_85"></a>Zhu, Yinhao, and Nicholas Zabaras. 2018. “Bayesian Deep Convolutional Encoder–Decoder Networks for Surrogate Modeling and Uncertainty Quantification.” <i>Journal of Computational Physics</i> 366 (August): 415–47. doi:<a href="https://doi.org/10.1016/j.jcp.2018.04.018">10.1016/j.jcp.2018.04.018</a>.</div>
+  <div class="csl-entry">NO_ITEM_DATA:donti2021dc3</div>
 </div>
 
     </div>
@@ -402,6 +1044,16 @@
     
     
 
+
+<div class="post-tags">
+  <h4> Tags: </h4>
+  
+  <a href="/tags/DDPDE">DDPDE</a>
+  
+</div>
+
+
+
     
 
     
@@ -440,6 +1092,30 @@
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -448,6 +1124,28 @@
    
 
    
+      
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -1002,8 +1700,25 @@
    
 
    
+
+   
+
 
 
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/current_learning_objectives/">Current Learning Objectives</a></li>
+       
+          <li><a href="/braindump/khoo2021solving/">khoo2021solving: Solving parametric PDE problems with artificial neural networks</a></li>
+       
+          <li><a href="/braindump/guo2016convolutional/">guo2016convolutional: Convolutional Neural Networks for Steady Flow Approximation</a></li>
+       
+     </ul>
+    </div>
+  </div>
 
 
     

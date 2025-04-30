@@ -50,9 +50,9 @@
   <meta property="og:title" content="Human-in-the-Loop Reinforcement Learning | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2025-04-09T11:39:18-06:00">
+  <meta property="article:published_time" content="2025-04-25T08:05:08-06:00">
   
-  <meta property="article:modified_time" content="2025-04-09T11:39:18-06:00">
+  <meta property="article:modified_time" content="2025-04-25T08:05:08-06:00">
   
 
   <title>Human-in-the-Loop Reinforcement Learning | Matthew Schlegel</title>
@@ -200,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2025-04-09 11:39:18 -0600 MDT" itemprop="datePublished dateModified">
-      Apr 9, 2025
+    <time datetime="2025-04-25 08:05:08 -0600 MDT" itemprop="datePublished dateModified">
+      Apr 25, 2025
     </time>
   </span>
 
@@ -303,6 +303,11 @@
 <h2 id="questions-thoughts">Questions/Thoughts</h2>
 <h3 id="in-industrial-settings-the-main-competitor-is-optimal-control-dot">In industrial settings the main competitor is optimal control.</h3>
 <p>When thinking about human in the loop RL for industrial control we must inevitably think about what is provided from optimal control. Optimal control provides guarantees because they are often able to provide an analytic framework to understand the steady state of their algorithm. RL doesn&rsquo;t have this benefit as our policies are ill-formed for this. Instead, could we estimate the PDE resulting from the interactions between</p>
+<h3 id="multiple-agents-vs-one-agent">Multiple agents vs one agent</h3>
+<p>An interesting thought came up while I was thinking about <a href="/braindump/power_systems_control/">Power Systems Control</a>. Has anyone studied the overall impact on explainability/interactability/interpretability of two agents solving a joint problem w/ clear responsibilities vs one global agent jointly optimizing over the system?</p>
+<p>What kinds of changes to the explainability algorithms need to be made to adjust for these two conditions?</p>
+<p>What would a human trial look like? What problem could we use other than <a href="/braindump/power_systems_control/">Power Systems Control</a>?</p>
+<p>How do I communicate this to Matt, Martha, and Mostafa?</p>
 <h2 id="notes-and-literature">Notes and Literature</h2>
 <p>Human-in-the-loop RL is a large field with lots of players. The goal of this note is to get oriented, and start feeling out directions we can go in the <a href="/braindump/power_systems_control/">Power Systems Control</a> projects. I think it would be beneficial to go about this in a few ways.</p>
 <ol>
@@ -311,9 +316,11 @@
 <li>Answer and ask questions about papers on HitL RL. Build knowledge, interact with the issues and motivations, dig deeper and uncover where core issues lie and figure out the exact language used to discuss these issues.</li>
 <li>Create notes and build organization to understand how the literature fits together.</li>
 </ol>
-<h3 id="interaction-centric--dot">Interaction centric (<a href="#citeproc_bib_item_3">Stanford Online 2022</a>).</h3>
-<h3 id="human-in-the-loop-rl-survey">Human-in-the-Loop RL Survey (<a href="#citeproc_bib_item_2">Retzlaff et al. 2024</a>)</h3>
-<h3 id="smart-control-room">Smart Control Room: (<a href="#citeproc_bib_item_1">Ghosh and Bequette 2020</a>)</h3>
+<h3 id="interaction-centric--dot"><span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Interaction centric (<a href="#citeproc_bib_item_3">Stanford Online 2022</a>).</h3>
+<h3 id="human-in-the-loop-rl-survey"><span class="org-todo todo IN_PROGRESS">IN-PROGRESS</span> Human-in-the-Loop RL Survey (<a href="#citeproc_bib_item_2">Retzlaff et al. 2024</a>)</h3>
+<h3 id="smart-control-room"><span class="org-todo done DONE">DONE</span> Smart Control Room: (<a href="#citeproc_bib_item_1">Ghosh and Bequette 2020</a>)</h3>
+<h3 id="closing-the-loop-for-power-systems"><span class="org-todo done DONE">DONE</span> Closing the loop for power systems: (<a href="#citeproc_bib_item_4">Stiasny et al. 2022</a>)</h3>
+<h3 id="explainable-rl--explainable-rl-dot-md"><a href="/braindump/explainable_rl/">Explainable RL</a></h3>
 
     </div>
 
@@ -374,6 +381,40 @@
    
 
    
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 
@@ -920,8 +961,29 @@
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
 
 
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/explainable_rl/">Explainable RL</a></li>
+       
+     </ul>
+    </div>
+  </div>
 
 
     

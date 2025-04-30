@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
+  
+  
+  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="author" content="Matthew Schlegel">
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,700%7cOpen&#43;Sans:400,400italic,700%7cRoboto&#43;Mono%25!%28EXTRA%20*hugolib.pageState=/Users/matt/Documents/Professional/website/content/braindump/explainable_rl.md%29">
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link rel="stylesheet" href="/css/header.css">
+  
+  <link rel="stylesheet" href="/css/img.css">
+  
+  <link rel="stylesheet" href="/css/braindump.css">
+  
+  <link rel="stylesheet" href="/css/post.css">
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://mkschleg.github.io/braindump/explainable_rl/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@mattschleg">
+  <meta property="twitter:creator" content="@mattschleg">
+  
+  <meta property="og:site_name" content="Matthew Schlegel">
+  <meta property="og:url" content="https://mkschleg.github.io/braindump/explainable_rl/">
+  <meta property="og:title" content="Explainable RL | Matthew Schlegel">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2025-04-25T08:05:01-06:00">
+  
+  <meta property="article:modified_time" content="2025-04-25T08:05:01-06:00">
+  
+
+  <title>Explainable RL | Matthew Schlegel</title>
+
+  
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']], 
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+ 
+  
+ 
+</style>
+
+<div class="masthead-hero"></div>
+
+
+<div id="main" role="main">
+  <div class="sidebar sticky" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="author-avatar">
+    <a href="/">
+      
+      <img src="/img/me.jpg" alt="Matthew Schlegel" itemprop="image">
+      
+    </a>
+  </div>
+  <div class="author-content">
+    <h3 class="author-name" itemprop="name">Matthew Schlegel</h3>
+    <p class="author-bio" itemprop="description">Lover of Espresso; Focused on RL and ML to improve the world; Research Scientist with a penchant for good software and alliteration.</p>
+  </div>
+  <div class="author-urls-wrapper">
+    <ul class="author-urls social-icons" aria-hidden="true">
+      <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+        <span itemprop="name">Edmonton, Alberta</span>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//linkedin.com/in/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-linkedin"></i>
+          LinkedIn
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//twitter.com/mattschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-twitter"></i>
+          Twitter
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/mkschleg" target="_blank" rel="noopener noreferrer">
+          <i class="fa fa-github"></i>
+          Github
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="author-urls social-icons" aria-hidden="true" style="margin-top:30px;">
+      
+      <li>
+        <a itemprop="sameAs" href=/tags >
+          <i class="fa fa-tag"></i>
+          Tags
+        </a>
+      </li>
+      
+      <li>
+        <a itemprop="sameAs" href=/collections >
+          <i class="fa fa-folder"></i>
+          Collections
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  <article class="page">
+		<div class="page_container">
+			<section class="page_content">
+				<div class="navbar-hero">
+  <nav>
+    
+    
+    <a class="hover" href="/">Home</a>
+    
+    
+    <a class="hover" href="/about">About</a>
+    
+    
+    <a class="hover" href="/CV.pdf">CV</a>
+    
+    
+    <a class="hover" href="/publications">Publications</a>
+    
+    
+    <a class="hover" href="/code">Code</a>
+    
+    
+    <a class="hover" href=/braindump> BrainDump </a>
+    
+  </nav>
+</div>
+
+				<article class="post" itemscope itemtype="http://schema.org/Article">
+  <div class="post-container">
+    <h1 itemprop="name"><a href="https://mkschleg.github.io/braindump/explainable_rl/">Explainable RL</a></h1>
+
+    
+      
+
+<div class="post-metadata">
+
+  <span class="post-date">
+    
+    <time datetime="2025-04-25 08:05:01 -0600 MDT" itemprop="datePublished dateModified">
+      Apr 25, 2025
+    </time>
+  </span>
+
+  
+
+</div>
+
+    
+
+    <div class="post-style" itemprop="articleBody">
+      
+      <p>\( \newcommand{\states}{\mathcal{S}}
+\newcommand{\actions}{\mathcal{A}}
+\newcommand{\observations}{\mathcal{O}}
+\newcommand{\rewards}{\mathcal{R}}
+\newcommand{\traces}{\mathbf{e}}
+\newcommand{\transition}{P}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complexs}{\mathbb{C}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\numfield}{\mathbb{F}}
+\newcommand{\expected}{\mathbb{E}}
+\newcommand{\var}{\mathbb{V}}
+\newcommand{\by}{\times}
+\newcommand{\partialderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\defineq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\defeq}{\stackrel{{\tiny\mbox{def}}}{=}}
+\newcommand{\eye}{\Imat}
+\newcommand{\hadamard}{\odot}
+\newcommand{\trans}{\top}
+\newcommand{\inv}{{-1}}
+\newcommand{\argmax}{\operatorname{argmax}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\avec}{\mathbf{a}}
+\newcommand{\bvec}{\mathbf{b}}
+\newcommand{\cvec}{\mathbf{c}}
+\newcommand{\dvec}{\mathbf{d}}
+\newcommand{\evec}{\mathbf{e}}
+\newcommand{\fvec}{\mathbf{f}}
+\newcommand{\gvec}{\mathbf{g}}
+\newcommand{\hvec}{\mathbf{h}}
+\newcommand{\ivec}{\mathbf{i}}
+\newcommand{\jvec}{\mathbf{j}}
+\newcommand{\kvec}{\mathbf{k}}
+\newcommand{\lvec}{\mathbf{l}}
+\newcommand{\mvec}{\mathbf{m}}
+\newcommand{\nvec}{\mathbf{n}}
+\newcommand{\ovec}{\mathbf{o}}
+\newcommand{\pvec}{\mathbf{p}}
+\newcommand{\qvec}{\mathbf{q}}
+\newcommand{\rvec}{\mathbf{r}}
+\newcommand{\svec}{\mathbf{s}}
+\newcommand{\tvec}{\mathbf{t}}
+\newcommand{\uvec}{\mathbf{u}}
+\newcommand{\vvec}{\mathbf{v}}
+\newcommand{\wvec}{\mathbf{w}}
+\newcommand{\xvec}{\mathbf{x}}
+\newcommand{\yvec}{\mathbf{y}}
+\newcommand{\zvec}{\mathbf{z}}
+\newcommand{\Amat}{\mathbf{A}}
+\newcommand{\Bmat}{\mathbf{B}}
+\newcommand{\Cmat}{\mathbf{C}}
+\newcommand{\Dmat}{\mathbf{D}}
+\newcommand{\Emat}{\mathbf{E}}
+\newcommand{\Fmat}{\mathbf{F}}
+\newcommand{\Gmat}{\mathbf{G}}
+\newcommand{\Hmat}{\mathbf{H}}
+\newcommand{\Imat}{\mathbf{I}}
+\newcommand{\Jmat}{\mathbf{J}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Lmat}{\mathbf{L}}
+\newcommand{\Mmat}{\mathbf{M}}
+\newcommand{\Nmat}{\mathbf{N}}
+\newcommand{\Omat}{\mathbf{O}}
+\newcommand{\Pmat}{\mathbf{P}}
+\newcommand{\Qmat}{\mathbf{Q}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\Smat}{\mathbf{S}}
+\newcommand{\Tmat}{\mathbf{T}}
+\newcommand{\Umat}{\mathbf{U}}
+\newcommand{\Vmat}{\mathbf{V}}
+\newcommand{\Wmat}{\mathbf{W}}
+\newcommand{\Xmat}{\mathbf{X}}
+\newcommand{\Ymat}{\mathbf{Y}}
+\newcommand{\Zmat}{\mathbf{Z}}
+\newcommand{\Sigmamat}{\boldsymbol{\Sigma}}
+\newcommand{\identity}{\Imat}
+\newcommand{\epsilonvec}{\boldsymbol{\epsilon}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\phivec}{\boldsymbol{\phi}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\sigmavec}{\boldsymbol{\sigma}}
+\newcommand{\jacobian}{\mathbf{J}}
+\newcommand{\ind}{\perp!!!!\perp}
+\newcommand{\bigoh}{\text{O}}
+\)</p>
+<dl>
+<dt>tags</dt>
+<dd><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></dd>
+</dl>
+<p>Explainable RL is the study of how to assign explanations to the policies learned through RL algorithms, or how to modify RL algorithms/representations such that they are explainable.</p>
+<h2 id="message-to-matt">Message To Matt</h2>
+<p>bThere are a ton of papers that I think are relevant. A part from the thesis you sent, I found <a href="https://dl.acm.org/doi/full/10.1145/3616864">https://dl.acm.org/doi/full/10.1145/3616864</a> to a be a really great review for XRL specifically, and proposes a new taxonomy to cover XRL topics that doesn&rsquo;t follow the XSL taxonomy. For an overview, Table 2 and Table 3 are great. Table 2 categorizes the papers based on the metrics used to evaluate the XRL method, and table 3 goes over the types of explanations. Below is a high-level overview of the main papers highlighted by the Milani that I think might be pertinent.</p>
+<p>There are quite a few ways you can develop explanations based on the features/observations to the agent. Some papers from the review that seem relevant (really depends on the type of explainability we might be looking for):</p>
+<p>Converting to an interpretable format: Post hoc convert an RL policy into an interpretable form.</p>
+<ul>
+<li><a href="https://proceedings.neurips.cc/paper/2018/hash/e6d8545daa42d5ced125a4bf747b3688-Abstract.html">https://proceedings.neurips.cc/paper/2018/hash/e6d8545daa42d5ced125a4bf747b3688-Abstract.html</a>: &ldquo;VIPER&rdquo; Create a decision tree policy from an RL policy using imitation learning</li>
+<li><a href="https://proceedings.mlr.press/v80/verma18a.html">https://proceedings.mlr.press/v80/verma18a.html</a>: &ldquo;PERL&rdquo;: Similar to VIPER, but uses a domain specific programmatic language to define policies to search over.</li>
+</ul>
+<p>Learning interpretable policies: Directly learn a policy where the policy space is defined by an interpretable form. These methods mostly use decision trees to learn policies. CUSTARD is one such method (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/17192">https://ojs.aaai.org/index.php/AAAI/article/view/17192</a>). There are lots of these, each using a different learning algorithm or enabling a different type of decision tree. You can see paragraphs 3, 4, and 5 on page 16 of the Milani review paper. A recent paper is (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/35451">https://ojs.aaai.org/index.php/AAAI/article/view/35451</a>) which learns a &ldquo;skill tree&rdquo; in a robotics domain, seems pretty interesting.</p>
+<p>Directly Generate Explanations: These generate explanations for actions taken by the policy. This includes Saliency maps and some natural language approaches.</p>
+<ul>
+<li><em>Natural Language</em>: These methods tend to restrict the sets of potential queries and responses to be domain specific (to make the learning of the map from policy to explanation easier). <a href="https://dl.acm.org/doi/abs/10.1145/2909824.3020233">https://dl.acm.org/doi/abs/10.1145/2909824.3020233</a> is highlighted in the Milani, but I&rsquo;m not following how the learning process works here.</li>
+<li><em>Saliency maps</em> are used throughout image based explanations. These provide some nice insight into what the agent is &ldquo;looking at&rdquo; to make a decision. Although in supervised learning they have found that these maps may not provide the best explainability power when the agent makes are &ldquo;wrong decision&rdquo; (i.e. classifies a cat as a dog) when tested in human studies (I&rsquo;m not remembering where I read this, but maybe in the thesis you sent). There are a lot of methods here, and the thesis has a good explanation as discussed in <a href="https://arxiv.org/abs/1912.05743">https://arxiv.org/abs/1912.05743</a> and Pierson&rsquo;s thesis.</li>
+<li>You can also use shapley values <a href="https://arxiv.org/pdf/2306.05810">https://arxiv.org/pdf/2306.05810</a>, or characteristic functions <a href="https://proceedings.mlr.press/v162/waldchen22a.html">https://proceedings.mlr.press/v162/waldchen22a.html</a> as a way of determining feature importance.</li>
+</ul>
+<p>Another idea presented is looking at how the underlying MDP&rsquo;s structure influences the agent. I think these would be the least useful for the forestry domain as they tend to think about incorporating causal models (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/5631">https://ojs.aaai.org/index.php/AAAI/article/view/5631</a>) or by learning a generative state-space model to probe the agent (<a href="https://arxiv.org/abs/1904.01318">https://arxiv.org/abs/1904.01318</a>).</p>
+<p>One idea that is related to how the MDP influences the agent, is identifying important training points that influence the behavior (<a href="https://proceedings.mlr.press/v119/gottesman20a/gottesman20a.pdf">https://proceedings.mlr.press/v119/gottesman20a/gottesman20a.pdf</a>).</p>
+<p>Finally, there are the methods that take a more trajectory based approach. This would be similar to the HIGHTLIGHTs algorithms (<a href="https://scholar.harvard.edu/files/oamir/files/highlightsmain.pdf">https://scholar.harvard.edu/files/oamir/files/highlightsmain.pdf</a>) described by Pierson&rsquo;s thesis. I think Lazy-MDPs (<a href="https://arxiv.org/pdf/2203.08542">https://arxiv.org/pdf/2203.08542</a>) are a really interesting idea related to &ldquo;learning interpretable policies&rdquo;. The idea is to penalize &ldquo;non-lazy&rdquo; actions, meaning you can identify the transitions where the learned policy decides to &ldquo;take over&rdquo; from a default policy. You can also cluster states together to find landmarks (<a href="https://ojs.aaai.org/index.php/ICAPS/article/view/6671">https://ojs.aaai.org/index.php/ICAPS/article/view/6671</a>) or create abstract policy graphs (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/4097">https://ojs.aaai.org/index.php/AAAI/article/view/4097</a>). Another recent paper is (<a href="https://arxiv.org/abs/2305.04073">https://arxiv.org/abs/2305.04073</a>) which tries to come up with a method to identify trajectories that lead towards learning a certain behavior.</p>
+<p>There are a lot more ideas/papers discussed in the Milani, and I just provided an overview of papers that I think could be relevant and added papers here and there that weren&rsquo;t included as fas as I could tell in the review paper.</p>
+<p>Beyond this review, I&rsquo;ve found some extra interesting examples of using explainability in various applications:</p>
+<ul>
+<li>for UAV path planning: <a href="https://www.sciencedirect.com/science/article/pii/S1270963821005629">https://www.sciencedirect.com/science/article/pii/S1270963821005629</a></li>
+<li>for power systems voltage regulation (explainability through converting to decision trees): <a href="https://www.sciencedirect.com/science/article/pii/S0378779625002469">https://www.sciencedirect.com/science/article/pii/S0378779625002469</a></li>
+<li>for traffic signal control using shapley values: <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8917519">https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8917519</a></li>
+</ul>
+<p>There is also this review, &ldquo;Explainable and Interpretable Reinforcement Learning for Robotics&rdquo; by Aaron Roth, that looks very relevant. But I haven&rsquo;t been able to get access to it yet.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>Draft v1</p>
+<p>There are a ton of papers that I think are relevant to the forestry + robotics domain that are worth a look. The core of which methods might be applicable are determined by the input space of the agent (i.e. sensor based, image based, or a combination of the two).</p>
+<p>A consistent method used are the creation of decisions trees to explain an agent&rsquo;s strategy. I like decision trees because that could be used for both image and sensor based agents (I believe), and don&rsquo;t rely much on a human visually inspecting an image (like in saliency maps).</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre><code>-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+
+Saliency maps are used throughout image based explanations. These provide some nice insight into what the agent is &quot;looking at&quot; to make a decision. Although in supervised learning they have found that these maps may not provide the best explainability power when the agent makes are &quot;wrong decision&quot; (i.e. classifies a cat as a dog) when tested in human studies.
+
+Another approach is through causal reasoning. The SHAP/DeepSHAP are the typical methods here, although there are a few methods looking at developing causal graphs from an agents behavior. SHAP determines the relative feature importance by looking at the causal relationship between having and not having the feature in the model at inference time (by seeing how much the output changes based on the features exclusion/inclusion).
+
+Here are some examples of using these techniques in applied domains:
+
+-   (&lt;a href=&quot;#citeproc_bib_item_1&quot;&gt;He, Aouf, and Song 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+-
+
+There are also some reviews that might be pertinent:
+
+-   (&lt;a href=&quot;#citeproc_bib_item_3&quot;&gt;Milani et al. 2024&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_6&quot;&gt;Roth et al. 2024&lt;/a&gt;) ( I don't have access to this book, but it looks relevant to the robotics domain).
+-
+
+**Reviews**
+
+-   (&lt;a href=&quot;#citeproc_bib_item_4&quot;&gt;Pierson 2021&lt;/a&gt;)
+-
+
+**Saliency Maps**
+
+-   (&lt;a href=&quot;#citeproc_bib_item_4&quot;&gt;Pierson 2021&lt;/a&gt;)
+
+**Decisions Trees**
+
+-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+
+**SHAP\*/\*Causal**
+
+-   (&lt;a href=&quot;#citeproc_bib_item_1&quot;&gt;He, Aouf, and Song 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_2&quot;&gt;Madumal et al. 2020&lt;/a&gt;)
+
+[Power Systems Control](/braindump/power_systems_control/)
+
+-   (&lt;a href=&quot;#citeproc_bib_item_7&quot;&gt;Stiasny et al. 2022&lt;/a&gt;)
+-
+</code></pre>
+
+    </div>
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+
+  <div class="bl-section">
+    <h4>Links to this note:</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+
+    
+
+  </div>
+</article>
+
+			</section>
+		</div>
+	</article>
+</div> 
+
+
+<div class="page_footer">
+	<p>Copyright © 2020 Matthew Schlegel. All Rights Reserved. Powered by <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/jhu247/minimal-academic">Minimal Academic</a>.</p>
+</div>
+    
+    
+
+
+  </body>
+</html>
+

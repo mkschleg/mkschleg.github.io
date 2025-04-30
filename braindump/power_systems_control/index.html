@@ -50,9 +50,9 @@
   <meta property="og:title" content="Power Systems Control | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2025-04-05T09:35:00-06:00">
+  <meta property="article:published_time" content="2025-04-30T10:51:52-06:00">
   
-  <meta property="article:modified_time" content="2025-04-05T09:35:00-06:00">
+  <meta property="article:modified_time" content="2025-04-30T10:51:52-06:00">
   
 
   <title>Power Systems Control | Matthew Schlegel</title>
@@ -200,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2025-04-05 09:35:00 -0600 MDT" itemprop="datePublished dateModified">
-      Apr 5, 2025
+    <time datetime="2025-04-30 10:51:52 -0600 MDT" itemprop="datePublished dateModified">
+      Apr 30, 2025
     </time>
   </span>
 
@@ -301,8 +301,7 @@
 \)</p>
 <h2 id="projects">Projects</h2>
 <h2 id="questions">Questions</h2>
-<h2 id="literature">Literature</h2>
-<h2 id="notes">Notes</h2>
+<h2 id="notes-literature">Notes/Literature</h2>
 <h3 id="common-terms">Common terms</h3>
 <!--list-separator-->
 <ul>
@@ -316,9 +315,34 @@
 <ul>
 <li>Point of Common Coupling</li>
 </ul>
+<!--list-separator-->
+<ul>
+<li>Voltage Source Converters</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Swing Equation</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Phasor Measurement Units</p>
+ <!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  Overview of history of PMUs (<a href="#citeproc_bib_item_4">Phadke 2002</a>)</li>
+</ul>
+ <!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  Government installing PMUs (<a href="#citeproc_bib_item_9">“New Technology Can Improve Electric Power System Efficiency and Reliability - U.S. Energy Information Administration (EIA)” 2025</a>).</li>
+</ul>
+</li>
+</ul>
 <h3 id="microgrid-control">Microgrid Control</h3>
 <p>A microgrid can be though of a cluster of loads, <a href="#distributed-generation-units">Distributed Generation Units</a> and <a href="#energy-storage-systems">Energy Storage Systems</a> operated in coordination to reliably supply electricty, connected to the host power system at the distribution level at a single point of connection, i.e. the <a href="#point-of-common-coupling">Point of Common Coupling</a>.</p>
-<p>(<a href="#citeproc_bib_item_1">Olivares et al. 2014</a>)</p>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_2">Olivares et al. 2014</a>)</li>
+</ul>
 <!--list-separator-->
 <ul>
 <li>
@@ -328,9 +352,114 @@
 </ul>
 </li>
 </ul>
-<h3 id="references">References</h3>
+<h3 id="d26bce"><span class="org-todo todo TODO">TODO</span> (<a href="#citeproc_bib_item_1">Dommel 1969</a>)</h3>
+<h3 id="problem-settings-use-cases">Problem Settings/Use Cases</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Electro-Magnetic Transient Simulation</p>
+<p><a href="https://www.mathworks.com/discovery/emt-simulation.html">Electro Magnetic Transient Simulation</a></p>
+ <!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_8">Zhang et al. 1997</a>)</li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Power Flow</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Optimal Power Flow</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Stability Analysis</p>
+<p>Along with transient stability assessment..</p>
+<ul>
+<li>(<a href="#citeproc_bib_item_6">Stiasny, Misyris, and Chatzivasileiadis 2023</a>)</li>
+</ul>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Co-Simulation</p>
+<p>Joint simulation of loosely coupled stand-alone sub-simulators</p>
+</li>
+</ul>
+<h2 id="examples-benchmarks">Examples/Benchmarks</h2>
+<h3 id="the-north-sea-wind-power-hub">The North Sea Wind Power Hub</h3>
+<p>Depicted below, this model represents a realistic example of an emerging converter-dominated system that must integrate securely into the legacy bulk power grid. The objective is to optimally tune the control parameters and determine the power dispatch of the NSWPH system under small-signal stability and N-1 security constraints.</p>
+<p>The below figure depicts:</p>
+<ul>
+<li>5 wind farms,</li>
+<li>a synchronous condenser,</li>
+<li>and two HVDC Voltage Source Converters</li>
+</ul>
+<p>When planning dispatch of the system, operators are assumed to have control over the active and reactive power set points of the turbines.  In the future, operators may also depend on the wind hubs to provide both primary frequency and primary voltage control support services. We assume operators have the capacity to adjust the droop parameters which determine the system&rsquo;s participation in both primary frequency and primary voltage control.</p>
+<figure><img src="/ox-hugo/2025-04-15_15-53-52_Screenshot%202025-04-15%20at%203.53.47%E2%80%AFPM.png">
+</figure>
+
+<h3 id="single-machine-infinite-bus-system">Single Machine Infinite Bus system</h3>
+<p>This is an extremely simple power bus with a single generator and infinite external grid which has a constant draw of power without a shift in voltage or angle (very idealized system).</p>
+<figure><img src="/ox-hugo/2025-04-25_10-39-40_Screenshot%202025-04-25%20at%2010.39.36%E2%80%AFAM.png">
+</figure>
+
+<h3 id="4-bus-2-generator-system">4-Bus 2-Generator System</h3>
+<p>Described in (<a href="#citeproc_bib_item_5">Stiasny, Misyris, and Chatzivasileiadis 2021</a>). With governing dynamics
+\[
+m_k \ddot{\delta}_k + d_k \dot{\delta}_k + \sum_j B_{kj} V_k V_j \text{sin}(\delta_k - \delta_j) - P_k = 0
+\]</p>
+<figure><img src="/ox-hugo/2025-04-28_10-56-06_Screenshot%202025-04-28%20at%2010.55.59%E2%80%AFAM.png">
+</figure>
+
+<figure><img src="/ox-hugo/2025-04-28_10-55-50_Screenshot%202025-04-28%20at%2010.55.44%E2%80%AFAM.png">
+</figure>
+
+<h3 id="kundur-two-area-system">Kundur Two-area system</h3>
+<p>First came across in (<a href="#citeproc_bib_item_6">Stiasny, Misyris, and Chatzivasileiadis 2023</a>). Originally described in <a href="https://www.taylorfrancis.com/chapters/edit/10.4324/b12113-10/power-system-stability-prabha-kundur">https://www.taylorfrancis.com/chapters/edit/10.4324/b12113-10/power-system-stability-prabha-kundur</a>.</p>
+<p>Governing equations:</p>
+<p>\begin{align}
+\dot{\delta}_i &amp;= \omega_i - \omega_0 \\
+\dot{\omega}_i &amp;= \frac{\omega_0}{2H_i} \left ( P_i^{\text{set}} + \Delta P_i - \sum_j \frac{V_i V_j}{X_{ij}} \sin(\delta_i - \delta_j) \right ) \\
+\dot{\delta}_i &amp;= \frac{1}{D_i} \left ( P_i^{\text{set}} + \Delta P_i - \sum_j \frac{V_i V_j}{X_{ij}} \sin(\delta_i - \delta_j) \right )
+\end{align}</p>
+<figure><img src="/ox-hugo/2025-04-28_11-02-36_Screenshot%202025-04-28%20at%2011.02.31%E2%80%AFAM.png">
+</figure>
+
+<h3 id="ieee-bus-systems">IEEE Bus Systems</h3>
+<!--list-separator-->
+<ul>
+<li>IEEE 14 Bus System</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>IEEE 33 Bus System</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>IEEE 118 Bus System</li>
+</ul>
+<h3 id="pantagruel">PanTaGruEl</h3>
+<p>A simulation of the European power grid</p>
+<!--list-separator-->
+<ul>
+<li><span class="org-todo todo TODO">TODO</span>  (<a href="#citeproc_bib_item_3">Pagnier and Jacquod 2019</a>; <a href="#citeproc_bib_item_7">Tyloo, Pagnier, and Jacquod 2019</a>)</li>
+</ul>
+<h2 id="references">References</h2>
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Olivares, Daniel E., Ali Mehrizi-Sani, Amir H. Etemadi, Claudio A. Cañizares, Reza Iravani, Mehrdad Kazerani, Amir H. Hajimiragha, et al. 2014. “Trends in Microgrid Control.” <i>IEEE Transactions on Smart Grid</i> 5 (4): 1905–19. doi:<a href="https://doi.org/10.1109/TSG.2013.2295514">10.1109/TSG.2013.2295514</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Dommel, Hermann W. 1969. “Digital Computer Solution of Electromagnetic Transients in Single-and Multiphase Networks.” <i>IEEE Transactions on Power Apparatus and Systems</i> PAS-88 (4): 388–99. doi:<a href="https://doi.org/10.1109/TPAS.1969.292459">10.1109/TPAS.1969.292459</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Olivares, Daniel E., Ali Mehrizi-Sani, Amir H. Etemadi, Claudio A. Cañizares, Reza Iravani, Mehrdad Kazerani, Amir H. Hajimiragha, et al. 2014. “Trends in Microgrid Control.” <i>IEEE Transactions on Smart Grid</i> 5 (4): 1905–19. doi:<a href="https://doi.org/10.1109/TSG.2013.2295514">10.1109/TSG.2013.2295514</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Pagnier, Laurent, and Philippe Jacquod. 2019. “Inertia Location and Slow Network Modes Determine Disturbance Propagation in Large-Scale Power Grids.” <i>Plos One</i> 14 (3). Public Library of Science: e0213550. doi:<a href="https://doi.org/10.1371/journal.pone.0213550">10.1371/journal.pone.0213550</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Phadke, A.G. 2002. “Synchronized Phasor Measurements-a Historical Overview.” In <i>IEEE/PES Transmission and Distribution Conference and Exhibition</i>, 1:476–79 vol.1. doi:<a href="https://doi.org/10.1109/TDC.2002.1178427">10.1109/TDC.2002.1178427</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Stiasny, Jochen, George S. Misyris, and Spyros Chatzivasileiadis. 2021. “Physics-Informed Neural Networks for Non-linear System Identification for Power System Dynamics.” In <i>2021 IEEE Madrid PowerTech</i>, 1–6. doi:<a href="https://doi.org/10.1109/PowerTech46648.2021.9495063">10.1109/PowerTech46648.2021.9495063</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Stiasny, Jochen, Georgios S. Misyris, and Spyros Chatzivasileiadis. 2023. “Transient Stability Analysis with Physics-Informed Neural Networks.” March 15. doi:<a href="https://doi.org/10.48550/arXiv.2106.13638">10.48550/arXiv.2106.13638</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Tyloo, M., L. Pagnier, and P. Jacquod. 2019. “The Key Player Problem in Complex Oscillator Networks and Electric Power Grids: Resistance Centralities Identify Local Vulnerabilities.” <i>Science Advances</i> 5 (11). American Association for the Advancement of Science: eaaw8359. doi:<a href="https://doi.org/10.1126/sciadv.aaw8359">10.1126/sciadv.aaw8359</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Zhang, Y., L. Wehenkel, P. Rousseaux, and M. Pavella. 1997. “SIME: A Hybrid Approach to Fast Transient Stability Assessment and Contingency Selection.” <i>International Journal of Electrical Power &#38; Energy Systems</i> 19 (3): 195–208. doi:<a href="https://doi.org/10.1016/S0142-0615(96)00047-6">10.1016/S0142-0615(96)00047-6</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>“New Technology Can Improve Electric Power System Efficiency and Reliability - U.S. Energy Information Administration (EIA).” 2025. Accessed April 28. <a href="https://www.eia.gov/todayinenergy/detail.php?id=5630">https://www.eia.gov/todayinenergy/detail.php?id=5630</a>.</div>
 </div>
 
     </div>
@@ -358,7 +487,45 @@
    
 
    
+      
+   
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    
@@ -374,7 +541,17 @@
    
 
    
-      
+
+   
+
+   
+
+   
+
+   
+
+   
+
    
 
    
@@ -950,9 +1127,15 @@
     <div class="backlinks">
       <ul>
        
-          <li><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></li>
+          <li><a href="/braindump/data_driven_pde_solvers/">Data Driven PDE Solvers for Power Systems</a></li>
        
           <li><a href="/braindump/current_learning_objectives/">Current Learning Objectives</a></li>
+       
+          <li><a href="/braindump/kron_reduction/">Kron Reduction</a></li>
+       
+          <li><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></li>
+       
+          <li><a href="/braindump/explainable_rl/">Explainable RL</a></li>
        
      </ul>
     </div>
