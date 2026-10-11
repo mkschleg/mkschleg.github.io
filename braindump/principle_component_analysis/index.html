@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="generator" content="Hugo 0.165.0">
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -309,7 +309,7 @@
 </div>
 <p>The procedure of PCA is very straightforward. We will use Julia to explore this in code along side the mathematics.</p>
 <p>Take the randomly generated data \(\Xmat \sim \mathscr{N}(\boldsymbol{\mu}, \Sigmamat)\)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Random
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Random
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Distributions
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> LinearAlgebra
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Statistics
@@ -321,7 +321,7 @@
 </span></span><span style="display:flex;"><span>μ <span style="color:#f92672">=</span> rand(n)
 </span></span><span style="display:flex;"><span>mvnormal <span style="color:#f92672">=</span> Distributions<span style="color:#f92672">.</span>MvNormal(μ, Σ)
 </span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> rand(mvnormal, <span style="color:#ae81ff">1000</span>); <span style="color:#75715e"># generate random samples!</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>10×1000 Matrix{Float64}:
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>10×1000 Matrix{Float64}:
 </span></span><span style="display:flex;"><span>  0.154199  -1.49158    -0.0868507  …  2.71999    0.328476  3.28587
 </span></span><span style="display:flex;"><span> -1.73977   -4.54743    -1.64781       1.26305   -0.964122  2.36852
 </span></span><span style="display:flex;"><span>  1.75934   -0.22245    -2.66986       1.87835    0.143766  3.42757
@@ -333,42 +333,42 @@
 </span></span><span style="display:flex;"><span> -0.821829  -1.15865    -1.73997       1.98992   -0.664556  1.59292
 </span></span><span style="display:flex;"><span>  0.596334  -0.457017   -0.955204      2.23139    0.829376  2.52783
 </span></span></code></pre></div><p>Lets then center and normalize the data (good practice when applying PCA)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> r <span style="color:#66d9ef">in</span> eachrow(X)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> r <span style="color:#66d9ef">in</span> eachrow(X)
 </span></span><span style="display:flex;"><span>    r <span style="color:#f92672">.=</span> (r <span style="color:#f92672">.-</span> mean(r))<span style="color:#f92672">/</span>sqrt(var(r))
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
 </span></span><span style="display:flex;"><span>(μ <span style="color:#f92672">=</span> [mean(r) <span style="color:#66d9ef">for</span> r <span style="color:#66d9ef">in</span> eachrow(X)], σ <span style="color:#f92672">=</span> [var(r) <span style="color:#66d9ef">for</span> r <span style="color:#66d9ef">in</span> eachrow(X)])
 </span></span></code></pre></div><table>
-  <thead>
-      <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>μ</td>
-          <td>=</td>
-          <td>(3.8524738954492934e-16 -1.7541523789077474e-17 5.813127756937319e-16 4.786449014915206e-17 -9.214851104388799e-17 -1.056932319443149e-16 -3.312905505481467e-16 2.808864252301646e-17 6.272760089132134e-17 2.3436808049837057e-16)</td>
-          <td>σ</td>
-          <td>=</td>
-          <td>(1.0000000000000004 0.9999999999999989 1.0000000000000018 1.0000000000000009 1.0000000000000013 1.0000000000000016 1.0000000000000002 1.0000000000000004 1.000000000000001 1.000000000000001)</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>μ</td>
+					<td>=</td>
+					<td>(3.8524738954492934e-16 -1.7541523789077474e-17 5.813127756937319e-16 4.786449014915206e-17 -9.214851104388799e-17 -1.056932319443149e-16 -3.312905505481467e-16 2.808864252301646e-17 6.272760089132134e-17 2.3436808049837057e-16)</td>
+					<td>σ</td>
+					<td>=</td>
+					<td>(1.0000000000000004 0.9999999999999989 1.0000000000000018 1.0000000000000009 1.0000000000000013 1.0000000000000016 1.0000000000000002 1.0000000000000004 1.000000000000001 1.000000000000001)</td>
+			</tr>
+	</tbody>
 </table>
 <p>Now for the PCA steps:</p>
 <ol>
 <li>
 <p>Find the covariance matrix:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>cov_X <span style="color:#f92672">=</span> reduce(hcat, [[cov(X[i, <span style="color:#f92672">:</span>], X[j, <span style="color:#f92672">:</span>]) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(X, <span style="color:#ae81ff">1</span>)] <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(X, <span style="color:#ae81ff">1</span>)]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>cov_X <span style="color:#f92672">=</span> reduce(hcat, [[cov(X[i, <span style="color:#f92672">:</span>], X[j, <span style="color:#f92672">:</span>]) <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(X, <span style="color:#ae81ff">1</span>)] <span style="color:#66d9ef">for</span> j <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>size(X, <span style="color:#ae81ff">1</span>)]);
 </span></span></code></pre></div></li>
 <li>
 <p>Find the <a href="/braindump/eigendecomposition/">Eigenvalues and Eigenvectors</a> of the covariance matrix over features (not instances):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>  eig_decomp <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>eigen(cov_X)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  LinearAlgebra.Eigen{Float64, Float64, Matrix{Float64}, Vector{Float64}}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>  eig_decomp <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>eigen(cov_X)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  LinearAlgebra.Eigen{Float64, Float64, Matrix{Float64}, Vector{Float64}}
 </span></span><span style="display:flex;"><span>  values:
 </span></span><span style="display:flex;"><span>  10-element Vector{Float64}:
 </span></span><span style="display:flex;"><span>   0.007715000421140434
@@ -396,9 +396,9 @@
 </span></span></code></pre></div></li>
 <li>
 <p>Order the <a href="/braindump/eigendecomposition/">eigenvector</a>s by the <a href="/braindump/eigendecomposition/">eigenvalues</a>. Conveniently these are already ordered based on the <a href="/braindump/eigendecomposition/">eigenvalues</a> and the <a href="/braindump/eigendecomposition/">eigenvector</a>s are the columns of the matrix. We need to choose how many components we want to use. The best way to do this is through the total explained variance of the k features.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>tot <span style="color:#f92672">=</span> sum(eig_decomp<span style="color:#f92672">.</span>values)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>tot <span style="color:#f92672">=</span> sum(eig_decomp<span style="color:#f92672">.</span>values)
 </span></span><span style="display:flex;"><span>cumsum([(i<span style="color:#f92672">/</span>tot)<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span> <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> reverse(eig_decomp<span style="color:#f92672">.</span>values)])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  10-element Vector{Float64}:
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  10-element Vector{Float64}:
 </span></span><span style="display:flex;"><span>    83.10235781721954
 </span></span><span style="display:flex;"><span>    88.4086856054563
 </span></span><span style="display:flex;"><span>    91.98967947227332
@@ -412,8 +412,8 @@
 </span></span></code></pre></div></li>
 <li>
 <p>The first 4 components explain the majority of the variance (\(95\%\)) so lets just use the first 4! So lets create a projection matrix from the first four <a href="/braindump/eigendecomposition/">eigenvector</a>s!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>  proj_mat <span style="color:#f92672">=</span> reduce(hcat, [eig_decomp<span style="color:#f92672">.</span>vectors[<span style="color:#f92672">:</span>, size(eig_decomp<span style="color:#f92672">.</span>vectors, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> i] <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  10×4 Matrix{Float64}:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>  proj_mat <span style="color:#f92672">=</span> reduce(hcat, [eig_decomp<span style="color:#f92672">.</span>vectors[<span style="color:#f92672">:</span>, size(eig_decomp<span style="color:#f92672">.</span>vectors, <span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> i] <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>])
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  10×4 Matrix{Float64}:
 </span></span><span style="display:flex;"><span>   -0.327279  -0.259167   0.315542   -0.0801132
 </span></span><span style="display:flex;"><span>   -0.315263  -0.301952   0.0283486  -0.320827
 </span></span><span style="display:flex;"><span>   -0.317831   0.328478   0.199804   -0.240223
@@ -427,8 +427,8 @@
 </span></span></code></pre></div></li>
 <li>
 <p>Now we can project our data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>proj_x <span style="color:#f92672">=</span> proj_mat<span style="color:#f92672">&#39;</span> <span style="color:#f92672">*</span> X
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>4×1000 Matrix{Float64}:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>proj_x <span style="color:#f92672">=</span> proj_mat<span style="color:#f92672">&#39;</span> <span style="color:#f92672">*</span> X
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>4×1000 Matrix{Float64}:
 </span></span><span style="display:flex;"><span>  1.10367   3.89547    3.30802   …  -2.37649   1.35173    -3.32848
 </span></span><span style="display:flex;"><span>  0.802943  1.36961   -1.41826      -0.660894  0.753229   -0.613667
 </span></span><span style="display:flex;"><span>  0.311876  0.253764  -0.122628      0.267786  0.36768     0.291698
@@ -831,21 +831,47 @@
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
    
 
    

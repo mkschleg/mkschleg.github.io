@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="generator" content="Hugo 0.165.0">
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -316,18 +316,18 @@
 <p>This decomposition always exists for any complex rectangular matrix.</p>
 <h2 id="rotation-coordinate-scaling-and-reflection">Rotation, Coordinate Scaling, and reflection</h2>
 <p>One nice interpretation of singular value decomposition is as a series of rotations scalings. Every matrix can be seen as a linear function on a vector. To visualize this we will use julia and a random linear transform matrix \(M\).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Plots
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Plots
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> LinearAlgebra<span style="color:#f92672">:</span> LinearAlgebra, svd
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> Random
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> plot_data(dat, clrs)
 </span></span><span style="display:flex;"><span>    Plots<span style="color:#f92672">.</span>scatter([(dd[<span style="color:#ae81ff">1</span>], dd[<span style="color:#ae81ff">2</span>]) <span style="color:#66d9ef">for</span> dd <span style="color:#66d9ef">in</span> eachcol(dat)], color<span style="color:#f92672">=</span>clrs, xlim<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.5</span>), ylim<span style="color:#f92672">=</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>), legend<span style="color:#f92672">=</span>false)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>┌ Info: Precompiling Plots [91a5bcdd-55d7-5caf-9e0b-520d859cae80]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>┌ Info: Precompiling Plots [91a5bcdd-55d7-5caf-9e0b-520d859cae80]
 </span></span><span style="display:flex;"><span>└ @ Base loading.jl:1664
 </span></span><span style="display:flex;"><span>plot_data (generic function with 1 method)
 </span></span></code></pre></div><p>Below we construct the data used in the shape of a circle to make the scaling and rotations very clear. We color each quadrant a different color to get the full effect.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>rng <span style="color:#f92672">=</span> Random<span style="color:#f92672">.</span>Xoshiro(<span style="color:#ae81ff">10</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>rng <span style="color:#f92672">=</span> Random<span style="color:#f92672">.</span>Xoshiro(<span style="color:#ae81ff">10</span>)
 </span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5000</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">.-</span> <span style="color:#ae81ff">1.0</span>
 </span></span><span style="display:flex;"><span>ids <span style="color:#f92672">=</span> (d[<span style="color:#ae81ff">1</span>, <span style="color:#f92672">:</span>]<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">.+</span> d[<span style="color:#ae81ff">2</span>, <span style="color:#f92672">:</span>]<span style="color:#f92672">.^</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">.&lt;=</span> <span style="color:#ae81ff">1</span>)
 </span></span><span style="display:flex;"><span>d_circ <span style="color:#f92672">=</span> d[<span style="color:#f92672">:</span>, ids]
@@ -348,15 +348,15 @@
 </figure>
 
 <p>Below we plot the full linear transformation.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M <span style="color:#f92672">=</span> rand(rng, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
 </span></span><span style="display:flex;"><span>d_trans <span style="color:#f92672">=</span> M<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_trans, clrs)
 </span></span></code></pre></div><figure><img src="/ox-hugo/svd-transform.svg">
 </figure>
 
 <p>We now use julia to find the decomposition of our matrix \(M\).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M_svd <span style="color:#f92672">=</span> svd(M)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LinearAlgebra.SVD{Float64, Float64, Matrix{Float64}, Vector{Float64}}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>M_svd <span style="color:#f92672">=</span> svd(M)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>LinearAlgebra.SVD{Float64, Float64, Matrix{Float64}, Vector{Float64}}
 </span></span><span style="display:flex;"><span>U factor:
 </span></span><span style="display:flex;"><span>2×2 Matrix{Float64}:
 </span></span><span style="display:flex;"><span> -0.864209  -0.503132
@@ -370,20 +370,20 @@
 </span></span><span style="display:flex;"><span> -0.701446  -0.712723
 </span></span><span style="display:flex;"><span>  0.712723  -0.701446
 </span></span></code></pre></div><p>With the decomposition created, we can now go through each operation in order. The first is \(\Vmat^*\) as a rotation.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_Vt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_Vt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_Vt, clrs)
 </span></span></code></pre></div><figure><img src="/ox-hugo/svd-vt.svg">
 </figure>
 
 <p>Then \(\Sigmamat\) is a scaling along the new axis determined by the rotation from \(\Vmat^*\).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>Σ <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>diagm(M_svd<span style="color:#f92672">.</span>S)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>Σ <span style="color:#f92672">=</span> LinearAlgebra<span style="color:#f92672">.</span>diagm(M_svd<span style="color:#f92672">.</span>S)
 </span></span><span style="display:flex;"><span>d_ΣVt <span style="color:#f92672">=</span> Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_ΣVt, clrs)
 </span></span></code></pre></div><figure><img src="/ox-hugo/svd-sigvt.svg">
 </figure>
 
 <p>Finally, \(\Umat\) rotates the new scaled data to its final position.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_UΣVt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>U<span style="color:#f92672">*</span>Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-julia" data-lang="julia"><span style="display:flex;"><span>d_UΣVt <span style="color:#f92672">=</span> M_svd<span style="color:#f92672">.</span>U<span style="color:#f92672">*</span>Σ<span style="color:#f92672">*</span>M_svd<span style="color:#f92672">.</span>Vt<span style="color:#f92672">*</span>d_circ
 </span></span><span style="display:flex;"><span>plot_data(d_UΣVt, clrs)
 </span></span></code></pre></div><figure><img src="/ox-hugo/svd-usigvt.svg">
 </figure>
@@ -784,21 +784,47 @@
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
-   
-
    
 
    

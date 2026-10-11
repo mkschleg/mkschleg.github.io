@@ -1,111 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Matthew Schlegel</title>
-    <link>https://mkschleg.github.io/tags/</link>
-    <description>Recent content in Tags on Matthew Schlegel</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 01 May 2025 09:38:34 -0600</lastBuildDate>
-    <atom:link href="https://mkschleg.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>DDPDE</title>
-      <link>https://mkschleg.github.io/tags/ddpde/</link>
-      <pubDate>Thu, 01 May 2025 09:38:34 -0600</pubDate>
-      <guid>https://mkschleg.github.io/tags/ddpde/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CLO</title>
-      <link>https://mkschleg.github.io/tags/clo/</link>
-      <pubDate>Wed, 30 Apr 2025 10:52:28 -0600</pubDate>
-      <guid>https://mkschleg.github.io/tags/clo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reinforcement-Learning</title>
-      <link>https://mkschleg.github.io/tags/reinforcement-learning/</link>
-      <pubDate>Fri, 28 Feb 2025 11:38:54 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/reinforcement-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>STUDY</title>
-      <link>https://mkschleg.github.io/tags/study/</link>
-      <pubDate>Fri, 21 Feb 2025 10:29:19 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/study/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Math</title>
-      <link>https://mkschleg.github.io/tags/math/</link>
-      <pubDate>Fri, 21 Feb 2025 10:29:17 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/math/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Causality</title>
-      <link>https://mkschleg.github.io/tags/causality/</link>
-      <pubDate>Fri, 21 Feb 2025 10:29:08 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/causality/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Core</title>
-      <link>https://mkschleg.github.io/tags/core/</link>
-      <pubDate>Fri, 21 Feb 2025 10:28:45 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/core/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Environments</title>
-      <link>https://mkschleg.github.io/tags/environments/</link>
-      <pubDate>Fri, 21 Feb 2025 10:28:31 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/environments/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Recurrent</title>
-      <link>https://mkschleg.github.io/tags/recurrent/</link>
-      <pubDate>Fri, 21 Feb 2025 10:28:19 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/recurrent/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Representation</title>
-      <link>https://mkschleg.github.io/tags/representation/</link>
-      <pubDate>Fri, 21 Feb 2025 10:28:19 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/representation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SFs</title>
-      <link>https://mkschleg.github.io/tags/sfs/</link>
-      <pubDate>Fri, 21 Feb 2025 10:28:12 -0700</pubDate>
-      <guid>https://mkschleg.github.io/tags/sfs/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Coffee</title>
-      <link>https://mkschleg.github.io/tags/coffee/</link>
-      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://mkschleg.github.io/tags/coffee/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>https://mkschleg.github.io/tags/about/</link>
-      <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://mkschleg.github.io/tags/about/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Meta</title>
-      <link>https://mkschleg.github.io/tags/meta/</link>
-      <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>https://mkschleg.github.io/tags/meta/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Tags on Matthew Schlegel</title>
+		<link>https://mkschleg.github.io/tags/</link>
+		<description>Recent content in Tags on Matthew Schlegel</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>Copyright &amp;#xA9; 2020 Matthew Schlegel. All Rights Reserved</copyright>
+		
+		
+			<lastBuildDate>Sat, 02 May 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://mkschleg.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>https://mkschleg.github.io/tags/about/</link>
+				<pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+				<guid>https://mkschleg.github.io/tags/about/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Meta</title>
+				<link>https://mkschleg.github.io/tags/meta/</link>
+				<pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+				<guid>https://mkschleg.github.io/tags/meta/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Reinforcement-Learning</title>
+				<link>https://mkschleg.github.io/tags/reinforcement-learning/</link>
+				<pubDate>Sat, 20 Sep 2025 10:19:47 -0600</pubDate>
+				<guid>https://mkschleg.github.io/tags/reinforcement-learning/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DDPDE</title>
+				<link>https://mkschleg.github.io/tags/ddpde/</link>
+				<pubDate>Thu, 26 Jun 2025 10:53:55 -0600</pubDate>
+				<guid>https://mkschleg.github.io/tags/ddpde/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Causality</title>
+				<link>https://mkschleg.github.io/tags/causality/</link>
+				<pubDate>Thu, 26 Jun 2025 09:51:48 -0600</pubDate>
+				<guid>https://mkschleg.github.io/tags/causality/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CLO</title>
+				<link>https://mkschleg.github.io/tags/clo/</link>
+				<pubDate>Mon, 12 May 2025 11:23:26 -0600</pubDate>
+				<guid>https://mkschleg.github.io/tags/clo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>STUDY</title>
+				<link>https://mkschleg.github.io/tags/study/</link>
+				<pubDate>Fri, 21 Feb 2025 10:29:19 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/study/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Math</title>
+				<link>https://mkschleg.github.io/tags/math/</link>
+				<pubDate>Fri, 21 Feb 2025 10:29:17 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/math/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Core</title>
+				<link>https://mkschleg.github.io/tags/core/</link>
+				<pubDate>Fri, 21 Feb 2025 10:28:45 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/core/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Environments</title>
+				<link>https://mkschleg.github.io/tags/environments/</link>
+				<pubDate>Fri, 21 Feb 2025 10:28:31 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/environments/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Recurrent</title>
+				<link>https://mkschleg.github.io/tags/recurrent/</link>
+				<pubDate>Fri, 21 Feb 2025 10:28:19 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/recurrent/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Representation</title>
+				<link>https://mkschleg.github.io/tags/representation/</link>
+				<pubDate>Fri, 21 Feb 2025 10:28:19 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/representation/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SFs</title>
+				<link>https://mkschleg.github.io/tags/sfs/</link>
+				<pubDate>Fri, 21 Feb 2025 10:28:12 -0700</pubDate>
+				<guid>https://mkschleg.github.io/tags/sfs/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Coffee</title>
+				<link>https://mkschleg.github.io/tags/coffee/</link>
+				<pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+				<guid>https://mkschleg.github.io/tags/coffee/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

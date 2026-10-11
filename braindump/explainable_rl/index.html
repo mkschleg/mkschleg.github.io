@@ -9,7 +9,7 @@
   <meta name="googlebot" content="noindex">
   
   
-  <meta name="generator" content="Hugo 0.144.1">
+  <meta name="generator" content="Hugo 0.165.0">
   <meta name="author" content="Matthew Schlegel">
 
   
@@ -50,9 +50,9 @@
   <meta property="og:title" content="Explainable RL | Matthew Schlegel">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2025-04-25T08:05:01-06:00">
+  <meta property="article:published_time" content="2025-09-18T10:40:02-06:00">
   
-  <meta property="article:modified_time" content="2025-04-25T08:05:01-06:00">
+  <meta property="article:modified_time" content="2025-09-18T10:40:02-06:00">
   
 
   <title>Explainable RL | Matthew Schlegel</title>
@@ -200,8 +200,8 @@
 
   <span class="post-date">
     
-    <time datetime="2025-04-25 08:05:01 -0600 MDT" itemprop="datePublished dateModified">
-      Apr 25, 2025
+    <time datetime="2025-09-18 10:40:02 -0600 MDT" itemprop="datePublished dateModified">
+      Sep 18, 2025
     </time>
   </span>
 
@@ -303,7 +303,70 @@
 <dt>tags</dt>
 <dd><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></dd>
 </dl>
-<p>Explainable RL is the study of how to assign explanations to the policies learned through RL algorithms, or how to modify RL algorithms/representations such that they are explainable.</p>
+<p>Explainable RL is the study of how to assign explanations to the policies learned through RL algorithms, or how to modify RL algorithms/representations such that they are explainable. This is typically an effort to remove the black-box nature of RL policies.</p>
+<ul>
+<li><a href="/braindump/xrl_in_power_systems/">XRL in Power Systems</a></li>
+</ul>
+<h2 id="explainable-reinforcement-learning-a-survey-and-comparative-review">(<a href="#citeproc_bib_item_4">Milani et al. 2024</a>): Explainable Reinforcement Learning: A Survey and Comparative Review</h2>
+<p>I prefer the taxonomy of XRL approaches presented here. The key categories:</p>
+<ul>
+<li>Feature Importance: Action-level look at the agent&rsquo;s behavior. For each action, you can query the immediate context that was critical for making that decision.</li>
+<li>Learning process and markov decision process: This provides information about the effects of the training process. This type of explanation enables understanding of the influential experiences that led to the agent&rsquo;s current behavior. Could be really good for an audit.</li>
+<li>Policy Level:</li>
+</ul>
+<p>While these categories are better for RL, the pre-hoc and post-hoc categories are also useful to understand how the method implements the explanation.</p>
+<p>For instance, the warning system proposed in (<a href="#citeproc_bib_item_3">Marot et al. 2022</a>) is a post-hoc, feature importance method which is mostly concerned with the Fidelity and Cognitive Load of the underlying policy. Now of course, the instantiation of the warning systems used domain specific knowledge.</p>
+<h3 id="taxonomy">Taxonomy</h3>
+<!--list-separator-->
+<ul>
+<li>
+<p>Feature Importance</p>
+<p>Decision level explanations. These explanations deal with understanding what context is responsible for the decision being made by the agent.</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Learning Processes and MDPs</p>
+<p>These explanations work to understand what experience from the agent has lead to the specific behavior or decisions for a context. This would be useful for an audit and dealing with</p>
+</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>
+<p>Policy Learning</p>
+<p>These present summaries of long-term behavior through abstraction or representative examples. This is necessary for the competency of the policy.</p>
+</li>
+</ul>
+<h3 id="metrics">Metrics</h3>
+<!--list-separator-->
+<ul>
+<li>Fidelity</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Performance</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Comprehensibility</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Preferability</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Actionability</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Cognitive Load</li>
+</ul>
+<!--list-separator-->
+<ul>
+<li>Visualization</li>
+</ul>
 <h2 id="message-to-matt">Message To Matt</h2>
 <p>bThere are a ton of papers that I think are relevant. A part from the thesis you sent, I found <a href="https://dl.acm.org/doi/full/10.1145/3616864">https://dl.acm.org/doi/full/10.1145/3616864</a> to a be a really great review for XRL specifically, and proposes a new taxonomy to cover XRL topics that doesn&rsquo;t follow the XSL taxonomy. For an overview, Table 2 and Table 3 are great. Table 2 categorizes the papers based on the metrics used to evaluate the XRL method, and table 3 goes over the types of explanations. Below is a high-level overview of the main papers highlighted by the Milani that I think might be pertinent.</p>
 <p>There are quite a few ways you can develop explanations based on the features/observations to the agent. Some papers from the review that seem relevant (really depends on the type of explainability we might be looking for):</p>
@@ -341,7 +404,7 @@
 </ul>
 </li>
 </ul>
-<pre><code>-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+<pre><code>-   (&lt;a href=&quot;#citeproc_bib_item_6&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
 
 Saliency maps are used throughout image based explanations. These provide some nice insight into what the agent is &quot;looking at&quot; to make a decision. Although in supervised learning they have found that these maps may not provide the best explainability power when the agent makes are &quot;wrong decision&quot; (i.e. classifies a cat as a dog) when tested in human studies.
 
@@ -350,27 +413,27 @@ Another approach is through causal reasoning. The SHAP/DeepSHAP are the typical 
 Here are some examples of using these techniques in applied domains:
 
 -   (&lt;a href=&quot;#citeproc_bib_item_1&quot;&gt;He, Aouf, and Song 2021&lt;/a&gt;)
--   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_6&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
 -
 
 There are also some reviews that might be pertinent:
 
--   (&lt;a href=&quot;#citeproc_bib_item_3&quot;&gt;Milani et al. 2024&lt;/a&gt;)
--   (&lt;a href=&quot;#citeproc_bib_item_6&quot;&gt;Roth et al. 2024&lt;/a&gt;) ( I don't have access to this book, but it looks relevant to the robotics domain).
+-   (&lt;a href=&quot;#citeproc_bib_item_4&quot;&gt;Milani et al. 2024&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_7&quot;&gt;Roth et al. 2024&lt;/a&gt;) ( I don't have access to this book, but it looks relevant to the robotics domain).
 -
 
 **Reviews**
 
--   (&lt;a href=&quot;#citeproc_bib_item_4&quot;&gt;Pierson 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Pierson 2021&lt;/a&gt;)
 -
 
 **Saliency Maps**
 
--   (&lt;a href=&quot;#citeproc_bib_item_4&quot;&gt;Pierson 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Pierson 2021&lt;/a&gt;)
 
 **Decisions Trees**
 
--   (&lt;a href=&quot;#citeproc_bib_item_5&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_6&quot;&gt;Roth, Liang, and Manocha 2021&lt;/a&gt;)
 
 **SHAP\*/\*Causal**
 
@@ -379,7 +442,7 @@ There are also some reviews that might be pertinent:
 
 [Power Systems Control](/braindump/power_systems_control/)
 
--   (&lt;a href=&quot;#citeproc_bib_item_7&quot;&gt;Stiasny et al. 2022&lt;/a&gt;)
+-   (&lt;a href=&quot;#citeproc_bib_item_8&quot;&gt;Stiasny et al. 2022&lt;/a&gt;)
 -
 </code></pre>
 
@@ -477,6 +540,34 @@ There are also some reviews that might be pertinent:
 
    
 
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
    
 
    
@@ -1039,6 +1130,8 @@ There are also some reviews that might be pertinent:
     <h4>Links to this note:</h4>
     <div class="backlinks">
       <ul>
+       
+          <li><a href="/braindump/xrl_in_power_systems/">XRL in Power Systems</a></li>
        
           <li><a href="/braindump/human_in_the_loop_reinforcement_learning/">Human-in-the-Loop Reinforcement Learning</a></li>
        

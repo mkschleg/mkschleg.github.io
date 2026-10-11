@@ -3,19 +3,121 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mkschleg.github.io/braindump/</loc>
-    <lastmod>2025-05-01T09:38:34-06:00</lastmod>
+    <lastmod>2026-09-03T10:54:43-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/data_driven_pde_solvers/</loc>
-    <lastmod>2025-05-01T09:38:34-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/ddpde/</loc>
-    <lastmod>2025-05-01T09:38:34-06:00</lastmod>
+    <loc>https://mkschleg.github.io/braindump/gramian_based_interaction_measures/</loc>
+    <lastmod>2026-09-03T10:54:43-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/</loc>
-    <lastmod>2025-05-01T09:38:34-06:00</lastmod>
+    <lastmod>2026-09-03T10:54:43-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/writing/</loc>
+    <lastmod>2026-06-22T17:44:46-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/about/</loc>
+    <lastmod>2026-05-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/meta/</loc>
+    <lastmod>2026-05-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/post/2026-05-01-my-research-up-to-now/</loc>
+    <lastmod>2026-05-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/post/</loc>
+    <lastmod>2026-05-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/tags/</loc>
-    <lastmod>2025-05-01T09:38:34-06:00</lastmod>
+    <lastmod>2026-05-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/post/2026-05-01-alps/</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/large_language_models/</loc>
+    <lastmod>2025-12-31T09:13:48-07:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/neurips_2025/</loc>
+    <lastmod>2025-12-07T10:20:22-08:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/power_systems_simulation/</loc>
+    <lastmod>2025-12-02T09:13:47-08:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/papers_with_notes/</loc>
+    <lastmod>2025-12-02T09:13:26-08:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/intelligence/</loc>
+    <lastmod>2025-12-02T09:13:04-08:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/bai2019deep/</loc>
+    <lastmod>2025-12-02T09:12:40-08:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</loc>
+    <lastmod>2025-10-04T09:38:00-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/xrl_in_power_systems/</loc>
+    <lastmod>2025-09-25T15:52:45-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/reinforcement_learning/</loc>
+    <lastmod>2025-09-20T10:19:47-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/reinforcement-learning/</loc>
+    <lastmod>2025-09-20T10:19:47-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/policy_gradient/</loc>
+    <lastmod>2025-09-19T14:38:06-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/explainable_rl/</loc>
+    <lastmod>2025-09-18T10:40:02-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/grant_writing/</loc>
+    <lastmod>2025-07-23T15:11:57-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/data_driven_pde_solvers/</loc>
+    <lastmod>2025-06-26T10:53:55-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/ddpde/</loc>
+    <lastmod>2025-06-26T10:53:55-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/bubic2010prediction/</loc>
+    <lastmod>2025-06-26T09:57:22-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/learning_causal_state_representations_of_partially_observable_environments/</loc>
+    <lastmod>2025-06-26T09:55:51-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/sternberg2016cognitive/</loc>
+    <lastmod>2025-06-26T09:55:10-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/causality/</loc>
+    <lastmod>2025-06-26T09:51:48-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/reinforcement_learning_is_not_a_causal_problem/</loc>
+    <lastmod>2025-06-26T09:51:48-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/causality_for_machine_learning/</loc>
+    <lastmod>2025-06-26T09:50:39-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/kovachki2024neural/</loc>
+    <lastmod>2025-06-26T09:46:46-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/neural_operator/</loc>
+    <lastmod>2025-06-26T09:14:55-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/differential_equations/</loc>
+    <lastmod>2025-06-26T09:09:28-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/partial_differential_equations/</loc>
+    <lastmod>2025-06-26T09:08:19-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/power_systems_control/</loc>
+    <lastmod>2025-06-12T10:10:49-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/bossart2025acceleration/</loc>
+    <lastmod>2025-05-28T11:18:59-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/tags/clo/</loc>
+    <lastmod>2025-05-12T11:23:26-06:00</lastmod>
+  </url><url>
+    <loc>https://mkschleg.github.io/braindump/current_learning_objectives/</loc>
+    <lastmod>2025-05-12T11:23:26-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/nonlinear_programming/</loc>
     <lastmod>2025-04-30T14:13:41-06:00</lastmod>
@@ -28,15 +130,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/karush_kuhn_tucker_conditions/</loc>
     <lastmod>2025-04-30T10:54:28-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/clo/</loc>
-    <lastmod>2025-04-30T10:52:28-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/current_learning_objectives/</loc>
-    <lastmod>2025-04-30T10:52:28-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/power_systems_control/</loc>
-    <lastmod>2025-04-30T10:51:52-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/physics_informed_neural_networks_a_deep_learning_framework_for_solving_forward_and_inverse_problems_involving_nonlinear_partial_differential_equations/</loc>
     <lastmod>2025-04-30T10:42:48-06:00</lastmod>
@@ -56,23 +149,11 @@
     <loc>https://mkschleg.github.io/braindump/human_in_the_loop_reinforcement_learning/</loc>
     <lastmod>2025-04-25T08:05:08-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/explainable_rl/</loc>
-    <lastmod>2025-04-25T08:05:01-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/writing/</loc>
-    <lastmod>2025-04-22T10:34:35-06:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/paper_editing_checklist/</loc>
     <lastmod>2025-04-22T10:28:31-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/human_in_the_loop_rl_industrial/</loc>
     <lastmod>2025-04-15T15:03:57-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/kovachki2024neural/</loc>
-    <lastmod>2025-04-14T11:50:47-06:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/partial_differential_equations/</loc>
-    <lastmod>2025-04-14T11:49:36-06:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/latin_hypercube_sampling/</loc>
     <lastmod>2025-04-14T11:41:29-06:00</lastmod>
@@ -104,20 +185,11 @@
     <loc>https://mkschleg.github.io/braindump/matt_taylor/</loc>
     <lastmod>2025-04-03T11:35:47-06:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/reinforcement_learning/</loc>
-    <lastmod>2025-02-28T11:38:54-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/reinforcement-learning/</loc>
-    <lastmod>2025-02-28T11:38:54-07:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/rl_for_industrial_control/</loc>
     <lastmod>2025-02-26T09:21:30-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/zuckerman_institute/</loc>
     <lastmod>2025-02-21T10:30:33-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/learning_causal_state_representations_of_partially_observable_environments/</loc>
-    <lastmod>2025-02-21T10:30:30-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/zettelkasten_method/</loc>
     <lastmod>2025-02-21T10:30:26-07:00</lastmod>
@@ -221,9 +293,6 @@
     <loc>https://mkschleg.github.io/braindump/stochastic_processes/</loc>
     <lastmod>2025-02-21T10:29:17-07:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/sternberg2016cognitive/</loc>
-    <lastmod>2025-02-21T10:29:16-07:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/stationary_point/</loc>
     <lastmod>2025-02-21T10:29:15-07:00</lastmod>
   </url><url>
@@ -256,12 +325,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/self_supervised_learning/</loc>
     <lastmod>2025-02-21T10:29:09-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/causality/</loc>
-    <lastmod>2025-02-21T10:29:08-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/causality_for_machine_learning/</loc>
-    <lastmod>2025-02-21T10:29:08-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/schwarzer2021pretraining/</loc>
     <lastmod>2025-02-21T10:29:08-07:00</lastmod>
@@ -521,9 +584,6 @@
     <loc>https://mkschleg.github.io/braindump/sutton1988learning/</loc>
     <lastmod>2025-02-21T10:28:12-07:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/large_language_models/</loc>
-    <lastmod>2025-02-21T10:28:11-07:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/laplace_transform/</loc>
     <lastmod>2025-02-21T10:28:10-07:00</lastmod>
   </url><url>
@@ -564,9 +624,6 @@
     <lastmod>2025-02-21T10:27:59-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/integral_transform/</loc>
-    <lastmod>2025-02-21T10:27:55-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/intelligence/</loc>
     <lastmod>2025-02-21T10:27:55-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/inner_product_space/</loc>
@@ -641,9 +698,6 @@
     <loc>https://mkschleg.github.io/braindump/goodman2016what/</loc>
     <lastmod>2025-02-21T10:26:31-07:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/braindump/reinforcement_learning_is_not_a_causal_problem/</loc>
-    <lastmod>2025-02-21T10:26:27-07:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/braindump/general_value_functions/</loc>
     <lastmod>2025-02-21T10:26:26-07:00</lastmod>
   </url><url>
@@ -703,9 +757,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/deepmind_lab/</loc>
     <lastmod>2025-02-21T10:26:12-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/deep_reinforcement_learning/</loc>
-    <lastmod>2025-02-21T10:26:11-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/dayan1993improving/</loc>
     <lastmod>2025-02-21T10:26:10-07:00</lastmod>
@@ -787,9 +838,6 @@
   </url><url>
     <loc>https://mkschleg.github.io/braindump/byrd2019what/</loc>
     <lastmod>2025-02-21T10:25:47-07:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/braindump/bubic2010prediction/</loc>
-    <lastmod>2025-02-21T10:25:46-07:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/braindump/brain/</loc>
     <lastmod>2025-02-21T10:25:45-07:00</lastmod>
@@ -902,20 +950,11 @@
     <loc>https://mkschleg.github.io/collections/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://mkschleg.github.io/post/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://mkschleg.github.io/post/2019-02-24-canmore-rave-coffe/</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/post/2018-11-13-credo-procrastination/</loc>
     <lastmod>2018-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/about/</loc>
-    <lastmod>2018-11-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://mkschleg.github.io/tags/meta/</loc>
-    <lastmod>2018-11-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://mkschleg.github.io/post/2018-11-03-blog-state-of-purpose/</loc>
     <lastmod>2018-11-03T00:00:00+00:00</lastmod>
